@@ -1,23 +1,40 @@
-The 'Screenshots' folder contains images of all the various windows/dialogs used in XBMC and are labelled the same as their relevant XML.
+XBMC Immersive
 
-To make use of the Debug Grid and Info add this to your Keymap.xml (or create a new one in the USERDATA/Keymaps folder)
+XBMC Immersive combines the elegant simplicity of Microsoft's Metro UI with the media richness of XBMC to create an extremely user-friendly and inviting skin.
 
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+What addons are needed?
+
+Skin Widgets: http://mirrors.xbmc.org/addons/frodo/service.skin.widgets/
+RandomandLastItem: http://mirrors.xbmc.org/addons/frodo/script.randomandlastitems/
+PlayAlbum: http://mirrors.xbmc.org/addons/frodo/script.playalbum/
+Favourites: http://mirrors.xbmc.org/addons/frodo/script.favourites/
+
+These should be downloaded automatically upon installation of the skin but I've linked them just in case they don't. 
+
+What addons are supported?
+
+The Big Pictures: http://forum.xbmc.org/showthread.php?tid=97605
+PseudoTV: http://forum.xbmc.org/showthread.php?tid=90738
+TV Show Next Aired: http://forum.xbmc.org/showthread.php?tid=79493
+Global Search: http://forum.xbmc.org/showthread.php?tid=109301
+MetaData Actors: http://forum.xbmc.org/showthread.php?tid=123578
+ForumBrowser: http://forum.xbmc.org/showthread.php?tid=85018
+Library Editor: http://forum.xbmc.org/showthread.php?tid=158775
+
+What should I do if I find a bug?
+
+Please report the issue to the GIT page at https://github.com/Sranshaft/skin.immersive/issues. Note: you will need a GIT account to do this. 
+
+Please do not report the issue to the forum. While I try my hardest to read each post, chances are it'll get overlooked / forgotten. It's much easier keep track of these issues when they are all in one place.
+
+Extras
+
+Charms bar: If you add the following code to your keymap.xml file (%appdata%\XBMC\Userdata\keymaps\keymap.xml) you will have access to a Charms bar-esque quick nav window that will allow you to quickly jump to different sections of the skin.
+
 <keymap>
-	<global>
-		<keyboard>
-			<F5>XBMC.ReloadSkin()</F5>
-			<F6>Skin.ToggleSetting(DebugGrid)</F6>
-			<F7>Skin.ToggleSetting(HideDebugInfo)</F7>
-			<F8>Notification(Testing 123,Hello world)</F8>
-		</keyboard>
-	</global>
+    <global>
+        <keyboard>
+			<a>XBMC.ActivateWindow(55)</a>
+        </keyboard>
+    </global>
 </keymap>
-
-F5 - Reload skin
-F6 - Show/Hide the Debug Grid
-F7 - Show/Hide the Debug Info
-F8 - Activates the KaiDialogToast.xml
-
-
-Further window info can be found in the WIKI (http://wiki.xbmc.org/index.php?title=List_of_Built_In_Controls).
