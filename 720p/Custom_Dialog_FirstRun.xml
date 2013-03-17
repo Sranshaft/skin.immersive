@@ -1,0 +1,105 @@
+<window type="dialog" id="53">
+
+	<defaultcontrol always="true">10</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<zorder>2</zorder>
+	
+	<controls>
+	
+		<include>Common_Background_Fade</include>
+
+		<control type="group">
+			
+			<posx>0</posx>
+			<posy>190</posy>
+			
+			<include>Common_Animation_Dialog</include>
+
+			<control type="image">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>340</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Background_Normal</colordiffuse>
+				
+			</control>
+		
+			<control type="grouplist">
+				
+				<posx>190</posx>
+				<posy>20</posy>
+				<width>900</width>
+				<itemgap>20</itemgap>
+				<orientation>vertical</orientation>
+				
+				<control type="label" id="1">
+					
+					<description>Heading</description>
+					<posx>900</posx>
+					<label>Welcome to XBMC Immersive</label>
+					<width>590</width>
+					<font>Dialog-Header</font>
+					
+				</control>
+
+				<control type="label" id="2">
+					
+					<description>Line 1</description>
+					<width>900</width>
+					<height>40</height>
+					<label>Since this is your first time using [B]XBMC Immersive[/B], let's take a few moments to set it up.</label>
+					<font>Dialog-Detail</font>
+					<wrapmultiline>true</wrapmultiline>
+					
+				</control>
+
+				<control type="label" id="3">
+					
+					<description>Line 2</description>
+					<width>900</width>
+					<height>40</height>
+					<label>Here you will find all the options available to you to customise the appearance of [B]XBMC Immersive[/B] exactly how you want it.</label>
+					<font>Dialog-Detail</font>
+					<wrapmultiline>true</wrapmultiline>
+					
+				</control>
+				
+				<control type="label" id="4">
+					
+					<description>Line 2</description>
+					<width>900</width>
+					<height>40</height>
+					<label>You can always come back to this page whenever you want by going to [B]System > Personalize[/B] if you ever need to change something.</label>
+					<font>Dialog-Detail</font>
+					<wrapmultiline>true</wrapmultiline>
+					
+				</control>
+
+			</control>
+			
+			<control type="grouplist">
+			
+				<posx>190</posx>
+				<posy>280</posy>
+				<width>900</width>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+			
+				<control type="button" id ="10">
+					<description>Play</description>
+					<include>Common_InfoDialog_Button</include>
+					<label>186</label>
+					<onclick>Skin.SetBool(FirstTimeRun)</onclick>
+					<onclick>Dialog.Close(53)</onclick>
+				</control>
+
+			</control>	
+
+		</control>
+
+	</controls>
+
+</window>

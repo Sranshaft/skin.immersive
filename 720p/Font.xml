@@ -1,0 +1,1044 @@
+<fonts>
+
+	<fontset id="default" unicode="true">
+
+		<!--Appbar Fonts-->
+		
+		<font>
+			<name>Appbar-Label</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>22</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Appbar-Label-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>12</size>
+			<style>lowercase</style>
+		</font>
+	
+		<!--Breadcrumb Fonts-->
+		
+		<font>
+			<name>Breadcrumb-Home</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>58</size>
+		</font>
+		
+		<font>
+			<name>Breadcrumb-SubFolder</name>
+			<filename>SegoeWP-Light.ttf</filename>
+			<size>40</size>
+		</font>
+		
+		<font>
+			<name>Breadcrumb-Home-Alt</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>22</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Breadcrumb-SubFolder-Alt</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+			<style>uppercase</style>
+		</font>
+		
+		<!--Charm Fonts-->
+		
+		<font>
+			<name>Charms-Label</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>14</size>
+		</font>
+		
+		<!--Clock Fonts-->
+		
+		<font>
+			<name>Clock-Header</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Clock-Detail</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>16</size>
+			<style>uppercase</style>
+		</font>
+		
+		<!--Content Fonts-->
+		
+		<font>
+			<name>Content-Label</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>28</size>
+		</font>
+		
+		<!--Context Fonts-->
+		
+		<font>
+			<name>Context-List</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<style>lowercase</style>
+			<size>24</size>
+		</font>
+		
+		<font>
+			<name>Context-List-Small</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>12</size>
+		</font>
+		
+		<!--Dialog Fonts-->
+		
+		<font>
+			<name>Dialog-Header</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>36</size>
+		</font>
+		
+		<font>
+			<name>Dialog-Detail</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>22</size>
+			<linespacing>0.85</linespacing>
+		</font>
+		
+		<font>
+			<name>Dialog-Detail-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>14</size>
+			<style>uppercase</style>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<!--Fonts Specific to DialogVideoInfo.xml-->
+		
+		<font>
+			<name>DialogInfo-Header</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>18</size>
+		</font>
+		
+		<font>
+			<name>DialogInfo-Label</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>20</size>
+			<linespacing>0.90</linespacing>
+		</font>
+		
+		<font>
+			<name>DialogInfo-Header-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<font>
+			<name>DialogInfo-Label-Small</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<font>
+			<name>Dropdown-Label</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>24</size>
+		</font>
+		
+		<!--Favourites Fonts-->
+		
+		<font>
+			<name>Favourites-Large</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>36</size>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<!--Fullscreen Fonts-->
+		
+		<font>
+			<name>Fullscreen-Slide-Large</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>210</size>
+		</font>
+		
+		<font>
+			<name>Fullscreen-Slide-Medium</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>100</size>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Fullscreen-Slide-Small</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>48</size>
+		</font>
+		
+		<font>
+			<name>Fullscreen-NowPlaying-Large</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>90</size>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Fullscreen-NowPlaying-Normal</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<style>uppercase</style>
+			<size>32</size>
+		</font>
+		
+		<font>
+			<name>Fullscreen-Info-Large</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>36</size>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Fullscreen-Info-Normal</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>22</size>
+		</font>
+		
+		<font>
+			<name>Fullscreen-Info-Normal-Bold</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>22</size>
+		</font>
+		
+		<font>
+			<name>Fullscreen-Info-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>14</size>
+			<style>uppercase</style>
+		</font>
+		
+		<!--GlobalSearch Fonts-->
+		
+		<font>
+			<name>GlobalSearch-Large</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>42</size>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>GlobalSearch-Small</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>16</size>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<!--Home Fonts-->
+		
+		<font>
+			<name>Home-Alt-Label</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>10</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Home-Alt-Vertical</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<linespacing>0.75</linespacing>
+			<style>uppercase</style>
+			<size>40</size>
+		</font>
+		
+		<font>
+			<name>Home-Featured</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>42</size>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Home-Featured-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>24</size>
+			<style>uppercase</style>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<font>
+			<name>Home-RecentWatched</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>18</size>
+			<style>uppercase</style>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<font>
+			<name>Home-RecentWatched-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>18</size>
+			<style>uppercase</style>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<font>
+			<name>Home-Tile-Header</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<font>
+			<name>Home-Tile-Detail</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<font>
+			<name>Home-Detail</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>34</size>
+		</font>
+		
+		<!--Kai Fonts-->
+		
+		<font>
+			<name>Kai-Header</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+			<style>lowercase</style>
+		</font>
+		
+		<font>
+			<name>Kai-Detail</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>16</size>
+			<style>lowercase</style>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<!--Keyboard Fonts-->
+		
+		<font>
+			<name>Keyboard-Label</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>22</size>
+		</font>
+		
+		<!--View Fonts-->
+		
+		<font>
+			<name>Menu-Header</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>32</size>
+		</font>
+		
+		<font>
+			<name>Menu-Scroll</name>
+			<filename>SegoeWP-Light.ttf</filename>
+			<size>32</size>
+			<style>lowercase</style>
+		</font>
+		
+		<font>
+			<name>Menu-Details-Header</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+			<size>28</size>
+		</font>
+		
+		<font>
+			<name>Menu-Details</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<font>
+			<name>Menu-Details-Small</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>14</size>
+		</font>
+		
+		<font>
+			<name>Menu-ExtendedList-Header</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+			<size>28</size>
+		</font>
+		
+		<font>
+			<name>Menu-ExtendedList-Details</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>18</size>
+		</font>
+		
+		<font>
+			<name>Menu-ExtendedList-Small</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>14</size>
+		</font>
+		
+		<font>
+			<name>Menu-List-Large</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>42</size>
+		</font>
+		
+		<font>
+			<name>Menu-List</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<style>lowercase</style>
+			<size>24</size>
+		</font>
+		
+		<font>
+			<name>Menu-List-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>14</size>
+		</font>
+		
+		<font>
+			<name>Menu-List-Detail</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>36</size>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-List-Plot</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>24</size>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-Grid-Header</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+			<size>36</size>
+		</font>
+		
+		<font>
+			<name>Menu-Grid-Details</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>18</size>
+		</font>
+		
+		<font>
+			<name>Menu-Grid-Small</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>14</size>
+		</font>
+		
+		<font>
+			<name>Menu-Square-Header</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>16</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Menu-Square-Detail</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Menu-Tall-Large</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>42</size>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-Tall</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>24</size>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-Thumbnail-Header</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>16</size>
+			<linespacing>0.85</linespacing>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Menu-Thumbnail-Detail</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Menu-Featured-Large</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>38</size>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-Featured</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>22</size>
+			<linespacing>0.85</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-Featured-Small</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>16</size>
+			<linespacing>0.75</linespacing>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Menu-RecentlyAdded-Large</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>42</size>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-RecentlyAdded-Small</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>16</size>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<!--NowPlaying Fonts-->
+		
+		<font>
+			<name>NowPlaying-Header</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>16</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>NowPlaying-Detail</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>12</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>NowPlaying-Detail-Small</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>12</size>
+			<style>uppercase</style>
+		</font>
+		
+		<!--Pivot Fonts-->
+		
+		<font>
+			<name>Pivot-Large</name>
+			<filename>SegoeWP.ttf</filename>
+			<style>lowercase</style>
+			<size>36</size>
+		</font>
+		
+		<font>
+			<name>Pivot-Small</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<style>uppercase</style>
+			<size>18</size>
+		</font>
+		
+		<!--Profile Fonts-->
+		
+		<font>
+			<name>Profile-Settings-Name</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>32</size>
+		</font>
+		
+		<font>
+			<name>Profile-Settings-Directory</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>18</size>
+		</font>
+		
+		<!--PseudoTV Fonts-->
+		
+		<font>
+			<name>PseudoTV-Channel-Name</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>20</size>
+		</font>
+		
+		<font>
+			<name>PseudoTV-Channel-Number</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>20</size>
+		</font>
+		
+		<font>
+			<name>PseudoTV-Time</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>PseudoTV-Show-Name</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>24</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>PseudoTV-Show-Title</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>24</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>PseudoTV-Show-Description</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>20</size>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<!--RSS Fonts-->
+		
+		<font>
+			<name>RSS-Normal</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<!--Screensaver Fonts-->
+		
+		<font>
+			<name>Screensaver-Time</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>128</size>
+		</font>
+		
+		<font>
+			<name>Screensaver-Date</name>
+			<filename>SegoeWP-Light.ttf</filename>
+			<size>48</size>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Screensaver-NowPlaying</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>18</size>
+		</font>
+		
+		<!--Select Fonts-->
+		
+		<font>
+			<name>Select-Large</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>36</size>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Select-Normal</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>24</size>
+			<style>uppercase</style>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<font>
+			<name>Select-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<!--Setting Dialog Fonts-->
+		
+		<font>
+			<name>Settings-Menu-Header</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>48</size>
+		</font>
+		
+		<font>
+			<name>Settings-Header</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>22</size>
+		</font>
+		
+		<font>
+			<name>Settings-Label</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>18</size>
+		</font>
+		
+		<!--SortLetter Fonts-->
+		
+		<font>
+			<name>SortLetter-Label</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>32</size>
+		</font>
+		
+		<!--Tile Fonts-->
+		
+		<font>
+			<name>Tile-Header</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>22</size>
+		</font>
+		
+		<font>
+			<name>Tile-Detail</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>72</size>
+		</font>
+		
+		<font>
+			<name>Tile-Description</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<font>
+			<name>Tile-Square-Header</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<font>
+			<name>Tile-Square-Detail</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<!--Weather Fonts-->
+		
+		<font>
+			<name>Weather-36HourChancePrecipitation</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>14</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Weather-36HourForecast</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>20</size>
+		</font>
+		
+		<font>
+			<name>Weather-36HourHeading</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>20</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Weather-36HourTemp</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>48</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Weather-City</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>14</size>
+		</font>
+		
+		<font>
+			<name>Weather-Updated</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>20</size>
+		</font>
+		
+		<font>
+			<name>Weather-CurrentTemp</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>128</size>
+		</font>
+		
+		<font>
+			<name>Weather-CurrentCondition</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>24</size>
+		</font>
+		
+		<font>
+			<name>Weather-CurrentFeelsLike</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<font>
+			<name>Weather-ExtendedDay</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>24</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Weather-ExtendedDate</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>14</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Weather-ExtendedTemp</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>24</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Weather-ExtendedCondition</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>14</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Weather-HourlyTime</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>20</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Weather-HourlyDate</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>18</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Weather-HourlyCondition</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>18</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Weather-HourlyTemp</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>48</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Weather-Header</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>14</size>
+		</font>
+		
+		<font>
+			<name>Weather-Detail</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>18</size>
+		</font>
+		
+		
+		<!----------------------------------------------->
+		<!--          3rd Party Addon Fonts			   -->
+		<!----------------------------------------------->
+		
+		<!--Big Picture Addon Fonts-->
+		
+		<font>
+			<name>BigPicture-Album</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>14</size>
+		</font>
+		
+		<font>
+			<name>BigPicture-Title</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>20</size>
+		</font>
+		
+		<font>
+			<name>BigPicture-PhotoName</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<linespacing>0.65</linespacing>
+			<style>uppercase</style>
+			<size>54</size>
+		</font>
+		
+		<font>
+			<name>BigPicture-Description</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>18</size>
+			<linespacing>0.85</linespacing>
+		</font>
+		
+		<!-- Forum Browser Fonts-->
+		
+		<font>
+			<name>ForumBrowser-PageLabels</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<linespacing>0.75</linespacing>
+			<style>uppercase</style>
+			<size>40</size>
+		</font>
+		
+		<font>
+			<name>ForumBrowser-PostNumber</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<linespacing>0.75</linespacing>
+			<style>uppercase</style>
+			<size>14</size>
+		</font>
+		
+		<font>
+			<name>ForumBrowser-Poster</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<linespacing>0.75</linespacing>
+			<style>uppercase</style>
+			<size>18</size>
+		</font>
+		
+		<font>
+			<name>ForumBrowser-Name</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<linespacing>0.75</linespacing>
+			<style>uppercase</style>
+			<size>14</size>
+		</font>
+		
+		<font>
+			<name>ForumBrowser-Date</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<linespacing>0.75</linespacing>
+			<style>lowercase</style>
+			<size>14</size>
+		</font>
+		
+		<font>
+			<name>ForumBrowser-Description</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<linespacing>0.65</linespacing>
+			<style>uppercase</style>
+			<size>48</size>
+		</font>
+		
+		<font>
+			<name>ForumBrowser-Message</name>
+			<filename>SegoeWP-Light.ttf</filename>
+			<linespacing>0.75</linespacing>
+			<size>28</size>
+		</font>
+	 	
+		<font>
+			<name>ForumBrowser-font10</name>
+			<filename>ForumBrowser-DejaVuSans.ttf</filename>
+			<size>12</size>
+		</font>
+		
+	 	<font>
+			<name>ForumBrowser-font12</name>
+			<filename>ForumBrowser-DejaVuSans.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<font>
+			<name>ForumBrowser-font13</name>
+			<filename>ForumBrowser-DejaVuSans.ttf</filename>
+			<size>20</size>
+		</font>
+		
+		<font>
+			<name>ForumBrowser-font30</name>
+			<filename>ForumBrowser-DejaVuSans.ttf</filename>
+			<size>30</size>
+		</font>
+		
+		<!--PseudoTV Addon Fonts-->
+		
+		<font>
+			<name>PseudoTV-NowPlaying</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<font>
+			<name>PseudoTV-Title</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>24</size>
+		</font>
+		
+		<font>
+			<name>PseudoTV-Description</name>
+			<filename>SegoeWP.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<!--TV Next Aired Addon Fonts-->
+		
+		<font>
+			<name>TVNextAired-Large</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>36</size>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>TVNextAired-Normal</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>22</size>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<font>
+			<name>TVNextAired-Small</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>14</size>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<!--Generic Fonts-->
+		
+		<font>
+			<name>Large</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>300</size>
+		</font>
+		
+		<font>
+			<name>Medium</name>
+			<filename>Arial.ttf</filename>
+			<size>26</size>
+		</font>
+		
+		<font>
+			<name>Small</name>
+			<filename>Arial.ttf</filename>
+			<size>20</size>
+		</font>
+
+		<!-- Required for system -->
+		<font>
+			<name>font13</name>
+			<filename>Arial.ttf</filename>
+			<size>20</size>
+		</font>
+
+	</fontset>
+</fonts>

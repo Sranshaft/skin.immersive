@@ -1,0 +1,221 @@
+﻿<!-- Foundation -->
+<window id="120">
+	
+	<defaultcontrol always="true">1</defaultcontrol>
+	
+	<controls>
+	
+		<!--Top Area-->
+		<control type="group">
+			
+			<posx>0</posx>
+			<posy>0</posy>
+			
+			<visible>!Player.ShowInfo + !Window.IsVisible(VisualisationSettings) + !Window.IsVisible(VisualisationPresetList)</visible>
+			
+			<include>Common_Animation_OSD_Breadcrumb</include>
+			
+			<control type="image">
+					
+				<include>Common_Dimensions</include>
+				<texture>overlays/overlay_fullscreen_top.png</texture>
+				
+			</control>
+			
+			<include>Common_Breadcrumb_Alt</include>
+			
+		</control>	
+
+		<control type="group">
+			
+			<posx>0</posx>
+			<posy>720</posy>
+			
+			<visible>!Player.ShowInfo + !Window.IsVisible(VisualisationSettings) + !Window.IsVisible(VisualisationPresetList)</visible>
+			
+			<include>Common_Animation_OSD</include>
+			
+			<control type="image">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>116</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>FanartDiffuse</colordiffuse>
+				
+			</control>
+			
+			<control type="grouplist" id="1">
+			
+				<posx>32</posx>
+				<posy>16</posy>
+				<width>1280</width>
+				<height>116</height>
+				<itemgap>16</itemgap>
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+
+				<!--Random Button-->
+				<control type="radiobutton" id="400">
+			
+					<include>Common_AppBar_Button</include>
+					<texturefocus>playercontrols/playercontrol_shuffle_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_shuffle.png</texturenofocus>
+					<textureradioon>appbar/appbar_radioon.png</textureradioon>
+					<textureradiooff>-</textureradiooff>
+					<radiowidth>48</radiowidth>
+					<radioheight>48</radioheight>
+					<radioposx>6</radioposx>
+					<label>$VAR[OSD_Random_Label]</label>
+					<onclick>playercontrol(random)</onclick>
+					
+				</control>
+				
+				<!--Skip Previous Button-->
+				<control type="button" id="401">
+					
+					<include>Common_AppBar_Button</include>
+					<texturefocus>playercontrols/playercontrol_skipback_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_skipback.png</texturenofocus>
+					<label>skip[CR]previous</label>
+					<onclick>playercontrol(previous)</onclick>
+					
+				</control>
+				
+				<!--Rewind Button-->
+				<control type="button" id="402">
+					
+					<include>Common_AppBar_Button</include>
+					<texturefocus>playercontrols/playercontrol_rewind_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_rewind.png</texturenofocus>
+					<label>rewind</label>
+					<onclick>playercontrol(rewind)</onclick>
+					
+				</control>
+				
+				<!--Play/Pause Button-->
+				<control type="togglebutton" id="403">
+					
+					<include>Common_AppBar_Button</include>
+					<texturefocus>playercontrols/playercontrol_pause_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_pause.png</texturenofocus>
+					<alttexturefocus>playercontrols/playercontrol_play_focus.png</alttexturefocus>
+					<alttexturenofocus>playercontrols/playercontrol_play.png</alttexturenofocus>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<label>$VAR[OSD_PlayPause_Label]</label>
+					<onclick>playercontrol(play)</onclick>
+					
+				</control>
+				
+				<!--Stop Button-->
+				<control type="button" id="404">
+					
+					<include>Common_AppBar_Button</include>
+					<texturefocus>playercontrols/playercontrol_stop_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_stop.png</texturenofocus>
+					<label>stop</label>
+					<onclick>playercontrol(stop)</onclick>
+					
+				</control>
+					
+				<!--Fast Forward Button-->
+				<control type="button" id="405">
+						
+					<include>Common_AppBar_Button</include>
+					<texturefocus>playercontrols/playercontrol_fastforward_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_fastforward.png</texturenofocus>
+					<label>fast[CR]forward</label>
+					<onclick>playercontrol(forward)</onclick>
+					
+				</control>
+					
+				<!--Skip Next Button-->
+				<control type="button" id="406">
+						
+					<include>Common_AppBar_Button</include>
+					<texturefocus>playercontrols/playercontrol_skipnext_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_skipnext.png</texturenofocus>
+					<label>skip[CR]next</label>
+					<onclick>playercontrol(next)</onclick>
+					
+				</control>
+				
+				<!--Repeat Button-->
+				<control type="button" id="407">
+						
+					<include>Common_AppBar_Button</include>
+					<texturefocus>playercontrols/playercontrol_repeat_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_repeat.png</texturenofocus>
+					<label>$VAR[OSD_Random_Label]</label>
+					<onclick>playercontrol(repeat)</onclick>
+					
+				</control>
+				
+				<!--Divider-->
+				<control type="image" id="9150">
+					<include>Common_AppBar_Divider</include>
+				</control>
+				
+				<!--Lyrics Button-->
+				<control type="button" id="410">
+						
+					<include>Common_AppBar_Button</include>
+					<texturefocus>playercontrols/playercontrol_lyrics_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_lyrics.png</texturenofocus>
+					<label>get[CR]lyrics</label>
+					<onclick>Close</onclick>
+					<onclick>XBMC.RunScript(script.cu.lyrics)</onclick>
+					
+				</control>
+				
+				<!--Divider-->
+				<control type="image" id="9151">
+					<include>Common_AppBar_Divider</include>
+				</control>
+				
+				<!--Visualization Settings Button-->
+				<control type="button" id="411">
+						
+					<include>Common_AppBar_Button</include>
+					<texturefocus>playercontrols/playercontrol_settings_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_settings.png</texturenofocus>
+					<colordiffuse>$VAR[Appbar_Visualisation_ColorDiffuse]</colordiffuse>
+					<label>visual[CR]settings</label>
+					<textcolor>$VAR[Appbar_Visualisation_ColorDiffuse]</textcolor>
+					<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+					<enable>Visualisation.Enabled</enable>
+					
+				</control>
+				
+				<!--Visualization Presets Button-->
+				<control type="button" id="412">
+						
+					<include>Common_AppBar_Button</include>
+					<texturefocus>playercontrols/playercontrol_presets_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_presets.png</texturenofocus>
+					<colordiffuse>$VAR[Appbar_Visualisation_ColorDiffuse]</colordiffuse>
+					<label>visual[CR]presets</label>
+					<textcolor>$VAR[Appbar_Visualisation_ColorDiffuse]</textcolor>
+					<onclick>ActivateWindow(122)</onclick>
+					<enable>Visualisation.Enabled</enable>
+					
+				</control>
+				
+				<!--Visualization Button-->
+				<control type="button" id="500">
+						
+					<include>Common_AppBar_Button</include>
+					<texturefocus>playercontrols/playercontrol_visualisations_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_visualisations.png</texturenofocus>
+					<label>visual:[CR][LOWERCASE]$INFO[Visualisation.Name][/LOWERCASE]</label>
+					
+				</control>
+				
+			</control>
+			
+		</control>	
+
+	</controls>
+
+</window>

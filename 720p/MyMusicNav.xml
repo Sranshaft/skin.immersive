@@ -1,0 +1,72 @@
+<!-- Foundation -->
+<window id="502">
+	
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>50,52,53,54,58,59</views>
+	
+	<!--Splash Screen-->
+	<onload>ActivateWindow(60)</onload>
+	
+	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Music)">XBMC.RunScript(script.randomandlastitems,limit=16,type=Music,method=Last,playlist=special://skin/playlists/History (Music).xsp,menu=Menu3)</onload>
+
+	<controls>
+
+		<!--Background Area-->
+		<include>Common_Background</include>
+		
+		<control type="group">
+		
+			<include>Common_Dimensions</include>
+			<include>Common_Animation_Window</include>
+		
+			<!--Top Area-->
+			<include>Common_Breadcrumb</include>
+			<include>Common_Clock</include>
+			<include>Common_Overlay</include>
+			
+			<!--Content Area-->
+			<control type="group">
+			
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>1280</width>
+				<height>480</height>
+				
+				<!--Animation-->
+				<include>Common_Animation_Content_Splash</include>
+				
+				<!--Available Views-->
+				<include>ViewList</include>
+				<include>ViewThumbnail</include>
+				<include>ViewExtendedList</include>
+				<include>ViewSquare</include>
+				<include>ViewExtendedList_Albums</include>
+				<include>ViewDetails</include>
+				
+			</control>
+			
+			<!--Bottom Area-->
+			<control type="group">
+			
+				<posx>0</posx>
+				<posy>620</posy>
+				<width>1280</width>
+				<height>100</height>
+			
+				<include>Common_Bottom</include>
+				
+			</control>
+			
+			<!--Sort Letter Indicator-->
+			<include>Common_SortLetter</include>
+			<include>Common_SortLetter_Alt</include>
+			
+			<!--Context Menu-->
+			<include>Common_AppBar</include>
+			
+		</control>	
+	
+	</controls>
+
+</window>

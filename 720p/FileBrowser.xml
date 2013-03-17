@@ -1,0 +1,281 @@
+<!-- Foundation -->
+<window id="126">
+	
+	<defaultcontrol always="true">450</defaultcontrol>
+	
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	
+	<include>Common_Animation_Window</include>
+	
+	<controls>
+	
+		<!--Background Area-->
+		<control type="image">
+				
+			<include>Common_Dimensions</include>
+			<texture background="true">colors/color_white.png</texture>
+			<colordiffuse>Background_Normal</colordiffuse>
+			
+		</control>
+		
+		<!--Top Area-->
+		<include>Common_Breadcrumb</include>
+		
+		<!--Content Area-->
+		<control type="group">
+		
+			<posx>0</posx>
+			<posy>100</posy>
+			<width>1280</width>
+			<height>560</height>
+			
+			<!--Animation-->
+			<include>Common_Animation_Content</include>
+			
+			<control type="grouplist">
+			
+				<include>Common_Content_Grouplist</include>
+				
+				<!--Preview Section-->
+				<control type="group">
+				
+					<height>440</height>
+					<width>300</width>
+					
+					<control type="label">
+							
+						<label>preview</label>
+						<include>Common_Section_Label</include>
+						
+					</control>
+				
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>60</posy>
+						<posy>40</posy>
+						<width>300</width>
+						<height>440</height>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+						<fadetime>400</fadetime>
+						
+					</control>
+					
+				</control>
+				
+				<!--Images Section-->
+				<control type="group">
+				
+					<posx>60</posx>
+					<posy>0</posy>
+				
+					<control type="label">
+							
+						<label>$INFO[ListItem.Label]</label>
+						<include>Common_Section_Label</include>
+						
+					</control>
+					
+					<control type="panel" id="450">
+								
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>900</width>
+						<height>480</height>
+						<onleft>450</onleft>
+						<onright>450</onright>
+						<onup>9000</onup>
+						<ondown>9000</ondown>
+						<pagecontrol>81</pagecontrol>
+						<orientation>horizontal</orientation>
+						<viewtype label="535">list</viewtype>
+						<scrolltime tween="cubic" easing="out">600</scrolltime>
+						<preloaditems>2</preloaditems>
+						
+						<itemlayout width="230" height="230">
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>210</width>
+								<height>210</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								<aspectratio>scale</aspectratio>
+								
+							</control>
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>210</width>
+								<height>210</height>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+								<aspectratio>scale</aspectratio>
+								
+							</control>
+
+						</itemlayout>
+
+						<focusedlayout width="230" height="230">
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>210</width>
+								<height>210</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								<aspectratio>scale</aspectratio>
+								
+							</control>
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>210</width>
+								<height>210</height>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+								<aspectratio>scale</aspectratio>
+								
+							</control>
+							
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>210</width>
+								<height>210</height>
+								<texture background="true" border="4,4,20,4">button_selected.png</texture>
+								<colordiffuse>Background_Highlight</colordiffuse>
+								
+							</control>
+							
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>210</width>
+								<height>210</height>
+								<texture background="true">button_selected_check.png</texture>
+								<colordiffuse>Label_Normal</colordiffuse>
+								
+							</control>
+						
+						</focusedlayout>
+
+					</control>
+					
+					<!--Scrollbar-->
+					<control type="scrollbar" id="81">
+						
+						<posx>0</posx>
+						<posy>520</posy>
+						<width>1180</width>
+						<height>5</height>
+						<texturesliderbackground>-</texturesliderbackground>
+						<texturesliderbar>colors/color_lightgrey.png</texturesliderbar>
+						<texturesliderbarfocus>colors/color_white.png</texturesliderbarfocus>
+						<colordiffuse>Background_Highlight</colordiffuse>
+						<orientation>horizontal</orientation>
+						<showonepage>false</showonepage>
+						
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(450).Scrolling">Conditional</animation>
+						
+					</control>
+					
+				</control>	
+				
+			</control>
+			
+		</control>
+
+		<control type="label" id="411">
+			<visible>false</visible>
+		</control>
+		
+		<!--Bottom Area-->
+		<control type="group">
+		
+			<posx>0</posx>
+			<posy>620</posy>
+			<width>1280</width>
+			<height>100</height>
+		
+			<control type="grouplist">
+				
+				<posx>60</posx>
+				<posy>20</posy>
+				<width>1160</width>
+				<height>60</height>
+				<orientation>horizontal</orientation>
+				<itemgap>40</itemgap>
+			
+				<control type="label">
+			
+					<width min="0" max="200">auto</width>
+					<height>60</height>
+					<label>$INFO[Container(450).NumItems,, items]</label>
+					<font>Content-Label</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>top</aligny>
+			
+				</control>
+				
+			</control>
+			
+		</control>
+		
+		<control type="grouplist" id="9000">
+		
+			<include>Common_Settings_Button_Grouplist</include>
+		
+			<!--Okay Button-->
+			<control type="button" id="413">
+				
+				<colordiffuse>Label_Normal</colordiffuse>
+				<textcolor>Label_Normal</textcolor>
+				<focusedcolor>Label_Highlight</focusedcolor>
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[186]</label>
+				<onup>450</onup>
+				
+			</control>
+
+			<!--Cancel Button-->
+			<control type="button" id="414">
+				
+				<colordiffuse>Label_Normal</colordiffuse>
+				<textcolor>Label_Normal</textcolor>
+				<focusedcolor>Label_Highlight</focusedcolor>
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[222]</label>
+				<onup>450</onup>
+				
+			</control>
+			
+			<!--New Folder Button-->
+			<control type="button" id="415">
+				
+				<colordiffuse>Label_Normal</colordiffuse>
+				<textcolor>Label_Normal</textcolor>
+				<focusedcolor>Label_Highlight</focusedcolor>
+				<width>120</width>
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[119]</label>
+				<onup>450</onup>
+				
+			</control>
+			
+		</control>
+		
+	</controls>
+	
+</window>

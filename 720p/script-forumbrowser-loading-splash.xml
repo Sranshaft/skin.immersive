@@ -1,0 +1,17 @@
+<window>
+	
+	<zorder>1</zorder>
+	
+	<controls>
+
+		<include>Common_Busy</include>
+		
+		<control type="label" id="100">
+		
+			<visible>false</visible>
+		
+		</control>
+
+	</controls>
+	
+</window>

@@ -1,0 +1,367 @@
+<!-- Foundation -->
+<window id="2006">
+	<defaultcontrol always="true">-</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	
+	<controls>
+	
+		<control type="visualisation">
+			
+			<include>Common_Dimensions</include>
+			<visible>IsEmpty(MusicPlayer.Property(Fanart_Image))</visible>
+		</control>
+
+		<control type="image">
+		
+			<include>Common_Dimensions</include>
+			<texture background="true">$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
+			
+		</control>
+		
+		<control type="image">
+		
+			<include>Common_Dimensions</include>
+			<texture background="true">colors/color_white.png</texture>
+			<colordiffuse>50000000</colordiffuse>
+			
+		</control>
+		
+		<control type="multiimage">
+			
+			<include>Common_Dimensions</include>
+			<imagepath>tile/fullscreen</imagepath>
+			<timeperimage>2000</timeperimage>
+			<fadetime>2000</fadetime>
+			<randomize>true</randomize>
+			<colordiffuse>FanartDiffuse</colordiffuse>
+			
+		</control>
+		
+		<!--1st Animation-->
+		<control type="group">
+		
+			<visible>SubString(MusicPlayer.Time,10,Right) | SubString(MusicPlayer.Time,11,Right) | SubString(MusicPlayer.Time,12,Right) | SubString(MusicPlayer.Time,13,Right) | SubString(MusicPlayer.Time,14,Right) | SubString(MusicPlayer.Time,15,Right) | SubString(MusicPlayer.Time,16,Right) | SubString(MusicPlayer.Time,17,Right) | SubString(MusicPlayer.Time,18,Right) | SubString(MusicPlayer.Time,19,Right)</visible>
+		
+			<animation type="Visible" reversible="false">
+			
+				<effect type="rotate" end="-45,0" />
+				<effect type="slide" start="1280,200" end="-4000,200" time="10000"/>
+				
+			</animation>
+			
+			<include>Common_Music_SlideLabels</include>
+			
+		</control>
+		
+		<!--2rd Animation-->
+		<control type="group">
+		
+			<posx>-400</posx>
+			<posy>720</posy>
+			<visible>SubString(MusicPlayer.Time,20,Right) | SubString(MusicPlayer.Time,21,Right) | SubString(MusicPlayer.Time,22,Right) | SubString(MusicPlayer.Time,23,Right) | SubString(MusicPlayer.Time,24,Right) | SubString(MusicPlayer.Time,25,Right) | SubString(MusicPlayer.Time,26,Right) | SubString(MusicPlayer.Time,27,Right) | SubString(MusicPlayer.Time,28,Right) | SubString(MusicPlayer.Time,29,Right)</visible>
+			
+			<animation type="Visible" reversible="false">
+			
+				<effect type="rotate" end="45,0" />
+				<effect type="slide" start="-4000,0" end="1280,0" time="10000" />
+				
+			</animation>
+			
+			<include>Common_Music_SlideLabels</include>
+			
+		</control>
+		
+		<!--3th Animation-->
+		<control type="group">
+		
+			<posx>0</posx>
+			<posy>400</posy>
+			<visible>IsEmpty(MusicPlayer.Property(Artist_Description)) + [SubString(MusicPlayer.Time,30,Right) | SubString(MusicPlayer.Time,31,Right) | SubString(MusicPlayer.Time,32,Right) | SubString(MusicPlayer.Time,33,Right) | SubString(MusicPlayer.Time,34,Right) | SubString(MusicPlayer.Time,35,Right) | SubString(MusicPlayer.Time,36,Right) | SubString(MusicPlayer.Time,37,Right) | SubString(MusicPlayer.Time,38,Right) | SubString(MusicPlayer.Time,39,Right)]</visible>
+			
+			<animation type="Visible" reversible="false">
+			
+				<effect type="slide" start="1280,0" end="-4000,0" time="10000" />
+				
+			</animation>
+			
+			<include>Common_Music_SlideLabels</include>
+			
+		</control>
+		
+		<!--3th Animation-->
+		<control type="group">
+		
+			<posx>0</posx>
+			<posy>400</posy>
+			<visible>!IsEmpty(MusicPlayer.Property(Artist_Description)) + [SubString(MusicPlayer.Time,30,Right) | SubString(MusicPlayer.Time,31,Right) | SubString(MusicPlayer.Time,32,Right) | SubString(MusicPlayer.Time,33,Right) | SubString(MusicPlayer.Time,34,Right) | SubString(MusicPlayer.Time,35,Right) | SubString(MusicPlayer.Time,36,Right) | SubString(MusicPlayer.Time,37,Right) | SubString(MusicPlayer.Time,38,Right) | SubString(MusicPlayer.Time,39,Right) | SubString(MusicPlayer.Time,40,Right) | SubString(MusicPlayer.Time,41,Right) | SubString(MusicPlayer.Time,42,Right) | SubString(MusicPlayer.Time,43,Right) | SubString(MusicPlayer.Time,44,Right) | SubString(MusicPlayer.Time,45,Right) | SubString(MusicPlayer.Time,46,Right) | SubString(MusicPlayer.Time,47,Right) | SubString(MusicPlayer.Time,48,Right) | SubString(MusicPlayer.Time,49,Right)]</visible>
+			
+			<animation type="Visible" reversible="false">
+			
+				<effect type="slide" start="0,0" end="0,-3000" time="20000" />
+				<effect type="fade" start="100" end="0" time="1000" delay="19000" />
+				
+			</animation>
+			
+			<control type="textbox">
+			
+				<posx>0</posx>
+				<posy>720</posy>
+				<width>1280</width>
+				<height>4000</height>
+				<label>$INFO[MusicPlayer.Property(Artist_Description)]</label>
+				<font>Fullscreen-Slide-Medium</font>
+				<textcolor>White_30</textcolor>
+				<autoscroll>false</autoscroll>
+				
+			</control>	
+				
+		</control>
+		
+		<!--4th Animation-->
+		<control type="group">
+		
+			<posx>1200</posx>
+			<posy>700</posy>
+			
+			<visible>IsEmpty(MusicPlayer.Property(Artist_Description)) + [SubString(MusicPlayer.Time,40,Right) | SubString(MusicPlayer.Time,41,Right) | SubString(MusicPlayer.Time,42,Right) | SubString(MusicPlayer.Time,43,Right) | SubString(MusicPlayer.Time,44,Right) | SubString(MusicPlayer.Time,45,Right) | SubString(MusicPlayer.Time,46,Right) | SubString(MusicPlayer.Time,47,Right) | SubString(MusicPlayer.Time,48,Right) | SubString(MusicPlayer.Time,49,Right)]</visible>
+			
+			<animation type="Visible" reversible="false">
+			
+				<effect type="rotate" end="90,0" center="640,360" />
+				<effect type="slide" start="0,0" end="-5200,0" time="10000" />
+				
+			</animation>
+			
+			<include>Common_Music_SlideLabels</include>
+			
+		</control>
+		
+		<!--5th Animation-->
+		<control type="group">
+		
+			<posx>1200</posx>
+			<posy>700</posy>
+			
+			<visible>SubString(MusicPlayer.Time,50,Right) | SubString(MusicPlayer.Time,51,Right) | SubString(MusicPlayer.Time,52,Right) | SubString(MusicPlayer.Time,53,Right) | SubString(MusicPlayer.Time,54,Right) | SubString(MusicPlayer.Time,55,Right) | SubString(MusicPlayer.Time,56,Right) | SubString(MusicPlayer.Time,57,Right) | SubString(MusicPlayer.Time,58,Right) | SubString(MusicPlayer.Time,59,Right)</visible>
+			
+			<animation type="Visible" reversible="false">
+			
+				<effect type="rotate" end="90,0" center="640,360" />
+				<effect type="slide" start="0,0" end="-5200,0" time="10000" />
+				
+			</animation>
+			
+			<include>Common_Music_SlideLabels</include>
+			
+		</control>
+		
+		<!--Top Area-->
+		<control type="group">
+		
+			<visible>Player.ShowInfo + !Window.IsVisible(VisualisationSettings) + !Window.IsVisible(VisualisationPresetList)</visible>
+			
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="400" />
+			</animation>
+			
+			<animation type="Hidden">
+				<effect type="fade" start="100" end="0" time="400" delay="400" />
+			</animation>
+			
+			<control type="image">
+					
+				<include>Common_Dimensions</include>
+				<texture>overlays/overlay_fullscreen_top.png</texture>
+				
+			</control>
+			
+			<include>Common_Breadcrumb_Alt</include>
+			
+		</control>
+			
+		<!--Information Area-->
+		<control type="group">
+		
+			<posx>880</posx>
+			<posy>0</posy>
+			<width>400</width>
+			<height>720</height>
+			
+			<visible>Player.ShowInfo + !Window.IsVisible(VisualisationSettings) + !Window.IsVisible(VisualisationPresetList)</visible>
+			
+			<animation type="Visible">
+			
+				<effect type="fade" start="0" end="100" time="400" delay="400"/>
+				<effect type="slide" start="1280,0" end="0,0" time="800" delay="400" tween="cubic" easing="out" />
+				
+			</animation>
+			
+			<animation type="Hidden">
+			
+				<effect type="fade" start="100" end="0" time="400" />
+				<effect type="slide" start="0,0" end="1280,0" time="800" tween="cubic" easing="out" />
+				
+			</animation>
+			
+			<control type="image">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>700</width>
+				<height>720</height>
+				<texture background="true">colors/color_white.png</texture>
+				<colordiffuse>FanartDiffuse</colordiffuse>
+			
+			</control>
+			
+			<control type="grouplist">
+				
+				<posx>40</posx>
+				<posy>40</posy>
+				<width>320</width>
+				<height>680</height>
+				<itemgap>10</itemgap>
+				<orientation>vertical</orientation>
+		
+				<control type="textbox">
+					
+					<width>700</width>
+					<height>48</height>
+					<label>[UPPERCASE]$VAR[NowPlaying_First_Label][/UPPERCASE]</label>
+					<textcolor>Label_Normal</textcolor>
+					<font>Fullscreen-Info-Large</font>
+					<aligny>top</aligny>
+				
+				</control>
+				
+				<control type="textbox">
+					
+					<width>700</width>
+					<height>40</height>
+					<label>[UPPERCASE][B]$VAR[NowPlaying_Second_Label][/B][/UPPERCASE]</label>
+					<textcolor>Label_Normal</textcolor>
+					<font>Fullscreen-Info-Normal</font>
+					<aligny>top</aligny>
+				
+				</control>
+				
+				<!--Album Art-->
+				<control type="group">
+				
+					<width>300</width>
+					<height>320</height>
+				
+					<control type="image">
+				
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>300</width>
+						<height>300</height>
+						<texture background="true">$VAR[NowPlaying_Image]</texture>
+						<aspectratio aligny="top">scale</aspectratio>
+					
+					</control>
+					
+				</control>
+				
+				<!--Current Time-->
+				<control type="group">
+				
+					<width>300</width>
+					<height>40</height>
+				
+					<!--Progress Bar-->
+					<control type="progress" id="12">
+						<description>My first progress control</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>300</width>
+						<height>5</height>
+						<texturebg>colors/color_black.png</texturebg>
+						<lefttexture>-</lefttexture>
+						<midtexture>colors/color_white.png</midtexture>
+						<righttexture>-</righttexture>
+						<info>Player.Progress</info>
+					</control>
+				
+					<control type="label">
+					
+						<posx>0</posx>
+						<posy>10</posy>
+						<width>100</width>
+						<height>40</height>
+						<label>$INFO[Player.Time]</label>
+						<textcolor>Label_Normal</textcolor>
+						<font>Fullscreen-Info-Small</font>
+						<aligny>top</aligny>
+					
+					</control>
+					
+					<!--Total Time-->
+					<control type="label">
+					
+						<posx>300</posx>
+						<posy>10</posy>
+						<width>100</width>
+						<height>40</height>
+						<label>$INFO[Player.Duration]</label>
+						<textcolor>Label_Normal</textcolor>
+						<font>Fullscreen-Info-Small</font>
+						<align>right</align>
+						<aligny>top</aligny>
+					
+					</control>
+					
+				</control>	
+			
+				<control type="textbox">
+				
+					<width>700</width>
+					<height>32</height>
+					<label>[UPPERCASE]$VAR[NowPlaying_Third_Label][/UPPERCASE]</label>
+					<textcolor>Label_Normal</textcolor>
+					<font>Fullscreen-Info-Normal</font>
+					<aligny>top</aligny>
+				
+				</control>
+				
+				<control type="textbox">
+				
+					<width>700</width>
+					<height>32</height>
+					<label>[UPPERCASE]$INFO[MusicPlayer.Offset(1).Title][/UPPERCASE]</label>
+					<textcolor>Label_Disabled</textcolor>
+					<font>Fullscreen-Info-Normal</font>
+					<aligny>top</aligny>
+				
+				</control>
+				
+				<control type="textbox">
+				
+					<width>700</width>
+					<height>32</height>
+					<label>[UPPERCASE]$INFO[MusicPlayer.Offset(2).Title][/UPPERCASE]</label>
+					<textcolor>Label_Disabled</textcolor>
+					<font>Fullscreen-Info-Normal</font>
+					<aligny>top</aligny>
+				
+				</control>
+				
+				<control type="textbox">
+				
+					<width>700</width>
+					<height>32</height>
+					<label>[UPPERCASE]$INFO[MusicPlayer.Offset(3).Title][/UPPERCASE]</label>
+					<textcolor>Label_Disabled</textcolor>
+					<font>Fullscreen-Info-Normal</font>
+					<aligny>top</aligny>
+				
+				</control>
+				
+			</control>	
+			
+		</control>
+		
+	</controls>
+
+</window>

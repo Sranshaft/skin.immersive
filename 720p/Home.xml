@@ -1,0 +1,64 @@
+<!-- Foundation -->
+<window id="0">
+	
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	
+	<onload>Weather.Refresh</onload>
+	<onload>XBMC.RunScript(script.favourites)</onload>
+	<onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(skinsettings)</onload>
+	<onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(53)</onload>
+	
+	<controls>
+	
+		<!--Background-->
+		<include>Common_Background</include>
+
+		<control type="group">
+		
+			<include>Common_Dimensions</include>
+			<include>Common_Animation_Window</include>
+		
+			<!--Top Section-->
+			<include>Common_Clock</include>
+			<include>Common_Overlay</include>
+			
+			<control type="image">
+							
+				<posx>60</posx>
+				<posy>20</posy>
+				<width>200</width>
+				<height>65</height>
+				<texture>home/logo.png</texture>
+				<aspectratio>keep</aspectratio>
+				
+			</control>
+			
+			<!--Content Area-->
+			<include>Home_Alternate</include>
+			<include>Home_Normal</include>
+			
+			<!--RSS-->
+			<include>Common_RSS</include>
+			
+			<!--Scrollbar-->
+			<control type="group">
+				
+				<control type="scrollbar" id="9010">
+				
+					<include>Common_Window_Scrollbar_Horizontal</include>
+					<posy>700</posy>
+					
+					<include>Common_Animation_Window_Scrollbar_Fade</include>
+					
+					<visible>System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)</visible>
+					
+				</control>
+				
+			</control>
+			
+		</control>	
+		
+	</controls>
+	
+</window>

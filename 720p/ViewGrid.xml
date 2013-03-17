@@ -1,0 +1,427 @@
+<includes>
+
+	<include name="ViewGrid">
+		
+		<control type="group">
+		
+			<posx>60</posx>
+			<posy>0</posy>
+		
+			<visible>Control.IsVisible(55)</visible>
+			
+			<include>Common_Animation_View</include>
+			
+			<control type="label">
+					
+				<label>explore</label>
+				<include>Common_Section_Label</include>
+				
+			</control>
+			
+			<control type="panel" id="55">
+
+				<posx>0</posx>
+				<posy>20</posy>
+				<width>640</width>
+				<height>480</height>
+				<onup condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">10000</onup>
+				<ondown condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">9000</ondown>
+				<onleft>55</onleft>
+				<onright>55</onright>
+				<viewtype label="Thumb">wrap</viewtype>
+				<orientation>horizontal</orientation>
+				<pagecontrol>65</pagecontrol>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<preloaditems>4</preloaditems>
+				
+				<include>Common_Animation_HideWhenScrolling</include>
+				
+				<itemlayout width="160" height="230">
+
+					<control type="group">
+		
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>370</width>
+						<height>210</height>
+						
+						<control type="image">
+					
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>140</width>
+							<height>210</height>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio>stretch</aspectratio>
+							
+						</control>
+						
+						<control type="image">
+					
+							<posx>0</posx>
+							<posy>150</posy>
+							<width>140</width>
+							<height>60</height>
+							<texture>colors/color_white.png</texture>
+							<colordiffuse>FanartDiffuse</colordiffuse>
+							
+						</control>
+						
+						<control type="textbox">
+							
+							<posx>10</posx>
+							<posy>158</posy>
+							<width>120</width>
+							<height>40</height>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-Thumbnail-Header</font>
+							<aligny>top</aligny>
+							<wrapmultiline>true</wrapmultiline>
+							<shadowcolor>00FFFFFF</shadowcolor>
+							<autoscroll>false</autoscroll>
+						
+						</control>
+						
+						<control type="group">
+						
+							<posx>0</posx>
+							<posy>118</posy>
+							<width>32</width>
+							<height>32</height>
+		
+							<include>Common_View_Overlay</include>
+		
+						</control>
+						
+					</control>
+					
+				</itemlayout>
+
+				<focusedlayout width="160" height="230">
+				
+					<control type="group">
+		
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>370</width>
+						<height>210</height>
+						
+						<control type="image">
+					
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>140</width>
+							<height>210</height>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio>stretch</aspectratio>
+							
+						</control>
+						
+						<control type="image">
+					
+							<posx>0</posx>
+							<posy>150</posy>
+							<width>140</width>
+							<height>60</height>
+							<texture>colors/color_white.png</texture>
+							<colordiffuse>Label_Highlight</colordiffuse>
+							
+						</control>
+						
+						<control type="textbox">
+							
+							<posx>10</posx>
+							<posy>158</posy>
+							<width>120</width>
+							<height>40</height>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-Thumbnail-Header</font>
+							<aligny>top</aligny>
+							<wrapmultiline>true</wrapmultiline>
+							<shadowcolor>00FFFFFF</shadowcolor>
+							<autoscroll>false</autoscroll>
+						
+						</control>
+						
+						<control type="group">
+						
+							<posx>0</posx>
+							<posy>118</posy>
+							<width>32</width>
+							<height>32</height>
+		
+							<include>Common_View_Overlay</include>
+		
+						</control>	
+						
+					</control>
+					
+				</focusedlayout>
+
+			</control>
+			
+			<!--Scrollbar-->
+			<control type="scrollbar" id="65">
+				
+				<include>Common_Scrollbar_Horizontal</include>
+				<posy>520</posy>
+				
+				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(55).Scrolling">Conditional</animation>
+				
+			</control>
+			
+			<!--Details Section-->
+			<control type="group">
+			
+				<posx>640</posx>
+				<posy>60</posy>
+				<width>400</width>
+				<height>440</height>
+				
+				<include>Common_Animation_HideWhenScrolling</include>
+				
+				<control type="image">
+							
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>400</width>
+					<height>440</height>
+					<texture background="true">colors/color_white.png</texture>
+					<colordiffuse>Settings_Background_Dark</colordiffuse>
+					
+				</control>
+				
+				<control type="grouplist">
+				
+					<posx>20</posx>
+					<posy>10</posy>
+					<width>360</width>
+					<height>400</height>
+					<itemgap>10</itemgap>
+					<orientation>vertical</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					
+					<control type="textbox">
+						
+						<width>360</width>
+						<height>76</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-Grid-Header</font>
+						<textcolor>Label_Dark</textcolor>
+						<aligny>top</aligny>
+						<wrapmultiline>true</wrapmultiline>
+						<shadowcolor>00FFFFFF</shadowcolor>
+						<autoscroll>false</autoscroll>
+						
+					</control>
+					
+					<control type="image">
+					
+						<width>100</width>
+						<height>20</height>
+						<texture background="true">$INFO[ListItem.StarRating]</texture>
+						<colordiffuse>Label_Dark</colordiffuse>
+						<aspectratio>scale</aspectratio>
+						
+					</control>
+					
+					<control type="textbox">
+					
+						<width min="20" max="360">auto</width>
+						<height>260</height>
+						<label>$VAR[ExtendedList_Plot]</label>
+						<font>Menu-Grid-Details</font>
+						<textcolor>Label_Dark</textcolor>
+						<aligny>top</aligny>
+						<wrapmultiline>true</wrapmultiline>
+						<shadowcolor>00FFFFFF</shadowcolor>
+						<autoscroll>false</autoscroll>
+						
+					</control>
+					
+				</control>
+				
+				<control type="label">
+						
+					<posx>20</posx>
+					<posy>400</posy>
+					<width>360</width>
+					<height>26</height>
+					<label>$VAR[ExtendedList_Detail]</label>
+					<font>Menu-Grid-Small</font>
+					<textcolor>Label_Dark</textcolor>
+					<aligny>center</aligny>
+					
+				</control>
+				
+				<control type="label">
+				
+					<posx>350</posx>
+					<posy>400</posy>
+					<width>360</width>
+					<height>26</height>
+					<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+					<font>Menu-Grid-Small</font>
+					<textcolor>Label_Dark</textcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					
+					<visible>!StringCompare(ListItem.Property(UnWatchedEpisodes),0)</visible>
+					
+				</control>
+				
+				<control type="image">
+					
+					<posx>350</posx>
+					<posy>394</posy>
+					<width>40</width>
+					<height>40</height>
+					<texture>$VAR[Menu_Overlay_Image]</texture>
+					<aspectratio>stretch</aspectratio>
+					<colordiffuse>Label_Dark</colordiffuse>
+					
+				</control>
+				
+			</control>
+			
+			<!--Fake Items Section-->
+			<control type="group">
+			
+				<posx>1060</posx>
+				<posy>60</posy>
+				
+				<animation effect="fade" start="100" end="0" time="400" reversible="true" condition="!Container.HasNext">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="200" reversible="true" condition="!Control.IsVisible(55)">Conditional</animation>
+				
+				<include>Common_Animation_HideWhenScrolling</include>
+				
+				<control type="group">
+				
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>140</width>
+					<height>210</height>
+				
+					<control type="image">
+						
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>140</width>
+						<height>210</height>
+						<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[Grid_Image_1]</texture>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>400</fadetime>
+						
+					</control>
+					
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>150</posy>
+						<width>140</width>
+						<height>60</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>FanartDiffuse</colordiffuse>
+						
+					</control>
+					
+					<control type="textbox">
+						
+						<posx>10</posx>
+						<posy>158</posy>
+						<width>120</width>
+						<height>40</height>
+						<label>$VAR[Grid_Label_1]</label>
+						<textcolor>Label_Normal</textcolor>
+						<font>Menu-Thumbnail-Header</font>
+						<aligny>top</aligny>
+						<wrapmultiline>true</wrapmultiline>
+						<shadowcolor>00FFFFFF</shadowcolor>
+						<autoscroll>false</autoscroll>
+					
+					</control>
+					
+				</control>
+
+				
+				<control type="group">
+				
+					<posx>0</posx>
+					<posy>230</posy>
+					<width>140</width>
+					<height>210</height>
+				
+					<control type="image">
+						
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>140</width>
+						<height>210</height>
+						<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[Grid_Image_2]</texture>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>400</fadetime>
+						
+					</control>
+					
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>150</posy>
+						<width>140</width>
+						<height>60</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>FanartDiffuse</colordiffuse>
+						
+					</control>
+					
+					<control type="textbox">
+						
+						<posx>10</posx>
+						<posy>158</posy>
+						<width>120</width>
+						<height>40</height>
+						<label>$VAR[Grid_Label_2]</label>
+						<textcolor>Label_Normal</textcolor>
+						<font>Menu-Thumbnail-Header</font>
+						<aligny>top</aligny>
+						<wrapmultiline>true</wrapmultiline>
+						<shadowcolor>00FFFFFF</shadowcolor>
+						<autoscroll>false</autoscroll>
+					
+					</control>
+					
+				</control>	
+				
+				<control type="image">
+					
+					<posx>160</posx>
+					<posy>0</posy>
+					<width>140</width>
+					<height>210</height>
+					<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[Container(55).ListItem(10).Thumb]</texture>
+					<aspectratio>stretch</aspectratio>
+					<fadetime>400</fadetime>
+					
+				</control>
+				
+				<control type="image">
+					
+					<posx>160</posx>
+					<posy>230</posy>
+					<width>140</width>
+					<height>210</height>
+					<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[Container(55).ListItem(11).Thumb]</texture>
+					<aspectratio>stretch</aspectratio>
+					<fadetime>400</fadetime>
+					
+				</control>
+				
+			</control>
+			
+		</control>
+		
+	</include>
+
+</includes>

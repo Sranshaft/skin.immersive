@@ -1,0 +1,494 @@
+<window>
+	
+	<defaultcontrol always="true">120</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<backgroundcolor>0xFFFFFFFF</backgroundcolor>
+	
+	<zorder>1</zorder>
+	
+	<include>Common_Animation_Window</include>
+	
+	<controls>
+
+		<control type="image">
+		
+			<include>Common_Dimensions</include>
+			<texture background="true">colors/color_white.png</texture>
+			<colordiffuse>Settings_Background_Light</colordiffuse>
+			
+		</control>
+		
+		<control type="image" id="110">
+			
+			<description>Service Logo</description>
+			<posx>1010</posx>
+			<posy>40</posy>
+			<width>250</width>
+			<height>40</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>Settings_Label</colordiffuse>
+			
+		</control>
+		
+		<control type="group" id="111">
+					
+		</control>
+		
+		<control type="spincontrol" id="121">
+		
+		</control>
+		
+		<!--Menu-->
+		<control type="group">
+			
+			<!--Background-->
+			<control type="image">
+			
+				<posy>0</posy>
+				<posy>0</posy>
+				<width>420</width>
+				<height>720</height>
+				<texture background="true">colors/color_white.png</texture>
+				<colordiffuse>Settings_Background_Dark</colordiffuse>			
+
+			</control>
+			
+			<control type="label">
+	
+				<posx>60</posx>
+				<posy>22</posy>
+				<width>420</width>
+				<height>32</height>
+				<label>XBMC Subtitles</label>
+				<font>Settings-Menu-Header</font>
+				<textcolor>Settings_Header</textcolor>
+				<aligny>top</aligny>
+				
+			</control>
+			
+			<control type="list" id="150">
+				
+				<description>List</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>420</width>
+				<height max="600">auto</height>
+				<onup>150</onup>
+				<ondown>150</ondown>
+				<onleft>-</onleft>
+				<onright>120</onright>
+				<scrolltime>0</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>-</pagecontrol>
+
+				<itemlayout width="420" height="60">
+
+					<control type="label">
+							
+						<posx>60</posx>
+						<posy>0</posy>
+						<width min="20" max="400">auto</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Settings_Menu_Normal</textcolor>
+						<aligny>center</aligny>
+						
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="420" height="60">
+
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>420</width>
+						<height>60</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>Background_Highlight</colordiffuse>
+					
+					</control>
+
+					<control type="label">
+							
+						<posx>60</posx>
+						<posy>0</posy>
+						<width min="20" max="400">auto</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Settings_Menu_Highlight</textcolor>
+						<aligny>center</aligny>
+						<scrollspeed>0</scrollspeed>
+						
+					</control>
+
+				</focusedlayout>
+				
+			</control>
+			
+			<control type="group" id="99">
+			
+				<posx>500</posx>
+				<posy>0</posy>
+				<width>700</width>
+				<height>480</height>
+			
+				<control type="label" id="100">
+				
+					<description></description>
+					<posx>0</posx>
+					<posy>100</posy>
+					<width>700</width>
+					<include>Common_Settings_Label</include>
+					<label>-</label>
+					
+				</control>
+			
+				<control type="list" id="120">
+						
+					<posx>0</posx>
+					<posy>160</posy>
+					<width>700</width>
+					<height>480</height>
+					<onleft>150</onleft>
+					<ondown>120</ondown>
+					<pagecontrol>81</pagecontrol>
+					<viewtype label="535">list</viewtype>
+					<scrolltime tween="cubic" easing="out">600</scrolltime>
+					<preloaditems>2</preloaditems>
+					
+					<itemlayout width="700" height="60">
+					
+						<control type="label">
+								
+							<posx>32</posx>
+							<posy>2</posy>
+							<width min="20" max="520">auto</width>
+							<height>30</height>
+							<label>$INFO[ListItem.Label2]</label>
+							<font>Menu-List</font>
+							<textcolor>Settings_Label</textcolor>
+							<aligny>top</aligny>
+							
+						</control>
+						
+						<control type="image">
+
+							<posx>20</posx>
+							<posy>34</posy>
+							<width>90</width>
+							<height>20</height>
+							<texture>rating$INFO[ListItem.ActualIcon].png</texture>
+							<colordiffuse>Settings_Label</colordiffuse>
+							
+						</control>
+						
+						<control type="label">
+						
+							<posx>110</posx>
+							<posy>32</posy>
+							<width min="20" max="520">auto</width>
+							<height>30</height>
+							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+							<font>Menu-List-Small</font>
+							<textcolor>Settings_Label</textcolor>
+							<aligny>top</aligny>
+							
+						</control>
+						
+						<control type="image">
+						
+							<posx>580</posx>
+							<posy>0</posy>
+							<width>60</width>
+							<height>60</height>
+							<texture>subtitles/subtitles_hearingimpaired.png</texture>
+							<aspectratio>center</aspectratio>
+							<colordiffuse>Background_Highlight</colordiffuse>
+							<visible>ListItem.property(hearing_imp)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<posx>580</posx>
+							<posy>0</posy>
+							<width>60</width>
+							<height>60</height>
+							<texture>subtitles/subtitles_hearingimpaired.png</texture>
+							<aspectratio>center</aspectratio>
+							<colordiffuse>Settings_Label</colordiffuse>
+							<visible>!ListItem.property(hearing_imp)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<posx>640</posx>
+							<posy>0</posy>
+							<width>60</width>
+							<height>60</height>
+							<texture>subtitles/subtitles_sync.png</texture>
+							<aspectratio>center</aspectratio>
+							<colordiffuse>Background_Highlight</colordiffuse>
+							<visible>ListItem.property(sync)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<posx>640</posx>
+							<posy>0</posy>
+							<width>60</width>
+							<height>60</height>
+							<texture>subtitles/subtitles_sync.png</texture>
+							<aspectratio>center</aspectratio>
+							<colordiffuse>Settings_Label</colordiffuse>
+							<visible>!ListItem.property(sync)</visible>
+							
+						</control>
+
+					</itemlayout>
+
+					<focusedlayout width="700" height="60">
+					
+						<control type="group">
+						
+							<visible>!Control.HasFocus(120)</visible>
+							
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>700</width>
+								<height>60</height>
+								<texture>colors/color_white.png</texture>
+								<colordiffuse>Settings_Background_Dark</colordiffuse>
+							
+							</control>
+						
+							<control type="label">
+									
+								<posx>32</posx>
+								<posy>2</posy>
+								<width min="20" max="520">auto</width>
+								<height>30</height>
+								<label>$INFO[ListItem.Label2]</label>
+								<font>Menu-List</font>
+								<textcolor>Settings_Label</textcolor>
+								<aligny>top</aligny>
+								
+							</control>
+							
+							<control type="image">
+
+								<posx>20</posx>
+								<posy>34</posy>
+								<width>90</width>
+								<height>20</height>
+								<texture>rating$INFO[ListItem.ActualIcon].png</texture>
+								<colordiffuse>Settings_Label</colordiffuse>
+								
+							</control>
+							
+							<control type="label">
+							
+								<posx>110</posx>
+								<posy>32</posy>
+								<width min="20" max="520">auto</width>
+								<height>30</height>
+								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+								<font>Menu-List-Small</font>
+								<textcolor>Settings_Label</textcolor>
+								<aligny>top</aligny>
+								
+							</control>
+							
+							<control type="image">
+						
+								<posx>580</posx>
+								<posy>0</posy>
+								<width>60</width>
+								<height>60</height>
+								<texture>subtitles/subtitles_hearingimpaired.png</texture>
+								<aspectratio>center</aspectratio>
+								<colordiffuse>Background_Highlight</colordiffuse>
+								<visible>ListItem.property(hearing_imp)</visible>
+								
+							</control>
+							
+							<control type="image">
+							
+								<posx>580</posx>
+								<posy>0</posy>
+								<width>60</width>
+								<height>60</height>
+								<texture>subtitles/subtitles_hearingimpaired.png</texture>
+								<aspectratio>center</aspectratio>
+								<colordiffuse>Settings_Label</colordiffuse>
+								<visible>!ListItem.property(hearing_imp)</visible>
+								
+							</control>
+							
+							<control type="image">
+							
+								<posx>640</posx>
+								<posy>0</posy>
+								<width>60</width>
+								<height>60</height>
+								<texture>subtitles/subtitles_sync.png</texture>
+								<aspectratio>center</aspectratio>
+								<colordiffuse>Background_Highlight</colordiffuse>
+								<visible>ListItem.property(sync)</visible>
+								
+							</control>
+							
+							<control type="image">
+							
+								<posx>640</posx>
+								<posy>0</posy>
+								<width>60</width>
+								<height>60</height>
+								<texture>subtitles/subtitles_sync.png</texture>
+								<aspectratio>center</aspectratio>
+								<colordiffuse>Settings_Label</colordiffuse>
+								<visible>!ListItem.property(sync)</visible>
+								
+							</control>
+							
+						</control>
+					
+						<control type="group">
+						
+							<visible>Control.HasFocus(120)</visible>
+							
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>700</width>
+								<height>60</height>
+								<texture>colors/color_white.png</texture>
+								<colordiffuse>Background_Highlight</colordiffuse>
+							
+							</control>
+						
+							<control type="label">
+									
+								<posx>32</posx>
+								<posy>2</posy>
+								<width min="20" max="520">auto</width>
+								<height>30</height>
+								<label>$INFO[ListItem.Label2]</label>
+								<font>Menu-List</font>
+								<textcolor>Label_Normal</textcolor>
+								<aligny>top</aligny>
+								
+							</control>
+							
+							<control type="image">
+
+								<posx>20</posx>
+								<posy>34</posy>
+								<width>90</width>
+								<height>20</height>
+								<texture>rating$INFO[ListItem.ActualIcon].png</texture>
+								<colordiffuse>Label_Normal</colordiffuse>
+								
+							</control>
+							
+							<control type="label">
+							
+								<posx>110</posx>
+								<posy>32</posy>
+								<width min="20" max="520">auto</width>
+								<height>30</height>
+								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+								<font>Menu-List-Small</font>
+								<textcolor>Label_Normal</textcolor>
+								<selectedcolor>Label_Highlight</selectedcolor>
+								<aligny>top</aligny>
+								
+							</control>
+							
+							<control type="image">
+						
+								<posx>580</posx>
+								<posy>0</posy>
+								<width>60</width>
+								<height>60</height>
+								<texture>subtitles/subtitles_hearingimpaired.png</texture>
+								<aspectratio>center</aspectratio>
+								<colordiffuse>Label_Normal</colordiffuse>
+								<visible>ListItem.property(hearing_imp)</visible>
+								
+							</control>
+							
+							<control type="image">
+							
+								<posx>580</posx>
+								<posy>0</posy>
+								<width>60</width>
+								<height>60</height>
+								<texture>subtitles/subtitles_hearingimpaired.png</texture>
+								<aspectratio>center</aspectratio>
+								<colordiffuse>Label_Disabled</colordiffuse>
+								<visible>!ListItem.property(hearing_imp)</visible>
+								
+							</control>
+							
+							<control type="image">
+							
+								<posx>640</posx>
+								<posy>0</posy>
+								<width>60</width>
+								<height>60</height>
+								<texture>subtitles/subtitles_sync.png</texture>
+								<aspectratio>center</aspectratio>
+								<colordiffuse>Label_Normal</colordiffuse>
+								<visible>ListItem.property(sync)</visible>
+								
+							</control>
+							
+							<control type="image">
+							
+								<posx>640</posx>
+								<posy>0</posy>
+								<width>60</width>
+								<height>60</height>
+								<texture>subtitles/subtitles_sync.png</texture>
+								<aspectratio>center</aspectratio>
+								<colordiffuse>Label_Disabled</colordiffuse>
+								<visible>!ListItem.property(sync)</visible>
+								
+							</control>
+							
+						</control>	
+
+					</focusedlayout>
+
+				</control>
+				
+				<!--Scrollbar-->
+				<control type="scrollbar" id="81">
+				
+					<include>Common_Settings_Scrollbar_Vertical</include>
+					
+					<posx>720</posx>
+					<posy>160</posy>
+					<height>480</height>
+					
+					<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(120).Scrolling">Conditional</animation>
+					
+				</control>
+				
+			</control>	
+
+		</control>
+		
+	</controls>
+	
+</window>

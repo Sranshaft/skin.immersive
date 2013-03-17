@@ -1,0 +1,261 @@
+<!-- Foundation -->
+<window id="29">
+	<defaultcontrol always="true">52</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<control type="image">
+			
+			<include>Common_Dimensions</include>
+			<texture>colors/color_keyboard_dark.png</texture>
+			
+		</control>
+
+		<control type="fixedlist" id="52">
+			
+			<description>Login Wraplist</description>
+			<posx>440</posx>
+			<posy>180</posy>
+			<width>400</width>
+			<height>360</height>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onleft>300</onleft>
+			<onright>99</onright>
+			<focusposition>0</focusposition>
+			<scrolltime tween="cubic" easing="out">600</scrolltime>
+
+			<itemlayout height="80" width="400">
+
+				<control type="image">
+				
+					<description>profile image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>60</width>
+					<height>60</height>
+					<texture>$INFO[ListItem.Thumb]</texture>
+					<aspectratio>scale</aspectratio>
+					
+				</control>
+				
+				<control type="label">
+					
+					<description>Profile Name</description>
+					<posx>80</posx>
+					<posy>0</posy>
+					<width>300</width>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Profile-Settings-Name</font>
+					<textcolor>Label_Normal</textcolor>
+					
+				</control>
+
+				<control type="label">
+					
+					<description>Profile Directory</description>
+					<posx>80</posx>
+					<posy>30</posy>
+					<width>300</width>
+					<label>$INFO[ListItem.Label2]</label>
+					<font>Profile-Settings-Directory</font>
+					<textcolor>Label_Normal</textcolor>
+					
+				</control>
+
+			</itemlayout>
+
+			<focusedlayout height="120" width="400">
+
+				<control type="image">
+				
+					<description>profile image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture>$INFO[ListItem.Thumb]</texture>
+					<aspectratio>scale</aspectratio>
+					
+				</control>
+
+				<control type="label">
+					
+					<description>Profile Name</description>
+					<posx>120</posx>
+					<posy>0</posy>
+					<width>300</width>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Profile-Settings-Name</font>
+					<textcolor>Label_Highlight</textcolor>
+					
+				</control>
+
+				<control type="label">
+					
+					<description>Profile Directory</description>
+					<posx>120</posx>
+					<posy>30</posy>
+					<width>300</width>
+					<label>$INFO[ListItem.Label2]</label>
+					<font>Profile-Settings-Directory</font>
+					<textcolor>Label_Normal</textcolor>
+					
+				</control>
+
+			</focusedlayout>
+
+		</control>
+		
+		<control type="button" id="99">
+		
+			<posx>1180</posx>
+			<posy>620</posy>
+			<width>48</width>
+			<height>48</height>
+			<texturefocus>colors/color_keyboard.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<onup>52</onup>
+			<onleft>52</onleft>
+			<onright>52</onright>
+			<ondown>52</ondown>
+			<onclick>SetFocus(10001)</onclick>
+			
+		</control>
+		
+		<control type="image">
+		
+			<posx>1180</posx>
+			<posy>620</posy>
+			<width>48</width>
+			<height>48</height>
+			<texture>charms/charm_shutdown.png</texture>
+			
+		</control>
+		
+		<control type="list" id="10001">
+						
+			<posx>1140</posx>
+			<posy>440</posy>
+			<width>120</width>
+			<height>160</height>
+			<onup>10001</onup>
+			<ondown>10001</ondown>
+			<onleft>52</onleft>
+			<onright>52</onright>
+			<viewtype label="List">list</viewtype>
+			<scrolltime tween="Cubic " easing="inout">200</scrolltime>
+			<preloaditems>2</preloaditems>
+			
+			<visible allowhiddenfocus="true">Control.HasFocus(10001)</visible>
+			
+			<animation effect="fade" start="0" end="100" time="200" reversible="true">Visible</animation>
+			
+			<itemlayout width="120" height="40">
+
+				<control type="image">
+							
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>120</width>
+					<height>40</height>
+					<texture>colors/color_white.png</texture>
+					
+				</control>
+				
+				<control type="label">
+				
+					<posx>16</posx>
+					<posy>0</posy>
+					<width min="20" max="80">auto</width>
+					<height>40</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Menu-List-Small</font>
+					<textcolor>Label_Dark</textcolor>
+					<aligny>center</aligny>
+					<scrollspeed>0</scrollspeed>
+					
+				</control>
+					
+			</itemlayout>
+
+			<focusedlayout width="120" height="40">
+					
+				<control type="image">
+				
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>120</width>
+					<height>40</height>
+					<texture>colors/color_white.png</texture>
+					<colordiffuse>Background_Highlight</colordiffuse>
+				
+				</control>
+				
+				<control type="label">
+					
+					<posx>16</posx>
+					<posy>0</posy>
+					<width min="20" max="80">auto</width>
+					<height>40</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Menu-List-Small</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>center</aligny>
+					<scrollspeed>0</scrollspeed>
+					
+				</control>
+					
+			</focusedlayout>
+			
+			<content>
+			
+				<!--Exit Button-->
+				<item>
+					<label>$LOCALIZE[13012]</label>
+					<onclick>Quit()</onclick>
+					
+					<visible>System.ShowExitButton</visible>
+				</item>
+			
+				<!--ShutDown Button-->
+				<item>
+					<label>$LOCALIZE[13011]</label>
+					<onclick>XBMC.Suspend()</onclick>
+				</item>
+				
+				<!--Suspend Button-->
+				<item>
+					<label>$LOCALIZE[13005]</label>
+					<onclick>XBMC.ShutDown()</onclick>
+				</item>
+			
+				<!--Reboot Button-->
+				<item>
+					<label>$LOCALIZE[13013]</label>
+					<onclick>XBMC.Reset()</onclick>
+				</item>
+				
+			</content>	
+				
+		</control>
+		
+		<control type="image">
+		
+			<posx>1140</posx>
+			<posy>440</posy>
+			<width>120</width>
+			<height>160</height>
+			<texture border="4">button_unfocus.png</texture>
+			<colordiffuse>Black</colordiffuse>
+			
+			<visible>Control.HasFocus(10001)</visible>
+			
+			<animation effect="fade" start="0" end="100" time="200" reversible="true">Visible</animation>
+			
+		</control>	
+
+	</controls>
+
+</window>

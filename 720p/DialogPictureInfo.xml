@@ -1,0 +1,94 @@
+<!-- Foundation -->
+<window id="139">
+	<defaultcontrol always="true">5</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<include>Common_Background_Fade</include>
+
+		<control type="group">
+			<posx>340</posx>
+			<posy>140</posy>
+
+			<control type="image">
+				<posx>-20</posx>
+				<posy>-20</posy>
+				<width>640</width>
+				<height>496</height>
+				<texture border="22">other_textures/ContentPanel.png</texture>
+			</control>
+
+			<control type="label">
+				<description>heading</description>
+				<posx>10</posx>
+				<width>560</width>
+				<label>13406</label>
+				<font>Medium</font>
+				<shadowcolor>black</shadowcolor>
+				<align>center</align>
+			</control>
+
+			<control type="list" id="5">
+				<posx>10</posx>
+				<posy>74</posy>
+				<width>580</width>
+				<height>368</height>
+				<onleft>450</onleft>
+				<onright>450</onright>
+				<onup>450</onup>
+				<ondown>450</ondown>
+
+				<itemlayout height="46">
+
+					<control type="image">
+						<width>580</width>
+						<height>44</height>
+						<texture border="2">other_textures/ButtonNF.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>20</posx>
+						<width>270</width>
+						<info>ListItem.Label</info>
+					</control>
+
+					<control type="label">
+						<posx>560</posx>
+						<width>270</width>
+						<align>right</align>
+						<info>ListItem.Label2</info>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout height="46">
+
+					<control type="image">
+						<width>580</width>
+						<height>44</height>
+						<texture border="5">other_textures/ButtonFO.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>20</posx>
+						<width>270</width>
+						<info>ListItem.Label</info>
+					</control>
+
+					<control type="label">
+						<posx>560</posx>
+						<width>270</width>
+						<align>right</align>
+						<info>ListItem.Label2</info>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

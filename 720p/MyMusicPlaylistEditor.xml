@@ -1,0 +1,307 @@
+<!-- Foundation -->
+<window id="503">
+	<defaultcontrol allways="true">6</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>50</views>
+
+	<controls>
+
+		<include>Common_Background</include>
+
+		<control type="group">
+			<description>Left panel</description>
+			<posx>30</posx>
+			<posy>52</posy>
+
+			<control type="image">
+				<posx>-20</posx>
+				<posy>-20</posy>
+				<width>480</width>
+				<height>680</height>
+				<texture border="22">other_textures/ContentPanel.png</texture>
+			</control>
+
+			<control type="label">
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>410</width>
+				<height>30</height>
+				<font>Medium</font>
+				<label>31022</label>
+			</control>
+
+			<control type="list" id="50">
+				<posx>10</posx>
+				<posy>62</posy>
+				<width>420</width>
+				<height>552</height>
+				<onleft>-</onleft>
+				<onright>9000</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<viewtype label="">list</viewtype>
+				<scrolltime>200</scrolltime>
+
+				<itemlayout height="46" width="420">
+
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>420</width>
+						<height>44</height>
+						<texture border="2">other_textures/ButtonNF.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>380</width>
+						<info>ListItem.Label</info>
+					</control>
+
+					<control type="label">
+						<posx>400</posx>
+						<posy>0</posy>
+						<width>380</width>
+						<align>right</align>
+						<info>ListItem.Label2</info>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout height="46" width="420">
+
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>420</width>
+						<height>44</height>
+						<texture border="5">other_textures/ButtonFO.png</texture>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+					</control>
+
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>380</width>
+						<info>ListItem.Label</info>
+					</control>
+
+					<control type="label">
+						<posx>400</posx>
+						<posy>0</posy>
+						<width>380</width>
+						<align>right</align>
+						<info>ListItem.Label2</info>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+		</control>
+
+		<control type="group">
+			<description>Middle Panel</description>
+			<posx>490</posx>
+			<posy>45</posy>
+
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>280</width>
+				<height>30</height>
+				<font>Medium</font>
+				<textcolor>blue</textcolor>
+				<align>center</align>
+				<label>31018</label>
+			</control>
+
+			<control type="group">
+				<visible>Control.HasFocus(50)</visible>
+
+				<control type="image">
+					<posx>10</posx>
+					<posy>50</posy>
+					<width>280</width>
+					<height>200</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[Container(50).ListItem.Icon]</texture>
+					<bordertexture border="5">other_textures/ButtonFo.png</bordertexture>
+					<bordersize>8</bordersize>
+				</control>
+
+				<control type="textbox">
+					<posx>10</posx>
+					<posy>260</posy>
+					<width>280</width>
+					<height>220</height>
+					<label>$INFO[Container(50).ListItem.Title,[COLOR=blue]$LOCALIZE[556]:[/COLOR] ,[CR]]$INFO[Container(50).ListItem.Artist,[COLOR=blue]$LOCALIZE[557]:[/COLOR] ,[CR]]$INFO[Container(50).ListItem.Album,[COLOR=blue]$LOCALIZE[558]:[/COLOR] ,[CR]]$INFO[Container(50).ListItem.Duration,[COLOR=blue]$LOCALIZE[555]:[/COLOR] ,[CR]]$INFO[Container(50).ListItem.TrackNumber,[COLOR=blue]$LOCALIZE[554]:[/COLOR] ,[CR]]$INFO[Container(50).ListItem.Genre,[COLOR=blue]$LOCALIZE[515]:[/COLOR] ,[CR]]</label>
+				</control>
+
+			</control>
+
+			<control type="group">
+				<visible>Control.HasFocus(100)</visible>
+
+				<control type="image">
+					<posx>10</posx>
+					<posy>50</posy>
+					<width>280</width>
+					<height>200</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[Container(100).ListItem.Icon]</texture>
+					<bordertexture border="5">other_textures/ButtonFo.png</bordertexture>
+					<bordersize>8</bordersize>
+				</control>
+
+				<control type="textbox">
+					<posx>10</posx>
+					<posy>260</posy>
+					<width>280</width>
+					<height>220</height>
+					<label>$INFO[Container(100).ListItem.Title,[COLOR=blue]$LOCALIZE[556]:[/COLOR] ,[CR]]$INFO[Container(100).ListItem.Artist,[COLOR=blue]$LOCALIZE[557]:[/COLOR] ,[CR]]$INFO[Container(100).ListItem.Album,[COLOR=blue]$LOCALIZE[558]:[/COLOR] ,[CR]]$INFO[Container(100).ListItem.Duration,[COLOR=blue]$LOCALIZE[555]:[/COLOR] ,[CR]]$INFO[Container(100).ListItem.TrackNumber,[COLOR=blue]$LOCALIZE[554]:[/COLOR] ,[CR]]$INFO[Container(100).ListItem.Genre,[COLOR=blue]$LOCALIZE[515]:[/COLOR] ,[CR]]</label>
+				</control>
+
+			</control>
+
+			<control type="group" id="9000">
+				<posx>10</posx>
+				<posy>502</posy>
+
+				<control type="button" id="6">
+					<description>Open Button</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>280</width>
+					<label>31019</label>
+					<onleft>50</onleft>
+					<onright>100</onright>
+					<onup>8</onup>
+					<ondown>7</ondown>
+				</control>
+
+				<control type="button" id="7">
+					<description>Save Button</description>
+					<posx>0</posx>
+					<posy>46</posy>
+					<width>280</width>
+					<label>31020</label>
+					<onleft>50</onleft>
+					<onright>100</onright>
+					<onup>6</onup>
+					<ondown>8</ondown>
+				</control>
+
+				<control type="button" id="8">
+					<description>Clear button</description>
+					<posx>0</posx>
+					<posy>92</posy>
+					<width>280</width>
+					<label>31021</label>
+					<onleft>50</onleft>
+					<onright>100</onright>
+					<onup>7</onup>
+					<ondown>6</ondown>
+				</control>
+
+			</control>
+
+		</control>
+
+		<control type="group">
+			<description>Right Panel</description>
+			<posx>810</posx>
+			<posy>52</posy>
+
+			<control type="image">
+				<posx>-20</posx>
+				<posy>-20</posy>
+				<width>480</width>
+				<height>680</height>
+				<texture border="22">other_textures/ContentPanel.png</texture>
+			</control>
+
+			<control type="label">
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>410</width>
+				<height>30</height>
+				<font>Medium</font>
+				<label>31029</label>
+			</control>
+
+			<control type="list" id="100">
+				<posx>10</posx>
+				<posy>62</posy>
+				<width>420</width>
+				<height>552</height>
+				<onleft>9000</onleft>
+				<onright>-</onright>
+				<onup>100</onup>
+				<ondown>100</ondown>
+				<viewtype label="">list</viewtype>
+				<scrolltime>200</scrolltime>
+
+				<itemlayout height="46" width="420">
+
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>420</width>
+						<height>44</height>
+						<texture border="2">other_textures/ButtonNF.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>380</width>
+						<info>ListItem.Label</info>
+					</control>
+
+					<control type="label">
+						<posx>400</posx>
+						<posy>0</posy>
+						<width>380</width>
+						<align>right</align>
+						<info>ListItem.Label2</info>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout height="46" width="420">
+
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>420</width>
+						<height>44</height>
+						<texture border="5">other_textures/ButtonFO.png</texture>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(100)">Conditional</animation>
+					</control>
+
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>380</width>
+						<info>ListItem.Label</info>
+					</control>
+
+					<control type="label">
+						<posx>400</posx>
+						<posy>0</posy>
+						<width>380</width>
+						<align>right</align>
+						<info>ListItem.Label2</info>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

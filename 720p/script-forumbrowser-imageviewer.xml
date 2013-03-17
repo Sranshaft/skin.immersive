@@ -1,0 +1,91 @@
+<window>
+  
+	<defaultcontrol>202</defaultcontrol>
+  
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	
+	<include>Common_Animation_Window</include>
+  
+	<controls>
+	
+		<control type="group">
+		
+			<control type="image" id="101">
+				
+				<include>Common_Dimensions</include>
+				<texture>colors/color_black.png</texture>
+				
+			</control>
+			
+			<control type="image" id="102">
+				
+				<include>Common_Dimensions</include>
+				<aspectratio>keep</aspectratio>
+				
+			</control>
+			
+			<control type="button" id="110">
+				
+				<posy>12</posy>
+				<width>48</width>
+				<height>48</height>
+				<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturefocus>
+				<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
+				<aspectratio>keep</aspectratio>
+				<colordiffuse>Label_Normal</colordiffuse>
+				<onclick>PreviousMenu</onclick>
+				<visible>System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)</visible>
+				
+			</control>
+			
+			<control type="button" id="200">
+				
+				<posx>60</posx>
+				<posy>360</posy>
+				<width>48</width>
+				<height>48</height>
+				<texturefocus>forumbrowser/forumbrowser_back_imageviewer.png</texturefocus>
+				<texturenofocus>forumbrowser/forumbrowser_back_imageviewer.png</texturenofocus>
+				<onright>202</onright>
+				<visible>true</visible>
+				
+				<animation type="Conditional" condition="!Control.HasFocus(200)">
+					<effect type="fade" start="100" end="60" time="400"/>
+				</animation>
+				
+			</control>
+			
+			<control type="button" id="202">
+				
+				<posx>1172</posx>
+				<posy>360</posy>
+				<width>48</width>
+				<height>48</height>
+				<texturefocus>forumbrowser/forumbrowser_back_imageviewer.png</texturefocus>
+				<texturenofocus>forumbrowser/forumbrowser_back_imageviewer.png</texturenofocus>
+				<onleft>200</onleft>
+				<visible>true</visible>
+				
+				<animation type="Conditional" condition="!Control.HasFocus(202)">
+					<effect type="fade" start="100" end="60" time="400"/>
+				</animation>
+				
+				<animation type="Conditional" condition="true">
+					<effect type="rotate" start="0" end="180" center="auto" time="0"/>
+				</animation>
+				
+			</control>
+			
+		</control>
+
+	</controls>
+	
+</window>
+      
+      
+      
+     

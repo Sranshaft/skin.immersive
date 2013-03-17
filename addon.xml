@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.immersive" version="0.0.5" name="Immersive" provider-name="Four13 Designs">
+
+	<requires>
+
+		<import addon="xbmc.gui" version="4.0.0"/>
+		<import addon="service.skin.widgets" version="0.0.17"/>
+		<import addon="script.favourites" version="4.0.4"/>
+		<import addon="script.globalsearch" version="1.0.5"/>
+		<import addon="script.playalbum" version="0.1.1"/>
+		<import addon="script.randomandlastitems" version="2.0.3"/>
+		<import addon="script.tv.show.next.aired" version="5.0.5"/>
+		
+	</requires>
+	
+	<extension point="xbmc.gui.skin" defaultthemename="textures.xbt" debugging="false" effectslowdown="1.00">
+		
+		<res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
+		
+	</extension>
+	
+	<extension point="xbmc.addon.metadata">
+	
+		<platform>all</platform>
+		<summary>Created by Four13 Designs</summary>
+		<description>Immersive combines the elegant simplicity of Microsoft's Metro UI with the media richness of XBMC to create an extremely user-friendly and inviting skin.</description>
+	
+	</extension>
+
+</addon>

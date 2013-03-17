@@ -1,0 +1,1380 @@
+<window>
+	
+	<allowoverlay>no</allowoverlay>
+	
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	
+	<!--Splash Screen-->
+	<onload>ActivateWindow(60)</onload>
+	
+	<controls>
+
+		<!--Background Area-->
+		<include>Common_Background</include>
+		
+		<control type="group">
+		
+			<include>Common_Dimensions</include>
+			<include>Common_Animation_Window</include>
+		
+			<!--Top Area-->
+			<include>Common_Breadcrumb</include>
+			<include>Common_Clock</include>
+			<include>Common_Overlay</include>
+			
+			<!--Content Area-->
+			<control type="group">
+			
+				<posx>0</posx>
+				<posy>120</posy>
+				<width>1280</width>
+				<height>480</height>
+				
+				<!--Animation-->
+				<include>Common_Animation_Content</include>
+				
+				<control type="grouplist" id="101">
+				
+					<include>Common_Content_Grouplist</include>
+				
+					<!--Movie List-->
+					<control type="group" id="119">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>440</width>
+						<height>480</height>
+						
+						<control type="label">
+								
+							<include>Common_Section_Label</include>
+							<label>[LOWERCASE]$LOCALIZE[342][/LOWERCASE]</label>
+							
+						</control>
+						
+						<control type="label" id="110">
+								
+							<include>Common_Section_Label_Right</include>
+							<label>-</label>
+							
+						</control>
+						
+						<control type="panel" id="111">
+							
+							<posx>0</posx>
+							<posy>60</posy>
+							<width>400</width>
+							<height>480</height>
+							<onleft>181</onleft>
+							<onright>121</onright>
+							<onup>111</onup>
+							<ondown>111</ondown>
+							<pagecontrol>112</pagecontrol>
+							<viewtype label="535">panel</viewtype>
+							<scrolltime tween="cubic" easing="out">600</scrolltime>
+							<preloaditems>2</preloaditems>
+							
+							<itemlayout width="400" height="120">
+							
+								<control type="image">
+									
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Property(Fanart)]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(Year)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+								
+								</control>
+
+							</itemlayout>
+
+							<focusedlayout width="400" height="120">
+
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Property(Fanart)]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>400</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(Year)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+									
+								</control>	
+
+							</focusedlayout>
+								
+						</control>
+						
+						<!--Scrollbar-->
+						<control type="group">
+							
+							<visible>IntegerGreaterThan(Container(111).NumPages,1)</visible>
+							
+							<control type="scrollbar" id="112">
+							
+								<include>Common_Scrollbar_Vertical</include>
+							
+								<posx>420</posx>
+								<posy>60</posy>
+								<height>450</height>
+								
+								<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(111).Scrolling">Conditional</animation>
+								
+							</control>
+						
+						</control>
+						
+					</control>
+					
+					<!--TV Show List-->
+					<control type="group" id="129">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>440</width>
+						<height>480</height>
+						
+						<control type="label">
+								
+							<include>Common_Section_Label</include>
+							<label>[LOWERCASE]$LOCALIZE[20343][/LOWERCASE]</label>
+							
+						</control>
+						
+						<control type="label" id="120">
+								
+							<include>Common_Section_Label_Right</include>
+							<label>-</label>
+							
+						</control>
+						
+						<control type="panel" id="121">
+							
+							<posx>0</posx>
+							<posy>60</posy>
+							<width>400</width>
+							<height>480</height>						
+							<onleft>111</onleft>
+							<onright>131</onright>
+							<onup>121</onup>
+							<ondown>121</ondown>
+							<pagecontrol>122</pagecontrol>
+							<viewtype label="535">panel</viewtype>
+							<scrolltime tween="cubic" easing="out">600</scrolltime>
+							<preloaditems>2</preloaditems>
+							
+							<itemlayout width="400" height="120">
+							
+								<control type="image">
+									
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Property(Fanart)]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(Studio)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+								
+								</control>
+
+							</itemlayout>
+
+							<focusedlayout width="400" height="120">
+
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Property(Fanart)]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(Studio)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+									
+								</control>	
+
+							</focusedlayout>
+								
+						</control>
+						
+						<!--Scrollbar-->
+						<control type="group">
+							
+							<visible>IntegerGreaterThan(Container(121).NumPages,1)</visible>
+							
+							<control type="scrollbar" id="122">
+							
+								<include>Common_Scrollbar_Vertical</include>
+							
+								<posx>420</posx>
+								<posy>60</posy>
+								<height>450</height>
+								
+								<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(121).Scrolling">Conditional</animation>
+								
+							</control>
+						
+						</control>
+						
+					</control>
+				
+					<!--Season List-->
+					<control type="group" id="139">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>440</width>
+						<height>480</height>
+						
+						<control type="label">
+								
+							<label>[LOWERCASE]$LOCALIZE[33054][/LOWERCASE]</label>
+							<include>Common_Section_Label</include>
+							
+						</control>
+						
+						<control type="label" id="130">
+								
+							<include>Common_Section_Label_Right</include>
+							<label>-</label>
+							
+						</control>
+						
+						<control type="panel" id="131">
+							
+							<posx>0</posx>
+							<posy>60</posy>
+							<width>400</width>
+							<height>480</height>
+							<onleft>121</onleft>
+							<onright>141</onright>
+							<onup>131</onup>
+							<ondown>131</ondown>
+							<pagecontrol>132</pagecontrol>
+							<viewtype label="535">panel</viewtype>
+							<scrolltime tween="cubic" easing="out">600</scrolltime>
+							<preloaditems>2</preloaditems>
+							
+							<itemlayout width="400" height="120">
+							
+								<control type="image">
+									
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Property(Fanart)]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>400</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(TvShowTitle)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+								
+								</control>
+
+							</itemlayout>
+
+							<focusedlayout width="400" height="120">
+
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Property(Fanart)]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>400</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(TvShowTitle)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+									
+								</control>	
+
+							</focusedlayout>
+								
+						</control>
+						
+						<!--Scrollbar-->
+						<control type="group">
+							
+							<visible>IntegerGreaterThan(Container(131).NumPages,1)</visible>
+							
+							<control type="scrollbar" id="132">
+							
+								<include>Common_Scrollbar_Vertical</include>
+							
+								<posx>400</posx>
+								<posy>60</posy>
+								<height>450</height>
+								
+								<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(131).Scrolling">Conditional</animation>
+								
+							</control>
+						
+						</control>
+						
+					</control>
+				
+					<!--Episode List-->
+					<control type="group" id="149">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>440</width>
+						<height>480</height>
+						
+						<control type="label">
+								
+							<include>Common_Section_Label</include>
+							<label>[LOWERCASE]$LOCALIZE[20360][/LOWERCASE]</label>
+							
+						</control>
+						
+						<control type="label" id="140">
+								
+							<include>Common_Section_Label_Right</include>
+							<label>-</label>
+							
+						</control>
+						
+						<control type="panel" id="141">
+							
+							<posx>0</posx>
+							<posy>60</posy>
+							<width>400</width>
+							<height>480</height>
+							<onleft>131</onleft>
+							<onright>151</onright>
+							<onup>141</onup>
+							<ondown>141</ondown>
+							<pagecontrol>142</pagecontrol>
+							<viewtype label="535">panel</viewtype>
+							<scrolltime tween="cubic" easing="out">600</scrolltime>
+							<preloaditems>2</preloaditems>
+							
+							<itemlayout width="400" height="120">
+							
+								<control type="image">
+									
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Property(Fanart)]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(TvShowTitle)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+								
+								</control>
+
+							</itemlayout>
+
+							<focusedlayout width="400" height="120">
+
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Property(Fanart)]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(TvShowTitle)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+									
+								</control>	
+
+							</focusedlayout>
+								
+						</control>
+						
+						<!--Scrollbar-->
+						<control type="group">
+							
+							<visible>IntegerGreaterThan(Container(141).NumPages,1)</visible>
+							
+							<control type="scrollbar" id="142">
+							
+								<include>Common_Scrollbar_Vertical</include>
+								
+								<posx>420</posx>
+								<posy>60</posy>
+								<height>450</height>
+								
+								<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(141).Scrolling">Conditional</animation>
+								
+							</control>
+						
+						</control>
+						
+					</control>
+				
+					<!--Music Video List-->
+					<control type="group" id="159">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>440</width>
+						<height>480</height>
+						
+						<control type="label">
+								
+							<include>Common_Section_Label</include>
+							<label>[LOWERCASE]$LOCALIZE[20389][/LOWERCASE]</label>
+							
+						</control>
+						
+						<control type="label" id="150">
+								
+							<include>Common_Section_Label_Right</include>
+							<label>-</label>
+							
+						</control>
+						
+						<control type="panel" id="151">
+							
+							<posx>0</posx>
+							<posy>60</posy>
+							<width>400</width>
+							<height>480</height>
+							<onleft>141</onleft>
+							<onright>161</onright>
+							<onup>151</onup>
+							<ondown>151</ondown>
+							<pagecontrol>152</pagecontrol>
+							<viewtype label="535">panel</viewtype>
+							<scrolltime tween="cubic" easing="out">600</scrolltime>
+							<preloaditems>2</preloaditems>
+							
+							<itemlayout width="400" height="120">
+							
+								<control type="image">
+									
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Icon]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(Artist)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+								
+								</control>
+
+							</itemlayout>
+
+							<focusedlayout width="400" height="120">
+
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Icon]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(Artist)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+									
+								</control>	
+
+							</focusedlayout>
+								
+						</control>
+						
+						<!--Scrollbar-->
+						<control type="group">
+							
+							<visible>IntegerGreaterThan(Container(151).NumPages,1)</visible>
+							
+							<control type="scrollbar" id="152">
+							
+								<include>Common_Scrollbar_Vertical</include>
+							
+								<posx>420</posx>
+								<posy>60</posy>
+								<height>450</height>
+								
+								<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(151).Scrolling">Conditional</animation>
+								
+							</control>
+						
+						</control>
+						
+					</control>
+					
+					<!--Artist List-->
+					<control type="group" id="169">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>440</width>
+						<height>480</height>
+						
+						<control type="label">
+								
+							<include>Common_Section_Label</include>
+							<label>[LOWERCASE]$LOCALIZE[133][/LOWERCASE]</label>
+							
+						</control>
+						
+						<control type="label" id="160">
+								
+							<include>Common_Section_Label_Right</include>
+							<label>-</label>
+							
+						</control>
+						
+						<control type="panel" id="161">
+							
+							<posx>0</posx>
+							<posy>60</posy>
+							<width>400</width>
+							<height>480</height>
+							<onleft>151</onleft>
+							<onright>171</onright>
+							<onup>161</onup>
+							<ondown>161</ondown>
+							<pagecontrol>162</pagecontrol>
+							<viewtype label="535">panel</viewtype>
+							<scrolltime tween="cubic" easing="out">600</scrolltime>
+							<preloaditems>2</preloaditems>
+							
+							<itemlayout width="400" height="120">
+							
+								<control type="image">
+									
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Property(Fanart)]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(Artist_Genre)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+								
+								</control>
+
+							</itemlayout>
+
+							<focusedlayout width="400" height="120">
+
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Property(Fanart)]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(Artist_Genre)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+									
+								</control>	
+
+							</focusedlayout>
+								
+						</control>
+						
+						<!--Scrollbar-->
+						<control type="group">
+							
+							<visible>IntegerGreaterThan(Container(161).NumPages,1)</visible>
+							
+							<control type="scrollbar" id="162">
+							
+								<include>Common_Scrollbar_Vertical</include>
+								
+								<posx>420</posx>
+								<posy>60</posy>
+								<height>450</height>
+								
+								<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(161).Scrolling">Conditional</animation>
+								
+							</control>
+						
+						</control>
+						
+					</control>
+					
+					<!--Album List-->
+					<control type="group" id="179">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>440</width>
+						<height>480</height>
+						
+						<control type="label">
+								
+							<include>Common_Section_Label</include>
+							<label>[LOWERCASE]$LOCALIZE[132][/LOWERCASE]</label>
+							
+						</control>
+						
+						<control type="label" id="170">
+								
+							<include>Common_Section_Label_Right</include>
+							<label>-</label>
+							
+						</control>
+						
+						<control type="panel" id="171">
+							
+							<posx>0</posx>
+							<posy>60</posy>
+							<width>400</width>
+							<height>480</height>
+							<onleft>161</onleft>
+							<onright>181</onright>
+							<onup>171</onup>
+							<ondown>171</ondown>
+							<pagecontrol>172</pagecontrol>
+							<viewtype label="535">panel</viewtype>
+							<scrolltime tween="cubic" easing="out">600</scrolltime>
+							<preloaditems>2</preloaditems>
+							
+							<itemlayout width="400" height="120">
+							
+								<control type="image">
+									
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Icon]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(Artist)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+								
+								</control>
+
+							</itemlayout>
+
+							<focusedlayout width="400" height="120">
+
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Icon]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>20</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(Artist)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+									
+								</control>	
+
+							</focusedlayout>
+								
+						</control>
+						
+						<!--Scrollbar-->
+						<control type="group">
+							
+							<visible>IntegerGreaterThan(Container(171).NumPages,1)</visible>
+							
+							<control type="scrollbar" id="172">
+							
+								<include>Common_Scrollbar_Vertical</include>
+							
+								<posx>420</posx>
+								<posy>60</posy>
+								<height>450</height>
+								
+								<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(171).Scrolling">Conditional</animation>
+								
+							</control>
+						
+						</control>
+						
+					</control>
+					
+					<!--Song List-->
+					<control type="group" id="189">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>440</width>
+						<height>480</height>
+						
+						<control type="label">
+								
+							<include>Common_Section_Label</include>
+							<label>[LOWERCASE]$LOCALIZE[134][/LOWERCASE]</label>
+							
+						</control>
+						
+						<control type="label" id="180">
+								
+							<include>Common_Section_Label_Right</include>
+							<label>-</label>
+							
+						</control>
+						
+						<control type="panel" id="181">
+							
+							<posx>0</posx>
+							<posy>60</posy>
+							<width>400</width>
+							<height>480</height>
+							<onleft>171</onleft>
+							<onright>111</onright>
+							<onup>181</onup>
+							<ondown>181</ondown>
+							<pagecontrol>182</pagecontrol>
+							<viewtype label="535">panel</viewtype>
+							<scrolltime tween="cubic" easing="out">600</scrolltime>
+							<preloaditems>2</preloaditems>
+							
+							<itemlayout width="400" height="120">
+							
+								<control type="image">
+									
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Icon]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(Album)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+								
+								</control>
+
+							</itemlayout>
+
+							<focusedlayout width="400" height="120">
+
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>100</width>
+									<height>100</height>
+									<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Icon]</texture>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="group">
+								
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>-16</posy>
+										<width>300</width>
+										<height>86</height>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<font>GlobalSearch-Large</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>120</posx>
+										<posy>74</posy>
+										<width>300</width>
+										<height>24</height>
+										<label>[UPPERCASE]$INFO[ListItem.Property(Album)][/UPPERCASE]</label>
+										<font>GlobalSearch-Small</font>
+										<textcolor>Label_Highlight</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<shadowcolor>00FFFFFF</shadowcolor>
+										<autoscroll>false</autoscroll>
+									
+									</control>
+									
+								</control>	
+
+							</focusedlayout>
+								
+						</control>
+						
+						<!--Scrollbar-->
+						<control type="group">
+							
+							<visible>IntegerGreaterThan(Container(181).NumPages,1)</visible>
+							
+							<control type="scrollbar" id="182">
+							
+								<include>Common_Scrollbar_Vertical</include>
+							
+								<posx>420</posx>
+								<posy>60</posy>
+								<height>450</height>
+								
+								<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(181).Scrolling">Conditional</animation>
+								
+							</control>
+						
+						</control>
+						
+					</control>
+					
+				</control>
+				
+			</control>
+			
+			<!--Scrollbar-->
+			<control type="group">
+				
+				<control type="scrollbar" id="9010">
+				
+					<include>Common_Window_Scrollbar_Horizontal</include>
+					<posy>700</posy>
+					
+					<include>Common_Animation_Window_Scrollbar_Fade</include>
+					
+					<visible>System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)</visible>
+					
+				</control>
+				
+			</control>
+			
+			<control type="label" id="190">
+				<visible>false</visible>
+			</control>
+
+			<control type="label" id="191">
+				<visible>false</visible>
+			</control>
+
+			<control type="label" id="199">
+				<visible>false</visible>
+			</control>
+
+			<control type="button" id="198">
+				<visible>false</visible>
+			</control>
+			
+		</control>	
+
+	</controls>
+	
+</window>

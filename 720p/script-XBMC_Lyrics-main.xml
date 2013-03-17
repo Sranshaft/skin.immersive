@@ -1,0 +1,75 @@
+<window>
+	
+	<allowoverlay>no</allowoverlay>
+	
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	
+	<controls>
+		
+		<!-- ** Required ** Do not change <id> or <type> -->
+		<control type="textbox" id="100">
+			<description>textarea</description>
+			<posx>234</posx>
+			<posy>270</posy>
+			<width>812</width>
+			<height>290</height>
+			<onup>101</onup>
+			<ondown>101</ondown>
+			<onleft>101</onleft>
+			<onright>101</onright>
+			<pagecontrol>101</pagecontrol>
+			<font>font13</font>
+			<textcolor>DDFFFFFF</textcolor>
+		</control>
+  		        
+		<!--Scrollbar-->
+		<control type="group">
+			
+			<visible>IntegerGreaterThan(Container(50).NumPages,1)</visible>
+			
+			<control type="scrollbar" id="69">
+			
+				<include>Common_Scrollbar_Vertical</include>
+				
+				<posx>420</posx>
+				<posy>60</posy>
+				<height>480</height>
+				<onleft>50</onleft>
+				<onright>9000</onright>
+				
+				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(50).Scrolling">Conditional</animation>
+				
+			</control>
+		
+		</control>
+				
+		<!-- ** Required ** Do not change <id> or <type> -->
+		
+		<control type="spincontrol" id="101">
+			<visible>false</visible>
+		</control>
+		
+		<control type="list" id="110">
+			<visible>false</visible>
+		</control>
+		
+  		<control type="spincontrol" id="111">
+			<visible>false</visible>
+		</control>
+		
+		<!-- ** Required ** Do not change <id> or <type> -->
+		<control type="list" id="120">
+			<visible>false</visible>
+		</control>
+		
+  		<control type="spincontrol" id="121">
+			<visible>false</visible>
+		</control>
+		
+	</controls>
+	
+</window>

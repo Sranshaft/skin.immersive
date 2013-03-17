@@ -1,0 +1,55 @@
+﻿[B]2.0.1[/B]
+
+Added: <!-- Foundation --> tags to all windows
+Added: Exit button visible condition
+Removed: Dummy controls from DialogPeripheralManager.xml and DialogPeripheralSettings.xml 
+
+[B]2.0.0[/B]
+
+Changed: Debug grid and Window/Dialog label handling (see Custom_Debug_Overlay.xml)
+Changed: Activate Video window controls
+Changed: DialogContextMenu.xml
+Changed: DialogButtonMenu.xml
+Added: DialogPeripheralManager.xml
+Added: DialogPeripheralSettings.xml
+Added: DialogPeripheralManager.jpg
+Added: DialogPeripheralSettings.jpg
+Removed: MyVideo.xml
+Removed: MyVideo.jpg
+
+[B]1.0.8[/B]
+
+Added: Previous update to 1080i files
+
+[B]1.0.7[/B]
+
+Added: Flipped fanart preview image
+
+[B]1.0.6[/B]
+
+Removed: <minversion app="xbmc"></minversion> tag from addon.xml
+
+[B]1.0.5[/B]
+
+Changed: Localised 'List' view label
+Added: XML List.txt
+
+[B]1.0.4[/B]
+
+Updated: MusicVisualisation.xml screen shot to show Music Info
+
+[B]1.0.3[/B]
+
+Fixed: Full Screen Info alignment
+
+[B]1.0.2[/B]
+
+Added: Textures folder
+
+[B]1.0.1[/B]
+
+Added: 1080i XMLs
+
+[B]1.0.0[/B]
+
+Initial commit

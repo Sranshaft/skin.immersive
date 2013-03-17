@@ -1,0 +1,217 @@
+<includes>
+
+	<include name="ViewExtendedList_Albums">
+	
+		<control type="group">
+			
+			<posx>60</posx>
+			<posy>0</posy>
+		
+			<visible>Control.IsVisible(58)</visible>
+			
+			<include>Common_Animation_View</include>
+		
+			<control type="label">
+					
+				<label>explore</label>
+				<include>Common_Section_Label</include>
+				
+			</control>
+		
+			<control type="fixedlist" id="58">
+					
+				<posx>0</posx>
+				<posy>20</posy>
+				<width>1500</width>
+				<height>480</height>
+				<onup condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">10000</onup>
+				<ondown condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">9000</ondown>
+				<onleft>58</onleft>
+				<onright>58</onright>
+				<viewtype label="Extended">wrap</viewtype>
+				<orientation>horizontal</orientation>
+				<pagecontrol>68</pagecontrol>
+				<focusposition>0</focusposition>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<preloaditems>2</preloaditems>
+				
+				<include>Common_Animation_HideWhenScrolling</include>
+				
+				<itemlayout width="320" height="480">
+				
+					<control type="group">
+					
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>300</width>
+						<height>440</height>
+				
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>440</height>
+							<texture background="true">colors/color_white.png</texture>
+							<colordiffuse>Settings_Background_Dark</colordiffuse>
+							
+						</control>
+						
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>300</height>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[ExtendedList_Image]</texture>
+							<aspectratio aligny="top">scale</aspectratio>
+							
+						</control>
+						
+						<control type="label">
+						
+							<posx>20</posx>
+							<posy>306</posy>
+							<width>260</width>
+							<height>36</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Menu-ExtendedList-Header</font>
+							<textcolor>Label_Dark</textcolor>
+							<aligny>top</aligny>
+							<shadowcolor>00FFFFFF</shadowcolor>
+							<autoscroll>false</autoscroll>
+							
+						</control>
+						
+						<control type="textbox">
+						
+							<posx>20</posx>
+							<posy>340</posy>
+							<width min="20" max="260">auto</width>
+							<height>20</height>
+							<label>[UPPERCASE]$VAR[ExtendedList_SubHeader][/UPPERCASE]</label>
+							<font>Menu-ExtendedList-Small</font>
+							<textcolor>Label_Dark</textcolor>
+							<aligny>top</aligny>
+							<wrapmultiline>false</wrapmultiline>
+							<autoscroll>false</autoscroll>
+							
+						</control>
+						
+						<control type="textbox">
+						
+							<posx>20</posx>
+							<posy>370</posy>
+							<width>260</width>
+							<height>50</height>
+							<label>$VAR[ExtendedList_Plot]</label>
+							<font>Menu-ExtendedList-Details</font>
+							<textcolor>Label_Dark</textcolor>
+							<aligny>top</aligny>
+							<wrapmultiline>true</wrapmultiline>
+							<shadowcolor>00FFFFFF</shadowcolor>
+							<autoscroll>false</autoscroll>
+							
+						</control>
+						
+					</control>	
+					
+				</itemlayout>
+
+				<focusedlayout width="320" height="480">
+				
+					<control type="group">
+					
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>300</width>
+						<height>440</height>
+						
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>440</height>
+							<texture background="true">colors/color_white.png</texture>
+							<colordiffuse>Label_Highlight</colordiffuse>
+							
+						</control>
+				
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>300</height>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[ExtendedList_Image]</texture>
+							<aspectratio aligny="top">scale</aspectratio>
+							
+						</control>
+						
+						<control type="label">
+						
+							<posx>20</posx>
+							<posy>306</posy>
+							<width>260</width>
+							<height>36</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Menu-ExtendedList-Header</font>
+							<textcolor>Label_Normal</textcolor>
+							<aligny>top</aligny>
+							<shadowcolor>00FFFFFF</shadowcolor>
+							<autoscroll>false</autoscroll>
+							
+						</control>
+						
+						<control type="textbox">
+						
+							<posx>20</posx>
+							<posy>340</posy>
+							<width min="20" max="260">auto</width>
+							<height>20</height>
+							<label>[UPPERCASE]$VAR[ExtendedList_SubHeader][/UPPERCASE]</label>
+							<font>Menu-ExtendedList-Small</font>
+							<textcolor>Label_Normal</textcolor>
+							<aligny>top</aligny>
+							<wrapmultiline>false</wrapmultiline>
+							<autoscroll>false</autoscroll>
+							
+						</control>
+						
+						<control type="textbox">
+						
+							<posx>20</posx>
+							<posy>370</posy>
+							<width min="20" max="260">auto</width>
+							<height>50</height>
+							<label>$VAR[ExtendedList_Plot]</label>
+							<font>Menu-ExtendedList-Details</font>
+							<textcolor>Label_Normal</textcolor>
+							<aligny>top</aligny>
+							<wrapmultiline>true</wrapmultiline>
+							<autoscroll>false</autoscroll>
+							
+						</control>
+						
+					</control>	
+					
+				</focusedlayout>
+
+			</control>
+			
+			<!--Scrollbar-->
+			<control type="scrollbar" id="68">
+				
+				<include>Common_Scrollbar_Horizontal</include>
+				<posy>520</posy>
+				
+				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(58).Scrolling">Conditional</animation>
+				
+			</control>
+		
+		</control>
+		
+	</include>
+
+</includes>

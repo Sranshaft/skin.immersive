@@ -1,0 +1,344 @@
+<!-- Foundation -->
+<window type="buttonMenu" id="111">
+	
+	<defaultcontrol always="true">3111</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<include>Common_Background_Fade</include>
+
+		<control type="group">
+
+			<posx>0</posx>
+			<posy>210</posy>
+			
+			<include>Common_Animation_Dialog</include>
+
+			<control type="image">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>300</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Background_Normal</colordiffuse>
+				
+			</control>
+			
+			<control type="grouplist">
+			
+				<posx>300</posx>
+				<posy>20</posy>
+				<width>880</width>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				
+				<animation effect="slide" start="0,0" end="-64,0" time="200" condition="System.Loggedon + System.HasLoginScreen">Conditional</animation>
+				
+				<control type="label" id="1">
+					
+					<description>Heading</description>
+					<posx>500</posx>
+					<posy>20</posy>
+					<width min="0" max="400">auto</width>
+					<height>70</height>
+					<label>Power options</label>
+					<font>Dialog-Header</font>
+					
+				</control>
+				
+				<control type="label" id="1">
+					
+					<description>Heading</description>
+					<posx>500</posx>
+					<posy>20</posy>
+					<width min="0" max="400">auto</width>
+					<height>82</height>
+					<label>$LOCALIZE[20145] $INFO[System.Alarmpos]</label>
+					<font>Dialog-Detail</font>
+					
+					<visible>System.HasAlarm(shutdowntimer)</visible>
+					
+				</control>
+				
+			</control>
+
+			<control type="grouplist">
+			
+				<posx>300</posx>
+				<posy>92</posy>
+				<width>880</width>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				
+				<animation effect="slide" start="0,0" end="-64,0" time="200" condition="System.Loggedon + System.HasLoginScreen">Conditional</animation>
+				
+				<!--Exit Button-->
+				<control type="group" id="1">
+				
+					<width>128</width>
+					<height>200</height>
+					
+					<visible>System.ShowExitButton</visible>
+					
+					<control type="button" id="3111">
+						
+						<include>Common_Power_Button</include>
+						<onclick>Quit()</onclick>
+						<onleft>3118</onleft>
+						<onright>3112</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Power_Image</include>
+						<texture>power/power_exit.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Power_Label</include>
+						<label>$LOCALIZE[13012]</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--Master Button-->
+				<control type="group" id="2">
+				
+					<width>128</width>
+					<height>200</height>
+					
+					<visible>System.HasLocks</visible>
+					
+					<control type="button" id="3112">
+						
+						<include>Common_Power_Button</include>
+						<label>$LOCALIZE[20046]</label>
+						<altlabel>$LOCALIZE[20045]</altlabel>
+						<onclick>XBMC.Mastermode</onclick>
+						<onleft>3111</onleft>
+						<onright>3113</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Power_Image</include>
+						<texture>power/power_master.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Power_Label</include>
+						<label>Control.GetLabel(3112)</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--LogOff Button-->
+				<control type="group" id="3">
+				
+					<width>128</width>
+					<height>200</height>
+					
+					<visible>System.Loggedon + System.HasLoginScreen</visible>
+					
+					<control type="button" id="3113">
+						
+						<include>Common_Power_Button</include>
+						<onclick>Dialog.Close(all,true)</onclick>
+						<onclick>System.LogOff</onclick>
+						<onleft>3112</onleft>
+						<onright>3114</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Power_Image</include>
+						<texture>power/power_switch_user.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Power_Label</include>
+						<label>$LOCALIZE[20126] $INFO[system.profilename]</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--Custom Shutdown Timer Button-->
+				<control type="group" id="4">
+				
+					<width>128</width>
+					<height>200</height>
+					
+					<visible>System.HasAlarm(shutdowntimer)</visible>
+					
+					<control type="button" id="3114">
+						
+						<include>Common_Power_Button</include>
+						<onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
+						<onleft>3113</onleft>
+						<onright>3115</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Power_Image</include>
+						<texture>power/power_shutdown_timer.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Power_Label</include>
+						<label>$LOCALIZE[20151]</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--Custom Shutdown Timer Button-->
+				<control type="group" id="5">
+				
+					<width>128</width>
+					<height>200</height>
+					
+					<visible>!System.HasAlarm(shutdowntimer)</visible>
+					
+					<control type="button" id="3115">
+						
+						<include>Common_Power_Button</include>
+						<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</onclick>
+						<onleft>3114</onleft>
+						<onright>3116</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Power_Image</include>
+						<texture>power/power_shutdown_timer.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Power_Label</include>
+						<label>$LOCALIZE[20150]</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--ShutDown Button-->
+				<control type="group" id="6">
+				
+					<width>128</width>
+					<height>200</height>
+					
+					<control type="button" id="3116">
+						
+						<include>Common_Power_Button</include>
+						<onclick>XBMC.ShutDown()</onclick>
+						<onleft>3115</onleft>
+						<onright>3117</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Power_Image</include>
+						<texture>power/power_shutdown.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Power_Label</include>
+						<label>$LOCALIZE[13005]</label>
+						
+					</control>
+					
+				</control>
+
+				<!--Suspend Button-->
+				<control type="group" id="7">
+				
+					<width>128</width>
+					<height>200</height>
+					
+					<control type="button" id="3117">
+						
+						<include>Common_Power_Button</include>
+						<onclick>XBMC.Suspend()</onclick>
+						<onleft>3116</onleft>
+						<onright>3118</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Power_Image</include>
+						<texture>power/power_suspend.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Power_Label</include>
+						<label>$LOCALIZE[13011]</label>
+						
+					</control>
+					
+				</control>
+
+				<!--Reboot Button-->
+				<control type="group" id="8">
+				
+					<width>128</width>
+					<height>200</height>
+					
+					<control type="button" id="3118">
+						
+						<include>Common_Power_Button</include>
+						<onclick>XBMC.Reset()</onclick>
+						<onleft>3117</onleft>
+						<onright>3111</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Power_Image</include>
+						<texture>power/power_restart.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Power_Label</include>
+						<label>$LOCALIZE[13013]</label>
+						
+					</control>
+					
+				</control>
+				
+			</control>	
+
+		</control>
+
+	</controls>
+
+</window>

@@ -1,0 +1,72 @@
+<!-- Foundation -->
+<window id="113">
+
+	<defaultcontrol always="true">901</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	
+	<controls>
+	
+		<control type="group">
+			
+			<posx>40</posx>
+			<posy>40</posy>
+			<width>60</width>
+			<height>145</height>
+			
+			<control type="image">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>60</width>
+				<height>145</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>FanartDiffuse</colordiffuse>
+				
+			</control>
+			
+			<control type="image">
+				
+				<posx>14</posx>
+				<posy>104</posy>
+				<width>32</width>
+				<height>32</height>
+				<texture>kai/kai_mute.png</texture>
+				<aspectratio>scale</aspectratio>
+				
+			</control>
+			
+			<control type="image">
+				
+				<posx>25</posx>
+				<posy>20</posy>
+				<width>10</width>
+				<height>80</height>
+				<texture>colors/color_grey.png</texture>
+				
+			</control>
+			
+			<control type="slider">
+
+				<posx>-45</posx>
+				<posy>-20</posy>
+				<width>80</width>
+				<height>10</height>
+				<visible>true</visible>
+				<texturesliderbar>colors/color_transparent.png</texturesliderbar>
+				<textureslidernib>colors/color_white.png</textureslidernib>
+				<textureslidernibfocus>colors/color_white.png</textureslidernibfocus>
+				<info>Player.Volume</info>
+				<action>volume</action>
+				<controloffsetx></controloffsetx>
+				<controloffsety></controloffsety>
+				<pulseonselect></pulseonselect>
+				
+				<animation effect="rotate" end="90" time="0" center="50,5" condition="true">Conditional</animation>
+				
+			</control>
+			
+		</control>
+
+	</controls>
+
+</window>

@@ -1,0 +1,310 @@
+<window type="dialog" id="55">
+
+	<defaultcontrol always="true">10</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<zorder>2</zorder>
+	
+	<onload>AlarmClock(CloseCharmBar,Dialog.Close(55, force),00:30,silent)</onload>
+	
+	<controls>
+	
+		<!--Time + Date Section-->
+		<control type="group">
+		
+			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="400">WindowClose</animation>
+			
+			<control type="image">
+			
+				<include>Common_Dimensions</include>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>60000000</colordiffuse>
+				
+			</control>
+			
+			<control type="image">
+			
+				<posx>40</posx>
+				<posy>545</posy>
+				<width>600</width>
+				<height>136</height>
+				<texture>colors/color_keyboard_dark.png</texture>
+				
+				<animation type="Conditional" condition="Player.HasMedia" reversible="false">
+					<effect type="slide" start="0,0" end="0,-20" time="200" tween="cubic" easing="out" />
+					<effect type="zoom" start="100,100" end="100,120" time="200" tween="cubic" easing="out" />
+				</animation>
+				
+			</control>
+		
+			<control type="grouplist">
+			
+				<posx>60</posx>
+				<posy>520</posy>
+				<width>1220</width>
+				<height>300</height>
+				<orientation>horizontal</orientation>
+				<itemgap>20</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				
+				<animation type="Conditional" condition="Player.HasMedia" reversible="false">
+					<effect type="slide" start="0,0" end="0,-20" time="200" tween="cubic" easing="out" />
+				</animation>
+				
+				<control type="label">
+				
+					<width min="0" max="400">auto</width>
+					<height>100</height>
+					<label>$INFO[System.Time(HH:MM)]</label>
+					<font>Screensaver-Time</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>top</aligny>
+				
+				</control>
+				
+				<control type="label">
+				
+					<posx>0</posx>
+					<posy>36</posy>
+					<width>1220</width>
+					<height>100</height>
+					<label>$INFO[System.Date(DDD)][CR]$INFO[System.Date(MMM d)]</label>
+					<font>Screensaver-Date</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>top</aligny>
+				
+				</control>
+				
+			</control>
+			
+			<control type="group">
+				
+				<posx>60</posx>
+				<posy>635</posy>
+				<visible>Player.HasMedia</visible>
+				
+				<animation type="VisibleChange" reversible="false">
+					<effect type="fade" start="0" end="100" delay="400" time="400" />
+					<effect type="slide" start="1280,0" end="0,0" center="auto" delay="400" time="1000" tween="cubic" easing="out" />
+				</animation>
+			
+				<control type="multiimage">
+								
+					<posx>6</posx>
+					<posy>0</posy>
+					<width>15</width>
+					<height>48</height>
+					<imagepath>nowplaying/</imagepath>
+					<aspectratio>center</aspectratio>
+					<timeperimage>1000</timeperimage>
+					<fadetime>400</fadetime>
+					<randomize>false</randomize>
+					<loop>yes</loop>
+					<colordiffuse>Label_Normal</colordiffuse>
+					
+				</control>
+				
+				<control type="label">
+				
+					<posx>36</posx>
+					<posy>0</posy>
+					<width>520</width>
+					<height>48</height>
+					<label>$VAR[NowPlaying_First_Label]</label>
+					<font>Screensaver-NowPlaying</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>center</aligny>
+					
+				</control>
+				
+			</control>
+			
+		</control>	
+	
+		<!--Charm Bar Section-->
+		<control type="group">
+		
+			<posx>1280</posx>
+			<posy>0</posy>
+			
+			<animation type="WindowOpen" reversible="false">
+				<effect type="slide" start="0,0" end="-100,0" time="400" tween="cubic" easing="out" />
+				<effect type="fade" start="0" end="100" time="200" />
+			</animation>
+			
+			<animation type="WindowClose" reversible="false">
+				<effect type="slide" start="-100,0" end="0,0" time="400" tween="cubic" easing="out" />
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+
+			<control type="image">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>100</width>
+				<height>720</height>
+				<texture>colors/color_keyboard_dark.png</texture>
+				
+			</control>
+			
+			<control type="list" id="10">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>100</width>
+				<height>720</height>
+				<onup>10</onup>
+				<ondown>10</ondown>
+				<onleft>Dialog.Close(55)</onleft>
+				<onright>Dialog.Close(55)</onright>
+				<viewtype label="List">list</viewtype>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<preloaditems>2</preloaditems>
+				
+				<animation effect="slide" start="0,0" end="0,80" time="400" tween="cubic" easing="out" condition="StringCompare(Container(10).NumItems,7)">Conditional</animation>
+				
+				<animation effect="slide" start="0,0" end="0,40" time="400" tween="cubic" easing="out" condition="StringCompare(Container(10).NumItems,8)">Conditional</animation>
+				
+				<itemlayout width="100" height="80">
+				
+					<control type="image">
+					
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>60</width>
+						<height>60</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<colordiffuse>Label_Normal</colordiffuse>
+						
+					</control>
+					
+					<control type="label">
+					
+						<posx>50</posx>
+						<posy>50</posy>
+						<width>100</width>
+						<height>20</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Charms-Label</font>
+						<textcolor>Label_Normal</textcolor>
+						<align>center</align>
+						
+					</control>
+					
+				</itemlayout>
+
+				<focusedlayout width="100" height="80">
+				
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>100</width>
+						<height>80</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>Label_Highlight</colordiffuse>
+						
+					</control>
+				
+					<control type="image">
+					
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>60</width>
+						<height>60</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<colordiffuse>Label_Normal</colordiffuse>
+						
+					</control>
+					
+					<control type="label">
+					
+						<posx>50</posx>
+						<posy>50</posy>
+						<width>100</width>
+						<height>20</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Charms-Label</font>
+						<textcolor>Label_Normal</textcolor>
+						<align>center</align>
+						
+					</control>
+					
+				</focusedlayout>
+				
+				<content>
+				
+					<item>
+						<description>Home</description>
+						<label>Home</label>
+						<thumb>charms/charm_home.png</thumb>
+						<onclick>Dialog.Close(55)</onclick>
+						<onclick>ActivateWindow(Home)</onclick>
+					</item>
+					
+					<item>
+						<description>Search</description>
+						<label>Search</label>
+						<thumb>charms/charm_search.png</thumb>
+						<onclick>Dialog.Close(55)</onclick>
+						<onclick>XBMC.RunScript(script.globalsearch)</onclick>
+						<visible>System.HasAddon(script.globalsearch)</visible>
+					</item>
+				
+					<item>
+						<description>Videos</description>
+						<label>$LOCALIZE[31003]</label>
+						<thumb>charms/charm_video.png</thumb>
+						<onclick>Dialog.Close(55)</onclick>
+						<onclick>ActivateWindow(videos,root)</onclick>
+					</item>
+				
+					<item>
+						<description>Music</description>
+						<label>$LOCALIZE[31004]</label>
+						<thumb>charms/charm_music.png</thumb>
+						<onclick>Dialog.Close(55)</onclick>
+						<onclick>ActivateWindow(MusicLibrary)</onclick>
+					</item>
+					
+					<item>
+						<description>Play Disc</description>
+						<label>$LOCALIZE[31014]</label>
+						<thumb>charms/charm_disc.png</thumb>
+						<onclick>Dialog.Close(55)</onclick>
+						<onclick>PlayDVD</onclick>
+						<visible>System.HasMediadvd</visible>
+					</item>
+					
+					<item>
+						<description>Favourites</description>
+						<label>$LOCALIZE[31008]</label>
+						<thumb>charms/charm_favourites.png</thumb>
+						<onclick>ActivateWindow(favourites)</onclick>
+					</item>
+					
+					<item>
+						<description>Settings</description>
+						<label>$LOCALIZE[31012]</label>
+						<thumb>charms/charm_settings.png</thumb>
+						<onclick>Dialog.Close(55)</onclick>
+						<onclick>ActivateWindow(settings)</onclick>
+					</item>
+					
+					<item>
+						<description>Shutdown</description>
+						<label>$LOCALIZE[31013]</label>
+						<thumb>charms/charm_shutdown.png</thumb>
+						<onclick>Dialog.Close(55)</onclick>
+						<onclick>ActivateWindow(shutdownmenu)</onclick>
+					</item>
+
+				</content>
+				
+			</control>
+			
+		</control>
+		
+	</controls>	
+	
+</window>

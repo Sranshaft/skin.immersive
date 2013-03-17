@@ -1,0 +1,90 @@
+<!-- Foundation -->
+<window type="dialog" id="56">
+
+	<zorder>2</zorder>
+
+	<visible>System.ScreenSaverActive + !Player.HasVideo</visible>
+
+	<controls>
+	
+		<control type="group">
+		
+			<posx>80</posx>
+			<posy>440</posy>
+			<width>1220</width>
+			<height>300</height>
+			
+			<animation effect="slide" end="0,-48" time="400" condition="Player.HasAudio">Conditional</animation>
+			
+			<control type="label">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1220</width>
+				<height>100</height>
+				<label>$INFO[System.Time(HH:MM)]</label>
+				<font>Screensaver-Time</font>
+				<textcolor>white</textcolor>
+				<aligny>top</aligny>
+			
+			</control>
+			
+			<control type="label">
+			
+				<posx>10</posx>
+				<posy>146</posy>
+				<width>1220</width>
+				<height>100</height>
+				<label>$INFO[System.Date(DDD)], $INFO[System.Date(MMM d)]</label>
+				<font>Screensaver-Date</font>
+				<textcolor>white</textcolor>
+				<aligny>top</aligny>
+			
+			</control>
+			
+		</control>	
+		
+		<control type="group">
+			
+			<posx>80</posx>
+			<posy>600</posy>
+			<visible>Player.HasAudio</visible>
+			
+			<animation type="VisibleChange" reversible="false">
+				<effect type="fade" start="0" end="100" delay="400" time="400" />
+				<effect type="slide" start="1280,0" end="0,0" center="auto" delay="400" time="1000" tween="cubic" easing="out" />
+			</animation>
+		
+			<control type="multiimage">
+							
+				<posx>10</posx>
+				<posy>2</posy>
+				<width>15</width>
+				<height>48</height>
+				<imagepath>nowplaying/</imagepath>
+				<aspectratio>center</aspectratio>
+				<timeperimage>1000</timeperimage>
+				<fadetime>400</fadetime>
+				<randomize>false</randomize>
+				<loop>yes</loop>
+				
+			</control>
+			
+			<control type="label">
+			
+				<posx>40</posx>
+				<posy>0</posy>
+				<width>1220</width>
+				<height>48</height>
+				<label>$INFO[MusicPlayer.Title] $INFO[MusicPlayer.Artist,· ,]</label>
+				<font>Screensaver-NowPlaying</font>
+				<textcolor>white</textcolor>
+				<aligny>center</aligny>
+				
+			</control>
+			
+		</control>	
+	
+	</controls>
+
+</window>

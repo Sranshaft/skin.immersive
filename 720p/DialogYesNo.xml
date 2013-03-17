@@ -1,0 +1,45 @@
+﻿<!-- Foundation -->
+<window id="100">
+	
+	<defaultcontrol always="true">10</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<include>Common_Background_Fade</include>
+
+		<control type="group">
+
+			<posx>0</posx>
+			<posy>210</posy>
+			
+			<include>Common_Dialog_Grouplist</include>
+
+			<control type="grouplist">
+			
+				<posx>580</posx>
+				<posy>240</posy>
+				<width>400</width>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+			
+				<control type="button" id ="10">
+					<description>Yes</description>
+					<include>Common_InfoDialog_Button</include>
+					<label>$LOCALIZE[106]</label>
+				</control>
+
+				<control type="button" id ="11">
+					<description>No</description>
+					<include>Common_InfoDialog_Button</include>
+					<label>$LOCALIZE[107]</label>
+				</control>
+				
+			</control>	
+
+		</control>
+
+	</controls>
+
+</window>

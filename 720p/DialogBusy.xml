@@ -1,0 +1,12 @@
+<!-- Foundation -->
+<window id="136">
+	<defaultcontrol always="true">-</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<include>Common_Busy</include>
+
+	</controls>
+
+</window>

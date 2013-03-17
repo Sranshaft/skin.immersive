@@ -1,0 +1,554 @@
+<window>
+	
+	<defaultcontrol>84</defaultcontrol>
+	
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	
+	<include>Common_Animation_Window</include>
+	
+	<controls>
+	
+		<control type="button" id="84">
+			<onfocus>SetFocus(9001)</onfocus>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+	
+		<control type="list" id="100">
+			<visible>false</visible>
+			<itemlayout width="1" height="1"/>
+			<focusedlayout width="1" height="1"/>
+		</control>
+		
+		<control type="image">
+		
+			<include>Common_Dimensions</include>
+			<texture background="true">colors/color_white.png</texture>
+			<colordiffuse>Settings_Background_Light</colordiffuse>
+			
+		</control>
+	
+		<include>Common_Breadcrumb_Dark</include>
+		
+		<!--Content Area-->
+		<control type="group">
+		
+			<posx>0</posx>
+			<posy>100</posy>
+			<width>1280</width>
+			<height>560</height>
+			
+			<!--Animation-->
+			<include>Common_Animation_Content</include>
+			
+			<control type="grouplist">
+			
+				<include>Common_Content_Grouplist</include>
+			
+				<!--Information Section-->
+				<control type="group">
+				
+					<width>380</width>
+					<height>560</height>
+					
+					<control type="button" id="9001">
+						
+						<posx>400</posx>
+						<onup>-</onup>
+						<ondown>-</ondown>
+						<onleft>191</onleft>
+						<onright>50</onright>
+						
+						<visible allowhiddenfocus="true">false</visible>
+						
+					</control>
+					
+					<control type="label">
+					
+						<posx>0</posx>
+						<posy>20</posy>
+						<width>340</width>
+						<height>20</height>
+						<label>$INFO[Container(100).ListItem.Property(Genre)]</label>
+						<font>DialogInfo-Label-Small</font>
+						<textcolor>Label_Dark</textcolor>
+					
+					</control>
+					
+					<control type="label">
+					
+						<posx>0</posx>
+						<posy>20</posy>
+						<width>340</width>
+						<height>20</height>
+						<label>$INFO[Container(100).ListItem.Property(Season),Season ,] $INFO[Container(100).ListItem.Property(Episode),Episode ,]</label>
+						<font>DialogInfo-Label-Small</font>
+						<textcolor>Label_Dark</textcolor>
+						
+						<visible>Control.IsVisible(140)</visible>
+					
+					</control>
+					
+					<control type="label">
+					
+						<posx>0</posx>
+						<posy>20</posy>
+						<width>340</width>
+						<height>20</height>
+						<label>$INFO[Container(100).ListItem.Property(Artist_Style)]</label>
+						<font>DialogInfo-Label-Small</font>
+						<textcolor>Label_Dark</textcolor>
+						
+						<visible>Control.IsVisible(160)</visible>
+					
+					</control>
+				
+					<control type="group">
+					
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>380</width>
+						<height>500</height>
+				
+						<control type="image">
+								
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>380</width>
+							<height>500</height>
+							<texture background="true">colors/color_white.png</texture>
+							<colordiffuse>Background_Normal</colordiffuse>
+							
+						</control>
+						
+						<control type="image">
+								
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>380</width>
+							<height>215</height>
+							<texture background="true">$INFO[Container(100).ListItem.Property(Fanart)]</texture>
+							<aspectratio align="left" aligny="top">scale</aspectratio>
+							
+						</control>
+						
+						<control type="grouplist">
+							
+							<posx>20</posx>
+							<posy>240</posy>
+							<width>360</width>
+							<height>100</height>
+							<itemgap>0</itemgap>
+							<onup>9000</onup>
+							<ondown>9000</ondown>
+							<onright>8</onright>
+							<onleft>9000</onleft>
+							<orientation>vertical</orientation>
+							
+							<control type="image">
+								
+								<width>128</width>
+								<height>32</height>
+								<texture background="true">$INFO[Container(100).ListItem.Property(StarRating)]</texture>
+								<aspectratio>scale</aspectratio>
+								
+								<visible>Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(180)</visible>
+								
+							</control>
+							
+							<control type="label">
+							
+								<width>340</width>
+								<height>20</height>
+								<label>$INFO[Container(100).ListItem.Property(Rating)]</label>
+								<font>DialogInfo-Header-Small</font>
+								<textcolor>Label_Normal</textcolor>
+								<aligny>top</aligny>
+								
+								<visible>Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(180)</visible>
+							
+							</control>
+							
+						</control>
+						
+						<control type="grouplist">
+						
+							<posx>20</posx>
+							<posy>180</posy>
+							<width>340</width>
+							<height>300</height>
+							<itemgap>0</itemgap>
+							<orientation>vertical</orientation>
+							<align>bottom</align>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Mpaa)]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Mpaa)) + [Control.IsVisible(110) | Control.IsVisible(120)]</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Episode),, Episodes]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Episode)) + [Control.IsVisible(120) | Control.IsVisible(130)]</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Writer)]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Writer)) + [Control.IsVisible(110) | Control.IsVisible(150)]</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Director)]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Director)) + [Control.IsVisible(110) | Control.IsVisible(150) | Control.IsVisible(160)]</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Duration),, minutes]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Duration)) + [Control.IsVisible(110) | Control.IsVisible(140) | Control.IsVisible(150) | Control.IsVisible(180)]</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Artist)]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Artist)) + [Control.IsVisible(150) | Control.IsVisible(170) | Control.IsVisible(180)]</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Album)]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Album)) + [Control.IsVisible(150) | Control.IsVisible(180)]</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(TvShowTitle)]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(TvShowTitle)) + [Control.IsVisible(130) | Control.IsVisible(140)]</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Artist_Born),Born ,]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Artist_Born)) + Control.IsVisible(160)</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Artist_Died),Died ,]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Artist_Died)) + Control.IsVisible(160)</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Artist_Formed),Formed ,]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Artist_Formed)) + Control.IsVisible(160)</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Artist_Disbanded),Disbanded ,]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Artist_Disbanded)) + Control.IsVisible(160)</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Artist_YearsActive),, Years active]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Artist_YearsActive)) + Control.IsVisible(160)</visible>
+							
+							</control>
+							
+							<!--Bold Section-->
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Header_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Year)] $INFO[Container(100).ListItem.Property(Studio)]</label>
+								<visible>Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(150)</visible>
+								
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Header_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Premiered),ORIGINALLY AIRED ,]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Premiered)) + Control.IsVisible(140)</visible>
+								
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Header_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Premiered),ORIGINALLY AIRED ,]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Premiered)) + Control.IsVisible(160)</visible>
+								
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Header_Small</include>
+								<label>$INFO[Container(100).ListItem.Property(Year)] $INFO[Container(100).ListItem.Property(Album_label)]</label>
+								<visible>!IsEmpty(Container(100).ListItem.Property(Year)) + [Control.IsVisible(170) | Control.IsVisible(180)]</visible>
+								
+							</control>
+						
+						</control>
+						
+					</control>
+				
+				</control>
+				
+				<!--Overview Section-->
+				<control type="group">
+				
+					<width>340</width>
+					<height>560</height>
+					
+					<control type="label">
+						
+						<label>overview</label>
+						<include>Common_Section_Label_Dark</include>
+						
+					</control>
+				
+					<control type="textbox">
+							
+						<include>Common_InfoDialog_Description</include>
+						<width>340</width>
+						<height>520</height>
+						<label>$INFO[Container(100).ListItem.Property(Plot)]</label>
+						<visible>Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(150)</visible>
+						
+					</control>
+						
+					<control type="textbox">
+							
+						<include>Common_InfoDialog_Description</include>
+						<width>340</width>
+						<height>520</height>
+						<label>$INFO[Container(100).ListItem.Property(Artist_Description)]</label>
+						<visible>Control.IsVisible(160)</visible>
+						
+					</control>
+						
+					<control type="textbox">
+							
+						<include>Common_InfoDialog_Description</include>
+						<width>340</width>
+						<height>520</height>
+						<label>$INFO[Container(100).ListItem.Property(Album_Description)]</label>
+						<visible>Control.IsVisible(170)</visible>
+						
+					</control>
+						
+					<control type="textbox">
+							
+						<include>Common_InfoDialog_Description</include>
+						<width>340</width>
+						<height>520</height>
+						<label>$INFO[Container(100).ListItem.Property(Comment)]</label>
+						<visible>Control.IsVisible(180)</visible>
+						
+					</control>
+					
+				</control>
+				
+				<!--Control Section-->
+				<control type="group">
+					
+					<width>320</width>
+					<height>480</height>
+					
+					<control type="label">
+							
+						<posx>45</posx>
+						<posy>60</posy>
+						
+						<include>Common_Vertical_Label</include>
+						<include>Common_Animation_Vertical_Label</include>
+						
+					</control>
+					
+					<control type="grouplist">
+
+						<posx>50</posx>
+						<posy>60</posy>
+						<width>400</width>
+						<height>480</height>
+						<scrolltime tween="cubic" easing="out">600</scrolltime>
+						<pagecontrol>9010</pagecontrol>
+						<itemgap>10</itemgap>
+						<orientation>vertical</orientation>
+						
+						<!--OK Button-->
+						<control type="group">
+						
+							<width>400</width>
+							<height>60</height>
+							
+							<control type="button" id="191">
+								
+								<include>Common_Control_Button</include>
+								<onup>193</onup>
+								<ondown>192</ondown>
+								
+							</control>
+							
+							<control type="image">
+							
+								<include>Common_Control_Image</include>
+								<texture>dialoginfo/dialoginfo_ok.png</texture>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_Control_Label</include>
+								<label>$LOCALIZE[186]</label>
+								
+							</control>
+							
+						</control>
+
+						<!--Play Button-->
+						<control type="group">
+						
+							<width>400</width>
+							<height>60</height>
+							
+							<control type="button" id="192">
+								
+								<include>Common_Control_Button</include>
+								<onup>191</onup>
+								<ondown>193</ondown>
+								
+							</control>
+							
+							<control type="image">
+							
+								<include>Common_Control_Image</include>
+								<texture>dialoginfo/dialoginfo_play.png</texture>
+								
+								<visible>Control.IsVisible(110) | Control.IsVisible(140) | Control.IsVisible(150) | Control.IsVisible(170) | Control.IsVisible(180)</visible>
+							
+							</control>
+							
+							<control type="image">
+							
+								<include>Common_Control_Image</include>
+								<texture>dialoginfo/dialoginfo_browse.png</texture>
+								
+								<visible>Control.IsVisible(120) | Control.IsVisible(130) | Control.IsVisible(160)</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_Control_Label</include>
+								<label>$INFO[Control.GetLabel(192)]</label>
+								
+							</control>
+							
+						</control>
+						
+						<!--Trailer Button-->
+						<control type="group">
+						
+							<width>400</width>
+							<height>60</height>
+							
+							<visible>!IsEmpty(Container(100).ListItem.Property(Trailer))</visible>
+							
+							<control type="button" id="193">
+								
+								<include>Common_Control_Button</include>
+								<onup>192</onup>
+								<ondown>191</ondown>
+								
+							</control>
+							
+							<control type="image">
+							
+								<include>Common_Control_Image</include>
+								<texture>dialoginfo/dialoginfo_trailer.png</texture>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_Control_Label</include>
+								<label>$INFO[Control.GetLabel(193)]</label>
+								
+							</control>
+							
+						</control>
+						
+					</control>	
+						
+				</control>
+				
+			</control>
+			
+		</control>	
+		
+		<control type="list" id="110">
+		</control>
+		
+		<control type="list" id="120">
+		</control>
+		
+		<control type="list" id="130">
+		</control>
+		
+		<control type="list" id="140">
+		</control>
+		
+		<control type="list" id="150">
+		</control>
+		
+		<control type="list" id="160">
+		</control>
+		
+		<control type="list" id="170">
+		</control>
+		
+		<control type="list" id="180">
+		</control>
+		
+		<control type="spincontrol" id="195">
+			<visible>false</visible>
+		</control>
+		
+	</controls>
+	
+</window>

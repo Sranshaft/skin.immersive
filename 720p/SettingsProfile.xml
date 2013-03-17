@@ -1,0 +1,361 @@
+<!-- Foundation -->
+<window id="34">
+	<defaultcontrol always="true">4</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<!--Background-->
+		<include>Common_Settings_Background</include>
+		
+		<control type="group">
+			
+			<control type="label" id="20">
+	
+				<posx>60</posx>
+				<posy>22</posy>
+				<width>420</width>
+				<height>32</height>
+				<label>Profiles</label>
+				<font>Settings-Menu-Header</font>
+				<textcolor>Settings_Header</textcolor>
+				<aligny>top</aligny>
+				
+			</control>
+			
+			<control type="list" id="98">
+				
+				<description>List</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>420</width>
+				<height max="600">auto</height>
+				<onup>98</onup>
+				<ondown>98</ondown>
+				<onleft>-</onleft>
+				<onright>99</onright>
+				<scrolltime>0</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>-</pagecontrol>
+
+				<itemlayout width="420" height="60">
+
+					<control type="label">
+							
+						<posx>60</posx>
+						<posy>0</posy>
+						<width min="20" max="400">auto</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Settings_Menu_Normal</textcolor>
+						<aligny>center</aligny>
+						
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="420" height="60">
+
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>420</width>
+						<height>60</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>Background_Highlight</colordiffuse>
+					
+					</control>
+
+					<control type="label">
+							
+						<posx>60</posx>
+						<posy>0</posy>
+						<width min="20" max="400">auto</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Settings_Menu_Highlight</textcolor>
+						<aligny>center</aligny>
+						<scrollspeed>0</scrollspeed>
+						
+					</control>
+
+				</focusedlayout>
+
+				<content>
+
+					<item id="1">
+						<description>Locations</description>
+						<label>options</label>
+						<onclick>-</onclick>
+					</item>
+				
+				</content>
+				
+			</control>
+
+		</control>
+		
+		<control type="group" id="99">
+		
+			<posx>500</posx>
+			<posy>100</posy>
+			<width>700</width>
+			<height>480</height>
+			
+			<control type="label">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<include>Common_Settings_Label</include>
+				<label>Start up options</label>
+				
+			</control>
+			
+			<control type="radiobutton" id="4">
+			
+				<description>Default Radio Button</description>
+				<include>Common_Settings_RadioButton</include>
+				<posx>0</posx>
+				<posy>60</posy>
+				<label>$LOCALIZE[20096]</label>
+				<ondown>2</ondown>
+				
+			</control>
+			
+			<control type="label">
+				
+				<posx>0</posx>
+				<posy>120</posy>
+				<include>Common_Settings_Label</include>
+				<label>Available profiles</label>
+				
+			</control>
+			
+			<control type="list" id="2">
+						
+				<posx>0</posx>
+				<posy>180</posy>
+				<width>700</width>
+				<height>180</height>
+				<viewtype label="535">list</viewtype>
+				<pagecontrol>81</pagecontrol>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<preloaditems>2</preloaditems>
+				<onup>4</onup>
+				<ondown>-</ondown>
+				<onright>9000</onright>
+				
+				<itemlayout width="700" height="60">
+
+					<control type="label">
+					
+						<posx>32</posx>
+						<posy>0</posy>
+						<width min="20" max="636">auto</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Settings_Label</textcolor>
+						<aligny>center</aligny>
+						
+						<visible>!ListItem.IsSelected</visible>
+						
+					</control>
+					
+					<control type="group">
+							
+						<visible>ListItem.IsSelected</visible>
+				
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>700</width>
+							<height>60</height>
+							<texture>colors/color_keyboard_dark.png</texture>
+							
+						</control>
+							
+						<control type="label">
+				
+							<posx>32</posx>
+							<posy>0</posy>
+							<width min="20" max="636">auto</width>
+							<height>60</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Menu-List</font>
+							<textcolor>Label_Normal</textcolor>
+							<aligny>center</aligny>
+							
+						</control>
+						
+					</control>
+
+
+				</itemlayout>
+
+				<focusedlayout width="700" height="60">
+				
+					<control type="group">
+							
+						<visible>!Control.HasFocus(2)</visible>
+				
+						<control type="image">
+					
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>700</width>
+							<height>60</height>
+							<texture>colors/color_white.png</texture>
+							<colordiffuse>Settings_Background_Dark</colordiffuse>
+							
+						</control>	
+							
+						<control type="label">
+				
+							<posx>32</posx>
+							<posy>0</posy>
+							<width min="20" max="636">auto</width>
+							<height>60</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Menu-List</font>
+							<textcolor>Label_Dark</textcolor>
+							<aligny>center</aligny>
+							
+						</control>
+						
+					</control>
+					
+					<control type="group">
+					
+						<visible>Control.HasFocus(2)</visible>
+
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>700</width>
+							<height>60</height>
+							<texture>colors/color_white.png</texture>
+							<colordiffuse>Background_Highlight</colordiffuse>
+						
+						</control>
+					
+						<control type="label">
+						
+							<posx>32</posx>
+							<posy>0</posy>
+							<width min="20" max="636">auto</width>
+							<height>60</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Menu-List</font>
+							<textcolor>Label_Normal</textcolor>
+							<aligny>center</aligny>
+							<scrollspeed>0</scrollspeed>
+							
+						</control>
+						
+					</control>
+
+				</focusedlayout>
+
+			</control>
+			
+		</control>	
+		
+	</controls>
+
+</window>	
+
+		<control type="group">
+			<posx>340</posx>
+			<posy>140</posy>
+
+			<control type="image">
+				<posx>-20</posx>
+				<posy>-20</posy>
+				<width>640</width>
+				<height>496</height>
+				<texture border="22">other_textures/ContentPanel.png</texture>
+			</control>
+
+			<control type="radiobutton" id="4">
+				<description>Enable Login Screen</description>
+				<posx>10</posx>
+				<posy>36</posy>
+				<width>580</width>
+				<label>20096</label>
+				<align>left</align>
+				<onright>-</onright>
+				<onleft>-</onleft>
+				<onup>-</onup>
+				<ondown>2</ondown>
+			</control>
+
+			<control type="list" id="2">
+				<posx>10</posx>
+				<posy>106</posy>
+				<width>580</width>
+				<height>322</height>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>4</onup>
+				<ondown>-</ondown>
+
+				<itemlayout height="46">
+
+					<control type="image">
+						<width>580</width>
+						<height>44</height>
+						<texture border="2">other_textures/ButtonNF.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>15</posx>
+						<width>550</width>
+						<info>ListItem.Label</info>
+					</control>
+
+					<control type="label">
+						<posx>565</posx>
+						<width>550</width>
+						<align>right</align>
+						<info>ListItem.Label2</info>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout height="46">
+
+					<control type="image">
+						<width>580</width>
+						<height>44</height>
+						<texture border="5">other_textures/ButtonFO.png</texture>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(2)">Conditional</animation>
+					</control>
+
+					<control type="label">
+						<posx>15</posx>
+						<width>550</width>
+						<info>ListItem.Label</info>
+					</control>
+
+					<control type="label">
+						<posx>565</posx>
+						<width>550</width>
+						<align>right</align>
+						<info>ListItem.Label2</info>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

@@ -1,0 +1,44 @@
+<colors>
+	
+	<!--Theme specific-->
+	
+	<color name="AppBar_Background">FF82592B</color>
+	<color name="AppBar_Text">FFFFFFFF</color>
+	
+	<color name="Background_Normal">FF82592B</color>
+	<color name="Background_Highlight">FF9A6B36</color>
+	<color name="Background_Dark">FF5A3D1C</color>
+	
+	<color name="FanartDiffuse">CC000000</color>
+	
+	<color name="Label_Normal">FFFFFFFF</color>
+	<color name="Label_Highlight">FF9A6B36</color>
+	<color name="Label_Dark">FF333333</color>
+	<color name="Label_Disabled">50FFFFFF</color>
+	<color name="Label_Grey">FFF5F5F5</color>
+	
+	<color name="Settings_Background_Light">FFFFFFFF</color>
+	<color name="Settings_Background_Dark">FFF5F5F5</color>
+	<color name="Settings_Menu_Normal">FF333333</color>
+	<color name="Settings_Menu_Highlight">FFFFFFFF</color>
+	<color name="Settings_Header">FF9A6B36</color>
+	<color name="Settings_Label">FF333333</color>
+	<color name="Settings_Label_Disabled">50333333</color>
+	<color name="Settings_Label_Highlight">FFFFFFFF</color>
+	
+	<color name="Tile_Text">FFFFFFFF</color>
+	<color name="Tile_Background">FF6C4A24</color>
+	
+	<!--Generic Colors-->
+	
+	<color name="Black">FF000000</color>
+	<color name="Red">FFFF0000</color>
+	<color name="Blue">FF2BB6EA</color>
+	<color name="Green">FF00FF00</color>
+	<color name="White">FFFFFFFF</color>
+	<color name="White_60">60FFFFFF</color>
+	<color name="White_30">30FFFFFF</color>
+	<color name="White_10">10FFFFFF</color>
+	<color name="White_5">05FFFFFF</color>
+	
+</colors>

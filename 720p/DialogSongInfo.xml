@@ -1,0 +1,173 @@
+<!-- Foundation -->
+<window id="135">
+	<defaultcontrol always="true">14</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<include>Common_Background_Fade</include>
+		
+		<control type="group">
+			<posx>0</posx>
+			<posy>210</posy>
+			
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="400"/>
+				<effect type="slide" start="0,300" end="0,0" center="auto" time="600" tween="back" easing="out"/>
+			</animation>
+			
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="400"/>
+				<effect type="slide" start="0,0" end="0,300" center="auto" time="400" tween="back" easing="in" />
+			</animation>
+
+			<control type="image">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>300</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Background_Normal</colordiffuse>
+				
+			</control>
+			
+			<control type="image" id="3">
+				
+				<description>Cover Image</description>
+				<posx>300</posx>
+				<posy>20</posy>
+				<width>200</width>
+				<height>200</height>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<aspectratio>stretch</aspectratio>
+				
+			</control>
+			
+			<control type="image" id="3">
+				
+				<description>Cover Image</description>
+				<posx>300</posx>
+				<posy>240</posy>
+				<width>200</width>
+				<height>40</height>
+				<texture>$INFO[ListItem.StarRating]</texture>
+				<aspectratio align="center">keep</aspectratio>
+				
+			</control>
+
+			<control type="grouplist">
+			
+				<posx>540</posx>
+				<posy>20</posy>
+				<width>600</width>
+				<itemgap>10</itemgap>
+				<orientation>vertical</orientation>
+				
+				<control type="label" id="1">
+					
+					<description>Heading</description>
+					<width>600</width>
+					<label>658</label>
+					<font>Dialog-Header</font>
+					
+				</control>
+
+				<control type="label" id="2">
+					
+					<description>Line 1</description>
+					<width>600</width>
+					<height>20</height>
+					<label>$INFO[ListItem.Title]</label>
+					<font>Dialog-Detail</font>
+					
+				</control>
+
+				<control type="label" id="3">
+					
+					<description>Line 2</description>
+					<width>600</width>
+					<height>20</height>
+					<label>$INFO[ListItem.Album]</label>
+					<font>Dialog-Detail</font>
+					<visible>!IsEmpty(ListItem.Album)</visible>
+					
+				</control>
+
+				<control type="label" id="4">
+
+					<description>Line 3</description>
+					<width>600</width>
+					<height>20</height>
+					<label>$INFO[ListItem.Artist]</label>
+					<font>Dialog-Detail</font>
+					<visible>!IsEmpty(ListItem.Artist)</visible>
+					
+				</control>
+				
+				<control type="label" id="5">
+
+					<description>Line 3</description>
+					<width>600</width>
+					<height>20</height>
+					<label>$INFO[ListItem.Genre]</label>
+					<font>Dialog-Detail</font>
+					<visible>!IsEmpty(ListItem.Genre)</visible>
+					
+				</control>
+				
+				<control type="label" id="6">
+
+					<description>Line 3</description>
+					<width>600</width>
+					<height>20</height>
+					<label>$INFO[ListItem.Year]</label>
+					<font>Dialog-Detail</font>
+					<visible>!IsEmpty(ListItem.Year)</visible>
+					
+				</control>
+				
+			</control>	
+
+			<control type="grouplist">
+			
+				<posx>400</posx>
+				<posy>240</posy>
+				<width>600</width>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+			
+				<control type="button" id ="14">
+					<description>Ok button</description>
+					<include>Common_InfoDialog_Button</include>
+					<label>- vote</label>
+					<onclick>DecreaseRating</onclick>
+				</control>
+				
+				<control type="button" id ="15">
+					<description>Ok button</description>
+					<include>Common_InfoDialog_Button</include>
+					<label>+ vote</label>
+					<onclick>IncreaseRating</onclick>
+				</control>
+			
+				<control type="button" id ="10">
+					<description>Ok button</description>
+					<include>Common_InfoDialog_Button</include>
+					<label>186</label>
+				</control>
+
+				<control type="button" id ="11">
+					<description>Cancel button</description>
+					<include>Common_InfoDialog_Button</include>
+					<label>222</label>
+				</control>
+				
+			</control>	
+
+		</control>
+
+	</controls>
+
+</window>

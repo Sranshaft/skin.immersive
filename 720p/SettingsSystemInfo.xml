@@ -1,0 +1,199 @@
+<!-- Foundation -->
+<window id="7">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<include>Common_Settings_Background</include>
+		
+		<control type="group">
+			
+			<control type="label">
+	
+				<posx>60</posx>
+				<posy>22</posy>
+				<width>420</width>
+				<height>32</height>
+				<label>130</label>
+				<font>Settings-Menu-Header</font>
+				<textcolor>Settings_Header</textcolor>
+				<aligny>top</aligny>
+				
+			</control>
+
+			<control type="grouplist" id="9000">
+					
+				<description>grouplist for context buttons</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>420</width>
+				<height max="600">auto</height>
+				<itemgap>0</itemgap>
+				<onright>5</onright>
+				
+				<control type="button" id="95">
+				
+					<description>General</description>
+					<include>Common_Settings_Menu</include>
+					<label>20037</label>
+					
+				</control>
+
+				<control type="button" id="94">
+					
+					<description>Storage</description>
+					<include>Common_Settings_Menu</include>
+					<label>13277</label>
+					
+				</control>
+
+				<control type="button" id="96">
+					
+					<description>Network</description>
+					<include>Common_Settings_Menu</include>
+					<label>13279</label>
+					
+				</control>
+
+				<control type="button" id="97">
+					
+					<description>Video</description>
+					<include>Common_Settings_Menu</include>
+					<label>13280</label>
+					
+				</control>
+
+				<control type="button" id="98">
+					
+					<description>Hardware</description>
+					<include>Common_Settings_Menu</include>
+					<label>13281</label>
+					
+				</control>
+				
+			</control>	
+			
+		</control>
+	
+		<control type="group">
+		
+			<posx>450</posx>
+			<posy>0</posy>
+			<width>800</width>
+			<height>480</height>
+
+			<control type="grouplist">
+				
+				<description>Control Area</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>800</width>
+				<height>540</height>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+
+				<control type="label" id="52">
+					
+					<description>XBMC XBE BUILD Version</description>
+					<include>Common_Settings_Button</include>
+					
+				</control>
+
+				<control type="label" id="21">
+					
+					<description>CPU Text</description>
+					<include>Common_Settings_Button</include>
+					<label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
+					
+				</control>
+
+				<control type="progress" id="22">
+					
+					<description>CPU BAR</description>
+					<include>Common_Settings_Progress</include>
+					<info>System.CPUUsage</info>
+					
+				</control>
+
+				<control type="label" id="23">
+					
+					<description>Memory Text</description>
+					<include>Common_Settings_Button</include>
+					<label>$LOCALIZE[31030] $INFO[system.memory(used.percent)]</label>
+					
+				</control>
+
+				<control type="progress" id="24">
+					
+					<description>Memory BAR</description>
+					<include>Common_Settings_Progress</include>
+					<info>system.memory(used)</info>
+					
+				</control>
+
+				<control type="label" id="25">
+					
+					<description>Spacer</description>
+					<font>-</font>
+					<width>800</width>
+					
+				</control>
+
+				<control type="label" id="2">
+					<description>Label 2</description>
+					<include>Common_Settings_Button</include>
+				</control>
+
+				<control type="label" id="3">
+					<description>Label 3</description>
+					<include>Common_Settings_Button</include>
+				</control>
+
+				<control type="label" id="4">
+					<description>Label 4</description>
+					<include>Common_Settings_Button</include>
+				</control>
+
+				<control type="label" id="5">
+					<description>Label 5</description>
+					<include>Common_Settings_Button</include>
+				</control>
+
+				<control type="label" id="6">
+					<description>Label 6</description>
+					<include>Common_Settings_Button</include>
+				</control>
+
+				<control type="label" id="7">
+					<description>Label 7</description>
+					<include>Common_Settings_Button</include>
+				</control>
+
+				<control type="label" id="8">
+					<description>Label 8</description>
+					<include>Common_Settings_Button</include>
+				</control>
+
+				<control type="label" id="9">
+					<description>Label 9</description>
+					<include>Common_Settings_Button</include>
+				</control>
+
+				<control type="label" id="10">
+					<description>Label 10</description>
+					<include>Common_Settings_Button</include>
+				</control>
+
+				<control type="label" id="11">
+					<description>Label 11</description>
+					<include>Common_Settings_Button</include>
+				</control>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

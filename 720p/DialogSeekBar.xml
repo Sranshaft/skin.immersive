@@ -1,0 +1,112 @@
+﻿<!-- Foundation -->
+<window id="115">
+	<defaultcontrol always="true">901</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	
+	<visible>!Window.IsVisible(fullscreeninfo) + [VideoPlayer.IsFullscreen | Window.IsVisible(visualisation)] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + !Window.IsVisible(script.pseudoTV.TVOverlay.xml) + !Window.IsVisible(osdvideosettings) + !Window.IsVisible(osdaudiosettings) + !Windows.IsVisible(videobookmarks) + !Window.IsVisible(script-XBMC-Subtitles-main.xml) + !Player.ShowCodec + !Player.ShowInfo</visible>
+
+	<controls>
+	
+		<control type="group">
+		
+			<include>Common_Dimensions</include>
+			<include>Common_Busy</include>
+			
+			<visible>Player.Caching</visible>
+			
+		</control>
+		
+		<!--Top Area-->
+		<control type="group">
+			
+			<posx>0</posx>
+			<posy>0</posy>
+			
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="400" />
+			</animation>
+			
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="400" delay="400" />
+			</animation>
+			
+			<control type="image">
+					
+				<include>Common_Dimensions</include>
+				<texture>overlays/overlay_fullscreen_top.png</texture>
+				
+			</control>
+			
+			<include>Common_Breadcrumb_Alt</include>
+			
+		</control>
+		
+		<control type="group">
+		
+			<visible>Player.Paused | Player.Rewinding | Player.Forwarding</visible>
+			
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="400" />
+			</animation>
+			
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="400" />
+			</animation>
+			
+			<control type="image">
+			
+				<posx>576</posx>
+				<posy>296</posy>
+				<width>128</width>
+				<height>128</height>
+				<texture>$VAR[Player_CurrentAction]</texture>
+				
+				<animation effect="fade" start="20" end="100" time="2000" pulse="true" condition="true">Conditional</animation>
+			
+			</control>	
+			
+			<control type="button">
+			
+				<include>Common_Dimensions</include>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onclick>PlayerControl(play)</onclick>
+				
+			</control>	
+			
+		</control>	
+		
+		<!--Bottom Area-->
+		<control type="group">
+		
+			<posx>0</posx>
+			<posy>720</posy>
+			
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="400"/>
+				<effect type="slide" start="0,0" end="0,-188" time="400" delay="400" tween="cubic" easing="out" />
+			</animation>
+				
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="400" />
+				<effect type="slide" start="0,-188" end="0,0" time="400" tween="cubic" easing="in" />
+			</animation>
+			
+			<control type="image">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>188</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>FanartDiffuse</colordiffuse>
+				
+			</control>
+		
+			<include>Common_Progress</include>
+			
+		</control>	
+
+	</controls>
+
+</window>

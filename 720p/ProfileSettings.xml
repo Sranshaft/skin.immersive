@@ -1,0 +1,217 @@
+<!-- Foundation -->
+<window id="130">
+	<defaultcontrol always="true">5</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<!--Background-->
+		<include>Common_Settings_Background</include>
+		
+		<control type="group">
+			
+			<control type="label" id="20">
+	
+				<posx>60</posx>
+				<posy>22</posy>
+				<width>420</width>
+				<height>32</height>
+				<label>Profiles</label>
+				<font>Settings-Menu-Header</font>
+				<textcolor>Settings_Header</textcolor>
+				<aligny>top</aligny>
+				
+			</control>
+			
+			<control type="list" id="98">
+				
+				<description>List</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>420</width>
+				<height max="600">auto</height>
+				<onup>98</onup>
+				<ondown>98</ondown>
+				<onleft>-</onleft>
+				<onright>99</onright>
+				<scrolltime>0</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>-</pagecontrol>
+
+				<itemlayout width="420" height="60">
+
+					<control type="label">
+							
+						<posx>60</posx>
+						<posy>0</posy>
+						<width min="20" max="400">auto</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Settings_Menu_Normal</textcolor>
+						<aligny>center</aligny>
+						
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="420" height="60">
+
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>420</width>
+						<height>60</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>Background_Highlight</colordiffuse>
+					
+					</control>
+
+					<control type="label">
+							
+						<posx>60</posx>
+						<posy>0</posy>
+						<width min="20" max="400">auto</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Settings_Menu_Highlight</textcolor>
+						<aligny>center</aligny>
+						<scrollspeed>0</scrollspeed>
+						
+					</control>
+
+				</focusedlayout>
+
+				<content>
+
+					<item id="1">
+						<description>Locations</description>
+						<label>options</label>
+						<onclick>-</onclick>
+					</item>
+				
+				</content>
+				
+			</control>
+
+		</control>
+		
+		<control type="group" id="99">
+		
+			<posx>500</posx>
+			<posy>100</posy>
+			<width>700</width>
+			<height>480</height>
+			
+			<control type="image">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>100</width>
+				<height>100</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Settings_Background_Dark</colordiffuse>
+				
+			</control>	
+			
+			<control type="image" id="2">
+				
+				<description>profile image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>100</width>
+				<height>100</height>
+				<aspectratio>scale</aspectratio>
+				
+			</control>
+
+			<control type="label" id="1000">
+				
+				<description>Profile Name</description>
+				<posx>120</posx>
+				<posy>0</posy>
+				<width>300</width>
+				<font>Profile-Settings-Name</font>
+				<textcolor>Label_Dark</textcolor>
+				
+			</control>
+
+			<control type="label" id="1001">
+				<description>Profile Directory</description>
+				<posx>120</posx>
+				<posy>30</posy>
+				<width>300</width>
+				<font>Profile-Settings-Directory</font>
+				<textcolor>Label_Dark</textcolor>
+			</control>
+			
+			<control type="grouplist" id="5">
+				
+				<description>Control Area</description>
+				<posx>0</posx>
+				<posy>120</posy>
+				<width>700</width>
+				<height>540</height>
+				<itemgap>0</itemgap>
+				<onleft>3</onleft>
+				<onright>9000</onright>
+				<orientation>vertical</orientation>
+				<pagecontrol>81</pagecontrol>
+				
+			</control>
+			
+			<control type="button" id="7">
+			
+				<description>Default Button</description>
+				<include>Common_Settings_Button</include>
+				
+			</control>
+
+			<control type="radiobutton" id="8">
+				
+				<description>Default Radio Button</description>
+				<include>Common_Settings_RadioButton</include>
+				
+			</control>
+
+			<control type="spincontrolex" id="9">
+			
+				<description>Default Spin Control</description>
+				<include>Common_Settings_SpinButton</include>
+				
+			</control>
+
+		</control>
+
+		<!--AppBar-->
+		<include>Common_Settings_Divider</include>
+		
+		<control type="grouplist" id="9000">
+		
+			<include>Common_Settings_Button_Grouplist</include>
+		
+			<!--Okay Button-->
+			<control type="button" id="28">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[186]</label>
+				<onup>5</onup>
+				
+			</control>
+
+			<!--Cancel Button-->
+			<control type="button" id="29">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[222]</label>
+				<onup>5</onup>
+				
+			</control>
+			
+		</control>
+	
+	 </controls>
+
+</window>

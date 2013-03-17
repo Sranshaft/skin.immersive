@@ -1,0 +1,101 @@
+<window>
+	
+	<defaultcontrol always="true">1001</defaultcontrol>
+	
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	
+	<controls>
+	
+		<control type="group">
+			
+			<posx>1280</posx>
+			<posy>0</posy>
+			
+			<control type="group">
+			
+				<animation effect="slide" start="0,0" end="-320,0" time="400" tween="cubic" easing="out">WindowOpen</animation>
+				<animation effect="slide" start="-320,0" end="0,0" time="200" tween="cubic" easing="in">WindowClose</animation>
+			
+				<!--Background-->
+				<control type="image">
+				
+					<posy>0</posy>
+					<posy>0</posy>
+					<width>320</width>
+					<height>720</height>
+					<texture background="true">colors/color_white.png</texture>
+					<colordiffuse>Background_Normal</colordiffuse>		
+
+				</control>
+				
+				<control type="label">
+		
+					<posx>32</posx>
+					<posy>22</posy>
+					<width>256</width>
+					<height>32</height>
+					<label>Menu</label>
+					<font>Menu-Header</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>top</aligny>
+				
+				</control>
+				
+				<control type="grouplist" id="1000">
+
+					<description>grouplist for context buttons</description>
+					<posx>0</posx>
+					<posy>92</posy>
+					<width>320</width>
+					<height>720</height>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					
+					<control type="button" id="1001">
+					
+						<description>Buttons</description>
+						<include>Common_ContextMenu_Button</include>
+					
+					</control>
+					
+					<control type="button" id="1002">
+					
+						<description>Buttons</description>
+						<include>Common_ContextMenu_Button</include>
+					
+					</control>
+					
+					<control type="button" id="1003">
+					
+						<description>Buttons</description>
+						<include>Common_ContextMenu_Button</include>
+					
+					</control>
+					
+				</control>
+
+			</control>
+
+		</control>
+						
+	
+		<control type="image" id="997">
+			<visible>false</visible>
+		</control>
+		
+		<control type="image" id="998">
+			<visible>false</visible>
+		</control>
+		
+		<control type="image" id="999">
+			<visible>false</visible>
+		</control>
+		
+	</controls>
+	
+</window>

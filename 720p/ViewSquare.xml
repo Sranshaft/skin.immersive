@@ -1,0 +1,252 @@
+<includes>
+
+	<include name="ViewSquare">
+		
+		<control type="group">
+		
+			<posx>60</posx>
+			<posy>0</posy>
+		
+			<visible>Control.IsVisible(54)</visible>
+			
+			<include>Common_Animation_View</include>
+		
+			<control type="label">
+					
+				<label>explore</label>
+				<include>Common_Section_Label</include>
+				
+			</control>
+			
+			<control type="panel" id="54">
+
+				<posx>0</posx>
+				<posy>20</posy>
+				<width>1280</width>
+				<height>480</height>
+				<onup condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">10000</onup>
+				<ondown condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">9000</ondown>
+				<onleft>54</onleft>
+				<onright>54</onright>
+				<viewtype label="Square">wrap</viewtype>
+				<orientation>horizontal</orientation>
+				<pagecontrol>64</pagecontrol>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<preloaditems>4</preloaditems>
+				
+				<include>Common_Animation_HideWhenScrolling</include>
+				
+				<itemlayout width="230" height="230">
+
+					<control type="group">
+		
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>210</width>
+						<height>210</height>
+						
+						<include>Common_LiveTile_Background</include>
+						
+					</control>
+					
+					<control type="group">
+		
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>210</width>
+						<height>210</height>
+						
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>210</width>
+							<height>210</height>
+							<texture>colors/color_keyboard_dark.png</texture>
+							<aspectratio>scale</aspectratio>
+							
+						</control>
+					
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>210</width>
+							<height>210</height>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[Square_Image]</texture>
+							<aspectratio>scale</aspectratio>
+							
+						</control>
+						
+						<control type="image">
+							
+							<posx>0</posx>
+							<posy>150</posy>
+							<width>210</width>
+							<height>60</height>
+							<texture>colors/color_white.png</texture>
+							<colordiffuse>FanartDiffuse</colordiffuse>
+							
+						</control>
+							
+						<control type="label">
+							
+							<posx>10</posx>
+							<posy>158</posy>
+							<width>190</width>
+							<height>20</height>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-Square-Header</font>
+							<aligny>top</aligny>
+							<label>$VAR[Square_Header]</label>
+						
+						</control>
+						
+						<control type="label">
+							
+							<posx>10</posx>
+							<posy>178</posy>
+							<width>190</width>
+							<height>20</height>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-Square-Detail</font>
+							<aligny>top</aligny>
+							<label>$VAR[Square_SubHeader]</label>
+						
+						</control>
+					
+					</control>
+					
+				</itemlayout>
+
+				<focusedlayout width="230" height="230">
+				
+					<control type="group">
+		
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>210</width>
+						<height>210</height>
+						
+						<include>Common_Animation_LiveTile_Background</include>
+						
+						<include>Common_LiveTile_Background</include>
+						
+					</control>
+				
+					<control type="group">
+						
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>210</width>
+						<height>210</height>
+					
+						<include>Common_Animation_LiveTile_Front</include>
+						
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>210</width>
+							<height>210</height>
+							<texture>colors/color_keyboard_dark.png</texture>
+							<aspectratio>scale</aspectratio>
+							
+						</control>
+					
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>210</width>
+							<height>210</height>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[Square_Image]</texture>
+							<aspectratio>scale</aspectratio>
+							
+						</control>
+						
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>150</posy>
+							<width>210</width>
+							<height>60</height>
+							<texture>colors/color_white.png</texture>
+							<colordiffuse>Background_Highlight</colordiffuse>
+							
+						</control>
+							
+						<control type="label">
+							
+							<posx>10</posx>
+							<posy>158</posy>
+							<width>190</width>
+							<height>20</height>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-Square-Header</font>
+							<aligny>top</aligny>
+							<label>$VAR[Square_Header]</label>
+						
+						</control>
+						
+						<control type="label">
+							
+							<posx>10</posx>
+							<posy>178</posy>
+							<width>190</width>
+							<height>20</height>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-Square-Detail</font>
+							<aligny>top</aligny>
+							<label>$VAR[Square_SubHeader]</label>
+						
+						</control>
+
+					</control>
+					
+					<!--Back Side Info-->
+					<control type="group">
+					
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>210</width>
+						<height>210</height>
+						
+						<include>Common_Animation_LiveTile_Back</include>
+						
+						<control type="image">
+						
+							<include>Common_LiveTile_Rating</include>
+							<visible>System.IdleTime(2)</visible>
+							
+						</control>
+						
+						<control type="textbox">
+							
+							<include>Common_LiveTile_Description</include>
+							<label>$VAR[Tile_Description]</label>
+							<visible>System.IdleTime(2)</visible>
+				
+						</control>
+						
+					</control>
+					
+				</focusedlayout>
+
+			</control>
+			
+			<!--Scrollbar-->
+			<control type="scrollbar" id="64">
+				
+				<include>Common_Scrollbar_Horizontal</include>
+				<posy>520</posy>
+				
+				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(54).Scrolling">Conditional</animation>
+				
+			</control>
+		
+		</control>	
+		
+	</include>
+
+</includes>

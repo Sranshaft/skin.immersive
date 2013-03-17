@@ -1,0 +1,45 @@
+<!-- Foundation -->
+<window type="dialog" id="60">
+
+	<zorder>2</zorder>
+	
+	<onload>AlarmClock(CloseSplash,Dialog.Close(60, force),00:02,silent)</onload>
+	
+	<controls>
+	
+		<control type="image">
+					
+			<include>Common_Dimensions</include>
+			<texture background="true">colors/color_white.png</texture>
+			<colordiffuse>FF000000</colordiffuse>
+			
+		</control>
+		
+		<control type="group">
+		
+			<include>Common_Animation_Splash</include>
+	
+			<control type="image">
+					
+				<include>Common_Dimensions</include>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Background_Normal</colordiffuse>
+			
+			</control>
+				
+			<control type="image">
+				
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="400" delay="200" />
+				</animation>
+				
+				<include>Common_Dimensions</include>
+				<texture>$VAR[Splash_Image]</texture>
+			
+			</control>
+			
+		</control>	
+	
+	</controls>
+
+</window>

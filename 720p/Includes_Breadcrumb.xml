@@ -1,0 +1,237 @@
+<includes>
+
+	<include name="Common_Breadcrumb">
+	
+		<!--Top Area-->
+		<control type="group">
+		
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>120</height>
+			
+			<control type="grouplist">
+			
+				<posx>60</posx>
+				<posy>20</posy>
+				<width>1100</width>
+				<height>100</height>
+				<orientation>horizontal</orientation>
+				<itemgap>20</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				
+				<control type="button">
+					
+					<posy>12</posy>
+					<width>48</width>
+					<height>48</height>
+					<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
+					<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>Label_Normal</colordiffuse>
+					<onclick>back</onclick>
+					<visible>!StringCompare(Window.Property(xmlfile),Home.xml)</visible>
+					
+				</control>
+				
+				<control type="label">
+					
+					<posy>-2</posy>
+					<width min="0" max="850">auto</width>
+					<height>65</height>
+					<label>$VAR[Breadcrumb_Home_Label]</label>
+					<font>Breadcrumb-Home</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>center</aligny>
+					
+				</control>
+				
+				<control type="label">
+					
+					<posy>6</posy>
+					<width min="0" max="450">auto</width>
+					<height>65</height>
+					<label>$VAR[Breadcrumb_SubFolder_Label]</label>
+					<font>Breadcrumb-SubFolder</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>center</aligny>
+					<visible>!StringCompare(Window.Property(xmlfile),Home.xml) + !StringCompare(Window.Property(xmlfile),FileBrowser.xml)</visible>
+					
+				</control>
+				
+				<control type="button" id="10000">
+					
+					<posy>30</posy>
+					<width>32</width>
+					<height>32</height>
+					<texturefocus>breadcrumb/breadcrumb_arrow.png</texturefocus>
+					<texturenofocus>breadcrumb/breadcrumb_arrow.png</texturenofocus>
+					<label>-</label>
+					<colordiffuse>Label_Normal</colordiffuse>
+					<onfocus>ActivateWindow(51)</onfocus>
+					
+					<animation effect="rotate" start="0" end="180" center="auto" time="200" condition="Window.IsVisible(51)">Conditional</animation>
+					
+					<visible>[!StringCompare(Container.FolderPath,videodb://1/) + SubString(Container.FolderPath,videodb://1/)] | [!StringCompare(Container.FolderPath,videodb://2/) + SubString(Container.FolderPath,videodb://2/)] | StringCompare(Container.FolderPath,videodb://4/) | StringCompare(Container.FolderPath,videodb://5/) | SubString(Container.FolderPath,musicdb://)</visible>
+					
+				</control>
+				
+			</control>
+		
+		</control>
+	
+	</include>
+	
+	<include name="Common_Breadcrumb_Dark">
+	
+		<!--Top Area-->
+		<control type="group">
+		
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>120</height>
+			
+			<control type="grouplist">
+			
+				<posx>60</posx>
+				<posy>20</posy>
+				<width>1100</width>
+				<height>100</height>
+				<orientation>horizontal</orientation>
+				<itemgap>20</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				
+				<control type="button">
+					
+					<posy>12</posy>
+					<width>48</width>
+					<height>48</height>
+					<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
+					<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>Label_Dark</colordiffuse>
+					<onclick>back</onclick>
+					
+				</control>
+				
+				<control type="label">
+					
+					<posy>-2</posy>
+					<width min="0" max="850">auto</width>
+					<height>65</height>
+					<label>$VAR[Breadcrumb_Home_Label]</label>
+					<font>Breadcrumb-Home</font>
+					<textcolor>Label_Dark</textcolor>
+					<aligny>center</aligny>
+					
+				</control>
+				
+				
+			</control>
+		
+		</control>
+	
+	</include>
+	
+	<include name="Common_Breadcrumb_Alt">
+	
+		<control type="group">
+		
+			<posx>60</posx>
+			<posy>20</posy>
+			<width>1280</width>
+			<height>120</height>
+			
+			<control type="button">
+					
+				<posy>12</posy>
+				<width>48</width>
+				<height>48</height>
+				<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
+				<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
+				<aspectratio>keep</aspectratio>
+				<colordiffuse>Label_Normal</colordiffuse>
+				<onclick>back</onclick>
+				
+			</control>
+			
+			<control type="label">
+
+				<description>Location Label</description>
+				<posx>68</posx>
+				<posy>0</posy>
+				<width>1200</width>
+				<label>$VAR[Breadcrumb_SubFolder_Label]</label>
+				<font>Breadcrumb-SubFolder-Alt</font>
+				<textcolor>Label_Normal</textcolor>
+				
+			</control>
+			
+			<control type="label">
+
+				<description>Location Label</description>
+				<posx>68</posx>
+				<posy>18</posy>
+				<width>1200</width>
+				<label>$VAR[Breadcrumb_Home_Label]</label>
+				<font>Breadcrumb-Home-Alt</font>
+				<textcolor>Label_Normal</textcolor>
+				
+			</control>
+			
+		</control>
+		
+	</include>
+	
+	<include name="Common_Breadcrumb_Alt_Dark">
+	
+		<control type="group">
+		
+			<posx>60</posx>
+			<posy>20</posy>
+			<width>1280</width>
+			<height>120</height>
+			
+			<control type="button">
+					
+				<posy>12</posy>
+				<width>48</width>
+				<height>48</height>
+				<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
+				<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
+				<aspectratio>keep</aspectratio>
+				<colordiffuse>Label_Dark</colordiffuse>
+				<onclick>back</onclick>
+				
+			</control>
+			
+			<control type="label">
+
+				<description>Location Label</description>
+				<posx>68</posx>
+				<posy>0</posy>
+				<width>1200</width>
+				<label>$VAR[Breadcrumb_SubFolder_Label]</label>
+				<font>Breadcrumb-SubFolder-Alt</font>
+				<textcolor>Label_Dark</textcolor>
+				
+			</control>
+			
+			<control type="label">
+
+				<description>Location Label</description>
+				<posx>68</posx>
+				<posy>18</posy>
+				<width>1200</width>
+				<label>$VAR[Breadcrumb_Home_Label]</label>
+				<font>Breadcrumb-Home-Alt</font>
+				<textcolor>Label_Dark</textcolor>
+				
+			</control>
+			
+		</control>
+		
+	</include>	
+
+</includes>

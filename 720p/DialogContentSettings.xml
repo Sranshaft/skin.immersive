@@ -1,0 +1,389 @@
+<!-- Foundation -->
+<window id="132">
+	
+	<defaultcontrol always="true">3</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<backgroundcolor>0xFFFFFFFF</backgroundcolor>
+
+	<controls>
+
+		<!--Background-->
+		<include>Common_Settings_Background</include>
+		
+		<control type="group">
+			
+			<control type="label" id="20">
+	
+				<posx>60</posx>
+				<posy>22</posy>
+				<width>420</width>
+				<height>32</height>
+				<label>$LOCALIZE[20333]</label>
+				<font>Settings-Menu-Header</font>
+				<textcolor>Settings_Header</textcolor>
+				<aligny>top</aligny>
+				
+			</control>
+			
+			<control type="list" id="98">
+				
+				<description>List</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>420</width>
+				<height max="600">auto</height>
+				<onup>98</onup>
+				<ondown>98</ondown>
+				<onleft>-</onleft>
+				<onright>99</onright>
+				<scrolltime>0</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>-</pagecontrol>
+
+				<itemlayout width="420" height="60">
+
+					<control type="label">
+							
+						<posx>60</posx>
+						<posy>0</posy>
+						<width min="20" max="400">auto</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Settings_Menu_Normal</textcolor>
+						<aligny>center</aligny>
+						
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="420" height="60">
+
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>420</width>
+						<height>60</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>Background_Highlight</colordiffuse>
+					
+					</control>
+
+					<control type="label">
+							
+						<posx>60</posx>
+						<posy>0</posy>
+						<width min="20" max="400">auto</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Settings_Menu_Highlight</textcolor>
+						<aligny>center</aligny>
+						<scrollspeed>0</scrollspeed>
+						
+					</control>
+
+				</focusedlayout>
+
+				<content>
+
+					<item id="1">
+						<description>Locations</description>
+						<label>options</label>
+						<onclick>-</onclick>
+					</item>
+				
+				</content>
+				
+			</control>
+
+		</control>
+		
+		<control type="group" id="99">
+		
+			<posx>500</posx>
+			<posy>100</posy>
+			<width>700</width>
+			<height>480</height>
+			
+			<control type="label">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<include>Common_Settings_Label</include>
+				<label>Set type of media</label>
+				
+			</control>
+			
+			<control type="spincontrolex" id="3">
+		
+				<description>Default Spin Control</description>
+				<posx>0</posx>
+				<posy>60</posy>
+				<include>Common_Settings_SpinButton</include>
+				<ondown>4</ondown>
+				<onright>9000</onright>
+				
+			</control>
+			
+			<control type="label">
+			
+				<description>Directory Contains</description>
+				<posx>32</posx>
+				<posy>60</posy>
+				<label>$LOCALIZE[20344]</label>
+				<textcolor>Settings_Label</textcolor>
+				<include>Common_Settings_Label</include>
+				
+				<visible>!Control.HasFocus(3)</visible>
+				
+			</control>
+			
+			<control type="label">
+			
+				<description>Directory Contains</description>
+				<posx>32</posx>
+				<posy>60</posy>
+				<label>$LOCALIZE[20344]</label>
+				<textcolor>Settings_Label_Highlight</textcolor>
+				<include>Common_Settings_Label</include>
+				
+				<visible>Control.HasFocus(3)</visible>
+				
+			</control>
+			
+			<control type="label">
+				
+				<posx>0</posx>
+				<posy>120</posy>
+				<include>Common_Settings_Label</include>
+				<label>Set scraper to gather information from</label>
+				
+			</control>
+			
+			<control type="image">
+				
+				<posx>0</posx>
+				<posy>180</posy>
+				<width>180</width>
+				<height>180</height>
+				<texture fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Icon]</texture>
+				<aspectratio align="center" aligny="top">stretch</aspectratio>
+				
+			</control>
+			
+			<control type="list" id="4">
+						
+				<posx>200</posx>
+				<posy>180</posy>
+				<width>500</width>
+				<height>180</height>
+				<viewtype label="535">list</viewtype>
+				<pagecontrol>81</pagecontrol>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<preloaditems>2</preloaditems>
+				<onup>3</onup>
+				<ondown>5</ondown>
+				<onright>9000</onright>
+				
+				<itemlayout width="500" height="60">
+
+					<control type="label">
+					
+						<posx>32</posx>
+						<posy>0</posy>
+						<width min="20" max="436">auto</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Settings_Label</textcolor>
+						<aligny>center</aligny>
+						
+						<visible>!ListItem.IsSelected</visible>
+						
+					</control>
+					
+					<control type="group">
+							
+						<visible>ListItem.IsSelected</visible>
+				
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>500</width>
+							<height>60</height>
+							<texture>colors/color_keyboard_dark.png</texture>
+							
+						</control>
+							
+						<control type="label">
+				
+							<posx>32</posx>
+							<posy>0</posy>
+							<width min="20" max="436">auto</width>
+							<height>60</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Menu-List</font>
+							<textcolor>Label_Normal</textcolor>
+							<aligny>center</aligny>
+							
+						</control>
+						
+					</control>
+
+
+				</itemlayout>
+
+				<focusedlayout width="500" height="60">
+				
+					<control type="group">
+							
+						<visible>!Control.HasFocus(4)</visible>
+				
+						<control type="image">
+					
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>500</width>
+							<height>60</height>
+							<texture>colors/color_white.png</texture>
+							<colordiffuse>Settings_Background_Dark</colordiffuse>
+							
+						</control>	
+							
+						<control type="label">
+				
+							<posx>32</posx>
+							<posy>0</posy>
+							<width min="20" max="436">auto</width>
+							<height>60</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Menu-List</font>
+							<textcolor>Label_Dark</textcolor>
+							<aligny>center</aligny>
+							
+						</control>
+						
+					</control>
+					
+					<control type="group">
+					
+						<visible>Control.HasFocus(4)</visible>
+
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>500</width>
+							<height>60</height>
+							<texture>colors/color_white.png</texture>
+							<colordiffuse>Background_Highlight</colordiffuse>
+						
+						</control>
+					
+						<control type="label">
+						
+							<posx>32</posx>
+							<posy>0</posy>
+							<width min="20" max="436">auto</width>
+							<height>60</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Menu-List</font>
+							<textcolor>Label_Normal</textcolor>
+							<aligny>center</aligny>
+							<scrollspeed>0</scrollspeed>
+							
+						</control>
+						
+					</control>
+
+				</focusedlayout>
+
+			</control>
+			
+			<!--Scrollbar-->
+			<control type="scrollbar" id="81">
+			
+				<include>Common_Settings_Scrollbar_Vertical</include>
+				
+				<posx>720</posx>
+				<posy>180</posy>
+				<height>180</height>
+				
+				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(81)">Conditional</animation>
+				
+			</control>
+			
+			<control type="grouplist" id="5">
+				
+				<description>Control Area</description>
+				<posx>0</posx>
+				<posy>380</posy>
+				<width>700</width>
+				<height>120</height>
+				<itemgap>0</itemgap>
+				<onup>4</onup>
+				<ondown>9000</ondown>
+				<onright>9000</onright>
+				<orientation>vertical</orientation>
+				<pagecontrol>81</pagecontrol>
+				
+			</control>
+			
+		</control>
+		
+		<control type="button" id="7">
+			
+			<description>Default Button</description>
+			<include>Common_Settings_Button</include>
+			
+		</control>
+
+		<control type="radiobutton" id="8">
+			
+			<description>Default Radio Button</description>
+			<include>Common_Settings_RadioButton</include>
+			
+		</control>
+		
+		<!--AppBar-->
+		<include>Common_Settings_Divider</include>
+		
+		<control type="grouplist" id="9000">
+		
+			<include>Common_Settings_Button_Grouplist</include>
+		
+			<!--Okay Button-->
+			<control type="button" id="28">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[186]</label>
+				<onup>5</onup>
+				
+			</control>
+
+			<!--Cancel Button-->
+			<control type="button" id="29">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[222]</label>
+				<onup>5</onup>
+				
+			</control>
+			
+			<!--Settings Button-->
+			<control type="button" id="6">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[5]</label>
+				<onup>5</onup>
+				
+			</control>
+			
+		</control>
+		
+	</controls>
+
+</window>

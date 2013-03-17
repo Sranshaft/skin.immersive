@@ -1,0 +1,149 @@
+<!-- Foundation -->
+<window id="107">
+	
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+	
+		<control type="group">
+			
+			<posx>880</posx>
+			<posy>0</posy>
+			<width>400</width>
+			<height>80</height>
+			
+			<include>Common_Animation_Toast_Notification</include>
+			
+			<visible>!IsEmpty(Control.GetLabel(400))</visible>
+
+			<control type="image">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>400</width>
+				<height>80</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Background_Highlight</colordiffuse>
+				
+			</control>
+			
+			<control type="image" id="400">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>80</width>
+				<height>80</height>
+				<aspectratio>stretch</aspectratio>	
+				
+			</control>
+			
+			<control type="label">
+				
+				<description>heading</description>
+				<posx>100</posx>
+				<posy>10</posy>
+				<width>260</width>
+				<height>20</height>
+				<label>$INFO[Control.GetLabel(401)]</label>
+				<font>Kai-Header</font>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>top</aligny>
+				
+			</control>
+
+			<control type="label">
+				
+				<description>message</description>
+				<posx>100</posx>
+				<posy>30</posy>
+				<width>260</width>
+				<height>40</height>
+				<label>$INFO[Control.GetLabel(402)]</label>
+				<font>Kai-Detail</font>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>top</aligny>
+				<wrapmultiline>true</wrapmultiline>
+				
+			</control>
+			
+		</control>
+
+		<control type="group">
+			
+			<posx>880</posx>
+			<posy>0</posy>
+			<width>400</width>
+			<height>80</height>
+			
+			<include>Common_Animation_Toast_Notification</include>
+			
+			<visible>IsEmpty(Control.GetLabel(400))</visible>
+
+			<control type="image">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>400</width>
+				<height>80</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Background_Highlight</colordiffuse>
+				
+			</control>
+			
+			<control type="image">
+				
+				<posx>358</posx>
+				<posy>40</posy>
+				<width>32</width>
+				<height>32</height>
+				<texture>kai/kai_warning.png</texture>
+				<aspectratio>center</aspectratio>	
+				
+			</control>
+			
+			<control type="label">
+				
+				<description>heading</description>
+				<posx>20</posx>
+				<posy>10</posy>
+				<width>320</width>
+				<height>20</height>
+				<label>$INFO[Control.GetLabel(401)]</label>
+				<font>Kai-Header</font>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>top</aligny>
+				
+			</control>
+
+			<control type="label">
+				
+				<description>message</description>
+				<posx>20</posx>
+				<posy>30</posy>
+				<width>320</width>
+				<height>40</height>
+				<label>$INFO[Control.GetLabel(402)]</label>
+				<font>Kai-Detail</font>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>top</aligny>
+				<wrapmultiline>true</wrapmultiline>
+				
+			</control>
+			
+		</control>
+		
+		<control type="label" id="401">
+			<visible>false</visible>
+		</control>
+		
+		<control type="label" id="402">
+			<visible>false</visible>
+		</control>
+
+	</controls>
+
+</window>

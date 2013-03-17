@@ -1,0 +1,406 @@
+<window type="dialog" id="51">
+
+	<defaultcontrol>10001</defaultcontrol>
+	
+	<zorder>2</zorder>
+	
+	<onunload>SetFocus(50)</onunload>
+	
+	<animation type="WindowOpen">
+		<effect type="fade" start="0" end="100" time="200" />
+	</animation>
+	
+	<animation type="WindowClose">
+		<effect type="fade" start="100" end="0" time="200" />
+	</animation>
+
+	<controls>
+	
+		<control type="list" id="10001">
+						
+			<posx>130</posx>
+			<posy>90</posy>
+			<width>200</width>
+			<height>420</height>
+			<onup>10001</onup>
+			<ondown>10001</ondown>
+			<onleft>Dialog.Close(51)</onleft>
+			<onright>Dialog.Close(51)</onright>
+			<pagecontrol>60</pagecontrol>
+			<viewtype label="List">list</viewtype>
+			<scrolltime tween="Cubic " easing="inout">200</scrolltime>
+			<preloaditems>2</preloaditems>
+			
+			<itemlayout width="200" height="60">
+
+				<control type="image">
+							
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>200</width>
+					<height>60</height>
+					<texture>colors/color_white.png</texture>
+					
+				</control>
+				
+				<control type="label">
+				
+					<posx>32</posx>
+					<posy>0</posy>
+					<width min="20" max="136">auto</width>
+					<height>60</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Menu-List</font>
+					<textcolor>Label_Dark</textcolor>
+					<aligny>center</aligny>
+					<scrollspeed>0</scrollspeed>
+					
+				</control>
+					
+			</itemlayout>
+
+			<focusedlayout width="200" height="60">
+					
+				<control type="image">
+				
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>200</width>
+					<height>60</height>
+					<texture>colors/color_white.png</texture>
+					<colordiffuse>Background_Highlight</colordiffuse>
+				
+				</control>
+				
+				<control type="label">
+					
+					<posx>32</posx>
+					<posy>0</posy>
+					<width min="20" max="136">auto</width>
+					<height>60</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Menu-List</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>center</aligny>
+					<scrollspeed>0</scrollspeed>
+					
+				</control>
+					
+			</focusedlayout>
+			
+			<content>
+	
+				<!--Movies-->
+						
+				<item id="10100">
+				
+					<label>title</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,MovieTitles)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
+					
+				</item>
+				
+				<item id="10101">
+				
+					<label>new</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,RecentlyAddedMovies)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
+					
+				</item>
+				
+				<item id="10102">
+				
+					<label>actors</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,MovieActors)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
+					
+				</item>
+				
+				<item id="10103">
+				
+					<label>directors</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,MovieDirectors)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
+					
+				</item>
+				
+				<item id="10104">
+				
+					<label>years</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,MovieYears)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
+					
+				</item>
+				
+				<item id="10105">
+				
+					<label>genres</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,MovieGenres)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
+					
+				</item>
+				
+				<item id="10106">
+				
+					<label>studios</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,MovieStudios)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
+					
+				</item>
+				
+				<item id="10107">
+				
+					<label>sets</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,MovieSets)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
+					
+				</item>
+				
+				<item id="10108">
+				
+					<label>tags</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,MovieTags)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
+					
+				</item>
+				
+				<item id="10109">
+				
+					<label>playlists</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,special://videoplaylists/)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
+					
+				</item>
+				
+				<item id="10110">
+				
+					<label>addons</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,addons://sources/video/)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
+					
+				</item>
+				
+				<!--TV Shows-->
+				
+				<item id="10200">
+				
+					<label>title</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,TvShowTitles)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
+					
+				</item>
+				
+				<item id="10201">
+					
+					<label>new</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
+					
+				</item>
+				
+				<item id="10202">
+				
+					<label>actors</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,TvShowActors)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
+					
+				</item>
+				
+				<item id="10203">
+				
+					<label>years</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,TvShowYears)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
+					
+				</item>
+				
+				<item id="10204">
+				
+					<label>genres</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,TvShowGenres)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
+					
+				</item>
+				
+				<item id="10205">
+				
+					<label>studios</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,TvShowStudios)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
+					
+				</item>
+				
+				<item id="10206">
+				
+					<label>playlists</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,special://videoplaylists/)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
+					
+				</item>
+				
+				<item id="10207">
+				
+					<label>addons</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(Videos,addons://sources/video/)</onclick>
+					
+					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
+					
+				</item>
+				
+				<!--Music-->
+				
+				<item id="10300">
+				
+					<label>last played</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,RecentlyPlayedAlbums)</onclick>
+					
+					<visible>SubString(Container.FolderPath,musicdb)</visible>
+					
+				</item>
+				
+				<item id="10301">
+				
+					<label>new</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums)</onclick>
+					
+					<visible>SubString(Container.FolderPath,musicdb)</visible>
+					
+				</item>
+				
+				<item id="10302">
+				
+					<label>artists</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,Artists)</onclick>
+					
+					<visible>SubString(Container.FolderPath,musicdb)</visible>
+					
+				</item>
+				
+				<item id="10303">
+				
+					<label>albums</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,Albums)</onclick>
+					
+					<visible>SubString(Container.FolderPath,musicdb)</visible>
+					
+				</item>
+				
+				<item id="10304">
+				
+					<label>songs</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,Songs)</onclick>
+					
+					<visible>SubString(Container.FolderPath,musicdb)</visible>
+					
+				</item>
+				
+				<item id="10305">
+				
+					<label>years</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,Years)</onclick>
+					
+					<visible>SubString(Container.FolderPath,musicdb)</visible>
+					
+				</item>
+				
+				<item id="10306">
+				
+					<label>genres</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,Genres)</onclick>
+					
+					<visible>SubString(Container.FolderPath,musicdb)</visible>
+					
+				</item>
+				
+				<item id="10307">
+				
+					<label>top 100</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,Top100)</onclick>
+					
+					<visible>SubString(Container.FolderPath,musicdb)</visible>
+					
+				</item>
+				
+				<item id="10308">
+				
+					<label>playlists</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,special://musicplaylists/)</onclick>
+					
+					<visible>SubString(Container.FolderPath,musicdb)</visible>
+					
+				</item>
+				
+				<item id="10309">
+				
+					<label>addons</label>
+					<onclick>Dialog.Close(51)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,addons://sources/audio/)</onclick>
+					
+					<visible>SubString(Container.FolderPath,musicdb)</visible>
+					
+				</item>
+				
+			</content>	
+			
+		</control>
+		
+		<control type="image">
+		
+			<posx>130</posx>
+			<posy>90</posy>
+			<width>200</width>
+			<height>420</height>
+			<texture border="4">button_unfocus.png</texture>
+			<colordiffuse>Black</colordiffuse>
+			
+		</control>	
+	
+	</controls>
+
+</window>

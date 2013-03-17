@@ -1,0 +1,108 @@
+<includes>
+
+	<include name="Common_NextAired">
+
+		<control type="group">
+				
+			<posx>880</posx>
+			<posy>0</posy>
+			<width>400</width>
+			<height>80</height>
+			
+			<visible>!IsEmpty(Window(Home).Property(NextAired.NextDate)) + Container.Content(tvshows) + Skin.HasSetting(ShowNextAiredNotification) + !Window.IsVisible(volumebar) + !Window.IsVisible(mutebug) + !Window.IsVisible(extendedprogressdialog) + !Window.IsVisible(infodialog)</visible>
+			
+			<include>Common_Animation_Toast_Notification</include>
+			
+			<control type="image">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>400</width>
+				<height>80</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Background_Highlight</colordiffuse>
+				
+			</control>
+			
+			<control type="image">
+				
+				<posx>358</posx>
+				<posy>40</posy>
+				<width>32</width>
+				<height>32</height>
+				<texture>kai/kai_date.png</texture>
+				<aspectratio>center</aspectratio>	
+				
+			</control>
+			
+			<control type="label">
+				
+				<description>heading</description>
+				<posx>20</posx>
+				<posy>10</posy>
+				<width>320</width>
+				<height>20</height>
+				<label>new episode airing today</label>
+				<font>Kai-Header</font>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>top</aligny>
+				
+				<visible>Window(Home).Property(NextAired.Today)</visible>
+				
+			</control>
+			
+			<control type="label">
+				
+				<description>heading</description>
+				<posx>20</posx>
+				<posy>10</posy>
+				<width>320</width>
+				<height>20</height>
+				<label>new episode airing soon</label>
+				<font>Kai-Header</font>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>top</aligny>
+				
+				<visible>!Window(Home).Property(NextAired.Today)</visible>
+				
+			</control>
+
+			<control type="label">
+				
+				<description>message</description>
+				<posx>20</posx>
+				<posy>30</posy>
+				<width>320</width>
+				<height>30</height>
+				<label>$INFO[Window(Home).Property(NextAired.NextNumber)] $INFO[Window(Home).Property(NextAired.NextTitle)]</label>
+				<font>Kai-Detail</font>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>top</aligny>
+				<wrapmultiline>false</wrapmultiline>
+				
+			</control>
+			
+			<control type="label">
+				
+				<description>message</description>
+				<posx>20</posx>
+				<posy>46</posy>
+				<width>320</width>
+				<height>30</height>
+				<label>airs on $INFO[Window(Home).Property(NextAired.NextDate)] at $INFO[Window(Home).Property(NextAired.ShortTime)]</label>
+				<font>Kai-Detail</font>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>top</aligny>
+				<wrapmultiline>true</wrapmultiline>
+				
+			</control>
+			
+		</control>
+		
+	</include>
+
+</includes>	

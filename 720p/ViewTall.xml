@@ -1,0 +1,168 @@
+<includes>
+
+	<include name="ViewTall">
+	
+		<control type="group">
+		
+			<posx>60</posx>
+			<posy>0</posy>
+		
+			<visible>Control.IsVisible(57)</visible>
+			
+			<include>Common_Animation_View</include>
+		
+			<control type="label">
+					
+				<label>explore</label>
+				<include>Common_Section_Label</include>
+				
+			</control>
+		
+			<control type="fixedlist" id="57">
+					
+				<posx>0</posx>
+				<posy>20</posy>
+				<width>1500</width>
+				<height>480</height>
+				<onup condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">10000</onup>
+				<ondown condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">9000</ondown>
+				<onleft>57</onleft>
+				<onright>57</onright>
+				<viewtype label="Tall">wrap</viewtype>
+				<orientation>horizontal</orientation>
+				<pagecontrol>67</pagecontrol>
+				<focusposition>0</focusposition>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<preloaditems>2</preloaditems>
+				
+				<itemlayout width="320" height="480">
+				
+					<control type="group">
+					
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>300</width>
+						<height>440</height>
+				
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>440</height>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio>scale</aspectratio>
+							<visible>!ListItem.IsFolder</visible>
+							
+						</control>
+						
+						<control type="multiimage">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>440</height>
+							<imagepath>$INFO[ListItem.FileNameAndPath]</imagepath>
+							<aspectratio>scale</aspectratio>
+							<timeperimage>30000</timeperimage>
+							<fadetime>2000</fadetime>
+							<pauseatend>0</pauseatend>
+							<randomize>false</randomize>
+							<visible>ListItem.IsFolder</visible>
+							
+						</control>
+						
+						<control type="textbox">
+						
+							<posx>20</posx>
+							<posy>335</posy>
+							<width>260</width>
+							<height>90</height>
+							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+							<font>Menu-Tall-Large</font>
+							<textcolor>Label_Normal</textcolor>
+							<shadowcolor>00FFFFFF</shadowcolor>
+							<aligny>bottom</aligny>
+							<autoscroll>false</autoscroll>
+							<wrapmultiline>true</wrapmultiline>
+							
+						</control>
+						
+					</control>	
+					
+				</itemlayout>
+
+				<focusedlayout width="320" height="480">
+				
+					<control type="group">
+					
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>300</width>
+						<height>440</height>
+				
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>440</height>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio>scale</aspectratio>
+							<visible>!ListItem.IsFolder</visible>
+							
+						</control>
+						
+						<control type="multiimage">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>440</height>
+							<imagepath>$INFO[ListItem.FileNameAndPath]</imagepath>
+							<aspectratio>scale</aspectratio>
+							<timeperimage>30000</timeperimage>
+							<fadetime>2000</fadetime>
+							<pauseatend>0</pauseatend>
+							<randomize>false</randomize>
+							<visible>ListItem.IsFolder</visible>
+							
+						</control>
+						
+						<control type="textbox">
+						
+							<posx>20</posx>
+							<posy>335</posy>
+							<width>260</width>
+							<height>90</height>
+							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+							<font>Menu-Tall-Large</font>
+							<textcolor>Label_Normal</textcolor>
+							<shadowcolor>00FFFFFF</shadowcolor>
+							<aligny>bottom</aligny>
+							<autoscroll>false</autoscroll>
+							<wrapmultiline>true</wrapmultiline>
+							
+						</control>
+						
+					</control>	
+					
+				</focusedlayout>
+
+			</control>
+			
+			<!--Scrollbar-->
+			<control type="scrollbar" id="67">
+
+				<include>Common_Scrollbar_Horizontal</include>
+				<posy>520</posy>
+				
+				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(57).Scrolling">Conditional</animation>
+				
+			</control>
+		
+		</control>
+		
+	</include>
+
+</includes>

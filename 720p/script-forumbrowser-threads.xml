@@ -1,0 +1,652 @@
+<window>
+
+	<defaultcontrol>120</defaultcontrol>
+	
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	
+	<controls>
+	
+		<!--Background-->
+		<include>Common_ForumBrowser_Background</include>
+	
+		<!--Top Area-->
+		<include>Common_ForumBrowser_Breadcrumb</include>
+		
+		<!--Control Section-->
+		<control type="group">
+			
+			<posx>-340</posx>
+			<posy>150</posy>
+			<width>360</width>
+			<height>480</height>
+			
+			<!--Animation-->
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="400"/>
+				<effect type="slide" start="0,0" end="-1280,0" center="auto" time="400"/>
+			</animation>
+			
+			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(202) | Control.HasFocus(105)">
+				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
+			</animation>
+			
+			<control type="label">
+							
+				<posx>45</posx>
+				<posy>60</posy>
+				
+				<include>Common_Vertical_Label</include>
+				<include>Common_Animation_Vertical_Label</include>
+				
+			</control>
+			
+			<control type="grouplist" id="110">
+
+				<posx>50</posx>
+				<posy>60</posy>
+				<width>400</width>
+				<height>480</height>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<pagecontrol>9010</pagecontrol>
+				<itemgap>10</itemgap>
+				<orientation>vertical</orientation>
+				
+				<!--Previous Button-->
+				<control type="group">
+				
+					<width>400</width>
+					<height>60</height>
+					
+					<visible>Control.IsVisible(200)</visible>
+					
+					<control type="button" id="200">
+						
+						<include>Common_Control_Button</include>
+						<onup>105</onup>
+						<ondown>202</ondown>
+						<onright>120</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Control_Image</include>
+						<texture>forumbrowser/forumbrowser_back.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Control_Label</include>
+						<label>previous page</label>
+						
+					</control>
+					
+				</control>
+
+				<!--Next Button-->
+				<control type="group">
+				
+					<width>400</width>
+					<height>60</height>
+					
+					<visible>Control.IsVisible(202)</visible>
+					
+					<control type="button" id="202">
+						
+						<include>Common_Control_Button</include>
+						<onup>200</onup>
+						<ondown>105</ondown>
+						<onright>120</onright>
+					
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Control_Image</include>
+						<texture>forumbrowser/forumbrowser_next.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Control_Label</include>
+						<label>next page</label>
+						
+					</control>
+					
+				</control>
+				
+				<control type="group">
+				
+					<width>400</width>
+					<height>60</height>
+					
+					<visible>Control.IsVisible(105)</visible>
+					
+					<control type="button" id="105">
+						
+						<include>Common_Control_Button</include>
+						<onup>202</onup>
+						<ondown>200</ondown>
+						<onright>120</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Control_Image</include>
+						<texture>forumbrowser/forumbrowser_findpage.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Control_Label</include>
+						<label>$INFO[Control.GetLabel(105)]</label>
+						
+					</control>
+					
+				</control>
+				
+			</control>	
+			
+		</control>
+		
+		<!--Content Area-->
+		<control type="group">
+		
+			<posx>0</posx>
+			<posy>150</posy>
+			<width>1280</width>
+			<height>560</height>
+			
+			<!--Animation-->
+			<include>Common_Animation_Content</include>
+			
+			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(202) | Control.HasFocus(105)">
+				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
+			</animation>
+			
+			<control type="grouplist">
+		
+				<include>Common_Content_Grouplist</include>
+
+				<!--List-->
+				<control type="group">
+				
+					<width>620</width>
+					<height>480</height>
+					
+					<control type="label">
+							
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="20" max="600">auto</width>
+						<height>100</height>
+						<label>explore</label>
+						<font>Menu-Scroll</font>
+						<textcolor>Settings_Menu_Normal</textcolor>
+						<aligny>top</aligny>
+						<wrapmultiline>true</wrapmultiline>
+						<scrollspeed>0</scrollspeed>
+						
+					</control>
+					
+					<control type="list" id="120">
+							
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>600</width>
+						<height>420</height>
+						<onleft>110</onleft>
+						<onup>120</onup>
+						<ondown>120</ondown>
+						<pagecontrol>121</pagecontrol>
+						<viewtype label="List">list</viewtype>
+						<scrolltime tween="cubic" easing="out">600</scrolltime>
+						<preloaditems>2</preloaditems>
+						
+						<itemlayout width="600" height="60">
+
+							<control type="group">
+							
+								<visible>!StringCompare(ListItem.Genre,sticky) + !StringCompare(ListItem.Genre,is_forum)</visible>
+						
+								<!--Read Thread-->
+								<control type="label">
+									
+									<posx>32</posx>
+									<posy>0</posy>
+									<width min="20" max="536">auto</width>
+									<height>60</height>
+									<label>$INFO[ListItem.Label2]</label>
+									<font>Menu-List</font>
+									<textcolor>Settings_Menu_Normal</textcolor>
+									<aligny>center</aligny>
+									<scrollspeed>0</scrollspeed>
+									<visible>StringCompare(ListItem.property(unread),)</visible>
+									
+								</control>
+								
+								<!--Unread Thread-->
+								<control type="label">
+									
+									<posx>32</posx>
+									<posy>0</posy>
+									<width min="20" max="536">auto</width>
+									<height>60</height>
+									<label>[B]$INFO[ListItem.Label2][/B]</label>
+									<font>Menu-List</font>
+									<textcolor>Settings_Menu_Normal</textcolor>
+									<aligny>center</aligny>
+									<scrollspeed>0</scrollspeed>
+									<visible>StringCompare(ListItem.property(unread),unread)</visible>
+									
+								</control>
+								
+							</control>	
+							
+							<!--Sticky / Subforum-->
+							<control type="group">
+							
+								<visible>StringCompare(ListItem.Genre,sticky) | StringCompare(ListItem.Genre,is_forum)</visible>
+								
+								<control type="image">
+									
+									<posx>32</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture>forumbrowser/forumbrowser_sticky.png</texture>
+									<colordiffuse>Settings_Menu_Normal</colordiffuse>
+									<aspectratio>center</aspectratio>
+									<visible>StringCompare(ListItem.Genre,sticky)</visible>
+									
+								</control>
+								
+								<control type="image">
+									
+									<posx>32</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture>forumbrowser/forumbrowser_subforum.png</texture>
+									<colordiffuse>Settings_Menu_Normal</colordiffuse>
+									<aspectratio>center</aspectratio>
+									<visible>StringCompare(ListItem.Genre,is_forum)</visible>
+									
+								</control>
+								
+								<control type="label">
+								
+									<posx>96</posx>
+									<posy>0</posy>
+									<width min="20" max="506">auto</width>
+									<height>60</height>
+									<label>$INFO[ListItem.Label2]</label>
+									<font>Menu-List</font>
+									<textcolor>Settings_Menu_Normal</textcolor>
+									<aligny>center</aligny>
+									<scrollspeed>0</scrollspeed>
+									
+								</control>
+							
+							</control>
+							
+						</itemlayout>
+
+						<focusedlayout width="600" height="60">
+						
+							<control type="group">
+							
+								<visible>!Control.HasFocus(120)</visible>
+								
+								<control type="image">
+									
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>600</width>
+									<height>60</height>
+									<texture>colors/color_white.png</texture>
+									<colordiffuse>Settings_Background_Dark</colordiffuse>
+									
+								</control>
+							
+								<control type="group">
+							
+								<visible>!StringCompare(ListItem.Genre,sticky) + !StringCompare(ListItem.Genre,is_forum)</visible>
+								
+									<!--Read Thread-->
+									<control type="label">
+										
+										<posx>32</posx>
+										<posy>0</posy>
+										<width min="20" max="536">auto</width>
+										<height>60</height>
+										<label>$INFO[ListItem.Label2]</label>
+										<font>Menu-List</font>
+										<textcolor>Settings_Menu_Normal</textcolor>
+										<aligny>center</aligny>
+										<scrollspeed>0</scrollspeed>
+										<visible>StringCompare(ListItem.property(unread),)</visible>
+										
+									</control>
+									
+									<!--Unread Thread-->
+									<control type="label">
+										
+										<posx>32</posx>
+										<posy>0</posy>
+										<width min="20" max="536">auto</width>
+										<height>60</height>
+										<label>[B]$INFO[ListItem.Label2][/B]</label>
+										<font>Menu-List</font>
+										<textcolor>Settings_Menu_Normal</textcolor>
+										<aligny>center</aligny>
+										<scrollspeed>0</scrollspeed>
+										<visible>StringCompare(ListItem.property(unread),unread)</visible>
+										
+									</control>
+									
+								</control>	
+								
+								<!--Sticky / Subforum-->
+								<control type="group">
+								
+									<visible>StringCompare(ListItem.Genre,sticky) | StringCompare(ListItem.Genre,is_forum)</visible>
+									
+									<control type="image">
+										
+										<posx>32</posx>
+										<posy>0</posy>
+										<width>60</width>
+										<height>60</height>
+										<texture>forumbrowser/forumbrowser_sticky.png</texture>
+										<colordiffuse>Settings_Menu_Normal</colordiffuse>
+										<aspectratio>center</aspectratio>
+										<visible>StringCompare(ListItem.Genre,sticky)</visible>
+										
+									</control>
+									
+									<control type="image">
+										
+										<posx>32</posx>
+										<posy>0</posy>
+										<width>60</width>
+										<height>60</height>
+										<texture>forumbrowser/forumbrowser_subforum.png</texture>
+										<colordiffuse>Settings_Menu_Normal</colordiffuse>
+										<aspectratio>center</aspectratio>
+										<visible>StringCompare(ListItem.Genre,is_forum)</visible>
+										
+									</control>
+									
+									<control type="label">
+									
+										<posx>96</posx>
+										<posy>0</posy>
+										<width min="20" max="506">auto</width>
+										<height>60</height>
+										<label>$INFO[ListItem.Label2]</label>
+										<font>Menu-List</font>
+										<textcolor>Settings_Menu_Normal</textcolor>
+										<aligny>center</aligny>
+										<scrollspeed>0</scrollspeed>
+										
+									</control>
+								
+								</control>
+								
+							</control>
+							
+							<control type="group">
+							
+								<visible>Control.HasFocus(120)</visible>
+								
+								<control type="image">
+									
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>600</width>
+									<height>60</height>
+									<texture>colors/color_white.png</texture>
+									<colordiffuse>Background_Highlight</colordiffuse>
+									
+								</control>
+							
+								<control type="group">
+							
+								<visible>!StringCompare(ListItem.Genre,sticky) + !StringCompare(ListItem.Genre,is_forum)</visible>
+								
+									<!--Read Thread-->
+									<control type="label">
+										
+										<posx>32</posx>
+										<posy>0</posy>
+										<width min="20" max="536">auto</width>
+										<height>60</height>
+										<label>$INFO[ListItem.Label2]</label>
+										<font>Menu-List</font>
+										<textcolor>Settings_Menu_Highlight</textcolor>
+										<aligny>center</aligny>
+										<scrollspeed>0</scrollspeed>
+										<visible>StringCompare(ListItem.property(unread),)</visible>
+										
+									</control>
+									
+									<!--Unread Thread-->
+									<control type="label">
+										
+										<posx>32</posx>
+										<posy>0</posy>
+										<width min="20" max="536">auto</width>
+										<height>60</height>
+										<label>[B]$INFO[ListItem.Label2][/B]</label>
+										<font>Menu-List</font>
+										<textcolor>Settings_Menu_Highlight</textcolor>
+										<aligny>center</aligny>
+										<scrollspeed>0</scrollspeed>
+										<visible>StringCompare(ListItem.property(unread),unread)</visible>
+										
+									</control>
+									
+								</control>	
+								
+								<!--Sticky / Subforum-->
+								<control type="group">
+								
+									<visible>StringCompare(ListItem.Genre,sticky) | StringCompare(ListItem.Genre,is_forum)</visible>
+									
+									<control type="image">
+										
+										<posx>32</posx>
+										<posy>0</posy>
+										<width>60</width>
+										<height>60</height>
+										<texture>forumbrowser/forumbrowser_sticky.png</texture>
+										<colordiffuse>Settings_Menu_Highlight</colordiffuse>
+										<aspectratio>center</aspectratio>
+										<visible>StringCompare(ListItem.Genre,sticky)</visible>
+										
+									</control>
+									
+									<control type="image">
+										
+										<posx>32</posx>
+										<posy>0</posy>
+										<width>60</width>
+										<height>60</height>
+										<texture>forumbrowser/forumbrowser_subforum.png</texture>
+										<colordiffuse>Settings_Menu_Highlight</colordiffuse>
+										<aspectratio>center</aspectratio>
+										<visible>StringCompare(ListItem.Genre,is_forum)</visible>
+										
+									</control>
+									
+									<control type="label">
+									
+										<posx>96</posx>
+										<posy>0</posy>
+										<width min="20" max="506">auto</width>
+										<height>60</height>
+										<label>$INFO[ListItem.Label2]</label>
+										<font>Menu-List</font>
+										<textcolor>Settings_Menu_Highlight</textcolor>
+										<aligny>center</aligny>
+										<scrollspeed>0</scrollspeed>
+										
+									</control>
+								
+								</control>
+								
+							</control>
+						
+						</focusedlayout>
+
+					</control>
+					
+					<!--Scrollbar-->
+					<control type="scrollbar" id="121">
+						
+						<include>Common_Settings_Scrollbar_Vertical</include>
+						
+						<posx>620</posx>
+						<posy>60</posy>
+						<height>420</height>
+						
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(120).Scrolling">Conditional</animation>
+						
+					</control>
+					
+				</control>
+				
+				<control type="group">
+	
+					<width>520</width>
+					<height>490</height>
+					
+					<animation type="Conditional" condition="IsEmpty(Container(120).ListItem(0).Label)">
+						<effect type="fade" start="100" end="0" time="400"/>
+						<effect type="slide" start="0,0" end="1280,0" center="auto" time="600" tween="cubic" easing="inout"/>
+					</animation>
+					
+					<control type="image">
+										
+						<posx>180</posx>
+						<posy>-80</posy>
+						<width>400</width>
+						<height>400</height>
+						<texture>forumbrowser/forumbrowser_quotations.png</texture>
+						<colordiffuse>AAe6e6e6</colordiffuse>
+						<aspectratio>keep</aspectratio>
+						
+					</control>
+					
+					<control type="label">
+									
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="20" max="500">auto</width>
+						<height>60</height>
+						<label>$INFO[Container(120).ListItem.Label,Thread started by: ,]</label>
+						<font>ForumBrowser-Poster</font>
+						<textcolor>Settings_Menu_Normal</textcolor>
+						<aligny>center</aligny>
+						<scrollspeed>0</scrollspeed>
+						
+					</control>
+					
+					<control type="image">
+										
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>500</width>
+						<height>2</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>Settings_Menu_Normal</colordiffuse>
+						
+					</control>
+					
+					<!--Description-->
+					<control type="textbox">
+
+						<description>textarea</description>
+						<posy>40</posy>
+						<width>500</width>
+						<height>470</height>
+						<label>$INFO[Container(120).ListItem.Property(last)]</label>
+						<font>ForumBrowser-Description</font>
+						<textcolor>Settings_Menu_Normal</textcolor>
+						<aligny>top</aligny>
+						<wrapmultiline>true</wrapmultiline>
+						<shadowcolor>00FFFFFF</shadowcolor>
+						<autoscroll>false</autoscroll>
+						
+					</control>
+					
+				</control>	
+				
+			</control>
+			
+		</control>
+		
+		<!--Unused required controls-->
+		<control type="group">
+		
+			<visible>false</visible>
+			
+			<control type="image" id="101">
+				<visible>false</visible>
+			</control>
+			
+			<control type="image" id="251">
+				<visible>false</visible>
+			</control>
+			
+			<control type="image" id="351">
+				<visible>false</visible>
+			</control>
+			
+			<control type="label" id="103">
+				<visible>false</visible>
+			</control>
+			
+			<!--Progress-->
+			<control type="image" id="310">
+				<visible>false</visible>
+			</control>
+
+			<!--Stop Button-->
+			<control type="button" id="106">
+				<visible>false</visible>
+			</control>
+			
+			<!--Close Button-->
+			<control type="image" id="300">
+				<visible>false</visible>
+			</control>
+				
+			<control type="button" id="110">
+				<visible>false</visible>
+			</control>
+			
+			<!--Login Status-->
+			<control type="image" id="111">
+				<visible>false</visible>
+			</control>
+			
+			<!--Login Error-->
+			<control type="label" id="160">
+				<visible>false</visible>
+			</control>
+      
+		</control>
+		
+	</controls>
+	
+</window>

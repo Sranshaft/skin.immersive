@@ -1,0 +1,144 @@
+<window>
+	
+	<defaultcontrol always="true">120</defaultcontrol>
+	<zorder>1</zorder>
+	<type>dialog</type>
+	
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	
+	<controls>
+	
+		<control type="label" id="300">
+			<visible>false</visible>
+		</control>
+	
+		<control type="group" id="250">
+		
+			<posx>0</posx>
+			<posy>680</posy>
+			
+			<animation type="WindowOpen">
+				<effect type="slide" start="0,0" end="0,-76" time="200" delay="200"/>
+			</animation>
+			
+			<animation type="WindowClose">
+				<effect type="slide" start="0,-76" end="0,0" time="200"/>
+			</animation>
+			
+			<control type="image" id="8000">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>116</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>CC000000</colordiffuse>
+				
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="200"/>
+				</animation>
+				
+			</control>
+			
+			<control type="image" id="8001">
+				
+				<posx>1208</posx>
+				<posy>0</posy>
+				<width>72</width>
+				<height>116</height>
+				<texture>appbar/appbar_overflowdots.png</texture>
+				<aspectratio aligny="top">center</aspectratio>
+				
+			</control>
+		
+			
+			<control type='panel' id="120">
+			
+				<posx>30</posx>
+				<posy>15</posy>
+				<width>1280</width>
+				<height>116</height>
+				<onleft>120</onleft>
+				<onright>120</onright>
+				<onup>120</onup>
+				<ondown>120</ondown>
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>
+				
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="200" delay="100"/>
+				</animation>
+				
+				<itemlayout width="72" height="116">
+					
+					<control type="image">
+						
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>48</width>
+						<height>48</height>
+						<texture>$VAR[ForumBrowser_Options_Image]</texture>
+						
+					</control>
+					
+					<control type="label">
+						
+						<posx>24</posx>
+						<posy>54</posy>
+						<width>60</width>
+						<height>20</height>
+						<label>$VAR[ForumBrowser_Options_Label]</label>
+						<font>Appbar-Label-Small</font>
+						<align>center</align>
+						<aligny>top</aligny>
+						<wrapmultiline>true</wrapmultiline>
+						
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout width="72" height="116">
+					
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>48</width>
+						<height>48</height>
+						<texture>$VAR[ForumBrowser_Options_Image_Focused]</texture>
+						
+					</control>
+					
+					<control type="label">
+						
+						<posx>24</posx>
+						<posy>54</posy>
+						<width>60</width>
+						<height>20</height>
+						<label>$VAR[ForumBrowser_Options_Label]</label>
+						<font>Appbar-Label-Small</font>
+						<align>center</align>
+						<aligny>top</aligny>
+						<wrapmultiline>true</wrapmultiline>
+						
+					</control>
+					
+				</focusedlayout>
+			</control>
+		</control>
+		
+		<control type="group" id="260">
+	
+			<control type="textbox" id="310">
+				<visible>false</visible>
+			</control>
+			
+		</control>
+		
+	</controls>
+	
+</window>

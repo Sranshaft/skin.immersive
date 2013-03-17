@@ -1,0 +1,197 @@
+<!-- Foundation -->
+<window type="dialog" id="142">
+	
+	<defaultcontrol always="true">603</defaultcontrol>
+	
+	<animation type="WindowOpen">
+		<effect type="fade" start="0" end="100" time="400" />
+	</animation>
+	
+	<animation type="WindowClose">
+		<effect type="fade" start="100" end="0" time="400" delay="400" />
+	</animation>
+	
+	<onload>AlarmClock(CloseFullscreenInfo,Dialog.Close(142, force),00:30,silent)</onload>
+	
+	<controls>
+	
+		<control type="group">
+		
+			<visible>!Player.ShowCodec</visible>
+	
+			<control type="image">
+					
+				<include>Common_Dimensions</include>
+				<texture>overlays/overlay_fullscreen_top.png</texture>
+				
+			</control>
+			
+			<!--Top Area-->
+			<include>Common_Breadcrumb_Alt</include>
+			
+			<!--Information Area-->
+			<control type="group">
+			
+				<posx>1280</posx>
+				<posy>0</posy>
+				<width>400</width>
+				<height>720</height>
+				
+				<animation effect="slide" start="0,0" end="-400,0" time="400" delay="400" tween="cubic" easing="out">WindowOpen</animation>
+				<animation effect="slide" start="-400,0" end="0,0" time="400" tween="cubic" easing="out">WindowClose</animation>
+				
+				<control type="image">
+				
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>700</width>
+					<height>720</height>
+					<texture background="true">colors/color_white.png</texture>
+					<colordiffuse>FanartDiffuse</colordiffuse>
+				
+				</control>
+				
+				<control type="grouplist">
+				
+					<posx>40</posx>
+					<posy>40</posy>
+					<width>320</width>
+					<height>680</height>
+					<itemgap>10</itemgap>
+					<orientation>vertical</orientation>
+				
+					<control type="textbox">
+					
+						<width>320</width>
+						<height>106</height>
+						<label>$VAR[NowPlaying_First_Label]</label>
+						<textcolor>Label_Normal</textcolor>
+						<font>Fullscreen-Info-Large</font>
+						<aligny>top</aligny>
+						<autoscroll>false</autoscroll>
+					
+					</control>
+					
+					<control type="image">
+						
+						<width>100</width>
+						<height>22</height>
+						<texture background="true">$INFO[Player.StarRating]</texture>
+						<colordiffuse>Label_Normal</colordiffuse>
+						<aspectratio>scale</aspectratio>
+						
+					</control>
+					
+					<control type="label">
+					
+						<width>350</width>
+						<height>10</height>
+						<label>$VAR[NowPlaying_Second_Label]</label>
+						<textcolor>Label_Normal</textcolor>
+						<font>Fullscreen-Info-Small</font>
+					
+					</control>
+					
+					<control type="label">
+					
+						<width>350</width>
+						<height>16</height>
+						<label>$VAR[NowPlaying_Third_Label][/UPPERCASE]</label>
+						<textcolor>Label_Normal</textcolor>
+						<font>Fullscreen-Info-Small</font>
+						
+					</control>
+					
+					<control type="textbox">
+					
+						<width>320</width>
+						<height>380</height>
+						<label>$INFO[VideoPlayer.Plot]</label>
+						<textcolor>Label_Normal</textcolor>
+						<font>Fullscreen-Info-Normal</font>
+						<wrapmultiline>true</wrapmultiline>
+						<shadowcolor>00FFFFFF</shadowcolor>
+						<autoscroll>false</autoscroll>
+					
+					</control>
+					
+				</control>
+				
+				<control type="group">
+		
+					<posx>40</posx>
+					<posy>660</posy>
+					<width>320</width>
+					
+					<!--Current Time-->
+					<control type="label">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width min="20" max="320">auto</width>
+						<height>40</height>
+						<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
+						<textcolor>Label_Normal</textcolor>
+						<font>Fullscreen-Info-Small</font>
+					
+					</control>
+					
+					<!--Progress Bar-->
+					<control type="progress" id="12">
+					
+						<description>My first progress control</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>320</width>
+						<height>5</height>
+						<texturebg border="2">colors/color_grey.png</texturebg>
+						<lefttexture>-</lefttexture>
+						<midtexture border="2">colors/color_silver.png</midtexture>
+						<righttexture>-</righttexture>
+						<info>Player.ProgressCache</info>
+						
+					</control>
+					
+					<!--Progress Bar-->
+					<control type="progress" id="12">
+					
+						<description>My first progress control</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>320</width>
+						<height>5</height>
+						<texturebg>colors/color_transparent.png</texturebg>
+						<lefttexture>-</lefttexture>
+						<midtexture border="2">colors/color_white.png</midtexture>
+						<righttexture>-</righttexture>
+						<info>Player.Progress</info>
+						<colordiffuse>Background_Highlight</colordiffuse>
+						
+					</control>
+					
+					<control type="slider">
+
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>320</width>
+						<height>5</height>
+						<texturesliderbar border="2">colors/color_transparent.png</texturesliderbar>
+						<textureslidernib border="2">colors/color_white.png</textureslidernib>
+						<textureslidernibfocus border="2">colors/color_white.png</textureslidernibfocus>
+						<info>Player.Progress</info>
+						<action>seek</action>
+						<controloffsetx></controloffsetx>
+						<controloffsety></controloffsety>
+						<pulseonselect></pulseonselect>
+						
+					</control>
+					
+				</control>
+				
+			</control>
+			
+		</control>	
+		
+	</controls>
+
+</window>

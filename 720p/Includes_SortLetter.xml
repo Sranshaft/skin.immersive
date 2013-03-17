@@ -1,0 +1,807 @@
+<includes>
+
+	<include name="Common_SortLetter">
+	
+		<control type="image">
+		
+			<include>Common_Dimensions</include>
+			<texture background="true">colors/color_white.png</texture>
+			<colordiffuse>FanartDiffuse</colordiffuse>
+			
+			<visible>Container.Scrolling + !Control.IsVisible(50) + StringCompare(Container.SortMethod,title)</visible>
+			
+			<animation effect="fade" start="0" end="100" time="400" delay="2000" reversible="true">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
+			
+		</control>
+
+		<control type="group">
+		
+			<posx>65</posx>
+			<posy>175</posy>
+			<width>1280</width>
+			<height>110</height>
+			
+			<visible>Container.Scrolling + !Control.IsVisible(50) + StringCompare(Container.SortMethod,title)</visible>
+			
+			<animation effect="fade" start="0" end="100" time="400" delay="2000" reversible="true">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
+			
+			<control type="grouplist">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>110</height>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+
+				<!--#-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,0) | StringCompare(ListItem.SortLetter,1) | StringCompare(ListItem.SortLetter,2) | StringCompare(ListItem.SortLetter,3) | StringCompare(ListItem.SortLetter,4) | StringCompare(ListItem.SortLetter,5) | StringCompare(ListItem.SortLetter,6) | StringCompare(ListItem.SortLetter,7) | StringCompare(ListItem.SortLetter,8) | StringCompare(ListItem.SortLetter,9)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>#</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--A-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,A)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>a</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--B-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,B)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>b</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--C-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,C)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>c</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--D-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,D)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>d</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--E-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,E)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>e</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--F-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,F)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>f</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--G-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+				
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,G)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>g</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--H-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+				
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,H)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>h</label>
+						
+					</control>
+					
+				</control>
+				
+			</control>
+			
+			<control type="grouplist">
+			
+				<posx>0</posx>
+				<posy>130</posy>
+				<width>1280</width>
+				<height>110</height>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				
+				<!--I-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,I)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>i</label>
+						
+					</control>
+					
+				</control>
+
+				<!--J-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,J)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>j</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--K-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,K)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>k</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--L-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,L)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>l</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--M-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,M)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>m</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--N-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,N)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>n</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--O-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+				
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,O)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>o</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--P-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+				
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,P)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>p</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--Q-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,Q)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>q</label>
+						
+					</control>
+					
+				</control>
+				
+			</control>
+			
+			<control type="grouplist">
+			
+				<posx>0</posx>
+				<posy>260</posy>
+				<width>1280</width>
+				<height>110</height>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				
+				<!--R-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,R)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>r</label>
+						
+					</control>
+					
+				</control>
+
+				<!--S-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,S)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>s</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--T-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,T)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>t</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--U-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,U)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>u</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--V-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+					
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,V)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>v</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--W-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+				
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,W)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>w</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--X-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+				
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,X)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>x</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--Y-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+				
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,Y)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>y</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--Z-->
+				<control type="group">
+				
+					<width>110</width>
+					<height>110</height>
+				
+					<include>Common_SortLetter_Normal</include>
+				
+					<control type="image">
+				
+						<include>Common_SortLetter_Highlight</include>
+						<visible>StringCompare(ListItem.SortLetter,Z)</visible>
+						
+					</control>
+					
+					<control type="label">
+				
+						<include>Common_SortLetter_Label</include>
+						<label>z</label>
+						
+					</control>
+					
+				</control>
+				
+			</control>
+
+		</control>
+		
+	</include>
+	
+	<include name="Common_SortLetter_Alt">
+	
+		<control type="image">
+		
+			<include>Common_Dimensions</include>
+			<texture background="true">colors/color_white.png</texture>
+			<colordiffuse>FanartDiffuse</colordiffuse>
+			
+			<visible>Container.Scrolling + !Control.IsVisible(50) + !StringCompare(Container.SortMethod,title)</visible>
+			
+			<animation effect="fade" start="0" end="100" time="400" delay="2000" reversible="true">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
+			
+		</control>
+	
+		<control type="group">
+			
+			<posx>585</posx>
+			<posy>305</posy>
+			<width>110</width>
+			<height>110</height>
+			
+			<visible>Container.Scrolling + !Control.IsVisible(50) + !StringCompare(Container.SortMethod,title)</visible>
+			
+			<animation effect="fade" start="0" end="100" time="400" delay="2000" reversible="true">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
+		
+			<control type="image">
+		
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>110</width>
+				<height>110</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Background_Highlight</colordiffuse>
+				
+			</control>
+			
+			<control type="label">
+		
+				<posx>20</posx>
+				<posy>50</posy>
+				<width>110</width>
+				<height>110</height>
+				<font>SortLetter-Label</font>
+				<label>$INFO[ListItem.SortLetter]</label>
+				<align>left</align>
+				<aligny>top</aligny>
+				
+			</control>
+			
+		</control>
+
+	</include>
+	
+	<include name="Common_SortLetter_Normal">
+	
+		<control type="image">
+		
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>110</width>
+			<height>110</height>
+			<texture>colors/color_keyboard.png</texture>
+			
+		</control>	
+		
+	</include>
+	
+	<include name="Common_SortLetter_Highlight">
+	
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>110</width>
+		<height>110</height>
+		<texture>colors/color_white.png</texture>
+		<colordiffuse>Background_Highlight</colordiffuse>
+		
+	</include>
+	
+	<include name="Common_SortLetter_Label">
+	
+		<posx>20</posx>
+		<posy>50</posy>
+		<width>110</width>
+		<height>110</height>
+		<font>SortLetter-Label</font>
+		<align>left</align>
+		<aligny>top</aligny>
+		
+	</include>
+
+</includes>	

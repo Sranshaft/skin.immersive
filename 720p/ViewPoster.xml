@@ -1,0 +1,88 @@
+<includes>
+
+	<include name="ViewPoster">
+	
+		<control type="group">
+		
+			<posx>60</posx>
+			<posy>0</posy>
+		
+			<visible>Control.IsVisible(51)</visible>
+			
+			<include>Common_Animation_View</include>
+		
+			<control type="label">
+					
+				<label>explore</label>
+				<include>Common_Section_Label</include>
+				
+			</control>
+			
+			<control type="fixedlist" id="51">
+
+				<posx>0</posx>
+				<posy>20</posy>
+				<width>1500</width>
+				<height>480</height>
+				<onup condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">10000</onup>
+				<ondown condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">9000</ondown>
+				<onleft>51</onleft>
+				<onright>51</onright>
+				<viewtype label="Poster">wrap</viewtype>
+				<orientation>horizontal</orientation>
+				<pagecontrol>61</pagecontrol>
+				<focusposition>0</focusposition>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<preloaditems>2</preloaditems>
+				
+				<include>Common_Animation_HideWhenScrolling</include>
+				
+				<itemlayout width="320" height="480">
+				
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>300</width>
+						<height>440</height>
+						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio>stretch</aspectratio>
+						
+					</control>
+					
+				</itemlayout>
+
+				<focusedlayout width="640" height="480">
+				
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>40</posy>
+						<width>300</width>
+						<height>440</height>
+						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio>stretch</aspectratio>
+						
+					</control>
+					
+					<include>Common_LiveTile</include>
+					
+				</focusedlayout>
+
+			</control>
+			
+			<!--Scrollbar-->
+			<control type="scrollbar" id="61">
+				
+				<include>Common_Scrollbar_Horizontal</include>
+				<posy>520</posy>
+				
+				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(51).Scrolling">Conditional</animation>
+				
+			</control>
+		
+		</control>
+		
+	</include>
+
+</includes>
