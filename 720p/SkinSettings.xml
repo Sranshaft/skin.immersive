@@ -1042,7 +1042,7 @@
 
 			</control>
 			
-			<!--Debug Options-->
+			<!--Notification Options-->
 			<control type="grouplist" id="800">
 				
 				<description>Control Area</description>
@@ -1063,13 +1063,31 @@
 				
 					<description></description>
 					<include>Common_Settings_Label</include>
+					<label>Built-in notifications</label>
+					
+				</control>
+				
+				<control type="radiobutton" id="801">
+					
+					<description>Enable Now Watching Grid</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Show 'now watching' for videos</label>
+					<onclick>Skin.ToggleSetting(ShowNowWatchingNotification)</onclick>
+					<selected>Skin.HasSetting(ShowNowWatchingNotification)</selected>
+					
+				</control>
+				
+				<control type="label" id="851">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
 					<label>3rd party notifications</label>
 					
 				</control>
 
-				<control type="radiobutton" id="801">
+				<control type="radiobutton" id="802">
 					
-					<description>Enable Debug Grid</description>
+					<description>Enable TV Next Aired</description>
 					<include>Common_Settings_RadioButton</include>
 					<label>Show 'new episode airing soon' for TV shows</label>
 					<onclick>Skin.ToggleSetting(ShowNextAiredNotification)</onclick>
@@ -1077,7 +1095,7 @@
 					<enable>System.HasAddon(script.tv.show.next.aired)</enable>
 					
 				</control>
-
+				
 			</control>
 
 			<!--Debug Options-->

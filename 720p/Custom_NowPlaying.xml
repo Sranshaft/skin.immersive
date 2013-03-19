@@ -2,7 +2,7 @@
 
 	<zorder>2</zorder>
 	
-	<visible>Window.IsActive(fullscreenvideo)</visible>
+	<visible>Window.IsActive(fullscreenvideo) + Skin.HasSetting(ShowNowWatchingNotification)</visible>
 
 	<controls>
 	
