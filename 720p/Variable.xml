@@ -22,32 +22,6 @@
 		<value condition="!Control.IsEnabled(7)">Label_Disabled</value>
 	</variable>
 	
-	<variable name="OSD_Bookmark_ColorDiffuse">
-		<value condition="!VideoPlayer.HasMenu">Label_Normal</value>
-		<value condition="VideoPlayer.HasMenu">Label_Disabled</value>
-	</variable>
-	
-	<variable name="OSD_DVDMenu_ColorDiffuse">
-		<value condition="VideoPlayer.HasMenu">Label_Normal</value>
-		<value condition="!VideoPlayer.HasMenu">Label_Disabled</value>
-	</variable>
-	
-	<variable name="OSD_Random_Label">
-		<value condition="Playlist.IsRandom">random:[CR]on</value>
-		<value condition="!Playlist.IsRandom">random:[CR]off</value>
-	</variable>
-	
-	<variable name="OSD_PlayPause_Label">
-		<value condition="Player.Paused | Player.Forwarding | Player.Rewinding">play</value>
-		<value>pause</value>
-	</variable>
-	
-	<variable name="OSD_Random_Label">
-		<value condition="!Playlist.IsRepeatOne + !Playlist.IsRepeat">repeat:[CR]off</value>
-		<value condition="Playlist.IsRepeat">repeat:[CR]all</value>
-		<value condition="Playlist.IsRepeatOne">repeat:[CR]one</value>
-	</variable>
-	
 	<!--Breadcrumb Variables-->
 	
 	<variable name="Breadcrumb_Home_Label">
@@ -486,6 +460,34 @@
 		<value condition="VideoPlayer.Content(files) + VideoPlayer.HasMenu">home/home_dvd_small.png</value>
 	</variable>
 	
+	<!--OSD Variables-->
+	
+	<variable name="OSD_Bookmark_ColorDiffuse">
+		<value condition="!VideoPlayer.HasMenu">Label_Normal</value>
+		<value condition="VideoPlayer.HasMenu">Label_Disabled</value>
+	</variable>
+	
+	<variable name="OSD_DVDMenu_ColorDiffuse">
+		<value condition="VideoPlayer.HasMenu">Label_Normal</value>
+		<value condition="!VideoPlayer.HasMenu">Label_Disabled</value>
+	</variable>
+	
+	<variable name="OSD_Random_Label">
+		<value condition="Playlist.IsRandom">random:[CR]on</value>
+		<value condition="!Playlist.IsRandom">random:[CR]off</value>
+	</variable>
+	
+	<variable name="OSD_PlayPause_Label">
+		<value condition="Player.Paused | Player.Forwarding | Player.Rewinding">play</value>
+		<value>pause</value>
+	</variable>
+	
+	<variable name="OSD_Random_Label">
+		<value condition="!Playlist.IsRepeatOne + !Playlist.IsRepeat">repeat:[CR]off</value>
+		<value condition="Playlist.IsRepeat">repeat:[CR]all</value>
+		<value condition="Playlist.IsRepeatOne">repeat:[CR]one</value>
+	</variable>
+	
 	<!--Personalize Variables-->
 	
 	<variable name="Personalize_Overlay_Image">
@@ -513,6 +515,15 @@
 		<value condition="IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.Year]</value>
 		<value>$INFO[ListItem.Artist]</value>
 	</variable>
+	
+	<!--Select Variables-->
+	
+	<variable name="Select_Button_Image">
+		<value condition="!Control.HasFocus(5) + StringCompare(Control.GetLabel(5),$LOCALIZE[413])">appbar/appbar_edit.png</value>
+		<value condition="Control.HasFocus(5) + StringCompare(Control.GetLabel(5),$LOCALIZE[413])">appbar/appbar_edit_focus.png</value>
+		<value condition="!Control.HasFocus(5) + StringCompare(Control.GetLabel(5),OK)">appbar/appbar_okay.png</value>
+		<value condition="Control.HasFocus(5) + StringCompare(Control.GetLabel(5),OK)">appbar/appbar_okay_focus.png</value>
+	</variable>	
 	
 	<!--Slide Menu Variables-->
 	
