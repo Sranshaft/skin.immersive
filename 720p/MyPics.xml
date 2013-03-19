@@ -37,6 +37,7 @@
 				<include>ViewList</include>
 				<include>ViewThumbnail</include>
 				<include>ViewTall</include>
+				<include>ViewSquare</include>
 			
 			</control>
 			
