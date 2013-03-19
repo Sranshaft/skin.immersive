@@ -266,27 +266,6 @@
 		
 	</include>
 	
-	<include name="Common_AppBar_Filter">
-	
-		<control type="radiobutton" id="5119">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_filter_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_filter.png</texturenofocus>
-			<textureradioon>appbar/appbar_radioon.png</textureradioon>
-			<textureradiooff>-</textureradiooff>
-			<selected>Container.Filtered</selected>
-			<radiowidth>48</radiowidth>
-			<radioheight>48</radioheight>
-			<radioposx>6</radioposx>
-			<label>smart[CR]filter</label>
-			<onclick>SetFocus(50)</onclick>
-			<onclick>Filter</onclick>
-			
-		</control>
-		
-	</include>
-	
 	<include name="Common_AppBar_Flatten">
 	
 		<control type="button" id="17">
@@ -294,10 +273,7 @@
 			<include>Common_AppBar_Button</include>
 			<texturefocus>appbar/appbar_flatten_focus.png</texturefocus>
 			<texturenofocus>appbar/appbar_flatten.png</texturenofocus>
-			<radiowidth>48</radiowidth>
-			<radioheight>48</radioheight>
-			<radioposx>6</radioposx>
-			<label>flatten</label>
+			<label>20411</label>
 			
 		</control>
 		
