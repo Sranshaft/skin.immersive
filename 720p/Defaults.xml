@@ -1,8 +1,14 @@
 <includes>
 
+	<default type="edit">
+	
+		<pulseonselect>false</pulseonselect>
+		
+	</default>	
+
 	<default type="label">
 	
-	<posx>0</posx>
+		<posx>0</posx>
 		<posy>0</posy>
 		<label>-</label>
 		<height>44</height>
