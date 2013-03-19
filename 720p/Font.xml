@@ -127,8 +127,8 @@
 		<font>
 			<name>DialogInfo-Label</name>
 			<filename>SegoeWP-SemiLight.ttf</filename>
-			<size>20</size>
-			<linespacing>0.90</linespacing>
+			<size>18</size>
+			<linespacing>0.92</linespacing>
 		</font>
 		
 		<font>
@@ -142,6 +142,8 @@
 			<filename>SegoeWP-SemiLight.ttf</filename>
 			<size>16</size>
 		</font>
+		
+		<!--Dropdown Fonts-->
 		
 		<font>
 			<name>Dropdown-Label</name>

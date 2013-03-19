@@ -190,7 +190,7 @@
 							
 						<include>Common_InfoDialog_Description</include>
 						<width>340</width>
-						<height>520</height>
+						<height>512</height>
 						<label>$VAR[Info_Description]</label>
 						
 					</control>

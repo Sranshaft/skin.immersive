@@ -345,7 +345,7 @@
 							
 						<include>Common_InfoDialog_Description</include>
 						<width>340</width>
-						<height>520</height>
+						<height>512</height>
 						<label>$INFO[Container(100).ListItem.Property(Plot)]</label>
 						<visible>Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(150)</visible>
 						
@@ -355,7 +355,7 @@
 							
 						<include>Common_InfoDialog_Description</include>
 						<width>340</width>
-						<height>520</height>
+						<height>512</height>
 						<label>$INFO[Container(100).ListItem.Property(Artist_Description)]</label>
 						<visible>Control.IsVisible(160)</visible>
 						
@@ -365,7 +365,7 @@
 							
 						<include>Common_InfoDialog_Description</include>
 						<width>340</width>
-						<height>520</height>
+						<height>512</height>
 						<label>$INFO[Container(100).ListItem.Property(Album_Description)]</label>
 						<visible>Control.IsVisible(170)</visible>
 						
@@ -375,7 +375,7 @@
 							
 						<include>Common_InfoDialog_Description</include>
 						<width>340</width>
-						<height>520</height>
+						<height>512</height>
 						<label>$INFO[Container(100).ListItem.Property(Comment)]</label>
 						<visible>Control.IsVisible(180)</visible>
 						

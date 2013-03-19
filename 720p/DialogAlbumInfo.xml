@@ -450,7 +450,7 @@
 							
 						<include>Common_InfoDialog_Description</include>
 						<width>340</width>
-						<height>520</height>
+						<height>512</height>
 						<label>$VAR[Info_Description]</label>
 						
 					</control>
@@ -659,7 +659,7 @@
 						<posx>0</posx>
 						<posy>60</posy>
 						<width>540</width>
-						<height>480</height>
+						<height>496</height>
 						<onleft>9001</onleft>
 						<onright>-</onright>
 						<onup>50</onup>
@@ -669,24 +669,55 @@
 						<scrolltime tween="cubic" easing="out">600</scrolltime>
 						<preloaditems>2</preloaditems>
 						
-						<itemlayout width="540" height="60">
+						<itemlayout width="540" height="62">
 
-							<control type="label">
+							<control type="group">
 							
-								<posx>32</posx>
-								<posy>0</posy>
-								<width min="20" max="476">auto</width>
-								<height>60</height>
-								<label>$INFO[ListItem.Label]</label>
-								<font>Menu-List</font>
-								<textcolor>Label_Dark</textcolor>
-								<aligny>center</aligny>
+								<control type="label">
+								
+									<posx>62</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<label>$INFO[ListItem.TrackNumber]</label>
+									<font>Menu-List-Large</font>
+									<textcolor>Label_Dark</textcolor>
+									<align>right</align>
+									<aligny>center</aligny>
+									
+								</control>
+							
+								<control type="textbox">
+								
+									<posx>82</posx>
+									<posy>0</posy>
+									<width>480</width>
+									<height>36</height>
+									<label>$INFO[ListItem.Label]</label>
+									<font>Menu-List</font>
+									<textcolor>Label_Dark</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>82</posx>
+									<posy>30</posy>
+									<width>500</width>
+									<height>30</height>
+									<label>$INFO[ListItem.Duration]</label>
+									<font>Menu-List-Small</font>
+									<textcolor>Label_Dark</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
 								
 							</control>
 							
 						</itemlayout>
 
-						<focusedlayout width="540" height="60">
+						<focusedlayout width="540" height="62">
 						
 							<control type="group">
 							
@@ -703,16 +734,47 @@
 									
 								</control>	
 									
-								<control type="label">
-						
-									<posx>32</posx>
-									<posy>0</posy>
-									<width min="20" max="476">auto</width>
-									<height>60</height>
-									<label>$INFO[ListItem.Label]</label>
-									<font>Menu-List</font>
-									<textcolor>Label_Dark</textcolor>
-									<aligny>center</aligny>
+								<control type="group">
+								
+									<control type="label">
+									
+										<posx>62</posx>
+										<posy>0</posy>
+										<width>60</width>
+										<height>60</height>
+										<label>$INFO[ListItem.TrackNumber]</label>
+										<font>Menu-List-Large</font>
+										<textcolor>Label_Dark</textcolor>
+										<align>right</align>
+										<aligny>center</aligny>
+										
+									</control>
+								
+									<control type="textbox">
+									
+										<posx>82</posx>
+										<posy>0</posy>
+										<width>480</width>
+										<height>36</height>
+										<label>$INFO[ListItem.Label]</label>
+										<font>Menu-List</font>
+										<textcolor>Label_Dark</textcolor>
+										<aligny>top</aligny>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>82</posx>
+										<posy>30</posy>
+										<width>500</width>
+										<height>30</height>
+										<label>$INFO[ListItem.Duration]</label>
+										<font>Menu-List-Small</font>
+										<textcolor>Label_Dark</textcolor>
+										<aligny>top</aligny>
+										
+									</control>
 									
 								</control>
 								
@@ -733,17 +795,47 @@
 								
 								</control>
 							
-								<control type="label">
+								<control type="group">
 								
-									<posx>32</posx>
-									<posy>0</posy>
-									<width min="20" max="476">auto</width>
-									<height>60</height>
-									<label>$INFO[ListItem.Label]</label>
-									<font>Menu-List</font>
-									<textcolor>Label_Normal</textcolor>
-									<aligny>center</aligny>
-									<scrollspeed>0</scrollspeed>
+									<control type="label">
+									
+										<posx>62</posx>
+										<posy>0</posy>
+										<width>60</width>
+										<height>60</height>
+										<label>$INFO[ListItem.TrackNumber]</label>
+										<font>Menu-List-Large</font>
+										<textcolor>Label_Normal</textcolor>
+										<align>right</align>
+										<aligny>center</aligny>
+										
+									</control>
+								
+									<control type="textbox">
+									
+										<posx>82</posx>
+										<posy>0</posy>
+										<width>480</width>
+										<height>36</height>
+										<label>$INFO[ListItem.Label]</label>
+										<font>Menu-List</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										
+									</control>
+									
+									<control type="textbox">
+									
+										<posx>82</posx>
+										<posy>30</posy>
+										<width>500</width>
+										<height>30</height>
+										<label>$INFO[ListItem.Duration]</label>
+										<font>Menu-List-Small</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										
+									</control>
 									
 								</control>
 								
