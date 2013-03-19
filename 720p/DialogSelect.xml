@@ -65,18 +65,16 @@
 				
 			</control>
 			
-			<control type="label" id="2">
+			<control type="label" id="20">
 								
 				<posx>32</posx>
 				<posy>60</posy>
 				<width min="20" max="1216">auto</width>
 				<height>30</height>
-				<label>$INFO[Control.GetLabel(2)] items</label>
+				<label>$INFO[Container(3).NumItems] items</label>
 				<font>Select-Small</font>
 				<textcolor>Label_Normal</textcolor>
 				<aligny>top</aligny>
-				
-				<visible>!IsEmpty(Control.GetLabel(2))</visible>
 				
 			</control>
 	
@@ -88,6 +86,7 @@
 				<height>600</height>
 				<onup>3</onup>
 				<ondown>3</ondown>
+				<onright>5</onright>
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="List">list</viewtype>
 				<scrolltime tween="cubic" easing="out">600</scrolltime>
@@ -143,7 +142,7 @@
 				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(3).Scrolling">Conditional</animation>
 				
 			</control>
-
+			
 		</control>	
 			
 		<control type="group">
@@ -350,7 +349,6 @@
 		
 		<control type="label" id="2">
 			<visible>false</visible>
-			<label>-</label>
 		</control>
 		
 	</controls>
