@@ -114,20 +114,55 @@
 						<width>300</width>
 						<height>40</height>
 					
+						<visible>Player.HasMedia</visible>
+					
 						<!--Progress Bar-->
 						<control type="progress" id="12">
-							
+						
+							<description>My first progress control</description>
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>300</width>
 							<height>5</height>
-							<texturebg>colors/color_black.png</texturebg>
+							<texturebg border="2">colors/color_grey.png</texturebg>
 							<lefttexture>-</lefttexture>
-							<midtexture>colors/color_white.png</midtexture>
+							<midtexture border="2">colors/color_silver.png</midtexture>
+							<righttexture>-</righttexture>
+							<info>Player.ProgressCache</info>
+							
+						</control>
+						
+						<!--Progress Bar-->
+						<control type="progress" id="12">
+						
+							<description>My first progress control</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>5</height>
+							<texturebg border="2">colors/color_transparent.png</texturebg>
+							<lefttexture>-</lefttexture>
+							<midtexture border="2">colors/color_white.png</midtexture>
 							<righttexture>-</righttexture>
 							<info>Player.Progress</info>
+							<colordiffuse>Background_Highlight</colordiffuse>
 							
-							<visible>Player.HasMedia</visible>
+						</control>
+						
+						<control type="slider">
+
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>5</height>
+							<texturesliderbar border="2">colors/color_transparent.png</texturesliderbar>
+							<textureslidernib border="2">colors/color_white.png</textureslidernib>
+							<textureslidernibfocus border="2">colors/color_white.png</textureslidernibfocus>
+							<info>Player.Progress</info>
+							<action>seek</action>
+							<controloffsetx></controloffsetx>
+							<controloffsety></controloffsety>
+							<pulseonselect></pulseonselect>
 							
 						</control>
 					
@@ -242,7 +277,7 @@
 						<width>400</width>
 						<height>480</height>
 						<onleft>9000</onleft>
-						<onright>69</onright>
+						<onright>9000</onright>
 						<onup>59</onup>
 						<ondown>59</ondown>
 						<pagecontrol>69</pagecontrol>
@@ -322,7 +357,6 @@
 								<posy>0</posy>
 								<width>400</width>
 								<height>60</height>
-								<texture>colors/color_white.png</texture>
 								<texture background="true">colors/color_keyboard.png</texture>
 								<visible>!Control.HasFocus(50)</visible>
 								
@@ -461,7 +495,7 @@
 			
 			</control>
 			
-			<include>Common_SlideMenu</include>
+			<include>Common_AppBar</include>
 			
 		</control>	
 
