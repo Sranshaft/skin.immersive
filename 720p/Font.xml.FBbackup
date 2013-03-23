@@ -4,29 +4,7 @@
 
 		<!--Appbar Fonts-->
 		
-				<!-- Forum Browser Fonts Mod -->
-	 	<font>
-			<name>ForumBrowser-font10</name>
-			<filename>ForumBrowser-DejaVuSans.ttf</filename>
-			<size>12</size>
-		</font>
-	 	<font>
-			<name>ForumBrowser-font12</name>
-			<filename>ForumBrowser-DejaVuSans.ttf</filename>
-			<size>16</size>
-		</font>
 		<font>
-			<name>ForumBrowser-font13</name>
-			<filename>ForumBrowser-DejaVuSans.ttf</filename>
-			<size>20</size>
-		</font>
-		<font>
-			<name>ForumBrowser-font30</name>
-			<filename>ForumBrowser-DejaVuSans.ttf</filename>
-			<size>30</size>
-		</font>
-
-<font>
 			<name>Appbar-Label</name>
 			<filename>SegoeWP-Bold.ttf</filename>
 			<size>22</size>

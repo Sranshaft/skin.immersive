@@ -33,7 +33,7 @@
 				<effect type="slide" start="0,0" end="-1280,0" center="auto" time="400"/>
 			</animation>
 			
-			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203)">
+			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204)">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
@@ -69,7 +69,7 @@
 					<control type="button" id="200">
 						
 						<include>Common_Control_Button</include>
-						<onup>203</onup>
+						<onup>204</onup>
 						<ondown>201</ondown>
 						<onright>120</onright>
 						
@@ -169,7 +169,7 @@
 					
 						<include>Common_Control_Button</include>
 						<onup>202</onup>
-						<ondown>200</ondown>
+						<ondown>204</ondown>
 						<onright>120</onright>
 						
 					</control>
@@ -185,6 +185,40 @@
 					
 						<include>Common_Control_Label</include>
 						<label>$LOCALIZE[SCRIPT3009]</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--Search Button-->
+				<control type="group">
+				
+					<width>400</width>
+					<height>60</height>
+					
+					<visible>Control.IsEnabled(204)</visible>
+	  
+					<control type="button" id="204">
+					
+						<include>Common_Control_Button</include>
+						<onup>203</onup>
+						<ondown>200</ondown>
+						<onright>120</onright>
+						<onclick>Control.SetFocus(205)</onclick>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Control_Image</include>
+						<texture>forumbrowser/forumbrowser_search.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Control_Label</include>
+						<label>$LOCALIZE[SCRIPT3016]</label>
 						
 					</control>
 					
@@ -205,7 +239,7 @@
 			<!--Animation-->
 			<include>Common_Animation_Content</include>
 			
-			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203)">
+			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204)">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
@@ -531,6 +565,221 @@
 					</control>
 					
 				</control>	
+				
+			</control>
+			
+		</control>
+		
+		<!--Search Dialog-->
+		<control type="group" id="198">
+			
+			<posx>0</posx>
+			<posy>0</posy>
+			
+			<animation type="Conditional" condition="Control.HasFocus(205) | Control.HasFocus(206) | Control.HasFocus(207)" reversible="true">
+				<effect type="fade" start="0" end="100" time="400" delay="200" />
+				<effect type="slide" start="0,720" end="0,360" time="400" delay="200" tween="cubic" easing="out" />
+			</animation>
+			
+			<animation type="Conditional" condition="!Control.HasFocus(205) + !Control.HasFocus(206) + !Control.HasFocus(207)" reversible="true">
+				<effect type="fade" start="100" end="0" time="400" delay="200" />
+				<effect type="slide" start="0,360" end="0,720" time="400" delay="200" tween="cubic" easing="out" />
+			</animation>
+			
+			<control type="image">
+			
+				<include>Common_Dimensions</include>
+				<texture>colors/color_keyboard_dark.png</texture>
+				
+			</control>	
+			
+			<control type="button" id="8001">
+				
+				<posx>1208</posx>
+				<posy>0</posy>
+				<width>72</width>
+				<height>72</height>
+				<texturefocus>appbar/appbar_overflowdots.png</texturefocus>
+				<texturenofocus>appbar/appbar_overflowdots.png</texturenofocus>
+				<colordiffuse>Label_Normal</colordiffuse>
+				<aspectratio aligny="top">center</aspectratio>
+				
+			</control>
+			
+			<control type="label">
+								
+				<posx>32</posx>
+				<posy>20</posy>
+				<width min="20" max="1216">auto</width>
+				<height>30</height>
+				<label>Search</label>
+				<font>Select-Large</font>
+				<textcolor>Label_Normal</textcolor>
+				<aligny>top</aligny>
+				
+			</control>
+			
+			<control type="grouplist" id="199">
+						
+				<posx>0</posx>
+				<posy>90</posy>
+				<width>1240</width>
+				<height>600</height>
+				<onup>199</onup>
+				<ondown>199</ondown>
+				<onright>120</onright>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				
+				<control type="button" id="205">
+					
+					<width>1216</width>
+					<height>50</height>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$LOCALIZE[SCRIPT3017]</label>
+					<font>Menu-List</font>
+					<textcolor>Label_Normal</textcolor>
+					<selectedcolor>Background_Highlight</selectedcolor>
+					<aligny>center</aligny>
+					
+				</control>
+				
+				<control type="button" id="206">
+					
+					<width>1216</width>
+					<height>50</height>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$LOCALIZE[SCRIPT3018]</label>
+					<font>Menu-List</font>
+					<textcolor>Label_Normal</textcolor>
+					<selectedcolor>Background_Highlight</selectedcolor>
+					<aligny>center</aligny>
+					
+				</control>
+				
+				<control type="button" id="207">
+					
+					<width>1216</width>
+					<height>50</height>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$LOCALIZE[SCRIPT3019]</label>
+					<font>Menu-List</font>
+					<textcolor>Label_Normal</textcolor>
+					<selectedcolor>Background_Highlight</selectedcolor>
+					<aligny>center</aligny>
+					
+				</control>
+
+			</control>
+			
+		</control>
+		
+		<!--Picture-in-Picture Section-->
+		<control type="group">
+			
+			<posx>0</posx>
+			<posy>604</posy>
+			
+			<visible>Player.Playing + Player.HasVideo + !StringCompare(Window(10000).Property(ForumBrowser_hidePNP),1)</visible>
+			
+			<animation effect="slide" start="0,0" end="0,-116" time="200" reversible="true">Visible</animation>
+			
+			<control type="image">
+				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>116</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>FanartDiffuse</colordiffuse>
+				
+			</control>
+			
+			<!--Now Playing (Info)-->
+			<control type="group">
+			
+				<posx>642</posx>
+				<posy>0</posy>
+				
+				<control type="image">
+				
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>208</width>
+					<height>116</height>
+					<texture>colors/color_black.png</texture>
+					
+				</control>
+				
+				<control type="videowindow">
+
+					<description>PIP</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>208</width>
+					<height>116</height>
+					
+				</control>
+				
+				<!--Player Info-->
+				<control type="grouplist">
+				
+					<posx>228</posx>
+					<posy>12</posy>
+					<width>500</width>
+					<height>116</height>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
+					<align>top</align>
+				
+					<control type="label">
+					
+						<width>500</width>
+						<height>32</height>
+						<label>$VAR[NowPlaying_First_Label]</label>
+						<font>Appbar-Label</font>
+						<textcolor>Label_Normal</textcolor>
+						<aligny>top</aligny>
+					
+					</control>
+					
+					<control type="label">
+					
+						<width>500</width>
+						<height>16</height>
+						<label>[UPPERCASE]$VAR[NowPlaying_Second_Label][/UPPERCASE]</label>
+						<font>Appbar-Label-Small</font>
+						<textcolor>Label_Normal</textcolor>
+						
+					</control>
+					
+					<control type="label">
+					
+						<width>500</width>
+						<height>16</height>
+						<label>[UPPERCASE]$VAR[NowPlaying_Third_Label][/UPPERCASE]</label>
+						<font>Appbar-Label-Small</font>
+						<textcolor>Label_Normal</textcolor>
+						
+					</control>
+					
+					<!--Current Time-->
+					<control type="label">
+					
+						<width>500</width>
+						<height>30</height>
+						<label>[B]$INFO[Player.Time] / $INFO[Player.Duration][/B]</label>
+						<font>Appbar-Label-Small</font>
+						<textcolor>Label_Normal</textcolor>
+						<aligny>center</aligny>
+					
+					</control>
+					
+				</control>
 				
 			</control>
 			
