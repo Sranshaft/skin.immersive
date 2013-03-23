@@ -482,7 +482,7 @@
 		<value>pause</value>
 	</variable>
 	
-	<variable name="OSD_Random_Label">
+	<variable name="OSD_Repeat_Label">
 		<value condition="!Playlist.IsRepeatOne + !Playlist.IsRepeat">repeat:[CR]off</value>
 		<value condition="Playlist.IsRepeat">repeat:[CR]all</value>
 		<value condition="Playlist.IsRepeatOne">repeat:[CR]one</value>

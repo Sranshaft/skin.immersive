@@ -161,7 +161,7 @@
 					<include>Common_AppBar_Button</include>
 					<texturefocus>playercontrols/playercontrol_repeat_focus.png</texturefocus>
 					<texturenofocus>playercontrols/playercontrol_repeat.png</texturenofocus>
-					<label>$VAR[OSD_Random_Label]</label>
+					<label>$VAR[OSD_Repeat_Label]</label>
 					<onclick>playercontrol(repeat)</onclick>
 					
 				</control>
