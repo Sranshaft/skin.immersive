@@ -230,7 +230,7 @@
 					<control type="textbox">
 					
 						<width min="20" max="360">auto</width>
-						<height>260</height>
+						<height>268</height>
 						<label>$VAR[ExtendedList_Plot]</label>
 						<font>Menu-Grid-Details</font>
 						<textcolor>Label_Dark</textcolor>
