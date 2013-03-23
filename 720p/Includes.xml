@@ -21,7 +21,6 @@
 	<include file="Includes_Home.xml" />
 	<include file="Includes_LiveTile.xml" />
 	<include file="Includes_NextAired.xml" />
-	<include file="Includes_SlideMenu.xml" />
 	<include file="Includes_SortLetter.xml" />
 	<include file="Includes_Splash.xml" />
 	

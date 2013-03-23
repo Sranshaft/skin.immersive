@@ -63,10 +63,12 @@
 				<!--Windows-->
 				<include condition="StringCompare(Window.Property(xmlfile),AddonBrowser.xml)">AppBar_AddonBrowser</include>
 				<include condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml)">AppBar_MyMusicNav</include>
+				<include condition="StringCompare(Window.Property(xmlfile),MyMusicPlaylist.xml)">AppBar_MyMusicPlaylist</include>
 				<include condition="StringCompare(Window.Property(xmlfile),MyMusicSongs.xml)">AppBar_MyMusicSongs</include>
 				<include condition="StringCompare(Window.Property(xmlfile),MyPics.xml)">AppBar_MyPics</include>
 				<include condition="StringCompare(Window.Property(xmlfile),MyPrograms.xml)">AppBar_MyPrograms</include>
 				<include condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml)">AppBar_MyVideoNav</include>
+				<include condition="StringCompare(Window.Property(xmlfile),MyVideoPlaylist.xml)">AppBar_MyVideoPlaylist</include>
 				<include condition="StringCompare(Window.Property(xmlfile),MyWeather.xml)">AppBar_MyWeather</include>
 				
 			</control>
@@ -212,6 +214,99 @@
 		<!--Search-->
 		<include>Common_AppBar_Search</include>
 		
+	</include>
+	
+	<!--Appbar for MyMusicPlaylist.xml-->
+	<include name="AppBar_MyMusicPlaylist">
+	
+		<!--Save Button-->
+		<control type="button" id="21">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_save_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_save.png</texturenofocus>
+			<label>save[CR]playlist</label>
+			
+		</control>
+		
+		<!--Clear Button-->
+		<control type="button" id="22">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_clear_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_clear.png</texturenofocus>
+			<label>clear[CR]playlist</label>
+			
+		</control>
+		
+		<!--Divider-->
+		<control type="image" id="9150">
+			<include>Common_AppBar_Divider</include>
+		</control>
+		
+		<!--Random Button-->
+		<control type="radiobutton" id="400">
+	
+			<include>Common_AppBar_Button</include>
+			<texturefocus>playercontrols/playercontrol_shuffle_focus.png</texturefocus>
+			<texturenofocus>playercontrols/playercontrol_shuffle.png</texturenofocus>
+			<textureradioon>appbar/appbar_radioon.png</textureradioon>
+			<textureradiooff>-</textureradiooff>
+			<radiowidth>48</radiowidth>
+			<radioheight>48</radioheight>
+			<radioposx>6</radioposx>
+			<label>$VAR[OSD_Random_Label]</label>
+			<onclick>playercontrol(random)</onclick>
+			
+		</control>
+		
+		<!--Skip Previous Button-->
+		<control type="button" id="401">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>playercontrols/playercontrol_skipback_focus.png</texturefocus>
+			<texturenofocus>playercontrols/playercontrol_skipback.png</texturenofocus>
+			<label>skip[CR]previous</label>
+			<onclick>playercontrol(previous)</onclick>
+			
+		</control>
+		
+		<!--Play/Pause Button-->
+		<control type="togglebutton" id="403">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>playercontrols/playercontrol_pause_focus.png</texturefocus>
+			<texturenofocus>playercontrols/playercontrol_pause.png</texturenofocus>
+			<alttexturefocus>playercontrols/playercontrol_play_focus.png</alttexturefocus>
+			<alttexturenofocus>playercontrols/playercontrol_play.png</alttexturenofocus>
+			<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+			<label>$VAR[OSD_PlayPause_Label]</label>
+			<onclick>playercontrol(play)</onclick>
+			
+		</control>
+		
+		<!--Skip Next Button-->
+		<control type="button" id="406">
+				
+			<include>Common_AppBar_Button</include>
+			<texturefocus>playercontrols/playercontrol_skipnext_focus.png</texturefocus>
+			<texturenofocus>playercontrols/playercontrol_skipnext.png</texturenofocus>
+			<label>skip[CR]next</label>
+			<onclick>playercontrol(next)</onclick>
+			
+		</control>
+		
+		<!--Repeat Button-->
+		<control type="button" id="407">
+				
+			<include>Common_AppBar_Button</include>
+			<texturefocus>playercontrols/playercontrol_repeat_focus.png</texturefocus>
+			<texturenofocus>playercontrols/playercontrol_repeat.png</texturenofocus>
+			<label>$VAR[OSD_Repeat_Label]</label>
+			<onclick>playercontrol(repeat)</onclick>
+			
+		</control>
+	
 	</include>
 	
 	<!--Appbar for MyMusicNav.xml-->
@@ -415,7 +510,7 @@
 		<include>Common_AppBar_SortDirection</include>
 		
 		<!--Divider-->
-		<control type="image" id="9150">
+		<control type="image" id="9151">
 			<include>Common_AppBar_Divider</include>
 		</control>	
 		
@@ -550,6 +645,99 @@
 		<!--Search-->
 		<include>Common_AppBar_Search</include>
 		
+	</include>
+	
+	<!--Appbar for MyVideoPlaylist.xml-->
+	<include name="AppBar_MyVideoPlaylist">
+	
+		<!--Save Button-->
+		<control type="button" id="21">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_save_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_save.png</texturenofocus>
+			<label>save[CR]playlist</label>
+			
+		</control>
+		
+		<!--Clear Button-->
+		<control type="button" id="22">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_clear_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_clear.png</texturenofocus>
+			<label>clear[CR]playlist</label>
+			
+		</control>
+		
+		<!--Divider-->
+		<control type="image" id="9150">
+			<include>Common_AppBar_Divider</include>
+		</control>
+		
+		<!--Random Button-->
+		<control type="radiobutton" id="400">
+	
+			<include>Common_AppBar_Button</include>
+			<texturefocus>playercontrols/playercontrol_shuffle_focus.png</texturefocus>
+			<texturenofocus>playercontrols/playercontrol_shuffle.png</texturenofocus>
+			<textureradioon>appbar/appbar_radioon.png</textureradioon>
+			<textureradiooff>-</textureradiooff>
+			<radiowidth>48</radiowidth>
+			<radioheight>48</radioheight>
+			<radioposx>6</radioposx>
+			<label>$VAR[OSD_Random_Label]</label>
+			<onclick>playercontrol(random)</onclick>
+			
+		</control>
+		
+		<!--Skip Previous Button-->
+		<control type="button" id="401">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>playercontrols/playercontrol_skipback_focus.png</texturefocus>
+			<texturenofocus>playercontrols/playercontrol_skipback.png</texturenofocus>
+			<label>skip[CR]previous</label>
+			<onclick>playercontrol(previous)</onclick>
+			
+		</control>
+		
+		<!--Play/Pause Button-->
+		<control type="togglebutton" id="403">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>playercontrols/playercontrol_pause_focus.png</texturefocus>
+			<texturenofocus>playercontrols/playercontrol_pause.png</texturenofocus>
+			<alttexturefocus>playercontrols/playercontrol_play_focus.png</alttexturefocus>
+			<alttexturenofocus>playercontrols/playercontrol_play.png</alttexturenofocus>
+			<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+			<label>$VAR[OSD_PlayPause_Label]</label>
+			<onclick>playercontrol(play)</onclick>
+			
+		</control>
+		
+		<!--Skip Next Button-->
+		<control type="button" id="406">
+				
+			<include>Common_AppBar_Button</include>
+			<texturefocus>playercontrols/playercontrol_skipnext_focus.png</texturefocus>
+			<texturenofocus>playercontrols/playercontrol_skipnext.png</texturenofocus>
+			<label>skip[CR]next</label>
+			<onclick>playercontrol(next)</onclick>
+			
+		</control>
+		
+		<!--Repeat Button-->
+		<control type="button" id="407">
+				
+			<include>Common_AppBar_Button</include>
+			<texturefocus>playercontrols/playercontrol_repeat_focus.png</texturefocus>
+			<texturenofocus>playercontrols/playercontrol_repeat.png</texturenofocus>
+			<label>$VAR[OSD_Repeat_Label]</label>
+			<onclick>playercontrol(repeat)</onclick>
+			
+		</control>
+	
 	</include>
 	
 	<!--AppBar for MyWeather.xml-->
