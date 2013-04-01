@@ -797,6 +797,8 @@
 			<texture background="true">colors/color_white.png</texture>
 			<colordiffuse>FanartDiffuse</colordiffuse>
 			
+			<include>Common_Animation_Window_Dark</include>
+			
 		</control>
 	
 		<control type="image">
@@ -916,6 +918,37 @@
 		<textoffsetx>32</textoffsetx>
 		<align>left</align>
 		<aligny>center</aligny>
+		
+	</include>
+	
+	<include name="Common_ContextMenu_Header">
+	
+		<posx>80</posx>
+		<posy>22</posy>
+		<width>420</width>
+		<height>32</height>
+		<font>Settings-Menu-Header</font>
+		<textcolor>Label_Normal</textcolor>
+		<aligny>top</aligny>
+		
+	</include>
+
+	<include name="Common_ContextMenu_Header_Back">
+	
+		<control type="button">
+					
+			<posx>30</posx>
+			<posy>30</posy>
+			<posy>60</posy>
+			<width>32</width>
+			<height>32</height>
+			<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
+			<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>Label_Normal</colordiffuse>
+			<onclick>back</onclick>
+			
+		</control>
 		
 	</include>
 	
@@ -2043,6 +2076,37 @@
 			
 	</include>
 	
+	<include name="Common_Settings_Header">
+	
+		<posx>80</posx>
+		<posy>22</posy>
+		<width>420</width>
+		<height>32</height>
+		<font>Settings-Menu-Header</font>
+		<textcolor>Settings_Header</textcolor>
+		<aligny>top</aligny>
+		
+	</include>
+
+	<include name="Common_Settings_Header_Back">
+	
+		<control type="button">
+					
+			<posx>30</posx>
+			<posy>30</posy>
+			<posy>60</posy>
+			<width>32</width>
+			<height>32</height>
+			<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
+			<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>Settings_Menu_Normal</colordiffuse>
+			<onclick>back</onclick>
+			
+		</control>
+		
+	</include>	
+	
 	<include name="Common_Settings_Label">
 	
 		<width>520</width>
@@ -2070,7 +2134,7 @@
 		<textcolor>Settings_Label</textcolor>
 		<focusedcolor>Settings_Label_Highlight</focusedcolor>
 		<disabledcolor>Settings_Label_Disabled</disabledcolor>
-		<textoffsetx>60</textoffsetx>
+		<textoffsetx>80</textoffsetx>
 		<align>left</align>
 		<aligny>center</aligny>
 	
@@ -2080,8 +2144,8 @@
 	
 		<posx>0</posx>
 		<posy>0</posy>
-		<width>690</width>
-		<height>370</height>
+		<width>500</width>
+		<height>280</height>
 		<aspectratio>stretch</aspectratio>
 		
 	</include>	
@@ -2529,17 +2593,17 @@
 						
 			<posx>0</posx>
 			<posy>0</posy>
-			<width>758</width>
-			<height>140</height>
+			<width>500</width>
+			<height>86</height>
 			<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Art(banner)]</texture>
-			<aspectratio>stretch</aspectratio>
+			<aspectratio aligny="top">scale</aspectratio>
 			
 		</control>
 		
 		<control type="group">
 						
 			<posx>0</posx>
-			<posy>108</posy>
+			<posy>54</posy>
 			<width>32</width>
 			<height>32</height>
 
@@ -2549,54 +2613,50 @@
 		
 		<control type="textbox">
 			
-			<posx>20</posx>
-			<posy>145</posy>
-			<width>758</width>
-			<height>34</height>
+			<posx>10</posx>
+			<posy>88</posy>
+			<width>400</width>
+			<height>24</height>
 			<label>$INFO[ListItem.TVShowTitle]</label>
-			<font>Menu-Details-Header</font>
+			<font>Menu-Banner-Header</font>
 			<textcolor>Label_Normal</textcolor>
 			<aligny>top</aligny>
-			<wrapmultiline>true</wrapmultiline>
-			<autoscroll>0</autoscroll>
 			
 		</control>
 		
 		<control type="textbox">
 			
-			<posx>20</posx>
-			<posy>175</posy>
-			<width>500</width>
+			<posx>10</posx>
+			<posy>110</posy>
+			<width>400</width>
 			<height>24</height>
 			<label>$INFO[ListItem.Studio]</label>
 			<font>Menu-Details</font>
 			<textcolor>Label_Normal</textcolor>
 			<aligny>top</aligny>
-			<autoscroll>0</autoscroll>
 			
 		</control>
 		
 		<control type="textbox">
 			
-			<posx>-20</posx>
-			<posy>175</posy>
-			<width>758</width>
+			<posx>10</posx>
+			<posy>110</posy>
+			<width>480</width>
 			<height>24</height>
 			<label>$INFO[ListItem.Property(TotalEpisodes),, Episodes]</label>
 			<font>Menu-Details</font>
 			<textcolor>Label_Normal</textcolor>
 			<align>right</align>
 			<aligny>top</aligny>
-			<autoscroll>0</autoscroll>
 			
 		</control>
 		
 		<control type="image">
 			
-			<posx>612</posx>
-			<posy>152</posy>
+			<posx>362</posx>
+			<posy>92</posy>
 			<width>128</width>
-			<height>34</height>
+			<height>24</height>
 			<texture background="true">$INFO[ListItem.StarRating]</texture>
 			<colordiffuse>Label_Normal</colordiffuse>
 			<aspectratio align="right">keep</aspectratio>

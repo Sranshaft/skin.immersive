@@ -4,29 +4,7 @@
 
 		<!--Appbar Fonts-->
 		
-				<!-- Forum Browser Fonts Mod -->
-	 	<font>
-			<name>ForumBrowser-font10</name>
-			<filename>ForumBrowser-DejaVuSans.ttf</filename>
-			<size>12</size>
-		</font>
-	 	<font>
-			<name>ForumBrowser-font12</name>
-			<filename>ForumBrowser-DejaVuSans.ttf</filename>
-			<size>16</size>
-		</font>
 		<font>
-			<name>ForumBrowser-font13</name>
-			<filename>ForumBrowser-DejaVuSans.ttf</filename>
-			<size>20</size>
-		</font>
-		<font>
-			<name>ForumBrowser-font30</name>
-			<filename>ForumBrowser-DejaVuSans.ttf</filename>
-			<size>30</size>
-		</font>
-
-<font>
 			<name>Appbar-Label</name>
 			<filename>SegoeWP-Bold.ttf</filename>
 			<size>22</size>
@@ -371,6 +349,14 @@
 		</font>
 		
 		<font>
+			<name>Menu-Banner-Header</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+			<size>20</size>
+		</font>
+		
+		<font>
 			<name>Menu-Details-Header</name>
 			<filename>SegoeWP-Black.ttf</filename>
 			<style>uppercase</style>
@@ -697,7 +683,7 @@
 		<font>
 			<name>Settings-Menu-Header</name>
 			<filename>SegoeWP-SemiLight.ttf</filename>
-			<size>48</size>
+			<size>36</size>
 		</font>
 		
 		<font>
@@ -1063,6 +1049,7 @@
 			<filename>Arial.ttf</filename>
 			<size>20</size>
 		</font>
-
+		
 	</fontset>
+	
 </fonts>

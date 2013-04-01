@@ -36,12 +36,12 @@
 				
 				<include>Common_Animation_HideWhenScrolling</include>
 				
-				<itemlayout width="778" height="230">
+				<itemlayout width="520" height="160">
 				
 					<control type="image">
 						
-						<width>758</width>
-						<height>210</height>
+						<width>500</width>
+						<height>140</height>
 						<texture border="2">colors/color_white.png</texture>
 						<colordiffuse>FanartDiffuse</colordiffuse>
 						
@@ -51,12 +51,12 @@
 					
 				</itemlayout>
 
-				<focusedlayout width="778" height="230">
+				<focusedlayout width="520" height="160">
 				
 					<control type="image">
 						
-						<width>758</width>
-						<height>210</height>
+						<width>500</width>
+						<height>140</height>
 						<texture border="2">colors/color_white.png</texture>
 						<colordiffuse>Background_Highlight</colordiffuse>
 						
