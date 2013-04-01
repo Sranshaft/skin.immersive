@@ -13,17 +13,13 @@
 		
 		<!--Menu-->
 		<control type="group">
+		
+			<include>Common_Settings_Header_Back</include>
 			
 			<control type="label">
 	
-				<posx>60</posx>
-				<posy>22</posy>
-				<width>420</width>
-				<height>32</height>
+				<include>Common_Settings_Header</include>
 				<label>Sources</label>
-				<font>Settings-Menu-Header</font>
-				<textcolor>Settings_Header</textcolor>
-				<aligny>top</aligny>
 				
 			</control>
 		
@@ -119,6 +115,8 @@
 			<control type="group" id="100">
 			
 				<visible>Container(98).HasFocus(1)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
 				
 				<control type="label" id="0">
 				
@@ -369,6 +367,8 @@
 				<onleft>98</onleft>
 				<orientation>vertical</orientation>
 				<visible>Container(98).HasFocus(2)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
 					
 				<control type="label" id="0">
 					

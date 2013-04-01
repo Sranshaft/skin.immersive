@@ -12,17 +12,13 @@
 		
 		<!--Menu-->
 		<control type="group">
+		
+			<include>Common_Settings_Header_Back</include>
 			
 			<control type="label">
 	
-				<posx>60</posx>
-				<posy>22</posy>
-				<width>420</width>
-				<height>32</height>
+				<include>Common_Settings_Header</include>
 				<label>Personalize</label>
-				<font>Settings-Menu-Header</font>
-				<textcolor>Settings_Header</textcolor>
-				<aligny>top</aligny>
 				
 			</control>
 			
@@ -156,6 +152,7 @@
 			<width>540</width>
 			<height>480</height>
 			
+			<!--Home Options-->
 			<control type="grouplist" id="100">
 			
 				<description>Control Area</description>
@@ -171,6 +168,8 @@
 				<orientation>vertical</orientation>
 				<pagecontrol>81</pagecontrol>
 				<visible>Container(98).HasFocus(1)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
 				
 				<control type="label" id="150">
 				
@@ -400,96 +399,9 @@
 					
 				</control>
 				
-				<control type="label" id="162">
-				
-					<description></description>
-					<include>Common_Settings_Label</include>
-					<label>Custom Shortcuts</label>
-					
-				</control>
-
-				<control type="button" id="121">
-					
-					<description>Custom Addon 1</description>
-					<include>Common_Settings_Button</include>
-					<label>$LOCALIZE[24000]</label>
-					<label2>$INFO[System.AddonTitle(Skin.String(HomeAddonButton_1))]</label2>
-					<onclick>Skin.SetAddon(HomeAddonButton_1,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-					
-				</control>
-				
-				<control type="button" id="122">
-					
-					<description>Custom Addon 2</description>
-					<include>Common_Settings_Button</include>
-					<label>$LOCALIZE[24000]</label>
-					<label2>$INFO[System.AddonTitle(Skin.String(HomeAddonButton_2))]</label2>
-					<onclick>Skin.SetAddon(HomeAddonButton_2,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-					
-				</control>
-				
-				<control type="button" id="123">
-					
-					<description>Custom Addon 3</description>
-					<include>Common_Settings_Button</include>
-					<label>$LOCALIZE[24000]</label>
-					<label2>$INFO[System.AddonTitle(Skin.String(HomeAddonButton_3))]</label2>
-					<onclick>Skin.SetAddon(HomeAddonButton_3,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-					
-				</control>
-				
-				<control type="button" id="124">
-					
-					<description>Custom Addon 4</description>
-					<include>Common_Settings_Button</include>
-					<label>$LOCALIZE[24000]</label>
-					<label2>$INFO[System.AddonTitle(Skin.String(HomeAddonButton_4))]</label2>
-					<onclick>Skin.SetAddon(HomeAddonButton_4,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-					
-				</control>
-				
-				<control type="button" id="125">
-					
-					<description>Custom Addon 5</description>
-					<include>Common_Settings_Button</include>
-					<label>$LOCALIZE[24000]</label>
-					<label2>$INFO[System.AddonTitle(Skin.String(HomeAddonButton_5))]</label2>
-					<onclick>Skin.SetAddon(HomeAddonButton_5,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-					
-				</control>
-				
-				<control type="button" id="126">
-					
-					<description>Custom Addon 6</description>
-					<include>Common_Settings_Button</include>
-					<label>$LOCALIZE[24000]</label>
-					<label2>$INFO[System.AddonTitle(Skin.String(HomeAddonButton_6))]</label2>
-					<onclick>Skin.SetAddon(HomeAddonButton_6,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-					
-				</control>
-				
-				<control type="button" id="127">
-					
-					<description>Custom Addon 7</description>
-					<include>Common_Settings_Button</include>
-					<label>$LOCALIZE[24000]</label>
-					<label2>$INFO[System.AddonTitle(Skin.String(HomeAddonButton_7))]</label2>
-					<onclick>Skin.SetAddon(HomeAddonButton_7,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-					
-				</control>
-				
-				<control type="button" id="128">
-					
-					<description>Custom Addon 8</description>
-					<include>Common_Settings_Button</include>
-					<label>$LOCALIZE[24000]</label>
-					<label2>$INFO[System.AddonTitle(Skin.String(HomeAddonButton_8))]</label2>
-					<onclick>Skin.SetAddon(HomeAddonButton_8,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable)</onclick>
-					
-				</control>
-				
 			</control>
 			
+			<!--Hub Options-->
 			<control type="grouplist" id="200">
 			
 				<description>Control Area</description>
@@ -505,6 +417,8 @@
 				<orientation>vertical</orientation>
 				<pagecontrol>82</pagecontrol>
 				<visible>Container(98).Hasfocus(2)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
 				
 				<control type="label" id="250">
 				
@@ -616,6 +530,8 @@
 				<pagecontrol>83</pagecontrol>
 				<visible>Container(98).Hasfocus(3)</visible>
 				
+				<include>Common_Animation_Settings_Options</include>
+				
 				<control type="label" id="351">
 				
 					<description></description>
@@ -628,7 +544,7 @@
 				<control type="group">
 				
 					<width>700</width>
-					<height>390</height>
+					<height>300</height>
 					
 					<control type="image">
 					
@@ -823,6 +739,8 @@
 				<orientation>vertical</orientation>
 				<pagecontrol>84</pagecontrol>
 				<visible>Container(98).Hasfocus(4)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
 
 				<control type="label" id="450">
 				
@@ -888,6 +806,8 @@
 				<orientation>vertical</orientation>
 				<pagecontrol>85</pagecontrol>
 				<visible>Container(98).Hasfocus(5)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
 
 				<control type="label" id="550">
 				
@@ -943,6 +863,8 @@
 				<orientation>vertical</orientation>
 				<pagecontrol>86</pagecontrol>
 				<visible>Container(98).Hasfocus(6)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
 				
 				<control type="label" id="650">
 				
@@ -1011,6 +933,8 @@
 				<pagecontrol>87</pagecontrol>
 				<visible>Container(98).Hasfocus(7)</visible>
 				
+				<include>Common_Animation_Settings_Options</include>
+				
 				<control type="label" id="750">
 				
 					<description></description>
@@ -1058,6 +982,8 @@
 				<orientation>vertical</orientation>
 				<pagecontrol>88</pagecontrol>
 				<visible>Container(98).Hasfocus(8)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
 				
 				<control type="label" id="850">
 				
@@ -1114,6 +1040,8 @@
 				<orientation>vertical</orientation>
 				<pagecontrol>89</pagecontrol>
 				<visible>Container(98).Hasfocus(9)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
 
 				<control type="radiobutton" id="901">
 					

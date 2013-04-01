@@ -10,17 +10,13 @@
 		
 		<!--Menu-->
 		<control type="group">
+		
+			<include>Common_Settings_Header_Back</include>
 			
 			<control type="label">
 	
-				<posx>60</posx>
-				<posy>22</posy>
-				<width>420</width>
-				<height>32</height>
+				<include>Common_Settings_Header</include>
 				<label>Edit rule</label>
-				<font>Settings-Menu-Header</font>
-				<textcolor>Settings_Header</textcolor>
-				<aligny>top</aligny>
 				
 			</control>
 		
@@ -105,6 +101,8 @@
 			<posy>0</posy>
 			<width>700</width>
 			<height>480</height>
+			
+			<include>Common_Animation_Settings_Options</include>
 		
 			<!--Filters Section-->
 			<control type="grouplist">

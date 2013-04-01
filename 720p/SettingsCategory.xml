@@ -9,16 +9,12 @@
 		<include>Common_Settings_Background</include>
 		
 		<control type="group">
+		
+			<include>Common_Settings_Header_Back</include>
 			
 			<control type="label" id="2">
 	
-				<posx>60</posx>
-				<posy>22</posy>
-				<width>420</width>
-				<height>32</height>
-				<font>Settings-Menu-Header</font>
-				<textcolor>Settings_Header</textcolor>
-				<aligny>top</aligny>
+				<include>Common_Settings_Header</include>
 				
 			</control>
 
@@ -42,20 +38,9 @@
 			<posy>0</posy>
 			<width>700</width>
 			<height>480</height>
-		
-			<control type="label">
-		
-				<posx>0</posx>
-				<posy>22</posy>
-				<width>520</width>
-				<height>32</height>
-				<label>$INFO[Container(3).ListItem(0).Label]</label>
-				<font>Settings-Menu-Header</font>
-				<textcolor>Settings_Header</textcolor>
-				<aligny>top</aligny>
-				
-			</control>
 			
+			<include>Common_Animation_Settings_Options</include>
+		
 			<control type="grouplist" id="5">
 				
 				<description>Control Area</description>

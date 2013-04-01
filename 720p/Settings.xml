@@ -4,7 +4,7 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	
 	<!--Splash Screen-->
-	<onload condition="![Window.Previous(picturessettings) | Window.Previous(picturessettings) | Window.Previous(programssettings) | Window.Previous(weathersettings) | Window.Previous(musicsettings) | Window.Previous(pvrsettings) | Window.Previous(systemsettings) | Window.Previous(videossettings) | Window.Previous(networksettings) | Window.Previous(servicesettings) | Window.Previous(appearancesettings) | Window.Previous(addonbrowser) | Window.Previous(skinsettings) | Window.Previous(systeminfo)]">ActivateWindow(60)</onload>
+	<onload condition="Window.Previous(home)">ActivateWindow(60)</onload>
 
 	<animation type="WindowClose" condition="Window.Next(home)">
 		<effect type="fade" start="100" end="0" time="400" />
@@ -17,16 +17,12 @@
 		<!--Menu-->
 		<control type="group">
 		
+			<include>Common_Settings_Header_Back</include>
+		
 			<control type="label">
 	
-				<posx>60</posx>
-				<posy>22</posy>
-				<width>420</width>
-				<height>32</height>
+				<include>Common_Settings_Header</include>
 				<label>XBMC settings</label>
-				<font>Settings-Menu-Header</font>
-				<textcolor>Settings_Header</textcolor>
-				<aligny>top</aligny>
 				
 			</control>
 			
@@ -138,7 +134,7 @@
 			
 		</control>
 		
-		<control type="group">
+		<!--<control type="group">
 		
 			<control type="multiimage">
 		
@@ -180,7 +176,7 @@
 				
 			</control>
 			
-		</control>	
+		</control>-->
 		
 	</controls>
 
