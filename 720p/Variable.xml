@@ -349,6 +349,11 @@
 	
 	<!--Info Dialog Variables-->
 	
+	<variable name="Info_Image">
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Art(thumb)]</value>
+		<value>$INFO[ListItem.Art(fanart)]</value>
+	</variable>
+	
 	<variable name="Info_Description">
 		<value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)] + !IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 		<value condition="Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
