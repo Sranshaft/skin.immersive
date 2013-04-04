@@ -40,7 +40,7 @@
 				<posy>60</posy>
 				<width>600</width>
 				<height>30</height>
-				<label>MYCONTROLS</label>
+				<label>MANAGE</label>
 				<font>ForumBrowser-PageLabels</font>
 				<textcolor>Settings_Menu_Normal</textcolor>
 				<aligny>top</aligny>

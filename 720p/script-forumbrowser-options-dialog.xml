@@ -12,6 +12,148 @@
 	
 	<controls>
 	
+		<control type="group">
+			
+			<posx>0</posx>
+			<posy>0</posy>
+			
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="400" delay="200" />
+			</animation>
+			
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="400" delay="200" />
+			</animation>
+			
+			<control type="image">
+			
+				<include>Common_Dimensions</include>
+				<texture>colors/color_keyboard_dark.png</texture>
+				
+			</control>	
+			
+			<control type="button" id="8001">
+				
+				<posx>1208</posx>
+				<posy>0</posy>
+				<width>72</width>
+				<height>72</height>
+				<texturefocus>appbar/appbar_overflowdots.png</texturefocus>
+				<texturenofocus>appbar/appbar_overflowdots.png</texturenofocus>
+				<colordiffuse>Label_Normal</colordiffuse>
+				<aspectratio aligny="top">center</aspectratio>
+				<onclick>Dialog.Close(2000)</onclick>
+				
+				<visible>!IntegerGreaterThan(Container(3).NumItems,5)</visible>
+				
+			</control>
+			
+			<control type="label" id="300">
+								
+				<posx>32</posx>
+				<posy>20</posy>
+				<width min="20" max="1216">auto</width>
+				<height>30</height>
+				<font>Select-Large</font>
+				<textcolor>Label_Normal</textcolor>
+				<aligny>top</aligny>
+				
+			</control>
+			
+			<control type="label" id="20">
+								
+				<posx>32</posx>
+				<posy>60</posy>
+				<width min="20" max="1216">auto</width>
+				<height>30</height>
+				<label>$INFO[Container(120).NumItems] items</label>
+				<font>Select-Small</font>
+				<textcolor>Label_Normal</textcolor>
+				<aligny>top</aligny>
+				
+			</control>
+	
+			<control type="list" id="120">
+						
+				<posx>0</posx>
+				<posy>90</posy>
+				<width>1240</width>
+				<height>600</height>
+				<onup>3</onup>
+				<ondown>3</ondown>
+				<onright>5</onright>
+				<pagecontrol>60</pagecontrol>
+				<viewtype label="List">list</viewtype>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<preloaditems>2</preloaditems>
+				
+				<itemlayout width="1240" height="50">
+
+					<control type="label">
+					
+						<posx>32</posx>
+						<posy>0</posy>
+						<width min="20" max="1216">auto</width>
+						<height>50</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Label_Normal</textcolor>
+						<selectedcolor>Background_Highlight</selectedcolor>
+						<aligny>center</aligny>
+						
+					</control>
+					
+				</itemlayout>
+
+				<focusedlayout width="1240" height="50">
+				
+					<control type="label">
+					
+						<posx>32</posx>
+						<posy>0</posy>
+						<width min="20" max="1216">auto</width>
+						<height>50</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Background_Highlight</textcolor>
+						<selectedcolor>Background_Highlight</selectedcolor>
+						<aligny>center</aligny>
+						
+					</control>
+					
+				</focusedlayout>
+
+			</control>
+			
+			<!--Scrollbar-->
+			<control type="scrollbar" id="60">
+				
+				<posx>1260</posx>
+				<posy>90</posy>
+				<height>600</height>
+				
+				<include>Common_Scrollbar_Vertical</include>
+				
+				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(3).Scrolling">Conditional</animation>
+				
+			</control>
+			
+			<control type="textbox" id="310">
+				<posx>400</posx>
+				<posy>90</posy>
+				<width>420</width>
+				<height>580</height>
+				<font>ForumBrowser-font13</font>
+				<textcolor>white</textcolor>
+				<info>Container(120).ListItem.Label2</info>
+			</control>
+			
+		</control>
+		
+	</controls>
+
+</window>	
+	
 		<control type="label" id="300">
 			<visible>false</visible>
 		</control>
@@ -128,13 +270,18 @@
 					</control>
 					
 				</focusedlayout>
+				
 			</control>
-		</control>
-		
-		<control type="group" id="260">
-	
+			
 			<control type="textbox" id="310">
-				<visible>false</visible>
+				<posx>20</posx>
+				<posy>20</posy>
+				<width>420</width>
+				<height>580</height>
+				<font>ForumBrowser-font13</font>
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<info>Container(120).ListItem.Label2</info>
 			</control>
 			
 		</control>

@@ -85,7 +85,7 @@
 					<control type="label">
 					
 						<include>Common_Control_Label</include>
-						<label>$LOCALIZE[SCRIPT3003]</label>
+						<label>$ADDON[script.forum.browser 32903]</label>
 						
 					</control>
 					
@@ -118,7 +118,7 @@
 					<control type="label">
 					
 						<include>Common_Control_Label</include>
-						<label>$LOCALIZE[SCRIPT3004]</label>
+						<label>$ADDON[script.forum.browser 32904]</label>
 						
 					</control>
 					
@@ -151,7 +151,7 @@
 					<control type="label">
 					
 						<include>Common_Control_Label</include>
-						<label>$LOCALIZE[SCRIPT3005]</label>
+						<label>$ADDON[script.forum.browser 32905]</label>
 						
 					</control>
 					
@@ -184,7 +184,7 @@
 					<control type="label">
 					
 						<include>Common_Control_Label</include>
-						<label>$LOCALIZE[SCRIPT3009]</label>
+						<label>$ADDON[script.forum.browser 32909]</label>
 						
 					</control>
 					
@@ -218,7 +218,7 @@
 					<control type="label">
 					
 						<include>Common_Control_Label</include>
-						<label>$LOCALIZE[SCRIPT3016]</label>
+						<label>$ADDON[script.forum.browser 32916]</label>
 						
 					</control>
 					
@@ -570,114 +570,6 @@
 			
 		</control>
 		
-		<!--Search Dialog-->
-		<control type="group" id="198">
-			
-			<posx>0</posx>
-			<posy>0</posy>
-			
-			<animation type="Conditional" condition="Control.HasFocus(205) | Control.HasFocus(206) | Control.HasFocus(207)" reversible="true">
-				<effect type="fade" start="0" end="100" time="400" delay="200" />
-				<effect type="slide" start="0,720" end="0,360" time="400" delay="200" tween="cubic" easing="out" />
-			</animation>
-			
-			<animation type="Conditional" condition="!Control.HasFocus(205) + !Control.HasFocus(206) + !Control.HasFocus(207)" reversible="true">
-				<effect type="fade" start="100" end="0" time="400" delay="200" />
-				<effect type="slide" start="0,360" end="0,720" time="400" delay="200" tween="cubic" easing="out" />
-			</animation>
-			
-			<control type="image">
-			
-				<include>Common_Dimensions</include>
-				<texture>colors/color_keyboard_dark.png</texture>
-				
-			</control>	
-			
-			<control type="button" id="8001">
-				
-				<posx>1208</posx>
-				<posy>0</posy>
-				<width>72</width>
-				<height>72</height>
-				<texturefocus>appbar/appbar_overflowdots.png</texturefocus>
-				<texturenofocus>appbar/appbar_overflowdots.png</texturenofocus>
-				<colordiffuse>Label_Normal</colordiffuse>
-				<aspectratio aligny="top">center</aspectratio>
-				
-			</control>
-			
-			<control type="label">
-								
-				<posx>32</posx>
-				<posy>20</posy>
-				<width min="20" max="1216">auto</width>
-				<height>30</height>
-				<label>Search</label>
-				<font>Select-Large</font>
-				<textcolor>Label_Normal</textcolor>
-				<aligny>top</aligny>
-				
-			</control>
-			
-			<control type="grouplist" id="199">
-						
-				<posx>0</posx>
-				<posy>90</posy>
-				<width>1240</width>
-				<height>600</height>
-				<onup>199</onup>
-				<ondown>199</ondown>
-				<onright>120</onright>
-				<pagecontrol>60</pagecontrol>
-				<orientation>vertical</orientation>
-				<itemgap>0</itemgap>
-				
-				<control type="button" id="205">
-					
-					<width>1216</width>
-					<height>50</height>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<label>$LOCALIZE[SCRIPT3017]</label>
-					<font>Menu-List</font>
-					<textcolor>Label_Normal</textcolor>
-					<selectedcolor>Background_Highlight</selectedcolor>
-					<aligny>center</aligny>
-					
-				</control>
-				
-				<control type="button" id="206">
-					
-					<width>1216</width>
-					<height>50</height>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<label>$LOCALIZE[SCRIPT3018]</label>
-					<font>Menu-List</font>
-					<textcolor>Label_Normal</textcolor>
-					<selectedcolor>Background_Highlight</selectedcolor>
-					<aligny>center</aligny>
-					
-				</control>
-				
-				<control type="button" id="207">
-					
-					<width>1216</width>
-					<height>50</height>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<label>$LOCALIZE[SCRIPT3019]</label>
-					<font>Menu-List</font>
-					<textcolor>Label_Normal</textcolor>
-					<selectedcolor>Background_Highlight</selectedcolor>
-					<aligny>center</aligny>
-					
-				</control>
-
-			</control>
-			
-		</control>
-		
 		<!--Picture-in-Picture Section-->
 		<control type="group">
 			
@@ -781,6 +673,112 @@
 					
 				</control>
 				
+			</control>
+			
+		</control>
+		
+		<!--Search Dialog-->
+		<control type="group">
+			
+			<posx>0</posx>
+			<posy>720</posy>
+			
+			<animation type="Conditional" condition="!Window.IsVisible(selectdialog) + [Control.HasFocus(205) | Control.HasFocus(206) | Control.HasFocus(207)]" reversible="true">
+				<effect type="fade" start="0" end="100" time="400" delay="200" />
+				<effect type="slide" start="0,0" end="0,-360" time="400" delay="200" tween="cubic" easing="out" />
+			</animation>
+			
+			<control type="image">
+			
+				<include>Common_Dimensions</include>
+				<texture>colors/color_keyboard_dark.png</texture>
+				
+			</control>	
+			
+			<control type="button" id="8001">
+				
+				<posx>1208</posx>
+				<posy>0</posy>
+				<width>72</width>
+				<height>72</height>
+				<texturefocus>appbar/appbar_overflowdots.png</texturefocus>
+				<texturenofocus>appbar/appbar_overflowdots.png</texturenofocus>
+				<colordiffuse>Label_Normal</colordiffuse>
+				<aspectratio aligny="top">center</aspectratio>
+				
+			</control>
+			
+			<control type="label">
+								
+				<posx>32</posx>
+				<posy>20</posy>
+				<width min="20" max="1216">auto</width>
+				<height>30</height>
+				<label>Search</label>
+				<font>Select-Large</font>
+				<textcolor>Label_Normal</textcolor>
+				<aligny>top</aligny>
+				
+			</control>
+			
+			<control type="grouplist" id="199">
+						
+				<posx>0</posx>
+				<posy>90</posy>
+				<width>1240</width>
+				<height>600</height>
+				<onup>199</onup>
+				<ondown>199</ondown>
+				<onright>120</onright>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				
+				<control type="button" id="205">
+					
+					<width>1216</width>
+					<height>50</height>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$ADDON[script.forum.browser 32917]</label>
+					<font>Menu-List</font>
+					<textcolor>Label_Normal</textcolor>
+					<focusedcolor>Background_Highlight</focusedcolor>
+					<selectedcolor>Background_Highlight</selectedcolor>
+					<aligny>center</aligny>
+					
+				</control>
+				
+				<control type="button" id="206">
+					
+					<width>1216</width>
+					<height>50</height>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$ADDON[script.forum.browser 32918]</label>
+					<font>Menu-List</font>
+					<textcolor>Label_Normal</textcolor>
+					<focusedcolor>Background_Highlight</focusedcolor>
+					<selectedcolor>Background_Highlight</selectedcolor>
+					<aligny>center</aligny>
+					
+				</control>
+				
+				<control type="button" id="207">
+					
+					<width>1216</width>
+					<height>50</height>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$ADDON[script.forum.browser 32919]</label>
+					<font>Menu-List</font>
+					<textcolor>Label_Normal</textcolor>
+					<focusedcolor>Background_Highlight</focusedcolor>
+					<selectedcolor>Background_Highlight</selectedcolor>
+					<aligny>center</aligny>
+					
+				</control>
+
 			</control>
 			
 		</control>
