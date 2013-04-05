@@ -2617,7 +2617,7 @@
 			<posy>88</posy>
 			<width>400</width>
 			<height>24</height>
-			<label>$INFO[ListItem.TVShowTitle]</label>
+			<label>$INFO[ListItem.Label]</label>
 			<font>Menu-Banner-Header</font>
 			<textcolor>Label_Normal</textcolor>
 			<aligny>top</aligny>
