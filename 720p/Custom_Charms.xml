@@ -16,19 +16,12 @@
 			
 			<control type="image">
 			
-				<include>Common_Dimensions</include>
-				<texture>colors/color_white.png</texture>
-				<colordiffuse>60000000</colordiffuse>
-				
-			</control>
-			
-			<control type="image">
-			
 				<posx>40</posx>
 				<posy>545</posy>
-				<width>600</width>
+				<width>500</width>
 				<height>136</height>
-				<texture>colors/color_keyboard_dark.png</texture>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>FanartDiffuse</colordiffuse>
 				
 				<animation type="Conditional" condition="Player.HasMedia" reversible="false">
 					<effect type="slide" start="0,0" end="0,-20" time="200" tween="cubic" easing="out" />
@@ -40,7 +33,7 @@
 			<control type="grouplist">
 			
 				<posx>60</posx>
-				<posy>520</posy>
+				<posy>540</posy>
 				<width>1220</width>
 				<height>300</height>
 				<orientation>horizontal</orientation>
@@ -65,7 +58,7 @@
 				<control type="label">
 				
 					<posx>0</posx>
-					<posy>36</posy>
+					<posy>24</posy>
 					<width>1220</width>
 					<height>100</height>
 					<label>$INFO[System.Date(DDD)][CR]$INFO[System.Date(MMM d)]</label>
@@ -110,7 +103,7 @@
 					<posy>0</posy>
 					<width>520</width>
 					<height>48</height>
-					<label>$VAR[NowPlaying_First_Label]</label>
+					<label>$VAR[NowPlaying_First_Label] $VAR[NowPlaying_Second_Label,· ,]</label>
 					<font>Screensaver-NowPlaying</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>center</aligny>
