@@ -596,7 +596,7 @@
 		<control type="button" id="9119">
 			
 			<include>Common_AppBar_View_Banner</include>
-			<visible>Container.Content(tvshows)</visible>
+			<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
 			
 		</control>
 		
