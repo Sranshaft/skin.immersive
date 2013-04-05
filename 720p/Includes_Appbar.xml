@@ -7,9 +7,9 @@
 			<posx>0</posx>
 			<posy>680</posy>
 			
-			<visible>!Window.IsVisible(virtualkeyboard)</visible>
+			<visible>!Window.IsVisible(virtualkeyboard) + ![StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/) | StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/) | [IsEmpty(Container.FolderPath) + StringCompare(Window.Property(xmlfile),MyMusicNav.xml)]]</visible>
 			
-			<animation type="Conditional" condition="[Skin.HasSetting(UseTouchInput) + Skin.HasSetting(ShowAppBar)] | [!Skin.HasSetting(UseTouchInput) + ControlGroup(9000).HasFocus]">
+			<animation type="Conditional" condition="Skin.HasSetting(ShowAppBar) | ControlGroup(9000).HasFocus">
 				<effect type="slide" start="0,0" end="0,-76" time="200"/>
 			</animation>
 			
@@ -22,7 +22,13 @@
 				<texture>colors/color_white.png</texture>
 				<colordiffuse>AppBar_Background</colordiffuse>
 				
-				<animation type="Conditional" condition="[Skin.HasSetting(UseTouchInput) + !Skin.HasSetting(ShowAppBar)] | [!Skin.HasSetting(UseTouchInput) + !ControlGroup(9000).HasFocus]">
+				<visible>Skin.HasSetting(ShowAppBar) | ControlGroup(9000).HasFocus</visible>
+				
+				<animation type="Visible">
+					<effect type="fade" start="0" end="100" time="200"/>
+				</animation>
+				
+				<animation type="Hidden">
 					<effect type="fade" start="100" end="0" time="200"/>
 				</animation>
 				
@@ -53,7 +59,13 @@
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
 				
-				<animation type="Conditional" condition="[Skin.HasSetting(UseTouchInput) + !Skin.HasSetting(ShowAppBar)] | [!Skin.HasSetting(UseTouchInput) + !ControlGroup(9000).HasFocus]">
+				<visible allowhiddenfocus="true">Skin.HasSetting(ShowAppBar) | ControlGroup(9000).HasFocus</visible>
+				
+				<animation type="Visible">
+					<effect type="fade" start="0" end="100" time="200"/>
+				</animation>
+				
+				<animation type="Hidden">
 					<effect type="fade" start="100" end="0" time="200"/>
 				</animation>
 				

@@ -24,8 +24,8 @@
 				<posy>20</posy>
 				<width>640</width>
 				<height>480</height>
-				<onup condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">10000</onup>
-				<ondown condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">9000</ondown>
+				<onup>10000</onup>
+				<ondown>9000</ondown>
 				<onleft>55</onleft>
 				<onright>55</onright>
 				<viewtype label="Thumb">wrap</viewtype>

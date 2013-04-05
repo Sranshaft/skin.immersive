@@ -24,8 +24,8 @@
 				<posy>60</posy>
 				<width>1280</width>
 				<height>480</height>
-				<onup condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">10000</onup>
-				<ondown condition="!System.GetBool(Input.EnableMouse) | !Skin.HasSetting(UseTouchInput)">9000</ondown>
+				<onup>10000</onup>
+				<ondown>9000</ondown>
 				<onleft>501</onleft>
 				<onright>501</onright>
 				<viewtype label="Banner">wrap</viewtype>
@@ -36,7 +36,7 @@
 				
 				<include>Common_Animation_HideWhenScrolling</include>
 				
-				<itemlayout width="520" height="160">
+				<itemlayout width="510" height="150">
 				
 					<control type="image">
 						
@@ -51,7 +51,7 @@
 					
 				</itemlayout>
 
-				<focusedlayout width="520" height="160">
+				<focusedlayout width="510" height="150">
 				
 					<control type="image">
 						
