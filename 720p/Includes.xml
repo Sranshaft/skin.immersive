@@ -938,8 +938,7 @@
 		<control type="button">
 					
 			<posx>30</posx>
-			<posy>30</posy>
-			<posy>60</posy>
+			<posy>32</posy>
 			<width>32</width>
 			<height>32</height>
 			<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
@@ -1304,14 +1303,13 @@
 	
 	<include name="Common_Keyboard_Button">
 	
-		<width>80</width>
+		<width>70</width>
 		<height>60</height>
 		<texturefocus>colors/color_grey.png</texturefocus>
 		<texturenofocus>colors/color_keyboard.png</texturenofocus>
 		<font>Keyboard-Label</font>
-		<colordiffuse>white</colordiffuse>
-		<textcolor>white</textcolor>
-		<focusedcolor>white</focusedcolor>
+		<textcolor>Label_Normal</textcolor>
+		<focusedcolor>Label_Normal</focusedcolor>
 		<textoffsetx>0</textoffsetx>
 		<textoffsety>0</textoffsety>
 		<align>center</align>
@@ -1327,9 +1325,8 @@
 		<alttexturefocus>colors/color_grey.png</alttexturefocus>
 		<alttexturenofocus>colors/color_grey.png</alttexturenofocus>
 		<font>Keyboard-Label</font>
-		<colordiffuse>white</colordiffuse>
-		<textcolor>white</textcolor>
-		<focusedcolor>white</focusedcolor>
+		<textcolor>Label_Normal</textcolor>
+		<focusedcolor>Label_Normal</focusedcolor>
 		<textoffsetx>0</textoffsetx>
 		<textoffsety>0</textoffsety>
 		<align>center</align>

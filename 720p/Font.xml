@@ -328,8 +328,15 @@
 		<!--Keyboard Fonts-->
 		
 		<font>
+			<name>Keyboard-Header</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>36</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
 			<name>Keyboard-Label</name>
-			<filename>SegoeWP-SemiLight.ttf</filename>
+			<filename>SegoeWP-SemiBold.ttf</filename>
 			<size>22</size>
 		</font>
 		
@@ -636,14 +643,14 @@
 		<font>
 			<name>Screensaver-Time</name>
 			<filename>SegoeWP-SemiLight.ttf</filename>
-			<size>128</size>
+			<size>96</size>
 		</font>
 		
 		<font>
 			<name>Screensaver-Date</name>
 			<filename>SegoeWP-Light.ttf</filename>
-			<size>48</size>
-			<linespacing>0.65</linespacing>
+			<size>36</size>
+			<linespacing>0.85</linespacing>
 		</font>
 		
 		<font>
