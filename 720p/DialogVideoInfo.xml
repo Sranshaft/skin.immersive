@@ -270,7 +270,7 @@
 					<control type="label">
 					
 						<include>Common_Control_Label</include>
-						<label>get artwork</label>
+						<label>choose art</label>
 						
 					</control>
 					
