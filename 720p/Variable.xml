@@ -531,18 +531,6 @@
 		<value condition="Control.HasFocus(5) + StringCompare(Control.GetLabel(5),OK)">appbar/appbar_okay_focus.png</value>
 	</variable>	
 	
-	<!--Slide Menu Variables-->
-	
-	<variable name="SlideMenu_Header_Label">
-		<value condition="StringCompare(Window.Property(xmlfile),MyWeather.xml)">Weather</value>
-		<value>Menu</value>
-	</variable>
-	
-	<variable name="SlideMenu_OnLeft_Action">
-		<value condition="StringCompare(Window.Property(xmlfile),MyMusicPlaylist.xml)">59</value>
-		<value>50</value>
-	</variable>
-	
 	<!--Splash Variables-->
 	
 	<variable name="Splash_Image">
