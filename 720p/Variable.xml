@@ -146,6 +146,7 @@
 	</variable>
 	
 	<variable name="ExtendedList_Plot">
+		<value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + !IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
 		<value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + !IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Plot)">$INFO[ListItem.Property(Addon.Description)]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
