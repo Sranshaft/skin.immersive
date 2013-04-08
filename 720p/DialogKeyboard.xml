@@ -55,7 +55,7 @@
 				<texturenofocus aligny="center">controls/control_close.png</texturenofocus>
 				<aspectratio>keep</aspectratio>
 				<colordiffuse>Label_Normal</colordiffuse>
-				<onclick>back</onclick>
+				<onclick>Dialog.Close(103,force)</onclick>
 				
 			</control>
 			
