@@ -10,6 +10,8 @@
 		<import addon="script.playalbum" version="0.1.1"/>
 		<import addon="script.randomandlastitems" version="2.0.3"/>
 		<import addon="script.tv.show.next.aired" version="5.0.5"/>
+		<import addon="script.extendedinfo" version="0.5.0"/>
+		<import addon="script.libraryeditor" version="0.5.0"/>
 		
 	</requires>
 	

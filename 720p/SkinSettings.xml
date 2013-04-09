@@ -506,6 +506,17 @@
 					
 					<description>Background Video</description>
 					<include>Common_Settings_RadioButton</include>
+					<label>Nearby events</label>
+					<onclick>Skin.ToggleSetting(ShowNearbyEventsSection_Music)</onclick>
+					<selected>Skin.HasSetting(ShowNearbyEventsSection_Music)</selected>
+					<enable>System.HasAddon(script.extendedinfo)</enable>
+					
+				</control>
+				
+				<control type="radiobutton" id="208">
+					
+					<description>Background Video</description>
+					<include>Common_Settings_RadioButton</include>
 					<label>History</label>
 					<onclick>Skin.ToggleSetting(ShowHistorySection_Music)</onclick>
 					<selected>Skin.HasSetting(ShowHistorySection_Music)</selected>
