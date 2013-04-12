@@ -4,14 +4,14 @@
 	<requires>
 
 		<import addon="xbmc.gui" version="4.0.0"/>
-		<import addon="service.skin.widgets" version="0.0.17"/>
-		<import addon="script.favourites" version="4.0.4"/>
-		<import addon="script.globalsearch" version="1.0.5"/>
-		<import addon="script.playalbum" version="0.1.1"/>
-		<import addon="script.randomandlastitems" version="2.0.3"/>
-		<import addon="script.tv.show.next.aired" version="5.0.5"/>
-		<import addon="script.extendedinfo" version="0.5.0"/>
-		<import addon="script.libraryeditor" version="0.5.0"/>
+		<import addon="service.skin.widgets" version="0.0.25"/>
+		<import addon="script.favourites" version="4.0.9"/>
+		<import addon="script.globalsearch" version="1.1.1"/>
+		<import addon="script.playalbum" version="0.1.2s"/>
+		<import addon="script.randomandlastitems" version="2.1.2"/>
+		<import addon="script.tv.show.next.aired" version="5.0.6"/>
+		<!--<import addon="script.extendedinfo" version="0.5.0"/>
+		<import addon="script.libraryeditor" version="0.5.0"/>-->
 		
 	</requires>
 	
