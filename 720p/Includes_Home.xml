@@ -262,7 +262,7 @@
 								<description>Games</description>
 								<label>Games</label>
 								<thumb>home/home_games.png</thumb>
-								<onclick>XBMC.RunScript(plugin.program.advanced.launcher)</onclick>
+								<onclick>XBMC.RunAddon(plugin.program.advanced.launcher)</onclick>
 								<visible>Skin.HasSetting(ShowGamesMenu)</visible>
 							</item>
 							
@@ -546,7 +546,7 @@
 								<description>Games</description>
 								<label>Games</label>
 								<thumb>home/home_games_small.png</thumb>
-								<onclick>XBMC.RunScript(plugin.program.advanced.launcher)</onclick>
+								<onclick>XBMC.RunAddon(plugin.program.advanced.launcher)</onclick>
 								<visible>Skin.HasSetting(ShowGamesMenu)</visible>
 							</item>
 							
@@ -2888,7 +2888,7 @@
 								<description>Games</description>
 								<label>Games</label>
 								<thumb>home/home_games.png</thumb>
-								<onclick>-</onclick>
+								<onclick>XBMC.RunAddon(plugin.program.advanced.launcher)</onclick>
 								<visible>Skin.HasSetting(ShowGamesMenu)</visible>
 							</item>
 
