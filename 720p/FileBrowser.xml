@@ -18,12 +18,152 @@
 				
 			<include>Common_Dimensions</include>
 			<texture background="true">colors/color_white.png</texture>
-			<colordiffuse>Background_Normal</colordiffuse>
+			<colordiffuse>Settings_Background_Light</colordiffuse>
 			
 		</control>
 		
 		<!--Top Area-->
-		<include>Common_Breadcrumb</include>
+		<include>Common_Breadcrumb_Dark</include>
+		
+		<!--Control Section-->
+		<control type="group">
+			
+			<posx>-340</posx>
+			<posy>100</posy>
+			<width>360</width>
+			<height>480</height>
+			
+			<animation type="Conditional" condition="Control.HasFocus(413) | Control.HasFocus(414) | Control.HasFocus(415)">
+				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
+			</animation>
+			
+			<control type="label">
+							
+				<posx>45</posx>
+				<posy>60</posy>
+				
+				<include>Common_Vertical_Label</include>
+				<include>Common_Animation_Vertical_Label</include>
+				
+			</control>
+			
+			<control type="grouplist">
+
+				<posx>50</posx>
+				<posy>60</posy>
+				<width>400</width>
+				<height>480</height>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<pagecontrol>9010</pagecontrol>
+				<itemgap>10</itemgap>
+				<orientation>vertical</orientation>
+				
+				<!--Okay Button-->
+				<control type="group">
+				
+					<width>400</width>
+					<height>60</height>
+					
+					<control type="button" id="413">
+						
+						<include>Common_Control_Button</include>
+						<onup>415</onup>
+						<ondown>414</ondown>
+						<onright>450</onright>
+						
+					</control>
+					
+					<control type="image">
+						
+						<include>Common_Control_Image</include>
+						<texture>dialoginfo/dialoginfo_ok.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Control_Label</include>
+						<label>$LOCALIZE[186]</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--Cancel Button-->
+				<control type="group">
+				
+					<width>400</width>
+					<height>60</height>
+					
+					<control type="button" id="414">
+						
+						<include>Common_Control_Button</include>
+						<onup>413</onup>
+						<ondown>415</ondown>
+						<onright>450</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Control_Image</include>
+						<texture>dialoginfo/dialoginfo_cancel.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Control_Label</include>
+						<label>$LOCALIZE[222]</label>
+						
+					</control>
+					
+				</control>
+				
+				<!--Divider-->
+				<control type="image">
+					
+					<width>60</width>
+					<height>5</height>
+					<texture>colors/color_white.png</texture>
+					<colordiffuse>Settings_Menu_Normal</colordiffuse>
+				
+				</control>
+				
+				<!--New Folder Button-->
+				<control type="group">
+				
+					<width>400</width>
+					<height>60</height>
+					
+					<control type="button" id="415">
+						
+						<include>Common_Control_Button</include>
+						<onup>414</onup>
+						<ondown>413</ondown>
+						<onright>450</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Control_Image</include>
+						<texture>dialoginfo/dialoginfo_newfolder.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Control_Label</include>
+						<label>$LOCALIZE[119]</label>
+						
+					</control>
+					
+				</control>
+				
+			</control>	
+				
+		</control>
 		
 		<!--Content Area-->
 		<control type="group">
@@ -36,77 +176,58 @@
 			<!--Animation-->
 			<include>Common_Animation_Content</include>
 			
+			<animation type="Conditional" condition="Control.HasFocus(413) | Control.HasFocus(414) | Control.HasFocus(415)">
+				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
+			</animation>
+				
 			<control type="grouplist">
-			
+		
 				<include>Common_Content_Grouplist</include>
-				
-				<!--Preview Section-->
-				<control type="group">
-				
-					<height>440</height>
-					<width>300</width>
-					
-					<control type="label">
-							
-						<label>preview</label>
-						<include>Common_Section_Label</include>
-						
-					</control>
-				
-					<control type="image">
-					
-						<posx>0</posx>
-						<posy>60</posy>
-						<posy>40</posy>
-						<width>300</width>
-						<height>440</height>
-						<texture background="true">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="top">keep</aspectratio>
-						<fadetime>400</fadetime>
-						
-					</control>
-					
-				</control>
-				
+		
 				<!--Images Section-->
 				<control type="group">
 				
 					<posx>60</posx>
 					<posy>0</posy>
 				
-					<control type="label">
+					<control type="label" id="412">
 							
-						<label>$INFO[ListItem.Label]</label>
-						<include>Common_Section_Label</include>
+						<include>Common_Section_Label_Dark</include>
 						
 					</control>
 					
-					<control type="panel" id="450">
+					<control type="list" id="450">
 								
 						<posx>0</posx>
 						<posy>60</posy>
-						<width>900</width>
-						<height>480</height>
-						<onleft>450</onleft>
-						<onright>450</onright>
-						<onup>9000</onup>
-						<ondown>9000</ondown>
+						<width>820</width>
+						<height>460</height>
+						<onleft>413</onleft>
+						<onup>450</onup>
+						<ondown>450</ondown>
 						<pagecontrol>81</pagecontrol>
-						<orientation>horizontal</orientation>
 						<viewtype label="535">list</viewtype>
 						<scrolltime tween="cubic" easing="out">600</scrolltime>
 						<preloaditems>2</preloaditems>
 						
-						<itemlayout width="230" height="230">
-						
+						<itemlayout width="820" height="115">
+
+							<!--<control type="image">
+								
+								<width>820</width>
+								<height>105</height>
+								<texture border="2">colors/color_white.png</texture>
+								<colordiffuse>Settings_Background_Dark</colordiffuse>
+								
+							</control>-->
+							
 							<control type="image">
 							
 								<posx>0</posx>
 								<posy>0</posy>
-								<width>210</width>
-								<height>210</height>
-								<texture background="true">colors/color_keyboard_dark.png</texture>
-								<aspectratio>scale</aspectratio>
+								<width>105</width>
+								<height>105</height>
+								<texture>colors/color_keyboard_dark.png</texture>
 								
 							</control>
 
@@ -114,46 +235,52 @@
 							
 								<posx>0</posx>
 								<posy>0</posy>
-								<width>210</width>
-								<height>210</height>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
+								<width>105</width>
+								<height>105</height>
+								<texture fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Icon]</texture>
 								<aspectratio>scale</aspectratio>
+								
+							</control>
+
+							<control type="textbox">
+								
+								<posx>125</posx>
+								<posy>10</posy>
+								<width>675</width>
+								<height>60</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Select-Normal</font>
+								<textcolor>Settings_Menu_Normal</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<autoscroll>0</autoscroll>
+								
+							</control>
+							
+							<control type="textbox">
+								
+								<posx>125</posx>
+								<posy>64</posy>
+								<width>675</width>
+								<height>20</height>
+								<label>$INFO[ListItem.Date] $INFO[ListItem.Size]</label>
+								<font>Select-Small</font>
+								<textcolor>Settings_Menu_Normal</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<autoscroll>0</autoscroll>
 								
 							</control>
 
 						</itemlayout>
 
-						<focusedlayout width="230" height="230">
-						
-							<control type="image">
-							
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>210</width>
-								<height>210</height>
-								<texture background="true">colors/color_keyboard_dark.png</texture>
-								<aspectratio>scale</aspectratio>
-								
-							</control>
+						<focusedlayout width="820" height="115">
 
 							<control type="image">
-							
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>210</width>
-								<height>210</height>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-								<aspectratio>scale</aspectratio>
 								
-							</control>
-							
-							<control type="image">
-							
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>210</width>
-								<height>210</height>
-								<texture background="true" border="4,4,20,4">button_selected.png</texture>
+								<width>820</width>
+								<height>105</height>
+								<texture border="2">colors/color_white.png</texture>
 								<colordiffuse>Background_Highlight</colordiffuse>
 								
 							</control>
@@ -162,38 +289,191 @@
 							
 								<posx>0</posx>
 								<posy>0</posy>
-								<width>210</width>
-								<height>210</height>
-								<texture background="true">button_selected_check.png</texture>
-								<colordiffuse>Label_Normal</colordiffuse>
+								<width>105</width>
+								<height>105</height>
+								<texture>colors/color_keyboard_dark.png</texture>
 								
 							</control>
-						
-						</focusedlayout>
 
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>105</width>
+								<height>105</height>
+								<texture fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Icon]</texture>
+								<aspectratio>scale</aspectratio>
+								
+							</control>
+
+							<control type="textbox">
+								
+								<posx>125</posx>
+								<posy>10</posy>
+								<width>675</width>
+								<height>60</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Select-Normal</font>
+								<textcolor>Label_Normal</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<autoscroll>0</autoscroll>
+								
+							</control>
+							
+							<control type="textbox">
+								
+								<posx>125</posx>
+								<posy>64</posy>
+								<width>675</width>
+								<height>20</height>
+								<label>$INFO[ListItem.Date] $INFO[ListItem.Size]</label>
+								<font>Select-Small</font>
+								<textcolor>Label_Normal</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<autoscroll>0</autoscroll>
+								
+							</control>
+
+						</focusedlayout>
+						
 					</control>
 					
 					<!--Scrollbar-->
 					<control type="scrollbar" id="81">
+					
+						<include>Common_Settings_Scrollbar_Vertical</include>
 						
-						<posx>0</posx>
-						<posy>520</posy>
-						<width>1180</width>
-						<height>5</height>
-						<texturesliderbackground>-</texturesliderbackground>
-						<texturesliderbar>colors/color_lightgrey.png</texturesliderbar>
-						<texturesliderbarfocus>colors/color_white.png</texturesliderbarfocus>
-						<colordiffuse>Background_Highlight</colordiffuse>
-						<orientation>horizontal</orientation>
-						<showonepage>false</showonepage>
+						<posx>840</posx>
+						<posy>60</posy>
+						<height>450</height>
+						<onleft>450</onleft>
 						
-						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(450).Scrolling">Conditional</animation>
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(81).Scrolling">Conditional</animation>
 						
 					</control>
 					
-				</control>	
+				</control>
 				
 			</control>
+			
+		</control>
+		
+		<!--Preview Section-->
+		<control type="group">
+		
+			<posx>980</posx>
+			<posy>0</posy>
+			<width>300</width>
+			<height>720</height>
+			
+			<include>Common_Animation_Content</include>
+			
+			<control type="image">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>300</width>
+				<height>720</height>
+				<texture background="true">colors/color_white.png</texture>
+				<colordiffuse>Settings_Background_Dark</colordiffuse>
+				
+			</control>
+			
+			<control type="image">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>300</width>
+				<height>440</height>
+				<texture background="true">colors/color_white.png</texture>
+				<colordiffuse>Label_Dark</colordiffuse>
+				
+			</control>
+			
+			<control type="image">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>300</width>
+				<height>440</height>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<fadetime>400</fadetime>
+				
+			</control>
+			
+			<control type="grouplist">
+			
+				<posx>20</posx>
+				<posy>480</posy>
+				<width>260</width>
+				<height>200</height>
+				<orientation>vertical</orientation>
+				
+				<control type="textbox">
+									
+					<width>260</width>
+					<height>60</height>
+					<label>$INFO[Container(450).ListItem.Label]</label>
+					<font>FileBrowser-Details-Large</font>
+					<textcolor>Label_Highlight</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>true</wrapmultiline>
+					<autoscroll>0</autoscroll>
+					
+				</control>
+				
+				<control type="textbox">
+									
+					<width>260</width>
+					<height>24</height>
+					<label>[B]$INFO[Container(450).ListItem.FileExtension][/B]</label>
+					<font>FileBrowser-Details-Small</font>
+					<textcolor>Label_Dark</textcolor>
+					<aligny>top</aligny>
+					<visible>!IsEmpty(Container(450).ListItem.FileExtension)</visible>
+					
+				</control>
+				
+				<control type="textbox">
+									
+					<width>260</width>
+					<height>24</height>
+					<label>[B]File folder[/B]</label>
+					<font>FileBrowser-Details-Small</font>
+					<textcolor>Label_Dark</textcolor>
+					<aligny>top</aligny>
+					<visible>Container(450).ListItem.IsFolder</visible>
+					
+				</control>
+				
+				<control type="textbox">
+									
+					<width>260</width>
+					<height>24</height>
+					<label>File size: $INFO[Container(450).ListItem.Size]</label>
+					<font>FileBrowser-Details-Small</font>
+					<textcolor>Label_Dark</textcolor>
+					<aligny>top</aligny>
+					<visible>!IsEmpty(Container(450).ListItem.Size)</visible>
+					
+				</control>
+				
+				<control type="textbox">
+									
+					<width>260</width>
+					<height>24</height>
+					<label>File date: $INFO[Container(450).ListItem.Date]</label>
+					<font>FileBrowser-Details-Small</font>
+					<textcolor>Label_Dark</textcolor>
+					<aligny>top</aligny>
+					<visible>!IsEmpty(Container(450).ListItem.Date)</visible>
+					
+				</control>
+				
+			</control>	
 			
 		</control>
 
@@ -224,53 +504,10 @@
 					<height>60</height>
 					<label>$INFO[Container(450).NumItems,, items]</label>
 					<font>Content-Label</font>
-					<textcolor>Label_Normal</textcolor>
+					<textcolor>Label_Dark</textcolor>
 					<aligny>top</aligny>
 			
 				</control>
-				
-			</control>
-			
-		</control>
-		
-		<control type="grouplist" id="9000">
-		
-			<include>Common_Settings_Button_Grouplist</include>
-		
-			<!--Okay Button-->
-			<control type="button" id="413">
-				
-				<colordiffuse>Label_Normal</colordiffuse>
-				<textcolor>Label_Normal</textcolor>
-				<focusedcolor>Label_Highlight</focusedcolor>
-				<include>Common_Settings_Control_Button</include>
-				<label>$LOCALIZE[186]</label>
-				<onup>450</onup>
-				
-			</control>
-
-			<!--Cancel Button-->
-			<control type="button" id="414">
-				
-				<colordiffuse>Label_Normal</colordiffuse>
-				<textcolor>Label_Normal</textcolor>
-				<focusedcolor>Label_Highlight</focusedcolor>
-				<include>Common_Settings_Control_Button</include>
-				<label>$LOCALIZE[222]</label>
-				<onup>450</onup>
-				
-			</control>
-			
-			<!--New Folder Button-->
-			<control type="button" id="415">
-				
-				<colordiffuse>Label_Normal</colordiffuse>
-				<textcolor>Label_Normal</textcolor>
-				<focusedcolor>Label_Highlight</focusedcolor>
-				<width>120</width>
-				<include>Common_Settings_Control_Button</include>
-				<label>$LOCALIZE[119]</label>
-				<onup>450</onup>
 				
 			</control>
 			

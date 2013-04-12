@@ -127,6 +127,17 @@
 					
 				</control>
 				
+				<control type="label">
+					
+					<posy>6</posy>
+					<width min="0" max="450">auto</width>
+					<height>65</height>
+					<label>$VAR[Breadcrumb_SubFolder_Label]</label>
+					<font>Breadcrumb-SubFolder</font>
+					<textcolor>Label_Dark</textcolor>
+					<aligny>center</aligny>
+					
+				</control>
 				
 			</control>
 		
