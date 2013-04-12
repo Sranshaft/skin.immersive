@@ -7,11 +7,9 @@
 		<import addon="service.skin.widgets" version="0.0.25"/>
 		<import addon="script.favourites" version="4.0.9"/>
 		<import addon="script.globalsearch" version="1.1.1"/>
-		<import addon="script.playalbum" version="0.1.2s"/>
+		<import addon="script.playalbum" version="0.1.2"/>
 		<import addon="script.randomandlastitems" version="2.1.2"/>
 		<import addon="script.tv.show.next.aired" version="5.0.6"/>
-		<!--<import addon="script.extendedinfo" version="0.5.0"/>
-		<import addon="script.libraryeditor" version="0.5.0"/>-->
 		
 	</requires>
 	
@@ -26,6 +24,7 @@
 		<platform>all</platform>
 		<summary>Created by Four13 Designs</summary>
 		<description>Immersive combines the elegant simplicity of Microsoft's Metro UI with the media richness of XBMC to create an extremely user-friendly and inviting skin.</description>
+		<disclaimer>This skin is a work-in-progress. Bugs are expected to occur.</disclaimer>
 	
 	</extension>
 
