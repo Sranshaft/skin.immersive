@@ -17,8 +17,8 @@
 	<color name="Label_Disabled">50FFFFFF</color>
 	<color name="Label_Grey">FFF5F5F5</color>
 	
-	<color name="Settings_Background_Light">FFFFFFFF</color>
-	<color name="Settings_Background_Dark">FFF5F5F5</color>
+	<color name="Settings_Background_Light">FFF5F5F5</color>
+	<color name="Settings_Background_Dark">FFEBEBEB</color>
 	<color name="Settings_Menu_Normal">FF333333</color>
 	<color name="Settings_Menu_Highlight">FFFFFFFF</color>
 	<color name="Settings_Header">FF9A6B36</color>
