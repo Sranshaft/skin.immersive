@@ -3,6 +3,8 @@
 	<defaultcontrol always="true">9001</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	
+	<onload>Skin.Reset(ShowManageMenu)</onload>
+	
 	<include>Common_Animation_Window</include>
 	
 	<controls>
@@ -17,24 +19,6 @@
 	
 		<include>Common_Breadcrumb_Dark</include>
 		
-		<control type="label">
-		
-			<posx>1240</posx>
-			<posy>32</posy>
-			<width>400</width>
-			<height>100</height>
-			<label>Slide right for more details</label>
-			<align>right</align>
-			<aligny>top</aligny>
-			<font>DialogInfo-Label-Small</font>
-			<textcolor>Label_Dark</textcolor>
-			
-			<animation type="Conditional" condition="Control.HasFocus(150) | Control.HasFocus(81)">
-				<effect type="fade" start="100" end="0" time="600" />
-			</animation>
-		
-		</control>
-		
 		<!--Control Section-->
 		<control type="group">
 			
@@ -43,7 +27,7 @@
 			<width>360</width>
 			<height>480</height>
 			
-			<animation type="Conditional" condition="Control.HasFocus(6) | Control.HasFocus(8) | Control.HasFocus(11) | Control.HasFocus(20) |Control.HasFocus(25)">
+			<animation type="Conditional" condition="Control.HasFocus(6) | Control.HasFocus(8) | Control.HasFocus(11) | Control.HasFocus(20) |Control.HasFocus(25) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
@@ -97,6 +81,16 @@
 						
 					</control>
 					
+				</control>
+				
+				<!--Divider-->
+				<control type="image">
+					
+					<width>60</width>
+					<height>5</height>
+					<texture>colors/color_white.png</texture>
+					<colordiffuse>Settings_Menu_Normal</colordiffuse>
+				
 				</control>
 				
 				<!--Refresh Button-->
@@ -161,16 +155,6 @@
 					
 				</control>
 				
-				<!--Divider-->
-				<control type="image">
-					
-					<width>60</width>
-					<height>5</height>
-					<texture>colors/color_white.png</texture>
-					<colordiffuse>Settings_Menu_Normal</colordiffuse>
-				
-				</control>
-				
 				<!--Profile Button-->
 				<control type="group">
 				
@@ -200,6 +184,16 @@
 						
 					</control>
 					
+				</control>
+				
+				<!--Divider-->
+				<control type="image">
+					
+					<width>60</width>
+					<height>5</height>
+					<texture>colors/color_white.png</texture>
+					<colordiffuse>Settings_Menu_Normal</colordiffuse>
+				
 				</control>
 				
 				<!--Settings Button-->
@@ -248,7 +242,7 @@
 			<!--Animation-->
 			<include>Common_Animation_Content</include>
 			
-			<animation type="Conditional" condition="Control.HasFocus(6) | Control.HasFocus(8) | Control.HasFocus(11) | Control.HasFocus(20) |Control.HasFocus(25)">
+			<animation type="Conditional" condition="Control.HasFocus(6) | Control.HasFocus(8) | Control.HasFocus(11) | Control.HasFocus(20) |Control.HasFocus(25) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
@@ -262,30 +256,6 @@
 					<width>380</width>
 					<height>560</height>
 					
-					<control type="button" id="9001">
-						
-						<posx>400</posx>
-						<onup>-</onup>
-						<ondown>-</ondown>
-						<onleft>8</onleft>
-						<onright>150</onright>
-						
-						<visible allowhiddenfocus="true">false</visible>
-						
-					</control>
-					
-					<control type="label">
-					
-						<posx>0</posx>
-						<posy>20</posy>
-						<width>340</width>
-						<height>20</height>
-						<label>$INFO[ListItem.Genre]</label>
-						<font>DialogInfo-Label-Small</font>
-						<textcolor>Label_Dark</textcolor>
-					
-					</control>
-				
 					<control type="group">
 					
 						<posx>0</posx>
@@ -312,6 +282,24 @@
 							<height>215</height>
 							<texture background="true">$INFO[Listitem.Property(Fanart_Image)]</texture>
 							<aspectratio align="left" aligny="top">scale</aspectratio>
+							
+						</control>
+						
+						<control type="button" id="9001">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>380</width>
+							<height>215</height>
+							<texturefocus>dialoginfo/dialoginfo_play_large.png</texturefocus>
+							<texturenofocus>dialoginfo/dialoginfo_play_large.png</texturenofocus>
+							<colordiffuse>Label_Normal</colordiffuse>
+							<pulseonselect>true</pulseonselect>
+							<onclick>SendClick(2003,8)</onclick>
+							<onleft>8</onleft>
+							<onright>150</onright>
+							
+							<visible allowhiddenfocus="true">false</visible>
 							
 						</control>
 						
@@ -355,13 +343,6 @@
 								<include>Common_InfoDialog_Header_Small</include>
 								<label>$ADDON[script.metadata.actors 32011]: $INFO[ListItem.Property(TotalMovies)]</label>
 								<visible>!IsEmpty(ListItem.Property(TotalMovies))</visible>
-								
-							</control>
-							
-							<control type="button" id="9002">
-			
-								<include>Common_InfoDialog_ControlOptions_Button</include>
-								<onclick>SetFocus(8)</onclick>
 								
 							</control>
 							
@@ -411,7 +392,7 @@
 				<!-- Filmography Section-->
 				<control type="group">
 				
-					<width>780</width>
+					<width>800</width>
 					<height>560</height>
 					
 					<control type="label">
@@ -425,7 +406,7 @@
 							
 						<posx>0</posx>
 						<posy>60</posy>
-						<width>760</width>
+						<width>780</width>
 						<height>520</height>
 						<onleft>9001</onleft>
 						<onright>-</onright>
@@ -616,12 +597,12 @@
 					
 						<include>Common_Settings_Scrollbar_Vertical</include>
 						
-						<posx>760</posx>
+						<posx>780</posx>
 						<posy>60</posy>
 						<height>500</height>
 						<onleft>50</onleft>
 						
-						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(150).Scrolling">Conditional</animation>
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(81).Scrolling">Conditional</animation>
 						
 					</control>	
 					

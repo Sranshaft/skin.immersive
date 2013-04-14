@@ -139,8 +139,10 @@
 					
 				</control>
 				
+				<include>Common_ShowManageMenu_Button</include>
+				
 			</control>
-		
+			
 		</control>
 	
 	</include>

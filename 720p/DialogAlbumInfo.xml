@@ -5,6 +5,7 @@
 	<allowoverlay>yes</allowoverlay>
 	
 	<onload condition="Skin.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=artistevents,artistname=$ESCINFO[ListItem.Artist])</onload>
+	<onload>Skin.Reset(ShowManageMenu)</onload>
 	
 	<include>Common_Animation_Window</include>
 	
@@ -20,24 +21,6 @@
 	
 		<include>Common_Breadcrumb_Dark</include>
 		
-		<control type="label">
-		
-			<posx>1240</posx>
-			<posy>32</posy>
-			<width>400</width>
-			<height>100</height>
-			<label>Slide right for more details</label>
-			<align>right</align>
-			<aligny>top</aligny>
-			<font>DialogInfo-Label-Small</font>
-			<textcolor>Label_Dark</textcolor>
-			
-			<animation type="Conditional" condition="Control.HasFocus(50) | Control.HasFocus(81)">
-				<effect type="fade" start="100" end="0" time="600" />
-			</animation>
-		
-		</control>
-		
 		<!--Control Section-->
 		<control type="group">
 			
@@ -46,7 +29,7 @@
 			<width>360</width>
 			<height>480</height>
 			
-			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(12)">
+			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(12) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
@@ -250,7 +233,7 @@
 			<!--Animation-->
 			<include>Common_Animation_Content</include>
 			
-			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(12)">
+			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(12) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 				
@@ -264,18 +247,6 @@
 					<width>380</width>
 					<height>560</height>
 					
-					<control type="label">
-					
-						<posx>0</posx>
-						<posy>20</posy>
-						<width>340</width>
-						<height>20</height>
-						<label>$INFO[ListItem.Genre]</label>
-						<font>DialogInfo-Label-Small</font>
-						<textcolor>Label_Dark</textcolor>
-					
-					</control>
-				
 					<control type="group">
 					
 						<posx>0</posx>
@@ -323,7 +294,7 @@
 								<effect type="fade" start="0" end="80" time="400" delay="2000" />
 							</animation>
 							
-							<visible allowhiddenfocus="true">Container.Content(movies) | Container.Content(episodes)</visible>
+							<visible allowhiddenfocus="true">Container.Content(albums)</visible>
 							
 						</control>
 						
@@ -419,13 +390,6 @@
 								<include>Common_InfoDialog_Header_Small</include>
 								<label>$INFO[ListItem.Year] $INFO[ListItem.Property(Album_Label)]</label>
 								<visible>!IsEmpty(ListItem.Property(Album_Label))</visible>
-								
-							</control>
-							
-							<control type="button" id="9002">
-			
-								<include>Common_InfoDialog_ControlOptions_Button</include>
-								<onclick>SetFocus(8)</onclick>
 								
 							</control>
 							

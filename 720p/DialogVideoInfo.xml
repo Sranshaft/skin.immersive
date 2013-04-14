@@ -1,8 +1,9 @@
-<!-- Foundation -->
 <window id="2003">
 	
 	<defaultcontrol always="true">9001</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	
+	<onload>Skin.Reset(ShowManageMenu)</onload>
 	
 	<include>Common_Animation_Window</include>
 	
@@ -18,24 +19,6 @@
 	
 		<include>Common_Breadcrumb_Dark</include>
 		
-		<control type="label">
-		
-			<posx>1240</posx>
-			<posy>32</posy>
-			<width>400</width>
-			<height>100</height>
-			<label>Slide right for more details</label>
-			<align>right</align>
-			<aligny>top</aligny>
-			<font>DialogInfo-Label-Small</font>
-			<textcolor>Label_Dark</textcolor>
-			
-			<animation type="Conditional" condition="Control.HasFocus(50) | Control.HasFocus(81)">
-				<effect type="fade" start="100" end="0" time="600" />
-			</animation>
-		
-		</control>
-		
 		<!--Control Section-->
 		<control type="group">
 			
@@ -44,7 +27,7 @@
 			<width>360</width>
 			<height>480</height>
 			
-			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(11) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(15)">
+			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(11) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(15) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
@@ -88,13 +71,31 @@
 					
 						<include>Common_Control_Image</include>
 						<texture>dialoginfo/dialoginfo_play.png</texture>
-					
+						<visible>Container.Content(episodes) | Container.Content(movies) | Container.Content(musicvideos)</visible>
+						
 					</control>
 					
 					<control type="label">
 					
 						<include>Common_Control_Label</include>
 						<label>$LOCALIZE[208]</label>
+						<visible>Container.Content(episodes) | Container.Content(movies) | Container.Content(musicvideos)</visible>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Control_Image</include>
+						<texture>dialoginfo/dialoginfo_browse.png</texture>
+						<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+						
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Control_Label</include>
+						<label>browse</label>
+						<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
 						
 					</control>
 					
@@ -291,7 +292,7 @@
 			<!--Animation-->
 			<include>Common_Animation_Content</include>
 			
-			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(11) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(15)">
+			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(11) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(15)| [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
@@ -305,18 +306,6 @@
 					<width>380</width>
 					<height>560</height>
 					
-					<control type="label">
-					
-						<posx>0</posx>
-						<posy>20</posy>
-						<width>340</width>
-						<height>20</height>
-						<label>$INFO[ListItem.Genre]</label>
-						<font>DialogInfo-Label-Small</font>
-						<textcolor>Label_Dark</textcolor>
-					
-					</control>
-				
 					<control type="group">
 					
 						<posx>0</posx>
@@ -426,6 +415,14 @@
 							<control type="label">
 							
 								<include>Common_InfoDialog_Label_Small</include>
+								<label>$INFO[ListItem.Genre]</label>
+								<visible>!IsEmpty(ListItem.Genre)</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
 								<label>$INFO[ListItem.Duration,, minutes]</label>
 								<visible>!IsEmpty(ListItem.Duration)</visible>
 							
@@ -454,13 +451,6 @@
 								
 							</control>
 							
-							<control type="button" id="9002">
-			
-								<include>Common_InfoDialog_ControlOptions_Button</include>
-								<onclick>SetFocus(8)</onclick>
-								
-							</control>
-						
 						</control>
 					
 					</control>

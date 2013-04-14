@@ -1153,7 +1153,7 @@
 	<include name="Common_InfoDialog_Detail_Label">
 	
 		<width>340</width>
-		<height>52</height>
+		<height>50</height>
 		<font>DialogInfo-Label-Small</font>
 		<textcolor>Label_Dark</textcolor>
 		<wrapmultiline>true</wrapmultiline>
@@ -2086,6 +2086,26 @@
 		<spinwidth>25</spinwidth>
 			
 	</include>
+	
+	<include name="Common_ShowManageMenu_Button">
+	
+		<control type="button">
+		
+			<posx>-26</posx>
+			<posy>18</posy>
+			<width>48</width>
+			<height>48</height>
+			<texturefocus>dialoginfo/dialoginfo_configure.png</texturefocus>
+			<texturenofocus>dialoginfo/dialoginfo_configure.png</texturenofocus>
+			<aspectratio>center</aspectratio>
+			<colordiffuse>Label_Dark</colordiffuse>
+			<onclick>Skin.ToggleSetting(ShowManageMenu)</onclick>
+			
+			<visible>[System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)] + [SubString(Window.Property(xmlfile),script-Actors-DialogInfo) | SubString(Window.Property(xmlfile),script-Actors-DialogVideoInfo) | SubString(Window.Property(xmlfile),script-Actors-Browser) | StringCompare(Window.Property(xmlfile),DialogAlbumInfo.xml) | StringCompare(Window.Property(xmlfile),DialogVideoInfo.xml) | StringCompare(Window.Property(xmlfile),FileBrowser.xml)]</visible>
+			
+		</control>
+		
+	</include>	
 	
 	<include name="Common_TVNextAired_FixedList">
 	
