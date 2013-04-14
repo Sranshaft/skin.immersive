@@ -35,7 +35,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasVideo">XBMC Video</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasAudio">XBMC Music</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSelect.xml)">$INFO[Control.GetLabel(1)]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),DialogVideoInfo.xml)">$INFO[ListItem.Label]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogVideoInfo.xml)">$INFO[ListItem.Title]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),FileBrowser.xml)">$INFO[Control.GetLabel(411)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),FileManager.xml)">$LOCALIZE[7]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicOSD.xml)">XBMC Music</value>
