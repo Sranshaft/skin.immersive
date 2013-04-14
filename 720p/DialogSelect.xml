@@ -351,6 +351,10 @@
 			<visible>false</visible>
 		</control>
 		
+		<control type="button" id="5">
+			<visible>false</visible>
+		</control>	
+		
 	</controls>
 
 </window>
