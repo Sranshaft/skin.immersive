@@ -67,7 +67,7 @@
 					<include>Common_ContextMenu_Button</include>
 					<label>$VAR[ContextMenu_MetaActors_Label]</label>
 					<onclick>RunScript(script.metadata.actors,$INFO[ListItem.Label])</onclick>
-					<visible>System.HasAddon(script.metadata.actors) + [Container.Content(Actors) | Container.Content(Directors) | Container.Content(Artists)]</visible>
+					<visible>System.HasAddon(script.metadata.actors) + [Container.Content(actors) | Container.Content(directors) | Container.Content(artists)]</visible>
 					
 				</control>
 				
