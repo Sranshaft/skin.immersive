@@ -183,20 +183,9 @@
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
-					<label>Use alternate home screen</label>
-					<onclick>Skin.ToggleSetting(UseAltTileMenu)</onclick>
-					<selected>Skin.HasSetting(UseAltTileMenu)</selected>
-					
-				</control>
-
-				<control type="radiobutton" id="102">
-					
-					<description>Background Visualiser</description>
-					<include>Common_Settings_RadioButton</include>
 					<label>Use tile menu</label>
 					<onclick>Skin.ToggleSetting(UseTileMenu)</onclick>
 					<selected>Skin.HasSetting(UseTileMenu)</selected>
-					<enable>!Skin.HasSetting(UseAltTileMenu)</enable>
 					
 				</control>
 				
