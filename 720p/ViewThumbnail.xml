@@ -48,22 +48,12 @@
 						<include>Common_LiveTile_Background_Wide</include>
 						
 						<control type="image">
-						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>370</width>
-							<height>210</height>
-							<texture>colors/color_keyboard_dark.png</texture>
-							
-						</control>
-						
-						<control type="image">
 					
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>370</width>
 							<height>210</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[Tile_Image]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[Thumbnail_Image]</texture>
 							<aspectratio>scale</aspectratio>
 							
 						</control>
@@ -85,11 +75,11 @@
 							<posy>158</posy>
 							<width>350</width>
 							<height>20</height>
+							<label>$VAR[Thumbnail_Header]</label>
 							<textcolor>Label_Normal</textcolor>
 							<font>Menu-Thumbnail-Header</font>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.Label]</label>
-						
+							
 						</control>
 						
 						<control type="label">
@@ -98,10 +88,10 @@
 							<posy>178</posy>
 							<width>350</width>
 							<height>20</height>
+							<label>$VAR[Thumbnail_Detail]</label>
 							<textcolor>Label_Normal</textcolor>
 							<font>Menu-Thumbnail-Detail</font>
 							<aligny>top</aligny>
-							<label>$VAR[ExtendedList_Detail]</label>
 							
 						</control>
 						
@@ -151,17 +141,7 @@
 							<posy>0</posy>
 							<width>370</width>
 							<height>210</height>
-							<texture>colors/color_keyboard_dark.png</texture>
-							
-						</control>
-					
-						<control type="image">
-						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>370</width>
-							<height>210</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[Tile_Image]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[Thumbnail_Image]</texture>
 							<aspectratio>scale</aspectratio>
 							
 						</control>
@@ -183,11 +163,11 @@
 							<posy>158</posy>
 							<width>350</width>
 							<height>20</height>
+							<label>$VAR[Thumbnail_Header]</label>
 							<textcolor>Label_Normal</textcolor>
 							<font>Menu-Thumbnail-Header</font>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.Label]</label>
-						
+							
 						</control>
 						
 						<control type="label">
@@ -196,10 +176,10 @@
 							<posy>178</posy>
 							<width>350</width>
 							<height>20</height>
+							<label>$VAR[Thumbnail_Detail]</label>
 							<textcolor>Label_Normal</textcolor>
 							<font>Menu-Thumbnail-Detail</font>
 							<aligny>top</aligny>
-							<label>$VAR[ExtendedList_Detail]</label>
 							
 						</control>
 						

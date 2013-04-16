@@ -110,9 +110,12 @@
 	</variable>	
 	
 	<variable name="Details_Image">
-		<value condition="Container.Content(seasons)">$INFO[Listitem.Property(Fanart_Image)]</value>
+		<value condition="Container.Content(movies) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_movies.jpg</value>
+		<value condition="Container.Content(artists) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_music.jpg</value>
+		<value condition="[Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))] | [Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))]">fallbacks/fallback_tv.jpg</value>
+		<value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="Container.Content(seasons)">$INFO[ListItem.Art(season.fanart)]</value>
 		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + !IsEmpty(ListItem.Fanart)">$INFO[ListItem.Fanart]</value>
-		<value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)">$INFO[Listitem.Property(Fanart_Image)]</value>
 		<value>$INFO[ListItem.Thumb]</value>
 	</variable>
 	
@@ -139,9 +142,12 @@
 	</variable>	
 	
 	<variable name="ExtendedList_Image">
-		<value condition="Container.Content(seasons)">$INFO[Listitem.Property(Fanart_Image)]</value>
+		<value condition="Container.Content(movies) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_movies.jpg</value>
+		<value condition="Container.Content(artists) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_music.jpg</value>
+		<value condition="[Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))] | [Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))]">fallbacks/fallback_tv.jpg</value>
+		<value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="Container.Content(seasons)">$INFO[ListItem.Art(season.fanart)]</value>
 		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + !IsEmpty(ListItem.Fanart)">$INFO[ListItem.Fanart]</value>
-		<value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)">$INFO[Listitem.Property(Fanart_Image)]</value>
 		<value>$INFO[ListItem.Thumb]</value>
 	</variable>
 	
@@ -169,6 +175,15 @@
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Born))">$INFO[ListItem.Property(Artist_Born),BORN ,]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Formed))">$INFO[ListItem.Property(Artist_Formed),FORMED ,]</value>
 	</variable>
+	
+	<!--Fallback Image Variable-->
+	
+	<variable name="Fallback_Image">
+		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">fallbacks/fallback_tvshows.jpg</value>
+		<value condition="Container.Content(movies)">fallbacks/fallback_movies.jpg</value>
+		<value condition="Container.Content(artists) | Container.Content(albums) | Container.Content(songs)">fallbacks/fallback_music.jpg</value>
+		<value>colors/color_keyboard_dark.png</value>
+	</variable>	
 	
 	<!--Fanart Image Variable-->
 	
@@ -395,21 +410,6 @@
 		<value condition="Container.Content(songs)">$INFO[ListItem.Duration]</value>
 	</variable>
 	
-	<variable name="List_Featured_Image">
-		<value condition="StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)">$INFO[Window(Home).Property(RandomMovie.2.Fanart)]</value>
-		<value condition="StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)">$INFO[Window(Home).Property(RandomEpisode.2.Fanart)]</value>
-	</variable>
-	
-	<variable name="List_Featured_Label">
-		<value condition="StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)">$INFO[Window(Home).Property(RandomMovie.2.Title)]</value>
-		<value condition="StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)">$INFO[Window(Home).Property(RandomEpisode.2.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisode.2.EpisodeTitle)]</value>
-	</variable>	
-	
-	<variable name="List_Featured_Path">
-		<value condition="StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)">$INFO[Window(Home).Property(RandomMovie.2.Path)]</value>
-		<value condition="StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)">$INFO[Window(Home).Property(RandomEpisode.2.Path)]</value>
-	</variable>
-	
 	<!--Menu Variables-->
 	
 	<variable name="Menu_Label_Color">
@@ -562,9 +562,11 @@
 	</variable>	
 	
 	<variable name="Square_Image">
-		<value condition="Container.Content(seasons)">$INFO[Listitem.Property(Fanart_Image)]</value>
-		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + !IsEmpty(ListItem.Fanart)">$INFO[ListItem.Fanart]</value>
-		<value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)">$INFO[Listitem.Property(Fanart_Image)]</value>
+		<value condition="Container.Content(movies) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_movies.jpg</value>
+		<value condition="Container.Content(artists) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_music.jpg</value>
+		<value condition="[Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))] | [Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))]">fallbacks/fallback_tv.jpg</value>
+		<value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="Container.Content(seasons)">$INFO[ListItem.Art(season.fanart)]</value>
 		<value>$INFO[ListItem.Thumb]</value>
 	</variable>
 	
@@ -591,7 +593,36 @@
 		<value condition="ListItem.property(sync) + Control.HasFocus(120)">Label_Normal</value>
 		<value condition="ListItem.property(sync) + !Control.HasFocus(120)">Settings_Label</value>
 		<value>Label_Disabled</value>
-	</variable>	
+	</variable>
+	
+	<!--Thumbnail Variables-->
+	
+	<variable name="Thumbnail_Image">
+		<value condition="Container.Content(movies) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_movies.jpg</value>
+		<value condition="Container.Content(artists) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_music.jpg</value>
+		<value condition="[Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))] | [Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))]">fallbacks/fallback_tv.jpg</value>
+		<value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="Container.Content(seasons)">$INFO[ListItem.Art(season.fanart)]</value>
+		<value condition="Container.Content(addons)">$INFO[ListItem.Art(fanart)]</value>
+		<value>$INFO[ListItem.Thumb]</value>
+	</variable>
+	
+	<variable name="Thumbnail_Header">
+		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">$INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Episode]. $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,,.] $INFO[ListItem.Title]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	
+	<variable name="Thumbnail_Detail">
+		<value condition="Container.Content(movies)">$INFO[ListItem.Year] $INFO[ListItem.Studio]</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons) | [[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Property(Addon.Version))]">$INFO[ListItem.Studio]</value>
+		<value condition="SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)">$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</value>
+		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered,ORIGINALLY AIRED ,]</value>
+		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Born))">$INFO[ListItem.Property(Artist_Born),BORN ,]</value>
+		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Formed))">$INFO[ListItem.Property(Artist_Formed),FORMED ,]</value>
+	</variable>
 	
 	<!--Tile Variables-->
 	
