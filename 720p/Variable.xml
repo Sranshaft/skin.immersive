@@ -112,7 +112,8 @@
 	<variable name="Details_Image">
 		<value condition="Container.Content(movies) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_movies.jpg</value>
 		<value condition="Container.Content(artists) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_music.jpg</value>
-		<value condition="[Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))] | [Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))]">fallbacks/fallback_tv.jpg</value>
+		<value condition="Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_tv.jpg</value>
+		<value condition="Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(seasons)">$INFO[ListItem.Art(season.fanart)]</value>
 		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + !IsEmpty(ListItem.Fanart)">$INFO[ListItem.Fanart]</value>
@@ -144,7 +145,8 @@
 	<variable name="ExtendedList_Image">
 		<value condition="Container.Content(movies) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_movies.jpg</value>
 		<value condition="Container.Content(artists) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_music.jpg</value>
-		<value condition="[Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))] | [Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))]">fallbacks/fallback_tv.jpg</value>
+		<value condition="Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_tv.jpg</value>
+		<value condition="Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(seasons)">$INFO[ListItem.Art(season.fanart)]</value>
 		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + !IsEmpty(ListItem.Fanart)">$INFO[ListItem.Fanart]</value>
@@ -564,7 +566,8 @@
 	<variable name="Square_Image">
 		<value condition="Container.Content(movies) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_movies.jpg</value>
 		<value condition="Container.Content(artists) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_music.jpg</value>
-		<value condition="[Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))] | [Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))]">fallbacks/fallback_tv.jpg</value>
+		<value condition="Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_tv.jpg</value>
+		<value condition="Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(seasons)">$INFO[ListItem.Art(season.fanart)]</value>
 		<value>$INFO[ListItem.Thumb]</value>
@@ -600,7 +603,8 @@
 	<variable name="Thumbnail_Image">
 		<value condition="Container.Content(movies) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_movies.jpg</value>
 		<value condition="Container.Content(artists) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_music.jpg</value>
-		<value condition="[Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))] | [Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))]">fallbacks/fallback_tv.jpg</value>
+		<value condition="Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_tv.jpg</value>
+		<value condition="Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(seasons)">$INFO[ListItem.Art(season.fanart)]</value>
 		<value condition="Container.Content(addons)">$INFO[ListItem.Art(fanart)]</value>
