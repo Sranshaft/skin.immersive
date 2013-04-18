@@ -185,7 +185,7 @@
 		<control type="button" id="9114">
 			
 			<include>Common_AppBar_View_Square</include>
-			<visible>Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)</visible>
+			<visible>Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(addons) | SubString(Container.FolderPath,plugin,left)</visible>
 			
 		</control>
 		
@@ -321,7 +321,7 @@
 	
 	</include>
 	
-	<!--Appbar for MyMusicNav.xml-->
+	<!--Appbar for MyMusicSongs.xml-->
 	<include name="AppBar_MyMusicSongs">
 		
 		<!--View List-->
@@ -491,7 +491,6 @@
 		<control type="button" id="9114">
 			
 			<include>Common_AppBar_View_ExtendedSqaure</include>
-			<visible>SubString(Container.FolderPath,addons,left)</visible>
 			
 		</control>
 		
@@ -499,7 +498,6 @@
 		<control type="button" id="9115">
 			
 			<include>Common_AppBar_View_Square</include>
-			<visible>SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)</visible>
 			
 		</control>
 		
@@ -545,7 +543,7 @@
 		<control type="button" id="9111">
 			
 			<include>Common_AppBar_View_Poster</include>
-			<visible>![SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + !Container.Content(episodes)</visible>
+			<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			
 		</control>
 		
@@ -553,7 +551,6 @@
 		<control type="button" id="9112">
 			
 			<include>Common_AppBar_View_Thumb</include>
-			<visible>!Container.Content(seasons)</visible>
 			
 		</control>
 		
@@ -569,7 +566,7 @@
 		<control type="button" id="9114">
 			
 			<include>Common_AppBar_View_ExtendedSqaure</include>
-			<visible>SubString(Container.FolderPath,addons,left)</visible>
+			<visible>Container.Content(addons)</visible>
 			
 		</control>
 		
@@ -577,7 +574,7 @@
 		<control type="button" id="9115">
 			
 			<include>Common_AppBar_View_Square</include>
-			<visible>SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)</visible>
+			<visible>Container.Content(addons) | SubString(Container.FolderPath,plugin,left)</visible>
 			
 		</control>
 		
