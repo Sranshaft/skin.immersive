@@ -104,6 +104,7 @@
 	<!--Details List Variables-->
 	
 	<variable name="Details_Header">
+		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">$INFO[ListItem.Title]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Episode,,.] $INFO[ListItem.Title]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,,.] $INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
@@ -121,23 +122,25 @@
 	</variable>
 	
 	<variable name="Details_SubHeader">
-		<value condition="Container.Content(movies)">$INFO[ListItem.Year] [UPPERCASE]$INFO[ListItem.Studio][/UPPERCASE]</value>
-		<value condition="Container.Content(tvshows) | [[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Property(Addon.Version))]">[UPPERCASE]$INFO[ListItem.Studio][/UPPERCASE]</value>
-		<value condition="SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)">$INFO[ListItem.Property(Addon.Version)] [UPPERCASE]$INFO[ListItem.Property(Addon.Creator)][/UPPERCASE]</value>
-		<value condition="Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, EPISODES]</value>
+		<value condition="Container.Content(movies)">$INFO[ListItem.Year] $INFO[ListItem.Studio]</value>
+		<value condition="Container.Content(tvshows)">$INFO[ListItem.Studio]</value>
+		<value condition="Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, Episodes]</value>
 		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered,ORIGINALLY AIRED ,]</value>
-		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Born))">[UPPERCASE]$INFO[ListItem.Property(Artist_Born),BORN ,][/UPPERCASE]</value>
-		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Formed))">[UPPERCASE]$INFO[ListItem.Property(Artist_Formed),FORMED ,][/UPPERCASE]</value>
-		<value condition="Container.Content(albums)">[UPPERCASE]$INFO[ListItem.Artist][/UPPERCASE]</value>
+		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Born))">$INFO[ListItem.Property(Artist_Born),BORN ,]</value>
+		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Formed))">$INFO[ListItem.Property(Artist_Formed),FORMED ,]</value>
+		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.Duration]</value>
+		<value condition="Container.Content(addons)">$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</value>
+		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Property(Addon.Version))">$INFO[ListItem.Studio]</value>
+		<value>$INFO[ListItem.Label2]</value>
 	</variable>
 	
 	<!--Extended List Variables-->
 	
 	<variable name="ExtendedList_Header">
 		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">$INFO[ListItem.Title]</value>
-		<value condition="Container.Content(episodes)">$INFO[ListItem.Episode]. $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Episode,,.] $INFO[ListItem.Title]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,,.] $INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>	
@@ -164,30 +167,26 @@
 	</variable>
 	
 	<variable name="ExtendedList_SubHeader">
-		<value condition="SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)">$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
+		<value condition="Container.Content(addons)">$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</value>
+		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Property(Addon.Version))">$INFO[ListItem.Studio]</value>
+		<value>$INFO[ListItem.Label2]</value>
 	</variable>
 	
 	<variable name="ExtendedList_Detail">
 		<value condition="Container.Content(movies)">$INFO[ListItem.Year] $INFO[ListItem.Studio]</value>
-		<value condition="Container.Content(tvshows) | Container.Content(seasons) | [[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Property(Addon.Version))]">$INFO[ListItem.Studio]</value>
-		<value condition="SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)">$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</value>
+		<value condition="Container.Content(tvshows)">$INFO[ListItem.Studio]</value>
+		<value condition="Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, Episodes]</value>
 		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered,ORIGINALLY AIRED ,]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Born))">$INFO[ListItem.Property(Artist_Born),BORN ,]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Formed))">$INFO[ListItem.Property(Artist_Formed),FORMED ,]</value>
+		<value condition="Container.Content(addons)">$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</value>
+		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Property(Addon.Version))">$INFO[ListItem.Studio]</value>
+		<value>$INFO[ListItem.Label2]</value>
 	</variable>
 	
-	<!--Fallback Image Variable-->
-	
-	<variable name="Fallback_Image">
-		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">fallbacks/fallback_tvshows.jpg</value>
-		<value condition="Container.Content(movies)">fallbacks/fallback_movies.jpg</value>
-		<value condition="Container.Content(artists) | Container.Content(albums) | Container.Content(songs)">fallbacks/fallback_music.jpg</value>
-		<value>colors/color_keyboard_dark.png</value>
-	</variable>	
-	
-	<!--Fanart Image Variable-->
+	<!--Fanart Variables-->
 	
 	<variable name="Fanart_Image">
 		<value condition="Window.IsVisible(script-globalsearch-main.xml) + Control.HasFocus(111)">$INFO[Container(111).ListItem.Property(Fanart)]</value>
@@ -407,6 +406,7 @@
 	</variable>
 	
 	<variable name="List_Detail">
+		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">$INFO[ListItem.TVShowTitle]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered,ORIGINALLY AIRED ,]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.Duration]</value>
@@ -558,7 +558,8 @@
 	<!--Square List Variables-->
 	
 	<variable name="Square_Header">
-		<value condition="Container.Content(episodes)">$INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">$INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Episode,,.] $INFO[ListItem.Title]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,,.] $INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>	
@@ -575,13 +576,17 @@
 	
 	<variable name="Square_SubHeader">
 		<value condition="Container.Content(movies)">$INFO[ListItem.Year] $INFO[ListItem.Studio]</value>
-		<value condition="Container.Content(tvshows) | Container.Content(seasons) | [[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Property(Addon.Version))]">$INFO[ListItem.Studio]</value>
-		<value condition="SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)">$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</value>
+		<value condition="Container.Content(tvshows)">$INFO[ListItem.Studio]</value>
+		<value condition="Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, Episodes]</value>
+		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered,ORIGINALLY AIRED ,]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Born))">$INFO[ListItem.Property(Artist_Born),BORN ,]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Formed))">$INFO[ListItem.Property(Artist_Formed),FORMED ,]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.Duration]</value>
+		<value condition="Container.Content(addons)">$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</value>
+		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Property(Addon.Version))">$INFO[ListItem.Studio]</value>
+		<value>$INFO[ListItem.Label2]</value>
 	</variable>
 	
 	<!--Subtitle Variables-->
@@ -613,19 +618,22 @@
 	
 	<variable name="Thumbnail_Header">
 		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">$INFO[ListItem.Title]</value>
-		<value condition="Container.Content(episodes)">$INFO[ListItem.Episode]. $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Episode,,.] $INFO[ListItem.Title]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,,.] $INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	
 	<variable name="Thumbnail_Detail">
 		<value condition="Container.Content(movies)">$INFO[ListItem.Year] $INFO[ListItem.Studio]</value>
-		<value condition="Container.Content(tvshows) | Container.Content(seasons) | [[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Property(Addon.Version))]">$INFO[ListItem.Studio]</value>
-		<value condition="SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)">$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</value>
+		<value condition="Container.Content(tvshows)">$INFO[ListItem.Studio]</value>
+		<value condition="Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, Episodes]</value>
 		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered,ORIGINALLY AIRED ,]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Born))">$INFO[ListItem.Property(Artist_Born),BORN ,]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Formed))">$INFO[ListItem.Property(Artist_Formed),FORMED ,]</value>
+		<value condition="Container.Content(addons)">$INFO[ListItem.Property(Addon.Version)] $INFO[ListItem.Property(Addon.Creator)]</value>
+		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Property(Addon.Version))">$INFO[ListItem.Studio]</value>
+		<value>$INFO[ListItem.Label2]</value>
 	</variable>
 	
 	<!--Tile Variables-->

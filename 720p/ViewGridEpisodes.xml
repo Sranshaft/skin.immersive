@@ -86,7 +86,7 @@
 							<textcolor>Label_Normal</textcolor>
 							<font>Menu-Thumbnail-Header</font>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ExtendedList_Header]</label>
 						
 						</control>
 						
@@ -168,7 +168,7 @@
 							<textcolor>Label_Normal</textcolor>
 							<font>Menu-Thumbnail-Header</font>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ExtendedList_Header]</label>
 						
 						</control>
 						
@@ -249,7 +249,7 @@
 						
 						<width>360</width>
 						<height>76</height>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ExtendedList_Header]</label>
 						<font>Menu-Grid-Header</font>
 						<textcolor>Label_Dark</textcolor>
 						<aligny>top</aligny>
@@ -291,7 +291,7 @@
 					<posy>400</posy>
 					<width>360</width>
 					<height>26</height>
-					<label>$INFO[ListItem.TVShowTitle]</label>
+					<label>$VAR[ExtendedList_Detail]</label>
 					<font>Menu-Grid-Small</font>
 					<textcolor>Label_Dark</textcolor>
 					<aligny>center</aligny>
