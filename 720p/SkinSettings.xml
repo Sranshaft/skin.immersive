@@ -454,6 +454,28 @@
 					
 					<description>Background Video</description>
 					<include>Common_Settings_RadioButton</include>
+					<label>In cinemas</label>
+					<onclick>Skin.ToggleSetting(ShowInCinemasSection_Video)</onclick>
+					<selected>Skin.HasSetting(ShowInCinemasSection_Video)</selected>
+					<enable>System.HasAddon(script.extendedinfo)</enable>
+					
+				</control>
+				
+				<control type="radiobutton" id="205">
+					
+					<description>Background Video</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Trending</label>
+					<onclick>Skin.ToggleSetting(ShowTrendingSection_Video)</onclick>
+					<selected>Skin.HasSetting(ShowTrendingSection_Video)</selected>
+					<enable>System.HasAddon(script.extendedinfo)</enable>
+					
+				</control>
+				
+				<control type="radiobutton" id="206">
+					
+					<description>Background Video</description>
+					<include>Common_Settings_RadioButton</include>
 					<label>History</label>
 					<onclick>Skin.ToggleSetting(ShowHistorySection_Video)</onclick>
 					<selected>Skin.HasSetting(ShowHistorySection_Video)</selected>
@@ -469,7 +491,7 @@
 					
 				</control>
 
-				<control type="radiobutton" id="205">
+				<control type="radiobutton" id="207">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
@@ -480,7 +502,7 @@
 					
 				</control>
 
-				<control type="radiobutton" id="206">
+				<control type="radiobutton" id="208">
 					
 					<description>Background Video</description>
 					<include>Common_Settings_RadioButton</include>
@@ -491,7 +513,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="207">
+				<control type="radiobutton" id="209">
 					
 					<description>Background Video</description>
 					<include>Common_Settings_RadioButton</include>
@@ -502,7 +524,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="208">
+				<control type="radiobutton" id="210">
 					
 					<description>Background Video</description>
 					<include>Common_Settings_RadioButton</include>

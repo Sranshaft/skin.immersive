@@ -550,6 +550,27 @@
 			<linespacing>0.75</linespacing>
 		</font>
 		
+		<font>
+			<name>Menu-InCinemas-Large</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>20</size>
+			<style>uppercase</style>
+		</font>	
+		
+		<font>
+			<name>Menu-InCinemas-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Menu-InCinemas-Plot</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>20</size>
+			<linespacing>0.85</linespacing>
+		</font>
+		
 		<!--NowPlaying Fonts-->
 		
 		<font>

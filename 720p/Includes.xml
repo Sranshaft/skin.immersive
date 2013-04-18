@@ -1193,6 +1193,14 @@
 		
 	</include>
 	
+	<include name="Common_List_Indicator">
+	
+		<width>10</width>
+		<height>10</height>
+		<texture>colors/color_white.png</texture>
+		
+	</include>	
+	
 	<include name="Common_Menu_Button">
 	
 		<width>320</width>
