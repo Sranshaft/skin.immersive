@@ -690,7 +690,47 @@
 	<variable name="Tile_StarRating">
 		<value condition="!IsEmpty(ListItem.Property(Addon.StarRating))">$INFO[ListItem.Property(Addon.StarRating)]</value>
 		<value>$INFO[ListItem.StarRating]</value>
-	</variable>	
+	</variable>
+	
+	<variable name="Trakt_TrendingMovies_Label">
+		<value condition="!ControlGroup(10000).HasFocus(10001)">trending movies</value>
+		<value condition="ControlGroup(10000).HasFocus(10001)">[B]trending movies[/B]</value>
+	</variable>
+	
+	<variable name="Trakt_TrendingMovies_TextColor">
+		<value condition="ControlGroup(10000).HasFocus(10001) + Control.HasFocus(10001)">Label_Highlight</value>
+		<value>Label_Dark</value>
+	</variable>
+	
+	<variable name="Trakt_TrendingShows_Label">
+		<value condition="!ControlGroup(10000).HasFocus(10002)">trending shows</value>
+		<value condition="ControlGroup(10000).HasFocus(10002)">[B]trending shows[/B]</value>
+	</variable>
+	
+	<variable name="Trakt_TrendingShows_TextColor">
+		<value condition="ControlGroup(10000).HasFocus(10002) + Control.HasFocus(10002)">Label_Highlight</value>
+		<value>Label_Dark</value>
+	</variable>
+	
+	<variable name="Trakt_AiringShows_Label">
+		<value condition="!ControlGroup(10000).HasFocus(10003)">airing shows</value>
+		<value condition="ControlGroup(10000).HasFocus(10003)">[B]airing shows[/B]</value>
+	</variable>
+	
+	<variable name="Trakt_AiringShows_TextColor">
+		<value condition="ControlGroup(10000).HasFocus(10003) + Control.HasFocus(10003)">Label_Highlight</value>
+		<value>Label_Dark</value>
+	</variable>
+	
+	<variable name="Trakt_PremieringShows_Label">
+		<value condition="!ControlGroup(10000).HasFocus(10004)">premiering shows</value>
+		<value condition="ControlGroup(10000).HasFocus(10004)">[B]premiering shows[/B]</value>
+	</variable>
+	
+	<variable name="Trakt_PremieringShows_TextColor">
+		<value condition="ControlGroup(10000).HasFocus(10004) + Control.HasFocus(10004)">Label_Highlight</value>
+		<value>Label_Dark</value>
+	</variable>
 	
 	<!--TV Show Next Aired Variables-->
 	

@@ -88,7 +88,7 @@
 		<font>
 			<name>Content-Label</name>
 			<filename>SegoeWP-SemiLight.ttf</filename>
-			<size>28</size>
+			<size>30</size>
 		</font>
 		
 		<!--Context Fonts-->
@@ -571,6 +571,28 @@
 			<linespacing>0.85</linespacing>
 		</font>
 		
+		<font>
+			<name>Menu-Similar-Header</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>20</size>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-Similar-Detail</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+			<linespacing>0.85</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-Similar-Plot</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>16</size>
+			<linespacing>0.85</linespacing>
+		</font>
+		
 		<!--NowPlaying Fonts-->
 		
 		<font>
@@ -1041,6 +1063,40 @@
 			<name>PseudoTV-Description</name>
 			<filename>SegoeWP.ttf</filename>
 			<size>16</size>
+		</font>
+		
+		<!--Trakt.TV Fonts-->
+		
+		<font>
+			<name>TraktTV-Breadcrumb-Menu</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>24</size>
+			<style>lowercase</style>
+		</font>
+		
+		<font>
+			<name>TraktTV-Info-Title</name>
+			<filename>SegeoWP-Light.ttf</filename>
+			<size>48</size>
+		</font>
+		
+		<font>
+			<name>TraktTV-Info-Tagline</name>
+			<filename>SegeoWP-SemiBold.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<font>
+			<name>TraktTV-Info-Detail</name>
+			<filename>SegeoWP-SemiBold.ttf</filename>
+			<size>16</size>
+		</font>
+		
+		<font>
+			<name>TraktTV-Info-Plot</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>18</size>
+			<linespacing>0.85</linespacing>
 		</font>
 		
 		<!--TV Next Aired Addon Fonts-->

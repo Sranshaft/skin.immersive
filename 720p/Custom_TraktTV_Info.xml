@@ -1,0 +1,345 @@
+<window type="dialog" id="58">
+
+	<defaultcontrol always="true">50</defaultcontrol>
+	
+	<zorder>2</zorder>
+	
+	<include>Common_Animation_Window</include>
+	
+	<controls>
+	
+		<!--Background-->
+		<control type="image">
+				
+			<include>Common_Dimensions</include>
+			<texture>colors/color_white.png</texture>
+			<colordiffuse>Background_Normal</colordiffuse>
+			
+		</control>
+		
+		<control type="group">
+		
+			<control type="image">
+	
+				<include>Common_Dimensions</include>
+				<texture background="true">$INFO[Window.Property(Fanart)]</texture>
+				
+			</control>
+			
+			<control type="image">
+	
+				<include>Common_Dimensions</include>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>FanartDiffuse</colordiffuse>
+			
+			</control>
+			
+		</control>
+		
+		<control type="group">
+		
+			<posx>1020</posx>
+			<posy>0</posy>
+			
+			<include>Common_Animation_Content</include>
+			<animation effect="slide" start="0,0" end="-200,0" time="600" tween="cubic" easing="out" condition="Control.HasFocus(581)">Conditional</animation>
+		
+			<control type="image">
+		
+				<include>Common_Dimensions</include>
+				<texture background="true">colors/color_white.png</texture>
+				<colordiffuse>Settings_Background_Light</colordiffuse>
+				
+			</control>
+			
+			<control type="image">
+			
+				<include>Common_Dimensions</include>
+				<texture background="true">forumbrowser/forumbrowser_background.png</texture>
+				<colordiffuse>AAd6d6d6</colordiffuse>
+				
+			</control>
+			
+		</control>
+	
+		<!--Top Area-->
+		<control type="group">
+		
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>120</height>
+			
+			<control type="grouplist">
+			
+				<posx>60</posx>
+				<posy>20</posy>
+				<width>1100</width>
+				<height>100</height>
+				<orientation>horizontal</orientation>
+				<itemgap>20</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				
+				<control type="button">
+					
+					<posy>12</posy>
+					<width>48</width>
+					<height>48</height>
+					<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
+					<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
+					<colordiffuse>Label_Normal</colordiffuse>
+					<aspectratio>keep</aspectratio>
+					<onclick>back</onclick>
+					
+				</control>
+				
+				<control type="image">
+							
+					<width>345</width>
+					<height>65</height>
+					<texture>trakt.tv/trakttv_breadcrumb.png</texture>
+					<colordiffuse>Label_Normal</colordiffuse>
+					<aspectratio>keep</aspectratio>
+					
+				</control>
+				
+			</control>
+			
+		</control>
+		
+		<!--Fanart Area-->
+		<control type="group">
+		
+			<posx>60</posx>
+			<posy>100</posy>
+			<width>980</width>
+			<height>300</height>
+			
+			<include>Common_Animation_Content</include>
+			<animation effect="slide" start="0,0" end="-200,0" time="600" tween="cubic" easing="out" condition="Control.HasFocus(581)">Conditional</animation>
+			
+			<!--Hidden button-->
+			<control type="button" id="50">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>0</width>
+				<height>0</height>
+				<visible allowhiddenfocus="true">false</visible>
+				<onright>581</onright>
+			
+			</control>
+			
+			<control type="group">
+			
+				<posx>0</posx>
+				<posy>490</posy>
+				
+				<control type="label">
+				
+					<posx>-2</posx>
+					<posy>0</posy>
+					<width>800</width>
+					<height>40</height>
+					<label>$INFO[Window.Property(Title)]</label>
+					<font>TraktTV-Info-Title</font>
+					<textcolor>Label_Normal</textcolor>
+					
+				</control>	
+				
+				<control type="label">
+				
+					<posx>0</posx>
+					<posy>40</posy>
+					<width>800</width>
+					<height>40</height>
+					<label>$INFO[Window.Property(Tagline)]</label>
+					<font>TraktTV-Info-Tagline</font>
+					<textcolor>Label_Normal</textcolor>
+					
+				</control>	
+				
+			</control>
+
+		</control>
+		
+		<!--Details Area-->
+		<control type="group">
+		
+			<posx>1080</posx>
+			<posy>49</posy>
+			<width>600</width>
+			<height>300</height>
+			
+			<include>Common_Animation_Content</include>
+			<animation effect="slide" start="0,0" end="-200,0" time="600" tween="cubic" easing="out" condition="Control.HasFocus(581)">Conditional</animation>
+			
+			<control type="label">
+				
+				<label>overview</label>
+				<include>Common_Section_Label_Dark</include>
+				
+			</control>
+			
+			<control type="image">
+						
+				<posx>0</posx>
+				<posy>60</posy>
+				<width>140</width>
+				<height>210</height>
+				<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[Window.Property(Poster)]</texture>
+				<aspectratio>stretch</aspectratio>
+				
+			</control>
+			
+			<control type="grouplist">
+			
+				<posx>160</posx>
+				<posy>60</posy>
+				<width>180</width>
+				<height>400</height>
+				<orientation>vertical</orientation>
+				<itemgap>6</itemgap>
+				
+				<control type="group">
+				
+					<width>48</width>
+					<height>48</height>
+				
+					<control type="image">
+					
+						<width>48</width>
+						<height>48</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>Background_Highlight</colordiffuse>
+						
+					</control>
+				
+					<control type="image">
+					
+						<width>48</width>
+						<height>48</height>
+						<texture>$INFO[Window.Property(MPAA),ratings/,.png]</texture>
+						<aspectratio>stretch</aspectratio>
+						
+					</control>
+					
+				</control>	
+				
+				<control type="label">
+				
+					<include>Common_TraktTV_Info_Detail</include>
+					<label>$INFO[Window.Property(Runtime),, minutes]</label>
+					<visible>!IsEmpty(Window.Property(Runtime))</visible>
+					
+				</control>
+				
+				<control type="label">
+				
+					<include>Common_TraktTV_Info_Detail</include>
+					<label>$INFO[Window.Property(Year)]</label>
+					<visible>!IsEmpty(Window.Property(Year))</visible>
+					
+				</control>
+				
+				<control type="label">
+				
+					<include>Common_TraktTV_Info_Detail</include>
+					<label>$INFO[Window.Property(Country)]</label>
+					<visible>!IsEmpty(Window.Property(Country))</visible>
+					
+				</control>
+				
+				<control type="label">
+				
+					<include>Common_TraktTV_Info_Detail</include>
+					<label>$INFO[Window.Property(NextTime)]</label>
+					<visible>!IsEmpty(Window.Property(NextTime))</visible>
+					
+				</control>
+				
+				<control type="label">
+				
+					<height>32</height>
+					<include>Common_TraktTV_Info_Detail</include>
+					<label>$INFO[Window.Property(Genre)]</label>
+					<visible>!IsEmpty(Window.Property(Genre))</visible>
+					
+				</control>
+				
+				<control type="image">
+				
+					<width>340</width>
+					<height>32</height>
+					<texture background="true">$INFO[Window.Property(Rating),trakt.tv/rating,.png]</texture>
+					<colordiffuse>Label_Dark</colordiffuse>
+					<aspectratio align="left">keep</aspectratio>
+					
+				</control>
+				
+				<control type="group">
+				
+					<width>180</width>
+					<height>32</height>
+					
+					<control type="button" id="581">
+					
+						<width>32</width>
+						<height>32</height>
+						<texturefocus>playercontrols/playercontrol_play_focus.png</texturefocus>
+						<texturenofocus>playercontrols/playercontrol_play.png</texturenofocus>
+						<colordiffuse>Label_Dark</colordiffuse>
+						<aspectratio align="left">scale</aspectratio>
+						<textoffsetx>32</textoffsetx>
+						<onleft>50</onleft>
+						<onclick condition="!IsEmpty(Window.Property(Trailer))">$INFO[Window.Property(Trailer)]</onclick>
+						<onclick condition="!IsEmpty(Window.Property(Trailer))">Dialog.Close(57)</onclick>
+						<onclick condition="!IsEmpty(Window.Property(Trailer))">Dialog.Close(58)</onclick>
+						<onclick condition="!IsEmpty(Window.Property(Trailer))">ActivateWindow(fullscreenvideo,return)</onclick>
+						
+						<visible allowhiddenfocus="true">!IsEmpty(Window.Property(Trailer))</visible>
+						
+					</control>
+					
+					<control type="label">
+
+						<posx>48</posx>
+						<include>Common_TraktTV_Info_Detail</include>
+						<label>play trailer</label>
+						
+						<visible allowhiddenfocus="true">!IsEmpty(Window.Property(Trailer))</visible>
+						
+					</control>
+					
+				</control>
+				
+			</control>
+			
+			<control type="image">
+					
+				<posx>0</posx>
+				<posy>290</posy>
+				<width>340</width>
+				<height>1</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Label_Dark</colordiffuse>
+				
+			</control>
+			
+			<control type="textbox">
+				
+				<posx>0</posx>
+				<posy>300</posy>
+				<width>340</width>
+				<height>314</height>
+				<label>$INFO[Window.Property(Plot)]</label>
+				<font>TraktTV-Info-Plot</font>
+				<textcolor>Label_Dark</textcolor>
+				
+			</control>
+			
+		</control>
+		
+	</controls>
+
+</window>	

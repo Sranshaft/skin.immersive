@@ -689,17 +689,17 @@
 		
 			<animation type="WindowOpen">
 				<effect type="fade" start="0" end="100" time="400"/>
-				<effect type="zoom" start="80" end="100" center="auto" time="400" tween="cubic" easing="out" />
+				<effect type="slide" start="1280,0" end="0,0" time="600" tween="cubic" easing="out" />
 			</animation>
 			
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="400"/>
-				<effect type="zoom" start="100" end="80" center="auto" time="400" tween="cubic" easing="out" />
+				<effect type="slide" start="0,0" end="1280,0" time="400" tween="cubic" easing="in" />
 			</animation>
 			
 			<animation type="VisibleChange">
 				<effect type="fade" start="0" end="100" time="400"/>
-				<effect type="zoom" start="80" end="100" center="auto" time="400" tween="cubic" easing="out" />
+				<effect type="slide" start="1280,0" end="0,0" time="600" tween="cubic" easing="out" />
 			</animation>
 
 			<control type="image">
@@ -949,7 +949,7 @@
 		
 			<include>Common_Dimensions</include>
 			<texture background="true">forumbrowser/forumbrowser_background.png</texture>
-			<colordiffuse>AAe6e6e6</colordiffuse>
+			<colordiffuse>AAd6d6d6</colordiffuse>
 			
 		</control>
 		
@@ -1783,7 +1783,7 @@
 		<posy>0</posy>
 		<width min="20" max="530">auto</width>
 		<height>40</height>
-		<font>Menu-Scroll</font>
+		<font>Content-Label</font>
 		<textcolor>Label_Normal</textcolor>
 		<aligny>top</aligny>
 		<wrapmultiline>false</wrapmultiline>
@@ -1797,7 +1797,7 @@
 		<posy>0</posy>
 		<width>400</width>
 		<height>100</height>
-		<font>Menu-Scroll</font>
+		<font>Content-Label</font>
 		<textcolor>Label_Normal</textcolor>
 		<align>right</align>
 		<aligny>top</aligny>
@@ -1812,7 +1812,7 @@
 		<posy>0</posy>
 		<width min="20" max="530">auto</width>
 		<height>40</height>
-		<font>Menu-Scroll</font>
+		<font>Content-Label</font>
 		<textcolor>Label_Dark</textcolor>
 		<aligny>top</aligny>
 		<wrapmultiline>false</wrapmultiline>
@@ -2112,6 +2112,35 @@
 			<visible>[System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)] + [SubString(Window.Property(xmlfile),script-Actors-DialogInfo) | SubString(Window.Property(xmlfile),script-Actors-DialogVideoInfo) | SubString(Window.Property(xmlfile),script-Actors-Browser) | StringCompare(Window.Property(xmlfile),DialogAlbumInfo.xml) | StringCompare(Window.Property(xmlfile),DialogVideoInfo.xml) | StringCompare(Window.Property(xmlfile),FileBrowser.xml)]</visible>
 			
 		</control>
+		
+	</include>
+	
+	<include name="Common_TraktTV_ClearProperties">
+	
+		<onclick>ClearProperty(Title,58)</onclick>
+		<onclick>ClearProperty(MPAA,58)</onclick>
+		<onclick>ClearProperty(Plot,58)</onclick>
+		<onclick>ClearProperty(Tagline,58)</onclick>
+		<onclick>ClearProperty(Year,58)</onclick>
+		<onclick>ClearProperty(Genre,58)</onclick>
+		<onclick>ClearProperty(Runtime,58)</onclick>
+		<onclick>ClearProperty(Rating,58)</onclick>
+		<onclick>ClearProperty(Poster,58)</onclick>
+		<onclick>ClearProperty(Fanart,58)</onclick>
+		<onclick>ClearProperty(Trailer,58)</onclick>
+		<onclick>ClearProperty(Country,58)</onclick>
+		<onclick>ClearProperty(NextTime,58)</onclick>
+		
+	</include>	
+	
+	<include name="Common_TraktTV_Info_Detail">
+	
+		<width>180</width>
+		<height>18</height>
+		<font>TraktTV-Info-Detail</font>
+		<textcolor>Label_Dark</textcolor>
+		<aligny>top</aligny>
+		<wrapmultiline>true</wrapmultiline>
 		
 	</include>	
 	
