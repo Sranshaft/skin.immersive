@@ -74,7 +74,7 @@
 					
 					<control type="image">
 						
-						<width>100</width>
+						<width>128</width>
 						<height>22</height>
 						<texture background="true">$INFO[Player.StarRating]</texture>
 						<colordiffuse>Label_Normal</colordiffuse>
