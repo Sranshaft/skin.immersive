@@ -1146,7 +1146,7 @@
 						
 							<posx>10</posx>
 							<posy>1</posy>
-							<width>400</width>
+							<width>380</width>
 							<height>24</height>
 							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 							<font>Home-RecentWatched</font>
@@ -1160,8 +1160,8 @@
 						<control type="label">
 						
 							<posx>10</posx>
-							<posy>21</posy>
-							<width>400</width>
+							<posy>22</posy>
+							<width>380</width>
 							<height>24</height>
 							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 							<font>Home-RecentWatched-Small</font>
@@ -1210,7 +1210,7 @@
 						
 							<posx>10</posx>
 							<posy>1</posy>
-							<width>400</width>
+							<width>380</width>
 							<height>24</height>
 							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 							<font>Home-RecentWatched</font>
@@ -1224,8 +1224,8 @@
 						<control type="label">
 						
 							<posx>10</posx>
-							<posy>21</posy>
-							<width>400</width>
+							<posy>22</posy>
+							<width>380</width>
 							<height>48</height>
 							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 							<font>Home-RecentWatched-Small</font>
@@ -1245,71 +1245,71 @@
 				
 					<item id="1">
 						<onclick>-</onclick>
-						<thumb>$INFO[Window(Home).Property(NearEvents.1.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(NearEvents.1.Artists)]</label>
+						<thumb>$INFO[Window(Home).Property(NearEvents.1.artist_image)]</thumb>
+						<label>$INFO[Window(Home).Property(NearEvents.1.EventName)]</label>
 						<label2>[B]$INFO[Window(Home).Property(NearEvents.1.Date)][/B][CR]$INFO[Window(Home).Property(NearEvents.1.City)]</label2>
 					</item>
 					
 					<item id="2">
 						<onclick>-</onclick>
-						<thumb>$INFO[Window(Home).Property(NearEvents.2.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(NearEvents.2.Artists)]</label>
+						<thumb>$INFO[Window(Home).Property(NearEvents.2.artist_image)]</thumb>
+						<label>$INFO[Window(Home).Property(NearEvents.2.EventName)]</label>
 						<label2>[B]$INFO[Window(Home).Property(NearEvents.2.Date)][/B][CR]$INFO[Window(Home).Property(NearEvents.2.City)]</label2>
 					</item>
 					
 					<item id="3">
 						<onclick>-</onclick>
-						<thumb>$INFO[Window(Home).Property(NearEvents.3.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(NearEvents.3.Artists)]</label>
+						<thumb>$INFO[Window(Home).Property(NearEvents.3.artist_image)]</thumb>
+						<label>$INFO[Window(Home).Property(NearEvents.3.EventName)]</label>
 						<label2>[B]$INFO[Window(Home).Property(NearEvents.3.Date)][/B][CR]$INFO[Window(Home).Property(NearEvents.3.City)]</label2>
 					</item>
 					
 					<item id="4">
 						<onclick>-</onclick>
-						<thumb>$INFO[Window(Home).Property(NearEvents.4.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(NearEvents.4.Artists)]</label>
+						<thumb>$INFO[Window(Home).Property(NearEvents.4.artist_image)]</thumb>
+						<label>$INFO[Window(Home).Property(NearEvents.4.EventName)]</label>
 						<label2>[B]$INFO[Window(Home).Property(NearEvents.4.Date)][/B][CR]$INFO[Window(Home).Property(NearEvents.4.City)]</label2>
 					</item>
 					
 					<item id="5">
 						<onclick>-</onclick>
-						<thumb>$INFO[Window(Home).Property(NearEvents.5.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(NearEvents.5.Artists)]</label>
+						<thumb>$INFO[Window(Home).Property(NearEvents.5.artist_image)]</thumb>
+						<label>$INFO[Window(Home).Property(NearEvents.5.EventName)]</label>
 						<label2>[B]$INFO[Window(Home).Property(NearEvents.5.Date)][/B][CR]$INFO[Window(Home).Property(NearEvents.5.City)]</label2>
 					</item>
 					
 					<item id="6">
 						<onclick>-</onclick>
-						<thumb>$INFO[Window(Home).Property(NearEvents.6.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(NearEvents.6.Artists)]</label>
+						<thumb>$INFO[Window(Home).Property(NearEvents.6.artist_image)]</thumb>
+						<label>$INFO[Window(Home).Property(NearEvents.6.EventName)]</label>
 						<label2>[B]$INFO[Window(Home).Property(NearEvents.6.Date)][/B][CR]$INFO[Window(Home).Property(NearEvents.6.City)]</label2>
 					</item>
 					
 					<item id="7">
 						<onclick>-</onclick>
-						<thumb>$INFO[Window(Home).Property(NearEvents.7.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(NearEvents.7.Artists)]</label>
+						<thumb>$INFO[Window(Home).Property(NearEvents.7.artist_image)]</thumb>
+						<label>$INFO[Window(Home).Property(NearEvents.7.EventName)]</label>
 						<label2>[B]$INFO[Window(Home).Property(NearEvents.7.Date)][/B][CR]$INFO[Window(Home).Property(NearEvents.7.City)]</label2>
 					</item>
 					
 					<item id="8">
 						<onclick>-</onclick>
-						<thumb>$INFO[Window(Home).Property(NearEvents.8.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(NearEvents.8.Artists)]</label>
+						<thumb>$INFO[Window(Home).Property(NearEvents.8.artist_image)]</thumb>
+						<label>$INFO[Window(Home).Property(NearEvents.8.EventName)]</label>
 						<label2>[B]$INFO[Window(Home).Property(NearEvents.8.Date)][/B][CR]$INFO[Window(Home).Property(NearEvents.8.City)]</label2>
 					</item>
 					
 					<item id="9">
 						<onclick>-</onclick>
-						<thumb>$INFO[Window(Home).Property(NearEvents.9.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(NearEvents.9.Artists)]</label>
+						<thumb>$INFO[Window(Home).Property(NearEvents.9.artist_image)]</thumb>
+						<label>$INFO[Window(Home).Property(NearEvents.9.EventName)]</label>
 						<label2>[B]$INFO[Window(Home).Property(NearEvents.9.Date)][/B][CR]$INFO[Window(Home).Property(NearEvents.9.City)]</label2><visible>!IsEmpty(Window(Home).Property(NearEvents.9.Artists))</visible>
 					</item>
 					
 					<item id="10">
 						<onclick>-</onclick>
-						<thumb>$INFO[Window(Home).Property(NearEvents.10.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(NearEvents.10.Artists)]</label>
+						<thumb>$INFO[Window(Home).Property(NearEvents.10.artist_image)]</thumb>
+						<label>$INFO[Window(Home).Property(NearEvents.10.EventName)]</label>
 						<label2>[B]$INFO[Window(Home).Property(NearEvents.10.Date)][/B][CR]$INFO[Window(Home).Property(NearEvents.10.City)]</label2>
 					</item>
 					
@@ -1412,92 +1412,95 @@
 				
 					<item id="1">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMovies.1.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMovies.1.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMovies.1.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMovies.1.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMovies.1.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.1.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.1.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.1.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.1.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.1.MPAA)]</property>
+						<property name="Rating">$INFO[Window(Home).Property(InCinemaMoviesRT.1.Rating)]</property>
 					</item>
 
 					<item id="2">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMovies.2.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMovies.2.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMovies.2.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMovies.2.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMovies.2.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.2.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.2.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.2.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.2.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.2.MPAA)]</property>
+						<property name="Rating">$INFO[Window(Home).Property(InCinemaMoviesRT.2.Rating)]</property>
 					</item>
 					
 					<item id="3">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMovies.3.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMovies.3.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMovies.3.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMovies.3.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMovies.3.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.3.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.3.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.3.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.3.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.3.MPAA)]</property>
+						<property name="Rating">$INFO[Window(Home).Property(InCinemaMoviesRT.3.Rating)]</property>
 					</item>
 
 					<item id="4">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMovies.4.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMovies.4.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMovies.4.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMovies.4.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMovies.4.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.4.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.4.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.4.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.4.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.4.MPAA)]</property>
 					</item>
 					
 					<item id="5">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMovies.5.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMovies.5.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMovies.5.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMovies.5.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMovies.5.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.5.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.5.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.5.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.5.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.5.MPAA)]</property>
 					</item>
 
 					<item id="6">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMovies.6.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMovies.6.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMovies.6.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMovies.6.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMovies.6.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.6.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.6.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.6.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.6.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.6.MPAA)]</property>
 					</item>
 					
 					<item id="7">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMovies.7.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMovies.7.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMovies.7.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMovies.7.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMovies.7.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.7.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.7.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.7.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.7.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.7.MPAA)]</property>
 					</item>
 
 					<item id="8">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMovies.8.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMovies.8.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMovies.8.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMovies.8.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMovies.8.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.8.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.8.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.8.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.8.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.8.MPAA)]</property>
 					</item>
 					
 					<item id="9">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMovies.9.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMovies.9.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMovies.9.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMovies.9.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMovies.9.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.9.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.9.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.9.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.9.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.9.MPAA)]</property>
 					</item>
 
 					<item id="10">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMovies.10.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMovies.10.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMovies.10.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMovies.10.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMovies.10.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.10.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.10.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.10.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.10.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.10.MPAA)]</property>
 					</item>
 					
 				</content>
@@ -1734,7 +1737,7 @@
 			<width>510</width>
 			<height>480</height>
 			
-			<visible>Control.IsVisible(50) + [Skin.HasSetting(ShowHistorySection_Video) + IntegerGreaterThan(Container(9006).NumItems,0) + [StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/) | StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)]] | [Skin.HasSetting(ShowHistorySection_Music) + IntegerGreaterThan(Container(9006).NumItems,0) + IsEmpty(Container.FolderPath) + StringCompare(Window.Property(xmlfile),MyMusicNav.xml)]</visible>
+			<visible>Control.IsVisible(50) + [Skin.HasSetting(ShowHistorySection_Video) + [StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/) | StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)]] | [Skin.HasSetting(ShowHistorySection_Music) + IsEmpty(Container.FolderPath) + StringCompare(Window.Property(xmlfile),MyMusicNav.xml)]</visible>
 		
 			<control type="label">
 					

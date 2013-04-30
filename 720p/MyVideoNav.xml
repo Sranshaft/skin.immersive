@@ -6,15 +6,15 @@
 	<views>50,51,52,53,54,55,56,58,59,501</views>
 	
 	<!--Splash Screen-->
-	<onload condition="!Window.Previous(fullscreenvideo)">ActivateWindow(60)</onload>
+	<onload condition="!Window.Previous(fullscreenvideo) + !Window.Previous(videolibrary)">ActivateWindow(60)</onload>
 	
 	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Video)">XBMC.RunScript(script.randomandlastitems,limit=10,method=Last,playlist=special://skin/playlists/History (Movies).xsp,menu=Menu1)</onload>
 	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Video)">XBMC.RunScript(script.randomandlastitems,limit=10,method=Last,playlist=special://skin/playlists/History (TV Shows).xsp,menu=Menu2)</onload>
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowAiringTodaySection_Video)">XBMC.RunScript(script.tv.show.next.aired,backend=True)</onload>
 	
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowInCinemasSection_Video)">RunScript(script.extendedinfo,info=InCinema)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingShows)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowInCinemasSection_Video)">RunScript(script.extendedinfo,info=incinema)</onload>
+	<!--<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingShows)</onload>-->
 	
 	<onload>AlarmClock(MoveFeatured,Control.Move(9001,1),00:20,silent,loop)</onload>
 	<onunload>XBMC.CancelAlarm(MoveFeatured,true)</onunload>
@@ -46,8 +46,8 @@
 				<height>480</height>
 				
 				<!--Animation-->
-				<include condition="!Window.Previous(fullscreenvideo)">Common_Animation_Content_Splash</include>
-				<include condition="Window.Previous(fullscreenvideo)">Common_Animation_Content</include>
+				<include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(videolibrary)">Common_Animation_Content_Splash</include>
+				<include condition="Window.Previous(fullscreenvideo) | Window.Previous(videolibrary)">Common_Animation_Content</include>
 				
 				<!--Available Views-->
 				<include>ViewList</include>
