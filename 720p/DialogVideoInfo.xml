@@ -4,6 +4,8 @@
 	<allowoverlay>yes</allowoverlay>
 	
 	<onload>Skin.Reset(ShowManageMenu)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(movies)">RunScript(script.extendedinfo,info=Similar,dbid=$INFO[ListItem.DBID],type=movie)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(tvshows)">RunScript(script.extendedinfo,info=Similar,dbid=$INFO[ListItem.DBID],type=tvshow)</onload>
 	
 	<include>Common_Animation_Window</include>
 	
@@ -376,7 +378,7 @@
 								<width>128</width>
 								<height>32</height>
 								<texture background="true">$INFO[ListItem.StarRating]</texture>
-								<aspectratio>scale</aspectratio>
+								<aspectratio>keep</aspectratio>
 								
 							</control>
 							
@@ -516,10 +518,10 @@
 						<width>780</width>
 						<height>520</height>
 						<onleft>9001</onleft>
-						<onright>-</onright>
+						<onright>51</onright>
 						<onup>50</onup>
 						<ondown>50</ondown>
-						<pagecontrol>81</pagecontrol>
+						<pagecontrol>80</pagecontrol>
 						<viewtype label="535">list</viewtype>
 						<scrolltime tween="cubic" easing="out">600</scrolltime>
 						<preloaditems>2</preloaditems>
@@ -652,7 +654,7 @@
 					</control>	
 				
 					<!--Scrollbar-->
-					<control type="scrollbar" id="81">
+					<control type="scrollbar" id="80">
 					
 						<include>Common_Settings_Scrollbar_Vertical</include>
 						
@@ -661,10 +663,476 @@
 						<height>500</height>
 						<onleft>50</onleft>
 						
-						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(81).Scrolling">Conditional</animation>
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(80).Scrolling">Conditional</animation>
 						
 					</control>	
 					
+				</control>
+				
+				<!--Similar Section-->
+				<control type="group">
+				
+					<width>400</width>
+					<height>560</height>
+					
+					<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+				
+					<control type="label">
+						
+						<label>similar</label>
+						<include>Common_Section_Label_Dark</include>
+						
+					</control>
+					
+					<control type="panel" id="51">
+							
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>380</width>
+						<height>520</height>
+						<onleft>50</onleft>
+						<onright>-</onright>
+						<onup>51</onup>
+						<ondown>51</ondown>
+						<pagecontrol>81</pagecontrol>
+						<viewtype label="535">list</viewtype>
+						<scrolltime tween="cubic" easing="out">600</scrolltime>
+						<preloaditems>2</preloaditems>
+						<orientation>vertical</orientation>
+						
+						<itemlayout width="380" height="130">
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								
+							</control>
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true">$INFO[ListItem.Thumb]</texture>
+								<aspectratio>stretch</aspectratio>
+								
+							</control>
+							
+							<control type="group">
+							
+								<posx>100</posx>
+								<posy>-10</posy>
+								<width>260</width>
+								<height>110</height>
+							
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>260</width>
+									<height>24</height>
+									<label>$INFO[ListItem.Label]</label>
+									<font>Menu-Similar-Header</font>
+									<textcolor>Label_Dark</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>24</posy>
+									<width>260</width>
+									<height>20</height>
+									<label>$INFO[ListItem.Property(Year)]</label>
+									<font>Menu-Similar-Detail</font>
+									<textcolor>Label_Dark</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>44</posy>
+									<width>260</width>
+									<height>80</height>
+									<label>$INFO[ListItem.Property(Plot)]</label>
+									<font>Menu-Similar-Plot</font>
+									<textcolor>Label_Dark</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+							</control>
+							
+						</itemlayout>
+
+						<focusedlayout width="380" height="260">
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								
+							</control>
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true">$INFO[ListItem.Thumb]</texture>
+								<aspectratio>stretch</aspectratio>
+								
+							</control>
+							
+							<control type="group">
+							
+								<posx>100</posx>
+								<posy>-10</posy>
+								<width>260</width>
+								<height>110</height>
+							
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>260</width>
+									<height>24</height>
+									<label>$INFO[ListItem.Label]</label>
+									<font>Menu-Similar-Header</font>
+									<textcolor>Label_Highlight</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>24</posy>
+									<width>260</width>
+									<height>20</height>
+									<label>$INFO[ListItem.Property(Year)]</label>
+									<font>Menu-Similar-Detail</font>
+									<textcolor>Label_Dark</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>44</posy>
+									<width>260</width>
+									<height>80</height>
+									<label>$INFO[ListItem.Property(Plot)]</label>
+									<font>Menu-Similar-Plot</font>
+									<textcolor>Label_Dark</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+							</control>	
+
+						</focusedlayout>
+						
+						<content>
+						
+							<item id="1">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.1.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.1.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.1.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.1.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.1.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.1.Year)]</property>
+								
+								<include>Common_TraktTV_ClearProperties</include>
+								<onclick>SetProperty(Title,$INFO[Window(Home).Property(SimilarTrakt.1.Title)],58)</onclick>
+								<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(SimilarTrakt.1.MPAA)],58)</onclick>
+								<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(SimilarTrakt.1.Plot)],58)</onclick>
+								<onclick condition="Container.Content(movies)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.1.Tagline)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.1.Studio)],58)</onclick>
+								<onclick>SetProperty(Year,$INFO[Window(Home).Property(SimilarTrakt.1.Year)],58)</onclick>
+								<onclick>SetProperty(Genre,$INFO[Window(Home).Property(SimilarTrakt.1.Genre)],58)</onclick>
+								<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(SimilarTrakt.1.Runtime)],58)</onclick>
+								<onclick>SetProperty(Rating,$INFO[Window(Home).Property(SimilarTrakt.1.Rating)],58)</onclick>
+								<onclick>SetProperty(Poster,$INFO[Window(Home).Property(SimilarTrakt.1.Art(poster))],58)</onclick>
+								<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(SimilarTrakt.1.Art(fanart))],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Country,$INFO[Window(Home).Property(SimilarTrakt.1.Country)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(NextTime,$INFO[Window(Home).Property(SimilarTrakt.1.ShortTime)] $INFO[Window(Home).Property(SimilarTrakt.1.NextDate)],58)</onclick>
+								<onclick>ActivateWindow(58,return)</onclick>
+							</item>
+							
+							<item id="2">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.2.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.2.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.2.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.2.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.2.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.2.Year)]</property>
+								
+								<include>Common_TraktTV_ClearProperties</include>
+								<onclick>SetProperty(Title,$INFO[Window(Home).Property(SimilarTrakt.2.Title)],58)</onclick>
+								<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(SimilarTrakt.2.MPAA)],58)</onclick>
+								<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(SimilarTrakt.2.Plot)],58)</onclick>
+								<onclick condition="Container.Content(movies)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.2.Tagline)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.2.Studio)],58)</onclick>
+								<onclick>SetProperty(Year,$INFO[Window(Home).Property(SimilarTrakt.2.Year)],58)</onclick>
+								<onclick>SetProperty(Genre,$INFO[Window(Home).Property(SimilarTrakt.2.Genre)],58)</onclick>
+								<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(SimilarTrakt.2.Runtime)],58)</onclick>
+								<onclick>SetProperty(Rating,$INFO[Window(Home).Property(SimilarTrakt.2.Rating)],58)</onclick>
+								<onclick>SetProperty(Poster,$INFO[Window(Home).Property(SimilarTrakt.2.Art(poster))],58)</onclick>
+								<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(SimilarTrakt.2.Art(fanart))],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Country,$INFO[Window(Home).Property(SimilarTrakt.2.Country)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(NextTime,$INFO[Window(Home).Property(SimilarTrakt.2.ShortTime)] $INFO[Window(Home).Property(SimilarTrakt.2.NextDate)],58)</onclick>
+								<onclick>ActivateWindow(58,return)</onclick>
+							</item>
+							
+							<item id="3">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.3.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.3.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.3.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.3.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.3.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.3.Year)]</property>
+								
+								<include>Common_TraktTV_ClearProperties</include>
+								<onclick>SetProperty(Title,$INFO[Window(Home).Property(SimilarTrakt.3.Title)],58)</onclick>
+								<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(SimilarTrakt.3.MPAA)],58)</onclick>
+								<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(SimilarTrakt.3.Plot)],58)</onclick>
+								<onclick condition="Container.Content(movies)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.3.Tagline)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.3.Studio)],58)</onclick>
+								<onclick>SetProperty(Year,$INFO[Window(Home).Property(SimilarTrakt.3.Year)],58)</onclick>
+								<onclick>SetProperty(Genre,$INFO[Window(Home).Property(SimilarTrakt.3.Genre)],58)</onclick>
+								<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(SimilarTrakt.3.Runtime)],58)</onclick>
+								<onclick>SetProperty(Rating,$INFO[Window(Home).Property(SimilarTrakt.3.Rating)],58)</onclick>
+								<onclick>SetProperty(Poster,$INFO[Window(Home).Property(SimilarTrakt.3.Art(poster))],58)</onclick>
+								<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(SimilarTrakt.3.Art(fanart))],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Country,$INFO[Window(Home).Property(SimilarTrakt.3.Country)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(NextTime,$INFO[Window(Home).Property(SimilarTrakt.3.ShortTime)] $INFO[Window(Home).Property(SimilarTrakt.3.NextDate)],58)</onclick>
+								<onclick>ActivateWindow(58,return)</onclick>
+							</item>
+							
+							<item id="4">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.4.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.4.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.4.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.4.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.4.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.4.Year)]</property>
+								
+								<include>Common_TraktTV_ClearProperties</include>
+								<onclick>SetProperty(Title,$INFO[Window(Home).Property(SimilarTrakt.4.Title)],58)</onclick>
+								<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(SimilarTrakt.4.MPAA)],58)</onclick>
+								<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(SimilarTrakt.4.Plot)],58)</onclick>
+								<onclick condition="Container.Content(movies)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.4.Tagline)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.4.Studio)],58)</onclick>
+								<onclick>SetProperty(Year,$INFO[Window(Home).Property(SimilarTrakt.4.Year)],58)</onclick>
+								<onclick>SetProperty(Genre,$INFO[Window(Home).Property(SimilarTrakt.4.Genre)],58)</onclick>
+								<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(SimilarTrakt.4.Runtime)],58)</onclick>
+								<onclick>SetProperty(Rating,$INFO[Window(Home).Property(SimilarTrakt.4.Rating)],58)</onclick>
+								<onclick>SetProperty(Poster,$INFO[Window(Home).Property(SimilarTrakt.4.Art(poster))],58)</onclick>
+								<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(SimilarTrakt.4.Art(fanart))],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Country,$INFO[Window(Home).Property(SimilarTrakt.4.Country)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(NextTime,$INFO[Window(Home).Property(SimilarTrakt.4.ShortTime)] $INFO[Window(Home).Property(SimilarTrakt.4.NextDate)],58)</onclick>
+								<onclick>ActivateWindow(58,return)</onclick>
+							</item>
+							
+							<item id="5">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.5.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.5.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.5.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.5.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.5.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.5.Year)]</property>
+								
+								<include>Common_TraktTV_ClearProperties</include>
+								<onclick>SetProperty(Title,$INFO[Window(Home).Property(SimilarTrakt.5.Title)],58)</onclick>
+								<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(SimilarTrakt.5.MPAA)],58)</onclick>
+								<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(SimilarTrakt.5.Plot)],58)</onclick>
+								<onclick condition="Container.Content(movies)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.5.Tagline)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.5.Studio)],58)</onclick>
+								<onclick>SetProperty(Year,$INFO[Window(Home).Property(SimilarTrakt.5.Year)],58)</onclick>
+								<onclick>SetProperty(Genre,$INFO[Window(Home).Property(SimilarTrakt.5.Genre)],58)</onclick>
+								<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(SimilarTrakt.5.Runtime)],58)</onclick>
+								<onclick>SetProperty(Rating,$INFO[Window(Home).Property(SimilarTrakt.5.Rating)],58)</onclick>
+								<onclick>SetProperty(Poster,$INFO[Window(Home).Property(SimilarTrakt.5.Art(poster))],58)</onclick>
+								<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(SimilarTrakt.5.Art(fanart))],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Country,$INFO[Window(Home).Property(SimilarTrakt.5.Country)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(NextTime,$INFO[Window(Home).Property(SimilarTrakt.5.ShortTime)] $INFO[Window(Home).Property(SimilarTrakt.5.NextDate)],58)</onclick>
+								<onclick>ActivateWindow(58,return)</onclick>
+							</item>
+							
+							<item id="6">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.6.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.6.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.6.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.6.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.6.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.6.Year)]</property>
+								
+								<include>Common_TraktTV_ClearProperties</include>
+								<onclick>SetProperty(Title,$INFO[Window(Home).Property(SimilarTrakt.6.Title)],58)</onclick>
+								<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(SimilarTrakt.6.MPAA)],58)</onclick>
+								<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(SimilarTrakt.6.Plot)],58)</onclick>
+								<onclick condition="Container.Content(movies)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.6.Tagline)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.6.Studio)],58)</onclick>
+								<onclick>SetProperty(Year,$INFO[Window(Home).Property(SimilarTrakt.6.Year)],58)</onclick>
+								<onclick>SetProperty(Genre,$INFO[Window(Home).Property(SimilarTrakt.6.Genre)],58)</onclick>
+								<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(SimilarTrakt.6.Runtime)],58)</onclick>
+								<onclick>SetProperty(Rating,$INFO[Window(Home).Property(SimilarTrakt.6.Rating)],58)</onclick>
+								<onclick>SetProperty(Poster,$INFO[Window(Home).Property(SimilarTrakt.6.Art(poster))],58)</onclick>
+								<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(SimilarTrakt.6.Art(fanart))],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Country,$INFO[Window(Home).Property(SimilarTrakt.6.Country)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(NextTime,$INFO[Window(Home).Property(SimilarTrakt.6.ShortTime)] $INFO[Window(Home).Property(SimilarTrakt.6.NextDate)],58)</onclick>
+								<onclick>ActivateWindow(58,return)</onclick>
+							</item>
+							
+							<item id="7">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.7.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.7.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.7.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.7.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.7.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.7.Year)]</property>
+								
+								<include>Common_TraktTV_ClearProperties</include>
+								<onclick>SetProperty(Title,$INFO[Window(Home).Property(SimilarTrakt.7.Title)],58)</onclick>
+								<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(SimilarTrakt.7.MPAA)],58)</onclick>
+								<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(SimilarTrakt.7.Plot)],58)</onclick>
+								<onclick condition="Container.Content(movies)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.7.Tagline)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.7.Studio)],58)</onclick>
+								<onclick>SetProperty(Year,$INFO[Window(Home).Property(SimilarTrakt.7.Year)],58)</onclick>
+								<onclick>SetProperty(Genre,$INFO[Window(Home).Property(SimilarTrakt.7.Genre)],58)</onclick>
+								<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(SimilarTrakt.7.Runtime)],58)</onclick>
+								<onclick>SetProperty(Rating,$INFO[Window(Home).Property(SimilarTrakt.7.Rating)],58)</onclick>
+								<onclick>SetProperty(Poster,$INFO[Window(Home).Property(SimilarTrakt.7.Art(poster))],58)</onclick>
+								<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(SimilarTrakt.7.Art(fanart))],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Country,$INFO[Window(Home).Property(SimilarTrakt.7.Country)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(NextTime,$INFO[Window(Home).Property(SimilarTrakt.7.ShortTime)] $INFO[Window(Home).Property(SimilarTrakt.7.NextDate)],58)</onclick>
+								<onclick>ActivateWindow(58,return)</onclick>
+							</item>
+							
+							<item id="8">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.8.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.8.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.8.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.8.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.8.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.8.Year)]</property>
+								
+								<include>Common_TraktTV_ClearProperties</include>
+								<onclick>SetProperty(Title,$INFO[Window(Home).Property(SimilarTrakt.8.Title)],58)</onclick>
+								<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(SimilarTrakt.8.MPAA)],58)</onclick>
+								<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(SimilarTrakt.8.Plot)],58)</onclick>
+								<onclick condition="Container.Content(movies)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.8.Tagline)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.8.Studio)],58)</onclick>
+								<onclick>SetProperty(Year,$INFO[Window(Home).Property(SimilarTrakt.8.Year)],58)</onclick>
+								<onclick>SetProperty(Genre,$INFO[Window(Home).Property(SimilarTrakt.8.Genre)],58)</onclick>
+								<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(SimilarTrakt.8.Runtime)],58)</onclick>
+								<onclick>SetProperty(Rating,$INFO[Window(Home).Property(SimilarTrakt.8.Rating)],58)</onclick>
+								<onclick>SetProperty(Poster,$INFO[Window(Home).Property(SimilarTrakt.8.Art(poster))],58)</onclick>
+								<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(SimilarTrakt.8.Art(fanart))],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Country,$INFO[Window(Home).Property(SimilarTrakt.8.Country)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(NextTime,$INFO[Window(Home).Property(SimilarTrakt.8.ShortTime)] $INFO[Window(Home).Property(SimilarTrakt.8.NextDate)],58)</onclick>
+								<onclick>ActivateWindow(58,return)</onclick>
+							</item>
+							
+							<item id="9">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.9.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.9.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.9.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.9.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.9.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.9.Year)]</property>
+								
+								<include>Common_TraktTV_ClearProperties</include>
+								<onclick>SetProperty(Title,$INFO[Window(Home).Property(SimilarTrakt.9.Title)],58)</onclick>
+								<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(SimilarTrakt.9.MPAA)],58)</onclick>
+								<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(SimilarTrakt.9.Plot)],58)</onclick>
+								<onclick condition="Container.Content(movies)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.9.Tagline)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.9.Studio)],58)</onclick>
+								<onclick>SetProperty(Year,$INFO[Window(Home).Property(SimilarTrakt.9.Year)],58)</onclick>
+								<onclick>SetProperty(Genre,$INFO[Window(Home).Property(SimilarTrakt.9.Genre)],58)</onclick>
+								<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(SimilarTrakt.9.Runtime)],58)</onclick>
+								<onclick>SetProperty(Rating,$INFO[Window(Home).Property(SimilarTrakt.9.Rating)],58)</onclick>
+								<onclick>SetProperty(Poster,$INFO[Window(Home).Property(SimilarTrakt.9.Art(poster))],58)</onclick>
+								<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(SimilarTrakt.9.Art(fanart))],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Country,$INFO[Window(Home).Property(SimilarTrakt.9.Country)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(NextTime,$INFO[Window(Home).Property(SimilarTrakt.9.ShortTime)] $INFO[Window(Home).Property(SimilarTrakt.9.NextDate)],58)</onclick>
+								<onclick>ActivateWindow(58,return)</onclick>
+							</item>
+							
+							<item id="10">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.10.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.10.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.10.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.10.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.10.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.10.Year)]</property>
+								
+								<include>Common_TraktTV_ClearProperties</include>
+								<onclick>SetProperty(Title,$INFO[Window(Home).Property(SimilarTrakt.10.Title)],58)</onclick>
+								<onclick>SetProperty(MPAA,$INFO[Window(Home).Property(SimilarTrakt.10.MPAA)],58)</onclick>
+								<onclick>SetProperty(Plot,$ESCINFO[Window(Home).Property(SimilarTrakt.10.Plot)],58)</onclick>
+								<onclick condition="Container.Content(movies)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.10.Tagline)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Tagline,$INFO[Window(Home).Property(SimilarTrakt.10.Studio)],58)</onclick>
+								<onclick>SetProperty(Year,$INFO[Window(Home).Property(SimilarTrakt.10.Year)],58)</onclick>
+								<onclick>SetProperty(Genre,$INFO[Window(Home).Property(SimilarTrakt.10.Genre)],58)</onclick>
+								<onclick>SetProperty(Runtime,$INFO[Window(Home).Property(SimilarTrakt.10.Runtime)],58)</onclick>
+								<onclick>SetProperty(Rating,$INFO[Window(Home).Property(SimilarTrakt.10.Rating)],58)</onclick>
+								<onclick>SetProperty(Poster,$INFO[Window(Home).Property(SimilarTrakt.10.Art(poster))],58)</onclick>
+								<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(SimilarTrakt.10.Art(fanart))],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(Country,$INFO[Window(Home).Property(SimilarTrakt.10.Country)],58)</onclick>
+								<onclick condition="Container.Content(tvshows)">SetProperty(NextTime,$INFO[Window(Home).Property(SimilarTrakt.10.ShortTime)] $INFO[Window(Home).Property(SimilarTrakt.10.NextDate)],58)</onclick>
+								<onclick>ActivateWindow(58,return)</onclick>
+							</item>
+
+						</content>		
+						
+					</control>
+					
+					<!--Scrollbar-->
+					<control type="scrollbar" id="81">
+					
+						<include>Common_Settings_Scrollbar_Vertical</include>
+						
+						<posx>380</posx>
+						<posy>60</posy>
+						<height>500</height>
+						
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(81).Scrolling">Conditional</animation>
+						
+					</control>	
+
 				</control>
 				
 				<!--Details Section-->
