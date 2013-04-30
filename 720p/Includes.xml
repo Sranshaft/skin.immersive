@@ -1199,6 +1199,70 @@
 		<height>10</height>
 		<texture>colors/color_white.png</texture>
 		
+	</include>
+	
+	<include name="Common_Lyrics_List">
+	
+		<posx>32</posx>
+		<posy>32</posy>
+		<width>436</width>
+		<height>608</height>
+		<viewtype label="535">list</viewtype>
+		<scrolltime>200</scrolltime>
+		
+		<itemlayout height="40">
+			
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>436</width>
+				<height>32</height>
+				<info>ListItem.Label</info>
+				<font>Lyrics-Lyric</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>Label_Disabled</textcolor>
+				
+			</control>
+			
+		</itemlayout>
+		
+		<focusedlayout height="40">
+		
+			<control type="label">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>436</width>
+				<height>32</height>
+				<info>ListItem.Label</info>
+				<font>Lyrics-Lyric</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>Label_Normal</textcolor>
+				
+			</control>
+			
+		</focusedlayout>
+		
+	</include>
+	
+	<include name="Common_Lyrics_SpinControl">
+	
+		<posx>420</posx>
+		<posy>680</posy>
+		<width>25</width>
+		<height>22</height>
+		<font>Lyrics-Scraper</font>
+		<align>right</align>
+		<subtype>page</subtype>
+		<textcolor>Label_Normal</textcolor>
+		<showonepage>false</showonepage>
+		<textureup>controls/control_spinbutton_up.png</textureup>
+		<textureupfocus diffuse="colors/color_grey.png">controls/control_spinbutton_up.png</textureupfocus>
+		<texturedown>controls/control_spinbutton_down.png</texturedown>
+		<texturedownfocus diffuse="colors/color_grey.png">controls/control_spinbutton_down.png</texturedownfocus>
+		
 	</include>	
 	
 	<include name="Common_Menu_Button">

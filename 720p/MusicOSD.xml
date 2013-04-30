@@ -165,7 +165,7 @@
 					<texturenofocus>playercontrols/playercontrol_lyrics.png</texturenofocus>
 					<label>get[CR]lyrics</label>
 					<onclick>Close</onclick>
-					<onclick>XBMC.RunScript(script.cu.lyrics)</onclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(LyricPath)])</onclick>
 					
 				</control>
 				

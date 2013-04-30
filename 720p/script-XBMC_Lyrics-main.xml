@@ -8,68 +8,120 @@
 		<posy>0</posy>
 	</coordinates>
 	
+	<animation type="WindowOpen">
+		<effect type="fade" start="0" end="100" time="400" delay="400"/>
+		<effect type="slide" start="1280,0" end="0,0" time="800" delay="400" tween="cubic" easing="out" />
+	</animation>
+	
+	<animation type="WindowClose">
+		<effect type="fade" start="100" end="0" time="400" />
+		<effect type="slide" start="0,0" end="1280,0" time="800" tween="cubic" easing="out" />
+	</animation>
+	
 	<controls>
-		
-		<!-- ** Required ** Do not change <id> or <type> -->
-		<control type="textbox" id="100">
-			<description>textarea</description>
-			<posx>234</posx>
-			<posy>270</posy>
-			<width>812</width>
-			<height>290</height>
-			<onup>101</onup>
-			<ondown>101</ondown>
-			<onleft>101</onleft>
-			<onright>101</onright>
-			<pagecontrol>101</pagecontrol>
-			<font>font13</font>
-			<textcolor>DDFFFFFF</textcolor>
-		</control>
-  		        
-		<!--Scrollbar-->
+	
 		<control type="group">
-			
-			<visible>IntegerGreaterThan(Container(50).NumPages,1)</visible>
-			
-			<control type="scrollbar" id="69">
-			
-				<include>Common_Scrollbar_Vertical</include>
+		
+			<posx>700</posx>
+			<posy>0</posy>
+			<width>500</width>
+			<height>720</height>
+	
+			<control type="image">
 				
-				<posx>420</posx>
-				<posy>60</posy>
-				<height>480</height>
-				<onleft>50</onleft>
-				<onright>9000</onright>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>500</width>
+				<height>720</height>
+				<texture background="true">colors/color_white.png</texture>
+				<colordiffuse>FanartDiffuse</colordiffuse>
 				
-				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(50).Scrolling">Conditional</animation>
+			</control>
+			
+			<control type="label">
+				
+				<description>Scraper Label</description>
+				<posx>32</posx>
+				<posy>684</posy>
+				<width>300</width>
+				<height>20</height>
+				<label>Powered by $INFO[Control.GetLabel(200)]</label>
+				<font>Lyrics-Scraper</font>
+				<textcolor>Label_Normal</textcolor>
 				
 			</control>
 		
-		</control>
+			<control type="label" id="200">
+				<visible>false</visible>
+			</control>
+			
+			<!-- ** Required ** Do not change <id> or <type> -->
+			<control type="textbox" id="100">
 				
-		<!-- ** Required ** Do not change <id> or <type> -->
-		
-		<control type="spincontrol" id="101">
-			<visible>false</visible>
-		</control>
-		
-		<control type="list" id="110">
-			<visible>false</visible>
-		</control>
-		
-  		<control type="spincontrol" id="111">
-			<visible>false</visible>
-		</control>
-		
-		<!-- ** Required ** Do not change <id> or <type> -->
-		<control type="list" id="120">
-			<visible>false</visible>
-		</control>
-		
-  		<control type="spincontrol" id="121">
-			<visible>false</visible>
+				<description>textarea</description>
+				<posx>20</posx>
+				<posy>20</posy>
+				<width>360</width>
+				<height>608</height>
+				<onup>101</onup>
+				<ondown>101</ondown>
+				<onleft>101</onleft>
+				<onright>101</onright>
+				<pagecontrol>101</pagecontrol>
+				<font>font13</font>
+				<textcolor>DDFFFFFF</textcolor>
+				
+			</control>
+			
+			<control type="spincontrol" id="101">
+				
+				<include>Common_Lyrics_SpinControl</include>
+				<visible>Control.IsVisible(100)</visible>
+				
+			</control>
+  		
+			<!-- ** Required ** Do not change <id> or <type> -->
+			<control type="list" id="110">
+				
+				<include>Common_Lyrics_List</include>
+				<onleft>111</onleft>
+				<onright>111</onright>
+				<onup>999</onup>
+				<ondown>110</ondown>
+				<pagecontrol>111</pagecontrol>
+				
+			</control>
+			
+			<control type="spincontrol" id="111">
+				
+				<include>Common_Lyrics_SpinControl</include>
+				<visible>Control.IsVisible(110)</visible>
+				
+			</control>
+  		
+			<!-- ** Required ** Do not change <id> or <type> -->
+			<control type="list" id="120">
+				
+				<include>Common_Lyrics_List</include>
+				<onleft>121</onleft>
+				<onright>121</onright>
+				<onup>120</onup>
+				<ondown>120</ondown>
+				<pagecontrol>121</pagecontrol>
+				
+			</control>
+			
+			<control type="spincontrol" id="121">
+				
+				<include>Common_Lyrics_SpinControl</include>
+				<visible>Control.IsVisible(120)</visible>
+				
+			</control>
+			
 		</control>
 		
 	</controls>
 	
 </window>
+
+		

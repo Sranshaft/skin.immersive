@@ -1045,6 +1045,20 @@
 			<size>30</size>
 		</font>
 		
+		<!--Lyrics Addon Fonts-->
+		
+		<font>
+			<name>Lyrics-Lyric</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>28</size>
+		</font>
+		
+		<font>
+			<name>Lyrics-Scraper</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>12</size>
+		</font>
+		
 		<!--PseudoTV Addon Fonts-->
 		
 		<font>
