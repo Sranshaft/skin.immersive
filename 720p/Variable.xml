@@ -692,6 +692,8 @@
 		<value>$INFO[ListItem.StarRating]</value>
 	</variable>
 	
+	<!--Trakt Variables-->
+	
 	<variable name="Trakt_TrendingMovies_Label">
 		<value condition="!ControlGroup(10000).HasFocus(10001)">trending movies</value>
 		<value condition="ControlGroup(10000).HasFocus(10001)">[B]trending movies[/B]</value>

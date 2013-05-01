@@ -419,6 +419,28 @@
 		</font>
 		
 		<font>
+			<name>Menu-Featured-Large</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>38</size>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-Featured</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>22</size>
+			<linespacing>0.85</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-Featured-Small</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>16</size>
+			<linespacing>0.75</linespacing>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
 			<name>Menu-List-Large</name>
 			<filename>SegoeWP-Black.ttf</filename>
 			<size>42</size>
@@ -472,15 +494,72 @@
 		</font>
 		
 		<font>
-			<name>Menu-Square-Header</name>
+			<name>Menu-InCinemas-Large</name>
 			<filename>SegoeWP-Bold.ttf</filename>
+			<size>20</size>
+			<style>uppercase</style>
+		</font>	
+		
+		<font>
+			<name>Menu-InCinemas-Plot</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>20</size>
+			<linespacing>0.85</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-InCinemas-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
 			<size>16</size>
 			<style>uppercase</style>
 		</font>
 		
 		<font>
+			<name>Menu-RecentlyAdded-Large</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>42</size>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-RecentlyAdded-Small</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>16</size>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-Similar-Detail</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+			<linespacing>0.85</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-Similar-Header</name>
+			<filename>SegoeWP-Black.ttf</filename>
+			<size>20</size>
+			<style>uppercase</style>
+			<linespacing>0.65</linespacing>
+		</font>
+		
+		<font>
+			<name>Menu-Similar-Plot</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>16</size>
+			<linespacing>0.85</linespacing>
+		</font>
+		
+		<font>
 			<name>Menu-Square-Detail</name>
 			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Menu-Square-Header</name>
+			<filename>SegoeWP-Bold.ttf</filename>
 			<size>16</size>
 			<style>uppercase</style>
 		</font>
@@ -500,6 +579,13 @@
 		</font>
 		
 		<font>
+			<name>Menu-Thumbnail-Detail</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>16</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
 			<name>Menu-Thumbnail-Header</name>
 			<filename>SegoeWP-Bold.ttf</filename>
 			<size>16</size>
@@ -508,96 +594,10 @@
 		</font>
 		
 		<font>
-			<name>Menu-Thumbnail-Detail</name>
-			<filename>SegoeWP-SemiBold.ttf</filename>
-			<size>16</size>
-			<style>uppercase</style>
-		</font>
-		
-		<font>
 			<name>Menu-Trakt-Tile</name>
 			<filename>SegoeWP-SemiLight.ttf</filename>
 			<size>28</size>
 			<style>lowercase</style>
-			<linespacing>0.85</linespacing>
-		</font>
-		
-		<font>
-			<name>Menu-Featured-Large</name>
-			<filename>SegoeWP-Black.ttf</filename>
-			<size>38</size>
-			<linespacing>0.65</linespacing>
-		</font>
-		
-		<font>
-			<name>Menu-Featured</name>
-			<filename>SegoeWP-SemiLight.ttf</filename>
-			<size>22</size>
-			<linespacing>0.85</linespacing>
-		</font>
-		
-		<font>
-			<name>Menu-Featured-Small</name>
-			<filename>SegoeWP-Bold.ttf</filename>
-			<size>16</size>
-			<linespacing>0.75</linespacing>
-			<style>uppercase</style>
-		</font>
-		
-		<font>
-			<name>Menu-RecentlyAdded-Large</name>
-			<filename>SegoeWP-Black.ttf</filename>
-			<size>42</size>
-			<linespacing>0.65</linespacing>
-		</font>
-		
-		<font>
-			<name>Menu-RecentlyAdded-Small</name>
-			<filename>SegoeWP-Bold.ttf</filename>
-			<size>16</size>
-			<linespacing>0.75</linespacing>
-		</font>
-		
-		<font>
-			<name>Menu-InCinemas-Large</name>
-			<filename>SegoeWP-Bold.ttf</filename>
-			<size>20</size>
-			<style>uppercase</style>
-		</font>	
-		
-		<font>
-			<name>Menu-InCinemas-Small</name>
-			<filename>SegoeWP-SemiBold.ttf</filename>
-			<size>16</size>
-			<style>uppercase</style>
-		</font>
-		
-		<font>
-			<name>Menu-InCinemas-Plot</name>
-			<filename>SegoeWP-SemiLight.ttf</filename>
-			<size>20</size>
-			<linespacing>0.85</linespacing>
-		</font>
-		
-		<font>
-			<name>Menu-Similar-Header</name>
-			<filename>SegoeWP-Black.ttf</filename>
-			<size>20</size>
-			<style>uppercase</style>
-			<linespacing>0.65</linespacing>
-		</font>
-		
-		<font>
-			<name>Menu-Similar-Detail</name>
-			<filename>SegoeWP-SemiBold.ttf</filename>
-			<size>16</size>
-			<linespacing>0.85</linespacing>
-		</font>
-		
-		<font>
-			<name>Menu-Similar-Plot</name>
-			<filename>SegoeWP-SemiLight.ttf</filename>
-			<size>16</size>
 			<linespacing>0.85</linespacing>
 		</font>
 		
