@@ -515,6 +515,14 @@
 		</font>
 		
 		<font>
+			<name>Menu-Trakt-Tile</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>28</size>
+			<style>lowercase</style>
+			<linespacing>0.85</linespacing>
+		</font>
+		
+		<font>
 			<name>Menu-Featured-Large</name>
 			<filename>SegoeWP-Black.ttf</filename>
 			<size>38</size>

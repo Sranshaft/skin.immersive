@@ -13,14 +13,17 @@
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowAiringTodaySection_Video)">XBMC.RunScript(script.tv.show.next.aired,backend=True)</onload>
 	
 	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowInCinemasSection_Video)">RunScript(script.extendedinfo,info=incinema)</onload>
-	<!--<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingShows)</onload>-->
+	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingShows)</onload>
 	
 	<onload>AlarmClock(MoveFeatured,Control.Move(9001,1),00:20,silent,loop)</onload>
 	<onunload>XBMC.CancelAlarm(MoveFeatured,true)</onunload>
 	
 	<onload>AlarmClock(MoveInCinemas,Control.Move(9005,1),00:20,silent,loop)</onload>
 	<onunload>XBMC.CancelAlarm(MoveInCinemas,true)</onunload>
+	
+	<onload>AlarmClock(MoveTrakt,Control.Move(9007,1),00:20,silent,loop)</onload>
+	<onunload>XBMC.CancelAlarm(MoveTrakt,true)</onunload>
 	
 	<controls>
 

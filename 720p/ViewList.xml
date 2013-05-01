@@ -35,7 +35,7 @@
 					
 					<onright condition="![StringCompare(Container.FolderPath,videodb://1/) + StringCompare(Container.FolderPath,library://video/movies/) + StringCompare(Container.FolderPath,videodb://2/) + StringCompare(Container.FolderPath,library://video/tvshows/) + [IsEmpty(Container.FolderPath) + StringCompare(Window.Property(xmlfile),MyMusicNav.xml)]]">9000</onright>
 					
-					<onleft condition="[StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/) | StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/) | [IsEmpty(Container.FolderPath) + StringCompare(Window.Property(xmlfile),MyMusicNav.xml)]]">9006</onleft>
+					<onleft condition="[StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/) | StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/) | [IsEmpty(Container.FolderPath) + StringCompare(Window.Property(xmlfile),MyMusicNav.xml)]]">9007</onleft>
 					
 					<onleft condition="![StringCompare(Container.FolderPath,videodb://1/) + StringCompare(Container.FolderPath,library://video/movies/) + StringCompare(Container.FolderPath,videodb://2/) + StringCompare(Container.FolderPath,library://video/tvshows/) + [IsEmpty(Container.FolderPath) + StringCompare(Window.Property(xmlfile),MyMusicNav.xml)]]">10000</onleft>
 					
@@ -139,6 +139,7 @@
 			<include>ViewList_RootMenu_NearbyEvents</include>
 			<include>ViewList_RootMenu_InCinemas</include>
 			<include>ViewList_RootMenu_History</include>
+			<include>ViewList_RootMenu_Trakt</include>
 			
 		</control>
 		
@@ -1746,6 +1747,23 @@
 				
 			</control>
 			
+			<control type="textbox">
+							
+				<posx>0</posx>
+				<posy>60</posy>
+				<width>510</width>
+				<height>200</height>
+				<label>no videos have been watched in the last week</label>
+				<font>Menu-List</font>
+				<textcolor>Label_Normal</textcolor>
+				<aligny>top</aligny>
+				<wrapmultiline>true</wrapmultiline>
+				<scrollspeed>0</scrollspeed>
+				
+				<visible>!IntegerGreaterThan(Container(9006).NumItems,0)</visible>
+				
+			</control>
+			
 			<control type="panel" id="9006">
 					
 				<posx>0</posx>
@@ -1755,7 +1773,7 @@
 				<onup>9006</onup>
 				<ondown>9006</ondown>
 				<onleft>9005</onleft>
-				<onright>50</onright>
+				<onright>9007</onright>
 				<viewtype label="535">list</viewtype>
 				<scrolltime tween="cubic" easing="out">600</scrolltime>
 				<preloaditems>2</preloaditems>
@@ -2117,6 +2135,613 @@
 			
 		</control>
 			
+	</include>
+	
+	<include name="ViewList_RootMenu_Trakt">
+	
+		<control type="group" id="8007">
+		
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>526</width>
+			<height>420</height>
+			
+			<visible>Control.IsVisible(50) + [Skin.HasSetting(ShowTrendingSection_Video) + [StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/) | StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)]]</visible>
+			
+			<control type="label">
+					
+				<label>trakt.tv</label>
+				<include>Common_Section_Label</include>
+				
+			</control>
+			
+			<control type="list" id="9007">
+						
+				<posx>0</posx>
+				<posy>60</posy>
+				<width>286</width>
+				<height>420</height>
+				<onup>9007</onup>
+				<ondown>9007</ondown>
+				<onleft>9006</onleft>
+				<onright>9017</onright>
+				<viewtype label="535">list</viewtype>
+				<scrolltime tween="cubic" easing="in">400</scrolltime>
+				<autoscroll delay="400" time="500" repeat="2000">true</autoscroll>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+				
+				<itemlayout width="286" height="420">
+				
+					<control type="image">
+						
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>286</width>
+						<height>420</height>
+						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio>stretch</aspectratio>
+						
+					</control>
+					
+				</itemlayout>
+
+				<focusedlayout width="286" height="420">
+
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>286</width>
+						<height>420</height>
+						<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio>stretch</aspectratio>
+						
+					</control>
+					
+				</focusedlayout>
+				
+				<content>
+				
+					<!--Movies-->
+				
+					<item id="1">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.1.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingMovies.1.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingMovies.1.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.1.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.1.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)</visible>
+					</item>
+
+					<item id="2">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.2.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingMovies.2.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingMovies.2.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.2.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.2.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)</visible>
+					</item>
+					
+					<item id="3">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.3.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingMovies.3.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingMovies.3.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.3.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.3.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)</visible>
+					</item>
+
+					<item id="4">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.4.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingMovies.4.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingMovies.4.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.4.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.4.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)</visible>
+					</item>
+					
+					<item id="5">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.5.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingMovies.5.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingMovies.5.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.5.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.5.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)</visible>
+					</item>
+
+					<item id="6">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.6.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingMovies.6.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingMovies.6.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.6.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.6.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)</visible>
+					</item>
+					
+					<item id="7">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.7.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingMovies.7.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingMovies.7.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.7.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.7.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)</visible>
+					</item>
+
+					<item id="8">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.8.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingMovies.8.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingMovies.8.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.8.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.8.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)</visible>
+					</item>
+					
+					<item id="9">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.9.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingMovies.9.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingMovies.9.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.9.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.9.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)</visible>
+					</item>
+
+					<item id="10">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.10.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingMovies.10.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingMovies.10.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.10.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.10.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)</visible>
+					</item>
+					
+					<!--TV Shows-->
+				
+					<item id="1">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.1.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingShows.1.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingShows.1.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.1.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.1.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+
+					<item id="2">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.2.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingShows.2.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingShows.2.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.2.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.2.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+					
+					<item id="3">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.3.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingShows.3.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingShows.3.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.3.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.3.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+
+					<item id="4">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.4.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingShows.4.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingShows.4.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.4.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.4.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+					
+					<item id="5">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.5.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingShows.5.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingShows.5.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.5.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.5.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+
+					<item id="6">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.6.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingShows.6.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingShows.6.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.6.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.6.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+					
+					<item id="7">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.7.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingShows.7.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingShows.7.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.7.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.7.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+
+					<item id="8">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.8.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingShows.8.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingShows.8.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.8.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.8.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+					
+					<item id="9">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.9.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingShows.9.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingShows.9.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.9.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.9.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+
+					<item id="10">
+						<onclick>-</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.10.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(TrendingShows.10.Title)]</label>
+						<label2>$INFO[Window(Home).Property(TrendingShows.10.Runtime),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.10.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.10.MPAA)]</property>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+					
+				</content>
+
+			</control>
+			
+			<control type="group">
+			
+				<posx>0</posx>
+				<posy>420</posy>
+				<width>286</width>
+				<height>60</height>
+				
+				<animation effect="slide" start="0,0" end="0,-180" time="400" tween="cubic" easing="in" condition="System.IdleTime(2) + Control.HasFocus(9007)">Conditional</animation>
+				
+				<control type="image">
+
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>286</width>
+					<height>60</height>
+					<texture>colors/color_white.png</texture>
+					<colordiffuse>FanartDiffuse</colordiffuse>
+					
+					<animation effect="zoom" start="100,100" end="100,400" center="143,0" time="400" tween="cubic" easing="in" condition="System.IdleTime(2) + Control.HasFocus(9007)">Conditional</animation>
+					<animation effect="zoom" start="100,400" end="100,100" center="143,0" time="200" tween="cubic" easing="out" condition="![System.IdleTime(2) + Control.HasFocus(9007)]">Conditional</animation>
+					
+				</control>
+
+				<control type="textbox">
+				
+					<posx>10</posx>
+					<posy>6</posy>
+					<width>266</width>
+					<height>26</height>
+					<label>$INFO[Container(9007).ListItem.Label]</label>
+					<font>Menu-InCinemas-Large</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>true</wrapmultiline>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<autoscroll>false</autoscroll>
+					
+					<visible>!Control.HasFocus(9007)</visible>
+					
+				</control>
+			
+				<control type="textbox">
+				
+					<posx>10</posx>
+					<posy>6</posy>
+					<width>266</width>
+					<height>26</height>
+					<label>$INFO[Container(9007).ListItem.Label]</label>
+					<font>Menu-InCinemas-Large</font>
+					<textcolor>Label_Highlight</textcolor>
+					<aligny>top</aligny>
+					
+					<visible>Control.HasFocus(9007)</visible>
+					
+				</control>
+				
+				<control type="textbox">
+				
+					<posx>10</posx>
+					<posy>26</posy>
+					<width>266</width>
+					<height>24</height>
+					<label>$INFO[Container(9007).ListItem.Label2]</label>
+					<font>Menu-InCinemas-Small</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>top</aligny>
+					
+				</control>
+				
+				<control type="textbox">
+				
+					<posx>10</posx>
+					<posy>26</posy>
+					<width>266</width>
+					<height>24</height>
+					<label>$INFO[Container(9007).ListItem.Property(MPAA)]</label>
+					<font>Menu-InCinemas-Small</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>top</aligny>
+					<align>right</align>
+					
+				</control>
+				
+			</control>
+			
+			<control type="textbox">
+				
+				<posx>10</posx>
+				<posy>300</posy>
+				<width>266</width>
+				<height>170</height>
+				<label>$INFO[Container(9007).ListItem.Property(Plot)]</label>
+				<font>Menu-InCinemas-Plot</font>
+				<textcolor>Label_Normal</textcolor>
+				<aligny>top</aligny>
+				<wrapmultiline>true</wrapmultiline>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<autoscroll delay="5000" time="1000" repeat="10000">Control.HasFocus(9007)</autoscroll>
+				
+				<animation effect="fade" start="0" end="100" time="400" delay="200" condition="System.IdleTime(2) + Control.HasFocus(9007)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="200" condition="![System.IdleTime(2) + Control.HasFocus(9007)]">Conditional</animation>
+			
+			</control>
+
+			<control type="grouplist">
+			
+				<posx>0</posx>
+				<posy>500</posy>
+				<width>286</width>
+				<height>24</height>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+				<itemgap>6</itemgap>
+				
+				<control type="image">
+				
+					<include>Common_List_Indicator</include>
+					
+					<animation type="Conditional" condition="!Container(9007).HasFocus(1)" reversible="true">
+						<effect type="fade" start="100" end="10" time="400" />
+					</animation>
+					
+				</control>
+				
+				<control type="image">
+				
+					<include>Common_List_Indicator</include>
+					
+					<animation type="Conditional" condition="!Container(9007).HasFocus(2)" reversible="true">
+						<effect type="fade" start="100" end="10" time="400" />
+					</animation>
+					
+				</control>
+				
+				<control type="image">
+				
+					<include>Common_List_Indicator</include>
+					
+					<animation type="Conditional" condition="!Container(9007).HasFocus(3)" reversible="true">
+						<effect type="fade" start="100" end="10" time="400" />
+					</animation>
+					
+				</control>
+				
+				<control type="image">
+				
+					<include>Common_List_Indicator</include>
+					
+					<animation type="Conditional" condition="!Container(9007).HasFocus(4)" reversible="true">
+						<effect type="fade" start="100" end="10" time="400" />
+					</animation>
+					
+				</control>
+				
+				<control type="image">
+				
+					<include>Common_List_Indicator</include>
+					
+					<animation type="Conditional" condition="!Container(9007).HasFocus(5)" reversible="true">
+						<effect type="fade" start="100" end="10" time="400" />
+					</animation>
+					
+				</control>
+				
+				<control type="image">
+				
+					<include>Common_List_Indicator</include>
+					
+					<animation type="Conditional" condition="!Container(9007).HasFocus(6)" reversible="true">
+						<effect type="fade" start="100" end="10" time="400" />
+					</animation>
+					
+				</control>
+				
+				<control type="image">
+				
+					<include>Common_List_Indicator</include>
+					
+					<animation type="Conditional" condition="!Container(9007).HasFocus(7)" reversible="true">
+						<effect type="fade" start="100" end="10" time="400" />
+					</animation>
+					
+				</control>
+				
+				<control type="image">
+				
+					<include>Common_List_Indicator</include>
+					
+					<animation type="Conditional" condition="!Container(9007).HasFocus(8)" reversible="true">
+						<effect type="fade" start="100" end="10" time="400" />
+					</animation>
+					
+				</control>
+				
+				<control type="image">
+				
+					<include>Common_List_Indicator</include>
+					
+					<animation type="Conditional" condition="!Container(9007).HasFocus(9)" reversible="true">
+						<effect type="fade" start="100" end="10" time="400" />
+					</animation>
+					
+				</control>
+				
+				<control type="image">
+				
+					<include>Common_List_Indicator</include>
+					
+					<animation type="Conditional" condition="!Container(9007).HasFocus(10)" reversible="true">
+						<effect type="fade" start="100" end="10" time="400" />
+					</animation>
+					
+				</control>
+				
+			</control>	
+			
+			<control type="panel" id="9017">
+						
+				<posx>306</posx>
+				<posy>60</posy>
+				<width>200</width>
+				<height>440</height>
+				<onup>9017</onup>
+				<ondown>9017</ondown>
+				<onleft>9007</onleft>
+				<onright>50</onright>
+				<pagecontrol>9012</pagecontrol>
+				<viewtype label="535">panel</viewtype>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<preloaditems>2</preloaditems>
+				
+				<itemlayout width="200" height="220">
+				
+					<control type="image">
+						
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>200</height>
+						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio>scale</aspectratio>
+						
+					</control>
+					
+					<control type="label">
+						
+						<posx>16</posx>
+						<posy>16</posy>
+						<width>168</width>
+						<height>168</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-Trakt-Tile</font>
+						<textcolor>Label_Normal</textcolor>
+						<aligny>bottom</aligny>
+						<wrapmultiline>true</wrapmultiline>
+						<autoscroll>false</autoscroll>
+						
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="200" height="220">
+
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>200</height>
+						<texture background="true" fallback="colors/color_keyboard.png">colors/color_white.png</texture>
+						<colordiffuse>Background_Highlight</colordiffuse>
+						
+					</control>
+					
+					<control type="label">
+						
+						<posx>16</posx>
+						<posy>16</posy>
+						<width>168</width>
+						<height>168</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-Trakt-Tile</font>
+						<textcolor>Label_Normal</textcolor>
+						<aligny>bottom</aligny>
+						<wrapmultiline>true</wrapmultiline>
+						<autoscroll>false</autoscroll>
+						
+					</control>
+
+				</focusedlayout>
+				
+				<content>
+				
+					<!--Movies-->
+				
+					<item id="1">
+						<onclick>ActivateWindow(57)</onclick>
+						<thumb>-</thumb>
+						<label>trending[CR]movies</label>
+						<visible>StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)</visible>
+					</item>
+
+					<!--TV Shows-->
+					
+					<item id="1">
+						<onclick>ActivateWindow(57)</onclick>
+						<thumb>-</thumb>
+						<label>trending[CR]shows</label>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+					
+					<item id="2">
+						<onclick>ActivateWindow(57)</onclick>
+						<thumb>-</thumb>
+						<label>premering[CR]shows</label>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+					
+					<item id="3">
+						<onclick>ActivateWindow(57)</onclick>
+						<thumb>-</thumb>
+						<label>airing[CR]shows</label>
+						<visible>StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)</visible>
+					</item>
+					
+				</content>
+
+			</control>
+			
+		</control>
+
 	</include>
 
 </includes>
