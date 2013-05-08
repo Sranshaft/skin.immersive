@@ -41,6 +41,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),MusicOSD.xml)">XBMC Music</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicVisualisation.xml)">XBMC Music</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPics.xml)">$LOCALIZE[1]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml)">Live TV</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml) | StringCompare(Window.Property(xmlfile),MyMusicSongs.xml)">$LOCALIZE[2]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + [StringCompare(Container.FolderPath,library://video/movies/) | SubString(Container.FolderPath,videodb://1/,left)]">$LOCALIZE[20342]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + [StringCompare(Container.FolderPath,library://video/tvshows/) | SubString(Container.FolderPath,videodb://2/,left)]">$LOCALIZE[20343]</value>
@@ -77,6 +78,14 @@
 		<value condition="StringCompare(Window.Property(xmlfile),MusicOSD.xml)">Controls</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicVisualisation.xml)">Now listening</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPics.xml)">$INFO[Container.FolderName]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(10)">EPG timeline</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(15)">EPG channel</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(16)">EPG now \ next</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(11)">TV channels</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(12)">Radio channels</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(13)">Recordings</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(14)">Timers</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(17)">Search</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + !StringCompare(Container.FolderPath,library://video/movies/) + !StringCompare(Container.FolderPath,videodb://1/) + !StringCompare(Container.FolderPath,library://video/tvshows/) + !StringCompare(Container.FolderPath,videodb://2/)">$INFO[Container.FolderName]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml) + !IsEmpty(Container.FolderPath)">$INFO[Container.FolderName]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyWeather.xml)">$INFO[Window(Weather).Property(Location)]</value>
@@ -376,6 +385,12 @@
 		<value condition="Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
 		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left) | Container.Content(plugins)] + !IsEmpty(ListItem.Property(Addon.Description))">$INFO[ListItem.Property(Addon.Description)]</value>
+		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(10)">$INFO[Container(10).ListItem.Plot]</value>
+		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(11)">$INFO[Container(11).ListItem.Plot]</value>
+		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(12)">$INFO[Container(12).ListItem.Plot]</value>
+		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(13)">$INFO[Container(13).ListItem.Plot]</value>
+		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(14)">$INFO[Container(14).ListItem.Plot]</value>
+		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(15)">$INFO[Container(15).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-Actors-DialogInfo.xml) + !IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-Actors-DialogVideoInfo.xml) + !IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + [Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(150)]">$INFO[Container(100).ListItem.Property(Plot)]</value>
@@ -437,12 +452,14 @@
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Artist]</value>
 		<value condition="Player.HasVideo + VideoPlayer.HasMenu">$INFO[Player.Title]</value>
 		<value condition="Player.HasVideo + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(files)]">$INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Title]</value>
 	</variable>
 	
 	<variable name="NowPlaying_Second_Label">
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Album]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(movies)">$INFO[VideoPlayer.Director]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + !IsEmpty(VideoPlayer.TVShowTitle)">$INFO[VideoPlayer.Season,Season ,] $INFO[VideoPlayer.Episode,Episode ,] '[B]$INFO[VideoPlayer.TVShowTitle][/B]'</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelName]</value>
 	</variable>
 	
 	<variable name="NowPlaying_Third_Label">
@@ -451,6 +468,7 @@
 		<value condition="Player.HasVideo + VideoPlayer.Content(movies) + !IsEmpty(VideoPlayer.Year)">[B]$INFO[VideoPlayer.Year][/B] $INFO[VideoPlayer.Studio]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(movies) + IsEmpty(VideoPlayer.Year)">$INFO[VideoPlayer.Studio]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Studio]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.StartTime] - $INFO[VideoPlayer.EndTime]</value>
 	</variable>
 	
 	<variable name="NowPlaying_Image">
@@ -458,6 +476,7 @@
 		<value condition="Player.HasVideo + VideoPlayer.HasMenu">nowplaying/tile/nowplaying_dvd.png</value>
 		<value condition="Player.HasVideo + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)]">$INFO[Player.Art(fanart)]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(files)">nowplaying/tile/nowplaying_file.png</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[Player.Art(thumb)]</value>
 	</variable>
 	
 	<variable name="NowPlaying_Icon">
@@ -523,6 +542,25 @@
 		<value condition="IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.Year]</value>
 		<value>$INFO[ListItem.Artist]</value>
 	</variable>
+	
+	<!--PVR Variables-->
+	
+	<variable name="PVR_EPG_Genre">
+		<value condition="StringCompare(ListItem.Property(GenreType),0) | StringCompare(ListItem.Property(GenreType),192) | StringCompare(ListItem.Property(GenreType),208) |
+		StringCompare(ListItem.Property(GenreType),224) |
+		StringCompare(ListItem.Property(GenreType),240)">EPG_Unknown</value>
+		<value condition="StringCompare(ListItem.Property(GenreType),16)">EPG_MovieDrama</value>
+		<value condition="StringCompare(ListItem.Property(GenreType),32)">EPG_News</value>
+		<value condition="StringCompare(ListItem.Property(GenreType),48)">EPG_Show</value>
+		<value condition="StringCompare(ListItem.Property(GenreType),64)">EPG_Sports</value>
+		<value condition="StringCompare(ListItem.Property(GenreType),80)">EPG_Child</value>
+		<value condition="StringCompare(ListItem.Property(GenreType),96)">EPG_Music</value>
+		<value condition="StringCompare(ListItem.Property(GenreType),112)">EPG_Arts</value>
+		<value condition="StringCompare(ListItem.Property(GenreType),128)">EPG_Social</value>
+		<value condition="StringCompare(ListItem.Property(GenreType),144)">EPG_Science</value>
+		<value condition="StringCompare(ListItem.Property(GenreType),160)">EPG_Hobby</value>
+		<value condition="StringCompare(ListItem.Property(GenreType),176)">EPG_Special</value>
+	</variable>	
 	
 	<!--Select Variables-->
 	
