@@ -244,7 +244,7 @@
 								<label>Live TV</label>
 								<thumb>home/home_livetv.png</thumb>
 								<onclick>ActivateWindow(PVR)</onclick>
-								<visible>System.HasPVR + Skin.HasSetting(ShowLiveTVMenu)</visible>
+								<visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(ShowLiveTVMenu)</visible>
 							</item>
 							
 							<item id="6">
@@ -537,7 +537,7 @@
 								<label>Live TV</label>
 								<thumb>home/home_livetv_small.png</thumb>
 								<onclick>ActivateWindow(PVR)</onclick>
-								<visible>System.HasPVR + Skin.HasSetting(ShowLiveTVMenu)</visible>
+								<visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(ShowLiveTVMenu)</visible>
 							</item>
 							
 							<item id="4">
