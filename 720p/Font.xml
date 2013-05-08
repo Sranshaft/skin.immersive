@@ -696,6 +696,23 @@
 			<linespacing>0.75</linespacing>
 		</font>
 		
+		<!--PVR Fonts-->
+		
+		<font>
+			<name>PVR-EPGListing-Header</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>20</size>
+			<style>uppercase</style>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<font>
+			<name>PVR-EPG-Time</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>24</size>
+			<style>lowercase</style>
+		</font>
+		
 		<!--RSS Fonts-->
 		
 		<font>

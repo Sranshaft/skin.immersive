@@ -43,14 +43,38 @@
 			
 			<control type="label">
 				<include>WindowID</include>
+				<label>script-forumbrowser-dialog-select.xml</label>
+				<visible>Window.IsVisible(script-forumbrowser-dialog-select.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-forumbrowser-dialog-smilies</label>
+				<visible>Window.IsVisible(script-forumbrowser-dialog-smilies.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-forumbrowser-dialog-yesno</label>
+				<visible>Window.IsVisible(script-forumbrowser-dialog-yesno.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
 				<label>script-forumbrowser-forums.xml</label>
 				<visible>Window.IsVisible(script-forumbrowser-forums.xml)</visible>
 			</control>
 			
 			<control type="label">
 				<include>WindowID</include>
-				<label>script-forumbrowser-forum-select.xml</label>
+				<label>script-forumbrowser-forum-select</label>
 				<visible>Window.IsVisible(script-forumbrowser-forum-select.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-forumbrowser-forum-settings</label>
+				<visible>Window.IsVisible(script-forumbrowser-forum-settings.xml)</visible>
 			</control>
 			
 			<control type="label">
@@ -73,6 +97,12 @@
 			
 			<control type="label">
 				<include>WindowID</include>
+				<label>script-forumbrowser-manage-forums.xml</label>
+				<visible>Window.IsVisible(script-forumbrowser-manage-forums.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
 				<label>script-forumbrowser-message.xml</label>
 				<visible>Window.IsVisible(script-forumbrowser-message.xml)</visible>
 			</control>
@@ -81,6 +111,18 @@
 				<include>WindowID</include>
 				<label>script-forumbrowser-message-dialog.xml</label>
 				<visible>Window.IsVisible(script-forumbrowser-message-dialog.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-forumbrowser-notifications.xml</label>
+				<visible>Window.IsVisible(script-forumbrowser-notifications.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-forumbrowser-notifications-small.xml</label>
+				<visible>Window.IsVisible(script-forumbrowser-notifications-small.xml)</visible>
 			</control>
 			
 			<control type="label">
@@ -371,6 +413,54 @@
 				<include>DialogID</include>
 				<label>DialogPictureInfo.xml</label>
 				<visible>Window.IsVisible(DialogPictureInfo.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>DialogPVRChannelManager.xml</label>
+				<visible>Window.IsVisible(DialogPVRChannelManager.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>DialogPVRChannelsOSD.xml</label>
+				<visible>Window.IsVisible(DialogPVRChannelsOSD.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>DialogPVRGroupManager.xml</label>
+				<visible>Window.IsVisible(DialogPVRGroupManager.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>DialogPVRGuideInfo.xml</label>
+				<visible>Window.IsVisible(DialogPVRGuideInfo.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>DialogPVRGuideOSD.xml</label>
+				<visible>Window.IsVisible(DialogPVRGuideOSD.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>DialogPVRGuideSearch.xml</label>
+				<visible>Window.IsVisible(DialogPVRGuideSearch.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>DialogPVRRecordingInfo.xml</label>
+				<visible>Window.IsVisible(DialogPVRRecordingInfo.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>DialogPVRTimerSettings.xml</label>
+				<visible>Window.IsVisible(DialogPVRTimerSettings.xml)</visible>
 			</control>
 
 			<control type="label">

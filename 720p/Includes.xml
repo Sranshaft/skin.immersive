@@ -21,6 +21,7 @@
 	<include file="Includes_Home.xml" />
 	<include file="Includes_LiveTile.xml" />
 	<include file="Includes_NextAired.xml" />
+	<include file="Includes_PVR.xml" />
 	<include file="Includes_SortLetter.xml" />
 	<include file="Includes_Splash.xml" />
 	
@@ -79,6 +80,24 @@
 		<textoffsety>54</textoffsety>
 		<wrapmultiline>true</wrapmultiline>
 		<onclick>Skin.Reset(ShowAppBar)</onclick>
+		<onup>SetFocus(50)</onup>
+		
+	</include>
+	
+	<include name="Common_AppBar_Button_Small">
+	
+		<width>32</width>
+		<height>32</height>
+		<font>Appbar-Label</font>
+		<textcolor>Label_Normal</textcolor>
+		<focusedcolor>Label_Normal</focusedcolor>
+		<selectedcolor>Label_Normal</selectedcolor>
+		<disabledcolor>Label_Disabled</disabledcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textoffsetx>48</textoffsetx>
+		<textoffsety>16</textoffsety>
+		<wrapmultiline>true</wrapmultiline>
 		<onup>SetFocus(50)</onup>
 		
 	</include>
