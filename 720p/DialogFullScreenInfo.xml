@@ -96,7 +96,7 @@
 					
 						<width>350</width>
 						<height>16</height>
-						<label>$VAR[NowPlaying_Third_Label][/UPPERCASE]</label>
+						<label>$VAR[NowPlaying_Third_Label]</label>
 						<textcolor>Label_Normal</textcolor>
 						<font>Fullscreen-Info-Small</font>
 						
