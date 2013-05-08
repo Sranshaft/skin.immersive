@@ -5,10 +5,9 @@
 		<control type="grouplist">
 		
 			<include>Common_Content_Grouplist</include>
+			<include>Common_Animation_View</include>
 			
 			<visible>Control.IsVisible(50)</visible>
-			
-			<include>Common_Animation_View</include>
 			
 			<control type="group">
 			
