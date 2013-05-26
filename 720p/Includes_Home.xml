@@ -1018,6 +1018,7 @@
 								<thumb>$INFO[Window.Property(RecommendedEpisode.1.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedEpisode.1.EpisodeNo)] $INFO[Window.Property(RecommendedEpisode.1.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedEpisode.1.TVshowTitle)]</label2>
+								<visible>!IsEmpty(Window.Property(RecommendedEpisode.1.TVshowTitle))</visible>
 							</item>
 
 							<item id="5">
@@ -1025,6 +1026,7 @@
 								<thumb>$INFO[Window.Property(RecommendedEpisode.2.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedEpisode.2.EpisodeNo)] $INFO[Window.Property(RecommendedEpisode.2.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedEpisode.2.TVshowTitle)]</label2>
+								<visible>!IsEmpty(Window.Property(RecommendedEpisode.2.TVshowTitle))</visible>
 							</item>
 							
 							<item id="6">
@@ -1032,6 +1034,7 @@
 								<thumb>$INFO[Window.Property(RecommendedEpisode.3.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedEpisode.3.EpisodeNo)] $INFO[Window.Property(RecommendedEpisode.3.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedEpisode.3.TVshowTitle)]</label2>
+								<visible>!IsEmpty(Window.Property(RecommendedEpisode.3.TVshowTitle))</visible>
 							</item>
 							
 							<item id="7">
@@ -1039,7 +1042,7 @@
 								<thumb>$INFO[Window.Property(RecommendedEpisode.4.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedEpisode.4.EpisodeNo)] $INFO[Window.Property(RecommendedEpisode.4.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedEpisode.4.TVshowTitle)]</label2>
-								<visible>IsEmpty(Window.Property(RecommendedMovie.3.Title))</visible>
+								<visible>!IsEmpty(Window.Property(RecommendedEpisode.4.TVshowTitle))</visible>
 							</item>
 
 							<item id="8">
@@ -1047,7 +1050,7 @@
 								<thumb>$INFO[Window.Property(RecommendedEpisode.5.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedEpisode.5.EpisodeNo)] $INFO[Window.Property(RecommendedEpisode.5.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedEpisode.5.TVshowTitle)]</label2>
-								<visible>IsEmpty(Window.Property(RecommendedMovie.2.Title))</visible>
+								<visible>!IsEmpty(Window.Property(RecommendedEpisode.5.TVshowTitle))</visible>
 							</item>
 							
 							<item id="9">
@@ -1055,7 +1058,7 @@
 								<thumb>$INFO[Window.Property(RecommendedEpisode.6.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedEpisode.6.EpisodeNo)] $INFO[Window.Property(RecommendedEpisode.6.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedEpisode.6.TVshowTitle)]</label2>
-								<visible>IsEmpty(Window.Property(RecommendedMovie.1.Title))</visible>
+								<visible>!IsEmpty(Window.Property(RecommendedEpisode.6.TVshowTitle))</visible>
 							</item>
 							
 						</content>
