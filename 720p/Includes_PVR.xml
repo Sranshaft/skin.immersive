@@ -703,7 +703,8 @@
 						<height>60</height>
 						<posx>0</posx>
 						<posy>0</posy>
-						<texture>colors/color_keyboard.png</texture>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>Label_Highlight</colordiffuse>
 						
 					</control>
 					

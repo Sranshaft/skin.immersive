@@ -67,16 +67,16 @@
 				
 				<animation effect="fade" start="20" end="100" time="2000" pulse="true" condition="true">Conditional</animation>
 			
-			</control>	
+			</control>
 			
 			<control type="button">
 			
 				<include>Common_Dimensions</include>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
+				<texturefocus>colors/color_transparent.png</texturefocus>
+				<texturenofocus>colors/color_transparent.png</texturenofocus>
 				<onclick>PlayerControl(play)</onclick>
 				
-			</control>	
+			</control>
 			
 		</control>	
 		
@@ -114,8 +114,8 @@
 		
 			<include>Common_Progress</include>
 			
-		</control>	
-
+		</control>
+		
 	</controls>
 
 </window>
