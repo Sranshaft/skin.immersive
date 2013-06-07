@@ -1,8 +1,9 @@
-<window type="dialog" id="58">
+<window id="58">
 
 	<defaultcontrol always="true">50</defaultcontrol>
 	
-	<zorder>2</zorder>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Similar,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
 	
 	<include>Common_Animation_Window</include>
 	
@@ -42,7 +43,7 @@
 			<posy>0</posy>
 			
 			<include>Common_Animation_Content</include>
-			<animation effect="slide" start="0,0" end="-200,0" time="600" tween="cubic" easing="out" condition="Control.HasFocus(581)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="-1020,0" time="600" tween="cubic" easing="out" condition="Control.HasFocus(51) | Control.HasFocus(581) | Control.HasFocus(52) | Control.HasFocus(53">Conditional</animation>
 		
 			<control type="image">
 		
@@ -93,15 +94,56 @@
 					
 				</control>
 				
-				<control type="image">
-							
-					<width>345</width>
-					<height>65</height>
-					<texture>trakt.tv/trakttv_breadcrumb.png</texture>
-					<colordiffuse>Label_Normal</colordiffuse>
-					<aspectratio>keep</aspectratio>
+			</control>
+			
+		</control>
+		
+		<control type="group">
+		
+			<posx>60</posx>
+			<posy>20</posy>
+			<width>1280</width>
+			<height>120</height>
+			
+			<animation effect="fade" start="0" end="100" time="600" reversible="true">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="600" reversible="true">Hidden</animation>
+			
+			<visible>Control.HasFocus(51) | Control.HasFocus(581) | Control.HasFocus(52) | Control.HasFocus(53</visible>
+			
+			<control type="button">
 					
-				</control>
+				<posy>12</posy>
+				<width>48</width>
+				<height>48</height>
+				<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
+				<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
+				<aspectratio>keep</aspectratio>
+				<colordiffuse>Label_Dark</colordiffuse>
+				<onclick>back</onclick>
+				
+			</control>
+			
+			<control type="label">
+
+				<description>Location Label</description>
+				<posx>68</posx>
+				<posy>0</posy>
+				<width>1200</width>
+				<label>$INFO[Window.Property(Title)]</label>
+				<font>Breadcrumb-SubFolder-Alt</font>
+				<textcolor>Label_Dark</textcolor>
+				
+			</control>
+			
+			<control type="label">
+
+				<description>Location Label</description>
+				<posx>68</posx>
+				<posy>18</posy>
+				<width>1200</width>
+				<label>Trakt.tv</label>
+				<font>Breadcrumb-Home-Alt</font>
+				<textcolor>Label_Dark</textcolor>
 				
 			</control>
 			
@@ -116,7 +158,7 @@
 			<height>300</height>
 			
 			<include>Common_Animation_Content</include>
-			<animation effect="slide" start="0,0" end="-200,0" time="600" tween="cubic" easing="out" condition="Control.HasFocus(581)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="-1020,0" time="600" tween="cubic" easing="out" condition="Control.HasFocus(51) | Control.HasFocus(581) | Control.HasFocus(52) | Control.HasFocus(53">Conditional</animation>
 			
 			<!--Hidden button-->
 			<control type="button" id="50">
@@ -126,7 +168,7 @@
 				<width>0</width>
 				<height>0</height>
 				<visible allowhiddenfocus="true">false</visible>
-				<onright>581</onright>
+				<onright>51</onright>
 			
 			</control>
 			
@@ -163,179 +205,1096 @@
 
 		</control>
 		
-		<!--Details Area-->
+		<!--Content Area-->
 		<control type="group">
 		
-			<posx>1080</posx>
-			<posy>49</posy>
+			<posx>1020</posx>
+			<posy>60</posy>
 			<width>600</width>
-			<height>300</height>
+			<height>700</height>
 			
 			<include>Common_Animation_Content</include>
-			<animation effect="slide" start="0,0" end="-200,0" time="600" tween="cubic" easing="out" condition="Control.HasFocus(581)">Conditional</animation>
 			
-			<control type="label">
-				
-				<label>overview</label>
-				<include>Common_Section_Label_Dark</include>
-				
-			</control>
-			
-			<control type="image">
-						
-				<posx>0</posx>
-				<posy>60</posy>
-				<width>140</width>
-				<height>210</height>
-				<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[Window.Property(Poster)]</texture>
-				<aspectratio>stretch</aspectratio>
-				
-			</control>
+			<animation effect="slide" start="0,0" end="-1020,0" time="600" tween="cubic" easing="out" condition="Control.HasFocus(51) | Control.HasFocus(581) | Control.HasFocus(52) | Control.HasFocus(53">Conditional</animation>
 			
 			<control type="grouplist">
 			
-				<posx>160</posx>
-				<posy>60</posy>
-				<width>180</width>
-				<height>400</height>
-				<orientation>vertical</orientation>
-				<itemgap>6</itemgap>
-				
+				<include>Common_Content_Grouplist</include>
+				<usecontrolcoords>true</usecontrolcoords>
+			
+				<!--Information Section-->
 				<control type="group">
 				
-					<width>48</width>
-					<height>48</height>
-				
-					<control type="image">
-					
-						<width>48</width>
-						<height>48</height>
-						<texture>colors/color_white.png</texture>
-						<colordiffuse>Background_Highlight</colordiffuse>
+					<width>360</width>
+					<height>700</height>
+			
+					<control type="label">
+						
+						<label>overview</label>
+						<include>Common_Section_Label_Dark</include>
+						
+						<animation effect="fade" start="100" end="0" time="600" condition="Control.HasFocus(51) | Control.HasFocus(581) | Control.HasFocus(52) | Control.HasFocus(53)">Conditional</animation>
 						
 					</control>
-				
-					<control type="image">
 					
-						<width>48</width>
-						<height>48</height>
-						<texture>$INFO[Window.Property(MPAA),ratings/,.png]</texture>
+					<control type="image">
+								
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>140</width>
+						<height>210</height>
+						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[Window.Property(Poster)]</texture>
 						<aspectratio>stretch</aspectratio>
 						
 					</control>
 					
-				</control>	
-				
-				<control type="label">
-				
-					<include>Common_TraktTV_Info_Detail</include>
-					<label>$INFO[Window.Property(Runtime),, minutes]</label>
-					<visible>!IsEmpty(Window.Property(Runtime))</visible>
+					<!--Hidden button-->
+					<control type="button" id="51">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>0</width>
+						<height>0</height>
+						<visible allowhiddenfocus="true">false</visible>
+						<onleft>50</onleft>
+						<onright>52</onright>
+						<ondown>581</ondown>
+					
+					</control>
+					
+					<control type="grouplist">
+					
+						<posx>160</posx>
+						<posy>60</posy>
+						<width>180</width>
+						<height>210</height>
+						<orientation>vertical</orientation>
+						<itemgap>6</itemgap>
+						
+						<control type="group">
+						
+							<width>48</width>
+							<height>48</height>
+						
+							<control type="image">
+							
+								<width>48</width>
+								<height>48</height>
+								<texture>colors/color_white.png</texture>
+								<colordiffuse>Background_Highlight</colordiffuse>
+								
+							</control>
+						
+							<control type="image">
+							
+								<width>48</width>
+								<height>48</height>
+								<texture>$INFO[Window.Property(MPAA),ratings/,.png]</texture>
+								<aspectratio>stretch</aspectratio>
+								
+							</control>
+							
+						</control>	
+						
+						<control type="label">
+						
+							<include>Common_TraktTV_Info_Detail</include>
+							<label>$INFO[Window.Property(Runtime),, minutes]</label>
+							<visible>!IsEmpty(Window.Property(Runtime))</visible>
+							
+						</control>
+						
+						<control type="label">
+						
+							<include>Common_TraktTV_Info_Detail</include>
+							<label>$INFO[Window.Property(Year)]</label>
+							<visible>!IsEmpty(Window.Property(Year))</visible>
+							
+						</control>
+						
+						<control type="label">
+						
+							<include>Common_TraktTV_Info_Detail</include>
+							<label>$INFO[Window.Property(Country)]</label>
+							<visible>!IsEmpty(Window.Property(Country))</visible>
+							
+						</control>
+						
+						<control type="label">
+						
+							<include>Common_TraktTV_Info_Detail</include>
+							<label>$INFO[Window.Property(NextTime)]</label>
+							<visible>!IsEmpty(Window.Property(NextTime))</visible>
+							
+						</control>
+						
+						<control type="label">
+						
+							<height>32</height>
+							<include>Common_TraktTV_Info_Detail</include>
+							<label>$INFO[Window.Property(Genre)]</label>
+							<visible>!IsEmpty(Window.Property(Genre))</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<width>340</width>
+							<height>32</height>
+							<texture background="true">$INFO[Window.Property(Rating),trakt.tv/rating,.png]</texture>
+							<colordiffuse>Label_Dark</colordiffuse>
+							<aspectratio align="left">keep</aspectratio>
+							
+						</control>
+						
+						<control type="group">
+						
+							<width>180</width>
+							<height>32</height>
+							
+							<control type="button" id="581">
+							
+								<width>32</width>
+								<height>32</height>
+								<texturefocus>playercontrols/playercontrol_play_focus.png</texturefocus>
+								<texturenofocus>playercontrols/playercontrol_play.png</texturenofocus>
+								<colordiffuse>Label_Dark</colordiffuse>
+								<aspectratio align="left">scale</aspectratio>
+								<textoffsetx>32</textoffsetx>
+								<onleft>50</onleft>
+								<onright>52</onright>
+								<onclick condition="!IsEmpty(Window.Property(Trailer))">$INFO[Window.Property(Trailer)]</onclick>
+								<onclick condition="!IsEmpty(Window.Property(Trailer))">Dialog.Close(57)</onclick>
+								<onclick condition="!IsEmpty(Window.Property(Trailer))">Dialog.Close(58)</onclick>
+								<onclick condition="!IsEmpty(Window.Property(Trailer))">ActivateWindow(fullscreenvideo,return)</onclick>
+								
+								<visible allowhiddenfocus="true">!IsEmpty(Window.Property(Trailer))</visible>
+								
+							</control>
+							
+							<control type="label">
+
+								<posx>48</posx>
+								<include>Common_TraktTV_Info_Detail</include>
+								<label>play trailer</label>
+								
+								<visible allowhiddenfocus="true">!IsEmpty(Window.Property(Trailer))</visible>
+								
+							</control>
+							
+						</control>
+						
+					</control>
+					
+					<control type="image">
+							
+						<posx>0</posx>
+						<posy>290</posy>
+						<width>340</width>
+						<height>1</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>Label_Dark</colordiffuse>
+						
+					</control>
+					
+					<control type="textbox">
+						
+						<posx>0</posx>
+						<posy>300</posy>
+						<width>340</width>
+						<height>400</height>
+						<label>$INFO[Window.Property(Plot)]</label>
+						<font>TraktTV-Info-Plot</font>
+						<textcolor>Label_Dark</textcolor>
+						
+					</control>
 					
 				</control>
 				
-				<control type="label">
-				
-					<include>Common_TraktTV_Info_Detail</include>
-					<label>$INFO[Window.Property(Year)]</label>
-					<visible>!IsEmpty(Window.Property(Year))</visible>
-					
-				</control>
-				
-				<control type="label">
-				
-					<include>Common_TraktTV_Info_Detail</include>
-					<label>$INFO[Window.Property(Country)]</label>
-					<visible>!IsEmpty(Window.Property(Country))</visible>
-					
-				</control>
-				
-				<control type="label">
-				
-					<include>Common_TraktTV_Info_Detail</include>
-					<label>$INFO[Window.Property(NextTime)]</label>
-					<visible>!IsEmpty(Window.Property(NextTime))</visible>
-					
-				</control>
-				
-				<control type="label">
-				
-					<height>32</height>
-					<include>Common_TraktTV_Info_Detail</include>
-					<label>$INFO[Window.Property(Genre)]</label>
-					<visible>!IsEmpty(Window.Property(Genre))</visible>
-					
-				</control>
-				
-				<control type="image">
-				
-					<width>340</width>
-					<height>32</height>
-					<texture background="true">$INFO[Window.Property(Rating),trakt.tv/rating,.png]</texture>
-					<colordiffuse>Label_Dark</colordiffuse>
-					<aspectratio align="left">keep</aspectratio>
-					
-				</control>
-				
+				<!--Similar Section-->
 				<control type="group">
 				
-					<width>180</width>
-					<height>32</height>
+					<posy>40</posy>
+					<width>400</width>
+					<height>560</height>
 					
-					<control type="button" id="581">
-					
-						<width>32</width>
-						<height>32</height>
-						<texturefocus>playercontrols/playercontrol_play_focus.png</texturefocus>
-						<texturenofocus>playercontrols/playercontrol_play.png</texturenofocus>
-						<colordiffuse>Label_Dark</colordiffuse>
-						<aspectratio align="left">scale</aspectratio>
-						<textoffsetx>32</textoffsetx>
-						<onleft>50</onleft>
-						<onclick condition="!IsEmpty(Window.Property(Trailer))">$INFO[Window.Property(Trailer)]</onclick>
-						<onclick condition="!IsEmpty(Window.Property(Trailer))">Dialog.Close(57)</onclick>
-						<onclick condition="!IsEmpty(Window.Property(Trailer))">Dialog.Close(58)</onclick>
-						<onclick condition="!IsEmpty(Window.Property(Trailer))">ActivateWindow(fullscreenvideo,return)</onclick>
+					<control type="label">
 						
-						<visible allowhiddenfocus="true">!IsEmpty(Window.Property(Trailer))</visible>
+						<label>similar</label>
+						<include>Common_Section_Label_Dark</include>
 						
 					</control>
 					
 					<control type="label">
-
-						<posx>48</posx>
-						<include>Common_TraktTV_Info_Detail</include>
-						<label>play trailer</label>
 						
-						<visible allowhiddenfocus="true">!IsEmpty(Window.Property(Trailer))</visible>
+						<posx>360</posx>
+						<label>$INFO[Window(Home).Property(SimilarTrakt.Count)]</label>
+						<include>Common_Section_Label_Right_Dark</include>
+						
+					</control>
+					
+					<control type="panel" id="52">
+							
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>380</width>
+						<height>520</height>
+						<onleft>51</onleft>
+						<onright>53</onright>
+						<onup>52</onup>
+						<ondown>52</ondown>
+						<pagecontrol>82</pagecontrol>
+						<viewtype label="535">list</viewtype>
+						<scrolltime tween="cubic" easing="out">600</scrolltime>
+						<preloaditems>2</preloaditems>
+						<orientation>vertical</orientation>
+						
+						<itemlayout width="380" height="130">
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								
+							</control>
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true">$INFO[ListItem.Thumb]</texture>
+								<aspectratio>stretch</aspectratio>
+								
+							</control>
+							
+							<control type="group">
+							
+								<posx>100</posx>
+								<posy>-10</posy>
+								<width>260</width>
+								<height>110</height>
+							
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>260</width>
+									<height>24</height>
+									<label>$INFO[ListItem.Label]</label>
+									<font>Menu-Similar-Header</font>
+									<textcolor>Label_Dark</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>24</posy>
+									<width>260</width>
+									<height>20</height>
+									<label>$INFO[ListItem.Property(Year)]</label>
+									<font>Menu-Similar-Detail</font>
+									<textcolor>Label_Dark</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>44</posy>
+									<width>260</width>
+									<height>80</height>
+									<label>$INFO[ListItem.Property(Plot)]</label>
+									<font>Menu-Similar-Plot</font>
+									<textcolor>Label_Dark</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+							</control>
+							
+						</itemlayout>
+
+						<focusedlayout width="380" height="260">
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								
+							</control>
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true">$INFO[ListItem.Thumb]</texture>
+								<aspectratio>stretch</aspectratio>
+								
+							</control>
+							
+							<control type="group">
+							
+								<posx>100</posx>
+								<posy>-10</posy>
+								<width>260</width>
+								<height>110</height>
+							
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>260</width>
+									<height>24</height>
+									<label>$INFO[ListItem.Label]</label>
+									<font>Menu-Similar-Header</font>
+									<textcolor>Label_Highlight</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>24</posy>
+									<width>260</width>
+									<height>20</height>
+									<label>$INFO[ListItem.Property(Year)]</label>
+									<font>Menu-Similar-Detail</font>
+									<textcolor>Label_Dark</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>44</posy>
+									<width>260</width>
+									<height>80</height>
+									<label>$INFO[ListItem.Property(Plot)]</label>
+									<font>Menu-Similar-Plot</font>
+									<textcolor>Label_Dark</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+							</control>	
+
+						</focusedlayout>
+						
+						<content>
+						
+							<item id="1">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.1.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.1.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.1.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.1.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.1.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.1.Year)]</property>
+								<onclick>-</onclick>
+							</item>
+							
+							<item id="2">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.2.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.2.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.2.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.2.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.2.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.2.Year)]</property>
+								<onclick>-</onclick>
+							</item>
+							
+							<item id="3">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.3.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.3.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.3.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.3.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.3.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.3.Year)]</property>
+								<onclick>-</onclick>
+							</item>
+							
+							<item id="4">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.4.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.4.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.4.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.4.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.4.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.4.Year)]</property>
+								<onclick>-</onclick>
+							</item>
+							
+							<item id="5">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.5.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.5.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.5.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.5.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.5.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.5.Year)]</property>
+								<onclick>-</onclick>
+							</item>
+							
+							<item id="6">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.6.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.6.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.6.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.6.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.6.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.6.Year)]</property>
+								<onclick>-</onclick>
+							</item>
+							
+							<item id="7">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.7.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.7.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.7.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.7.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.7.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.7.Year)]</property>
+								<onclick>-</onclick>
+							</item>
+							
+							<item id="8">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.8.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.8.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.8.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.8.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.8.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.8.Year)]</property>
+								<onclick>-</onclick>
+							</item>
+							
+							<item id="9">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.9.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.9.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.9.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.9.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.9.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.9.Year)]</property>
+								<onclick>-</onclick>
+							</item>
+							
+							<item id="10">
+								<label>$INFO[Window(Home).Property(SimilarTrakt.10.Title)]</label>
+								<thumb>$INFO[Window(Home).Property(SimilarTrakt.10.Art(poster))]</thumb>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.10.Plot)]</property>
+								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.10.Genre)]</property>
+								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.10.MPAA)]</property>
+								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.10.Year)]</property>
+								<onclick>-</onclick>
+							</item>
+
+						</content>		
+						
+					</control>
+					
+					<!--Scrollbar-->
+					<control type="scrollbar" id="82">
+					
+						<include>Common_Settings_Scrollbar_Vertical</include>
+						
+						<posx>380</posx>
+						<posy>60</posy>
+						<height>500</height>
+						
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(82).Scrolling">Conditional</animation>
+						
+					</control>	
+
+				</control>
+			
+				<!--Comments Section-->
+				<control type="group">
+				
+					<posy>40</posy>
+					<width>420</width>
+					<height>560</height>
+					
+					<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),0)</visible>
+				
+					<control type="label">
+						
+						<label>comments</label>
+						<include>Common_Section_Label_Dark</include>
+						
+					</control>
+					
+					<control type="label">
+						
+						<posx>380</posx>
+						<label>$INFO[Window(Home).Property(CommentsTrakt.Count)]</label>
+						<include>Common_Section_Label_Right_Dark</include>
+						
+					</control>
+					
+					<control type="panel" id="53">
+							
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>380</width>
+						<height>520</height>
+						<onleft>52</onleft>
+						<onright>-</onright>
+						<onup>53</onup>
+						<ondown>53</ondown>
+						<pagecontrol>83</pagecontrol>
+						<viewtype label="535">list</viewtype>
+						<scrolltime tween="cubic" easing="out">600</scrolltime>
+						<preloaditems>2</preloaditems>
+						<orientation>vertical</orientation>
+						
+						<itemlayout width="380" height="130">
+
+							<control type="group">
+							
+								<visible>StringCompare(ListItem.Thumb,forumbrowser/forumbrowser_bubble_left.png)</visible>
+							
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture background="true">$INFO[ListItem.Property(Avatar)]</texture>
+									<aspectratio>stretch</aspectratio>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>48</posx>
+									<posy>0</posy>
+									<width>340</width>
+									<height>110</height>
+									<texture background="true" border="20,50,20,20">$INFO[ListItem.Thumb]</texture>
+									<aspectratio>stretch</aspectratio>
+									<colordiffuse>FF464646</colordiffuse>
+									
+								</control>
+							
+								<control type="group">
+								
+									<posx>76</posx>
+									<posy>16</posy>
+									<width>280</width>
+									<height>80</height>
+									
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>-10</posy>
+										<width>280</width>
+										<height>24</height>
+										<label>$INFO[ListItem.Label]</label>
+										<font>Menu-Similar-Detail</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+								
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>16</posy>
+										<width>280</width>
+										<height>60</height>
+										<label>$INFO[ListItem.Property(Comment)]</label>
+										<font>Menu-Similar-Plot</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+								</control>
+								
+							</control>	
+							
+							<control type="group">
+							
+								<visible>StringCompare(ListItem.Thumb,forumbrowser/forumbrowser_bubble_right.png)</visible>
+							
+								<control type="image">
+								
+									<posx>320</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture background="true">$INFO[ListItem.Property(Avatar)]</texture>
+									<aspectratio>stretch</aspectratio>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>340</width>
+									<height>110</height>
+									<texture background="true" border="20,50,20,20">$INFO[ListItem.Thumb]</texture>
+									<aspectratio>stretch</aspectratio>
+									<colordiffuse>FF222222</colordiffuse>
+									
+								</control>
+							
+								<control type="group">
+								
+									<posx>16</posx>
+									<posy>16</posy>
+									<width>280</width>
+									<height>80</height>
+									
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>-10</posy>
+										<width>280</width>
+										<height>24</height>
+										<label>$INFO[ListItem.Label]</label>
+										<font>Menu-Similar-Detail</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+								
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>16</posy>
+										<width>280</width>
+										<height>60</height>
+										<label>$INFO[ListItem.Property(Comment)]</label>
+										<font>Menu-Similar-Plot</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+								</control>
+								
+							</control>
+							
+						</itemlayout>
+
+						<focusedlayout width="380" height="260">
+
+							<control type="group">
+							
+								<visible>StringCompare(ListItem.Thumb,forumbrowser/forumbrowser_bubble_left.png)</visible>
+							
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture background="true">$INFO[ListItem.Property(Avatar)]</texture>
+									<aspectratio>stretch</aspectratio>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>48</posx>
+									<posy>0</posy>
+									<width>340</width>
+									<height>110</height>
+									<texture background="true" border="20,50,20,20">$INFO[ListItem.Thumb]</texture>
+									<aspectratio>stretch</aspectratio>
+									<colordiffuse>Background_Highlight</colordiffuse>
+									
+								</control>
+							
+								<control type="group">
+								
+									<posx>76</posx>
+									<posy>16</posy>
+									<width>280</width>
+									<height>80</height>
+									
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>-10</posy>
+										<width>280</width>
+										<height>24</height>
+										<label>$INFO[ListItem.Label]</label>
+										<font>Menu-Similar-Detail</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+								
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>16</posy>
+										<width>280</width>
+										<height>60</height>
+										<label>$INFO[ListItem.Property(Comment)]</label>
+										<font>Menu-Similar-Plot</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+								</control>
+								
+							</control>	
+							
+							<control type="group">
+							
+								<visible>StringCompare(ListItem.Thumb,forumbrowser/forumbrowser_bubble_right.png)</visible>
+							
+								<control type="image">
+								
+									<posx>320</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture background="true">$INFO[ListItem.Property(Avatar)]</texture>
+									<aspectratio>stretch</aspectratio>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>340</width>
+									<height>110</height>
+									<texture background="true" border="20,50,20,20">$INFO[ListItem.Thumb]</texture>
+									<aspectratio>stretch</aspectratio>
+									<colordiffuse>Background_Highlight</colordiffuse>
+									
+								</control>
+							
+								<control type="group">
+								
+									<posx>16</posx>
+									<posy>16</posy>
+									<width>280</width>
+									<height>80</height>
+									
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>-10</posy>
+										<width>280</width>
+										<height>24</height>
+										<label>$INFO[ListItem.Label]</label>
+										<font>Menu-Similar-Detail</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+								
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>16</posy>
+										<width>280</width>
+										<height>60</height>
+										<label>$INFO[ListItem.Property(Comment)]</label>
+										<font>Menu-Similar-Plot</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+								</control>
+								
+							</control>	
+
+						</focusedlayout>
+						
+						<content>
+						
+							<item id="1">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.1.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.1.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.1.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.1.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.1.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),0)</visible>
+							</item>
+							
+							<item id="2">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.2.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.2.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.2.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.2.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.2.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),1)</visible>
+							</item>
+							
+							<item id="3">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.3.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.3.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.3.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.3.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.3.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),2)</visible>
+							</item>
+							
+							<item id="4">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.4.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.4.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.4.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.4.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.4.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),3)</visible>
+							</item>
+							
+							<item id="5">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.5.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.5.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.5.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.5.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.5.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),4)</visible>
+							</item>
+							
+							<item id="6">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.6.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.6.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.6.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.6.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.6.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),5)</visible>
+							</item>
+							
+							<item id="7">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.7.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.7.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.7.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.7.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.7.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),6)</visible>
+							</item>
+							
+							<item id="8">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.8.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.8.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.8.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.8.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.8.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),7)</visible>
+							</item>
+							
+							<item id="9">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.9.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.9.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.9.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.9.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.9.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),8)</visible>
+							</item>
+							
+							<item id="10">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.10.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.10.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.10.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.10.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.10.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),9)</visible>
+							</item>
+							
+							<item id="11">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.11.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.11.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.11.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.11.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.11.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),10)</visible>
+							</item>
+							
+							<item id="12">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.12.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.12.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.12.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.12.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.12.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),11)</visible>
+							</item>
+							
+							<item id="13">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.13.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.13.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.13.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.13.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.13.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),12)</visible>
+							</item>
+							
+							<item id="14">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.14.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.14.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.14.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.14.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.14.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),13)</visible>
+							</item>
+							
+							<item id="15">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.15.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.15.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.15.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.15.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.15.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),14)</visible>
+							</item>
+							
+							<item id="16">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.16.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.16.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.16.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.16.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.16.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),15)</visible>
+							</item>
+							
+							<item id="17">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.17.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.17.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.17.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.17.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.17.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),16)</visible>
+							</item>
+							
+							<item id="18">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.18.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.18.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.18.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.18.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.18.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),17)</visible>
+							</item>
+							
+							<item id="19">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.19.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.19.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.19.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.19.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.19.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),18)</visible>
+							</item>
+							
+							<item id="20">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(CommentsTrakt.20.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.20.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.20.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.20.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.20.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),19)</visible>
+							</item>
+
+						</content>		
+						
+					</control>
+					
+					<!--Scrollbar-->
+					<control type="scrollbar" id="83">
+					
+						<include>Common_Settings_Scrollbar_Vertical</include>
+						
+						<posx>400</posx>
+						<posy>60</posy>
+						<height>500</height>
+						
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(83).Scrolling">Conditional</animation>
 						
 					</control>
 					
 				</control>
-				
-			</control>
-			
-			<control type="image">
-					
-				<posx>0</posx>
-				<posy>290</posy>
-				<width>340</width>
-				<height>1</height>
-				<texture>colors/color_white.png</texture>
-				<colordiffuse>Label_Dark</colordiffuse>
-				
-			</control>
-			
-			<control type="textbox">
-				
-				<posx>0</posx>
-				<posy>300</posy>
-				<width>340</width>
-				<height>314</height>
-				<label>$INFO[Window.Property(Plot)]</label>
-				<font>TraktTV-Info-Plot</font>
-				<textcolor>Label_Dark</textcolor>
-				
+
 			</control>
 			
 		</control>
