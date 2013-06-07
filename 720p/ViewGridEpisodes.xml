@@ -420,30 +420,6 @@
 					
 				</control>	
 				
-				<control type="image">
-					
-					<posx>320</posx>
-					<posy>0</posy>
-					<width>300</width>
-					<height>210</height>
-					<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[Container(56).ListItem(10).Thumb]</texture>
-					<aspectratio>scale</aspectratio>
-					<fadetime>400</fadetime>
-					
-				</control>
-				
-				<control type="image">
-					
-					<posx>320</posx>
-					<posy>230</posy>
-					<width>300</width>
-					<height>210</height>
-					<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[Container(56).ListItem(11).Thumb]</texture>
-					<aspectratio>scale</aspectratio>
-					<fadetime>400</fadetime>
-					
-				</control>
-				
 			</control>
 			
 		</control>
