@@ -549,25 +549,6 @@
 		<value>$INFO[ListItem.Artist]</value>
 	</variable>
 	
-	<!--PVR Variables-->
-	
-	<variable name="PVR_EPG_Genre">
-		<value condition="StringCompare(ListItem.Property(GenreType),0) | StringCompare(ListItem.Property(GenreType),192) | StringCompare(ListItem.Property(GenreType),208) |
-		StringCompare(ListItem.Property(GenreType),224) |
-		StringCompare(ListItem.Property(GenreType),240)">EPG_Unknown</value>
-		<value condition="StringCompare(ListItem.Property(GenreType),16)">EPG_MovieDrama</value>
-		<value condition="StringCompare(ListItem.Property(GenreType),32)">EPG_News</value>
-		<value condition="StringCompare(ListItem.Property(GenreType),48)">EPG_Show</value>
-		<value condition="StringCompare(ListItem.Property(GenreType),64)">EPG_Sports</value>
-		<value condition="StringCompare(ListItem.Property(GenreType),80)">EPG_Child</value>
-		<value condition="StringCompare(ListItem.Property(GenreType),96)">EPG_Music</value>
-		<value condition="StringCompare(ListItem.Property(GenreType),112)">EPG_Arts</value>
-		<value condition="StringCompare(ListItem.Property(GenreType),128)">EPG_Social</value>
-		<value condition="StringCompare(ListItem.Property(GenreType),144)">EPG_Science</value>
-		<value condition="StringCompare(ListItem.Property(GenreType),160)">EPG_Hobby</value>
-		<value condition="StringCompare(ListItem.Property(GenreType),176)">EPG_Special</value>
-	</variable>	
-	
 	<!--Select Variables-->
 	
 	<variable name="Select_Button_Image">
