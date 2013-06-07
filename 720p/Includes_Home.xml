@@ -532,7 +532,7 @@
 								<label>$LOCALIZE[31006]</label>
 								<label2>$INFO[Window(Home).Property(Movies.Count),, movies][CR]$INFO[Window(Home).Property(Movies.Watched),, watched][CR]$INFO[Window(Home).Property(Movies.UnWatched),, unwatched]</label2>
 								<thumb>home/home_movie_small.png</thumb>
-								<onclick>ActivateWindow(videos,movies,return)</onclick>
+								<onclick>ActivateWindow(61,return)</onclick>
 								<visible>Library.HasContent(movies) + Skin.HasSetting(ShowMoviesMenu)</visible>
 							</item>
 
@@ -541,7 +541,7 @@
 								<label>$LOCALIZE[31007]</label>
 								<label2>$INFO[Window(Home).Property(TVShows.Count),, tv shows][CR]$INFO[Window(Home).Property(TVShows.Watched),, watched][CR]$INFO[Window(Home).Property(TVShows.UnWatched),, unwatched]</label2>
 								<thumb>home/home_tvshow_small.png</thumb>
-								<onclick>ActivateWindow(videos,tvshows,return)</onclick>
+								<onclick>ActivateWindow(62,return)</onclick>
 								<visible>Library.HasContent(tvshows) + Skin.HasSetting(ShowTVShowsMenu)</visible>
 							</item>
 							
@@ -566,7 +566,7 @@
 								<label>$LOCALIZE[31004]</label>
 								<label2>$INFO[Window(Home).Property(Music.ArtistsCount),, artists][CR]$INFO[Window(Home).Property(Music.AlbumsCount),, albums][CR]$INFO[Window(Home).Property(Music.SongsCount),, songs]</label2>
 								<thumb>home/home_music_small.png</thumb>
-								<onclick>ActivateWindow(MusicLibrary)</onclick>
+								<onclick>ActivateWindow(63,return)</onclick>
 								<visible>Skin.HasSetting(ShowMusicMenu)</visible>
 							</item>
 

@@ -26,6 +26,9 @@
 	
 	<variable name="Breadcrumb_Home_Label">
 		<value condition="StringCompare(Window.Property(xmlfile),AddonBrowser.xml)">$LOCALIZE[24001]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">$LOCALIZE[31006]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">$LOCALIZE[31004]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">$LOCALIZE[20343]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogAddonInfo.xml)">$INFO[ListItem.Property(Addon.Name)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogAlbumInfo.xml) + Container.Content(artists)">$INFO[ListItem.Artist]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogAlbumInfo.xml) + Container.Content(albums)">$INFO[ListItem.Album]</value>
@@ -71,6 +74,9 @@
 	</variable>
 	
 	<variable name="Breadcrumb_SubFolder_Label">
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">Hub</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">Hub</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">Hub</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogFullScreenInfo.xml)">Now watching</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasVideo">Now watching</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasAudio">Now listening</value>
@@ -579,11 +585,11 @@
 		<value condition="Window.IsVisible(script-globalsearch-main.xml)">splash/splash_globalsearch.png</value>
 		<value condition="Window.IsVisible(script-forumbrowser-forums.xml)">splash/splash_forumbrowser.png</value>
 		<value condition="Window.IsVisible(script.pseudotv.EPG.xml)">splash/splash_pseudotv.png</value>
+		<value condition="Window.IsActive(Custom_Hub_Movies.xml)">splash/splash_movies.png</value>
+		<value condition="Window.IsActive(Custom_Hub_Music.xml)">splash/splash_music.png</value>
+		<value condition="Window.IsActive(Custom_Hub_TV.xml)">splash/splash_tvshows.png</value>
 		<value condition="Window.IsActive(DialogFavourites.xml)">splash/splash_favorites.png</value>
 		<value condition="Window.IsActive(MyPics.xml)">splash/splash_picture.png</value>
-		<value condition="Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml)">splash/splash_music.png</value>
-		<value condition="Window.IsActive(MyVideoNav.xml) + [SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/)]">splash/splash_movies.png</value>
-		<value condition="Window.IsActive(MyVideoNav.xml) + [Substring(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/)]">splash/splash_tvshows.png</value>
 		<value condition="Window.IsActive(MyVideoNav.xml)">splash/splash_video.png</value>
 		<value condition="Window.IsActive(FileManager.xml)">splash/splash_filemanager.png</value>
 		<value condition="Window.IsActive(Settings.xml)">splash/splash_settings.png</value>

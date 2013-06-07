@@ -96,7 +96,7 @@
 				
 					<label>title</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,MovieTitles)</onclick>
+					<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
 					
@@ -106,7 +106,7 @@
 				
 					<label>new</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,RecentlyAddedMovies)</onclick>
+					<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
 					
@@ -116,7 +116,7 @@
 				
 					<label>actors</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,MovieActors)</onclick>
+					<onclick>ActivateWindow(Videos,MovieActors,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
 					
@@ -126,7 +126,7 @@
 				
 					<label>directors</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,MovieDirectors)</onclick>
+					<onclick>ActivateWindow(Videos,MovieDirectors,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
 					
@@ -136,7 +136,7 @@
 				
 					<label>years</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,MovieYears)</onclick>
+					<onclick>ActivateWindow(Videos,MovieYears,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
 					
@@ -146,7 +146,7 @@
 				
 					<label>genres</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,MovieGenres)</onclick>
+					<onclick>ActivateWindow(Videos,MovieGenres,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
 					
@@ -156,7 +156,7 @@
 				
 					<label>studios</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,MovieStudios)</onclick>
+					<onclick>ActivateWindow(Videos,MovieStudios,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
 					
@@ -166,7 +166,7 @@
 				
 					<label>sets</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,MovieSets)</onclick>
+					<onclick>ActivateWindow(Videos,MovieSets,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
 					
@@ -176,7 +176,7 @@
 				
 					<label>tags</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,MovieTags)</onclick>
+					<onclick>ActivateWindow(Videos,MovieTags,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
 					
@@ -186,7 +186,7 @@
 				
 					<label>playlists</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,special://videoplaylists/)</onclick>
+					<onclick>ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
 					
@@ -196,7 +196,7 @@
 				
 					<label>addons</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,addons://sources/video/)</onclick>
+					<onclick>ActivateWindow(Videos,addons://sources/video/,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,videodb://4/)</visible>
 					
@@ -208,7 +208,7 @@
 				
 					<label>title</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,TvShowTitles)</onclick>
+					<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
 					
@@ -218,7 +218,7 @@
 					
 					<label>new</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes)</onclick>
+					<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
 					
@@ -228,7 +228,7 @@
 				
 					<label>actors</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,TvShowActors)</onclick>
+					<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
 					
@@ -238,7 +238,7 @@
 				
 					<label>years</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,TvShowYears)</onclick>
+					<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
 					
@@ -248,7 +248,7 @@
 				
 					<label>genres</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,TvShowGenres)</onclick>
+					<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
 					
@@ -258,7 +258,7 @@
 				
 					<label>studios</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,TvShowStudios)</onclick>
+					<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
 					
@@ -268,7 +268,7 @@
 				
 					<label>playlists</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,special://videoplaylists/)</onclick>
+					<onclick>ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
 					
@@ -278,7 +278,7 @@
 				
 					<label>addons</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(Videos,addons://sources/video/)</onclick>
+					<onclick>ActivateWindow(Videos,addons://sources/video/,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,videodb://5/)</visible>
 					
@@ -290,7 +290,7 @@
 				
 					<label>last played</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(MusicLibrary,RecentlyPlayedAlbums)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,RecentlyPlayedAlbums,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,musicdb)</visible>
 					
@@ -300,7 +300,7 @@
 				
 					<label>new</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,musicdb)</visible>
 					
@@ -310,7 +310,7 @@
 				
 					<label>artists</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(MusicLibrary,Artists)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,Artists,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,musicdb)</visible>
 					
@@ -320,7 +320,7 @@
 				
 					<label>albums</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(MusicLibrary,Albums)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,Albums,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,musicdb)</visible>
 					
@@ -330,7 +330,7 @@
 				
 					<label>songs</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(MusicLibrary,Songs)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,Songs,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,musicdb)</visible>
 					
@@ -340,7 +340,7 @@
 				
 					<label>years</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(MusicLibrary,Years)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,Years,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,musicdb)</visible>
 					
@@ -350,7 +350,7 @@
 				
 					<label>genres</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(MusicLibrary,Genres)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,Genres,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,musicdb)</visible>
 					
@@ -360,7 +360,7 @@
 				
 					<label>top 100</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(MusicLibrary,Top100)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,Top100,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,musicdb)</visible>
 					
@@ -370,7 +370,7 @@
 				
 					<label>playlists</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(MusicLibrary,special://musicplaylists/)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,special://musicplaylists/,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,musicdb)</visible>
 					
@@ -380,7 +380,7 @@
 				
 					<label>addons</label>
 					<onclick>Dialog.Close(51)</onclick>
-					<onclick>ActivateWindow(MusicLibrary,addons://sources/audio/)</onclick>
+					<onclick>ActivateWindow(MusicLibrary,addons://sources/audio/,return)</onclick>
 					
 					<visible>SubString(Container.FolderPath,musicdb)</visible>
 					

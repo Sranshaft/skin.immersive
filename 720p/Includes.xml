@@ -19,6 +19,7 @@
 	<include file="Includes_Appbar.xml" />
 	<include file="Includes_Breadcrumb.xml" />
 	<include file="Includes_Home.xml" />
+	<include file="Includes_Hub.xml" />
 	<include file="Includes_LiveTile.xml" />
 	<include file="Includes_NextAired.xml" />
 	<include file="Includes_PVR.xml" />
@@ -1214,8 +1215,8 @@
 	
 	<include name="Common_List_Indicator">
 	
-		<width>10</width>
-		<height>10</height>
+		<width>20</width>
+		<height>20</height>
 		<texture>colors/color_white.png</texture>
 		
 	</include>

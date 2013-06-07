@@ -1,0 +1,302 @@
+<window id="62">
+
+	<defaultcontrol always="true">9000</defaultcontrol>
+	
+	<zorder>2</zorder>
+	
+	<include>Common_Animation_Window</include>
+	
+	<!--Splash Screen-->
+	<onload condition="Window.Previous(home)">ActivateWindow(60)</onload>
+	
+	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Video)">XBMC.RunScript(script.randomandlastitems,limit=10,method=Last,playlist=special://skin/playlists/History (TV Shows).xsp,menu=Menu2)</onload>
+	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowAiringTodaySection_Video)">XBMC.RunScript(script.tv.show.next.aired,backend=True)</onload>
+	
+	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingShows)</onload>
+	
+	<onload>AlarmClock(MoveFeatured,Control.Move(9001,1),00:20,silent,loop)</onload>
+	<onunload>XBMC.CancelAlarm(MoveFeatured,true)</onunload>
+	
+	<onload>AlarmClock(MoveTrakt,Control.Move(9007,1),00:20,silent,loop)</onload>
+	<onunload>XBMC.CancelAlarm(MoveTrakt,true)</onunload>
+	
+	<controls>
+
+		<!--Background Area-->
+		<include>Common_Background</include>
+		
+		<control type="group">
+		
+			<include>Common_Dimensions</include>
+			<include>Common_Animation_Window</include>
+		
+			<!--Top Area-->
+			<include>Common_Breadcrumb</include>
+			<include>Common_Clock</include>
+			<include>Common_Overlay</include>
+			
+			<!--Content Area-->
+			<control type="group">
+			
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>1280</width>
+				<height>480</height>
+				
+				<!--Animation-->
+				<include condition="Window.Previous(home)">Common_Animation_Content_Splash</include>
+				<include condition="!Window.Previous(home)">Common_Animation_Content</include>
+				
+				<control type="grouplist">
+		
+					<include>Common_Content_Grouplist</include>
+					
+					<control type="group" id="8000">
+					
+						<posx>60</posx>
+						<posy>0</posy>
+						<width>400</width>
+						<height>480</height>
+						
+						<control type="label">
+							
+							<posx>45</posx>
+							<posy>57</posy>
+							<width>600</width>
+							<height>30</height>
+							<label>EXPLORE</label>
+							<font>ForumBrowser-PageLabels</font>
+							<textcolor>Label_Normal</textcolor>
+							<aligny>top</aligny>
+							<wrapmultiline>true</wrapmultiline>
+							<scrollspeed>0</scrollspeed>
+							<angle>-90</angle>
+							
+							<include>Common_Animation_Vertical_Label</include>
+							
+						</control>
+					
+						<control type="panel" id="9000">
+								
+							<posx>50</posx>
+							<posy>60</posy>
+							<width>400</width>
+							<height>480</height>
+							<onleft>9007</onleft>
+							<onright>9001</onright>
+							<onup>9000</onup>
+							<ondown>9000</ondown>
+							<pagecontrol>9020</pagecontrol>
+							<viewtype label="535">list</viewtype>
+							<scrolltime tween="cubic" easing="out">600</scrolltime>
+							<preloaditems>2</preloaditems>
+							
+							<itemlayout width="400" height="80">
+							
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture>colors/color_keyboard_dark.png</texture>
+									
+								</control>
+							
+								<control type="image">
+								
+									<include>Common_Control_Image</include>
+									<texture>$INFO[ListItem.Thumb]</texture>
+									
+								</control>
+								
+								<control type="label">
+								
+									<width min="20" max="380">auto</width>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>Label_Normal</textcolor>
+									<include>Common_Control_Label</include>
+									
+								</control>
+
+							</itemlayout>
+
+							<focusedlayout width="400" height="80">
+							
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture>colors/color_white.png</texture>
+									<colordiffuse>Tile_Background</colordiffuse>
+									<visible>!Control.HasFocus(9000)</visible>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture>colors/color_white.png</texture>
+									<colordiffuse>Background_Highlight</colordiffuse>
+									
+									<visible>Control.HasFocus(9000)</visible>
+									
+								</control>
+							
+								<control type="image">
+								
+									<include>Common_Control_Image</include>
+									<texture>$INFO[ListItem.Thumb]</texture>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture>button_unfocus.png</texture>
+									<colordiffuse>Background_Highlight</colordiffuse>
+									
+									<visible>Control.HasFocus(9000)</visible>
+									
+								</control>
+								
+								<control type="label">
+								
+									<width min="20" max="380">auto</width>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>Label_Normal</textcolor>
+									<include>Common_Control_Label</include>
+									
+								</control>
+
+							</focusedlayout>
+							
+							<content>
+
+								<item>
+									<description>Now Playing</description>
+									<label>Now playing</label>
+									<thumb>$VAR[NowPlaying_Image]</thumb>
+									<onclick>ActivateWindow(fullscreenvideo)</onclick>
+									<visible>Player.HasVideo + VideoPlayer.Content(episodes)</visible>
+								</item>
+								
+								<item>
+									<description>Titles</description>
+									<label>Titles</label>
+									<thumb>hub/hub_movietitles_small.png</thumb>
+									<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
+								</item>
+							
+								<item>
+									<description>Recently Added</description>
+									<label>Recently added</label>
+									<thumb>hub/hub_recentlyadded_small.png</thumb>
+									<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
+								</item>
+								
+								<item>
+									<description>Actors</description>
+									<label>Actors</label>
+									<thumb>hub/hub_actors_small.png</thumb>
+									<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
+								</item>
+								
+								<item>
+									<description>Genres</description>
+									<label>Genres</label>
+									<thumb>hub/hub_genres_small.png</thumb>
+									<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
+								</item>
+								
+								<item>
+									<description>Years</description>
+									<label>Years</label>
+									<thumb>hub/hub_years_small.png</thumb>
+									<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
+								</item>
+								
+								<item>
+									<description>Studios</description>
+									<label>Studios</label>
+									<thumb>hub/hub_studios_small.png</thumb>
+									<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
+								</item>
+								
+								<item>
+									<description>Playlists</description>
+									<label>Playlists</label>
+									<thumb>hub/hub_playlists_small.png</thumb>
+									<onclick>ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
+								</item>
+								
+								<item>
+									<description>Addons</description>
+									<label>Addons</label>
+									<thumb>hub/hub_addons_small.png</thumb>
+									<onclick>ActivateWindow(Videos,addons://sources/video/,return)</onclick>
+								</item>
+								
+								<item>
+									<description>Files</description>
+									<label>Files</label>
+									<thumb>hub/hub_files_small.png</thumb>
+									<onclick>ActivateWindow(Videos,Files,return)</onclick>
+								</item>
+
+							</content>
+							
+						</control>
+						
+						<!--Scrollbar-->
+						<control type="scrollbar" id="9020">
+							
+							<include>Common_Scrollbar_Vertical</include>
+						
+							<posx>380</posx>
+							<posy>60</posy>
+							<height>460</height>
+							
+							<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(9000).Scrolling">Conditional</animation>
+							
+						</control>
+					
+					</control>
+					
+					<include>ViewList_RootMenu_Featured</include>
+					<include>ViewList_RootMenu_RecentlyAdded</include>
+					<include>ViewList_RootMenu_AiringToday</include>
+					<include>ViewList_RootMenu_InCinemas</include>
+					<include>ViewList_RootMenu_NearbyEvents</include>
+					<include>ViewList_RootMenu_History</include>
+					<include>ViewList_RootMenu_Trakt</include>
+					
+				</control>
+				
+			</control>
+			
+			<!--Scrollbar-->
+			<control type="scrollbar" id="9010">
+				
+				<include>Common_Window_Scrollbar_Horizontal</include>
+				<posy>600</posy>
+				
+				<include>Common_Animation_Window_Scrollbar_Fade</include>
+				
+				<visible>Skin.HasSetting(UseTouchInput)</visible>
+				
+			</control>
+
+		</control>
+		
+	</controls>	
+		
+</window>
