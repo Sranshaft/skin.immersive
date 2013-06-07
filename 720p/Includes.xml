@@ -1904,6 +1904,21 @@
 		
 	</include>
 	
+	<include name="Common_Section_Label_Right_Dark">
+	
+		<posx>0</posx>
+		<posy>0</posy>
+		<width min="20" max="530">auto</width>
+		<height>40</height>
+		<font>Content-Label</font>
+		<textcolor>Label_Dark</textcolor>
+		<align>right</align>
+		<aligny>top</aligny>
+		<wrapmultiline>false</wrapmultiline>
+		<scrollspeed>0</scrollspeed>
+		
+	</include>
+	
 	<include name="Common_Settings_Background">
 	
 		<control type="image">
@@ -2212,6 +2227,8 @@
 		<onclick>ClearProperty(Poster,58)</onclick>
 		<onclick>ClearProperty(Fanart,58)</onclick>
 		<onclick>ClearProperty(Trailer,58)</onclick>
+		<onclick>ClearProperty(ID,58)</onclick>
+		<onclick>ClearProperty(Type,58)</onclick>
 		<onclick>ClearProperty(Country,58)</onclick>
 		<onclick>ClearProperty(NextTime,58)</onclick>
 		
