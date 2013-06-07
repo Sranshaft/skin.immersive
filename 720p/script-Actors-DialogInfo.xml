@@ -27,7 +27,7 @@
 			<width>360</width>
 			<height>480</height>
 			
-			<animation type="Conditional" condition="Control.HasFocus(6) | Control.HasFocus(8) | Control.HasFocus(11) | Control.HasFocus(20) |Control.HasFocus(25) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
+			<animation type="Conditional" condition="Control.HasFocus(6) | Control.HasFocus(8) | Control.HasFocus(11) | Control.HasFocus(20) | Control.HasFocus(25) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
