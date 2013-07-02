@@ -518,10 +518,19 @@
 
 		<control type="group">
 		
-			<control type="image">
+			<!--<control type="image">
 					
 				<include>Common_Dimensions</include>
 				<texture background="true">colors/color_black.png</texture>
+				
+			</control>-->
+			
+			<control type="image">
+				
+				<include>Common_Dimensions</include>
+				<texture background="true">colors/color_white.png</texture>
+				<colordiffuse>Background_Dark</colordiffuse>
+				<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
 				
 			</control>
 			
@@ -530,14 +539,6 @@
 			<control type="group">
 			
 				<visible>!IsEmpty(Skin.String(PersonalizeOverlay)) + StringCompare(Window.Property(xmlfile),Home.xml)</visible>
-			
-				<control type="image">
-					
-					<include>Common_Dimensions</include>
-					<texture background="true">colors/color_white.png</texture>
-					<colordiffuse>Background_Dark</colordiffuse>
-					
-				</control>
 			
 				<control type="image">
 				
@@ -551,7 +552,7 @@
 				
 			</control>
 			
-			<!--Video Background-->
+			<!--Audio Background-->
 			<control type="group">
 			
 				<visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
@@ -2107,8 +2108,8 @@
 	
 		<posx>0</posx>
 		<posy>0</posy>
-		<width>500</width>
-		<height>280</height>
+		<width>320</width>
+		<height>180</height>
 		<aspectratio>stretch</aspectratio>
 		
 	</include>	
