@@ -49,8 +49,7 @@
 				<height>480</height>
 				
 				<!--Animation-->
-				<include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(videolibrary)">Common_Animation_Content_Splash</include>
-				<include condition="Window.Previous(fullscreenvideo) | Window.Previous(videolibrary)">Common_Animation_Content</include>
+				<include>Common_Animation_Content</include>
 				
 				<!--Available Views-->
 				<include>ViewList</include>
