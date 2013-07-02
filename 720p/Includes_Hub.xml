@@ -37,8 +37,6 @@
 	
 	<include name="ViewList_RootMenu_Featured">
 	
-		<visible>[Skin.HasSetting(ShowFeaturedSection_Video) + [StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) | StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)]] | [Skin.HasSetting(ShowFeaturedSection_Music) + StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)]</visible>
-	
 		<!--Featured Area-->
 		<control type="group" id="8001">
 		
@@ -46,6 +44,8 @@
 			<posy>0</posy>
 			<height>420</height>
 			<width>780</width>
+			
+			<visible>[Skin.HasSetting(ShowFeaturedSection_Video) + [StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) | StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)]] | [Skin.HasSetting(ShowFeaturedSection_Music) + StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)]</visible>
 			
 			<control type="label">
 					
