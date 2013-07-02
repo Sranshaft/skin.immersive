@@ -6,6 +6,7 @@
 	<onload>Skin.Reset(ShowManageMenu)</onload>
 	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(movies)">RunScript(script.extendedinfo,info=Comments,dbid=$INFO[ListItem.DBID],type=movie)</onload>
 	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(tvshows)">RunScript(script.extendedinfo,info=Comments,dbid=$INFO[ListItem.DBID],type=tvshow)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(episodes)">RunScript(script.extendedinfo,info=EpisodeComments,show=$INFO[ListItem.TVshowTitle],type=episode,season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode])</onload>
 	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(movies)">RunScript(script.extendedinfo,info=Similar,dbid=$INFO[ListItem.DBID],type=movie)</onload>
 	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(tvshows)">RunScript(script.extendedinfo,info=Similar,dbid=$INFO[ListItem.DBID],type=tvshow)</onload>
 	
@@ -1684,6 +1685,566 @@
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.20.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.20.Likes)]</property>
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),19)</visible>
+							</item>
+
+						</content>		
+						
+					</control>
+					
+					<!--Scrollbar-->
+					<control type="scrollbar" id="82">
+					
+						<include>Common_Settings_Scrollbar_Vertical</include>
+						
+						<posx>400</posx>
+						<posy>60</posy>
+						<height>500</height>
+						
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(82).Scrolling">Conditional</animation>
+						
+					</control>	
+
+				</control>
+				
+				<!--Comments Section-->
+				<control type="group">
+				
+					<width>420</width>
+					<height>560</height>
+					
+					<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),0) + Container.Content(episodes)</visible>
+				
+					<control type="label">
+						
+						<label>comments</label>
+						<include>Common_Section_Label_Dark</include>
+						
+					</control>
+					
+					<control type="label">
+						
+						<posx>380</posx>
+						<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.Count)]</label>
+						<include>Common_Section_Label_Right_Dark</include>
+						
+					</control>
+					
+					<control type="panel" id="52">
+							
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>380</width>
+						<height>520</height>
+						<onleft>51</onleft>
+						<onright>-</onright>
+						<onup>52</onup>
+						<ondown>52</ondown>
+						<pagecontrol>82</pagecontrol>
+						<viewtype label="535">list</viewtype>
+						<scrolltime tween="cubic" easing="out">600</scrolltime>
+						<preloaditems>2</preloaditems>
+						<orientation>vertical</orientation>
+						
+						<itemlayout width="380" height="130">
+
+							<control type="group">
+							
+								<visible>StringCompare(ListItem.Thumb,forumbrowser/forumbrowser_bubble_left.png)</visible>
+							
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture background="true">$INFO[ListItem.Property(Avatar)]</texture>
+									<aspectratio>stretch</aspectratio>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>48</posx>
+									<posy>0</posy>
+									<width>340</width>
+									<height>110</height>
+									<texture background="true" border="20,50,20,20">$INFO[ListItem.Thumb]</texture>
+									<aspectratio>stretch</aspectratio>
+									<colordiffuse>FF464646</colordiffuse>
+									
+								</control>
+							
+								<control type="group">
+								
+									<posx>76</posx>
+									<posy>16</posy>
+									<width>280</width>
+									<height>80</height>
+									
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>-10</posy>
+										<width>280</width>
+										<height>24</height>
+										<label>$INFO[ListItem.Label]</label>
+										<font>Menu-Similar-Detail</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+								
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>16</posy>
+										<width>280</width>
+										<height>60</height>
+										<label>$INFO[ListItem.Property(Comment)]</label>
+										<font>Menu-Similar-Plot</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+								</control>
+								
+							</control>	
+							
+							<control type="group">
+							
+								<visible>StringCompare(ListItem.Thumb,forumbrowser/forumbrowser_bubble_right.png)</visible>
+							
+								<control type="image">
+								
+									<posx>320</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture background="true">$INFO[ListItem.Property(Avatar)]</texture>
+									<aspectratio>stretch</aspectratio>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>340</width>
+									<height>110</height>
+									<texture background="true" border="20,50,20,20">$INFO[ListItem.Thumb]</texture>
+									<aspectratio>stretch</aspectratio>
+									<colordiffuse>FF222222</colordiffuse>
+									
+								</control>
+							
+								<control type="group">
+								
+									<posx>16</posx>
+									<posy>16</posy>
+									<width>280</width>
+									<height>80</height>
+									
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>-10</posy>
+										<width>280</width>
+										<height>24</height>
+										<label>$INFO[ListItem.Label]</label>
+										<font>Menu-Similar-Detail</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+								
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>16</posy>
+										<width>280</width>
+										<height>60</height>
+										<label>$INFO[ListItem.Property(Comment)]</label>
+										<font>Menu-Similar-Plot</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+								</control>
+								
+							</control>
+							
+						</itemlayout>
+
+						<focusedlayout width="380" height="260">
+
+							<control type="group">
+							
+								<visible>StringCompare(ListItem.Thumb,forumbrowser/forumbrowser_bubble_left.png)</visible>
+							
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture background="true">$INFO[ListItem.Property(Avatar)]</texture>
+									<aspectratio>stretch</aspectratio>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>48</posx>
+									<posy>0</posy>
+									<width>340</width>
+									<height>110</height>
+									<texture background="true" border="20,50,20,20">$INFO[ListItem.Thumb]</texture>
+									<aspectratio>stretch</aspectratio>
+									<colordiffuse>Background_Highlight</colordiffuse>
+									
+								</control>
+							
+								<control type="group">
+								
+									<posx>76</posx>
+									<posy>16</posy>
+									<width>280</width>
+									<height>80</height>
+									
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>-10</posy>
+										<width>280</width>
+										<height>24</height>
+										<label>$INFO[ListItem.Label]</label>
+										<font>Menu-Similar-Detail</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+								
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>16</posy>
+										<width>280</width>
+										<height>60</height>
+										<label>$INFO[ListItem.Property(Comment)]</label>
+										<font>Menu-Similar-Plot</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+								</control>
+								
+							</control>	
+							
+							<control type="group">
+							
+								<visible>StringCompare(ListItem.Thumb,forumbrowser/forumbrowser_bubble_right.png)</visible>
+							
+								<control type="image">
+								
+									<posx>320</posx>
+									<posy>0</posy>
+									<width>60</width>
+									<height>60</height>
+									<texture background="true">$INFO[ListItem.Property(Avatar)]</texture>
+									<aspectratio>stretch</aspectratio>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>340</width>
+									<height>110</height>
+									<texture background="true" border="20,50,20,20">$INFO[ListItem.Thumb]</texture>
+									<aspectratio>stretch</aspectratio>
+									<colordiffuse>Background_Highlight</colordiffuse>
+									
+								</control>
+							
+								<control type="group">
+								
+									<posx>16</posx>
+									<posy>16</posy>
+									<width>280</width>
+									<height>80</height>
+									
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>-10</posy>
+										<width>280</width>
+										<height>24</height>
+										<label>$INFO[ListItem.Label]</label>
+										<font>Menu-Similar-Detail</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+								
+									<control type="textbox">
+									
+										<posx>0</posx>
+										<posy>16</posy>
+										<width>280</width>
+										<height>60</height>
+										<label>$INFO[ListItem.Property(Comment)]</label>
+										<font>Menu-Similar-Plot</font>
+										<textcolor>Label_Normal</textcolor>
+										<aligny>top</aligny>
+										<wrapmultiline>true</wrapmultiline>
+										<autoscroll>false</autoscroll>
+										
+									</control>
+									
+								</control>
+								
+							</control>	
+
+						</focusedlayout>
+						
+						<content>
+						
+							<item id="1">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),0)</visible>
+							</item>
+							
+							<item id="2">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),1)</visible>
+							</item>
+							
+							<item id="3">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.3.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.3.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.3.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.3.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.3.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),2)</visible>
+							</item>
+							
+							<item id="4">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.4.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.4.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.4.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.4.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.4.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),3)</visible>
+							</item>
+							
+							<item id="5">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.5.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.5.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.5.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.5.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.5.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),4)</visible>
+							</item>
+							
+							<item id="6">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.6.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.6.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.6.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.6.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.6.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),5)</visible>
+							</item>
+							
+							<item id="7">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.7.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.7.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.7.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.7.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.7.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),6)</visible>
+							</item>
+							
+							<item id="8">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.8.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.8.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.8.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.8.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.8.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),7)</visible>
+							</item>
+							
+							<item id="9">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.9.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.9.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.9.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.9.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.9.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),8)</visible>
+							</item>
+							
+							<item id="10">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.10.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.10.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.10.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.10.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.10.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),9)</visible>
+							</item>
+							
+							<item id="11">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.11.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.11.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.11.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.11.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.11.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),10)</visible>
+							</item>
+							
+							<item id="12">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.12.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.12.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.12.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.12.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.12.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),11)</visible>
+							</item>
+							
+							<item id="13">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.13.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.13.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.13.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.13.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.13.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),12)</visible>
+							</item>
+							
+							<item id="14">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.14.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.14.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.14.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.14.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.14.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),13)</visible>
+							</item>
+							
+							<item id="15">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),14)</visible>
+							</item>
+							
+							<item id="16">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.16.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.16.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.16.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.16.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.16.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),15)</visible>
+							</item>
+							
+							<item id="17">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.17.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.17.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.17.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.17.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.17.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),16)</visible>
+							</item>
+							
+							<item id="18">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.18.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.18.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.18.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.18.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.18.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),17)</visible>
+							</item>
+							
+							<item id="19">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.19.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.19.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.19.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.19.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.19.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),18)</visible>
+							</item>
+							
+							<item id="20">
+								<onclick>-</onclick>
+								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.20.Username)]</label>
+								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
+								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.20.Avatar)]</property>
+								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.20.Text)]</property>
+								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.20.Type)]</property>
+								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.20.Likes)]</property>
+								<visible>IntegerGreaterThan(Window(Home).Property(EpisodeCommentsTrakt.Count),19)</visible>
 							</item>
 
 						</content>		
