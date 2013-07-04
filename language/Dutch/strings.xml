@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<strings>
+
+  <string id="31000">Eindigt om</string>
+  <string id="31001">Bestand mode</string>
+  
+  <!--Home Menu-->
+  
+  <string id="31002">Programma's</string>
+  <string id="31003">Video</string>
+  <string id="31004">Muziek</string>
+  <string id="31005">Afbeeldingen</string>
+  <string id="31006">Films</string>
+  <string id="31007">TV Reeksen</string>
+  <string id="31008">Favorieten</string>
+  <string id="31009">Profielen</string>
+  <string id="31010">Weer</string>
+  <string id="31011">Bestands beheer</string>
+  <string id="31012">Instellingen</string>
+  <string id="31013">Afspelen</string>
+  <string id="31014">Speel schijf</string>
+  
+  
+  
+  <string id="31015">Speler Controle</string>
+  <string id="31016">Achtergrond Visualizaties</string>
+  <string id="31017">Lyrics/Ondertitels</string>
+  <string id="31018">Huidige geselecteerd</string>
+  <string id="31019">Open playlist</string>
+  <string id="31020">Bewaar playlist</string>
+  <string id="31021">Sluit playlist af</string>
+  <string id="31022">System music files</string>
+  <string id="31023">Verhinder Achtergrond Visualisaties</string>
+  <string id="31024">Verhinder Achtergrond Video</string>
+  <string id="31025">Klik om het standaard Lyrics script te wijzigen</string>
+  <string id="31026">Klik om het standaard Ondertitels script te wijzigen</string>
+  <string id="31027">Items</string>
+  <string id="31028">Pagina</string>
+  <string id="31029">Huidige playlist</string>
+  <string id="31030">Geheugen gebruikt</string>
+  <string id="31031">Karaoke Song Selector</string>
+  <string id="31032">Visualizatie instellingen</string>
+  <string id="31033">Debug</string>
+  <string id="31034">Activeer Debug Grid</string>
+  <string id="31035">Verhinder Debug Info</string>
+  <string id="31036">Terugspoelen</string>
+  <string id="31037">Pauze</string>
+  <string id="31038">Stop</string>
+  <string id="31039">Snel vooruit</string>
+  <string id="31040">Visualisatie instellingen</string>
+  <string id="31041">DVD Menu</string>
+
+</strings>
