@@ -16,6 +16,8 @@
 	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
 	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingShows)</onload>
 	
+	<onload condition="System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True&amp;loop=False)</onload>
+	
 	<onload>AlarmClock(MoveFeatured,Control.Move(9001,1),00:20,silent,loop)</onload>
 	<onunload>XBMC.CancelAlarm(MoveFeatured,true)</onunload>
 	
