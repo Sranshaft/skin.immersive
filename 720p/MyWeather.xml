@@ -154,7 +154,7 @@
 					<posy>0</posy>
 					<width>500</width>
 					<height>100</height>
-					<label>$INFO[Window(Weather).Property(Current.Temperature),,?]</label>
+					<label>$INFO[Window(Weather).Property(Current.Temperature),,°]</label>
 					<font>Weather-CurrentTemp</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>
@@ -192,7 +192,7 @@
 					<posy>190</posy>
 					<width>500</width>
 					<height>100</height>
-					<label>$INFO[Window(Weather).Property(Current.FeelsLike),Feels like ,?]</label>
+					<label>$INFO[Window(Weather).Property(Current.FeelsLike),Feels like ,°]</label>
 					<font>Weather-CurrentFeelsLike</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>
