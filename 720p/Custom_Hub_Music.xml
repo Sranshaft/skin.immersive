@@ -7,7 +7,7 @@
 	<include>Common_Animation_Window</include>
 	
 	<!--Splash Screen-->
-	<onload condition="Window.Previous(home)">ActivateWindow(60)</onload>
+	<onload condition="Window.Previous(home) + !Skin.HasSetting(NoSplashTransition)">ActivateWindow(60)</onload>
 	
 	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Music)">XBMC.RunScript(script.randomandlastitems,limit=16,type=Music,method=Last,playlist=special://skin/playlists/History (Music).xsp,menu=Menu3)</onload>
 	

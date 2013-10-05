@@ -6,7 +6,7 @@
 	<views>50,51,52,53,54,55,56,58,59,501</views>
 	
 	<!--Splash Screen-->
-	<onload condition="Window.Previous(home)">ActivateWindow(60)</onload>
+	<onload condition="Window.Previous(home) + !Skin.HasSetting(NoSplashTransition)">ActivateWindow(60)</onload>
 	
 	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Video)">XBMC.RunScript(script.randomandlastitems,limit=10,method=Last,playlist=special://skin/playlists/History (Movies).xsp,menu=Menu1)</onload>
 	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Video)">XBMC.RunScript(script.randomandlastitems,limit=10,method=Last,playlist=special://skin/playlists/History (TV Shows).xsp,menu=Menu2)</onload>
