@@ -483,6 +483,17 @@
 					
 				</control>
 				
+				<control type="radiobutton" id="211">
+
+				 	<description>Background Video</description>
+					<include>Common_Settings_RadioButton</include>
+ 					<label>$LOCALIZE[31043]</label>
+ 					<onclick>Skin.ToggleSetting(EnableTvTunes)</onclick>
+					<selected>Skin.HasSetting(EnableTvTunes)</selected>
+
+				</control>
+				
+				
 				<control type="label" id="251">
 				
 					<description></description>
