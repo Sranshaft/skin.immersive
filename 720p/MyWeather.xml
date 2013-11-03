@@ -5,7 +5,7 @@
 	<allowoverlay>yes</allowoverlay>
 	
 	<!--Splash Screen-->
-	<onload>ActivateWindow(60)</onload>
+	<onload condition="!Skin.HasSetting(NoSplashTransition)">ActivateWindow(60)</onload>
 	
 	<include>Common_Animation_Window_Splash</include>
 
@@ -154,7 +154,7 @@
 					<posy>0</posy>
 					<width>500</width>
 					<height>100</height>
-					<label>$INFO[Window(Weather).Property(Current.Temperature),,°]</label>
+					<label>$INFO[Window(Weather).Property(Current.Temperature),,Â°]</label>
 					<font>Weather-CurrentTemp</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>
@@ -192,7 +192,7 @@
 					<posy>190</posy>
 					<width>500</width>
 					<height>100</height>
-					<label>$INFO[Window(Weather).Property(Current.FeelsLike),Feels like ,°]</label>
+					<label>$INFO[Window(Weather).Property(Current.FeelsLike),Feels like ,Â°]</label>
 					<font>Weather-CurrentFeelsLike</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>

@@ -4,7 +4,7 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	
 	<!--Splash Screen-->
-	<onload condition="Window.Previous(home)">ActivateWindow(60)</onload>
+	<onload condition="Window.Previous(home) + !Skin.HasSetting(NoSplashTransition)">ActivateWindow(60)</onload>
 
 	<animation type="WindowClose" condition="Window.Next(home)">
 		<effect type="fade" start="100" end="0" time="400" />

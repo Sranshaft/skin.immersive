@@ -931,6 +931,16 @@
 					<selected>Skin.HasSetting(NoBackgroundVideo)</selected>
 					
 				</control>
+
+				<control type="radiobutton" id="404">
+					
+					<description>Background Video</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31042]</label>
+					<onclick>Skin.ToggleSetting(NoSplashTransition)</onclick>
+					<selected>Skin.HasSetting(NoSplashTransition)</selected>
+					
+				</control>
 				
 				<control type="label" id="451">
 				

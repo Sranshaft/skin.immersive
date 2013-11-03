@@ -9,7 +9,7 @@
 	</coordinates>
 	
 	<!--Splash Screen-->
-	<onload condition="Window.Previous(programs)">ActivateWindow(60)</onload>
+	<onload condition="Window.Previous(programs) + !Skin.HasSetting(NoSplashTransition)">ActivateWindow(60)</onload>
 	
 	<controls>
 	
