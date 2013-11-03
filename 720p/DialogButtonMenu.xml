@@ -85,7 +85,7 @@
 					<control type="button" id="3111">
 						
 						<include>Common_Power_Button</include>
-						<onclick>Quit()</onclick>
+						<onclick>XBMC.Quit()</onclick>
 						<onleft>3118</onleft>
 						<onright>3112</onright>
 						
@@ -251,7 +251,9 @@
 					<control type="button" id="3116">
 						
 						<include>Common_Power_Button</include>
-						<onclick>XBMC.ShutDown()</onclick>
+						<!--onclick>XBMC.ShutDown()</onclick-->
+						<onclick condition="System.CanPowerDown">XBMC.Powerdown()</onclick>
+                        <onclick condition="!System.CanPowerDown">XBMC.Shutdown()</onclick>
 						<onleft>3115</onleft>
 						<onright>3117</onright>
 						
