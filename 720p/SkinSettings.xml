@@ -128,8 +128,8 @@
 					</item>
 					
 					<item id="8">
-						<description>Notifications</description>
-						<label>Notifications</label>
+						<description>3rd party addons</description>
+						<label>3rd Party addons</label>
 						<onclick>-</onclick>
 					</item>
 
@@ -949,6 +949,24 @@
 					<selected>Skin.HasSetting(ShowFanartBackground)</selected>
 					
 				</control>
+				
+				<control type="label" id="452">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Splash screen</label>
+					
+				</control>
+
+				<control type="radiobutton" id="404">
+					
+					<description>Background Visualiser</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Disable transition splash screens</label>
+					<onclick>Skin.ToggleSetting(NoSplashScreen)</onclick>
+					<selected>Skin.HasSetting(NoSplashScreen)</selected>
+					
+				</control>
 
 			</control>
 
@@ -1128,7 +1146,7 @@
 
 			</control>
 			
-			<!--Notification Options-->
+			<!--3rd Party Addons Options-->
 			<control type="grouplist" id="800">
 				
 				<description>Control Area</description>
@@ -1143,7 +1161,7 @@
 				<onright>-</onright>
 				<orientation>vertical</orientation>
 				<pagecontrol>88</pagecontrol>
-				<visible>Container(98).Hasfocus(8)</visible>
+				<visible>Container(98).HasFocus(8)</visible>
 				
 				<include>Common_Animation_Settings_Options</include>
 				
@@ -1169,10 +1187,12 @@
 				
 					<description></description>
 					<include>Common_Settings_Label</include>
-					<label>3rd party notifications</label>
+					<label>3rd party addons</label>
 					
 				</control>
-
+				
+				<!--TV Next Aired-->
+				
 				<control type="radiobutton" id="802">
 					
 					<description>Enable TV Next Aired</description>
@@ -1181,6 +1201,19 @@
 					<onclick>Skin.ToggleSetting(ShowNextAiredNotification)</onclick>
 					<selected>Skin.HasSetting(ShowNextAiredNotification)</selected>
 					<enable>System.HasAddon(script.tv.show.next.aired)</enable>
+					
+				</control>
+				
+				<!--TV Tunes-->
+				
+				<control type="radiobutton" id="803">
+					
+					<description>Enable TV Tunes</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Play TV Tunes while browsing TV Shows</label>
+					<onclick>Skin.ToggleSetting(ShowTVTunesNotification)</onclick>
+					<selected>Skin.HasSetting(ShowTVTunesNotification)</selected>
+					<enable>System.HasAddon(script.tvtunes)</enable>
 					
 				</control>
 				
