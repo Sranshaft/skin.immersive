@@ -172,7 +172,7 @@
 				<label>CustomSettings.xml</label>
 				<visible>Window.IsVisible(CustomSettings.xml)</visible>
 			</control>
-
+			
 			<control type="label">
 				<include>WindowID</include>
 				<label>FileManager.xml</label>
@@ -318,6 +318,18 @@
 				<label>DialogContextMenu.xml</label>
 				<visible>Window.IsVisible(DialogContextMenu.xml)</visible>
 			</control>
+			
+			<control type="label">
+				<include>DialogID</include>
+				<label>DialogDownloadProgress.xml</label>
+				<visible>Window.IsVisible(DialogDownloadProgress.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>WindowID</include>
+				<label>DialogExtendedProgressBar.xml</label>
+				<visible>Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
+			</control>
 
 			<control type="label">
 				<include>DialogID</include>
@@ -413,6 +425,12 @@
 				<include>DialogID</include>
 				<label>DialogPictureInfo.xml</label>
 				<visible>Window.IsVisible(DialogPictureInfo.xml)</visible>
+			</control>
+			
+			<control type="label">
+				<include>DialogID</include>
+				<label>DialogProgress.xml</label>
+				<visible>Window.IsVisible(DialogProgress.xml)</visible>
 			</control>
 			
 			<control type="label">

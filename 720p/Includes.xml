@@ -8,7 +8,7 @@
 	<include file="ViewGrid.xml" />					<!--55-->
 	<include file="ViewGridEpisodes.xml" />			<!--56-->
 	<include file="ViewTall.xml" />					<!--57-->
-	<include file="ViewExtendedListAlbums.xml" />	<!--58-->
+	<include file="ViewExtendedListSquare.xml" />	<!--58-->
 	<include file="ViewDetails.xml" />				<!--59-->
 	<include file="ViewBanner.xml" />				<!--60-->
 	
@@ -518,12 +518,12 @@
 
 		<control type="group">
 		
-			<!--<control type="image">
+			<control type="image">
 					
 				<include>Common_Dimensions</include>
 				<texture background="true">colors/color_black.png</texture>
 				
-			</control>-->
+			</control>
 			
 			<control type="image">
 				

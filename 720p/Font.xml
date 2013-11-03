@@ -129,6 +129,22 @@
 			<linespacing>0.75</linespacing>
 		</font>
 		
+		<!--DialogDownloadProgress Fonts-->
+		
+		<font>
+			<name>DialogDownloadProgress-Detail</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>18</size>
+			<linespacing>0.85</linespacing>
+		</font>
+		
+		<font>
+			<name>DialogDownloadProgress-Detail-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>14</size>
+			<linespacing>0.75</linespacing>
+		</font>
+		
 		<!--Fonts Specific to DialogVideoInfo.xml-->
 		
 		<font>

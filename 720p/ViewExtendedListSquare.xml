@@ -1,6 +1,6 @@
 <includes>
 
-	<include name="ViewExtendedList_Albums">
+	<include name="ViewExtendedList_Square">
 	
 		<control type="group">
 			

@@ -537,101 +537,14 @@
 
 			</control>
 			
-			<!--Preview-->
-			<control type="group">
-			
-				<posx>0</posx>
-				<posy>100</posy>
-				<width>700</width>
-				<height>240</height>
-				
-				<visible>Container(98).Hasfocus(3)</visible>
-				
-				<include>Common_Animation_Settings_Options</include>
-				
-				<control type="label" id="351">
-				
-					<description></description>
-					<include>Common_Settings_Label</include>
-					<label>Start screen</label>
-					
-				</control>
-				
-				<control type="group">
-				
-					<posy>60</posy>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture>colors/color_black.png</texture>
-						
-					</control>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture>colors/color_white.png</texture>
-						<colordiffuse>Background_Dark</colordiffuse>
-						<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
-						
-					</control>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture background="true">$INFO[Container(302).ListItem(0).Thumb]</texture>
-						<colordiffuse>Background_Normal</colordiffuse>
-						<fadetime>1000</fadetime>
-						<visible>Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
-						
-					</control>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture background="true">$INFO[Container(302).ListItem(0).Thumb]</texture>
-						<fadetime>1000</fadetime>
-						<visible>!Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
-						
-					</control>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture background="true">settings/settings_tile_preview.png</texture>
-						<colordiffuse>Tile_Background</colordiffuse>
-						
-					</control>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture background="true">settings/settings_menu_preview.png</texture>
-						<colordiffuse>Background_Normal</colordiffuse>
-						
-					</control>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture background="true">settings/settings_highlight_preview.png</texture>
-						<colordiffuse>Background_Highlight</colordiffuse>
-						
-					</control>
-					
-				</control>	
-
-			</control>
-
 			<!--Background Options-->
 			<control type="grouplist" id="300">
 			
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>350</posy>
+				<posy>100</posy>
 				<width>700</width>
-				<height>290</height>
+				<height>540</height>
 				<itemgap>0</itemgap>
 				<onleft>98</onleft>
 				<onright>-</onright>
@@ -640,6 +553,91 @@
 				<visible>Container(98).Hasfocus(3)</visible>
 				
 				<include>Common_Animation_Settings_Options</include>
+				
+				<!--Preview-->
+				<control type="group">
+				
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>700</width>
+					<height>240</height>
+					
+					<include>Common_Animation_Settings_Options</include>
+					
+					<control type="label" id="351">
+					
+						<description></description>
+						<include>Common_Settings_Label</include>
+						<label>Start screen</label>
+						
+					</control>
+					
+					<control type="group">
+					
+						<posy>60</posy>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture>colors/color_black.png</texture>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture>colors/color_white.png</texture>
+							<colordiffuse>Background_Dark</colordiffuse>
+							<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">$INFO[Container(302).ListItem(0).Thumb]</texture>
+							<colordiffuse>Background_Normal</colordiffuse>
+							<fadetime>1000</fadetime>
+							<visible>Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">$INFO[Container(302).ListItem(0).Thumb]</texture>
+							<fadetime>1000</fadetime>
+							<visible>!Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">settings/settings_tile_preview.png</texture>
+							<colordiffuse>Tile_Background</colordiffuse>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">settings/settings_menu_preview.png</texture>
+							<colordiffuse>Background_Normal</colordiffuse>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">settings/settings_highlight_preview.png</texture>
+							<colordiffuse>Background_Highlight</colordiffuse>
+							
+						</control>
+						
+					</control>	
+
+				</control>
 				
 				<control type="label" id="352">
 				
@@ -652,16 +650,16 @@
 				<control type="panel" id="302">
 				
 					<width>640</width>
-					<height>160</height>
+					<height>80</height>
 					
-					<itemlayout width="80" height="80">
+					<itemlayout width="70" height="60">
 					
 						<control type="image">
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>colors/color_black.png</texture>
 							
 						</control>
@@ -670,8 +668,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>colors/color_white.png</texture>
 							<colordiffuse>Background_Dark</colordiffuse>
 							<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
@@ -682,8 +680,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>$INFO[ListItem.Icon]</texture>
 							<aspectratio align="left" aligny="bottom">scale</aspectratio>
 							<colordiffuse>Background_Normal</colordiffuse>
@@ -695,8 +693,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>$INFO[ListItem.Icon]</texture>
 							<aspectratio align="left" aligny="bottom">scale</aspectratio>
 							<colordiffuse>Background_Normal</colordiffuse>
@@ -706,14 +704,14 @@
 					
 					</itemlayout>
 					
-					<focusedlayout width="80" height="80">
+					<focusedlayout width="70" height="60">
 					
 						<control type="image">
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>colors/color_black.png</texture>
 							
 						</control>
@@ -722,8 +720,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>colors/color_white.png</texture>
 							<colordiffuse>Background_Dark</colordiffuse>
 							<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
@@ -734,8 +732,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>$INFO[ListItem.Icon]</texture>
 							<aspectratio align="left" aligny="bottom">scale</aspectratio>
 							<colordiffuse>Background_Normal</colordiffuse>
@@ -747,8 +745,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>$INFO[ListItem.Icon]</texture>
 							<aspectratio align="left" aligny="bottom">scale</aspectratio>
 							<colordiffuse>Background_Normal</colordiffuse>
@@ -760,8 +758,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>colors/color_white.png</texture>
 							<colordiffuse>40FFFFFF</colordiffuse>
 							
@@ -845,6 +843,16 @@
 						
 					</content>
 
+				</control>
+				
+				<control type="button" id ="10">
+					<description>Browse</description>
+					<textcolor>Settings_Label</textcolor>
+					<focusedcolor>Settings_Label_Highlight</focusedcolor>
+					<disabledcolor>Settings_Label_Disabled</disabledcolor>
+					<colordiffuse>Settings_Label</colordiffuse>
+					<include>Common_InfoDialog_Button</include>
+					<label>Browse</label>
 				</control>
 				
 				<control type="label" id="353">

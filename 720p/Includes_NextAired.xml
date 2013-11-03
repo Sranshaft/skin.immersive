@@ -9,7 +9,7 @@
 			<width>400</width>
 			<height>80</height>
 			
-			<visible>!IsEmpty(Window(Home).Property(NextAired.NextDate)) + Container.Content(tvshows) + Skin.HasSetting(ShowNextAiredNotification) + !Window.IsVisible(volumebar) + !Window.IsVisible(mutebug) + !Window.IsVisible(extendedprogressdialog) + !Window.IsVisible(infodialog)</visible>
+			<visible>!IsEmpty(Window(Home).Property(NextAired.NextDate)) + Container.Content(tvshows) + Skin.HasSetting(ShowNextAiredNotification)</visible>
 			
 			<include>Common_Animation_Toast_Notification</include>
 			

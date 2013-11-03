@@ -318,7 +318,7 @@
 			<control type="scrollbar" id="9010">
 				
 				<include>Common_Window_Scrollbar_Horizontal</include>
-				<posy>600</posy>
+				<posy>700</posy>
 				
 				<include>Common_Animation_Window_Scrollbar_Fade</include>
 				

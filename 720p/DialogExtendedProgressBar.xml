@@ -5,79 +5,105 @@
 	<allowoverlay>yes</allowoverlay>
 
 	<controls>
-
+	
 		<control type="group">
 			
-			<posx>880</posx>
-			<posy>0</posy>
-			<width>400</width>
-			<height>80</height>
+			<description>Coordinates</description>
+			<posx>0</posx>
+			<posy>640</posy>
 			
-			<visible>!VideoPlayer.IsFullscreen + !Window.IsVisible(screencalibration) + !Window.IsVisible(settings) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(volumebar) + !Window.IsVisible(mutebug) + !Window.IsVisible(infodialog) + !ControlGroup(9000).HasFocus</visible>
-		
-			<include>Common_Animation_Toast_Notification</include>
-
+			<visible>!VideoPlayer.IsFullscreen + !Window.IsVisible(screencalibration) + !Window.IsVisible(settings) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(infodialog)</visible>
+			
+			<animation type="WindowOpen">
+				<effect type="slide" start="0,76" end="0,0" time="200"/>
+				<effect type="fade" start="0" end="100" time="200"/>
+			</animation>
+			
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="0,76" time="600"/>
+				<effect type="fade" start="100" end="0" time="600"/>
+			</animation>
+			
+			<animation type="Visible">
+				<effect type="slide" start="0,76" end="0,0" time="200"/>
+				<effect type="fade" start="0" end="100" time="200"/>
+			</animation>
+			
+			<animation type="Hidden">
+				<effect type="slide" start="0,0" end="0,76" time="200"/>
+				<effect type="fade" start="100" end="0" time="200"/>
+			</animation>
+			
 			<control type="image">
 				
 				<posx>0</posx>
 				<posy>0</posy>
-				<width>400</width>
+				<width>1280</width>
 				<height>80</height>
-				<texture>colors/color_white.png</texture>
-				<colordiffuse>Background_Highlight</colordiffuse>
-				
-			</control>
-			
-			<control type="image">
-				
-				<posx>358</posx>
-				<posy>40</posy>
-				<width>32</width>
-				<height>32</height>
-				<texture>kai/kai_downloading.png</texture>
-				<aspectratio>center</aspectratio>	
+				<texture>colors/color_keyboard_dark.png</texture>
 				
 			</control>
 			
 			<control type="label" id="30">
 				
-				<description>heading</description>
-				<posx>20</posx>
+				<description>label</description>
+				<posx>820</posx>
 				<posy>10</posy>
-				<width>320</width>
+				<width>400</width>
 				<height>20</height>
-				<font>Kai-Header</font>
-				<scroll>false</scroll>
+				<font>DialogDownloadProgress-Detail</font>
+				<textcolor>Label_Normal</textcolor>
 				<align>left</align>
-				<aligny>top</aligny>
+				<aligny>center</aligny>
 				
 			</control>
-
+			
 			<control type="label" id="31">
 				
-				<description>message</description>
-				<posx>20</posx>
+				<description>heading</description>
+				<posx>820</posx>
 				<posy>30</posy>
-				<width>320</width>
+				<width>400</width>
 				<height>20</height>
-				<font>Kai-Detail</font>
-				<scroll>false</scroll>
+				<font>DialogDownloadProgress-Detail-Small</font>
+				<textcolor>Label_Normal</textcolor>
 				<align>left</align>
-				<aligny>top</aligny>
+				<aligny>center</aligny>
+				
+			</control>
+			
+			<control type="image">
+				
+				<posx>820</posx>
+				<posy>56</posy>
+				<width>400</width>
+				<height>10</height>
+				<texture border="2">colors\color_grey.png</texture>
 				
 			</control>
 			
 			<control type="progress" id="32">
 				
 				<description>progress control</description>
-				<posx>20</posx>
-				<posy>60</posy>
-				<width>320</width>
-				<height>5</height>
-				<texturebg>colors/color_black.png</texturebg>
+				<posx>820</posx>
+				<posy>56</posy>
+				<width>400</width>
+				<height>10</height>
+				<texturebg>colors/color_transparent.png</texturebg>
 				<lefttexture>-</lefttexture>
 				<midtexture>colors/color_white.png</midtexture>
 				<righttexture>-</righttexture>
+				<colordiffuse>Background_Highlight</colordiffuse>
+				
+			</control>
+			
+			<control type="image">
+				
+				<posx>756</posx>
+				<posy>16</posy>
+				<width>48</width>
+				<height>48</height>
+				<texture>kai\kai_downloading.png</texture>
 				
 			</control>
 			

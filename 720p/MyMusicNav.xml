@@ -46,7 +46,7 @@
 				<include>ViewThumbnail</include>
 				<include>ViewExtendedList</include>
 				<include>ViewSquare</include>
-				<include>ViewExtendedList_Albums</include>
+				<include>ViewExtendedList_Square</include>
 				<include>ViewDetails</include>
 				
 			</control>
