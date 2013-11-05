@@ -204,84 +204,8 @@
 						</focusedlayout>
 						
 						<content>
-
+						
 							<item id="1">
-								<description>Programs</description>
-								<label>$LOCALIZE[31002]</label>
-								<thumb>home/home_addons.png</thumb>
-								<onclick>ActivateWindow(programs,addons,return)</onclick>
-								<visible>Skin.HasSetting(ShowAddonsMenu)</visible>
-							</item>
-							
-							<item id="2">
-								<description>Videos</description>
-								<label>$LOCALIZE[31003]</label>
-								<thumb>home/home_videos.png</thumb>
-								<onclick>ActivateWindow(videos,root)</onclick>
-								<visible>Skin.HasSetting(ShowVideosMenu)</visible>
-							</item>
-
-							<item id="3">
-								<description>Movies</description>
-								<label>$LOCALIZE[31006]</label>
-								<label2>$INFO[Window(Home).Property(Movies.Count),, movies][CR]$INFO[Window(Home).Property(Movies.Watched),, watched][CR]$INFO[Window(Home).Property(Movies.UnWatched),, unwatched]</label2>
-								<thumb>home/home_movie.png</thumb>
-								<onclick>ActivateWindow(61,return)</onclick>
-								<visible>Library.HasContent(movies) + Skin.HasSetting(ShowMoviesMenu)</visible>
-							</item>
-
-							<item id="4">
-								<description>TV Shows</description>
-								<label>$LOCALIZE[31007]</label>
-								<label2>$INFO[Window(Home).Property(TVShows.Count),, tv shows][CR]$INFO[Window(Home).Property(TVShows.Watched),, watched][CR]$INFO[Window(Home).Property(TVShows.UnWatched),, unwatched]</label2>
-								<thumb>home/home_tvshow.png</thumb>
-								<onclick>ActivateWindow(62,return)</onclick>
-								<visible>Library.HasContent(tvshows) + Skin.HasSetting(ShowTVShowsMenu)</visible>
-							</item>
-							
-							<item id="5">
-								<description>Live TV</description>
-								<label>Live TV</label>
-								<thumb>home/home_livetv.png</thumb>
-								<onclick>ActivateWindow(PVR)</onclick>
-								<visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(ShowLiveTVMenu)</visible>
-							</item>
-							
-							<item id="6">
-								<description>Music</description>
-								<label>$LOCALIZE[31004]</label>
-								<label2>$INFO[Window(Home).Property(Music.ArtistsCount),, artists][CR]$INFO[Window(Home).Property(Music.AlbumsCount),, albums][CR]$INFO[Window(Home).Property(Music.SongsCount),, songs]</label2>
-								<thumb>home/home_music.png</thumb>
-								<onclick>ActivateWindow(63,return)</onclick>
-								<visible>Skin.HasSetting(ShowMusicMenu)</visible>
-							</item>
-							
-							<item id="7">
-								<description>Games</description>
-								<label>Games</label>
-								<thumb>home/home_games.png</thumb>
-								<onclick>XBMC.RunAddon(plugin.program.advanced.launcher)</onclick>
-								<visible>Skin.HasSetting(ShowGamesMenu)</visible>
-							</item>
-							
-							<item id="8">
-								<description>Pictures</description>
-								<label>$LOCALIZE[31005]</label>
-								<thumb>home/home_pictures.png</thumb>
-								<onclick>ActivateWindow(2)</onclick>
-								<visible>Skin.HasSetting(ShowPicturesMenu)</visible>
-							</item>
-							
-							<item id="9">
-								<description>Play Disc</description>
-								<label>$LOCALIZE[31014]</label>
-								<label2>$INFO[System.DVDLabel]</label2>
-								<thumb>home/home_dvd.png</thumb>
-								<onclick>PlayDVD</onclick>
-								<visible>System.HasMediadvd</visible>
-							</item>
-							
-							<item id="10">
 								<description>Now Playing</description>
 								<label>Now playing</label>
 								<label2>$INFO[VideoPlayer.Title]</label2>
@@ -290,7 +214,7 @@
 								<visible>Player.HasVideo + !VideoPlayer.HasMenu</visible>
 							</item>
 							
-							<item id="10">
+							<item id="1">
 								<description>Now Playing</description>
 								<label>Now playing</label>
 								<label2>$INFO[VideoPlayer.Title]</label2>
@@ -299,13 +223,89 @@
 								<visible>Player.HasVideo + VideoPlayer.HasMenu</visible>
 							</item>
 							
-							<item id="10">
+							<item id="1">
 								<description>Now Playing</description>
 								<label>Now playing</label>
 								<label2>$INFO[MusicPlayer.Title][CR]$INFO[MusicPlayer.Album]</label2>
 								<thumb>$VAR[NowPlaying_Image]</thumb>
 								<onclick>ActivateWindow(visualisation)</onclick>
 								<visible>Player.HasAudio</visible>
+							</item>
+
+							<item id="2">
+								<description>Programs</description>
+								<label>$LOCALIZE[31002]</label>
+								<thumb>home/home_addons.png</thumb>
+								<onclick>ActivateWindow(programs,addons,return)</onclick>
+								<visible>Skin.HasSetting(ShowAddonsMenu)</visible>
+							</item>
+							
+							<item id="3">
+								<description>Videos</description>
+								<label>$LOCALIZE[31003]</label>
+								<thumb>home/home_videos.png</thumb>
+								<onclick>ActivateWindow(videos,root)</onclick>
+								<visible>Skin.HasSetting(ShowVideosMenu)</visible>
+							</item>
+
+							<item id="4">
+								<description>Movies</description>
+								<label>$LOCALIZE[31006]</label>
+								<label2>$INFO[Window(Home).Property(Movies.Count),, movies][CR]$INFO[Window(Home).Property(Movies.Watched),, watched][CR]$INFO[Window(Home).Property(Movies.UnWatched),, unwatched]</label2>
+								<thumb>home/home_movie.png</thumb>
+								<onclick>ActivateWindow(61,return)</onclick>
+								<visible>Library.HasContent(movies) + Skin.HasSetting(ShowMoviesMenu)</visible>
+							</item>
+
+							<item id="5">
+								<description>TV Shows</description>
+								<label>$LOCALIZE[31007]</label>
+								<label2>$INFO[Window(Home).Property(TVShows.Count),, tv shows][CR]$INFO[Window(Home).Property(TVShows.Watched),, watched][CR]$INFO[Window(Home).Property(TVShows.UnWatched),, unwatched]</label2>
+								<thumb>home/home_tvshow.png</thumb>
+								<onclick>ActivateWindow(62,return)</onclick>
+								<visible>Library.HasContent(tvshows) + Skin.HasSetting(ShowTVShowsMenu)</visible>
+							</item>
+							
+							<item id="6">
+								<description>Live TV</description>
+								<label>Live TV</label>
+								<thumb>home/home_livetv.png</thumb>
+								<onclick>ActivateWindow(PVR)</onclick>
+								<visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(ShowLiveTVMenu)</visible>
+							</item>
+							
+							<item id="7">
+								<description>Music</description>
+								<label>$LOCALIZE[31004]</label>
+								<label2>$INFO[Window(Home).Property(Music.ArtistsCount),, artists][CR]$INFO[Window(Home).Property(Music.AlbumsCount),, albums][CR]$INFO[Window(Home).Property(Music.SongsCount),, songs]</label2>
+								<thumb>home/home_music.png</thumb>
+								<onclick>ActivateWindow(63,return)</onclick>
+								<visible>Skin.HasSetting(ShowMusicMenu)</visible>
+							</item>
+							
+							<item id="8">
+								<description>Games</description>
+								<label>Games</label>
+								<thumb>home/home_games.png</thumb>
+								<onclick>XBMC.RunAddon(plugin.program.advanced.launcher)</onclick>
+								<visible>Skin.HasSetting(ShowGamesMenu)</visible>
+							</item>
+							
+							<item id="9">
+								<description>Pictures</description>
+								<label>$LOCALIZE[31005]</label>
+								<thumb>home/home_pictures.png</thumb>
+								<onclick>ActivateWindow(2)</onclick>
+								<visible>Skin.HasSetting(ShowPicturesMenu)</visible>
+							</item>
+							
+							<item id="10">
+								<description>Play Disc</description>
+								<label>$LOCALIZE[31014]</label>
+								<label2>$INFO[System.DVDLabel]</label2>
+								<thumb>home/home_dvd.png</thumb>
+								<onclick>PlayDVD</onclick>
+								<visible>System.HasMediadvd</visible>
 							</item>
 							
 							<item id="11">
@@ -391,7 +391,7 @@
 					<control type="label">
 							
 						<posx>45</posx>
-						<posy>57</posy>
+						<posy>58</posy>
 						<width>600</width>
 						<height>30</height>
 						<label>EXPLORE</label>
@@ -491,7 +491,7 @@
 								<posy>0</posy>
 								<width>60</width>
 								<height>60</height>
-								<texture>button_unfocus.png</texture>
+								<texture border="10">button_unfocus.png</texture>
 								<colordiffuse>Background_Highlight</colordiffuse>
 								
 								<visible>Control.HasFocus(9001)</visible>
@@ -510,84 +510,8 @@
 						</focusedlayout>
 						
 						<content>
-
+						
 							<item id="1">
-								<description>Programs</description>
-								<label>$LOCALIZE[31002]</label>
-								<thumb>home/home_addons_small.png</thumb>
-								<onclick>ActivateWindow(programs,addons,return)</onclick>
-								<visible>Skin.HasSetting(ShowAddonsMenu)</visible>
-							</item>
-							
-							<item id="2">
-								<description>Videos</description>
-								<label>$LOCALIZE[31003]</label>
-								<thumb>home/home_videos_small.png</thumb>
-								<onclick>ActivateWindow(videos,root)</onclick>
-								<visible>Skin.HasSetting(ShowVideosMenu)</visible>
-							</item>
-
-							<item id="3">
-								<description>Movies</description>
-								<label>$LOCALIZE[31006]</label>
-								<label2>$INFO[Window(Home).Property(Movies.Count),, movies][CR]$INFO[Window(Home).Property(Movies.Watched),, watched][CR]$INFO[Window(Home).Property(Movies.UnWatched),, unwatched]</label2>
-								<thumb>home/home_movie_small.png</thumb>
-								<onclick>ActivateWindow(61,return)</onclick>
-								<visible>Library.HasContent(movies) + Skin.HasSetting(ShowMoviesMenu)</visible>
-							</item>
-
-							<item id="4">
-								<description>TV Shows</description>
-								<label>$LOCALIZE[31007]</label>
-								<label2>$INFO[Window(Home).Property(TVShows.Count),, tv shows][CR]$INFO[Window(Home).Property(TVShows.Watched),, watched][CR]$INFO[Window(Home).Property(TVShows.UnWatched),, unwatched]</label2>
-								<thumb>home/home_tvshow_small.png</thumb>
-								<onclick>ActivateWindow(62,return)</onclick>
-								<visible>Library.HasContent(tvshows) + Skin.HasSetting(ShowTVShowsMenu)</visible>
-							</item>
-							
-							<item id="4">
-								<description>Live TV</description>
-								<label>Live TV</label>
-								<thumb>home/home_livetv_small.png</thumb>
-								<onclick>ActivateWindow(PVR)</onclick>
-								<visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(ShowLiveTVMenu)</visible>
-							</item>
-							
-							<item id="4">
-								<description>Games</description>
-								<label>Games</label>
-								<thumb>home/home_games_small.png</thumb>
-								<onclick>XBMC.RunAddon(plugin.program.advanced.launcher)</onclick>
-								<visible>Skin.HasSetting(ShowGamesMenu)</visible>
-							</item>
-							
-							<item id="5">
-								<description>Music</description>
-								<label>$LOCALIZE[31004]</label>
-								<label2>$INFO[Window(Home).Property(Music.ArtistsCount),, artists][CR]$INFO[Window(Home).Property(Music.AlbumsCount),, albums][CR]$INFO[Window(Home).Property(Music.SongsCount),, songs]</label2>
-								<thumb>home/home_music_small.png</thumb>
-								<onclick>ActivateWindow(63,return)</onclick>
-								<visible>Skin.HasSetting(ShowMusicMenu)</visible>
-							</item>
-
-							<item id="6">
-								<description>Pictures</description>
-								<label>$LOCALIZE[31005]</label>
-								<thumb>home/home_pictures_small.png</thumb>
-								<onclick>ActivateWindow(2)</onclick>
-								<visible>Skin.HasSetting(ShowPicturesMenu)</visible>
-							</item>
-							
-							<item id="7">
-								<description>Play Disc</description>
-								<label>$LOCALIZE[31014]</label>
-								<label2>$INFO[System.DVDLabel]</label2>
-								<thumb>home/home_dvd_small.png</thumb>
-								<onclick>PlayDVD</onclick>
-								<visible>System.HasMediadvd</visible>
-							</item>
-							
-							<item id="8">
 								<description>Now Playing</description>
 								<label>Now playing</label>
 								<label2>$INFO[VideoPlayer.Title]</label2>
@@ -596,7 +520,7 @@
 								<visible>Player.HasMedia + Player.HasVideo + !VideoPlayer.HasMenu</visible>
 							</item>
 							
-							<item id="8">
+							<item id="1">
 								<description>Now Playing</description>
 								<label>Now playing</label>
 								<label2>$INFO[VideoPlayer.Title]</label2>
@@ -605,7 +529,7 @@
 								<visible>Player.HasMedia + Player.HasVideo + VideoPlayer.HasMenu</visible>
 							</item>
 							
-							<item id="9">
+							<item id="1">
 								<description>Now Playing</description>
 								<label>Now playing</label>
 								<label2>$INFO[MusicPlayer.Title][CR]$INFO[MusicPlayer.Album]</label2>
@@ -613,8 +537,84 @@
 								<onclick>ActivateWindow(visualisation)</onclick>
 								<visible>Player.HasMedia + Player.HasAudio</visible>
 							</item>
+
+							<item id="2">
+								<description>Programs</description>
+								<label>$LOCALIZE[31002]</label>
+								<thumb>home/home_addons_small.png</thumb>
+								<onclick>ActivateWindow(programs,addons,return)</onclick>
+								<visible>Skin.HasSetting(ShowAddonsMenu)</visible>
+							</item>
+							
+							<item id="3">
+								<description>Videos</description>
+								<label>$LOCALIZE[31003]</label>
+								<thumb>home/home_videos_small.png</thumb>
+								<onclick>ActivateWindow(videos,root)</onclick>
+								<visible>Skin.HasSetting(ShowVideosMenu)</visible>
+							</item>
+
+							<item id="4">
+								<description>Movies</description>
+								<label>$LOCALIZE[31006]</label>
+								<label2>$INFO[Window(Home).Property(Movies.Count),, movies][CR]$INFO[Window(Home).Property(Movies.Watched),, watched][CR]$INFO[Window(Home).Property(Movies.UnWatched),, unwatched]</label2>
+								<thumb>home/home_movie_small.png</thumb>
+								<onclick>ActivateWindow(61,return)</onclick>
+								<visible>Library.HasContent(movies) + Skin.HasSetting(ShowMoviesMenu)</visible>
+							</item>
+
+							<item id="5">
+								<description>TV Shows</description>
+								<label>$LOCALIZE[31007]</label>
+								<label2>$INFO[Window(Home).Property(TVShows.Count),, tv shows][CR]$INFO[Window(Home).Property(TVShows.Watched),, watched][CR]$INFO[Window(Home).Property(TVShows.UnWatched),, unwatched]</label2>
+								<thumb>home/home_tvshow_small.png</thumb>
+								<onclick>ActivateWindow(62,return)</onclick>
+								<visible>Library.HasContent(tvshows) + Skin.HasSetting(ShowTVShowsMenu)</visible>
+							</item>
+							
+							<item id="6">
+								<description>Live TV</description>
+								<label>Live TV</label>
+								<thumb>home/home_livetv_small.png</thumb>
+								<onclick>ActivateWindow(PVR)</onclick>
+								<visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(ShowLiveTVMenu)</visible>
+							</item>
+							
+							<item id="7">
+								<description>Games</description>
+								<label>Games</label>
+								<thumb>home/home_games_small.png</thumb>
+								<onclick>XBMC.RunAddon(plugin.program.advanced.launcher)</onclick>
+								<visible>Skin.HasSetting(ShowGamesMenu)</visible>
+							</item>
+							
+							<item id="8">
+								<description>Music</description>
+								<label>$LOCALIZE[31004]</label>
+								<label2>$INFO[Window(Home).Property(Music.ArtistsCount),, artists][CR]$INFO[Window(Home).Property(Music.AlbumsCount),, albums][CR]$INFO[Window(Home).Property(Music.SongsCount),, songs]</label2>
+								<thumb>home/home_music_small.png</thumb>
+								<onclick>ActivateWindow(63,return)</onclick>
+								<visible>Skin.HasSetting(ShowMusicMenu)</visible>
+							</item>
+
+							<item id="9">
+								<description>Pictures</description>
+								<label>$LOCALIZE[31005]</label>
+								<thumb>home/home_pictures_small.png</thumb>
+								<onclick>ActivateWindow(2)</onclick>
+								<visible>Skin.HasSetting(ShowPicturesMenu)</visible>
+							</item>
 							
 							<item id="10">
+								<description>Play Disc</description>
+								<label>$LOCALIZE[31014]</label>
+								<label2>$INFO[System.DVDLabel]</label2>
+								<thumb>home/home_dvd_small.png</thumb>
+								<onclick>PlayDVD</onclick>
+								<visible>System.HasMediadvd</visible>
+							</item>
+							
+							<item id="11">
 								<description>Weather</description>
 								<label>$LOCALIZE[31010]</label>
 								<label2>$INFO[Window(Weather).Property(Current.Condition)][CR]$INFO[Window(Weather).Property(Current.Temperature),,°]</label2>
@@ -623,7 +623,7 @@
 								<visible>Skin.HasSetting(ShowWeatherMenu)</visible>
 							</item>
 
-							<item id="11">
+							<item id="12">
 								<description>Favourites</description>
 								<label>$LOCALIZE[31008]</label>
 								<thumb>home/home_favourites_small.png</thumb>
@@ -631,7 +631,7 @@
 								<visible>Skin.HasSetting(ShowFavoritesMenu)</visible>
 							</item>
 
-							<item id="12">
+							<item id="13">
 								<description>Profiles</description>
 								<label>$LOCALIZE[31009]</label>
 								<thumb>home/home_profiles_small.png</thumb>
@@ -639,7 +639,7 @@
 								<visible>Skin.HasSetting(ShowProfilesMenu)</visible>
 							</item>
 							
-							<item id="13">
+							<item id="14">
 								<description>File Manager</description>
 								<label>$LOCALIZE[31011]</label>
 								<thumb>home/home_filemanager_small.png</thumb>
@@ -647,14 +647,14 @@
 								<visible>Skin.HasSetting(ShowFileManagerMenu)</visible>
 							</item>
 
-							<item id="14">
+							<item id="15">
 								<description>Settings</description>
 								<label>$LOCALIZE[31012]</label>
 								<thumb>home/home_settings_small.png</thumb>
 								<onclick>ActivateWindow(settings)</onclick>
 							</item>
 
-							<item id="15">
+							<item id="16">
 								<description>Shutdown</description>
 								<label>$LOCALIZE[31013]</label>
 								<thumb>home/home_shutdown_small.png</thumb>
@@ -1727,103 +1727,134 @@
 						
 					</control>
 					
-					<control type="label">
+					<control type="image">
 						
 						<posx>0</posx>
 						<posy>60</posy>
-						<width min="20" max="1024">auto</width>
-						<height>32</height>
-						<label>[UPPERCASE]$VAR[NowPlaying_First_Label][/UPPERCASE]</label>
-						<textcolor>Label_Normal</textcolor>
-						<font>Fullscreen-Info-Large</font>
-					
-					</control>
-					
-					<control type="label">
-						
-						<posx>0</posx>
-						<posy>100</posy>
-						<width min="20" max="1024">auto</width>
-						<height>32</height>
-						<label>[UPPERCASE]$VAR[NowPlaying_Second_Label][/UPPERCASE]</label>
-						<textcolor>Label_Normal</textcolor>
-						<font>Fullscreen-Info-Normal</font>
+						<width>460</width>
+						<height>260</height>
+						<texture background="true">$VAR[NowPlaying_Image]</texture>
+						<aspectratio align="left" aligny="top">keep</aspectratio>
 					
 					</control>
 					
 					<control type="group">
 					
+						<visible>Player.HasVideo</visible>
+						
 						<posx>0</posx>
-						<posy>150</posy>
-						<width>300</width>
-						<height>320</height>
-						
-						<control type="image">
-					
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>300</width>
-							<height>300</height>
-							<texture>colors/color_keyboard_dark.png</texture>
-							<aspectratio aligny="top">scale</aspectratio>
-						
-						</control>
+						<posy>60</posy>
 					
 						<control type="image">
-					
+							
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>300</width>
-							<height>300</height>
+							<width>460</width>
+							<height>260</height>
 							<texture background="true">$VAR[NowPlaying_Image]</texture>
-							<aspectratio aligny="top">scale</aspectratio>
+							<aspectratio align="true" aligny="top">scale</aspectratio>
 						
 						</control>
 						
-						<control type="multiimage">
-						
+						<control type="image">
+							
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>300</width>
-							<height>300</height>
-							<imagepath>tile</imagepath>
-							<timeperimage>4000</timeperimage>
-							<fadetime>400</fadetime>
-							<randomize>true</randomize>
-							<loop>yes</loop>
-							<colordiffuse>FanartDiffuse</colordiffuse>
+							<width>460</width>
+							<height>260</height>
+							<texture border="16">button_unfocus.png</texture>
+							
+						</control>
+					
+					</control>
+					
+					<control type="group">
+					
+						<visible>Player.HasAudio</visible>
+						
+						<posx>0</posx>
+						<posy>60</posy>
+					
+						<control type="image">
+							
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>260</width>
+							<height>260</height>
+							<texture background="true">$VAR[NowPlaying_Image]</texture>
+							<aspectratio align="true" aligny="top">scale</aspectratio>
 						
 						</control>
 						
-						<control type="button" id="9007">
+						<control type="image">
+							
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>260</width>
+							<height>260</height>
+							<texture border="16">button_unfocus.png</texture>
+							
+						</control>
 					
-							<posx>232</posx>
-							<posy>232</posy>
-							<width>48</width>
-							<height>48</height>
-							<texturefocus>playercontrols/playercontrol_fullscreen_focus.png</texturefocus>
-							<texturenofocus>playercontrols/playercontrol_fullscreen.png</texturenofocus>
-							<colordiffuse>Label_Normal</colordiffuse>
-							<onleft>9006</onleft>
-							<onright>9001</onright>
-							<onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
-							<onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>
+					</control>
+					
+					<control type="grouplist">
+					
+						<posx>0</posx>
+						<posy>340</posy>
+						<height>180</height>
+						<orientation>vertical</orientation>
+						<itemgap>0</itemgap>
+						<usecontrolcoords>true</usecontrolcoords>
+					
+						<control type="textbox">
+						
+							<width>460</width>
+							<height>76</height>
+							<label>[UPPERCASE]$VAR[NowPlaying_First_Label][/UPPERCASE]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Fullscreen-Info-Large</font>
+							<aligny>top</aligny>
+						
+						</control>
+						
+						<control type="textbox">
+							
+							<posy>10</posy>
+							<width>460</width>
+							<height>26</height>
+							<label>[UPPERCASE]$VAR[NowPlaying_Second_Label][/UPPERCASE]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Fullscreen-Info-Normal</font>
 							
 						</control>
 						
 						<control type="label">
-						
-							<posx>218</posx>
-							<posy>238</posy>
-							<width>100</width>
-							<height>40</height>
-							<label>click to go fullscreen</label>
+					
+							<width>460</width>
+							<height>26</height>
+							<label>[UPPERCASE]$VAR[NowPlaying_Third_Label][/UPPERCASE]</label>
 							<textcolor>Label_Normal</textcolor>
-							<font>Fullscreen-Info-Small</font>
-							<align>right</align>
-							<wrapmultiline>true</wrapmultiline>
-						
+							<font>Fullscreen-Info-Normal</font>
+							<aligny>top</aligny>
+							
 						</control>
+					
+					</control>
+					
+					<control type="button" id="9007">
+				
+						<posx>436</posx>
+						<posy>10</posy>
+						<width>24</width>
+						<height>24</height>
+						<texturefocus>playercontrols/playercontrol_fullscreen_focus.png</texturefocus>
+						<texturenofocus>playercontrols/playercontrol_fullscreen.png</texturenofocus>
+						<colordiffuse>Label_Normal</colordiffuse>
+						<onleft>9006</onleft>
+						<onright>9001</onright>
+						<onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
+						<onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>-->
 						
 					</control>
 					
@@ -1831,8 +1862,8 @@
 					<control type="group">
 					
 						<posx>0</posx>
-						<posy>470</posy>
-						<width>300</width>
+						<posy>490</posy>
+						<width>260</width>
 						<height>40</height>
 					
 						<!--Progress Bar-->
@@ -1840,7 +1871,7 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>300</width>
+							<width>260</width>
 							<height>5</height>
 							<texturebg border="2">colors/color_grey.png</texturebg>
 							<lefttexture>-</lefttexture>
@@ -1852,16 +1883,19 @@
 						
 						<!--Progress Bar-->
 						<control type="progress">
+						
 							<description>My first progress control</description>
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>300</width>
+							<width>260</width>
 							<height>5</height>
-							<texturebg>colors/color_black.png</texturebg>
+							<texturebg border="2">colors/color_transparent.png</texturebg>
 							<lefttexture>-</lefttexture>
-							<midtexture>colors/color_white.png</midtexture>
+							<midtexture border="2">colors/color_white.png</midtexture>
 							<righttexture>-</righttexture>
 							<info>Player.Progress</info>
+							<colordiffuse>Background_Highlight</colordiffuse>
+							
 						</control>
 					
 						<control type="label">
@@ -1880,7 +1914,7 @@
 						<!--Total Time-->
 						<control type="label">
 						
-							<posx>300</posx>
+							<posx>260</posx>
 							<posy>10</posy>
 							<width>100</width>
 							<height>40</height>
@@ -1894,19 +1928,6 @@
 						
 					</control>	
 				
-					<control type="label">
-					
-						<posx>0</posx>
-						<posy>510</posy>
-						<width min="20" max="1024">auto</width>
-						<height>32</height>
-						<label>[UPPERCASE]$VAR[NowPlaying_Third_Label][/UPPERCASE]</label>
-						<textcolor>Label_Normal</textcolor>
-						<font>Fullscreen-Info-Normal</font>
-						<aligny>top</aligny>
-					
-					</control>
-					
 				</control>	
 			
 			</control>

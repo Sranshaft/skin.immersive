@@ -196,7 +196,7 @@
 						<width>500</width>
 						<height>32</height>
 						<label>$VAR[NowPlaying_First_Label]</label>
-						<font>Appbar-Label</font>
+						<font>Appbar-Info</font>
 						<textcolor>Label_Dark</textcolor>
 						<aligny>top</aligny>
 					
@@ -206,8 +206,8 @@
 					
 						<width>500</width>
 						<height>16</height>
-						<label>[UPPERCASE]$VAR[NowPlaying_Second_Label][/UPPERCASE]</label>
-						<font>Appbar-Label-Small</font>
+						<label>$VAR[NowPlaying_Second_Label]</label>
+						<font>Appbar-Info-Small</font>
 						<textcolor>Label_Dark</textcolor>
 						
 					</control>
@@ -216,8 +216,8 @@
 					
 						<width>500</width>
 						<height>16</height>
-						<label>[UPPERCASE]$VAR[NowPlaying_Third_Label][/UPPERCASE]</label>
-						<font>Appbar-Label-Small</font>
+						<label>$VAR[NowPlaying_Third_Label]</label>
+						<font>Appbar-Info-Small</font>
 						<textcolor>Label_Dark</textcolor>
 						
 					</control>
@@ -228,7 +228,7 @@
 						<width>500</width>
 						<height>30</height>
 						<label>[B]$INFO[Player.Time] / $INFO[Player.Duration][/B]</label>
-						<font>Appbar-Label-Small</font>
+						<font>Appbar-Info-Small</font>
 						<textcolor>Label_Dark</textcolor>
 						<aligny>center</aligny>
 					

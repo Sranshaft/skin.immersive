@@ -80,7 +80,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),DialogFullScreenInfo.xml)">Now watching</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasVideo">Now watching</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasAudio">Now listening</value>
-		<value condition="StringCompare(Window.Property(xmlfile),DialogSelect.xml)">$INFO[Control.GetLabel(2), items]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogSelect.xml)">$INFO[Container(6).NumItems,, items]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicOSD.xml)">Controls</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicVisualisation.xml)">Now listening</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPics.xml)">$INFO[Container.FolderName]</value>
@@ -379,6 +379,18 @@
 		<value condition="StringCompare(Container(56).Position,3)">$INFO[Container(56).ListItem(2).Label]</value>
 	</variable>
 	
+	<!--Home Variables-->
+	
+	<variable name="Home_Background_Image">
+		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Blocks)">personalization/personalization_blocks.png</value>
+		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Circles)">personalization/personalization_circles.png</value>
+		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Flowers)">personalization/personalization_flowers.png</value>
+		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Mountains)">personalization/personalization_mountains.png</value>
+		<value condition="StringCompare(Skin.String(PersonalizeOverlay),City)">personalization/personalization_city.png</value>
+		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Cubist)">personalization/personalization_cubist.png</value>
+		<value></value>
+	</variable>
+	
 	<!--Info Dialog Variables-->
 	
 	<variable name="Info_Image">
@@ -480,9 +492,10 @@
 	<variable name="NowPlaying_Image">
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Cover]</value>
 		<value condition="Player.HasVideo + VideoPlayer.HasMenu">nowplaying/tile/nowplaying_dvd.png</value>
-		<value condition="Player.HasVideo + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)]">$INFO[Player.Art(fanart)]</value>
+		<value condition="Player.HasVideo + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(files)">nowplaying/tile/nowplaying_file.png</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[Player.Art(thumb)]</value>
+		<value>$INFO[Player.Art(thumb)]</value>
 	</variable>
 	
 	<variable name="NowPlaying_Icon">
@@ -519,18 +532,6 @@
 		<value condition="!Playlist.IsRepeatOne + !Playlist.IsRepeat">repeat:[CR]off</value>
 		<value condition="Playlist.IsRepeat">repeat:[CR]all</value>
 		<value condition="Playlist.IsRepeatOne">repeat:[CR]one</value>
-	</variable>
-	
-	<!--Personalize Variables-->
-	
-	<variable name="Personalize_Overlay_Image">
-		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Blocks)">personalization/personalization_blocks.png</value>
-		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Circles)">personalization/personalization_circles.png</value>
-		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Flowers)">personalization/personalization_flowers.png</value>
-		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Mountains)">personalization/personalization_mountains.png</value>
-		<value condition="StringCompare(Skin.String(PersonalizeOverlay),City)">personalization/personalization_city.png</value>
-		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Cubist)">personalization/personalization_cubist.png</value>
-		<value></value>
 	</variable>
 	
 	<!--Player Variables-->
@@ -571,6 +572,9 @@
 		<value condition="Window.IsActive(Custom_Hub_TV.xml)">splash/splash_tvshows.png</value>
 		<value condition="Window.IsActive(DialogFavourites.xml)">splash/splash_favorites.png</value>
 		<value condition="Window.IsActive(MyPics.xml)">splash/splash_picture.png</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + StringCompare(Container.FolderName,Revision3)">splash/splash_revision3.png</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + StringCompare(Container.FolderName,Reddit Video)">splash/splash_reddit.png</value>
+		<value condition="Window.IsActive(MyVideoNav.xml) + StringCompare(Container.FolderName,Youtube)">splash/splash_youtube.png</value>
 		<value condition="Window.IsActive(MyVideoNav.xml)">splash/splash_video.png</value>
 		<value condition="Window.IsActive(FileManager.xml)">splash/splash_filemanager.png</value>
 		<value condition="Window.IsActive(Settings.xml)">splash/splash_settings.png</value>

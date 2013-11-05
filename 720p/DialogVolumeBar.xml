@@ -176,38 +176,38 @@
 			<control type="grouplist">
 			
 				<posx>60</posx>
-				<posy>16</posy>
+				<posy>12</posy>
 				<width>320</width>
 				<height>120</height>
 				<itemgap>0</itemgap>
 				<orientation>vertical</orientation>
 				
-				<control type="label">
+				<control type="textbox">
 				
 					<width>280</width>
-					<height>20</height>
+					<height>42</height>
 					<label>$VAR[NowPlaying_First_Label]</label>
-					<font>NowPlaying-Header</font>s
+					<font>NowPlaying-Header</font>
 					<textcolor>Label_Normal</textcolor>
-					<aligny>center</aligny>
+					<aligny>top</aligny>
 				
 				</control>
 				
-				<control type="label">
+				<control type="textbox">
 				
 					<width>280</width>
 					<height>16</height>
 					<label>[UPPERCASE]$VAR[NowPlaying_Second_Label][/UPPERCASE]</label>
 					<font>NowPlaying-Detail</font>
 					<textcolor>Label_Normal</textcolor>
-					<aligny>center</aligny>
+					<aligny>top</aligny>
 					
 				</control>
 				
 				<control type="label">
 				
 					<width>280</width>
-					<height>61</height>
+					<height>16</height>
 					<label>$VAR[NowPlaying_Third_Label]</label>
 					<font>NowPlaying-Detail</font>
 					<textcolor>Label_Normal</textcolor>
@@ -215,18 +215,20 @@
 					
 				</control>
 				
-				<!--Current Time-->
-				<control type="label">
-				
-					<width>280</width>
-					<height>14</height>
-					<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
-					<textcolor>Label_Normal</textcolor>
-					<font>NowPlaying-Detail-Small</font>
-					<aligny>center</aligny>
-				
-				</control>
-				
+			</control>
+			
+			<!--Current Time-->
+			<control type="label">
+			
+				<posx>60</posx>
+				<posy>114</posy>
+				<width>280</width>
+				<height>16</height>
+				<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
+				<textcolor>Label_Normal</textcolor>
+				<font>NowPlaying-Detail-Small</font>
+				<aligny>center</aligny>
+			
 			</control>
 			
 			<control type="image">
@@ -236,7 +238,7 @@
 				<width>115</width>
 				<height>115</height>
 				<texture>$VAR[NowPlaying_Image]</texture>
-				<aspectratio aligny="top">scale</aspectratio>
+				<aspectratio aligny="center">scale</aspectratio>
 				
 			</control>
 			
