@@ -592,22 +592,57 @@
 							
 						</control>
 						
-						<control type="image">
+						<!--Preview (Fanart Background)-->
+						<control type="group">
 						
-							<include>Common_Settings_Preview</include>
-							<texture background="true">$INFO[Container(302).ListItem(0).Thumb]</texture>
-							<colordiffuse>Background_Normal</colordiffuse>
-							<fadetime>1000</fadetime>
-							<visible>Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
+							<visible>Skin.HasSetting(UseFanartBackground_Home)</visible>
+
+							<control type="image">
+							
+								<include>Common_Settings_Preview</include>
+								<texture background="true">$INFO[Window(Home).Property(script.grab.fanart.Video.Fanart)]</texture>
+								<fadetime>1000</fadetime>
+								
+							</control>
+							
+							<!--Overlay Background-->
+							<control type="image">
+							
+								<include>Common_Settings_Preview</include>
+								<texture background="true">colors/color_black.png</texture>
+								
+								<animation effect="fade" start="100" end="75" time="400" condition="true">Conditional</animation>
+								
+							</control>
 							
 						</control>
 						
 						<control type="image">
 						
 							<include>Common_Settings_Preview</include>
-							<texture background="true">$INFO[Container(302).ListItem(0).Thumb]</texture>
+							<texture background="true">colors/color_white.png</texture>
+							<colordiffuse>Background_Dark</colordiffuse>
 							<fadetime>1000</fadetime>
-							<visible>!Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
+							<visible>StringCompare(Skin.String(PersonalizeOverlay),Plain)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">$VAR[Home_Background_Image]</texture>
+							<colordiffuse>Background_Normal</colordiffuse>
+							<fadetime>1000</fadetime>
+							<visible>!StringCompare(Skin.String(PersonalizeOverlay),Plain) + Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">$VAR[Home_Background_Image]</texture>
+							<fadetime>1000</fadetime>
+							<visible>!StringCompare(Skin.String(PersonalizeOverlay),Plain) + !Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
 							
 						</control>
 						
@@ -647,7 +682,7 @@
 					
 				</control>
 				
-				<control type="panel" id="302">
+				<control type="panel" id="301">
 				
 					<width>640</width>
 					<height>80</height>
@@ -845,14 +880,15 @@
 
 				</control>
 				
-				<control type="button" id ="10">
-					<description>Browse</description>
-					<textcolor>Settings_Label</textcolor>
-					<focusedcolor>Settings_Label_Highlight</focusedcolor>
-					<disabledcolor>Settings_Label_Disabled</disabledcolor>
-					<colordiffuse>Settings_Label</colordiffuse>
-					<include>Common_InfoDialog_Button</include>
-					<label>Browse</label>
+				<control type="radiobutton" id="302">
+					
+					<description>Color Background</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Use random fanart for background</label>
+					<onclick>Skin.ToggleSetting(UseFanartBackground_Home)</onclick>
+					<selected>Skin.HasSetting(UseFanartBackground_Home)</selected>
+					<enable>System.HasAddon(script.grab.fanart)</enable>
+					
 				</control>
 				
 				<control type="label" id="353">
