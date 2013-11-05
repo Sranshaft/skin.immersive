@@ -10,23 +10,14 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			
-			<animation type="WindowOpen" condition="IntegerGreaterThan(Container(3).NumItems,5)">
+			<animation type="WindowOpen">
 				<effect type="fade" start="0" end="100" time="400" delay="200" />
 			</animation>
 			
-			<animation type="WindowClose" condition="IntegerGreaterThan(Container(3).NumItems,5)">
+			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="400" delay="200" />
 			</animation>
 			
-			<animation type="WindowOpen" condition="!IntegerGreaterThan(Container(3).NumItems,5)">
-				<effect type="fade" start="0" end="100" time="400" delay="200" />
-				<effect type="slide" start="0,720" end="0,360" time="400" delay="200" tween="cubic" easing="out" />
-			</animation>
-			
-			<animation type="WindowClose" condition="!IntegerGreaterThan(Container(3).NumItems,5)">
-				<effect type="fade" start="100" end="0" time="400" delay="200" />
-			</animation>
-
 			<visible>IntegerGreaterThan(Container(3).NumItems,0)</visible>
 			
 			<control type="image">
@@ -36,29 +27,12 @@
 				
 			</control>	
 			
-			<control type="button" id="8001">
-				
-				<posx>1208</posx>
-				<posy>0</posy>
-				<width>72</width>
-				<height>72</height>
-				<texturefocus>appbar/appbar_overflowdots.png</texturefocus>
-				<texturenofocus>appbar/appbar_overflowdots.png</texturenofocus>
-				<colordiffuse>Label_Normal</colordiffuse>
-				<aspectratio aligny="top">center</aspectratio>
-				<onclick>Dialog.Close(2000)</onclick>
-				
-				<visible>!IntegerGreaterThan(Container(3).NumItems,5)</visible>
-				
-			</control>
-			
 			<control type="label" id="1">
 								
 				<posx>32</posx>
 				<posy>20</posy>
 				<width min="20" max="1216">auto</width>
 				<height>30</height>
-				<label>$INFO[Control.GetLabel(1)]</label>
 				<font>Select-Large</font>
 				<textcolor>Label_Normal</textcolor>
 				<aligny>top</aligny>
@@ -91,6 +65,11 @@
 				<viewtype label="List">list</viewtype>
 				<scrolltime tween="cubic" easing="out">600</scrolltime>
 				<preloaditems>2</preloaditems>
+				
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="400" delay="200" />
+					<effect type="slide" start="100,0" end="0,0" time="400" delay="200" tween="cubic" easing="out" />
+				</animation>
 				
 				<itemlayout width="1240" height="50">
 
@@ -160,6 +139,18 @@
 			</control>
 		
 			<include>Common_Breadcrumb_Dark</include>
+			
+			<control type="button" id="5">
+				
+				<include>Common_AppBar_Button_Small</include>
+				<posx>800</posx>
+				<posy>60</posy>
+				<texturefocus>dialoginfo/dialoginfo_add.png</texturefocus>
+				<texturenofocus>dialoginfo/dialoginfo_add</texturenofocus>
+				<onup>SetFocus(6)</onup>
+				<ondown>SetFocus(6)</ondown>
+				
+			</control>
 
 			<!--Control Section-->
 			<control type="group">
@@ -185,10 +176,10 @@
 					<posy>60</posy>
 					<width>1220</width>
 					<height>500</height>
-					<onleft>450</onleft>
-					<onright>450</onright>
-					<onup>450</onup>
-					<ondown>450</ondown>
+					<onleft>6</onleft>
+					<onright>6</onright>
+					<onup>5</onup>
+					<ondown>-</ondown>
 					<pagecontrol>9010</pagecontrol>
 					<scrolltime tween="cubic" easing="out">600</scrolltime>
 					<orientation>horizontal</orientation>
@@ -350,10 +341,6 @@
 		<control type="label" id="2">
 			<visible>false</visible>
 		</control>
-		
-		<control type="button" id="5">
-			<visible>false</visible>
-		</control>	
 		
 	</controls>
 
