@@ -652,7 +652,8 @@
 			<include>Common_Dimensions</include>
 			<texture>colors/color_black.png</texture>
 			
-			<animation effect="fade" start="100" end="85" time="400" condition="true">Conditional</animation>
+			<animation effect="fade" start="100" end="85" time="400" condition="!Skin.HasSetting(MoreVisFanart)">Conditional</animation>
+			<animation effect="fade" start="100" end="70" time="400" condition="Skin.HasSetting(MoreVisFanart)">Conditional</animation>
 			
 		</control>
 		
