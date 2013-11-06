@@ -104,7 +104,7 @@
 		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.TVOverlay)">$INFO[Control.GetLabel(502)]</value>
 		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.EPG)">EPG</value>
 		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-main)">$INFO[Control.GetLabel(190)]$INFO[Control.GetLabel(191)]</value>
-		<value condition="SubString(Window.Property(xmlfile),script-The Big Picture-main)">$INFO[Container(100).ListItem.Property(Album)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-The Big Picture-main)">$INFO[Container(100).ListItem.Property(album_title)]</value>
 	</variable>
 	
 	<!--Context Menu Variables-->
