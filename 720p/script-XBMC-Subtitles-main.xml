@@ -177,7 +177,7 @@
 						
 						<control type="image">
 
-							<posx>20</posx>
+							<posx>32</posx>
 							<posy>34</posy>
 							<width>90</width>
 							<height>20</height>
@@ -188,8 +188,8 @@
 						
 						<control type="label">
 						
-							<posx>110</posx>
-							<posy>32</posy>
+							<posx>140</posx>
+							<posy>34</posy>
 							<width min="20" max="520">auto</width>
 							<height>30</height>
 							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
@@ -285,7 +285,7 @@
 							
 							<control type="image">
 
-								<posx>20</posx>
+								<posx>32</posx>
 								<posy>34</posy>
 								<width>90</width>
 								<height>20</height>
@@ -296,8 +296,8 @@
 							
 							<control type="label">
 							
-								<posx>110</posx>
-								<posy>32</posy>
+								<posx>140</posx>
+								<posy>34</posy>
 								<width min="20" max="520">auto</width>
 								<height>30</height>
 								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
@@ -391,7 +391,7 @@
 							
 							<control type="image">
 
-								<posx>20</posx>
+								<posx>32</posx>
 								<posy>34</posy>
 								<width>90</width>
 								<height>20</height>
@@ -402,8 +402,8 @@
 							
 							<control type="label">
 							
-								<posx>110</posx>
-								<posy>32</posy>
+								<posx>140</posx>
+								<posy>34</posy>
 								<width min="20" max="520">auto</width>
 								<height>30</height>
 								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
