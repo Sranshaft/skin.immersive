@@ -6,6 +6,7 @@
 		<posy>30</posy>
 	</coordinates>
 	<include>dialogeffect</include>
+  
 	<controls>
 		<control type="image">
 			<description>background image</description>
@@ -14,7 +15,7 @@
 			<width>730</width>
 			<height>660</height>
 			<texture border="40">colors/color_white.png</texture>
-			<colordiffuse>blue</colordiffuse>
+			<colordiffuse>gray</colordiffuse>
 		</control>
 		<control type="image">
 			<description>background image</description>
@@ -42,7 +43,7 @@
 			<label>-</label>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>selected</textcolor>
+			<textcolor>Settings_Menu_Highlight</textcolor>
 			<shadowcolor>black</shadowcolor>
 		</control>
 		<control type="button">
@@ -86,6 +87,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font12_title</font>
+        <textcolor>Background_Highlight</textcolor>
 				<label>186</label>
 				<onleft>29</onleft>
 				<onright>29</onright>
@@ -101,6 +103,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font12_title</font>
+        <textcolor>Background_Highlight</textcolor>
 				<label>222</label>
 				<onleft>28</onleft>
 				<onright>28</onright>
@@ -112,8 +115,8 @@
 			<description>Default Button</description>
 			<height>40</height>
 			<font>font13</font>
-			<textcolor>grey2</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<textcolor>Settings_Menu_Normal</textcolor>
+			<focusedcolor>Settings_Menu_Highlight</focusedcolor>
 			<texturefocus border="5">button-focus2.png</texturefocus>
 			<texturenofocus border="5">button-nofocus.png</texturenofocus>
 		</control>
@@ -121,16 +124,16 @@
 			<description>Default RadioButton</description>
 			<height>40</height>
 			<font>font13</font>
-			<textcolor>grey2</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<textcolor>Settings_Menu_Normal</textcolor>
+			<focusedcolor>Settings_Menu_Highlight</focusedcolor>
 			<texturefocus border="5">button-focus2.png</texturefocus>
 			<texturenofocus border="5">button-nofocus.png</texturenofocus>
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default spincontrolex</description>
 			<height>40</height>
-			<textcolor>grey2</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<textcolor>Settings_Menu_Normal</textcolor>
+			<focusedcolor>Settings_Menu_Highlight</focusedcolor>
 			<texturefocus border="5">button-focus2.png</texturefocus>
 			<texturenofocus border="5">button-nofocus.png</texturenofocus>
 			<font>font13</font>
@@ -143,8 +146,8 @@
 			<texturefocus border="5">button-focus2.png</texturefocus>
 			<texturenofocus border="5">button-nofocus.png</texturenofocus>
 			<font>font13</font>
-			<textcolor>grey2</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<textcolor>Settings_Menu_Normal</textcolor>
+			<focusedcolor>Settings_Menu_Highlight</focusedcolor>
 		</control>
 		<control type="image" id="11">
 			<description>Default Seperator</description>
@@ -155,8 +158,8 @@
 			<description>Default Edit</description>
 			<height>40</height>
 			<font>font13</font>
-			<textcolor>grey2</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<textcolor>Settings_Menu_Normal</textcolor>
+			<focusedcolor>Settings_Menu_Highlight</focusedcolor>
 			<texturefocus border="5">button-focus2.png</texturefocus>
 			<texturenofocus border="5">button-nofocus.png</texturenofocus>
 		</control>
