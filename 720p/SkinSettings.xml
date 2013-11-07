@@ -324,6 +324,16 @@
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31044]</label>
+					<onclick>Skin.ToggleSetting(ShowSearchMenu)</onclick>
+					<selected>Skin.HasSetting(ShowSearchMenu)</selected>
+					
+				</control>
+				
+				<control type="radiobutton" id="116">
+					
+					<description>Background Visualiser</description>
+					<include>Common_Settings_RadioButton</include>
 					<label>$LOCALIZE[31013]</label>
 					<onclick>Skin.ToggleSetting(ShowShutdownMenu)</onclick>
 					<selected>Skin.HasSetting(ShowShutdownMenu)</selected>
@@ -338,7 +348,7 @@
 					
 				</control>
 
-				<control type="radiobutton" id="116">
+				<control type="radiobutton" id="117">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
@@ -348,7 +358,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="117">
+				<control type="radiobutton" id="118">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
@@ -358,7 +368,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="118">
+				<control type="radiobutton" id="119">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
@@ -368,7 +378,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="119">
+				<control type="radiobutton" id="120">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
@@ -378,7 +388,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="120">
+				<control type="radiobutton" id="121">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
@@ -482,6 +492,17 @@
 					<enable>System.HasAddon(script.randomandlastitems)</enable>
 					
 				</control>
+				
+				<control type="radiobutton" id="211">
+
+				 	<description>Background Video</description>
+					<include>Common_Settings_RadioButton</include>
+ 					<label>$LOCALIZE[31043]</label>
+ 					<onclick>Skin.ToggleSetting(EnableTvTunes)</onclick>
+					<selected>Skin.HasSetting(EnableTvTunes)</selected>
+
+				</control>
+				
 				
 				<control type="label" id="251">
 				
@@ -910,7 +931,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="304">
+				<control type="radiobutton" id="303">
 					
 					<description>Color Background</description>
 					<include>Common_Settings_RadioButton</include>
@@ -920,7 +941,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="305">
+				<control type="radiobutton" id="304">
 					
 					<description>Color Background</description>
 					<include>Common_Settings_RadioButton</include>
