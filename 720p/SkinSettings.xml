@@ -891,6 +891,17 @@
 					
 				</control>
 				
+				<control type="radiobutton" id="303">
+					
+					<description>More Visible Fanart</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Make fanart more visible</label>
+					<onclick>Skin.ToggleSetting(MoreVisFanart)</onclick>
+					<selected>Skin.HasSetting(MoreVisFanart)</selected>
+					<enable>System.HasAddon(script.grab.fanart) + Skin.HasSetting(UseFanartBackground_Home)</enable>
+					
+				</control>
+				
 				<control type="label" id="353">
 				
 					<description></description>
@@ -899,7 +910,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="303">
+				<control type="radiobutton" id="304">
 					
 					<description>Color Background</description>
 					<include>Common_Settings_RadioButton</include>
@@ -909,7 +920,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="304">
+				<control type="radiobutton" id="305">
 					
 					<description>Color Background</description>
 					<include>Common_Settings_RadioButton</include>
