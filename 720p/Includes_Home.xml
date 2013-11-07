@@ -349,6 +349,14 @@
 							</item>
 
 							<item id="16">
+								<description>Search</description>
+								<label>$LOCALIZE[31044]</label>
+								<thumb>charms\charm_search.png</thumb>
+								<onclick>XBMC.RunScript(script.globalsearch)</onclick>
+								<visible>Skin.HasSetting(ShowSearchMenu)</visible>
+							</item>
+							
+							<item id="17">
 								<description>Shutdown</description>
 								<label>$LOCALIZE[31013]</label>
 								<thumb>home/home_shutdown.png</thumb>
@@ -655,9 +663,17 @@
 							</item>
 
 							<item id="16">
+								<description>Search</description>
+								<label>$LOCALIZE[31044]</label>
+								<thumb>charms\charm_search.png</thumb>
+								<onclick>XBMC.RunScript(script.globalsearch)</onclick>
+								<visible>Skin.HasSetting(ShowSearchMenu)</visible>
+							</item>
+							
+							<item id="17">
 								<description>Shutdown</description>
 								<label>$LOCALIZE[31013]</label>
-								<thumb>home/home_shutdown_small.png</thumb>
+								<thumb>home/home_shutdown.png</thumb>
 								<onclick>ActivateWindow(shutdownmenu)</onclick>
 								<visible>Skin.HasSetting(ShowShutdownMenu)</visible>
 							</item>
