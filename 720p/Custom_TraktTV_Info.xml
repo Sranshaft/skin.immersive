@@ -66,7 +66,7 @@
 			
 				<include>Common_Dimensions</include>
 				<texture background="true">forumbrowser/forumbrowser_background.png</texture>
-				<colordiffuse>AAd6d6d6</colordiffuse>
+				<colordiffuse>Settings_Background_Dark</colordiffuse>
 				
 			</control>
 			
@@ -127,7 +127,7 @@
 				<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 				<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
 				<aspectratio>keep</aspectratio>
-				<colordiffuse>Label_Dark</colordiffuse>
+				<colordiffuse>Settings_Label</colordiffuse>
 				<onclick>back</onclick>
 				
 			</control>
@@ -140,7 +140,7 @@
 				<width>1200</width>
 				<label>$INFO[Window.Property(Title)]</label>
 				<font>Breadcrumb-SubFolder-Alt</font>
-				<textcolor>Label_Dark</textcolor>
+				<textcolor>Settings_Label</textcolor>
 				
 			</control>
 			
@@ -152,7 +152,7 @@
 				<width>1200</width>
 				<label>Trakt.tv</label>
 				<font>Breadcrumb-Home-Alt</font>
-				<textcolor>Label_Dark</textcolor>
+				<textcolor>Settings_Label</textcolor>
 				
 			</control>
 			
@@ -356,7 +356,7 @@
 							<width>340</width>
 							<height>32</height>
 							<texture background="true">$INFO[Window.Property(Rating),trakt.tv/rating,.png]</texture>
-							<colordiffuse>Label_Dark</colordiffuse>
+							<colordiffuse>Settings_Label</colordiffuse>
 							<aspectratio align="left">keep</aspectratio>
 							
 						</control>
@@ -372,7 +372,7 @@
 								<height>32</height>
 								<texturefocus>playercontrols/playercontrol_play_focus.png</texturefocus>
 								<texturenofocus>playercontrols/playercontrol_play.png</texturenofocus>
-								<colordiffuse>Label_Dark</colordiffuse>
+								<colordiffuse>Settings_Label</colordiffuse>
 								<aspectratio align="left">scale</aspectratio>
 								<textoffsetx>32</textoffsetx>
 								<onleft>50</onleft>
@@ -407,7 +407,7 @@
 						<width>340</width>
 						<height>1</height>
 						<texture>colors/color_white.png</texture>
-						<colordiffuse>Label_Dark</colordiffuse>
+						<colordiffuse>Settings_Label</colordiffuse>
 						
 					</control>
 					
@@ -419,7 +419,7 @@
 						<height>400</height>
 						<label>$INFO[Window.Property(Plot)]</label>
 						<font>TraktTV-Info-Plot</font>
-						<textcolor>Label_Dark</textcolor>
+						<textcolor>Settings_Label</textcolor>
 						
 					</control>
 					
@@ -503,7 +503,7 @@
 									<height>24</height>
 									<label>$INFO[ListItem.Label]</label>
 									<font>Menu-Similar-Header</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -519,7 +519,7 @@
 									<height>20</height>
 									<label>$INFO[ListItem.Property(Year)]</label>
 									<font>Menu-Similar-Detail</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -535,7 +535,7 @@
 									<height>80</height>
 									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>Menu-Similar-Plot</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -601,7 +601,7 @@
 									<height>20</height>
 									<label>$INFO[ListItem.Property(Year)]</label>
 									<font>Menu-Similar-Detail</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -617,7 +617,7 @@
 									<height>80</height>
 									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>Menu-Similar-Plot</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>

@@ -416,6 +416,8 @@
 							<width>400</width>
 							<height>60</height>
 							
+							<include>Common_Control_Background</include>
+
 							<control type="button" id="191">
 								
 								<include>Common_Control_Button</include>
@@ -445,6 +447,8 @@
 						
 							<width>400</width>
 							<height>60</height>
+
+							<include>Common_Control_Background</include>
 							
 							<control type="button" id="192">
 								
@@ -488,6 +492,8 @@
 							<height>60</height>
 							
 							<visible>!IsEmpty(Container(100).ListItem.Property(Trailer))</visible>
+
+							<include>Common_Control_Background</include>
 							
 							<control type="button" id="193">
 								

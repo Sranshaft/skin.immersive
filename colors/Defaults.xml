@@ -23,7 +23,7 @@
 	<color name="Settings_Menu_Highlight">FFFFFFFF</color>
 	<color name="Settings_Header">FF1BA1E2</color>
 	<color name="Settings_Label">FF333333</color>
-	<color name="Settings_Label_Disabled">50333333</color>
+	<color name="Settings_Label_Disabled">FFC8C8C8</color>
 	<color name="Settings_Label_Highlight">FFFFFFFF</color>
 	
 	<color name="Tile_Text">FFFFFFFF</color>

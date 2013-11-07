@@ -158,7 +158,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>100</onup>
@@ -329,6 +329,17 @@
 					<selected>Skin.HasSetting(ShowShutdownMenu)</selected>
 					
 				</control>
+
+				<control type="radiobutton" id="116">
+					
+					<description>Background Visualiser</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Search</label>
+					<onclick>Skin.ToggleSetting(ShowSearchMenu)</onclick>
+					<selected>Skin.HasSetting(ShowSearchMenu)</selected>
+					<enable>System.HasAddon(script.globalsearch)</enable>
+					
+				</control>
 				
 				<control type="label" id="152">
 				
@@ -338,17 +349,17 @@
 					
 				</control>
 
-				<control type="radiobutton" id="116">
+				<control type="radiobutton" id="117">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
 					<label>Featured</label>
 					<onclick>Skin.ToggleSetting(ShowFeaturedSection)</onclick>
 					<selected>Skin.HasSetting(ShowFeaturedSection)</selected>
-					
+
 				</control>
 				
-				<control type="radiobutton" id="117">
+				<control type="radiobutton" id="118">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
@@ -358,7 +369,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="118">
+				<control type="radiobutton" id="119">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
@@ -368,17 +379,18 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="119">
+				<control type="radiobutton" id="120">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
 					<label>Search</label>
 					<onclick>Skin.ToggleSetting(ShowSearchSection)</onclick>
 					<selected>Skin.HasSetting(ShowSearchSection)</selected>
+					<enable>System.HasAddon(script.globalsearch)</enable>
 					
 				</control>
 				
-				<control type="radiobutton" id="120">
+				<control type="radiobutton" id="121">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
@@ -396,7 +408,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>200</onup>
@@ -543,7 +555,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onleft>98</onleft>
@@ -559,7 +571,7 @@
 				
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>700</width>
+					<width>730</width>
 					<height>240</height>
 					
 					<include>Common_Animation_Settings_Options</include>
@@ -891,6 +903,17 @@
 					
 				</control>
 				
+				<control type="radiobutton" id="303">
+					
+					<description>More Visible Fanart</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Make fanart more visible</label>
+					<onclick>Skin.ToggleSetting(MoreVisFanart)</onclick>
+					<selected>Skin.HasSetting(MoreVisFanart)</selected>
+					<enable>System.HasAddon(script.grab.fanart) + Skin.HasSetting(UseFanartBackground_Home)</enable>
+					
+				</control>
+				
 				<control type="label" id="353">
 				
 					<description></description>
@@ -899,7 +922,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="303">
+				<control type="radiobutton" id="304">
 					
 					<description>Color Background</description>
 					<include>Common_Settings_RadioButton</include>
@@ -909,7 +932,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="304">
+				<control type="radiobutton" id="305">
 					
 					<description>Color Background</description>
 					<include>Common_Settings_RadioButton</include>
@@ -927,7 +950,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>400</onup>
@@ -1012,7 +1035,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>500</onup>
@@ -1069,7 +1092,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>600</onup>
@@ -1120,7 +1143,7 @@
 				
 				<control type="textbox">
 					
-					<width>700</width>
+					<width>730</width>
 					<height>300</height>
 					<label>[CR]This option is best suited in situations where the user is using a physical keyboard.[CR][CR]If using a remote or touch screen, disable this option to use the on-screen keyboard.</label>
 					<font>Menu-List</font>
@@ -1138,7 +1161,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>700</onup>
@@ -1188,7 +1211,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>900</onup>
@@ -1261,7 +1284,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>900</onup>

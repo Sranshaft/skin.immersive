@@ -652,7 +652,8 @@
 			<include>Common_Dimensions</include>
 			<texture>colors/color_black.png</texture>
 			
-			<animation effect="fade" start="100" end="85" time="400" condition="true">Conditional</animation>
+			<animation effect="fade" start="100" end="85" time="400" condition="!Skin.HasSetting(MoreVisFanart)">Conditional</animation>
+			<animation effect="fade" start="100" end="70" time="400" condition="Skin.HasSetting(MoreVisFanart)">Conditional</animation>
 			
 		</control>
 		
@@ -857,21 +858,45 @@
 		</control>
 		
 	</include>
+
+	<include name="Common_Control_Background">
+
+		<control type="image">
+							
+			<include>Common_Control_Image</include>
+			<texture>colors/color_keyboard_dark.png</texture>
+							
+		</control>
+
+	</include>	
 	
 	<include name="Common_Control_Button">
 	
 		<width>60</width>
 		<height>60</height>
 		<texturefocus>colors/color_white.png</texturefocus>
-		<texturenofocus>colors/color_keyboard_dark.png</texturenofocus>
+		<texturenofocus>-</texturenofocus>
 		<alttexturefocus>colors/color_white.png</alttexturefocus>
-		<alttexturenofocus>colors/color_keyboard_dark.png</alttexturenofocus>
+		<alttexturenofocus>-</alttexturenofocus>
 		<colordiffuse>Background_Highlight</colordiffuse>
 		<disabledcolor>Label_Disabled</disabledcolor>
-		<textcolor>00FFFFFF</textcolor>
+		<textcolor>Transparent</textcolor>
 		<visible allowhiddenfocus="true">true</visible>
 		
 	</include>
+
+	<include name="Common_Control_Divider">
+
+		<control type="image">
+					
+			<width>60</width>
+			<height>2</height>
+			<texture>colors/color_white.png</texture>
+			<colordiffuse>Settings_Label</colordiffuse>
+		
+		</control>
+
+	</include>	
 
 	<include name="Common_Control_Image">	
 	
@@ -997,7 +1022,7 @@
 		
 			<include>Common_Dimensions</include>
 			<texture background="true">forumbrowser/forumbrowser_background.png</texture>
-			<colordiffuse>AAd6d6d6</colordiffuse>
+			<colordiffuse>Settings_Background_Dark</colordiffuse>
 			
 		</control>
 		
@@ -1137,7 +1162,7 @@
 		<textcolor>Label_Normal</textcolor>
 		<focusedcolor>Label_Highlight</focusedcolor>
 		<disabledcolor>Label_Disabled</disabledcolor>
-		<colordiffuse>Label_Normal</colordiffuse>
+		<colordiffuse>Settings_Label</colordiffuse>
 		<textoffsetx>0</textoffsetx>
 		<textoffsety>6</textoffsety>
 		<align>center</align>
@@ -1194,7 +1219,7 @@
 		<width>340</width>
 		<height>16</height>
 		<font>DialogInfo-Header-Small</font>
-		<textcolor>Label_Dark</textcolor>
+		<textcolor>Settings_Label</textcolor>
 		
 	</include>
 	
@@ -1203,7 +1228,7 @@
 		<width>340</width>
 		<height>50</height>
 		<font>DialogInfo-Label-Small</font>
-		<textcolor>Label_Dark</textcolor>
+		<textcolor>Settings_Label</textcolor>
 		<wrapmultiline>true</wrapmultiline>
 		
 	</include>
@@ -1925,7 +1950,7 @@
 		<width min="20" max="530">auto</width>
 		<height>40</height>
 		<font>Content-Label</font>
-		<textcolor>Label_Dark</textcolor>
+		<textcolor>Settings_Label</textcolor>
 		<aligny>top</aligny>
 		<wrapmultiline>false</wrapmultiline>
 		<scrollspeed>0</scrollspeed>
@@ -1939,7 +1964,7 @@
 		<width min="20" max="530">auto</width>
 		<height>40</height>
 		<font>Content-Label</font>
-		<textcolor>Label_Dark</textcolor>
+		<textcolor>Settings_Label</textcolor>
 		<align>right</align>
 		<aligny>top</aligny>
 		<wrapmultiline>false</wrapmultiline>
@@ -1953,6 +1978,7 @@
 		
 			<include>Common_Dimensions</include>
 			<texture>colors/color_white.png</texture>
+			<colordiffuse>Settings_Background_Dark</colordiffuse>
 			
 		</control>
 	
@@ -1982,14 +2008,14 @@
 	
 	<include name="Common_Settings_Button">
 	
-		<width>700</width>
+		<width>728</width>
 		<height>60</height>
 		<texturefocus>colors/color_white.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<alttexturefocus>colors/color_white.png</alttexturefocus>
 		<alttexturenofocus>-</alttexturenofocus>
 		<colordiffuse>Background_Highlight</colordiffuse>
-		<disabledColorDiffuse>Label_Disabled</disabledColorDiffuse>
+		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
 		<font>Menu-List</font>
 		<textcolor>Settings_Label</textcolor>
 		<focusedcolor>Settings_Label_Highlight</focusedcolor>
@@ -2021,7 +2047,7 @@
 		<texturenofocus border="6">button_unfocus.png</texturenofocus>
 		<font>DialogInfo-Header</font>
 		<textcolor>Settings_Label</textcolor>
-		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<focusedcolor>Label_Dark</focusedcolor>
 		<disabledcolor>Settings_Label_Disabled</disabledcolor>
 		<colordiffuse>Settings_Label</colordiffuse>
 		<textoffsetx>0</textoffsetx>
@@ -2048,7 +2074,7 @@
 	
 	<include name="Common_Settings_Edit">
 	
-		<width>700</width>
+		<width>730</width>
 		<height>60</height>
 		<texturefocus>colors/color_white.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
@@ -2103,9 +2129,9 @@
 		<width>520</width>
 		<height>60</height>
 		<font>Menu-List</font>
-		<textcolor>Label_Highlight</textcolor>
-		<focusedcolor>Label_Highlight</focusedcolor>
-		<disabledcolor>Label_Disabled</disabledcolor>
+		<textcolor>Settings_Header</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
 		<align>left</align>
 		<aligny>center</aligny>
 	
@@ -2143,31 +2169,31 @@
 	
 	<include name="Common_Settings_Progress">
 		
-		<posx>30</posx>
+		<posx>32</posx>
 		<posy>10</posy>
-		<width>700</width>
+		<width>730</width>
 		<height>5</height>
 		<texturebg>colors/color_keyboard_dark.png</texturebg>
 		<lefttexture>-</lefttexture>
 		<midtexture>colors/color_white.png</midtexture>
 		<righttexture>-</righttexture>
-		<colordiffuse>Background_Highlight</colordiffuse>
-		<disabledColorDiffuse>Label_Disabled</disabledColorDiffuse>
+		<!--<colordiffuse>Background_Highlight</colordiffuse>-->
+		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
 		
 	</include>
 	
 	<include name="Common_Settings_RadioButton">
 	
-		<width>700</width>
+		<width>730</width>
 		<height>60</height>
 		<textureradioon>controls/control_radiobutton_on.png</textureradioon>
 		<textureradiooff>controls/control_radiobutton_off.png</textureradiooff>
 		<colordiffuse>Background_Highlight</colordiffuse>
-		<disabledColorDiffuse>Label_Disabled</disabledColorDiffuse>
+		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
 		<textcolor>Settings_Label</textcolor>
 		<focusedcolor>Settings_Label_Highlight</focusedcolor>
 		<disabledcolor>Settings_Label_Disabled</disabledcolor>
-		<radioposx>618</radioposx>
+		<radioposx>650</radioposx>
 		<radioposy>21</radioposy>
 		
 	</include>
@@ -2185,7 +2211,7 @@
 	
 	<include name="Common_Settings_SliderEx">
 		
-		<width>700</width>
+		<width>730</width>
 		<height>60</height>
 		<texturefocus>colors/color_white.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
@@ -2194,7 +2220,7 @@
 		<texturesliderbar>controls/control_slider.png</texturesliderbar>
 		<textureslidernib border="2">controls/control_slider_nib.png</textureslidernib>
 		<textureslidernibfocus border="2">controls/control_slider_nib.png</textureslidernibfocus>
-		<disabledColorDiffuse>Label_Disabled</disabledColorDiffuse>
+		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
 		<textcolor>Settings_Label</textcolor>
 		<focusedcolor>Settings_Label_Highlight</focusedcolor>
 		<disabledcolor>Settings_Label_Disabled</disabledcolor>
@@ -2205,14 +2231,14 @@
 	
 	<include name="Common_Settings_SpinButton">
 	
-		<width>700</width>
+		<width>730</width>
 		<height>60</height>
 		<textureup>controls/control_spinbutton_up.png</textureup>
 		<textureupfocus diffuse="colors/color_grey.png">controls/control_spinbutton_up.png</textureupfocus>
 		<texturedown>controls/control_spinbutton_down.png</texturedown>
 		<texturedownfocus diffuse="colors/color_grey.png">controls/control_spinbutton_down.png</texturedownfocus>
 		<colordiffuse>Background_Highlight</colordiffuse>
-		<disabledColorDiffuse>Label_Disabled</disabledColorDiffuse>
+		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
 		<textcolor>Settings_Label</textcolor>
 		<focusedcolor>Settings_Label_Highlight</focusedcolor>
 		<disabledcolor>Settings_Label_Disabled</disabledcolor>
@@ -2267,7 +2293,7 @@
 		<width>180</width>
 		<height>18</height>
 		<font>TraktTV-Info-Detail</font>
-		<textcolor>Label_Dark</textcolor>
+		<textcolor>Settings_Label</textcolor>
 		<aligny>top</aligny>
 		<wrapmultiline>true</wrapmultiline>
 		
@@ -2314,7 +2340,7 @@
 					<height>76</height>
 					<label>[UPPERCASE]$INFO[ListItem.Property(NextTitle)][/UPPERCASE]</label>
 					<font>TVNextAired-Large</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<shadowcolor>00FFFFFF</shadowcolor>
 					<aligny>top</aligny>
 					<autoscroll>false</autoscroll>
@@ -2329,7 +2355,7 @@
 					<height>20</height>
 					<label>$INFO[ListItem.Property(ShortTime)]</label>
 					<font>TVNextAired-Normal</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<aligny>top</aligny>
 					
 				</control>
@@ -2342,7 +2368,7 @@
 					<height>20</height>
 					<label>$INFO[ListItem.Label] $INFO[ListItem.Property(Network)]</label>
 					<font>TVNextAired-Small</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<aligny>top</aligny>
 					
 				</control>

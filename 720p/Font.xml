@@ -1146,19 +1146,19 @@
 		
 		<font>
 			<name>TraktTV-Info-Title</name>
-			<filename>SegeoWP-Light.ttf</filename>
+			<filename>SegoeWP-Light.ttf</filename>
 			<size>48</size>
 		</font>
 		
 		<font>
 			<name>TraktTV-Info-Tagline</name>
-			<filename>SegeoWP-SemiBold.ttf</filename>
+			<filename>SegoeWP-SemiBold.ttf</filename>
 			<size>16</size>
 		</font>
 		
 		<font>
 			<name>TraktTV-Info-Detail</name>
-			<filename>SegeoWP-SemiBold.ttf</filename>
+			<filename>SegoeWP-SemiBold.ttf</filename>
 			<size>16</size>
 		</font>
 		

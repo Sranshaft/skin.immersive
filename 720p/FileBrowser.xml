@@ -60,6 +60,8 @@
 				
 					<width>400</width>
 					<height>60</height>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="413">
 						
@@ -91,6 +93,8 @@
 				
 					<width>400</width>
 					<height>60</height>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="414">
 						
@@ -118,20 +122,15 @@
 				</control>
 				
 				<!--Divider-->
-				<control type="image">
-					
-					<width>60</width>
-					<height>5</height>
-					<texture>colors/color_white.png</texture>
-					<colordiffuse>Settings_Menu_Normal</colordiffuse>
-				
-				</control>
+				<include>Common_Control_Divider</include>
 				
 				<!--New Folder Button-->
 				<control type="group">
 				
 					<width>400</width>
 					<height>60</height>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="415">
 						
@@ -371,7 +370,7 @@
 								<height>60</height>
 								<label>$INFO[ListItem.Label]</label>
 								<font>Select-Normal</font>
-								<textcolor>Settings_Menu_Normal</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>top</aligny>
 								<wrapmultiline>true</wrapmultiline>
 								<autoscroll>0</autoscroll>
@@ -386,7 +385,7 @@
 								<height>20</height>
 								<label>$INFO[ListItem.Date] $INFO[ListItem.Size]</label>
 								<font>Select-Small</font>
-								<textcolor>Settings_Menu_Normal</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>top</aligny>
 								<wrapmultiline>true</wrapmultiline>
 								<autoscroll>0</autoscroll>
@@ -435,7 +434,7 @@
 								<height>60</height>
 								<label>$INFO[ListItem.Label]</label>
 								<font>Select-Normal</font>
-								<textcolor>Label_Normal</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>top</aligny>
 								<wrapmultiline>true</wrapmultiline>
 								<autoscroll>0</autoscroll>
@@ -450,7 +449,7 @@
 								<height>20</height>
 								<label>$INFO[ListItem.Date] $INFO[ListItem.Size]</label>
 								<font>Select-Small</font>
-								<textcolor>Label_Normal</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>top</aligny>
 								<wrapmultiline>true</wrapmultiline>
 								<autoscroll>0</autoscroll>
@@ -516,17 +515,6 @@
 				<posy>0</posy>
 				<width>300</width>
 				<height>440</height>
-				<texture background="true">colors/color_white.png</texture>
-				<colordiffuse>Label_Dark</colordiffuse>
-				
-			</control>
-			
-			<control type="image">
-			
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>300</width>
-				<height>440</height>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<fadetime>400</fadetime>
@@ -560,7 +548,7 @@
 					<height>24</height>
 					<label>[B]$INFO[ListItem.FileExtension][/B]</label>
 					<font>FileBrowser-Details-Small</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<aligny>top</aligny>
 					<visible>!IsEmpty(ListItem.FileExtension)</visible>
 					
@@ -572,7 +560,7 @@
 					<height>24</height>
 					<label>[B]File folder[/B]</label>
 					<font>FileBrowser-Details-Small</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<aligny>top</aligny>
 					<visible>ListItem.IsFolder</visible>
 					
@@ -584,7 +572,7 @@
 					<height>24</height>
 					<label>File size: $INFO[ListItem.Size]</label>
 					<font>FileBrowser-Details-Small</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<aligny>top</aligny>
 					<visible>!IsEmpty(ListItem.Size)</visible>
 					
@@ -596,7 +584,7 @@
 					<height>24</height>
 					<label>File date: $INFO[ListItem.Date]</label>
 					<font>FileBrowser-Details-Small</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<aligny>top</aligny>
 					<visible>!IsEmpty(ListItem.Date)</visible>
 					
@@ -633,7 +621,7 @@
 					<height>60</height>
 					<label>$INFO[Container(450).NumItems,, items]</label>
 					<font>Content-Label</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<aligny>top</aligny>
 			
 				</control>

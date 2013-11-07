@@ -62,6 +62,8 @@
 				
 					<width>400</width>
 					<height>60</height>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="8">
 						
@@ -113,6 +115,8 @@
 					<height>60</height>
 					
 					<visible>ListItem.IsResumable</visible>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="9">
 						
@@ -148,6 +152,8 @@
 					<height>60</height>
 					
 					<visible>!IsEmpty(ListItem.Trailer)</visible>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="11">
 						
@@ -177,14 +183,7 @@
 				</control>
 				
 				<!--Divider-->
-				<control type="image">
-					
-					<width>60</width>
-					<height>5</height>
-					<texture>colors/color_white.png</texture>
-					<colordiffuse>Settings_Menu_Normal</colordiffuse>
-				
-				</control>
+				<include>Common_Control_Divider</include>
 				
 				<!--Refresh Button-->
 				<control type="group">
@@ -192,6 +191,8 @@
 					<width>400</width>
 					<height>60</height>
 					
+					<include>Common_Control_Background</include>
+
 					<control type="button" id="6">
 						
 						<include>Common_Control_Button</include>
@@ -224,6 +225,8 @@
 					<height>60</height>
 					
 					<visible>System.HasAddon(script.libraryeditor)</visible>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="15">
 						
@@ -256,6 +259,8 @@
 				
 					<width>400</width>
 					<height>60</height>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="10">
 						
@@ -749,7 +754,7 @@
 									<height>24</height>
 									<label>$INFO[ListItem.Label]</label>
 									<font>Menu-Similar-Header</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -765,7 +770,7 @@
 									<height>20</height>
 									<label>$INFO[ListItem.Property(Year)]</label>
 									<font>Menu-Similar-Detail</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -781,7 +786,7 @@
 									<height>80</height>
 									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>Menu-Similar-Plot</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -847,7 +852,7 @@
 									<height>20</height>
 									<label>$INFO[ListItem.Property(Year)]</label>
 									<font>Menu-Similar-Detail</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -863,7 +868,7 @@
 									<height>80</height>
 									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>Menu-Similar-Plot</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -2376,7 +2381,7 @@
 							<width>85</width>
 							<height>40</height>
 							<texture>$INFO[ListItem.VideoCodec,flags/video/,.png]</texture>
-							<colordiffuse>Label_Dark</colordiffuse>
+							<colordiffuse>Settings_Label</colordiffuse>
 							<aspectratio>keep</aspectratio>
 							
 							<visible>!IsEmpty(ListItem.VideoCodec)</visible>
@@ -2388,7 +2393,7 @@
 							<width>85</width>
 							<height>40</height>
 							<texture>$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
-							<colordiffuse>Label_Dark</colordiffuse>
+							<colordiffuse>Settings_Label</colordiffuse>
 							<aspectratio>keep</aspectratio>
 							
 							<visible>!IsEmpty(ListItem.VideoAspect)</visible>
@@ -2400,7 +2405,7 @@
 							<width>85</width>
 							<height>40</height>
 							<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
-							<colordiffuse>Label_Dark</colordiffuse>
+							<colordiffuse>Settings_Label</colordiffuse>
 							<aspectratio>keep</aspectratio>
 							
 							<visible>!IsEmpty(ListItem.AudioCodec)</visible>
@@ -2412,7 +2417,7 @@
 							<width>85</width>
 							<height>40</height>
 							<texture>$INFO[ListItem.AudioChannels,flags/audio/,.png]</texture>
-							<colordiffuse>Label_Dark</colordiffuse>
+							<colordiffuse>Settings_Label</colordiffuse>
 							<aspectratio>keep</aspectratio>
 							
 							<visible>!IsEmpty(ListItem.AudioChannels)</visible>

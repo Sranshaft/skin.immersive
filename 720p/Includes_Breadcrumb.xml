@@ -110,7 +110,7 @@
 					<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 					<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
 					<aspectratio>keep</aspectratio>
-					<colordiffuse>Label_Dark</colordiffuse>
+					<colordiffuse>Settings_Label</colordiffuse>
 					<onclick>back</onclick>
 					
 				</control>
@@ -122,7 +122,7 @@
 					<height>65</height>
 					<label>$VAR[Breadcrumb_Home_Label]</label>
 					<font>Breadcrumb-Home</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<aligny>center</aligny>
 					
 				</control>
@@ -134,7 +134,7 @@
 					<height>65</height>
 					<label>$VAR[Breadcrumb_SubFolder_Label]</label>
 					<font>Breadcrumb-SubFolder</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<aligny>center</aligny>
 					
 				</control>
@@ -214,7 +214,7 @@
 				<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 				<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
 				<aspectratio>keep</aspectratio>
-				<colordiffuse>Label_Dark</colordiffuse>
+				<colordiffuse>Settings_Label</colordiffuse>
 				<onclick>back</onclick>
 				
 			</control>
@@ -227,7 +227,7 @@
 				<width>1200</width>
 				<label>$VAR[Breadcrumb_SubFolder_Label]</label>
 				<font>Breadcrumb-SubFolder-Alt</font>
-				<textcolor>Label_Dark</textcolor>
+				<textcolor>Settings_Label</textcolor>
 				
 			</control>
 			
@@ -239,7 +239,7 @@
 				<width>1200</width>
 				<label>$VAR[Breadcrumb_Home_Label]</label>
 				<font>Breadcrumb-Home-Alt</font>
-				<textcolor>Label_Dark</textcolor>
+				<textcolor>Settings_Label</textcolor>
 				
 			</control>
 			

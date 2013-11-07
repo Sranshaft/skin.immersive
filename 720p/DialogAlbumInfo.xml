@@ -59,6 +59,8 @@
 				
 					<width>400</width>
 					<height>60</height>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="8">
 						
@@ -117,9 +119,9 @@
 				<control type="image">
 					
 					<width>60</width>
-					<height>5</height>
+					<height>2</height>
 					<texture>colors/color_white.png</texture>
-					<colordiffuse>Settings_Menu_Normal</colordiffuse>
+					<colordiffuse>Settings_Label</colordiffuse>
 				
 				</control>
 				
@@ -128,6 +130,8 @@
 				
 					<width>400</width>
 					<height>60</height>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="6">
 						
@@ -159,6 +163,8 @@
 				
 					<width>400</width>
 					<height>60</height>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="10">
 						
@@ -192,6 +198,8 @@
 					<height>60</height>
 					
 					<visible>Container.Content(artists)</visible>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="12">
 						
@@ -515,7 +523,7 @@
 									<height>40</height>
 									<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 									<font>Menu-Featured-Small</font>
-									<textcolor>Label_Normal</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -647,7 +655,7 @@
 									<height>60</height>
 									<label>$INFO[ListItem.TrackNumber]</label>
 									<font>Menu-List-Large</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<align>right</align>
 									<aligny>center</aligny>
 									
@@ -661,7 +669,7 @@
 									<height>36</height>
 									<label>$INFO[ListItem.Label]</label>
 									<font>Menu-List</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									
 								</control>
@@ -674,7 +682,7 @@
 									<height>30</height>
 									<label>$INFO[ListItem.Duration]</label>
 									<font>Menu-List-Small</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>top</aligny>
 									
 								</control>
@@ -710,7 +718,7 @@
 										<height>60</height>
 										<label>$INFO[ListItem.TrackNumber]</label>
 										<font>Menu-List-Large</font>
-										<textcolor>Label_Dark</textcolor>
+										<textcolor>Settings_Label</textcolor>
 										<align>right</align>
 										<aligny>center</aligny>
 										
@@ -724,7 +732,7 @@
 										<height>36</height>
 										<label>$INFO[ListItem.Label]</label>
 										<font>Menu-List</font>
-										<textcolor>Label_Dark</textcolor>
+										<textcolor>Settings_Label</textcolor>
 										<aligny>top</aligny>
 										
 									</control>
@@ -737,7 +745,7 @@
 										<height>30</height>
 										<label>$INFO[ListItem.Duration]</label>
 										<font>Menu-List-Small</font>
-										<textcolor>Label_Dark</textcolor>
+										<textcolor>Settings_Label</textcolor>
 										<aligny>top</aligny>
 										
 									</control>

@@ -65,6 +65,8 @@
 					<width>400</width>
 					<height>60</height>
 					
+					<include>Common_Control_Background</include>
+
 					<control type="button" id="413">
 						
 						<include>Common_Control_Button</include>
@@ -95,6 +97,8 @@
 				
 					<width>400</width>
 					<height>60</height>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="414">
 						
@@ -122,20 +126,15 @@
 				</control>
 				
 				<!--Divider-->
-				<control type="image">
-					
-					<width>60</width>
-					<height>5</height>
-					<texture>colors/color_white.png</texture>
-					<colordiffuse>Settings_Menu_Normal</colordiffuse>
-				
-				</control>
+				<include>Common_Control_Divider</include>
 				
 				<!--Select All Button-->
 				<control type="group">
 				
 					<width>400</width>
 					<height>60</height>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="415">
 						
@@ -167,6 +166,8 @@
 				
 					<width>400</width>
 					<height>60</height>
+
+					<include>Common_Control_Background</include>
 					
 					<control type="button" id="416">
 						
