@@ -1,7 +1,7 @@
 <window type="window">
 
 	<!--Splash Screen-->
-	<onload>ActivateWindow(60)</onload>
+	<onload condition="!Skin.HasSetting(NoSplashScreen)">ActivateWindow(60)</onload>
 	
 	<include>Common_Animation_Window_Splash</include>
 
@@ -37,7 +37,7 @@
 			
         </control>
        
-		<control type="image">
+		<control type="image" id="105">
         
 			<description>Main background</description>
             <include>Common_Dimensions</include>
@@ -47,18 +47,29 @@
         
 		<control type="image" id="101">
             
-			<description>The spinning animation in the background</description>
-            <posx>607</posx>
-            <posy>327</posy>
-            <width>66</width>
-            <height>66</height>
-            <texture>loader.gif</texture>
-            <visible>!IntegerGreaterThan(Container(100).NumPages,0) | ![Container(100).OnNext | Container(100).OnPrevious]</visible>
-            <animation effect="fade" time="200" delay="500" reversible="false">Visible</animation>
+			<description>Busy animation</description>
+			<posx>576</posx>
+			<posy>296</posy>
+			<width>128</width>
+			<height>128</height>
+			<texture>buffer/buffer_progress.png</texture>
+			<aspectratio>keep</aspectratio>
 			
-        </control>
-        
-		<control type="wraplist" id="100">
+			<visible>!IntegerGreaterThan(Container(100).NumPages,0) | ![Container(100).OnNext | Container(100).OnPrevious]</visible>
+			
+			<animation effect="rotate" end="-360" center="640,360" time="1200" loop="true" condition="true">Conditional</animation>
+			
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="400" />
+			</animation>
+			
+			<animation type="Hidden">
+				<effect type="fade" start="100" end="0" time="400" delay="400" />
+			</animation>
+				
+		</control>
+			
+		<control type="list" id="100">
         
 			<description>List of Images</description>
             <include>Common_Dimensions</include>
@@ -74,6 +85,19 @@
                     <include>Common_Dimensions</include>
                     <texture background="true">$INFO[ListItem.Icon]</texture>
                     <aspectratio>scale</aspectratio>
+					
+					<visible>!Control.IsVisible(103)</visible>
+					
+                </control>
+				
+				<control type="largeimage">
+                    
+					<description>Picture in ratio keep (default)</description>
+                    <include>Common_Dimensions</include>
+                    <texture background="true">$INFO[ListItem.Icon]</texture>
+                    <aspectratio>keep</aspectratio>
+					
+					<visible>Control.IsVisible(103)</visible>
 					
                 </control>
 				
@@ -94,9 +118,30 @@
 					<description>Picture in ratio keep (default)</description>
                     <include>Common_Dimensions</include>
                     <texture background="true">$INFO[ListItem.Icon]</texture>
-                    <aspectratio>scale</aspectratio>
+                   <aspectratio>scale</aspectratio>
+					
+					<visible>!Control.IsVisible(103)</visible>
 					
                 </control>
+				
+				<control type="largeimage">
+                    
+					<description>Picture in ratio keep (default)</description>
+                    <include>Common_Dimensions</include>
+                    <texture background="true">$INFO[ListItem.Icon]</texture>
+                    <aspectratio>keep</aspectratio>
+					
+					<visible>Control.IsVisible(103)</visible>
+					
+                </control>
+				
+				<control type="image">
+                        
+					<description>Description background</description>
+					<include>Common_Dimensions</include>
+					<texture background="true">weather/weather_overlay.png</texture>
+					
+				</control>
 				
             </focusedlayout>
 			
@@ -104,6 +149,8 @@
 		
 		<!--Information Area-->
 		<control type="group">
+		
+			<visible>!System.IdleTime(30)</visible>
 		
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="400" />
@@ -123,10 +170,64 @@
 			<!--Top Area-->
 			<include>Common_Breadcrumb_Alt</include>
 			
+			<control type="group">
+			
+				<!--Left Scroll Image-->
+				<control type="image">
+				
+					<posx>0</posx>
+					<posy>320</posy>
+					<width>100</width>
+					<height>48</height>
+					<texture>controls/control_image_left.png</texture>
+					
+					<visible>Control.IsVisible(104) + IntegerGreaterThan(Container(100).NumPages,0) + !StringCompare(Container(100).CurrentPage,1) + !System.IdleTime(30)</visible>
+					
+					<animation type="Visible">
+						<effect type="fade" start="0" end="100" time="400" />
+					</animation>
+					
+					<animation type="Hidden">
+						<effect type="fade" start="100" end="0" time="400" delay="400" />
+					</animation>
+					
+					<animation type="Conditional" condition="System.IdleTime(10)">
+						<effect type="fade" start="100" end="80" time="400" />
+					</animation>
+					
+				</control>
+				
+				<!--Right Scroll Image-->
+				<control type="image">
+				
+					<posx>1180</posx>
+					<posy>320</posy>
+					<width>100</width>
+					<height>48</height>
+					<texture>controls/control_image_right.png</texture>
+					
+					<visible>Control.IsVisible(104) + IntegerGreaterThan(Container(100).NumPages,0) + !StringCompare(Container(100).CurrentPage,Container(100).NumPages) + !System.IdleTime(30)</visible>
+					
+					<animation type="Visible">
+						<effect type="fade" start="0" end="100" time="400" />
+					</animation>
+					
+					<animation type="Hidden">
+						<effect type="fade" start="100" end="0" time="400" delay="400" />
+					</animation>
+					
+					<animation type="Conditional" condition="System.IdleTime(10)">
+						<effect type="fade" start="100" end="80" time="400" />
+					</animation>
+					
+				</control>
+				
+			</control>	
+			
 			<!--Bottom Area-->
 			<control type="group">
 			
-				<visible>System.IdleTime(4)</visible>
+				<visible>System.IdleTime(5) + !System.IdleTime(30) + Control.IsVisible(102)</visible>
 				
 				<animation type="Visible">
 					<effect type="fade" start="0" end="100" time="400" delay="1000" />

@@ -9,12 +9,28 @@
 			
 			<include>Common_Dimensions</include>
 			<visible>IsEmpty(MusicPlayer.Property(Fanart_Image))</visible>
+			
 		</control>
 
 		<control type="image">
 		
 			<include>Common_Dimensions</include>
 			<texture background="true">$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
+			
+			<animation type="Conditional" condition="IntegerGreaterThan(System.Time(ss),00) + !IntegerGreaterThan(System.Time(ss),20)" reversible="true">
+				<effect type="slide" acceleration="10" tween="cubic" easing="inout" start="100,0" end="-100,0" time="20000"/>
+				<effect type="zoom" center="640,360" start="100" end="125" time="10000"/>
+			</animation>
+			
+			<animation type="Conditional" condition="IntegerGreaterThan(System.Time(ss),19) + !IntegerGreaterThan(System.Time(ss),40)" reversible="true">
+				<effect type="slide" acceleration="10" tween="cubic" easing="inout" start="-100,0" end="250,10" time="20000"/>
+				<effect type="zoom" center="640,360" start="125" end="150" time="10000"/>
+			</animation>
+			
+			<animation type="Conditional" condition="IntegerGreaterThan(System.Time(ss),39) + !IntegerGreaterThan(System.Time(ss),60)" reversible="true">
+				<effect type="slide" acceleration="10" tween="cubic" easing="inout" start="250,10" end="-100,0" time="20000"/>
+				<effect type="zoom" center="640,360" start="150" end="100" time="10000"/>
+			</animation>
 			
 		</control>
 		
@@ -40,7 +56,7 @@
 		<!--1st Animation-->
 		<control type="group">
 		
-			<visible>SubString(MusicPlayer.Time,10,Right) | SubString(MusicPlayer.Time,11,Right) | SubString(MusicPlayer.Time,12,Right) | SubString(MusicPlayer.Time,13,Right) | SubString(MusicPlayer.Time,14,Right) | SubString(MusicPlayer.Time,15,Right) | SubString(MusicPlayer.Time,16,Right) | SubString(MusicPlayer.Time,17,Right) | SubString(MusicPlayer.Time,18,Right) | SubString(MusicPlayer.Time,19,Right)</visible>
+			<visible>IntegerGreaterThan(System.Time(ss),00) + !IntegerGreaterThan(System.Time(ss),10)</visible>
 		
 			<animation type="Visible" reversible="false">
 			
@@ -58,7 +74,8 @@
 		
 			<posx>-400</posx>
 			<posy>720</posy>
-			<visible>SubString(MusicPlayer.Time,20,Right) | SubString(MusicPlayer.Time,21,Right) | SubString(MusicPlayer.Time,22,Right) | SubString(MusicPlayer.Time,23,Right) | SubString(MusicPlayer.Time,24,Right) | SubString(MusicPlayer.Time,25,Right) | SubString(MusicPlayer.Time,26,Right) | SubString(MusicPlayer.Time,27,Right) | SubString(MusicPlayer.Time,28,Right) | SubString(MusicPlayer.Time,29,Right)</visible>
+			
+			<visible>IntegerGreaterThan(System.Time(ss),9) + !IntegerGreaterThan(System.Time(ss),20)</visible>
 			
 			<animation type="Visible" reversible="false">
 			
@@ -71,12 +88,13 @@
 			
 		</control>
 		
-		<!--3th Animation-->
+		<!--3th Animation (No Artist Description)-->
 		<control type="group">
 		
 			<posx>0</posx>
 			<posy>400</posy>
-			<visible>IsEmpty(MusicPlayer.Property(Artist_Description)) + [SubString(MusicPlayer.Time,30,Right) | SubString(MusicPlayer.Time,31,Right) | SubString(MusicPlayer.Time,32,Right) | SubString(MusicPlayer.Time,33,Right) | SubString(MusicPlayer.Time,34,Right) | SubString(MusicPlayer.Time,35,Right) | SubString(MusicPlayer.Time,36,Right) | SubString(MusicPlayer.Time,37,Right) | SubString(MusicPlayer.Time,38,Right) | SubString(MusicPlayer.Time,39,Right)]</visible>
+			
+			<visible>IsEmpty(MusicPlayer.Property(Artist_Description)) + IntegerGreaterThan(System.Time(ss),19) + !IntegerGreaterThan(System.Time(ss),30)</visible>
 			
 			<animation type="Visible" reversible="false">
 			
@@ -88,17 +106,17 @@
 			
 		</control>
 		
-		<!--3th Animation-->
+		<!--3th Animation (Artist Description)-->
 		<control type="group">
 		
 			<posx>0</posx>
 			<posy>400</posy>
-			<visible>!IsEmpty(MusicPlayer.Property(Artist_Description)) + [SubString(MusicPlayer.Time,30,Right) | SubString(MusicPlayer.Time,31,Right) | SubString(MusicPlayer.Time,32,Right) | SubString(MusicPlayer.Time,33,Right) | SubString(MusicPlayer.Time,34,Right) | SubString(MusicPlayer.Time,35,Right) | SubString(MusicPlayer.Time,36,Right) | SubString(MusicPlayer.Time,37,Right) | SubString(MusicPlayer.Time,38,Right) | SubString(MusicPlayer.Time,39,Right) | SubString(MusicPlayer.Time,40,Right) | SubString(MusicPlayer.Time,41,Right) | SubString(MusicPlayer.Time,42,Right) | SubString(MusicPlayer.Time,43,Right) | SubString(MusicPlayer.Time,44,Right) | SubString(MusicPlayer.Time,45,Right) | SubString(MusicPlayer.Time,46,Right) | SubString(MusicPlayer.Time,47,Right) | SubString(MusicPlayer.Time,48,Right) | SubString(MusicPlayer.Time,49,Right)]</visible>
+			<visible>!IsEmpty(MusicPlayer.Property(Artist_Description)) + IntegerGreaterThan(System.Time(ss),19) + !IntegerGreaterThan(System.Time(ss),30)</visible>
 			
 			<animation type="Visible" reversible="false">
 			
-				<effect type="slide" start="0,0" end="0,-3000" time="20000" />
-				<effect type="fade" start="100" end="0" time="1000" delay="19000" />
+				<effect type="slide" start="0,0" end="0,-3000" time="10000" />
+				<effect type="fade" start="100" end="0" time="1000" delay="9000" />
 				
 			</animation>
 			
@@ -113,7 +131,7 @@
 				<textcolor>White_30</textcolor>
 				<autoscroll>false</autoscroll>
 				
-			</control>	
+			</control>
 				
 		</control>
 		
@@ -123,7 +141,7 @@
 			<posx>1200</posx>
 			<posy>700</posy>
 			
-			<visible>IsEmpty(MusicPlayer.Property(Artist_Description)) + [SubString(MusicPlayer.Time,40,Right) | SubString(MusicPlayer.Time,41,Right) | SubString(MusicPlayer.Time,42,Right) | SubString(MusicPlayer.Time,43,Right) | SubString(MusicPlayer.Time,44,Right) | SubString(MusicPlayer.Time,45,Right) | SubString(MusicPlayer.Time,46,Right) | SubString(MusicPlayer.Time,47,Right) | SubString(MusicPlayer.Time,48,Right) | SubString(MusicPlayer.Time,49,Right)]</visible>
+			<visible>IntegerGreaterThan(System.Time(ss),29) + !IntegerGreaterThan(System.Time(ss),40)</visible>
 			
 			<animation type="Visible" reversible="false">
 			
@@ -139,10 +157,10 @@
 		<!--5th Animation-->
 		<control type="group">
 		
-			<posx>1200</posx>
+			<posx>800</posx>
 			<posy>700</posy>
 			
-			<visible>SubString(MusicPlayer.Time,50,Right) | SubString(MusicPlayer.Time,51,Right) | SubString(MusicPlayer.Time,52,Right) | SubString(MusicPlayer.Time,53,Right) | SubString(MusicPlayer.Time,54,Right) | SubString(MusicPlayer.Time,55,Right) | SubString(MusicPlayer.Time,56,Right) | SubString(MusicPlayer.Time,57,Right) | SubString(MusicPlayer.Time,58,Right) | SubString(MusicPlayer.Time,59,Right)</visible>
+			<visible>IntegerGreaterThan(System.Time(ss),39) + !IntegerGreaterThan(System.Time(ss),50)</visible>
 			
 			<animation type="Visible" reversible="false">
 			

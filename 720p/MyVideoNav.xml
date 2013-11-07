@@ -6,24 +6,12 @@
 	<views>50,51,52,53,54,55,56,58,59,501</views>
 	
 	<!--Splash Screen-->
-	<onload condition="Window.Previous(home)">ActivateWindow(60)</onload>
+	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
 	
-	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Video)">XBMC.RunScript(script.randomandlastitems,limit=10,method=Last,playlist=special://skin/playlists/History (Movies).xsp,menu=Menu1)</onload>
-	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Video)">XBMC.RunScript(script.randomandlastitems,limit=10,method=Last,playlist=special://skin/playlists/History (TV Shows).xsp,menu=Menu2)</onload>
-	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowAiringTodaySection_Video)">XBMC.RunScript(script.tv.show.next.aired,backend=True)</onload>
-	
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowInCinemasSection_Video)">RunScript(script.extendedinfo,info=incinema)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingShows)</onload>
-	
-	<onload>AlarmClock(MoveFeatured,Control.Move(9001,1),00:20,silent,loop)</onload>
-	<onunload>XBMC.CancelAlarm(MoveFeatured,true)</onunload>
-	
-	<onload>AlarmClock(MoveInCinemas,Control.Move(9005,1),00:20,silent,loop)</onload>
-	<onunload>XBMC.CancelAlarm(MoveInCinemas,true)</onunload>
-	
-	<onload>AlarmClock(MoveTrakt,Control.Move(9007,1),00:20,silent,loop)</onload>
-	<onunload>XBMC.CancelAlarm(MoveTrakt,true)</onunload>
+	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowNextAiredNotification)">XBMC.RunScript(script.tv.show.next.aired,backend=True)</onload>
+	<onload condition="System.HasAddon(script.tvtunes) + Skin.HasSetting(EnableTvTunes)">XBMC.RunScript(script.tvtunes,backend=True&amp;loop=False)</onload>
+ 
+
 	
 	<controls>
 
@@ -57,7 +45,7 @@
 				<include>ViewSquare</include>
 				<include>ViewThumbnail</include>
 				<include>ViewExtendedList</include>
-				<include>ViewExtendedList_Albums</include>
+				<include>ViewExtendedList_Square</include>
 				<include>ViewGrid</include>
 				<include>ViewGrid_Episodes</include>
 				<include>ViewDetails</include>

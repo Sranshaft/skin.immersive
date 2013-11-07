@@ -17,6 +17,20 @@
 			<size>12</size>
 			<style>lowercase</style>
 		</font>
+		
+		<font>
+			<name>Appbar-Info</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>22</size>
+			<style>uppercase</style>
+		</font>
+		
+		<font>
+			<name>Appbar-Info-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>12</size>
+			<style>uppercase</style>
+		</font>
 	
 		<!--Breadcrumb Fonts-->
 		
@@ -126,6 +140,22 @@
 			<filename>SegoeWP-SemiBold.ttf</filename>
 			<size>14</size>
 			<style>uppercase</style>
+			<linespacing>0.75</linespacing>
+		</font>
+		
+		<!--DialogDownloadProgress Fonts-->
+		
+		<font>
+			<name>DialogDownloadProgress-Detail</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
+			<size>18</size>
+			<linespacing>0.85</linespacing>
+		</font>
+		
+		<font>
+			<name>DialogDownloadProgress-Detail-Small</name>
+			<filename>SegoeWP-SemiBold.ttf</filename>
+			<size>14</size>
 			<linespacing>0.75</linespacing>
 		</font>
 		
@@ -415,6 +445,7 @@
 		<font>
 			<name>Menu-ExtendedList-Small</name>
 			<filename>SegoeWP-Bold.ttf</filename>
+			<style>uppercase</style>
 			<size>14</size>
 		</font>
 		

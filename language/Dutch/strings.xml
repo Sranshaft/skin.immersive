@@ -17,11 +17,9 @@
   <string id="31010">Weer</string>
   <string id="31011">Bestands beheer</string>
   <string id="31012">Instellingen</string>
-  <string id="31013">Afspelen</string>
+  <string id="31013">Afsluiten</string>
   <string id="31014">Speel schijf</string>
-  
-  
-  
+
   <string id="31015">Speler Controle</string>
   <string id="31016">Achtergrond Visualizaties</string>
   <string id="31017">Lyrics/Ondertitels</string>
@@ -49,5 +47,6 @@
   <string id="31039">Snel vooruit</string>
   <string id="31040">Visualisatie instellingen</string>
   <string id="31041">DVD Menu</string>
+  <string id="31042">Lijst</string>
 
 </strings>

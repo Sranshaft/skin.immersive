@@ -92,7 +92,7 @@
 			
 		</control>
 
-		<control type="button" id="10">
+		<control type="togglebutton" id="10">
 			
 			<description>Default Category Button</description>
 			<include>Common_Settings_Menu</include>

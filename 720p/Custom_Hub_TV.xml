@@ -7,7 +7,7 @@
 	<include>Common_Animation_Window</include>
 	
 	<!--Splash Screen-->
-	<onload condition="Window.Previous(home)">ActivateWindow(60)</onload>
+	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
 	
 	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Video)">XBMC.RunScript(script.randomandlastitems,limit=10,method=Last,playlist=special://skin/playlists/History (TV Shows).xsp,menu=Menu2)</onload>
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowAiringTodaySection_Video)">XBMC.RunScript(script.tv.show.next.aired,backend=True)</onload>
@@ -61,7 +61,7 @@
 						<control type="label">
 							
 							<posx>45</posx>
-							<posy>57</posy>
+							<posy>58</posy>
 							<width>600</width>
 							<height>30</height>
 							<label>EXPLORE</label>
@@ -287,7 +287,7 @@
 			<control type="scrollbar" id="9010">
 				
 				<include>Common_Window_Scrollbar_Horizontal</include>
-				<posy>600</posy>
+				<posy>700</posy>
 				
 				<include>Common_Animation_Window_Scrollbar_Fade</include>
 				

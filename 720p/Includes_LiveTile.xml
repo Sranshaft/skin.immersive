@@ -238,7 +238,7 @@
 		<posx>20</posx>
 		<posy>60</posy>
 		<width>330</width>
-		<height>130</height>
+		<height>110</height>
 		<textcolor>Tile_Text</textcolor>
 		<font>Tile-Description</font>
 		<align>left</align>

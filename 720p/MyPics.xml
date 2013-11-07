@@ -5,7 +5,7 @@
 	<views>50,51,52,53,54,57</views>
 	
 	<!--Splash Screen-->
-	<onload>ActivateWindow(60)</onload>
+	<onload condition="!Skin.HasSetting(NoSplashScreen)">ActivateWindow(60)</onload>
 	
 	<controls>
 

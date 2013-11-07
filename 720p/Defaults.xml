@@ -57,7 +57,7 @@
 		
 		<height>60</height>
 		<texturefocus>colors/color_white.png</texturefocus>
-		<texturenofocus>-</texturenofocus>
+		<texturenofocus>colors/color_transparent.png</texturenofocus>
 		<font>Menu-List</font>
 		<textcolor>Label_Normal</textcolor>
 		<selectedcolor>Label_Highlight</selectedcolor>
@@ -73,7 +73,7 @@
 		
 		<height>60</height>
 		<texturefocus>colors/color_white.png</texturefocus>
-		<texturenofocus>-</texturenofocus>
+		<texturenofocus>colors/color_transparent.png</texturenofocus>
 		<alttexturefocus>colors/color_white.png</alttexturefocus>
 		<alttexturenofocus>-</alttexturenofocus>
 		<font>Menu-List</font>
@@ -114,7 +114,7 @@
 		<spinwidth>50</spinwidth>
 		<spinheight>19</spinheight>
 		<texturefocus>colors/color_white.png</texturefocus>
-		<texturenofocus>-</texturenofocus>
+		<texturenofocus>colors/color_transparent.png</texturenofocus>
 		<textureup diffuse="colors/color_white.png">controls/control_spinbutton_up.png</textureup>
 		<textureupfocus diffuse="colors/color_white.png">controls/control_spinbutton_up.png</textureupfocus>
 		<texturedown diffuse="colors/color_white.png">controls/control_spinbutton_down.png</texturedown>
@@ -138,7 +138,7 @@
 		<spinwidth>50</spinwidth>
 		<spinheight>19</spinheight>
 		<texturefocus>colors/color_white.png</texturefocus>
-		<texturenofocus>-</texturenofocus>
+		<texturenofocus>colors/color_transparent.png</texturenofocus>
 		<textureup diffuse="colors/color_black.png">controls/control_spinbutton_up.png</textureup>
 		<textureupfocus diffuse="colors/color_black.png">controls/control_spinbutton_up.png</textureupfocus>
 		<texturedown diffuse="colors/color_black.png">controls/control_spinbutton_down.png</texturedown>
@@ -160,7 +160,7 @@
 		
 		<height>60</height>
 		<texturefocus>colors/color_white.png</texturefocus>
-		<texturenofocus>-</texturenofocus>
+		<texturenofocus>colors/color_transparent.png</texturenofocus>
 		<sliderwidth>160</sliderwidth>
 		<sliderheight>15</sliderheight>
 		<texturesliderbar>controls/control_slider.png</texturesliderbar>

@@ -69,28 +69,15 @@
 							
 						</control>
 							
-						<control type="label">
+						<control type="textbox">
 							
 							<posx>10</posx>
 							<posy>158</posy>
 							<width>350</width>
-							<height>20</height>
+							<height>40</height>
 							<label>$VAR[Thumbnail_Header]</label>
 							<textcolor>Label_Normal</textcolor>
 							<font>Menu-Thumbnail-Header</font>
-							<aligny>top</aligny>
-							
-						</control>
-						
-						<control type="label">
-							
-							<posx>10</posx>
-							<posy>178</posy>
-							<width>350</width>
-							<height>20</height>
-							<label>$VAR[Thumbnail_Detail]</label>
-							<textcolor>Label_Normal</textcolor>
-							<font>Menu-Thumbnail-Detail</font>
 							<aligny>top</aligny>
 							
 						</control>
@@ -157,28 +144,15 @@
 							
 						</control>
 							
-						<control type="label">
+						<control type="textbox">
 							
 							<posx>10</posx>
 							<posy>158</posy>
 							<width>350</width>
-							<height>20</height>
+							<height>40</height>
 							<label>$VAR[Thumbnail_Header]</label>
 							<textcolor>Label_Normal</textcolor>
 							<font>Menu-Thumbnail-Header</font>
-							<aligny>top</aligny>
-							
-						</control>
-						
-						<control type="label">
-							
-							<posx>10</posx>
-							<posy>178</posy>
-							<width>350</width>
-							<height>20</height>
-							<label>$VAR[Thumbnail_Detail]</label>
-							<textcolor>Label_Normal</textcolor>
-							<font>Menu-Thumbnail-Detail</font>
 							<aligny>top</aligny>
 							
 						</control>
@@ -219,6 +193,20 @@
 							<label>$VAR[Tile_Description]</label>
 							<visible>System.IdleTime(2)</visible>
 				
+						</control>
+						
+						<control type="label">
+							
+							<posx>20</posx>
+							<posy>176</posy>
+							<width>350</width>
+							<height>20</height>
+							<label>$VAR[Thumbnail_Detail]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-Thumbnail-Detail</font>
+							<aligny>top</aligny>
+							<visible>System.IdleTime(2)</visible>
+							
 						</control>
 						
 						<control type="image">

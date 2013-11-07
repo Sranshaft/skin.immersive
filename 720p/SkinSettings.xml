@@ -128,8 +128,8 @@
 					</item>
 					
 					<item id="8">
-						<description>Notifications</description>
-						<label>Notifications</label>
+						<description>3rd party addons</description>
+						<label>3rd Party addons</label>
 						<onclick>-</onclick>
 					</item>
 
@@ -537,101 +537,14 @@
 
 			</control>
 			
-			<!--Preview-->
-			<control type="group">
-			
-				<posx>0</posx>
-				<posy>100</posy>
-				<width>700</width>
-				<height>240</height>
-				
-				<visible>Container(98).Hasfocus(3)</visible>
-				
-				<include>Common_Animation_Settings_Options</include>
-				
-				<control type="label" id="351">
-				
-					<description></description>
-					<include>Common_Settings_Label</include>
-					<label>Start screen</label>
-					
-				</control>
-				
-				<control type="group">
-				
-					<posy>60</posy>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture>colors/color_black.png</texture>
-						
-					</control>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture>colors/color_white.png</texture>
-						<colordiffuse>Background_Dark</colordiffuse>
-						<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
-						
-					</control>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture background="true">$INFO[Container(302).ListItem(0).Thumb]</texture>
-						<colordiffuse>Background_Normal</colordiffuse>
-						<fadetime>1000</fadetime>
-						<visible>Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
-						
-					</control>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture background="true">$INFO[Container(302).ListItem(0).Thumb]</texture>
-						<fadetime>1000</fadetime>
-						<visible>!Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
-						
-					</control>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture background="true">settings/settings_tile_preview.png</texture>
-						<colordiffuse>Tile_Background</colordiffuse>
-						
-					</control>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture background="true">settings/settings_menu_preview.png</texture>
-						<colordiffuse>Background_Normal</colordiffuse>
-						
-					</control>
-					
-					<control type="image">
-					
-						<include>Common_Settings_Preview</include>
-						<texture background="true">settings/settings_highlight_preview.png</texture>
-						<colordiffuse>Background_Highlight</colordiffuse>
-						
-					</control>
-					
-				</control>	
-
-			</control>
-
 			<!--Background Options-->
 			<control type="grouplist" id="300">
 			
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>350</posy>
+				<posy>100</posy>
 				<width>700</width>
-				<height>290</height>
+				<height>540</height>
 				<itemgap>0</itemgap>
 				<onleft>98</onleft>
 				<onright>-</onright>
@@ -641,6 +554,126 @@
 				
 				<include>Common_Animation_Settings_Options</include>
 				
+				<!--Preview-->
+				<control type="group">
+				
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>700</width>
+					<height>240</height>
+					
+					<include>Common_Animation_Settings_Options</include>
+					
+					<control type="label" id="351">
+					
+						<description></description>
+						<include>Common_Settings_Label</include>
+						<label>Start screen</label>
+						
+					</control>
+					
+					<control type="group">
+					
+						<posy>60</posy>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture>colors/color_black.png</texture>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture>colors/color_white.png</texture>
+							<colordiffuse>Background_Dark</colordiffuse>
+							<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
+							
+						</control>
+						
+						<!--Preview (Fanart Background)-->
+						<control type="group">
+						
+							<visible>Skin.HasSetting(UseFanartBackground_Home)</visible>
+
+							<control type="image">
+							
+								<include>Common_Settings_Preview</include>
+								<texture background="true">$INFO[Window(Home).Property(script.grab.fanart.Video.Fanart)]</texture>
+								<fadetime>1000</fadetime>
+								
+							</control>
+							
+							<!--Overlay Background-->
+							<control type="image">
+							
+								<include>Common_Settings_Preview</include>
+								<texture background="true">colors/color_black.png</texture>
+								
+								<animation effect="fade" start="100" end="75" time="400" condition="true">Conditional</animation>
+								
+							</control>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">colors/color_white.png</texture>
+							<colordiffuse>Background_Dark</colordiffuse>
+							<fadetime>1000</fadetime>
+							<visible>StringCompare(Skin.String(PersonalizeOverlay),Plain)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">$VAR[Home_Background_Image]</texture>
+							<colordiffuse>Background_Normal</colordiffuse>
+							<fadetime>1000</fadetime>
+							<visible>!StringCompare(Skin.String(PersonalizeOverlay),Plain) + Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">$VAR[Home_Background_Image]</texture>
+							<fadetime>1000</fadetime>
+							<visible>!StringCompare(Skin.String(PersonalizeOverlay),Plain) + !Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">settings/settings_tile_preview.png</texture>
+							<colordiffuse>Tile_Background</colordiffuse>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">settings/settings_menu_preview.png</texture>
+							<colordiffuse>Background_Normal</colordiffuse>
+							
+						</control>
+						
+						<control type="image">
+						
+							<include>Common_Settings_Preview</include>
+							<texture background="true">settings/settings_highlight_preview.png</texture>
+							<colordiffuse>Background_Highlight</colordiffuse>
+							
+						</control>
+						
+					</control>	
+
+				</control>
+				
 				<control type="label" id="352">
 				
 					<description></description>
@@ -649,19 +682,19 @@
 					
 				</control>
 				
-				<control type="panel" id="302">
+				<control type="panel" id="301">
 				
 					<width>640</width>
-					<height>160</height>
+					<height>80</height>
 					
-					<itemlayout width="80" height="80">
+					<itemlayout width="70" height="60">
 					
 						<control type="image">
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>colors/color_black.png</texture>
 							
 						</control>
@@ -670,8 +703,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>colors/color_white.png</texture>
 							<colordiffuse>Background_Dark</colordiffuse>
 							<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
@@ -682,8 +715,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>$INFO[ListItem.Icon]</texture>
 							<aspectratio align="left" aligny="bottom">scale</aspectratio>
 							<colordiffuse>Background_Normal</colordiffuse>
@@ -695,8 +728,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>$INFO[ListItem.Icon]</texture>
 							<aspectratio align="left" aligny="bottom">scale</aspectratio>
 							<colordiffuse>Background_Normal</colordiffuse>
@@ -706,14 +739,14 @@
 					
 					</itemlayout>
 					
-					<focusedlayout width="80" height="80">
+					<focusedlayout width="70" height="60">
 					
 						<control type="image">
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>colors/color_black.png</texture>
 							
 						</control>
@@ -722,8 +755,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>colors/color_white.png</texture>
 							<colordiffuse>Background_Dark</colordiffuse>
 							<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
@@ -734,8 +767,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>$INFO[ListItem.Icon]</texture>
 							<aspectratio align="left" aligny="bottom">scale</aspectratio>
 							<colordiffuse>Background_Normal</colordiffuse>
@@ -747,8 +780,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>$INFO[ListItem.Icon]</texture>
 							<aspectratio align="left" aligny="bottom">scale</aspectratio>
 							<colordiffuse>Background_Normal</colordiffuse>
@@ -760,8 +793,8 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>70</width>
-							<height>70</height>
+							<width>60</width>
+							<height>60</height>
 							<texture>colors/color_white.png</texture>
 							<colordiffuse>40FFFFFF</colordiffuse>
 							
@@ -845,6 +878,17 @@
 						
 					</content>
 
+				</control>
+				
+				<control type="radiobutton" id="302">
+					
+					<description>Color Background</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Use random fanart for background</label>
+					<onclick>Skin.ToggleSetting(UseFanartBackground_Home)</onclick>
+					<selected>Skin.HasSetting(UseFanartBackground_Home)</selected>
+					<enable>System.HasAddon(script.grab.fanart)</enable>
+					
 				</control>
 				
 				<control type="label" id="353">
@@ -939,6 +983,24 @@
 					<label>Use fanart as background when available</label>
 					<onclick>Skin.ToggleSetting(ShowFanartBackground)</onclick>
 					<selected>Skin.HasSetting(ShowFanartBackground)</selected>
+					
+				</control>
+				
+				<control type="label" id="452">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Splash screen</label>
+					
+				</control>
+
+				<control type="radiobutton" id="404">
+					
+					<description>Background Visualiser</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Disable transition splash screens</label>
+					<onclick>Skin.ToggleSetting(NoSplashScreen)</onclick>
+					<selected>Skin.HasSetting(NoSplashScreen)</selected>
 					
 				</control>
 
@@ -1120,7 +1182,7 @@
 
 			</control>
 			
-			<!--Notification Options-->
+			<!--3rd Party Addons Options-->
 			<control type="grouplist" id="800">
 				
 				<description>Control Area</description>
@@ -1135,7 +1197,7 @@
 				<onright>-</onright>
 				<orientation>vertical</orientation>
 				<pagecontrol>88</pagecontrol>
-				<visible>Container(98).Hasfocus(8)</visible>
+				<visible>Container(98).HasFocus(8)</visible>
 				
 				<include>Common_Animation_Settings_Options</include>
 				
@@ -1161,10 +1223,12 @@
 				
 					<description></description>
 					<include>Common_Settings_Label</include>
-					<label>3rd party notifications</label>
+					<label>3rd party addons</label>
 					
 				</control>
-
+				
+				<!--TV Next Aired-->
+				
 				<control type="radiobutton" id="802">
 					
 					<description>Enable TV Next Aired</description>
@@ -1173,6 +1237,19 @@
 					<onclick>Skin.ToggleSetting(ShowNextAiredNotification)</onclick>
 					<selected>Skin.HasSetting(ShowNextAiredNotification)</selected>
 					<enable>System.HasAddon(script.tv.show.next.aired)</enable>
+					
+				</control>
+				
+				<!--TV Tunes-->
+				
+				<control type="radiobutton" id="803">
+					
+					<description>Enable TV Tunes</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Play TV Tunes while browsing TV Shows</label>
+					<onclick>Skin.ToggleSetting(ShowTVTunesNotification)</onclick>
+					<selected>Skin.HasSetting(ShowTVTunesNotification)</selected>
+					<enable>System.HasAddon(script.tvtunes)</enable>
 					
 				</control>
 				

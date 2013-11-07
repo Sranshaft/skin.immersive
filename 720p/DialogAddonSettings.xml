@@ -154,7 +154,7 @@
 			
 		</control>
 
-		<control type="button" id="13">
+		<control type="togglebutton" id="13">
 			
 			<description>Default Category Button</description>
 			<include>Common_Settings_Menu</include>

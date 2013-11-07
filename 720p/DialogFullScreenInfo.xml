@@ -57,8 +57,9 @@
 					<posy>40</posy>
 					<width>320</width>
 					<height>680</height>
-					<itemgap>10</itemgap>
+					<itemgap>6</itemgap>
 					<orientation>vertical</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
 				
 					<control type="textbox">
 					
@@ -74,7 +75,7 @@
 					
 					<control type="image">
 						
-						<width>128</width>
+						<width>110</width>
 						<height>22</height>
 						<texture background="true">$INFO[Player.StarRating]</texture>
 						<colordiffuse>Label_Normal</colordiffuse>
@@ -84,6 +85,7 @@
 					
 					<control type="label">
 					
+						<posy>10</posy>
 						<width>350</width>
 						<height>10</height>
 						<label>$VAR[NowPlaying_Second_Label]</label>

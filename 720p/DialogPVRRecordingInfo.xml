@@ -85,7 +85,7 @@
 					<posy>0</posy>
 					<width>160</width>
 					<height>25</height>
-					<align>right</align>
+					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13</font>
 					<textcolor>blue</textcolor>
@@ -93,11 +93,11 @@
 				</control>
 				<control type="label">
 					<description>Start date value</description>
-					<posx>180</posx>
+					<posx>190</posx>
 					<posy>0</posy>
 					<width>470</width>
 					<height>25</height>
-					<align>left</align>
+					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13</font>
 					<textcolor>white</textcolor>
@@ -109,7 +109,7 @@
 					<posy>35</posy>
 					<width>160</width>
 					<height>25</height>
-					<align>right</align>
+					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13</font>
 					<textcolor>blue</textcolor>
@@ -117,12 +117,12 @@
 				</control>
 				<control type="label">
 					<description>Start Time value</description>
-					<posx>180</posx>
+					<posx>190</posx>
 					<posy>35</posy>
 					<width>470</width>
 					<height>25</height>
 					<align>left</align>
-					<aligny>center</aligny>
+					<aligny>right</aligny>
 					<font>font13</font>
 					<textcolor>white</textcolor>
 					<label>$INFO[ListItem.StartTime]</label>
@@ -133,7 +133,7 @@
 					<posy>70</posy>
 					<width>160</width>
 					<height>25</height>
-					<align>right</align>
+					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13</font>
 					<textcolor>blue</textcolor>
@@ -141,11 +141,11 @@
 				</control>
 				<control type="fadelabel">
 					<description>Channel Value</description>
-					<posx>180</posx>
+					<posx>190</posx>
 					<posy>70</posy>
 					<width>470</width>
 					<height>25</height>
-					<align>left</align>
+					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13</font>
 					<textcolor>white</textcolor>
@@ -165,7 +165,7 @@
 				</control>
 				<control type="label">
 					<description>Duration value</description>
-					<posx>180</posx>
+					<posx>190</posx>
 					<posy>105</posy>
 					<width>470</width>
 					<label>$INFO[ListItem.Duration]</label>

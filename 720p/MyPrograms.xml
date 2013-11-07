@@ -6,7 +6,7 @@
 	<views>50,51,52,53,54,58,59</views>
 	
 	<!--Splash Screen-->
-	<onload>ActivateWindow(60)</onload>
+	<onload condition="!Skin.HasSetting(NoSplashScreen)">ActivateWindow(60)</onload>
 
 	<controls>
 
@@ -38,7 +38,7 @@
 				<include>ViewList</include>
 				<include>ViewPoster</include>
 				<include>ViewSquare</include>
-				<include>ViewExtendedList_Albums</include>
+				<include>ViewExtendedList_Square</include>
 				<include>ViewDetails</include>
 			
 			</control>

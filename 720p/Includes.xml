@@ -8,7 +8,7 @@
 	<include file="ViewGrid.xml" />					<!--55-->
 	<include file="ViewGridEpisodes.xml" />			<!--56-->
 	<include file="ViewTall.xml" />					<!--57-->
-	<include file="ViewExtendedListAlbums.xml" />	<!--58-->
+	<include file="ViewExtendedListSquare.xml" />	<!--58-->
 	<include file="ViewDetails.xml" />				<!--59-->
 	<include file="ViewBanner.xml" />				<!--60-->
 	
@@ -91,7 +91,7 @@
 		<height>32</height>
 		<font>Appbar-Label</font>
 		<textcolor>Label_Normal</textcolor>
-		<focusedcolor>Label_Normal</focusedcolor>
+		<focusedcolor>Label_Highlight</focusedcolor>
 		<selectedcolor>Label_Normal</selectedcolor>
 		<disabledcolor>Label_Disabled</disabledcolor>
 		<align>left</align>
@@ -515,22 +515,37 @@
 	</include>
 	
 	<include name="Common_Background">
-
+	
 		<control type="group">
 		
-			<!--<control type="image">
-					
-				<include>Common_Dimensions</include>
-				<texture background="true">colors/color_black.png</texture>
-				
-			</control>-->
-			
+			<!--Background-->
 			<control type="image">
-				
+			
 				<include>Common_Dimensions</include>
 				<texture background="true">colors/color_white.png</texture>
 				<colordiffuse>Background_Dark</colordiffuse>
-				<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
+				<visible>Skin.HasSetting(UseColorBackground_Home) + StringCompare(Window.Property(xmlfile),Home.xml)</visible>
+				
+				<animation effect="fade" start="0" end="100" time="1000" reversible="true">VisibleChange</animation>
+				
+			</control>
+			
+			<!--Fanart Background (Home)-->
+			<control type="group">
+			
+				<visible>Skin.HasSetting(UseFanartBackground_Home) + StringCompare(Window.Property(xmlfile),Home.xml)</visible>
+				
+				<animation effect="fade" start="0" end="100" time="1000" reversible="true">VisibleChange</animation>
+				
+				<control type="multiimage">
+					
+					<include>Common_Dimensions</include>
+					<imagepath background="true">$INFO[Window(Home).Property(script.grab.fanart.Video.Fanart)]</imagepath>
+					<fadetime>1000</fadetime>
+					
+				</control>
+				
+				<include>Common_Background_Fade</include>
 				
 			</control>
 			
@@ -539,16 +554,45 @@
 			<control type="group">
 			
 				<visible>!IsEmpty(Skin.String(PersonalizeOverlay)) + StringCompare(Window.Property(xmlfile),Home.xml)</visible>
+				
+				<animation effect="fade" start="0" end="100" time="1000" reversible="true">VisibleChange</animation>
+				
+				<control type="image">
+				
+					<include>Common_Dimensions</include>
+					<texture background="true">colors/color_white.png</texture>
+					<colordiffuse>Background_Dark</colordiffuse>
+					<visible>StringCompare(Skin.String(PersonalizeOverlay),Plain)</visible>
+					
+				</control>
 			
 				<control type="image">
 				
 					<include>Common_Dimensions</include>
-					<texture background="true">$VAR[Personalize_Overlay_Image]</texture>
+					<texture background="true">$VAR[Home_Background_Image]</texture>
 					<colordiffuse>Background_Normal</colordiffuse>
+					<visible>!StringCompare(Skin.String(PersonalizeOverlay),Plain)</visible>
 					
 				</control>
 				
-				<include>Common_Animation_Window</include>
+			</control>
+			
+			<!--Fanart Background-->
+			<control type="group">
+			
+				<visible>Skin.HasSetting(ShowFanartBackground) + !StringCompare(Window.Property(xmlfile),Home.xml)</visible>
+				
+				<animation effect="fade" start="0" end="100" time="1000" reversible="true">VisibleChange</animation>
+				
+				<control type="image">
+					
+					<include>Common_Dimensions</include>
+					<fadetime>1000</fadetime>
+					<texture background="true">$VAR[Fanart_Image]</texture>
+					
+				</control>
+				
+				<include>Common_Background_Fade</include>
 				
 			</control>
 			
@@ -556,6 +600,8 @@
 			<control type="group">
 			
 				<visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
+				
+				<animation effect="fade" start="0" end="100" time="1000" reversible="true">VisibleChange</animation>
 			
 				<control type="image">
 					
@@ -568,12 +614,16 @@
 					<include>Common_Dimensions</include>
 				</control>
 				
+				<include>Common_Background_Fade</include>
+				
 			</control>
 			
 			<!--Video Background-->
 			<control type="group">
 			
 				<visible>Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)</visible>
+				
+				<animation effect="fade" start="0" end="100" time="1000" reversible="true">VisibleChange</animation>
 			
 				<control type="image">
 					
@@ -586,31 +636,7 @@
 					<include>Common_Dimensions</include>
 				</control>
 				
-			</control>
-			
-			<!--Fanart Background-->
-			<control type="group">
-			
-				<visible>[!Player.HasVideo | [Player.HasVideo + Skin.HasSetting(NoBackgroundVideo)]] + [!Player.HasAudio | [Player.HasAudio + Skin.HasSetting(NoBackgroundVisualiser)]] + Skin.HasSetting(ShowFanartBackground)</visible>
-			
-				<control type="image">
-					
-					<include>Common_Dimensions</include>
-					<fadetime>800</fadetime>
-					<texture background="true">$VAR[Fanart_Image]</texture>
-					
-				</control>
-				
-			</control>
-			
-			<!--Overlay Background-->
-			<control type="image">
-			
-				<include>Common_Dimensions</include>
-				<texture background="true">colors/color_white.png</texture>
-				<colordiffuse>FanartDiffuse</colordiffuse>
-				
-				<visible>!StringCompare(Window.Property(xmlfile),Home.xml) | StringCompare(Window.Property(xmlfile),Home.xml) + [[Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)] | [Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)]] | IsEmpty(Skin.String(PersonalizeOverlay))</visible>
+				<include>Common_Background_Fade</include>
 				
 			</control>
 			
@@ -624,8 +650,9 @@
 		<control type="image">
 		
 			<include>Common_Dimensions</include>
-			<texture background="true">colors/color_white.png</texture>
-			<colordiffuse>FanartDiffuse</colordiffuse>
+			<texture>colors/color_black.png</texture>
+			
+			<animation effect="fade" start="100" end="85" time="400" condition="true">Conditional</animation>
 			
 		</control>
 		
@@ -2572,7 +2599,7 @@
 			<posx>362</posx>
 			<posy>92</posy>
 			<width>128</width>
-			<height>24</height>
+			<height>20</height>
 			<texture background="true">$INFO[ListItem.StarRating]</texture>
 			<colordiffuse>Label_Normal</colordiffuse>
 			<aspectratio align="right">keep</aspectratio>

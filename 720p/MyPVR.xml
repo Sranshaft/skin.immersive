@@ -154,7 +154,7 @@
 						<include>Common_Control_Button</include>
 						<onup>31</onup>
 						<ondown>35</ondown>
-						<onright>11</onright>
+						<onright>13</onright>
 						
 					</control>
 					
@@ -267,6 +267,8 @@
 				<include>PVR_EPGTimelineView</include>
 				<include>PVR_EPGChannelView</include>
 				<include>PVR_EPGNowNextView</include>
+        
+        <include>PVR_LiveTVRecordingsView</include>
 				
 				<!--Overview Section-->
 				<control type="group">

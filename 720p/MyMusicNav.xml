@@ -6,7 +6,7 @@
 	<views>50,52,53,54,58,59</views>
 	
 	<!--Splash Screen-->
-	<onload condition="Window.Previous(home)">ActivateWindow(60)</onload>
+	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
 	
 	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Music)">XBMC.RunScript(script.randomandlastitems,limit=16,type=Music,method=Last,playlist=special://skin/playlists/History (Music).xsp,menu=Menu3)</onload>
 	
@@ -46,7 +46,7 @@
 				<include>ViewThumbnail</include>
 				<include>ViewExtendedList</include>
 				<include>ViewSquare</include>
-				<include>ViewExtendedList_Albums</include>
+				<include>ViewExtendedList_Square</include>
 				<include>ViewDetails</include>
 				
 			</control>
