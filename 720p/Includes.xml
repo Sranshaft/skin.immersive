@@ -1978,6 +1978,7 @@
 		
 			<include>Common_Dimensions</include>
 			<texture>colors/color_white.png</texture>
+			<colordiffuse>Settings_Background_Dark</colordiffuse>
 			
 		</control>
 	

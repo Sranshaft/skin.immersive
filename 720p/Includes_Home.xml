@@ -356,6 +356,14 @@
 								<visible>Skin.HasSetting(ShowShutdownMenu)</visible>
 							</item>
 
+							<item id="17">
+								<description>Search</description>
+								<label>Search</label>
+								<thumb>home/home_search.png</thumb>
+								<onclick>XBMC.RunScript(script.globalsearch)</onclick>
+								<visible>Skin.HasSetting(ShowSearchMenu)</visible>
+							</item>
+
 						</content>
 
 					</control>
@@ -660,6 +668,14 @@
 								<thumb>home/home_shutdown_small.png</thumb>
 								<onclick>ActivateWindow(shutdownmenu)</onclick>
 								<visible>Skin.HasSetting(ShowShutdownMenu)</visible>
+							</item>
+
+							<item id="17">
+								<description>Search</description>
+								<label>Search</label>
+								<thumb>home/home_search_small.png</thumb>
+								<onclick>XBMC.RunScript(script.globalsearch)</onclick>
+								<visible>Skin.HasSetting(ShowSearchMenu)</visible>
 							</item>
 
 						</content>
@@ -1413,7 +1429,8 @@
 						<ondown>9005</ondown>
 						<onleft>9004</onleft>
 						<onright>9006</onright>
-						<onclick>XBMC.RunScript(script.globalsearch)</onclick>
+						<onclick condtion="System.HasAddon(script.globalsearch)">XBMC.RunScript(script.globalsearch)</onclick>
+						<onclick condtion="!System.HasAddon(script.globalsearch)">VideoLibrary.Search</onclick>
 						
 					</control>
 					
