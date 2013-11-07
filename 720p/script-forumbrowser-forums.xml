@@ -65,6 +65,8 @@
 					<height>60</height>
 					
 					<visible>Control.IsEnabled(200)</visible>
+
+					<include>Common_Control_Background</include>
 				
 					<control type="button" id="200">
 						
@@ -98,6 +100,8 @@
 					<height>60</height>
 					
 					<visible>Control.IsEnabled(201)</visible>
+
+					<include>Common_Control_Background</include>
 	  
 					<control type="button" id="201">
 						
@@ -131,6 +135,8 @@
 					<height>60</height>
 					
 					<visible>Control.IsEnabled(202)</visible>
+
+					<include>Common_Control_Background</include>
 				
 					<control type="button" id="202">
 						
@@ -164,6 +170,8 @@
 					<height>60</height>
 					
 					<visible>Control.IsEnabled(203)</visible>
+
+					<include>Common_Control_Background</include>
 	  
 					<control type="button" id="203">
 					
@@ -197,6 +205,8 @@
 					<height>60</height>
 					
 					<visible>Control.IsEnabled(204)</visible>
+
+					<include>Common_Control_Background</include>
 	  
 					<control type="button" id="204">
 					

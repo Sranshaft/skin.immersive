@@ -80,7 +80,7 @@
 				<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 				<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
 				<aspectratio>keep</aspectratio>
-				<colordiffuse>Label_Dark</colordiffuse>
+				<colordiffuse>Settings_Label</colordiffuse>
 				<onclick>back</onclick>
 				
 			</control>
@@ -93,7 +93,7 @@
 				<width>1200</width>
 				<label>$VAR[Breadcrumb_SubFolder_Label]</label>
 				<font>Breadcrumb-SubFolder-Alt</font>
-				<textcolor>Label_Dark</textcolor>
+				<textcolor>Settings_Label</textcolor>
 				
 			</control>
 			
@@ -105,7 +105,7 @@
 				<width>1200</width>
 				<label>$VAR[Breadcrumb_Home_Label]</label>
 				<font>Breadcrumb-Home-Alt</font>
-				<textcolor>Label_Dark</textcolor>
+				<textcolor>Settings_Label</textcolor>
 				
 			</control>
 			
@@ -121,7 +121,7 @@
 			
 			<include>Common_Animation_Content</include>
 			
-			<animation effect="slide" start="0,0" end="-1020,0" time="600" tween="cubic" easing="out" condition="Control.HasFocus(9500) | Control.HasFocus(9501) | Control.HasFocus(9502)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="-1020,0" time="600" tween="cubic" easing="out" condition="Control.HasFocus(9500) | Control.HasFocus(9501) | Control.HasFocus(9502) | Control.HasFocus(9503)">Conditional</animation>
 			
 			<control type="label">
 				
@@ -459,7 +459,7 @@
 								<width>500</width>
 								<height>60</height>
 								<texture>colors/color_white.png</texture>
-								<colordiffuse>Settings_Background_Dark</colordiffuse>
+								<colordiffuse>Settings_Label_Disabled</colordiffuse>
 								
 								<visible>ListItem.Property(UseAltColor)</visible>
 								
@@ -471,7 +471,8 @@
 								<posy>0</posy>
 								<width>500</width>
 								<height>60</height>
-								<texture>colors/color_silver.png</texture>
+								<texture>colors/color_white.png</texture>
+								<colordiffuse>Settings_Background_Dark</colordiffuse>
 								
 								<visible>!ListItem.Property(UseAltColor)</visible>
 								
@@ -485,7 +486,7 @@
 								<height>30</height>
 								<label>$INFO[ListItem.Property(Time)]</label>
 								<font>Weather-HourlyTime</font>
-								<textcolor>Label_Dark</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>top</aligny>
 								
 							</control>
@@ -498,7 +499,7 @@
 								<height>30</height>
 								<label>$INFO[ListItem.Property(Date)]</label>
 								<font>Weather-HourlyDate</font>
-								<textcolor>Label_Dark</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>top</aligny>
 								
 							</control>
@@ -510,7 +511,7 @@
 								<width>40</width>
 								<height>40</height>
 								<texture background="true">$INFO[ListItem.Thumb,weather/,.png]</texture>
-								<colordiffuse>Label_Dark</colordiffuse>
+								<colordiffuse>Settings_Label</colordiffuse>
 								<aspectratio>scale</aspectratio>
 								
 							</control>
@@ -523,7 +524,7 @@
 								<height>60</height>
 								<label>$INFO[ListItem.Property(Condition)]</label>
 								<font>Weather-HourlyCondition</font>
-								<textcolor>Label_Dark</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>center</aligny>
 								
 							</control>
@@ -536,7 +537,7 @@
 								<height>60</height>
 								<label>$INFO[ListItem.Property(Temp)]</label>
 								<font>Weather-HourlyTemp</font>
-								<textcolor>Label_Dark</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<align>right</align>
 								<aligny>center</aligny>
 								
@@ -891,7 +892,7 @@
 								<width>270</width>
 								<height>60</height>
 								<texture>colors/color_white.png</texture>
-								<colordiffuse>Label_Dark</colordiffuse>
+								<colordiffuse>Settings_Label_Disabled</colordiffuse>
 								
 							</control>
 							
@@ -903,7 +904,7 @@
 								<height>24</height>
 								<label>$INFO[ListItem.Property(Heading)]</label>
 								<font>Weather-36HourHeading</font>
-								<textcolor>Label_Normal</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>top</aligny>
 								
 							</control>
@@ -915,7 +916,7 @@
 								<width>128</width>
 								<height>128</height>
 								<texture background="true">$INFO[ListItem.Thumb,weather/,.png]</texture>
-								<colordiffuse>Label_Dark</colordiffuse>
+								<colordiffuse>Settings_Label</colordiffuse>
 								<aspectratio>scale</aspectratio>
 								
 							</control>
@@ -928,7 +929,7 @@
 								<height>30</height>
 								<label>$INFO[ListItem.Property(Temp)]</label>
 								<font>Weather-36HourTemp</font>
-								<textcolor>Label_Dark</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<align>center</align>
 								
 							</control>
@@ -941,7 +942,7 @@
 								<height>100</height>
 								<label>$INFO[ListItem.Property(Forecast)]</label>
 								<font>Weather-36HourForecast</font>
-								<textcolor>Label_Dark</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>top</aligny>
 								
 							</control>
@@ -954,7 +955,7 @@
 								<height>20</height>
 								<label>$INFO[ListItem.Property(ChancePrecipitation),Chance of precipitation: ,]</label>
 								<font>Weather-36HourChancePrecipitation</font>
-								<textcolor>Label_Dark</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>top</aligny>
 								
 							</control>
@@ -981,7 +982,7 @@
 								<width>270</width>
 								<height>60</height>
 								<texture>colors/color_white.png</texture>
-								<colordiffuse>Label_Dark</colordiffuse>
+								<colordiffuse>Settings_Background_Dark</colordiffuse>
 								
 							</control>
 							
@@ -993,7 +994,7 @@
 								<height>24</height>
 								<label>$INFO[ListItem.Property(Heading)]</label>
 								<font>Weather-36HourHeading</font>
-								<textcolor>Label_Normal</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>top</aligny>
 								
 							</control>
@@ -1135,7 +1136,7 @@
 								<height>30</height>
 								<label>$INFO[ListItem.Property(Day)]</label>
 								<font>Weather-ExtendedDay</font>
-								<textcolor>Label_Dark</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>top</aligny>
 								
 							</control>
@@ -1148,7 +1149,7 @@
 								<height>30</height>
 								<label>$INFO[ListItem.Property(Date)]</label>
 								<font>Weather-ExtendedDate</font>
-								<textcolor>Label_Dark</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<aligny>top</aligny>
 								
 							</control>
@@ -1160,7 +1161,7 @@
 								<width>84</width>
 								<height>84</height>
 								<texture background="true">$INFO[ListItem.Thumb,weather/,.png]</texture>
-								<colordiffuse>Label_Dark</colordiffuse>
+								<colordiffuse>Settings_Label</colordiffuse>
 								<aspectratio>scale</aspectratio>
 								
 							</control>
@@ -1173,7 +1174,7 @@
 								<height>16</height>
 								<label>$INFO[ListItem.Property(Temp)]</label>
 								<font>Weather-ExtendedTemp</font>
-								<textcolor>Label_Dark</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<align>center</align>
 								<aligny>top</aligny>
 								
@@ -1187,7 +1188,7 @@
 								<height>16</height>
 								<label>$INFO[ListItem.Property(Condition)]</label>
 								<font>Weather-ExtendedCondition</font>
-								<textcolor>Label_Dark</textcolor>
+								<textcolor>Settings_Label</textcolor>
 								<align>center</align>
 								<aligny>top</aligny>
 								

@@ -158,7 +158,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>100</onup>
@@ -396,7 +396,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>200</onup>
@@ -543,7 +543,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onleft>98</onleft>
@@ -559,7 +559,7 @@
 				
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>700</width>
+					<width>730</width>
 					<height>240</height>
 					
 					<include>Common_Animation_Settings_Options</include>
@@ -927,7 +927,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>400</onup>
@@ -1012,7 +1012,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>500</onup>
@@ -1069,7 +1069,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>600</onup>
@@ -1120,7 +1120,7 @@
 				
 				<control type="textbox">
 					
-					<width>700</width>
+					<width>730</width>
 					<height>300</height>
 					<label>[CR]This option is best suited in situations where the user is using a physical keyboard.[CR][CR]If using a remote or touch screen, disable this option to use the on-screen keyboard.</label>
 					<font>Menu-List</font>
@@ -1138,7 +1138,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>700</onup>
@@ -1188,7 +1188,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>900</onup>
@@ -1261,7 +1261,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onup>900</onup>

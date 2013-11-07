@@ -29,9 +29,9 @@
 			<!--Information Area-->
 			<control type="group">
 			
-				<posx>580</posx>
+				<posx>550</posx>
 				<posy>0</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>720</height>
 				
 				<animation type="WindowOpen">
@@ -48,7 +48,7 @@
 				
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>700</width>
+					<width>730</width>
 					<height>720</height>
 					<texture background="true">colors/color_white.png</texture>
 					<colordiffuse>FanartDiffuse</colordiffuse>
@@ -75,7 +75,7 @@
 					<description>Control Area</description>
 					<posx>0</posx>
 					<posy>40</posy>
-					<width>700</width>
+					<width>730</width>
 					<height>660</height>
 					<viewtype label="535">list</viewtype>
 					<scrolltime tween="cubic" easing="out">600</scrolltime>
@@ -105,7 +105,7 @@
 							
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>700</width>
+							<width>730</width>
 							<height>60</height>
 							<texture>colors/color_white.png</texture>
 							<colordiffuse>Background_Highlight</colordiffuse>

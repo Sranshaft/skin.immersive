@@ -24,7 +24,7 @@
 		
 			<include>Common_Dimensions</include>
 			<texture background="true">forumbrowser/forumbrowser_background.png</texture>
-			<colordiffuse>AAd6d6d6</colordiffuse>
+			<colordiffuse>Settings_Background_Dark</colordiffuse>
 			
 		</control>
 	
@@ -53,7 +53,7 @@
 					<height>48</height>
 					<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 					<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
-					<colordiffuse>Label_Dark</colordiffuse>
+					<colordiffuse>Settings_Label</colordiffuse>
 					<aspectratio>keep</aspectratio>
 					<onclick>back</onclick>
 					
@@ -64,7 +64,7 @@
 					<width>345</width>
 					<height>65</height>
 					<texture>trakt.tv/trakttv_breadcrumb.png</texture>
-					<colordiffuse>Label_Dark</colordiffuse>
+					<colordiffuse>Settings_Label</colordiffuse>
 					<aspectratio>keep</aspectratio>
 					
 				</control>

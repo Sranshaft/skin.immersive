@@ -1,0 +1,24 @@
+<colors>
+	
+	<!--Theme specific-->
+	
+	<color name="AppBar_Background">FFD70072</color>
+	
+	<color name="Background_Normal">FFD70072</color>
+	<color name="Background_Highlight">FFF80084</color>
+	<color name="Background_Dark">FF840046</color>
+	
+	<color name="Label_Highlight">FFF80084</color>
+	
+	<color name="Settings_Background_Light">FF424242</color>
+	<color name="Settings_Background_Dark">FF333333</color>
+	<color name="Settings_Menu_Normal">FFF0F0F0</color>
+	<color name="Settings_Menu_Highlight">FFFFFFFF</color>
+	<color name="Settings_Header">FFF80084</color>
+	<color name="Settings_Label">FFF0F0F0</color>
+	<color name="Settings_Label_Disabled">FF707070</color>
+	<color name="Settings_Label_Highlight">FFFFFFFF</color>
+
+	<color name="Tile_Background">FFA20056</color>
+	
+</colors>

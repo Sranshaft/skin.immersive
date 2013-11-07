@@ -74,7 +74,7 @@
 									<height>60</height>
 									<label>$INFO[ListItem.Label]</label>
 									<font>Menu-List</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>center</aligny>
 									
 								</control>
@@ -86,7 +86,7 @@
 									<width>26</width>
 									<height>26</height>
 									<texture>controls/control_checkbox_unchecked.png</texture>
-									<colordiffuse>Label_Dark</colordiffuse>
+									<colordiffuse>Settings_Label</colordiffuse>
 									<aspectratio>center</aspectratio>
 								
 								</control>
@@ -161,7 +161,7 @@
 									<height>60</height>
 									<label>$INFO[ListItem.Label]</label>
 									<font>Menu-List</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Label_Normal</textcolor>
 									<aligny>center</aligny>
 									
 								</control>
@@ -173,7 +173,7 @@
 									<width>26</width>
 									<height>26</height>
 									<texture>controls/control_checkbox_checked.png</texture>
-									<colordiffuse>Label_Dark</colordiffuse>
+									<colordiffuse>Label_Normal</colordiffuse>
 									<aspectratio>center</aspectratio>
 									
 									<visible>ListItem.IsSelected</visible>
@@ -187,7 +187,7 @@
 									<width>26</width>
 									<height>26</height>
 									<texture>controls/control_checkbox_unchecked.png</texture>
-									<colordiffuse>Label_Dark</colordiffuse>
+									<colordiffuse>Label_Normal</colordiffuse>
 									<aspectratio>center</aspectratio>
 									
 									<visible>!ListItem.IsSelected</visible>
@@ -327,7 +327,7 @@
 									<height>60</height>
 									<label>$INFO[ListItem.Label]</label>
 									<font>Menu-List</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Settings_Label</textcolor>
 									<aligny>center</aligny>
 									
 								</control>
@@ -339,7 +339,7 @@
 									<width>26</width>
 									<height>26</height>
 									<texture>controls/control_checkbox_unchecked.png</texture>
-									<colordiffuse>Label_Dark</colordiffuse>
+									<colordiffuse>Settings_Label</colordiffuse>
 									<aspectratio>center</aspectratio>
 								
 								</control>
@@ -414,7 +414,7 @@
 									<height>60</height>
 									<label>$INFO[ListItem.Label]</label>
 									<font>Menu-List</font>
-									<textcolor>Label_Dark</textcolor>
+									<textcolor>Label_Normal</textcolor>
 									<aligny>center</aligny>
 									
 								</control>
@@ -440,7 +440,7 @@
 									<width>26</width>
 									<height>26</height>
 									<texture>controls/control_checkbox_unchecked.png</texture>
-									<colordiffuse>Label_Dark</colordiffuse>
+									<colordiffuse>Label_Normal</colordiffuse>
 									<aspectratio>center</aspectratio>
 									
 									<visible>!ListItem.IsSelected</visible>
