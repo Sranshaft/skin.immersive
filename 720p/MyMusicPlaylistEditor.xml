@@ -1,5 +1,9 @@
-<!-- Foundation -->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Need to update-->
+
 <window id="503">
+
 	<defaultcontrol allways="true">6</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<views>50</views>

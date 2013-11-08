@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <window>
 	
 	<defaultcontrol always="true">120</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0xFFFFFFFF</backgroundcolor>
+	<backgroundcolor>Settings_Background_Dark</backgroundcolor>
 	
 	<zorder>1</zorder>
 	

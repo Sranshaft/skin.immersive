@@ -1,8 +1,10 @@
-<!-- Foundation -->
+<?xml version="1.0" encoding="UTF-8"?>
+
 <window id="129">
+
 	<defaultcontrol always="true">98</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<backgroundcolor>0xFFFFFFFF</backgroundcolor>
+	<backgroundcolor>Settings_Background_Dark</backgroundcolor>
 	
 	<include>Common_Animation_Window</include>
 

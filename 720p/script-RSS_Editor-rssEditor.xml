@@ -1,4 +1,5 @@
-﻿<!--based on PMIII DialogMediaSource.xml by Jezz_X & chokemaniac-->
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
 <window id="129">
     
 	<defaultcontrol always="true">10</defaultcontrol>

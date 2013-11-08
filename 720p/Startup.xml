@@ -1,4 +1,5 @@
-﻿<!-- Foundation -->
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
 <window>
 	
 	<onload condition="System.HasAddon(script.tv.show.next.aired)">XBMC.RunScript(script.tv.show.next.aired,silent=True)</onload>

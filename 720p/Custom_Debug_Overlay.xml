@@ -1,4 +1,6 @@
-﻿<window type="dialog" id="50">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="dialog" id="50">
 
 	<zorder>2</zorder>
 	<visible>!Window.IsVisible(startup)</visible>

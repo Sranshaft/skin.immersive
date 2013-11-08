@@ -1,4 +1,5 @@
-<!-- Foundation -->
+<?xml version="1.0" encoding="UTF-8"?>
+
 <window id="129">
 	
 	<defaultcontrol always="true">15</defaultcontrol>
@@ -97,9 +98,9 @@
 		
 		<control type="group" id="99">
 			
-			<posx>500</posx>
+			<posx>480</posx>
 			<posy>0</posy>
-			<width>700</width>
+			<width>730</width>
 			<height>480</height>
 			
 			<include>Common_Animation_Settings_Options</include>
@@ -109,7 +110,7 @@
 					
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>480</height>
 				<pagecontrol>80</pagecontrol>
 				<itemgap>0</itemgap>

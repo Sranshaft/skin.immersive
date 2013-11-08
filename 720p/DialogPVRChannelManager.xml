@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Need to update-->
+
 <window>
 	<defaultcontrol always="true">20</defaultcontrol>
 	<allowoverlay>no</allowoverlay>

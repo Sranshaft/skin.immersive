@@ -1,4 +1,5 @@
-<!-- Foundation -->
+<?xml version="1.0" encoding="UTF-8"?>
+
 <window id="10140">
 	
 	<defaultcontrol always="true">9</defaultcontrol>
@@ -38,7 +39,7 @@
 		
 		<control type="group">
 		
-			<posx>500</posx>
+			<posx>480</posx>
 			<posy>0</posy>
 			<width>730</width>
 			<height>480</height>

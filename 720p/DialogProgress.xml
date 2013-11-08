@@ -1,5 +1,7 @@
-﻿<!-- Foundation -->
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
 <window id="101">
+
 	<defaultcontrol always="true">10</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 
@@ -8,6 +10,7 @@
 		<include>Common_Background_Fade</include>
 
 		<control type="group">
+		
 			<posx>0</posx>
 			<posy>210</posy>
 			
@@ -23,9 +26,11 @@
 				<align>right</align>
 			
 				<control type="button" id ="10">
+					
 					<description>Cancel</description>
 					<include>Common_InfoDialog_Button</include>
 					<label>222</label>
+
 				</control>
 
 			</control>	
