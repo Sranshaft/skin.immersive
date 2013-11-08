@@ -718,8 +718,9 @@
 			<height>128</height>
 			<texture>buffer/buffer_progress.png</texture>
 			<aspectratio>keep</aspectratio>
+			<colordiffuse>Background_Highlight</colordiffuse>
 			
-			<animation effect="rotate" end="-360" center="640,360" time="1200" loop="true" condition="true">Conditional</animation>
+			<animation effect="rotate" end="-360" center="640,360" time="2000" loop="true" condition="true">Conditional</animation>
 			
 		</control>
 		
@@ -2418,7 +2419,7 @@
 					<height>76</height>
 					<label>[UPPERCASE]$INFO[ListItem.Property(NextTitle)][/UPPERCASE]</label>
 					<font>TVNextAired-Large</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<shadowcolor>00FFFFFF</shadowcolor>
 					<aligny>top</aligny>
 					<autoscroll>false</autoscroll>
@@ -2433,7 +2434,7 @@
 					<height>20</height>
 					<label>$INFO[ListItem.Property(ShortTime)]</label>
 					<font>TVNextAired-Normal</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<aligny>top</aligny>
 					
 				</control>
@@ -2446,7 +2447,7 @@
 					<height>20</height>
 					<label>$INFO[ListItem.Label] $INFO[ListItem.Property(Network)]</label>
 					<font>TVNextAired-Small</font>
-					<textcolor>Label_Dark</textcolor>
+					<textcolor>Settings_Label</textcolor>
 					<aligny>top</aligny>
 					
 				</control>
