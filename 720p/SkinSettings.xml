@@ -147,9 +147,9 @@
 
 		<control type="group" id="99">
 			
-			<posx>500</posx>
+			<posx>480</posx>
 			<posy>0</posy>
-			<width>540</width>
+			<width>730</width>
 			<height>480</height>
 			
 			<!--Home Options-->
