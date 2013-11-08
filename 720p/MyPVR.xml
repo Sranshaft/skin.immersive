@@ -36,7 +36,7 @@
 				
 			</control>
 			
-			<control type="grouplist">
+			<control type="grouplist" id="30">
 
 				<posx>50</posx>
 				<posy>60</posy>

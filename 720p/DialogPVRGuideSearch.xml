@@ -1,10 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Need to update-->
+
 <window>
+
 	<defaultcontrol always="true">9</defaultcontrol>
-	<coordinates>
-		<system>1</system>
-		<posx>210</posx>
-		<posy>65</posy>
-	</coordinates>
+
+	<controls>
+
+		<include>Common_Settings_Background</include>
+		
+		<!--Menu-->
+		<control type="group">
+
+			<include>Common_Settings_Header_Back</include>
+			
+			<control type="label">
+	
+				<include>Common_Settings_Header</include>
+				<label>Search</label>
+				
+			</control>
+
+			<control type="list" id="98">
+				
+				<description>List</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>420</width>
+				<height max="600">auto</height>
+				<onup>98</onup>
+				<ondown>98</ondown>
+				<onleft>-</onleft>
+				<onright>99</onright>
+				<scrolltime>0</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>-</pagecontrol>
+
+				<itemlayout width="420" height="60">
+
+					<control type="label">
+							
+						<posx>60</posx>
+						<posy>0</posy>
+						<width min="20" max="400">auto</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Settings_Menu_Normal</textcolor>
+						<aligny>center</aligny>
+						
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="420" height="60">
+
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>420</width>
+						<height>60</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>Background_Highlight</colordiffuse>
+					
+					</control>
+
+					<control type="label">
+							
+						<posx>60</posx>
+						<posy>0</posy>
+						<width min="20" max="400">auto</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Settings_Menu_Highlight</textcolor>
+						<aligny>center</aligny>
+						<scrollspeed>0</scrollspeed>
+						
+					</control>
+
+				</focusedlayout>
+
+				<content>
+
+					<item id="1">
+						<description>Search term</description>
+						<label>Search term</label>
+						<onclick>-</onclick>
+					</item>
+					
+					<item id="2">
+						<description>Time period</description>
+						<label>Time period</label>
+						<onclick>-</onclick>
+					</item>
+					
+					<item id="3">
+						<description>Filters</description>
+						<label>Filters</label>
+						<onclick>-</onclick>
+					</item>
+
+				</content>
+				
+			</control>		
+
+		</control>
+
+		<control type="group" id="99">
+			
+			<posx>480</posx>
+			<posy>0</posy>
+			<width>730</width>
+			<height>480</height>
+			
+			<!--Search term-->		
+			<control type="grouplist" id="100">
+				
+				<description>Control Area</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>730</width>
+				<height>480</height>
+				<itemgap>0</itemgap>
+				<onleft>98</onleft>
+				<onright>9000</onright>
+				<onup>2</onup>
+				<ondown>2</ondown>
+				<orientation>vertical</orientation>
+				<pagecontrol>81</pagecontrol>
+				<visible>Container(98).HasFocus(1)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
+				
+				<control type="edit" id="9">
+
+					<include>Common_Settings_Edit</include>
+					<label>$LOCALIZE[19133]</label>
+
+				</control>
+
+				<control type="label" id="150">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Search rules</label>
+					
+				</control>
+				
+				<control type="radiobutton" id="10">
+				
+					<description>Include Description</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[19134]</label>
+
+				</control>
+
+				<control type="radiobutton" id="11">
+				
+					<description>Case Sensitive</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[19135]</label>
+
+				</control>
+
+			</control>
+			
+			<!--Search term-->		
+			<control type="grouplist" id="200">
+				
+				<description>Control Area</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>730</width>
+				<height>480</height>
+				<itemgap>0</itemgap>
+				<onleft>98</onleft>
+				<onright>9000</onright>
+				<onup>2</onup>
+				<ondown>2</ondown>
+				<orientation>vertical</orientation>
+				<pagecontrol>81</pagecontrol>
+				<visible>Container(98).HasFocus(2)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>	
+
+				<control type="label" id="250">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Time period to search</label>
+					
+				</control>
+
+				<control type="edit" id="14">
+
+					<description>Start Date</description>
+					<include>Common_Settings_Edit</include>
+					<label>$LOCALIZE[19133]</label>
+
+				</control>
+
+				<control type="edit" id="15">
+
+					<description>Stop Date</description>
+					<include>Common_Settings_Edit</include>
+					<label>$LOCALIZE[19129]</label>
+
+				</control>
+
+				<control type="edit" id="16">
+
+					<description>Start Time</description>
+					<include>Common_Settings_Edit</include>
+					<label>$LOCALIZE[19126]</label>
+
+				</control>
+
+				<control type="edit" id="17">
+
+					<description>Stop Time</description>
+					<include>Common_Settings_Edit</include>
+					<label>$LOCALIZE[19127]</label>
+
+				</control>
+
+			</control>
+			
+			<!--Search term-->		
+			<control type="grouplist" id="300">
+				
+				<description>Control Area</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>730</width>
+				<height>480</height>
+				<itemgap>0</itemgap>
+				<onleft>98</onleft>
+				<onright>9000</onright>
+				<onup>2</onup>
+				<ondown>2</ondown>
+				<orientation>vertical</orientation>
+				<pagecontrol>81</pagecontrol>
+				<visible>Container(98).HasFocus(3)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>	
+
+				<control type="label" id="350">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Filters</label>
+					
+				</control>
+
+				<control type="spincontrolex" id="18">
+
+					<description>Genre</description>
+					<include>Common_Settings_SpinButton</include>
+					<label>$LOCALIZE[19129]</label>
+
+				</control>
+
+				<control type="spincontrolex" id="21">
+
+					<description>Groups</description>
+					<include>Common_Settings_SpinButton</include>
+					<label>$LOCALIZE[19141]</label>
+
+				</control>
+
+				<control type="spincontrolex" id="23">
+
+					<description>Channels</description>
+					<include>Common_Settings_SpinButton</include>
+					<label>$LOCALIZE[19148]</label>
+
+				</control>
+
+				<control type="radiobutton" id="19">
+				
+					<description>Avoid Repeats</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[19121]</label>
+
+				</control>
+
+				<control type="radiobutton" id="20">
+				
+					<description>Include unknown Genres</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[19132]</label>
+
+				</control>
+
+				<control type="radiobutton" id="22">
+				
+					<description>FTA only</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[19123]</label>
+
+				</control>
+
+				<control type="radiobutton" id="24">
+				
+					<description>Ignore Timers</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[19124]</label>
+
+				</control>
+
+				<control type="radiobutton" id="27">
+				
+					<description>Ignore Recordingss</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[19125]</label>
+
+				</control>
+
+			</control>
+	
+		</control>
+
+		<include>Common_Settings_Divider</include>
+		
+		<control type="grouplist" id="9000">
+		
+			<include>Common_Settings_Button_Grouplist</include>
+		
+			<!--Search Button-->
+			<control type="button" id="26">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[137]</label>
+				<onup>99</onup>
+				
+			</control>
+
+			<!--Cancel Button-->
+			<control type="button" id="25">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[222]</label>
+				<onup>99</onup>
+				
+			</control>
+			
+			<!--Default Button-->
+			<control type="button" id="28">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[409]</label>
+				<onup>99</onup>
+				
+			</control>
+			
+		</control>	
+
+	</controls>
+	
+</window>			
+
+
+
+
+
 	<include>dialogeffect</include>
 	<controls>
 		<control type="image">
