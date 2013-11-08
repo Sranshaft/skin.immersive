@@ -76,7 +76,7 @@
 							<height>36</height>
 							<label>$INFO[ListItem.Label]</label>
 							<font>Menu-ExtendedList-Header</font>
-							<textcolor>Label_Dark</textcolor>
+							<textcolor>Settings_Label</textcolor>
 							<aligny>top</aligny>
 							<shadowcolor>00FFFFFF</shadowcolor>
 							<autoscroll>false</autoscroll>
@@ -91,7 +91,7 @@
 							<height>20</height>
 							<label>[UPPERCASE]$VAR[ExtendedList_SubHeader][/UPPERCASE]</label>
 							<font>Menu-ExtendedList-Small</font>
-							<textcolor>Label_Dark</textcolor>
+							<textcolor>Settings_Label</textcolor>
 							<aligny>top</aligny>
 							<wrapmultiline>false</wrapmultiline>
 							<autoscroll>false</autoscroll>
@@ -106,7 +106,7 @@
 							<height>50</height>
 							<label>$VAR[ExtendedList_Plot]</label>
 							<font>Menu-ExtendedList-Details</font>
-							<textcolor>Label_Dark</textcolor>
+							<textcolor>Settings_Label</textcolor>
 							<aligny>top</aligny>
 							<wrapmultiline>true</wrapmultiline>
 							<shadowcolor>00FFFFFF</shadowcolor>

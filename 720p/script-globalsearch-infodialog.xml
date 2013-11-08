@@ -74,7 +74,7 @@
 						<height>20</height>
 						<label>$INFO[Container(100).ListItem.Property(Genre)]</label>
 						<font>DialogInfo-Label-Small</font>
-						<textcolor>Label_Dark</textcolor>
+						<textcolor>Settings_Label</textcolor>
 					
 					</control>
 					
@@ -86,7 +86,7 @@
 						<height>20</height>
 						<label>$INFO[Container(100).ListItem.Property(Season),Season ,] $INFO[Container(100).ListItem.Property(Episode),Episode ,]</label>
 						<font>DialogInfo-Label-Small</font>
-						<textcolor>Label_Dark</textcolor>
+						<textcolor>Settings_Label</textcolor>
 						
 						<visible>Control.IsVisible(140)</visible>
 					
@@ -100,7 +100,7 @@
 						<height>20</height>
 						<label>$INFO[Container(100).ListItem.Property(Artist_Style)]</label>
 						<font>DialogInfo-Label-Small</font>
-						<textcolor>Label_Dark</textcolor>
+						<textcolor>Settings_Label</textcolor>
 						
 						<visible>Control.IsVisible(160)</visible>
 					
@@ -153,7 +153,7 @@
 								<width>128</width>
 								<height>32</height>
 								<texture background="true">$INFO[Container(100).ListItem.Property(StarRating)]</texture>
-								<aspectratio>scale</aspectratio>
+								<aspectratio>keep</aspectratio>
 								
 								<visible>Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(180)</visible>
 								

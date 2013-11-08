@@ -76,7 +76,7 @@
 							<height>62</height>
 							<label>$VAR[ExtendedList_Header]</label>
 							<font>Menu-ExtendedList-Header</font>
-							<textcolor>Label_Dark</textcolor>
+							<textcolor>Settings_Label</textcolor>
 							<aligny>top</aligny>
 							<shadowcolor>00FFFFFF</shadowcolor>
 							<autoscroll>false</autoscroll>
@@ -90,7 +90,7 @@
 							<width>100</width>
 							<height>20</height>
 							<texture background="true">$INFO[ListItem.StarRating]</texture>
-							<colordiffuse>Label_Dark</colordiffuse>
+							<colordiffuse>Settings_Label</colordiffuse>
 							<aspectratio>scale</aspectratio>
 							
 						</control>
@@ -103,7 +103,7 @@
 							<height>125</height>
 							<label>$VAR[ExtendedList_Plot]</label>
 							<font>Menu-ExtendedList-Details</font>
-							<textcolor>Label_Dark</textcolor>
+							<textcolor>Settings_Label</textcolor>
 							<aligny>top</aligny>
 							<wrapmultiline>true</wrapmultiline>
 							<shadowcolor>00FFFFFF</shadowcolor>
@@ -119,7 +119,7 @@
 							<height>26</height>
 							<label>$VAR[ExtendedList_Detail]</label>
 							<font>Menu-ExtendedList-Small</font>
-							<textcolor>Label_Dark</textcolor>
+							<textcolor>Settings_Label</textcolor>
 							<aligny>center</aligny>
 							
 						</control>
@@ -132,7 +132,7 @@
 							<height>26</height>
 							<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 							<font>Menu-ExtendedList-Small</font>
-							<textcolor>Label_Dark</textcolor>
+							<textcolor>Settings_Label</textcolor>
 							<align>right</align>
 							<aligny>center</aligny>
 							
@@ -148,7 +148,7 @@
 							<height>40</height>
 							<texture>$VAR[Menu_Overlay_Image]</texture>
 							<aspectratio>stretch</aspectratio>
-							<colordiffuse>Label_Dark</colordiffuse>
+							<colordiffuse>Settings_Label</colordiffuse>
 							
 						</control>
 						
