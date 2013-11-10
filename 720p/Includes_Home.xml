@@ -313,7 +313,7 @@
 							<item id="11">
 								<description>Weather</description>
 								<label>$LOCALIZE[31010]</label>
-								<label2>$INFO[Window(Weather).Property(Current.Condition)][CR]$INFO[Window(Weather).Property(Current.Temperature),,°]</label2>
+
 								<thumb>home/home_weather.png</thumb>
 								<onclick>ActivateWindow(weather,return)</onclick>
 								<visible>Skin.HasSetting(ShowWeatherMenu)</visible>
@@ -627,7 +627,7 @@
 							<item id="11">
 								<description>Weather</description>
 								<label>$LOCALIZE[31010]</label>
-								<label2>$INFO[Window(Weather).Property(Current.Condition)][CR]$INFO[Window(Weather).Property(Current.Temperature),,°]</label2>
+
 								<thumb>home/home_weather_small.png</thumb>
 								<onclick>ActivateWindow(weather,return)</onclick>
 								<visible>Skin.HasSetting(ShowWeatherMenu)</visible>
