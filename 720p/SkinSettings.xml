@@ -401,6 +401,17 @@
 					
 				</control>
 				
+				<control type="radiobutton" id="122">
+					
+					<description>Extend favourites</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Extend favourites to 20 items (default 10)</label>
+					<onclick>Skin.ToggleSetting(ExtendFavouritesSection)</onclick>
+					<enable>Skin.HasSetting(ShowFavouritesSection)</enable>
+					<selected>Skin.HasSetting(ExtendFavouritesSection)</selected>
+					
+				</control>
+				
 			</control>
 			
 			<!--Hub Options-->
