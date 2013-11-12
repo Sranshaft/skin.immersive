@@ -10,7 +10,7 @@
 	<onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(skinsettings)</onload>
 	<onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(53)</onload>
 	
-	<onload condition="System.HasAddon(script.grab.fanart) + Skin.HasSetting(UseFanartBackground_Home)">XBMC.RunScript(script.grab.fanart,mode=Random,refresh=10)</onload>
+	<onload condition="System.HasAddon(script.grab.fanart) + Skin.HasSetting(UseFanartBackground_Home)">XBMC.RunScript(script.grab.fanart,mode=random,refresh=10)</onload>
 	
 	<controls>
 	
