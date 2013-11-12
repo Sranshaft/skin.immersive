@@ -1,171 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <window>
-	
-	<defaultcontrol>9000</defaultcontrol>
-	
-	<animation type="WindowOpen">
-		<effect type="fade" start="0" end="100" time="400" />
-	</animation>
-	
-	<animation type="WindowClose">
-		<effect type="fade" start="100" end="0" time="400" delay="400" />
-	</animation>
-	
-	<onload>AlarmClock(CloseFullscreenInfo,Dialog.Close(),00:30,silent)</onload>
-	
-	<controls>
-	
-		<control type="group">
-		
-			<!--Top Area-->
-			<control type="image">
-					
-				<include>Common_Dimensions</include>
-				<texture>overlays/overlay_fullscreen_top.png</texture>
-				
-			</control>
-		
-			<!--Information Area-->
-			<control type="group">
-			
-				<posx>1280</posx>
-				<posy>0</posy>
-				<width>400</width>
-				<height>720</height>
-				
-				<animation effect="slide" start="0,0" end="-400,0" time="400" delay="400" tween="cubic" easing="out">WindowOpen</animation>
-				<animation effect="slide" start="-400,0" end="0,0" time="400" tween="cubic" easing="out">WindowClose</animation>
-				
-				<control type="image">
-				
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>700</width>
-					<height>720</height>
-					<texture background="true">colors/color_white.png</texture>
-					<colordiffuse>Background_Normal</colordiffuse>
-				
-				</control>
-				
-				<control type="grouplist">
-				
-					<posx>40</posx>
-					<posy>40</posy>
-					<width>320</width>
-					<height>680</height>
-					<itemgap>10</itemgap>
-					<orientation>vertical</orientation>
-					<aligny>bottom</aligny>
-				
-					<control type="textbox">
-					
-						<width>320</width>
-						<height>106</height>
-						<label>$INFO[ListItem.Title]</label>
-						<textcolor>Label_Normal</textcolor>
-						<font>Fullscreen-Info-Large</font>
-						<aligny>top</aligny>
-						<autoscroll>false</autoscroll>
-					
-					</control>
-					
-					<control type="label">
-					
-						<width>350</width>
-						<height>10</height>
-						<label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime] $INFO[ListItem.StartDate,(,)]</label>
-						<textcolor>Label_Normal</textcolor>
-						<font>Fullscreen-Info-Small</font>
-					
-					</control>
-					
-					<control type="label">
-					
-						<width>350</width>
-						<height>10</height>
-						<label>$INFO[ListItem.Duration,, duration]</label>
-						<textcolor>Label_Normal</textcolor>
-						<font>Fullscreen-Info-Small</font>
-					
-					</control>
-					
-					<control type="label">
-					
-						<width>350</width>
-						<height>16</height>
-						<label>$INFO[ListItem.ChannelName]</label>
-						<textcolor>Label_Normal</textcolor>
-						<font>Fullscreen-Info-Small</font>
+
+  <defaultcontrol>9000</defaultcontrol>
+
+  <animation type="WindowOpen">
+    <effect type="fade" start="0" end="100" time="400" />
+  </animation>
+
+  <animation type="WindowClose">
+    <effect type="fade" start="100" end="0" time="400" delay="400" />
+  </animation>
+
+  <onload>AlarmClock(CloseFullscreenInfo,Dialog.Close(),00:30,silent)</onload>
+
+  <controls>
+
+    <control type="group">
+
+      <!--Top Area-->
+      <control type="image">
+
+        <include>Common_Dimensions</include>
+        <texture>overlays/overlay_fullscreen_top.png</texture>
+
+      </control>
+
+      <!--Information Area-->
+      <control type="group">
+
+        <posx>1280</posx>
+        <posy>0</posy>
+        <width>400</width>
+        <height>720</height>
+
+        <animation effect="slide" start="0,0" end="-400,0" time="400" delay="400" tween="cubic" easing="out">WindowOpen</animation>
+        <animation effect="slide" start="-400,0" end="0,0" time="400" tween="cubic" easing="out">WindowClose</animation>
+
+        <control type="image">
+
+          <posx>0</posx>
+          <posy>0</posy>
+          <width>700</width>
+          <height>720</height>
+          <texture background="true">colors/color_white.png</texture>
+          <colordiffuse>Background_Normal</colordiffuse>
+
+        </control>
+
+        <control type="grouplist" id="11">
+
+          <posx>40</posx>
+          <posy>40</posy>
+          <width>320</width>
+          <height>680</height>
+          <itemgap>10</itemgap>
+          <orientation>vertical</orientation>
+          <aligny>bottom</aligny>
+
+          <control type="textbox">
+
+            <width>320</width>
+            <height>106</height>
+            <label>$INFO[ListItem.Title]</label>
+            <textcolor>Label_Normal</textcolor>
+            <font>Fullscreen-Info-Large</font>
+            <aligny>top</aligny>
+            <autoscroll>false</autoscroll>
+
+          </control>
+
+          <control type="label">
+
+            <width>350</width>
+            <height>10</height>
+            <label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime] $INFO[ListItem.StartDate,(,)]</label>
+            <textcolor>Label_Normal</textcolor>
+            <font>Fullscreen-Info-Small</font>
+
+          </control>
+
+          <control type="label">
+
+            <width>350</width>
+            <height>10</height>
+            <label>$INFO[ListItem.Duration,, duration]</label>
+            <textcolor>Label_Normal</textcolor>
+            <font>Fullscreen-Info-Small</font>
+
+          </control>
+
+          <control type="label">
+
+            <width>350</width>
+            <height>16</height>
+            <label>$INFO[ListItem.ChannelName]</label>
+            <textcolor>Label_Normal</textcolor>
+            <font>Fullscreen-Info-Small</font>
+
+          </control>
+
+          <control type="textbox" id="400">
+
+            <width>320</width>
+            <height>324</height>
+            <label>$INFO[ListItem.Plot]</label>
+            <textcolor>Label_Normal</textcolor>
+            <font>Fullscreen-Info-Normal</font>
+            <wrapmultiline>true</wrapmultiline>
+            <shadowcolor>00FFFFFF</shadowcolor>
+            <autoscroll>false</autoscroll>
+
+          </control>
+
+        </control>
+
+        <control type="grouplist" id="9000">
+
+          <posx>40</posx>
+          <posy>570</posy>
+          <width>400</width>
+          <height>116</height>
+          <itemgap>10</itemgap>
+          <orientation>vertical</orientation>
+          <align>left</align>
+          <onleft>9000</onleft>
+          <onright>9000</onright>
+          
+          <control type="image">
+						
+						<posx>32</posx>
+						<posy>0</posy>
+						<width>336</width>
+						<height>1</height>
+						<texture>colors/color_white.png</texture>
 						
 					</control>
-					
-					<control type="textbox" id="400">
-					
-						<width>320</width>
-						<height>324</height>
-						<label>$INFO[ListItem.Plot]</label>
-						<textcolor>Label_Normal</textcolor>
-						<font>Fullscreen-Info-Normal</font>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
-					
-					</control>
-					
-				</control>
-				
-				<control type="grouplist" id="9000">
-				
-					<posx>40</posx>
-					<posy>570</posy>
-					<width>400</width>
-					<height>116</height>
-					<itemgap>10</itemgap>
-					<orientation>vertical</orientation>
-					<align>left</align>
-					<onleft>9000</onleft>
-					<onright>9000</onright>
-					
-					<control type="button" id="5">
-						
-						<include>Common_AppBar_Button_Small</include>
-						<texturefocus>appbar/appbar_addbookmark_focus.png</texturefocus>
-						<texturenofocus>appbar/appbar_addbookmark.png</texturenofocus>
-						<label>switch channel</label>
-						
-					</control>
-					
-					<control type="button" id="6">
-						
-						<include>Common_AppBar_Button_Small</include>
-						<texturefocus>appbar/appbar_record_focus.png</texturefocus>
-						<texturenofocus>appbar/appbar_record.png</texturenofocus>
-						<label>record</label>
-						
-					</control>
-					
-					<control type="button" id="7">
-						
-						<include>Common_AppBar_Button_Small</include>
-						<texturefocus>appbar/appbar_okay_focus.png</texturefocus>
-						<texturenofocus>appbar/appbar_okay.png</texturenofocus>
-						<label>ok</label>
-						
-					</control>
-					
-				</control>
-				
-			</control>
-			
-		</control>	
-		
-	</controls>
+
+          <control type="group">
+            <height>32</height>
+            
+            <control type="button" id="5">
+              <include>Common_AppBar_Button_Small</include>
+              <texturefocus>appbar/appbar_addbookmark_focus.png</texturefocus>
+              <texturenofocus>appbar/appbar_addbookmark.png</texturenofocus>
+              <onup>7</onup>
+              <ondown>6</ondown>
+            </control>
+            
+            <control type="label">
+							<posx>48</posx>
+							<posy>-2</posy>
+							<width min="20" max="380">auto</width>
+							<height>32</height>
+							<label>switch channel</label>
+							<font>Appbar-Label</font>
+							<textcolor>Label_Normal</textcolor>
+							<aligny>center</aligny>	
+						</control>
+          </control>
+
+          <control type="group">
+            <height>32</height>
+            
+            <control type="button" id="6">
+              <include>Common_AppBar_Button_Small</include>
+              <texturefocus>appbar/appbar_record_focus.png</texturefocus>
+              <texturenofocus>appbar/appbar_record.png</texturenofocus>
+              <onup>5</onup>
+              <ondown>7</ondown>
+            </control>
+            
+            <control type="label">	
+							<posx>48</posx>
+							<posy>-2</posy>
+							<width min="20" max="380">auto</width>
+							<height>32</height>
+							<label>record</label>
+							<font>Appbar-Label</font>
+							<textcolor>Label_Normal</textcolor>
+							<aligny>center</aligny>
+						</control>
+          </control>
+
+          <control type="group">
+            <height>32</height>
+            
+            <control type="button" id="7">
+              <include>Common_AppBar_Button_Small</include>
+              <texturefocus>appbar/appbar_okay_focus.png</texturefocus>
+              <texturenofocus>appbar/appbar_okay.png</texturenofocus>
+              <onup>6</onup>
+              <ondown>5</ondown>
+            </control>
+            
+            <control type="label">	
+							<posx>48</posx>
+							<posy>-2</posy>
+							<width min="20" max="380">auto</width>
+							<height>32</height>
+							<label>ok</label>
+							<font>Appbar-Label</font>
+							<textcolor>Label_Normal</textcolor>
+							<aligny>center</aligny>
+						</control>
+          </control>
+
+        </control>
+
+      </control>
+
+    </control>	
+
+  </controls>
 
 </window>
-	
-	
-	
+
+
+<!--
 	<defaultcontrol always="true">7</defaultcontrol>
 	<coordinates>
 		<system>1</system>
@@ -389,4 +441,4 @@
 			</control>
 		</control>
 	</controls>
-</window>
+</window-->

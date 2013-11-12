@@ -54,9 +54,9 @@
 				
 					<width>400</width>
 					<height>60</height>
-
-					<include>Common_Control_Background</include>
 					
+          <include>Common_Control_Background</include>
+          
 					<control type="button" id="32">
 						
 						<include>Common_Control_Button</include>
@@ -88,9 +88,9 @@
 				
 					<width>400</width>
 					<height>60</height>
-
-					<include>Common_Control_Background</include>
 					
+          <include>Common_Control_Background</include>
+          
 					<control type="button" id="33">
 						
 						<include>Common_Control_Button</include>
@@ -122,9 +122,9 @@
 				
 					<width>400</width>
 					<height>60</height>
-
-					<include>Common_Control_Background</include>
 					
+          <include>Common_Control_Background</include>
+          
 					<control type="button" id="31">
 						
 						<include>Common_Control_Button</include>
@@ -156,15 +156,15 @@
 				
 					<width>400</width>
 					<height>60</height>
-
-					<include>Common_Control_Background</include>
 					
+          <include>Common_Control_Background</include>
+          
 					<control type="button" id="34">
 						
 						<include>Common_Control_Button</include>
 						<onup>31</onup>
 						<ondown>35</ondown>
-						<onright>11</onright>
+						<onright>13</onright>
 						
 					</control>
 					
@@ -190,15 +190,15 @@
 				
 					<width>400</width>
 					<height>60</height>
-
-					<include>Common_Control_Background</include>
 					
+          <include>Common_Control_Background</include>
+          
 					<control type="button" id="35">
 						
 						<include>Common_Control_Button</include>
 						<onup>34</onup>
 						<ondown>36</ondown>
-						<onright>11</onright>
+						<onright>14</onright>
 						
 					</control>
 					
@@ -224,9 +224,9 @@
 				
 					<width>400</width>
 					<height>60</height>
-
-					<include>Common_Control_Background</include>
 					
+          <include>Common_Control_Background</include>
+          
 					<control type="button" id="36">
 						
 						<include>Common_Control_Button</include>
@@ -281,6 +281,9 @@
 				<include>PVR_EPGTimelineView</include>
 				<include>PVR_EPGChannelView</include>
 				<include>PVR_EPGNowNextView</include>
+        
+        <include>PVR_LiveTVRecordingsView</include>
+        <include>PVR_LiveTVTimersView</include>
 				
 				<!--Overview Section-->
 				<control type="group">
