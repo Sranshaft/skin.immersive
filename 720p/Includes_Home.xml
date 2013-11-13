@@ -213,16 +213,7 @@
 								<label2>$INFO[VideoPlayer.Title]</label2>
 								<thumb>$VAR[NowPlaying_Image]</thumb>
 								<onclick>ActivateWindow(fullscreenvideo)</onclick>
-								<visible>Player.HasVideo + !VideoPlayer.HasMenu</visible>
-							</item>
-							
-							<item id="1">
-								<description>Now Playing</description>
-								<label>Now playing</label>
-								<label2>$INFO[VideoPlayer.Title]</label2>
-								<thumb>$VAR[NowPlaying_Image]</thumb>
-								<onclick>ActivateWindow(fullscreenvideo)</onclick>
-								<visible>Player.HasVideo + VideoPlayer.HasMenu</visible>
+								<visible>Player.HasVideo</visible>
 							</item>
 							
 							<item id="1">
@@ -527,16 +518,7 @@
 								<label2>$INFO[VideoPlayer.Title]</label2>
 								<thumb>$VAR[NowPlaying_Image]</thumb>
 								<onclick>ActivateWindow(fullscreenvideo)</onclick>
-								<visible>Player.HasMedia + Player.HasVideo + !VideoPlayer.HasMenu</visible>
-							</item>
-							
-							<item id="1">
-								<description>Now Playing</description>
-								<label>Now playing</label>
-								<label2>$INFO[VideoPlayer.Title]</label2>
-								<thumb>$VAR[NowPlaying_Image]</thumb>
-								<onclick>ActivateWindow(fullscreenvideo)</onclick>
-								<visible>Player.HasMedia + Player.HasVideo + VideoPlayer.HasMenu</visible>
+								<visible>Player.HasVideo</visible>
 							</item>
 							
 							<item id="1">
@@ -545,7 +527,7 @@
 								<label2>$INFO[MusicPlayer.Title][CR]$INFO[MusicPlayer.Album]</label2>
 								<thumb>$VAR[NowPlaying_Image]</thumb>
 								<onclick>ActivateWindow(visualisation)</onclick>
-								<visible>Player.HasMedia + Player.HasAudio</visible>
+								<visible>Player.HasAudio</visible>
 							</item>
 
 							<item id="2">
@@ -1816,17 +1798,6 @@
 						
 					</control>
 					
-					<control type="image">
-						
-						<posx>0</posx>
-						<posy>60</posy>
-						<width>460</width>
-						<height>260</height>
-						<texture background="true">$VAR[NowPlaying_Image]</texture>
-						<aspectratio align="left" aligny="top">keep</aspectratio>
-					
-					</control>
-					
 					<control type="group">
 					
 						<visible>Player.HasVideo</visible>
@@ -1943,7 +1914,7 @@
 						<onleft>9006</onleft>
 						<onright>9001</onright>
 						<onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
-						<onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>-->
+						<onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>
 						
 					</control>
 					
