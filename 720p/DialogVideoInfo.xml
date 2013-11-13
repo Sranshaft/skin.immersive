@@ -11,6 +11,8 @@
 	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(episodes)">RunScript(script.extendedinfo,info=EpisodeComments,show=$INFO[ListItem.TVshowTitle],type=episode,season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode])</onload>
 	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(movies)">RunScript(script.extendedinfo,info=Similar,dbid=$INFO[ListItem.DBID],type=movie)</onload>
 	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(tvshows)">RunScript(script.extendedinfo,info=Similar,dbid=$INFO[ListItem.DBID],type=tvshow)</onload>
+	<onload condition="System.HasAddon(script.videoextras)">
+    XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	
 	<include>Common_Animation_Window</include>
 	
@@ -34,7 +36,7 @@
 			<width>360</width>
 			<height>480</height>
 			
-			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(11) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(15) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
+			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(11) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(15) | Control.HasFocus(105) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
@@ -161,7 +163,7 @@
 						
 						<include>Common_Control_Button</include>
 						<onup>9</onup>
-						<ondown>6</ondown>
+						<ondown>105</ondown>
 						<onright>9001</onright>
 						
 						<enable>!IsEmpty(ListItem.Trailer)</enable>
@@ -183,7 +185,43 @@
 					</control>
 					
 				</control>
+
+				<!--Extras Button-->
+				<control type="group">
 				
+					<width>400</width>
+					<height>60</height>
+					
+					<visible>System.HasAddon(script.videoextras) + [Container.Content(movies) | Container.Content(episodes) | Container.Content(TVShows)] + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
+
+					<include>Common_Control_Background</include>
+					
+					<control type="button" id="105">
+						
+						<include>Common_Control_Button</include>
+						<onup>11</onup>
+						<ondown>6</ondown>
+						<onright>9001</onright>
+						<onclick>XBMC.RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Control_Image</include>
+						<texture>dialoginfo/dialoginfo_add.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Control_Label</include>
+						<label>Extras</label>
+						
+					</control>
+					
+				</control>
+
 				<!--Divider-->
 				<include>Common_Control_Divider</include>
 				
@@ -198,7 +236,7 @@
 					<control type="button" id="6">
 						
 						<include>Common_Control_Button</include>
-						<onup>11</onup>
+						<onup>105</onup>
 						<ondown>15</ondown>
 						<onright>9001</onright>
 						
@@ -304,7 +342,7 @@
 			<!--Animation-->
 			<include>Common_Animation_Content</include>
 			
-			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(11) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(15)| [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
+			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(11) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(15) | Control.HasFocus(105) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
