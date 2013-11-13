@@ -2189,8 +2189,8 @@
 	
 		<width>730</width>
 		<height>60</height>
-		<textureradioon>controls/control_radiobutton_on.png</textureradioon>
-		<textureradiooff>controls/control_radiobutton_off.png</textureradiooff>
+		<textureradioon colordiffuse="Settings_Label">controls/control_radiobutton_on.png</textureradioon>
+		<textureradiooff colordiffuse="Settings_Label">controls/control_radiobutton_off.png</textureradiooff>
 		<colordiffuse>Background_Highlight</colordiffuse>
 		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
 		<textcolor>Settings_Label</textcolor>
@@ -2220,9 +2220,9 @@
 		<texturenofocus>-</texturenofocus>
 		<sliderwidth>160</sliderwidth>
 		<sliderheight>15</sliderheight>
-		<texturesliderbar>controls/control_slider.png</texturesliderbar>
-		<textureslidernib border="2">controls/control_slider_nib.png</textureslidernib>
-		<textureslidernibfocus border="2">controls/control_slider_nib.png</textureslidernibfocus>
+		<texturesliderbar colordiffuse="Settings_Label">controls/control_slider.png</texturesliderbar>
+		<textureslidernib border="2" colordiffuse="Settings_Label">controls/control_slider_nib.png</textureslidernib>
+		<textureslidernibfocus border="2" colordiffuse="Settings_Label">controls/control_slider_nib.png</textureslidernibfocus>
 		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
 		<textcolor>Settings_Label</textcolor>
 		<focusedcolor>Settings_Label_Highlight</focusedcolor>
@@ -2237,9 +2237,9 @@
 		<width>730</width>
 		<height>60</height>
 		<textureup>controls/control_spinbutton_up.png</textureup>
-		<textureupfocus diffuse="colors/color_grey.png">controls/control_spinbutton_up.png</textureupfocus>
+		<textureupfocus colordiffuse="Settings_Label">controls/control_spinbutton_up.png</textureupfocus>
 		<texturedown>controls/control_spinbutton_down.png</texturedown>
-		<texturedownfocus diffuse="colors/color_grey.png">controls/control_spinbutton_down.png</texturedownfocus>
+		<texturedownfocus colordiffuse="Settings_Label">controls/control_spinbutton_down.png</texturedownfocus>
 		<colordiffuse>Background_Highlight</colordiffuse>
 		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
 		<textcolor>Settings_Label</textcolor>
@@ -2344,7 +2344,6 @@
 					<label>[UPPERCASE]$INFO[ListItem.Property(NextTitle)][/UPPERCASE]</label>
 					<font>TVNextAired-Large</font>
 					<textcolor>Settings_Label</textcolor>
-					<shadowcolor>00FFFFFF</shadowcolor>
 					<aligny>top</aligny>
 					<autoscroll>false</autoscroll>
 					
@@ -2422,7 +2421,6 @@
 					<label>[UPPERCASE]$INFO[ListItem.Property(NextTitle)][/UPPERCASE]</label>
 					<font>TVNextAired-Large</font>
 					<textcolor>Settings_Label</textcolor>
-					<shadowcolor>00FFFFFF</shadowcolor>
 					<aligny>top</aligny>
 					<autoscroll>false</autoscroll>
 					
@@ -2496,7 +2494,6 @@
 					<label>[UPPERCASE]$INFO[ListItem.Property(NextTitle)][/UPPERCASE]</label>
 					<font>TVNextAired-Large</font>
 					<textcolor>Label_Normal</textcolor>
-					<shadowcolor>00FFFFFF</shadowcolor>
 					<aligny>top</aligny>
 					<autoscroll>false</autoscroll>
 					
