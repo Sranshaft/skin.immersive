@@ -10,7 +10,7 @@
 			<texture background="true">colors/color_white.png</texture>
 			<colordiffuse>FanartDiffuse</colordiffuse>
 			
-			<visible>Container.Scrolling + !Control.IsVisible(50) + StringCompare(Container.SortMethod,title)</visible>
+			<visible>!Skin.HasSetting(DisableSortLetter) + Container.Scrolling + !Control.IsVisible(50) + StringCompare(Container.SortMethod,title)</visible>
 			
 			<animation effect="fade" start="0" end="100" time="400" delay="2000" reversible="true">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
@@ -24,7 +24,7 @@
 			<width>1280</width>
 			<height>110</height>
 			
-			<visible>Container.Scrolling + !Control.IsVisible(50) + StringCompare(Container.SortMethod,title)</visible>
+			<visible>!Skin.HasSetting(DisableSortLetter) + Container.Scrolling + !Control.IsVisible(50) + StringCompare(Container.SortMethod,title)</visible>
 			
 			<animation effect="fade" start="0" end="100" time="400" delay="2000" reversible="true">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
@@ -722,7 +722,7 @@
 			<texture background="true">colors/color_white.png</texture>
 			<colordiffuse>FanartDiffuse</colordiffuse>
 			
-			<visible>Container.Scrolling + !Control.IsVisible(50) + !StringCompare(Container.SortMethod,title)</visible>
+			<visible>!Skin.HasSetting(DisableSortLetter) + Container.Scrolling + !Control.IsVisible(50) + !StringCompare(Container.SortMethod,title)</visible>
 			
 			<animation effect="fade" start="0" end="100" time="400" delay="2000" reversible="true">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>

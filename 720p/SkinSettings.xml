@@ -135,6 +135,12 @@
 					</item>
 
 					<item id="9">
+						<description>Misc.</description>
+						<label>Miscellaneous</label>
+						<onclick>-</onclick>
+					</item>
+					
+					<item id="10">
 						<description>Debug</description>
 						<label>$LOCALIZE[31033]</label>
 						<onclick>-</onclick>
@@ -1279,7 +1285,7 @@
 				
 			</control>
 
-			<!--Debug Options-->
+			<!--Misc. Options - Might be more populated in the future as the skin evolves-->
 			<control type="grouplist" id="900">
 				
 				<description>Control Area</description>
@@ -1297,8 +1303,47 @@
 				<visible>Container(98).Hasfocus(9)</visible>
 				
 				<include>Common_Animation_Settings_Options</include>
+				
+				<control type="label" id="951">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Views</label>
+					
+				</control>
 
 				<control type="radiobutton" id="901">
+					
+					<description>Disable alphabetic overlay when scrolling media</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Disable alphabetic overlay when scrolling media</label>
+					<onclick>Skin.ToggleSetting(DisableSortLetter)</onclick>
+					<selected>Skin.HasSetting(DisableSortLetter)</selected>
+					
+				</control>
+
+			</control>
+			
+			<!--Debug Options-->
+			<control type="grouplist" id="1000">
+				
+				<description>Control Area</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>730</width>
+				<height>540</height>
+				<itemgap>0</itemgap>
+				<onup>900</onup>
+				<ondown>900</ondown>
+				<onleft>98</onleft>
+				<onright>-</onright>
+				<orientation>vertical</orientation>
+				<pagecontrol>90</pagecontrol>
+				<visible>Container(98).Hasfocus(10)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
+
+				<control type="radiobutton" id="1001">
 					
 					<description>Enable Debug Grid</description>
 					<include>Common_Settings_RadioButton</include>
@@ -1308,7 +1353,7 @@
 					
 				</control>
 
-				<control type="radiobutton" id="902">
+				<control type="radiobutton" id="1002">
 					
 					<description>Disable Debug Info</description>
 					<include>Common_Settings_RadioButton</include>
