@@ -35,7 +35,7 @@
 				<effect type="slide" start="0,0" end="-1280,0" center="auto" time="400"/>
 			</animation>
 			
-			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
+			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204) | Control.HasFocus(208) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
@@ -179,7 +179,7 @@
 					
 						<include>Common_Control_Button</include>
 						<onup>202</onup>
-						<ondown>204</ondown>
+						<ondown>208</ondown>
 						<onright>120</onright>
 						
 					</control>
@@ -199,6 +199,41 @@
 					</control>
 					
 				</control>
+
+				<!--Unread messages Button-->
+				<control type="group">
+				
+					<width>400</width>
+					<height>60</height>
+					
+					<visible>Control.IsEnabled(208)</visible>
+
+					<include>Common_Control_Background</include>
+	  
+					<control type="button" id="208">
+					
+						<include>Common_Control_Button</include>
+						<onup>203</onup>
+						<ondown>204</ondown>
+						<onright>120</onright>
+						
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Control_Image</include>
+						<texture>forumbrowser/forumbrowser_unread.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Control_Label</include>
+						<label>$ADDON[script.forum.browser 32565]</label>
+						
+					</control>
+					
+				</control>
 				
 				<!--Search Button-->
 				<control type="group">
@@ -213,7 +248,7 @@
 					<control type="button" id="204">
 					
 						<include>Common_Control_Button</include>
-						<onup>203</onup>
+						<onup>208</onup>
 						<ondown>200</ondown>
 						<onright>120</onright>
 						<onclick>Control.SetFocus(205)</onclick>
@@ -235,7 +270,7 @@
 					</control>
 					
 				</control>
-	  
+
 			</control>	
 			
 		</control>
@@ -251,7 +286,7 @@
 			<!--Animation-->
 			<include>Common_Animation_Content</include>
 			
-			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
+			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204) | Control.HasFocus(208) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
@@ -552,7 +587,7 @@
 						<width>400</width>
 						<height>400</height>
 						<texture>forumbrowser/forumbrowser_quotations.png</texture>
-						<colordiffuse>AAe6e6e6</colordiffuse>
+						<colordiffuse>Settings_Background_Dark</colordiffuse>
 						<aspectratio>keep</aspectratio>
 						
 					</control>
