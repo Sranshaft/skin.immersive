@@ -1,8 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-
-<window id="120">
+﻿<window id="120">
 	
-	<defaultcontrol always="true">1</defaultcontrol>
+	<defaultcontrol always="true">403</defaultcontrol>
 	
 	<controls>
 	
