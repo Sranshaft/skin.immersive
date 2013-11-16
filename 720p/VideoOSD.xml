@@ -2,7 +2,7 @@
 
 <window type="dialog" id="2901">
 	
-	<defaultcontrol always="true">1</defaultcontrol>
+	<defaultcontrol always="true">403</defaultcontrol>
 	
 	<controls>
 	
@@ -70,6 +70,8 @@
 				<itemgap>16</itemgap>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
+        
+        
 				
 				<!--Random Button-->
 				<control type="radiobutton" id="400">
