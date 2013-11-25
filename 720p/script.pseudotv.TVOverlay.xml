@@ -70,7 +70,7 @@
 			
 			<animation effect="slide" start="400,0" end="0,0" time="400" delay="400" tween="cubic" easing="out" condition="Control.IsVisible(102)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="400,0" time="200" tween="cubic" easing="in" condition="!Control.IsVisible(102)">Conditional</animation>
-			
+
 			<control type="image">
 			
 				<posx>0</posx>
@@ -88,8 +88,9 @@
 				<posy>40</posy>
 				<width>320</width>
 				<height>680</height>
-				<itemgap>10</itemgap>
+				<itemgap>6</itemgap>
 				<orientation>vertical</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
 			
 				<control type="textbox">
 				
@@ -103,27 +104,107 @@
 				
 				</control>
 				
+				<control type="image">
+					
+					<width>110</width>
+					<height>22</height>
+					<texture background="true">$INFO[Player.StarRating]</texture>
+					<colordiffuse>Label_Normal</colordiffuse>
+					<aspectratio>scale</aspectratio>
+					
+				</control>
+				
 				<control type="label">
 				
+					<posy>10</posy>
 					<width>350</width>
-					<height>40</height>
+					<height>16</height>
 					<label>$INFO[Control.GetLabel(504)]</label>
 					<textcolor>Label_Normal</textcolor>
 					<font>Fullscreen-Info-Small</font>
-				
+					
 				</control>
 				
 				<control type="textbox">
 				
 					<width>320</width>
-					<height>467</height>
-					<label>$INFO[Control.GetLabel(505)]</label>
+					<height>416</height>
+					<label>$INFO[Control.GetLabel(505)].</label>
 					<textcolor>Label_Normal</textcolor>
 					<font>Fullscreen-Info-Normal</font>
 					<wrapmultiline>true</wrapmultiline>
-					<shadowcolor>00FFFFFF</shadowcolor>
-					<autoscroll>false</autoscroll>
 				
+				</control>
+				
+			</control>
+			
+			<control type="group">
+	
+				<posx>40</posx>
+				<posy>660</posy>
+				<width>320</width>
+				
+				<!--Current Time-->
+				<control type="label">
+				
+					<posx>0</posx>
+					<posy>0</posy>
+					<width min="20" max="320">auto</width>
+					<height>40</height>
+					<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
+					<textcolor>Label_Normal</textcolor>
+					<font>Fullscreen-Info-Small</font>
+				
+				</control>
+				
+				<!--Progress Bar-->
+				<control type="progress" id="12">
+				
+					<description>My first progress control</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>320</width>
+					<height>5</height>
+					<texturebg border="2">colors/color_grey.png</texturebg>
+					<lefttexture>-</lefttexture>
+					<midtexture border="2">colors/color_silver.png</midtexture>
+					<righttexture>-</righttexture>
+					<info>Player.ProgressCache</info>
+					
+				</control>
+				
+				<!--Progress Bar-->
+				<control type="progress" id="12">
+				
+					<description>My first progress control</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>320</width>
+					<height>5</height>
+					<texturebg>colors/color_transparent.png</texturebg>
+					<lefttexture>-</lefttexture>
+					<midtexture border="2">colors/color_white.png</midtexture>
+					<righttexture>-</righttexture>
+					<info>Player.Progress</info>
+					<colordiffuse>Background_Highlight</colordiffuse>
+					
+				</control>
+				
+				<control type="slider">
+
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>320</width>
+					<height>5</height>
+					<texturesliderbar border="2">colors/color_transparent.png</texturesliderbar>
+					<textureslidernib border="2">colors/color_white.png</textureslidernib>
+					<textureslidernibfocus border="2">colors/color_white.png</textureslidernibfocus>
+					<info>Player.Progress</info>
+					<action>seek</action>
+					<controloffsetx></controloffsetx>
+					<controloffsety></controloffsety>
+					<pulseonselect></pulseonselect>
+					
 				</control>
 				
 			</control>
