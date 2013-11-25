@@ -72,6 +72,7 @@
 		<value condition="SubString(Window.Property(xmlfile),script-NextAired-TVGuide)">Next Aired TV Guide</value>
 		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.TVOverlay)">PseudoTV</value>
 		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.EPG.xml)">PseudoTV</value>
+		<value condition="SubString(Window.Property(xmlfile),script-videoextras-main.xml)">$INFO[ListItem.Title]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-The Big Picture-main)">The Big Picture</value>
 	</variable>
 	
@@ -106,6 +107,7 @@
 		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.TVOverlay)">$INFO[Control.GetLabel(502)]</value>
 		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.EPG)">EPG</value>
 		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-main)">$INFO[Control.GetLabel(190)]$INFO[Control.GetLabel(191)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-videoextras-main.xml)">$ADDON[script.videoextras 32001]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-The Big Picture-main)">$INFO[Container(100).ListItem.Property(album_title)]</value>
 	</variable>
 	
@@ -457,6 +459,7 @@
 	<variable name="Menu_Overlay_Image">
 	
 		<value condition="ListItem.IsResumable">OverlayResumable.png</value>
+		<value condition="SubString(Window.Property(xmlfile),script-videoextras-main.xml)">OverlayWatched.png</value>
 		<value>$INFO[ListItem.Overlay]</value>
 		
 	</variable>
