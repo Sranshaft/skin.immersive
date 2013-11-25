@@ -42,27 +42,40 @@
 				<itemlayout width="440" height="115">
 				
 					<control type="image">
-						
+							
 						<width>420</width>
 						<height>95</height>
 						<texture border="2">colors/color_white.png</texture>
-						<colordiffuse>FanartDiffuse</colordiffuse>
+						<colordiffuse>Settings_Background_Dark</colordiffuse>
 						
 					</control>
-				
+			
 					<include>Common_View_Details</include>
 					
 				</itemlayout>
 
 				<focusedlayout width="440" height="115">
+
+					<control type="image">
+							
+						<width>420</width>
+						<height>95</height>
+						<texture border="2">colors/color_white.png</texture>
+						<colordiffuse>Settings_Background_Dark</colordiffuse>
+						
+						<visible>!Control.HasFocus(59)</visible>
+
+					</control>
 				
 					<control type="image">
-						
+							
 						<width>420</width>
 						<height>95</height>
 						<texture border="2">colors/color_white.png</texture>
 						<colordiffuse>Background_Highlight</colordiffuse>
 						
+						<visible>Control.HasFocus(59)</visible>
+
 					</control>
 
 					<include>Common_View_Details</include>
