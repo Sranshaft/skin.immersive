@@ -10,7 +10,7 @@
 	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
 	
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowNextAiredNotification)">XBMC.RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<onload condition="System.HasAddon(script.tvtunes) + Skin.HasSetting(ShowTVTunesNotification)">XBMC.RunScript(script.tvtunes,backend=True&amp;loop=False)</onload>
+	<onload condition="System.HasAddon(script.tvtunes) + Skin.HasSetting(ShowTVTunesNotification)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
  
 
 	

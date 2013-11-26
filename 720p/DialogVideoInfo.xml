@@ -13,6 +13,8 @@
 	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(tvshows)">RunScript(script.extendedinfo,info=Similar,dbid=$INFO[ListItem.DBID],type=tvshow)</onload>
 	<onload condition="System.HasAddon(script.videoextras)">
     XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
+	<onload condition="Skin.HasSetting(ShowTVTunesNotification) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
+
 	
 	<include>Common_Animation_Window</include>
 	
@@ -36,7 +38,7 @@
 			<width>360</width>
 			<height>480</height>
 			
-			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(11) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(15) | Control.HasFocus(105) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
+			<animation type="Conditional" condition="Control.HasFocus(6) | Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(15) | Control.HasFocus(100) | Control.HasFocus(105) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
@@ -72,7 +74,7 @@
 					<control type="button" id="8">
 						
 						<include>Common_Control_Button</include>
-						<onup>10</onup>
+						<onup>100</onup>
 						<ondown>9</ondown>
 						<onright>9001</onright>
 						
@@ -306,7 +308,7 @@
 						
 						<include>Common_Control_Button</include>
 						<onup>15</onup>
-						<ondown>8</ondown>
+						<ondown>100</ondown>
 						<onright>9001</onright>
 						
 					</control>
@@ -326,9 +328,45 @@
 					</control>
 					
 				</control>
+
+				<!--Get Theme Button-->
+				<control type="group">
 				
-			</control>	
+					<width>400</width>
+					<height>60</height>
+					
+					<visible>Skin.HasSetting(ShowTVTunesNotification) + System.HasAddon(script.tvtunes) + [Container.Content(TVShows) | Container.Content(movies)] + IsEmpty(Window(movieinformation).Property("TvTunes_HideVideoInfoButton"))</visible>
+
+					<include>Common_Control_Background</include>
+					
+					<control type="button" id="100">
+						
+						<include>Common_Control_Button</include>
+						<onup>10</onup>
+						<ondown>8</ondown>
+						<onright>9001</onright>
+						<onclick>XBMC.RunScript(script.tvtunes,mode=solo)</onclick>
+
+					</control>
+					
+					<control type="image">
+					
+						<include>Common_Control_Image</include>
+						<texture>dialoginfo/dialoginfo_theme.png</texture>
+					
+					</control>
+					
+					<control type="label">
+					
+						<include>Common_Control_Label</include>
+						<label>get theme</label>
+						
+					</control>
+					
+				</control>
 				
+			</control>
+
 		</control>
 		
 		<!--Content Area-->
@@ -342,7 +380,7 @@
 			<!--Animation-->
 			<include>Common_Animation_Content</include>
 			
-			<animation type="Conditional" condition="Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(11) | Control.HasFocus(6) | Control.HasFocus(10) | Control.HasFocus(15) | Control.HasFocus(105) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
+			<animation type="Conditional" condition="Control.HasFocus(6) | Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(15) | Control.HasFocus(100) | Control.HasFocus(105) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
 				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>
 			
