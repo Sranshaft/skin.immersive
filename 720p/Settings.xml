@@ -15,7 +15,7 @@
 	
 		<include>Common_Settings_Background</include>
 	
-		<!--Menu-->
+		<include>Common_Clock_Dark</include><!--Menu-->
 		<control type="group">
 		
 			<include>Common_Settings_Header_Back</include>
