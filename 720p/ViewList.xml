@@ -21,6 +21,7 @@
 				<control type="label">
 						
 					<label>explore</label>
+          <textcolor>Background_Highlight</textcolor>
 					<include>Common_Section_Label</include>
 					
 				</control>
@@ -40,21 +41,22 @@
 					<scrolltime tween="cubic" easing="out">600</scrolltime>
 					<preloaditems>2</preloaditems>
 					
-					<itemlayout width="640" height="60">
+					<itemlayout width="600" height="60">
 
 						<include>Common_View_List</include>
 						
 					</itemlayout>
 
-					<focusedlayout width="640" height="60">
+					<focusedlayout width="600" height="60">
 					
 						<control type="image">
 									
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>640</width>
+							<width>600</width>
 							<height>60</height>
-							<texture background="true">colors/color_keyboard.png</texture>
+							<!--texture background="true">colors/color_keyboard.png</texture-->
+              <texture background="true">colors/color_white.png</texture>
 							<visible>!Control.HasFocus(50)</visible>
 							
 						</control>
@@ -63,10 +65,10 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>640</width>
+							<width>600</width>
 							<height>60</height>
 							<texture>colors/color_white.png</texture>
-							<colordiffuse>Label_Highlight</colordiffuse>
+							<colordiffuse>Background_Highlight</colordiffuse>
 							<visible>Control.HasFocus(50)</visible>
 							
 						</control>
@@ -85,7 +87,8 @@
 					<height>24</height>
 					<label>[UPPERCASE]$INFO[Container(50).CurrentPage,Page ,] of $INFO[Container(50).NumPages,, pages][/UPPERCASE]</label>
 					<font>Menu-List-Small</font>
-					<textcolor>Label_Disabled</textcolor>
+					<textcolor>Settings_Label</textcolor>
+		      <focusedcolor>Settings_Label_Highlight</focusedcolor>
 					<align>left</align>
 					<aligny>top</aligny>
 					
@@ -99,7 +102,8 @@
 					<height>24</height>
 					<label>[UPPERCASE]$INFO[Container(50).Totaltime,Total Playing Time: ,][/UPPERCASE]</label>
 					<font>Menu-List-Small</font>
-					<textcolor>Label_Disabled</textcolor>
+					<textcolor>Settings_Label</textcolor>
+		      <focusedcolor>Settings_Label_Highlight</focusedcolor>
 					<align>right</align>
 					<aligny>top</aligny>
 					
@@ -108,14 +112,15 @@
 				<!--Scrollbar-->
 				<control type="scrollbar" id="60">
 					
-					<posx>660</posx>
+					<posx>620</posx>
 					<posy>60</posy>
 					<height>420</height>
 					<onleft>50</onleft>
 					<onright>9001</onright>
 					
 					<include>Common_Scrollbar_Vertical</include>
-					
+					<texturesliderbar>colors/color_grey.png</texturesliderbar>
+		      <texturesliderbarfocus>colors/color_white.png</texturesliderbarfocus>
 					<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(50).Scrolling">Conditional</animation>
 					
 				</control>
@@ -141,6 +146,7 @@
 			<control type="label">
 					
 				<label>preview</label>
+        <textcolor>Background_Highlight</textcolor>
 				<include>Common_Section_Label</include>
 				
 			</control>

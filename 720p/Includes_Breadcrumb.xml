@@ -55,7 +55,7 @@
 					<height>65</height>
 					<label>$VAR[Breadcrumb_SubFolder_Label]</label>
 					<font>Breadcrumb-SubFolder</font>
-					<textcolor>Label_Normal</textcolor>
+					<textcolor>Label_Highlight</textcolor>
 					<aligny>center</aligny>
 					<visible>!StringCompare(Window.Property(xmlfile),Home.xml) + !StringCompare(Window.Property(xmlfile),FileBrowser.xml)</visible>
 					
@@ -124,7 +124,7 @@
 					<height>65</height>
 					<label>$VAR[Breadcrumb_Home_Label]</label>
 					<font>Breadcrumb-Home</font>
-					<textcolor>Settings_Label</textcolor>
+					<textcolor>Background_Highlight</textcolor>
 					<aligny>center</aligny>
 					
 				</control>
@@ -136,7 +136,7 @@
 					<height>65</height>
 					<label>$VAR[Breadcrumb_SubFolder_Label]</label>
 					<font>Breadcrumb-SubFolder</font>
-					<textcolor>Settings_Label</textcolor>
+					<textcolor>Label_Dark</textcolor>
 					<aligny>center</aligny>
 					
 				</control>

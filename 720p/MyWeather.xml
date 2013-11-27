@@ -1089,7 +1089,7 @@
 					
 				</control>	
 		
-				<!--10 Dsy Forecast-->
+				<!--10 Day Forecast-->
 				<control type="group">
 				
 					<width>980</width>
@@ -1383,11 +1383,10 @@
 					<height>500</height>
 
 					<control type="label">
-						
+            <width>500</width>
 						<label>map + alerts</label>
 						<include>Common_Section_Label_Dark</include>
-						
-					</control>
+		      </control>
 					
 					<control type="button" id="9503">
 					
