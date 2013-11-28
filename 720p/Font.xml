@@ -106,6 +106,12 @@
 			<filename>SegoeWP-SemiLight.ttf</filename>
 			<size>30</size>
 		</font>
+
+		<font>
+			<name>Content-Label-Small</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>18</size>
+		</font>
 		
 		<!--Context Fonts-->
 		

@@ -214,7 +214,7 @@
 					<control type="group">
 					
 						<height>32</height>
-					
+
 						<control type="button" id="2">
 						
 							<include>Common_AppBar_Button_Small</include>

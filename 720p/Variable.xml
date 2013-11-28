@@ -554,7 +554,16 @@
 		<value condition="IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.Year]</value>
 		<value>$INFO[ListItem.Artist]</value>
 	</variable>
-	
+
+	<!--PVR Variables-->
+
+	<variable name="PVR_Guide_Label">
+		<value condition="Control.IsVisible(10)">EPG: Timeline</value>
+		<value condition="Control.IsVisible(15)">EPG: Channel</value>
+		<value condition="Control.IsVisible(16)">EPG: Now / Next</value>
+		<value>EPG</value>
+	</variable>	
+
 	<!--Select Variables-->
 	
 	<variable name="Select_Button_Image">

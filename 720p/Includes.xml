@@ -92,7 +92,7 @@
 		<width>32</width>
 		<height>32</height>
 		<font>Appbar-Label</font>
-		<textcolor>Label_Normal</textcolor>
+		<textcolor>00FFFFFF</textcolor>
 		<focusedcolor>Label_Highlight</focusedcolor>
 		<selectedcolor>Label_Normal</selectedcolor>
 		<disabledcolor>Label_Disabled</disabledcolor>
@@ -517,9 +517,9 @@
 	</include>
 	
 	<include name="Common_Background">
-	
+
 		<control type="group">
-		
+
 			<!--Background-->
 			<control type="image">
 			
@@ -2717,7 +2717,7 @@
 			<include>Common_View_Overlay</include>
 
 		</control>
-		
+
 		<control type="textbox">
 			
 			<posx>115</posx>
@@ -2758,7 +2758,7 @@
 			<aspectratio align="left">keep</aspectratio>
 			
 		</control>
-		
+
 	</include>
 	
 	<include name="Common_View_List">
@@ -2902,7 +2902,62 @@
 			
 		</control>
 		
-	</include>	
+	</include>
+
+	<include name="Common_View_EPGTimeline">
+
+		<control type="image">
+
+			<width>10</width>
+			<height>60</height>
+			<posx>0</posx>
+			<posy>0</posy>
+			<texture>$INFO[ListItem.Property(GenreType),PVR/genres/,.png]</texture>
+			<aspectratio>stretch</aspectratio>
+			
+		</control>
+
+		<control type="label" id="1">
+			
+			<posx>20</posx>
+			<posy>2</posy>
+			<width>20</width>
+			<height>30</height>
+			<label>$INFO[ListItem.Label]</label>
+			<font>PVR-EPGListing-Header</font>
+			<aligny>center</aligny>
+			
+		</control>
+		
+		<control type="grouplist">
+
+			<posx>20</posx>
+			<posy>32</posy>
+			<width>60</width>
+			<height>16</height>
+			<orientation>horizontal</orientation>
+
+			<control type="image">
+				
+				<width>16</width>
+				<height>16</height>
+				<texture>PVR/pvr_recording.png</texture>
+				<visible>ListItem.IsRecording</visible>
+				
+			</control>
+
+			<control type="image">
+				
+				<width>16</width>
+				<height>16</height>
+				<texture>PVR/pvr_timer.png</texture>
+				<visible>ListItem.HasTimer</visible>
+
+			</control>
+
+		</control>	
+
+	</include>		
 	
 	<include name="Common_Window_Scrollbar_Horizontal">
 	

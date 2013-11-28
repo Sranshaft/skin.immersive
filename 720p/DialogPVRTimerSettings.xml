@@ -3,6 +3,187 @@
 <!--Need to update-->
 
 <window>
+
+	<defaultcontrol always="true">5</defaultcontrol>
+
+	<controls>
+
+		<include>Common_Settings_Background</include>
+		
+		<!--Menu-->
+		<control type="group">
+
+			<include>Common_Settings_Header_Back</include>
+			
+			<control type="label" id="2">
+	
+				<include>Common_Settings_Header</include>
+				
+			</control>
+
+			<control type="list" id="98">
+				
+				<description>List</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>420</width>
+				<height max="600">auto</height>
+				<onup>98</onup>
+				<ondown>98</ondown>
+				<onleft>-</onleft>
+				<onright>5</onright>
+				<scrolltime>0</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>-</pagecontrol>
+
+				<include>Common_Settings_Menu_List</include>
+
+				<content>
+
+					<item id="1">
+						<description>Configuration</description>
+						<label>Configuration</label>
+						<onclick>-</onclick>
+					</item>
+
+				</content>
+				
+			</control>		
+
+		</control>
+
+		<control type="group">
+		
+			<posx>480</posx>
+			<posy>0</posy>
+			<width>730</width>
+			<height>480</height>
+			
+			<include>Common_Animation_Settings_Options</include>
+		
+			<control type="grouplist" id="5">
+				
+				<description>Control Area</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>730</width>
+				<height>480</height>
+				<itemgap>0</itemgap>
+				<onleft>3</onleft>
+				<onright>9000</onright>
+				<orientation>vertical</orientation>
+				<pagecontrol>81</pagecontrol>
+				
+			</control>
+		
+		</control>
+		
+		<!--Scrollbar-->
+		<control type="scrollbar" id="81">
+		
+			<include>Common_Settings_Scrollbar_Vertical</include>
+			
+			<posx>1260</posx>
+			<posy>100</posy>
+			<height>480</height>
+			
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(81)">Conditional</animation>
+			
+		</control>
+
+		<control type="button" id="7">
+			
+			<description>Default Button</description>
+			<include>Common_Settings_Button</include>
+			
+		</control>
+
+		<control type="radiobutton" id="8">
+			
+			<description>Default Radio Button</description>
+			<include>Common_Settings_RadioButton</include>
+			
+		</control>
+
+		<control type="spincontrolex" id="9">
+		
+			<description>Default Spin Control</description>
+			<include>Common_Settings_SpinButton</include>
+			
+		</control>
+
+		<control type="togglebutton" id="10">
+			
+			<description>Default Toggle Button</description>
+			<include>Common_Settings_Menu</include>
+			
+		</control>
+
+		<control type="sliderex" id="10">
+
+			<description>Default Slider Control</description>
+			<include>Common_Settings_Slider</include>
+
+		</control>
+
+		<control type="image" id="11">
+			
+			<description>Default Seperator</description>
+			<include>Common_Settings_Divider</include>
+
+		</control>
+		
+		<control type="edit" id="12">
+
+			<description>Default Edit Control</description>
+			<include>Common_Settings_Edit</include>
+
+		</control>	
+
+		<include>Common_Settings_Divider</include>
+		
+		<control type="grouplist" id="9000">
+		
+			<include>Common_Settings_Button_Grouplist</include>
+		
+			<!--OK Button-->
+			<control type="button" id="28">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[186]</label>
+				<onup>99</onup>
+				
+			</control>
+
+			<!--Cancel Button-->
+			<control type="button" id="29">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[222]</label>
+				<onup>99</onup>
+				
+			</control>
+			
+			<!--Default Button-->
+			<control type="button" id="7">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[409]</label>
+				<onup>99</onup>
+				
+			</control>
+			
+		</control>	
+
+	</controls>
+	
+</window>			
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Need to update-->
+
+<window>
 	<defaultcontrol>29</defaultcontrol>
 	<coordinates>
 		<system>1</system>

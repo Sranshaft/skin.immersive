@@ -145,8 +145,8 @@
 					
 						<textcolor>Label_Normal</textcolor>
 						<include>Common_Control_Label</include>
-						<label>$LOCALIZE[19222]: $LOCALIZE[19030]</label>
-						
+						<label>$VAR[PVR_Guide_Label]</label>
+
 					</control>
 					
 				</control>
@@ -164,7 +164,7 @@
 						<include>Common_Control_Button</include>
 						<onup>31</onup>
 						<ondown>35</ondown>
-						<onright>11</onright>
+						<onright>13</onright>
 						
 					</control>
 					
@@ -198,7 +198,7 @@
 						<include>Common_Control_Button</include>
 						<onup>34</onup>
 						<ondown>36</ondown>
-						<onright>11</onright>
+						<onright>14</onright>
 						
 					</control>
 					
@@ -281,6 +281,9 @@
 				<include>PVR_EPGTimelineView</include>
 				<include>PVR_EPGChannelView</include>
 				<include>PVR_EPGNowNextView</include>
+				<include>PVR_LiveTVRecordingsView</include>
+				<include>PVR_LiveTVTimersView</include>
+				<include>PVR_LiveTVSearchView</include>
 				
 				<!--Overview Section-->
 				<control type="group">
@@ -341,105 +344,123 @@
 						
 					</control>
 					
-					<control type="textbox">
+					<control type="group">
+					
+						<visible>Player.HasVideo</visible>
 						
 						<posx>0</posx>
-						<posy>46</posy>
-						<width min="20" max="500">auto</width>
-						<height>40</height>
-						<label>[UPPERCASE]$VAR[NowPlaying_First_Label][/UPPERCASE]</label>
-						<textcolor>Label_Normal</textcolor>
-						<font>Fullscreen-Info-Large</font>
-						<aligny>top</aligny>
+						<posy>60</posy>
 					
-					</control>
-					
-					<control type="textbox">
+						<control type="image">
+							
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>460</width>
+							<height>260</height>
+							<texture background="true">$VAR[NowPlaying_Image]</texture>
+							<aspectratio align="true" aligny="top">scale</aspectratio>
 						
-						<posx>0</posx>
-						<posy>86</posy>
-						<width min="20" max="500">auto</width>
-						<height>40</height>
-						<label>[UPPERCASE]$VAR[NowPlaying_Second_Label][/UPPERCASE]</label>
-						<textcolor>Label_Normal</textcolor>
-						<font>Fullscreen-Info-Normal</font>
-						<aligny>top</aligny>
+						</control>
+						
+						<control type="image">
+							
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>460</width>
+							<height>260</height>
+							<texture border="16">button_unfocus.png</texture>
+							
+						</control>
 					
 					</control>
 					
 					<control type="group">
 					
+						<visible>Player.HasAudio</visible>
+						
 						<posx>0</posx>
-						<posy>150</posy>
-						<width>300</width>
-						<height>320</height>
-						
-						<control type="image">
-					
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>300</width>
-							<height>300</height>
-							<texture>colors/color_keyboard_dark.png</texture>
-							<aspectratio aligny="top">scale</aspectratio>
-						
-						</control>
+						<posy>60</posy>
 					
 						<control type="image">
-					
+							
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>300</width>
-							<height>300</height>
+							<width>260</width>
+							<height>260</height>
 							<texture background="true">$VAR[NowPlaying_Image]</texture>
-							<aspectratio aligny="top">scale</aspectratio>
+							<aspectratio align="true" aligny="top">scale</aspectratio>
 						
 						</control>
 						
-						<control type="multiimage">
-						
+						<control type="image">
+							
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>300</width>
-							<height>300</height>
-							<imagepath>tile</imagepath>
-							<timeperimage>4000</timeperimage>
-							<fadetime>400</fadetime>
-							<randomize>true</randomize>
-							<loop>yes</loop>
-							<colordiffuse>FanartDiffuse</colordiffuse>
+							<width>260</width>
+							<height>260</height>
+							<texture border="16">button_unfocus.png</texture>
+							
+						</control>
+					
+					</control>
+					
+					<control type="grouplist">
+					
+						<posx>0</posx>
+						<posy>340</posy>
+						<height>180</height>
+						<orientation>vertical</orientation>
+						<itemgap>0</itemgap>
+						<usecontrolcoords>true</usecontrolcoords>
+					
+						<control type="textbox">
+						
+							<width>460</width>
+							<height>76</height>
+							<label>[UPPERCASE]$VAR[NowPlaying_First_Label][/UPPERCASE]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Fullscreen-Info-Large</font>
+							<aligny>top</aligny>
 						
 						</control>
 						
-						<control type="button" id="9007">
-					
-							<posx>232</posx>
-							<posy>232</posy>
-							<width>48</width>
-							<height>48</height>
-							<texturefocus>playercontrols/playercontrol_fullscreen_focus.png</texturefocus>
-							<texturenofocus>playercontrols/playercontrol_fullscreen.png</texturenofocus>
-							<colordiffuse>Label_Normal</colordiffuse>
-							<onleft>11</onleft>
-							<onright>11</onright>
-							<onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
-							<onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>
+						<control type="textbox">
+							
+							<posy>10</posy>
+							<width>460</width>
+							<height>26</height>
+							<label>[UPPERCASE]$VAR[NowPlaying_Second_Label][/UPPERCASE]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Fullscreen-Info-Normal</font>
 							
 						</control>
 						
 						<control type="label">
-						
-							<posx>218</posx>
-							<posy>238</posy>
-							<width>100</width>
-							<height>40</height>
-							<label>click to go fullscreen</label>
+					
+							<width>460</width>
+							<height>26</height>
+							<label>[UPPERCASE]$VAR[NowPlaying_Third_Label][/UPPERCASE]</label>
 							<textcolor>Label_Normal</textcolor>
-							<font>Fullscreen-Info-Small</font>
-							<align>right</align>
-							<wrapmultiline>true</wrapmultiline>
-						
+							<font>Fullscreen-Info-Normal</font>
+							<aligny>top</aligny>
+							
 						</control>
+					
+					</control>
+					
+					<control type="button" id="9007">
+				
+						<posx>436</posx>
+						<posy>10</posy>
+						<width>24</width>
+						<height>24</height>
+						<texturefocus>playercontrols/playercontrol_fullscreen_focus.png</texturefocus>
+						<texturenofocus>playercontrols/playercontrol_fullscreen.png</texturenofocus>
+						<colordiffuse>Label_Normal</colordiffuse>
+						<onleft>11</onleft>
+						<onright>-</onright>
+						<onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
+						<onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>
 						
 					</control>
 					
@@ -447,8 +468,8 @@
 					<control type="group">
 					
 						<posx>0</posx>
-						<posy>470</posy>
-						<width>300</width>
+						<posy>490</posy>
+						<width>260</width>
 						<height>40</height>
 					
 						<!--Progress Bar-->
@@ -456,7 +477,7 @@
 						
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>300</width>
+							<width>260</width>
 							<height>5</height>
 							<texturebg border="2">colors/color_grey.png</texturebg>
 							<lefttexture>-</lefttexture>
@@ -468,16 +489,19 @@
 						
 						<!--Progress Bar-->
 						<control type="progress">
+						
 							<description>My first progress control</description>
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>300</width>
+							<width>260</width>
 							<height>5</height>
-							<texturebg>colors/color_black.png</texturebg>
+							<texturebg border="2">colors/color_transparent.png</texturebg>
 							<lefttexture>-</lefttexture>
-							<midtexture>colors/color_white.png</midtexture>
+							<midtexture border="2">colors/color_white.png</midtexture>
 							<righttexture>-</righttexture>
 							<info>Player.Progress</info>
+							<colordiffuse>Background_Highlight</colordiffuse>
+							
 						</control>
 					
 						<control type="label">
@@ -496,7 +520,7 @@
 						<!--Total Time-->
 						<control type="label">
 						
-							<posx>300</posx>
+							<posx>260</posx>
 							<posy>10</posy>
 							<width>100</width>
 							<height>40</height>
@@ -510,24 +534,11 @@
 						
 					</control>	
 				
-					<control type="label">
-					
-						<posx>0</posx>
-						<posy>510</posy>
-						<width min="20" max="1024">auto</width>
-						<height>32</height>
-						<label>[UPPERCASE]$VAR[NowPlaying_Third_Label][/UPPERCASE]</label>
-						<textcolor>Label_Normal</textcolor>
-						<font>Fullscreen-Info-Normal</font>
-						<aligny>top</aligny>
-					
-					</control>
-					
-				</control>	
-			
-			</control>
+				</control>
 
-		</control>
+			</control>
+			
+		</control>			
 		
 		<control type="label" id="29">
 			<description>Empty so we can pass the values up one level</description>
