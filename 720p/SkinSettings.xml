@@ -61,8 +61,8 @@
 					</item>
 					
 					<item id="4">
-						<description>Visualisations</description>
-						<label>Visualisations</label>
+						<description>Visuals</description>
+						<label>Visuals</label>
 						<onclick>-</onclick>
 					</item>
 					
