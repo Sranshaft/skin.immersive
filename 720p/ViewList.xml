@@ -66,7 +66,7 @@
 							<width>640</width>
 							<height>60</height>
 							<texture>colors/color_white.png</texture>
-							<colordiffuse>Label_Highlight</colordiffuse>
+							<colordiffuse>Background_Highlight</colordiffuse>
 							<visible>Control.HasFocus(50)</visible>
 							
 						</control>
