@@ -46,7 +46,7 @@
 						<width>420</width>
 						<height>95</height>
 						<texture border="2">colors/color_white.png</texture>
-						<colordiffuse>Settings_Background_Dark</colordiffuse>
+						<colordiffuse>FanartDiffuse</colordiffuse>
 						
 					</control>
 			
@@ -61,7 +61,7 @@
 						<width>420</width>
 						<height>95</height>
 						<texture border="2">colors/color_white.png</texture>
-						<colordiffuse>Settings_Background_Dark</colordiffuse>
+						<colordiffuse>FanartDiffuse</colordiffuse>
 						
 						<visible>!Control.HasFocus(59)</visible>
 
