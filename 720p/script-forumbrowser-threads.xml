@@ -550,7 +550,7 @@
 						<width>400</width>
 						<height>400</height>
 						<texture>forumbrowser/forumbrowser_quotations.png</texture>
-						<colordiffuse>AAe6e6e6</colordiffuse>
+						<colordiffuse>Settings_Background_Dark</colordiffuse>
 						<aspectratio>keep</aspectratio>
 						
 					</control>
@@ -563,7 +563,7 @@
 						<height>60</height>
 						<label>$INFO[Container(120).ListItem.Label,Thread started by: ,]</label>
 						<font>ForumBrowser-Poster</font>
-						<textcolor>Settings_Menu_Normal</textcolor>
+						<textcolor>Settings_Label</textcolor>
 						<aligny>center</aligny>
 						<scrollspeed>0</scrollspeed>
 						
@@ -576,7 +576,7 @@
 						<width>500</width>
 						<height>2</height>
 						<texture>colors/color_white.png</texture>
-						<colordiffuse>Settings_Menu_Normal</colordiffuse>
+						<colordiffuse>Settings_Label</colordiffuse>
 						
 					</control>
 					
@@ -589,7 +589,7 @@
 						<height>470</height>
 						<label>$INFO[Container(120).ListItem.Property(last)]</label>
 						<font>ForumBrowser-Description</font>
-						<textcolor>Settings_Menu_Normal</textcolor>
+						<textcolor>Settings_Label</textcolor>
 						<aligny>top</aligny>
 						<wrapmultiline>true</wrapmultiline>
 						<shadowcolor>00FFFFFF</shadowcolor>

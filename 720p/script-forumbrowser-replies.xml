@@ -379,7 +379,7 @@
 									<width>1022</width>
 									<height>150</height>
 									<texture border="20">forumbrowser/forumbrowser_bubble_right.png</texture>
-									<colordiffuse>FFE6E6E6</colordiffuse>
+									<colordiffuse>FF222222</colordiffuse>
 									
 								</control>
 								
@@ -397,7 +397,7 @@
 										<label>[B]$INFO[ListItem.Property(postnumber),#,][/B] $INFO[ListItem.Label]</label>
 										<font>ForumBrowser-Name</font>
 										<aligny>top</aligny>
-										<textcolor>Settings_Label</textcolor>
+										<textcolor>Label_Normal</textcolor>
 										
 									</control>
 									
@@ -409,7 +409,7 @@
 										<height>68</height>
 										<label>$INFO[ListItem.Property(message)]</label>
 										<font>ForumBrowser-Message</font>
-										<textcolor>Settings_Label</textcolor>
+										<textcolor>Label_Normal</textcolor>
 										<shadowcolor>00FFFFFF</shadowcolor>
 										<autoscroll>false</autoscroll>
 										
@@ -426,7 +426,7 @@
 										<font>ForumBrowser-Date</font>
 										<align>right</align>
 										<aligny>top</aligny>
-										<textcolor>Settings_Label</textcolor>
+										<textcolor>Label_Normal</textcolor>
 										
 									</control>
 									
