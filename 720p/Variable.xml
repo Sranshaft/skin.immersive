@@ -524,8 +524,8 @@
 	</variable>
 	
 	<variable name="OSD_Random_Label">
-		<value condition="Playlist.IsRandom">random:[CR]on</value>
-		<value condition="!Playlist.IsRandom">random:[CR]off</value>
+		<value condition="Playlist.IsRandom">random: on</value>
+		<value condition="!Playlist.IsRandom">random: off</value>
 	</variable>
 	
 	<variable name="OSD_PlayPause_Label">
@@ -534,9 +534,9 @@
 	</variable>
 	
 	<variable name="OSD_Repeat_Label">
-		<value condition="!Playlist.IsRepeatOne + !Playlist.IsRepeat">repeat:[CR]off</value>
-		<value condition="Playlist.IsRepeat">repeat:[CR]all</value>
-		<value condition="Playlist.IsRepeatOne">repeat:[CR]one</value>
+		<value condition="!Playlist.IsRepeatOne + !Playlist.IsRepeat">repeat: off</value>
+		<value condition="Playlist.IsRepeat">repeat: all</value>
+		<value condition="Playlist.IsRepeatOne">repeat: one</value>
 	</variable>
 	
 	<!--Player Variables-->

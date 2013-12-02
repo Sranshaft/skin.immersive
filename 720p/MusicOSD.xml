@@ -4,6 +4,9 @@
 	
 	<defaultcontrol always="true">1</defaultcontrol>
 	
+	<onload>Skin.Reset(ShowMoreOptionsMenu)</onload>
+	<onunload>Skin.Reset(ShowMoreOptionsMenu)</onunload>
+	
 	<controls>
 	
 		<!--Top Area-->
@@ -47,32 +50,94 @@
 				
 			</control>
 			
+			<!--Media Info-->
+			<control type="group">
+
+				<posx>16</posx>
+				<posy>16</posy>
+				<height>84</height>
+
+				<control type="image">
+						
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>84</width>
+					<height>84</height>
+					<texture>$VAR[NowPlaying_Image]</texture>
+					<aspectratio>scale</aspectratio>
+					
+				</control>
+				
+				<!--Player Info-->
+				<control type="grouplist">
+				
+					<posx>100</posx>
+					<posy>-2</posy>
+					<width>500</width>
+					<height>84</height>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
+					<align>top</align>
+				
+					<control type="label">
+					
+						<width>500</width>
+						<height>32</height>
+						<label>$VAR[NowPlaying_First_Label]</label>
+						<font>Appbar-Info</font>
+						<textcolor>Label_Normal</textcolor>
+						<aligny>top</aligny>
+					
+					</control>
+					
+					<control type="label">
+					
+						<width>500</width>
+						<height>16</height>
+						<label>$VAR[NowPlaying_Second_Label]</label>
+						<font>Appbar-Info-Small</font>
+						<textcolor>Label_Normal</textcolor>
+						
+					</control>
+					
+					<control type="label">
+					
+						<width>500</width>
+						<height>16</height>
+						<label>$VAR[NowPlaying_Third_Label]</label>
+						<font>Appbar-Info-Small</font>
+						<textcolor>Label_Normal</textcolor>
+						
+					</control>
+					
+					<!--Current Time-->
+					<control type="label">
+					
+						<width>500</width>
+						<height>30</height>
+						<label>[B]$INFO[Player.Time] / $INFO[Player.Duration][/B]</label>
+						<font>Appbar-Info-Small</font>
+						<textcolor>Label_Normal</textcolor>
+						<aligny>center</aligny>
+					
+					</control>
+					
+				</control>
+			
+			</control>
+
+			<!--Player Controls-->
 			<control type="grouplist" id="1">
 			
 				<posx>32</posx>
 				<posy>16</posy>
-				<width>1280</width>
+				<width>1216</width>
 				<height>116</height>
 				<itemgap>16</itemgap>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
+				<align>right</align>
 
-				<!--Random Button-->
-				<control type="radiobutton" id="400">
-			
-					<include>Common_AppBar_Button</include>
-					<texturefocus>playercontrols/playercontrol_shuffle_focus.png</texturefocus>
-					<texturenofocus>playercontrols/playercontrol_shuffle.png</texturenofocus>
-					<textureradioon>appbar/appbar_radioon.png</textureradioon>
-					<textureradiooff>-</textureradiooff>
-					<radiowidth>48</radiowidth>
-					<radioheight>48</radioheight>
-					<radioposx>6</radioposx>
-					<label>$VAR[OSD_Random_Label]</label>
-					<onclick>playercontrol(random)</onclick>
-					
-				</control>
-				
 				<!--Skip Previous Button-->
 				<control type="button" id="401">
 					
@@ -142,78 +207,186 @@
 					
 				</control>
 				
-				<!--Repeat Button-->
-				<control type="button" id="407">
-						
-					<include>Common_AppBar_Button</include>
-					<texturefocus>playercontrols/playercontrol_repeat_focus.png</texturefocus>
-					<texturenofocus>playercontrols/playercontrol_repeat.png</texturenofocus>
-					<label>$VAR[OSD_Repeat_Label]</label>
-					<onclick>playercontrol(repeat)</onclick>
-					
-				</control>
-				
 				<!--Divider-->
 				<control type="image" id="9150">
 					<include>Common_AppBar_Divider</include>
 				</control>
-				
-				<!--Lyrics Button-->
-				<control type="button" id="410">
+
+				<!--More Options Button-->
+				<control type="button" id="413">
 						
 					<include>Common_AppBar_Button</include>
-					<texturefocus>playercontrols/playercontrol_lyrics_focus.png</texturefocus>
-					<texturenofocus>playercontrols/playercontrol_lyrics.png</texturenofocus>
-					<label>get[CR]lyrics</label>
-					<onclick>Close</onclick>
-					<onclick>XBMC.RunScript($INFO[Skin.String(LyricPath)])</onclick>
-					
-				</control>
-				
-				<!--Divider-->
-				<control type="image" id="9151">
-					<include>Common_AppBar_Divider</include>
-				</control>
-				
-				<!--Visualization Settings Button-->
-				<control type="button" id="411">
-						
-					<include>Common_AppBar_Button</include>
-					<texturefocus>playercontrols/playercontrol_settings_focus.png</texturefocus>
-					<texturenofocus>playercontrols/playercontrol_settings.png</texturenofocus>
-					<colordiffuse>$VAR[Appbar_Visualisation_ColorDiffuse]</colordiffuse>
-					<label>visual[CR]settings</label>
-					<textcolor>$VAR[Appbar_Visualisation_ColorDiffuse]</textcolor>
-					<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
-					<enable>Visualisation.Enabled</enable>
-					
-				</control>
-				
-				<!--Visualization Presets Button-->
-				<control type="button" id="412">
-						
-					<include>Common_AppBar_Button</include>
-					<texturefocus>playercontrols/playercontrol_presets_focus.png</texturefocus>
-					<texturenofocus>playercontrols/playercontrol_presets.png</texturenofocus>
-					<colordiffuse>$VAR[Appbar_Visualisation_ColorDiffuse]</colordiffuse>
-					<label>visual[CR]presets</label>
-					<textcolor>$VAR[Appbar_Visualisation_ColorDiffuse]</textcolor>
-					<onclick>ActivateWindow(122)</onclick>
-					<enable>Visualisation.Enabled</enable>
-					
-				</control>
-				
-				<!--Visualization Button-->
-				<control type="button" id="500">
-						
-					<include>Common_AppBar_Button</include>
-					<texturefocus>playercontrols/playercontrol_visualisations_focus.png</texturefocus>
-					<texturenofocus>playercontrols/playercontrol_visualisations.png</texturenofocus>
-					<label>visual:[CR][LOWERCASE]$INFO[Visualisation.Name][/LOWERCASE]</label>
+					<texturefocus>playercontrols/playercontrol_more_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_more.png</texturenofocus>
+					<label>more[CR]options</label>
+					<onclick>Skin.SetBool(ShowMoreOptionsMenu)</onclick>
+					<onclick>SetFocus(10001)</onclick>
 					
 				</control>
 				
 			</control>
+			
+		</control>
+
+		<!--Visualization Button-->
+		<control type="button" id="500">
+			<visible>false</visible>				
+		</control>
+
+		<!--More Options Menu-->
+		<control type="group">
+
+			<visible>Skin.HasSetting(ShowMoreOptionsMenu)</visible>
+			
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="200" />
+			</animation>
+			
+			<animation type="Hidden">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+
+			<control type="list" id="10001">
+						
+				<posx>1048</posx>
+				<posy>168</posy>
+				<width>200</width>
+				<height>420</height>
+				<onup>10001</onup>
+				<ondown>10001</ondown>
+				<onleft>SetFocus(413)</onleft>
+				<onleft>Skin.Reset(ShowMoreOptionsMenu)</onleft>
+				<onright>SetFocus(413)</onright>
+				<onright>Skin.Reset(ShowMoreOptionsMenu)</onright>
+				<pagecontrol>60</pagecontrol>
+				<viewtype label="List">list</viewtype>
+				<scrolltime tween="Cubic " easing="inout">200</scrolltime>
+				<preloaditems>2</preloaditems>
+
+				<itemlayout width="200" height="60">
+
+					<control type="image">
+								
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>60</height>
+						<texture>colors/color_white.png</texture>
+						
+					</control>
+					
+					<control type="label">
+					
+						<posx>16</posx>
+						<posy>0</posy>
+						<width>168</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Label_Dark</textcolor>
+						<aligny>center</aligny>
+						<scrollspeed>0</scrollspeed>
+						
+					</control>
+						
+				</itemlayout>
+
+				<focusedlayout width="200" height="60">
+						
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>60</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>Background_Highlight</colordiffuse>
+					
+					</control>
+					
+					<control type="label">
+						
+						<posx>16</posx>
+						<posy>0</posy>
+						<width>168</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Label_Normal</textcolor>
+						<aligny>center</aligny>
+						<scrollspeed>0</scrollspeed>
+						
+					</control>
+						
+				</focusedlayout>
+				
+				<content>
+		
+					<item>
+						<label>visual settings</label>
+						<onclick>SetFocus(413)</onclick>
+						<onclick>Skin.Reset(ShowMoreOptionsMenu)</onclick>
+						<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+						<enable>Visualisation.Enabled</enable>
+					</item>
+
+					<item>
+						<label>visual presets</label>
+						<onclick>SetFocus(413)</onclick>
+						<onclick>Skin.Reset(ShowMoreOptionsMenu)</onclick>
+						<onclick>ActivateWindow(122)</onclick>
+						<enable>Visualisation.Enabled</enable>
+					</item>
+
+					<item>
+						<label>visual: [LOWERCASE]$INFO[Visualisation.Name][/LOWERCASE]</label>
+						<onclick>SetFocus(413)</onclick>
+						<onclick>Skin.Reset(ShowMoreOptionsMenu)</onclick>
+						<onclick>SendClick(500)</onclick>
+					</item>
+
+					<item>
+						<label>get lyrics</label>
+						<onclick>SetFocus(413)</onclick>
+						<onclick>Skin.Reset(ShowMoreOptionsMenu)</onclick>
+						<onclick>Close</onclick>
+						<onclick>XBMC.RunScript($INFO[Skin.String(LyricPath)])</onclick>
+					</item>
+
+					<item>
+						<label>DVD menu</label>
+						<onclick>PlayerControl(ShowVideoMenu)</onclick>
+						<enable>VideoPlayer.HasMenu</enable>
+					</item>
+
+					<item>
+						<label>$VAR[OSD_Repeat_Label]</label>
+						<onclick>playercontrol(repeat)</onclick>
+					</item>
+
+					<item>
+						<label>$VAR[OSD_Random_Label]</label>
+						<onclick>playercontrol(random)</onclick>
+					</item>	
+
+				</content>
+				
+			</control>
+
+			<control type="image">
+		
+				<posx>1048</posx>
+				<posy>168</posy>
+				<width>200</width>
+				<height>420</height>
+				<texture border="4">button_unfocus.png</texture>
+				<colordiffuse>Black</colordiffuse>
+				
+			</control>	
 			
 		</control>	
 

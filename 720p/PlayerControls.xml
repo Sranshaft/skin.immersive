@@ -7,15 +7,19 @@
 	
 	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !VideoPlayer.IsFullscreen + !Window.IsActive(Visualisation)</visible>
 
+	<onload>Skin.Reset(ShowMoreOptionsMenu)</onload>
+	<onunload>Skin.Reset(ShowMoreOptionsMenu)</onunload>
+
 	<controls>
 
 		<control type="group">
-			
+		
 			<posx>0</posx>
 			<posy>720</posy>
 			
-			<animation effect="slide" start="0,0" end="0,-116" time="200">WindowOpen</animation>
-			<animation effect="slide" start="0,-116" end="0,0" time="200">WindowClose</animation>
+			<visible>!Window.IsVisible(osdvideosettings) + !Window.IsVisible(osdaudiosettings) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(fullscreeninfo)</visible>
+
+			<include>Common_Animation_OSD</include>
 
 			<control type="image">
 				
@@ -23,37 +27,98 @@
 				<posy>0</posy>
 				<width>1280</width>
 				<height>116</height>
-				<texture>colors/color_white.png</texture>
-				<colordiffuse>AppBar_Background</colordiffuse>
+				<texture>colors/color_keyboard_dark.png</texture>
 				
 			</control>
+
+			<!--Media Info-->
+			<control type="group">
+
+				<posx>16</posx>
+				<posy>16</posy>
+				<height>84</height>
+
+				<control type="image">
+						
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>84</width>
+					<height>84</height>
+					<texture>$VAR[NowPlaying_Image]</texture>
+					<aspectratio>scale</aspectratio>
+					
+				</control>
+				
+				<!--Player Info-->
+				<control type="grouplist">
+				
+					<posx>100</posx>
+					<posy>-2</posy>
+					<width>500</width>
+					<height>84</height>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
+					<align>top</align>
+				
+					<control type="label">
+					
+						<width>500</width>
+						<height>32</height>
+						<label>$VAR[NowPlaying_First_Label]</label>
+						<font>Appbar-Info</font>
+						<textcolor>Label_Normal</textcolor>
+						<aligny>top</aligny>
+					
+					</control>
+					
+					<control type="label">
+					
+						<width>500</width>
+						<height>16</height>
+						<label>$VAR[NowPlaying_Second_Label]</label>
+						<font>Appbar-Info-Small</font>
+						<textcolor>Label_Normal</textcolor>
+						
+					</control>
+					
+					<control type="label">
+					
+						<width>500</width>
+						<height>16</height>
+						<label>$VAR[NowPlaying_Third_Label]</label>
+						<font>Appbar-Info-Small</font>
+						<textcolor>Label_Normal</textcolor>
+						
+					</control>
+					
+					<!--Current Time-->
+					<control type="label">
+					
+						<width>500</width>
+						<height>30</height>
+						<label>[B]$INFO[Player.Time] / $INFO[Player.Duration][/B]</label>
+						<font>Appbar-Info-Small</font>
+						<textcolor>Label_Normal</textcolor>
+						<aligny>center</aligny>
+					
+					</control>
+					
+				</control>
 			
+			</control>
+
+			<!--Player Controls-->
 			<control type="grouplist" id="1">
 			
 				<posx>32</posx>
 				<posy>16</posy>
-				<width>1280</width>
+				<width>1216</width>
 				<height>116</height>
 				<itemgap>16</itemgap>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
+				<align>right</align>
 				
-				<!--Random Button-->
-				<control type="radiobutton" id="400">
-			
-					<include>Common_AppBar_Button</include>
-					<texturefocus>playercontrols/playercontrol_shuffle_focus.png</texturefocus>
-					<texturenofocus>playercontrols/playercontrol_shuffle.png</texturenofocus>
-					<textureradioon>appbar/appbar_radioon.png</textureradioon>
-					<textureradiooff>-</textureradiooff>
-					<radiowidth>48</radiowidth>
-					<radioheight>48</radioheight>
-					<radioposx>6</radioposx>
-					<label>$VAR[OSD_Random_Label]</label>
-					<onclick>playercontrol(random)</onclick>
-					
-				</control>
-
 				<!--Skip Previous Button-->
 				<control type="button" id="401">
 					
@@ -123,122 +188,151 @@
 					
 				</control>
 				
-				<!--Repeat Button-->
-				<control type="button" id="407">
-						
-					<include>Common_AppBar_Button</include>
-					<texturefocus>playercontrols/playercontrol_repeat_focus.png</texturefocus>
-					<texturenofocus>playercontrols/playercontrol_repeat.png</texturenofocus>
-					<label>$VAR[OSD_Repeat_Label]</label>
-					<onclick>playercontrol(repeat)</onclick>
-					
-				</control>
-				
 				<!--Divider-->
 				<control type="image" id="9150">
 					<include>Common_AppBar_Divider</include>
 				</control>
 				
-				<!--Fullscreen Button-->
-				<control type="button" id="408">
+				<!--More Options Button-->
+				<control type="button" id="413">
 						
 					<include>Common_AppBar_Button</include>
-					<texturefocus>playercontrols/playercontrol_fullscreen_focus.png</texturefocus>
-					<texturenofocus>playercontrols/playercontrol_fullscreen.png</texturenofocus>
-					<label>go to[CR]fullscreen</label>
-					<onclick condition="Player.HasVideo">activatewindow(fullscreenvideo)</onclick>
-					<onclick condition="Player.HasAudio">activatewindow(visualisation)</onclick>
+					<texturefocus>playercontrols/playercontrol_more_focus.png</texturefocus>
+					<texturenofocus>playercontrols/playercontrol_more.png</texturenofocus>
+					<label>more[CR]options</label>
+					<onclick>Skin.SetBool(ShowMoreOptionsMenu)</onclick>
+					<onclick>SetFocus(10001)</onclick>
 					
 				</control>
 				
 			</control>
 			
-			<!--Now Playing (Info)-->
-			<control type="group">
+		</control>
+
+		<!--More Options Menu-->
+		<control type="group">
+
+			<visible>Skin.HasSetting(ShowMoreOptionsMenu)</visible>
 			
-				<posx>642</posx>
-				<posy>0</posy>
-				
-				<control type="image">
-				
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>640</width>
-					<height>116</height>
-					<texture>colors/color_white.png</texture>
-					<colordiffuse>Settings_Background_Dark</colordiffuse>
-					
-				</control>
-				
-				<control type="image">
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="200" />
+			</animation>
+			
+			<animation type="Hidden">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+
+			<control type="list" id="10001">
 						
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>116</width>
-					<height>116</height>
-					<texture>$VAR[NowPlaying_Image]</texture>
-					<aspectratio>scale</aspectratio>
-					
-				</control>
-				
-				<!--Player Info-->
-				<control type="grouplist">
-				
-					<posx>136</posx>
-					<posy>12</posy>
-					<width>500</width>
-					<height>116</height>
-					<itemgap>0</itemgap>
-					<orientation>vertical</orientation>
-					<align>top</align>
-				
-					<control type="label">
-					
-						<width>500</width>
-						<height>32</height>
-						<label>$VAR[NowPlaying_First_Label]</label>
-						<font>Appbar-Info</font>
-						<textcolor>Label_Dark</textcolor>
-						<aligny>top</aligny>
-					
-					</control>
-					
-					<control type="label">
-					
-						<width>500</width>
-						<height>16</height>
-						<label>$VAR[NowPlaying_Second_Label]</label>
-						<font>Appbar-Info-Small</font>
-						<textcolor>Label_Dark</textcolor>
+				<posx>1048</posx>
+				<posy>408</posy>
+				<width>200</width>
+				<height>180</height>
+				<onup>10001</onup>
+				<ondown>10001</ondown>
+				<onleft>SetFocus(413)</onleft>
+				<onleft>Skin.Reset(ShowMoreOptionsMenu)</onleft>
+				<onright>SetFocus(413)</onright>
+				<onright>Skin.Reset(ShowMoreOptionsMenu)</onright>
+				<pagecontrol>60</pagecontrol>
+				<viewtype label="List">list</viewtype>
+				<scrolltime tween="Cubic " easing="inout">200</scrolltime>
+				<preloaditems>2</preloaditems>
+
+				<itemlayout width="200" height="60">
+
+					<control type="image">
+								
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>60</height>
+						<texture>colors/color_white.png</texture>
 						
 					</control>
 					
 					<control type="label">
 					
-						<width>500</width>
-						<height>16</height>
-						<label>$VAR[NowPlaying_Third_Label]</label>
-						<font>Appbar-Info-Small</font>
-						<textcolor>Label_Dark</textcolor>
-						
-					</control>
-					
-					<!--Current Time-->
-					<control type="label">
-					
-						<width>500</width>
-						<height>30</height>
-						<label>[B]$INFO[Player.Time] / $INFO[Player.Duration][/B]</label>
-						<font>Appbar-Info-Small</font>
+						<posx>16</posx>
+						<posy>0</posy>
+						<width>168</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
 						<textcolor>Label_Dark</textcolor>
 						<aligny>center</aligny>
+						<scrollspeed>0</scrollspeed>
+						
+					</control>
+						
+				</itemlayout>
+
+				<focusedlayout width="200" height="60">
+						
+					<control type="image">
+					
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>60</height>
+						<texture>colors/color_white.png</texture>
+						<colordiffuse>Background_Highlight</colordiffuse>
 					
 					</control>
 					
-				</control>
+					<control type="label">
+						
+						<posx>16</posx>
+						<posy>0</posy>
+						<width>168</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-List</font>
+						<textcolor>Label_Normal</textcolor>
+						<aligny>center</aligny>
+						<scrollspeed>0</scrollspeed>
+						
+					</control>
+						
+				</focusedlayout>
+				
+				<content>
+		
+					<item>
+						<label>show fullscreen</label>
+						<onclick condition="Player.HasVideo">activatewindow(fullscreenvideo)</onclick>
+						<onclick condition="Player.HasAudio">activatewindow(visualisation)</onclick>
+					</item>	
+
+					<item>
+						<label>$VAR[OSD_Repeat_Label]</label>
+						<onclick>playercontrol(repeat)</onclick>
+					</item>
+
+					<item>
+						<label>$VAR[OSD_Random_Label]</label>
+						<onclick>playercontrol(random)</onclick>
+					</item>	
+
+				</content>
 				
 			</control>
+
+			<control type="image">
 		
+				<posx>1048</posx>
+				<posy>408</posy>
+				<width>200</width>
+				<height>180</height>
+				<texture border="4">button_unfocus.png</texture>
+				<colordiffuse>Black</colordiffuse>
+				
+			</control>	
+			
 		</control>
 
 	</controls>
