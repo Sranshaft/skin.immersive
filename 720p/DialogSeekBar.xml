@@ -98,11 +98,11 @@
 				<effect type="slide" start="0,-188" end="0,0" time="400" delay="400" tween="cubic" easing="in" />
 			</animation>
 			
-			<animation type="Conditional" condition="System.IdleTime(5) + !Player.Caching" reversible="true">
+			<animation type="Conditional" condition="[System.IdleTime(5) + !Player.Caching] | Window.IsVisible(videoosd)" reversible="true">
 				<effect type="fade" start="100" end="0" time="400" />
 				<effect type="slide" start="0,0" end="0,188" time="400" tween="cubic" easing="in" />
 			</animation>
-			
+
 			<control type="image">
 				
 				<posx>0</posx>
