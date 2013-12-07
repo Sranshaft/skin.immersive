@@ -38,51 +38,7 @@
 				<orientation>vertical</orientation>
 				<pagecontrol>-</pagecontrol>
 
-				<itemlayout width="420" height="60">
-
-					<control type="label">
-							
-						<posx>60</posx>
-						<posy>0</posy>
-						<width min="20" max="400">auto</width>
-						<height>60</height>
-						<label>$INFO[ListItem.Label]</label>
-						<font>Menu-List</font>
-						<textcolor>Settings_Menu_Normal</textcolor>
-						<aligny>center</aligny>
-						
-					</control>
-
-				</itemlayout>
-
-				<focusedlayout width="420" height="60">
-
-					<control type="image">
-					
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>420</width>
-						<height>60</height>
-						<texture>colors/color_white.png</texture>
-						<colordiffuse>Background_Highlight</colordiffuse>
-					
-					</control>
-
-					<control type="label">
-							
-						<posx>60</posx>
-						<posy>0</posy>
-						<width min="20" max="400">auto</width>
-						<height>60</height>
-						<label>$INFO[ListItem.Label]</label>
-						<font>Menu-List</font>
-						<textcolor>Settings_Menu_Highlight</textcolor>
-						<aligny>center</aligny>
-						<scrollspeed>0</scrollspeed>
-						
-					</control>
-
-				</focusedlayout>
+				<include>Common_Settings_Menu_List</include>
 
 				<content>
 
@@ -105,8 +61,8 @@
 					</item>
 					
 					<item id="4">
-						<description>Visualisations</description>
-						<label>Visualisations</label>
+						<description>Visuals</description>
+						<label>Visuals</label>
 						<onclick>-</onclick>
 					</item>
 					
@@ -135,12 +91,6 @@
 					</item>
 
 					<item id="9">
-						<description>Misc.</description>
-						<label>Miscellaneous</label>
-						<onclick>-</onclick>
-					</item>
-					
-					<item id="10">
 						<description>Debug</description>
 						<label>$LOCALIZE[31033]</label>
 						<onclick>-</onclick>
@@ -1033,6 +983,24 @@
 					<selected>Skin.HasSetting(NoSplashScreen)</selected>
 					
 				</control>
+				
+				<control type="label" id="452">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Media views</label>
+					
+				</control>
+				
+				<control type="radiobutton" id="405">
+					
+					<description>Disable alphabetic overlay when scrolling media</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Disable alphabetic overlay when scrolling media</label>
+					<onclick>Skin.ToggleSetting(DisableSortLetter)</onclick>
+					<selected>Skin.HasSetting(DisableSortLetter)</selected>
+					
+				</control>
 
 			</control>
 
@@ -1285,7 +1253,7 @@
 				
 			</control>
 
-			<!--Misc. Options - Might be more populated in the future as the skin evolves-->
+			<!--Debug Options-->
 			<control type="grouplist" id="900">
 				
 				<description>Control Area</description>
@@ -1303,47 +1271,8 @@
 				<visible>Container(98).Hasfocus(9)</visible>
 				
 				<include>Common_Animation_Settings_Options</include>
-				
-				<control type="label" id="951">
-				
-					<description></description>
-					<include>Common_Settings_Label</include>
-					<label>Views</label>
-					
-				</control>
 
 				<control type="radiobutton" id="901">
-					
-					<description>Disable alphabetic overlay when scrolling media</description>
-					<include>Common_Settings_RadioButton</include>
-					<label>Disable alphabetic overlay when scrolling media</label>
-					<onclick>Skin.ToggleSetting(DisableSortLetter)</onclick>
-					<selected>Skin.HasSetting(DisableSortLetter)</selected>
-					
-				</control>
-
-			</control>
-			
-			<!--Debug Options-->
-			<control type="grouplist" id="1000">
-				
-				<description>Control Area</description>
-				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
-				<height>540</height>
-				<itemgap>0</itemgap>
-				<onup>900</onup>
-				<ondown>900</ondown>
-				<onleft>98</onleft>
-				<onright>-</onright>
-				<orientation>vertical</orientation>
-				<pagecontrol>90</pagecontrol>
-				<visible>Container(98).Hasfocus(10)</visible>
-				
-				<include>Common_Animation_Settings_Options</include>
-
-				<control type="radiobutton" id="1001">
 					
 					<description>Enable Debug Grid</description>
 					<include>Common_Settings_RadioButton</include>
@@ -1353,7 +1282,7 @@
 					
 				</control>
 
-				<control type="radiobutton" id="1002">
+				<control type="radiobutton" id="902">
 					
 					<description>Disable Debug Info</description>
 					<include>Common_Settings_RadioButton</include>
