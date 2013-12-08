@@ -983,6 +983,24 @@
 					<selected>Skin.HasSetting(NoSplashScreen)</selected>
 					
 				</control>
+				
+				<control type="label" id="452">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Media views</label>
+					
+				</control>
+				
+				<control type="radiobutton" id="405">
+					
+					<description>Disable alphabetic overlay when scrolling media</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Disable alphabetic overlay when scrolling media</label>
+					<onclick>Skin.ToggleSetting(DisableSortLetter)</onclick>
+					<selected>Skin.HasSetting(DisableSortLetter)</selected>
+					
+				</control>
 
 			</control>
 
