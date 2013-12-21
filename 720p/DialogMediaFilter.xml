@@ -19,9 +19,12 @@
 		
 			<!--Top Area-->
 			<control type="image">
-					
+		
 				<include>Common_Dimensions</include>
-				<texture>overlays/overlay_fullscreen_top.png</texture>
+				<texture background="true">colors/color_white.png</texture>
+				<colordiffuse>FanartDiffuse</colordiffuse>
+				
+				<include>Common_Animation_Window_Dark</include>
 				
 			</control>
 			
@@ -49,8 +52,7 @@
 					<posy>0</posy>
 					<width>700</width>
 					<height>720</height>
-					<texture background="true">colors/color_white.png</texture>
-					<colordiffuse>Background_Normal</colordiffuse>
+					<texture background="true">colors/color_keyboard_dark.png</texture>		
 				
 				</control>
 				

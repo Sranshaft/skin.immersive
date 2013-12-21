@@ -39,8 +39,7 @@
 				<posy>0</posy>
 				<width>320</width>
 				<height>720</height>
-				<texture background="true">colors/color_white.png</texture>
-				<colordiffuse>Background_Normal</colordiffuse>			
+				<texture background="true">colors/color_keyboard_dark.png</texture>		
 
 			</control>
 			
