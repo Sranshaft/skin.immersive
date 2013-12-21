@@ -105,24 +105,6 @@
 		
 	</include>
 	
-	<include name="Common_AppBar_AutoUpdate">
-	
-		<control type="radiobutton" id="5">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_autoupdate_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_autoupdate.png</texturenofocus>
-			<textureradioon>appbar/appbar_radioon.png</textureradioon>
-			<textureradiooff>-</textureradiooff>
-			<radiowidth>48</radiowidth>
-			<radioheight>48</radioheight>
-			<radioposx>6</radioposx>
-			<label>auto[CR]update</label>
-			
-		</control>
-		
-	</include>	
-	
 	<include name="Common_AppBar_Divider">
 	
 		<posx>0</posx>
@@ -183,115 +165,6 @@
 		
 	</include>
 	
-	<include name="Common_AppBar_LanguageFilter">
-	
-		<control type="radiobutton" id="7">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_languages_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_languages.png</texturenofocus>
-			<textureradioon>appbar/appbar_radioon.png</textureradioon>
-			<textureradiooff>-</textureradiooff>
-			<radiowidth>48</radiowidth>
-			<radioheight>48</radioheight>
-			<radioposx>6</radioposx>
-			<label>hide[CR]foriegn</label>
-			
-		</control>
-		
-	</include>
-	
-	<include name="Common_AppBar_Notifications">
-	
-		<control type="radiobutton" id="6">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_notifications_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_notifications.png</texturenofocus>
-			<textureradioon>appbar/appbar_radioon.png</textureradioon>
-			<textureradiooff>-</textureradiooff>
-			<radiowidth>48</radiowidth>
-			<radioheight>48</radioheight>
-			<radioposx>6</radioposx>
-			<label>notify[CR]me</label>
-			
-		</control>
-		
-	</include>
-	
-	<include name="Common_AppBar_PartyMode">
-	
-		<control type="button" id="16">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_partymode_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_partymode.png</texturenofocus>
-			<label>589</label>
-			<visible>Container.Content(musicvideos)</visible>
-			
-		</control>
-		
-	</include>
-	
-	<include name="Common_AppBar_RandomizeSlideshow">
-	
-		<control type="radiobutton" id="9">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_random_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_random.png</texturenofocus>
-			<textureradioon>appbar/appbar_radioon.png</textureradioon>
-			<textureradiooff>-</textureradiooff>
-			<radiowidth>48</radiowidth>
-			<radioheight>48</radioheight>
-			<radioposx>6</radioposx>
-			<label>random[CR]slideshow</label>
-			
-		</control>
-		
-	</include>
-	
-	<include name="Common_AppBar_Record">
-	
-		<control type="button" id="10">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_record_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_record.png</texturenofocus>
-			<label>record</label>
-			<visible>Control.IsEnabled(10)</visible>
-			
-		</control>
-		
-	</include>
-	
-	<include name="Common_AppBar_RipCD">
-	
-		<control type="button" id="11">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_ripcd_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_ripcd.png</texturenofocus>
-			<label>rip cd</label>
-			<visible>Control.IsEnabled(11)</visible>
-			
-		</control>
-		
-	</include>
-	
-	<include name="Common_AppBar_ScanToLibrary">
-	
-		<control type="button" id="9">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_scantolibrary_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_scantolibrary.png</texturenofocus>
-			<label>scan to[CR]library</label>
-			
-		</control>
-		
-	</include>
-
 	<include name="Common_AppBar_Search">
 	
 		<control type="button" id="8">
@@ -300,34 +173,6 @@
 			<texturefocus>appbar/appbar_search_focus.png</texturefocus>
 			<texturenofocus>appbar/appbar_search.png</texturenofocus>
 			<label>search</label>
-			
-		</control>
-		
-	</include>
-	
-	<include name="Common_AppBar_Slideshow">
-	
-		<control type="button" id="6">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_carousel_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_carousel.png</texturenofocus>
-			<label>start[CR]slideshow</label>
-			<visible>!ListItem.IsFolder</visible>
-			
-		</control>
-		
-	</include>
-	
-	<include name="Common_AppBar_Slideshow_Recursive">
-	
-		<control type="button" id="7">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_carousel_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_carousel.png</texturenofocus>
-			<label>start[CR]slideshow</label>
-			<visible>ListItem.IsFolder</visible>
 			
 		</control>
 		
@@ -2050,7 +1895,7 @@
 		<texturenofocus border="6">button_unfocus.png</texturenofocus>
 		<font>DialogInfo-Header</font>
 		<textcolor>Settings_Label</textcolor>
-		<focusedcolor>Label_Dark</focusedcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
 		<disabledcolor>Settings_Label_Disabled</disabledcolor>
 		<colordiffuse>Settings_Label</colordiffuse>
 		<textoffsetx>0</textoffsetx>
