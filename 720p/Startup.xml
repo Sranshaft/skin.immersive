@@ -3,6 +3,7 @@
 <window>
 	
 	<onload condition="System.HasAddon(script.tv.show.next.aired)">XBMC.RunScript(script.tv.show.next.aired,silent=True)</onload>
+	<onload condition="System.HasAddon(script.grab.fanart)">XBMC.RunScript(script.grab.fanart,mode=random)</onload>
 	
 	<!--Splash Screen-->
 	<onload>AlarmClock(CloseStartup,ReplaceWindow(home),00:05,silent)</onload>
