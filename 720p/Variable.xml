@@ -392,9 +392,12 @@
 		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Mountains)">personalization/personalization_mountains.png</value>
 		<value condition="StringCompare(Skin.String(PersonalizeOverlay),City)">personalization/personalization_city.png</value>
 		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Cubist)">personalization/personalization_cubist.png</value>
+		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Custom1)">$INFO[Skin.String(PersonalizationOverlayCustom1)]</value>
+		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Custom2)">$INFO[Skin.String(PersonalizationOverlayCustom2)]</value>
+		<value condition="StringCompare(Skin.String(PersonalizeOverlay),Custom3)">$INFO[Skin.String(PersonalizationOverlayCustom3)]</value>
 		<value></value>
 	</variable>
-	
+
 	<!--Info Dialog Variables-->
 	
 	<variable name="Info_Image">

@@ -4,7 +4,7 @@
 
 	<zorder>2</zorder>
 	
-	<onload>AlarmClock(CloseSplash,Dialog.Close(60, force),00:02,silent)</onload>
+	<onload>AlarmClock(CloseSplash,Dialog.Close(60, force),00:01,silent)</onload>
 	
 	<controls>
 	

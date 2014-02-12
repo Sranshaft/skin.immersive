@@ -632,7 +632,7 @@
 		<control type="button" id="9111">
 			
 			<include>Common_AppBar_View_Poster</include>
-			<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+			<visible>Container.Content(files) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(actors)</visible>
 			
 		</control>
 		
@@ -689,7 +689,7 @@
 			<include>Common_AppBar_View_Details</include>
 			
 		</control>
-		
+
 		<!--View Banner-->
 		<control type="button" id="9119">
 			

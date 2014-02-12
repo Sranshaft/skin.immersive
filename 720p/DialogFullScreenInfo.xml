@@ -108,7 +108,7 @@
 					<control type="textbox">
 					
 						<width>320</width>
-						<height>380</height>
+						<height>410</height>
 						<label>$INFO[VideoPlayer.Plot]</label>
 						<textcolor>Label_Normal</textcolor>
 						<font>Fullscreen-Info-Normal</font>

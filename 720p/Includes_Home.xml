@@ -2,7 +2,7 @@
 
 <includes>
 
-	<include name="Home_Normal">
+	<include name="Home_Content">
 	
 		<control type="group">
 		
@@ -17,6 +17,11 @@
 			<control type="grouplist" id="9000">
 			
 				<include>Common_Content_Grouplist</include>
+
+				<animation type="Conditional" reversible="true" condition="Window.IsActive(134)">
+					<effect type="fade" start="100" end="0" time="100"/>
+					<effect type="slide" start="0,0" end="0,-60" center="auto" time="400" tween="cubic" easing="out" />
+				</animation>
 				
 				<!--Main Menu (Tile)-->
 				<control type="group">
@@ -40,8 +45,9 @@
 						<height>480</height>
 						<onleft>9007</onleft>
 						<onright>9002</onright>
-						<onup>9001</onup>
-						<ondown>9001</ondown>
+						<onup>8999</onup>
+						<onup>Control.Move(9001,-1)</onup>
+						<ondown>8999</ondown>
 						<pagecontrol>9011</pagecontrol>
 						<viewtype label="535">list</viewtype>
 						<scrolltime tween="cubic" easing="out">600</scrolltime>
@@ -60,6 +66,36 @@
 								<colordiffuse>Tile_Background</colordiffuse>
 								
 							</control>
+
+							<control type="multiimage">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>140</width>
+								<height>140</height>
+								<imagepath>$INFO[ListItem.Thumb]</imagepath>
+								<timeperimage>2000</timeperimage>
+								<fadetime>1000</fadetime>
+								<randomize>false</randomize>
+								<aspectratio>scale</aspectratio>
+								
+							</control>
+
+							<control type="multiimage">
+			
+								<posx>-1</posx>
+								<posy>-1</posy>
+								<width>142</width>
+								<height>142</height>
+								<imagepath>tile/</imagepath>
+								<timeperimage>2000</timeperimage>
+								<fadetime>1000</fadetime>
+								<randomize>false</randomize>
+								<colordiffuse>FanartDiffuse</colordiffuse>
+
+								<visible>!IsEmpty(ListItem.Thumb)</visible>
+
+							</control>
 							
 							<control type="image">
 							
@@ -67,7 +103,7 @@
 								<posy>0</posy>
 								<width>140</width>
 								<height>140</height>
-								<texture>$INFO[ListItem.Thumb]</texture>
+								<texture>$INFO[ListItem.Icon]</texture>
 								<aspectratio>scale</aspectratio>
 								
 							</control>
@@ -100,7 +136,7 @@
 								<visible>StringCompare(ListItem.Label,Now playing) + !VideoPlayer.HasMenu</visible>
 								
 							</control>
-							
+
 						</itemlayout>
 
 						<focusedlayout width="160" height="160">
@@ -115,6 +151,36 @@
 								<colordiffuse>Background_Highlight</colordiffuse>
 								
 							</control>
+
+							<control type="multiimage">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>140</width>
+								<height>140</height>
+								<imagepath>$INFO[ListItem.Thumb]</imagepath>
+								<timeperimage>2000</timeperimage>
+								<fadetime>1000</fadetime>
+								<randomize>false</randomize>
+								<aspectratio>scale</aspectratio>
+								
+							</control>
+
+							<control type="multiimage">
+			
+								<posx>-1</posx>
+								<posy>-1</posy>
+								<width>142</width>
+								<height>142</height>
+								<imagepath>tile/</imagepath>
+								<timeperimage>2000</timeperimage>
+								<fadetime>1000</fadetime>
+								<randomize>false</randomize>
+								<colordiffuse>FanartDiffuse</colordiffuse>
+
+								<visible>!IsEmpty(ListItem.Thumb)</visible>
+								
+							</control>
 							
 							<control type="image">
 							
@@ -122,7 +188,7 @@
 								<posy>0</posy>
 								<width>140</width>
 								<height>140</height>
-								<texture>$INFO[ListItem.Thumb]</texture>
+								<texture>$INFO[ListItem.Icon]</texture>
 								<aspectratio>scale</aspectratio>
 								
 							</control>
@@ -153,6 +219,18 @@
 								<aligny>top</aligny>
 								
 								<visible>StringCompare(ListItem.Label,Now playing) + !VideoPlayer.HasMenu</visible>
+								
+							</control>
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>140</width>
+								<height>140</height>
+								<texture border="10">button_unfocus.png</texture>
+								<colordiffuse>Background_Highlight</colordiffuse>
+								<aspectratio>scale</aspectratio>
 								
 							</control>
 							
@@ -210,7 +288,7 @@
 							<item id="1">
 								<description>Now Playing</description>
 								<label>Now playing</label>
-								<label2>$INFO[VideoPlayer.Title]</label2>
+								<label2>$VAR[NowPlaying_First_Label][CR]$VAR[NowPlaying_Second_Label]</label2>
 								<thumb>$VAR[NowPlaying_Image]</thumb>
 								<onclick>ActivateWindow(fullscreenvideo)</onclick>
 								<visible>Player.HasVideo</visible>
@@ -228,7 +306,7 @@
 							<item id="2">
 								<description>Programs</description>
 								<label>$LOCALIZE[31002]</label>
-								<thumb>home/home_addons.png</thumb>
+								<icon>home/home_addons.png</icon>
 								<onclick>ActivateWindow(programs,addons,return)</onclick>
 								<visible>Skin.HasSetting(ShowAddonsMenu)</visible>
 							</item>
@@ -236,7 +314,7 @@
 							<item id="3">
 								<description>Videos</description>
 								<label>$LOCALIZE[31003]</label>
-								<thumb>home/home_videos.png</thumb>
+								<icon>home/home_videos.png</icon>
 								<onclick>ActivateWindow(videos,root)</onclick>
 								<visible>Skin.HasSetting(ShowVideosMenu)</visible>
 							</item>
@@ -245,7 +323,8 @@
 								<description>Movies</description>
 								<label>$LOCALIZE[31006]</label>
 								<label2>$INFO[Window(Home).Property(Movies.Count),, movies][CR]$INFO[Window(Home).Property(Movies.Watched),, watched][CR]$INFO[Window(Home).Property(Movies.UnWatched),, unwatched]</label2>
-								<thumb>home/home_movie.png</thumb>
+								<thumb>$INFO[Window(Home).Property(script.grab.fanart.Movie.Fanart)]</thumb>
+								<icon>home/home_movie.png</icon>
 								<onclick>ActivateWindow(61,return)</onclick>
 								<visible>Library.HasContent(movies) + Skin.HasSetting(ShowMoviesMenu)</visible>
 							</item>
@@ -254,7 +333,8 @@
 								<description>TV Shows</description>
 								<label>$LOCALIZE[31007]</label>
 								<label2>$INFO[Window(Home).Property(TVShows.Count),, tv shows][CR]$INFO[Window(Home).Property(TVShows.Watched),, watched][CR]$INFO[Window(Home).Property(TVShows.UnWatched),, unwatched]</label2>
-								<thumb>home/home_tvshow.png</thumb>
+								<thumb>$INFO[Window(Home).Property(script.grab.fanart.TV.Fanart)]</thumb>
+								<icon>home/home_tvshow.png</icon>
 								<onclick>ActivateWindow(62,return)</onclick>
 								<visible>Library.HasContent(tvshows) + Skin.HasSetting(ShowTVShowsMenu)</visible>
 							</item>
@@ -262,7 +342,7 @@
 							<item id="6">
 								<description>Live TV</description>
 								<label>Live TV</label>
-								<thumb>home/home_livetv.png</thumb>
+								<icon>home/home_livetv.png</icon>
 								<onclick>ActivateWindow(PVR)</onclick>
 								<visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(ShowLiveTVMenu)</visible>
 							</item>
@@ -271,7 +351,8 @@
 								<description>Music</description>
 								<label>$LOCALIZE[31004]</label>
 								<label2>$INFO[Window(Home).Property(Music.ArtistsCount),, artists][CR]$INFO[Window(Home).Property(Music.AlbumsCount),, albums][CR]$INFO[Window(Home).Property(Music.SongsCount),, songs]</label2>
-								<thumb>home/home_music.png</thumb>
+								<thumb>$INFO[Window(Home).Property(script.grab.fanart.Music.Fanart)]</thumb>
+								<icon>home/home_music.png</icon>
 								<onclick>ActivateWindow(63,return)</onclick>
 								<visible>Skin.HasSetting(ShowMusicMenu)</visible>
 							</item>
@@ -279,7 +360,7 @@
 							<item id="8">
 								<description>Games</description>
 								<label>Games</label>
-								<thumb>home/home_games.png</thumb>
+								<icon>home/home_games.png</icon>
 								<onclick>XBMC.RunAddon(plugin.program.advanced.launcher)</onclick>
 								<visible>Skin.HasSetting(ShowGamesMenu)</visible>
 							</item>
@@ -287,7 +368,7 @@
 							<item id="9">
 								<description>Pictures</description>
 								<label>$LOCALIZE[31005]</label>
-								<thumb>home/home_pictures.png</thumb>
+								<icon>home/home_pictures.png</icon>
 								<onclick>ActivateWindow(2)</onclick>
 								<visible>Skin.HasSetting(ShowPicturesMenu)</visible>
 							</item>
@@ -296,7 +377,7 @@
 								<description>Play Disc</description>
 								<label>$LOCALIZE[31014]</label>
 								<label2>$INFO[System.DVDLabel]</label2>
-								<thumb>home/home_dvd.png</thumb>
+								<icon>home/home_dvd.png</icon>
 								<onclick>PlayDVD</onclick>
 								<visible>System.HasMediadvd</visible>
 							</item>
@@ -305,23 +386,16 @@
 								<description>Weather</description>
 								<label>$LOCALIZE[31010]</label>
 								<label2>$INFO[Window(Weather).Property(Current.Condition)][CR]$INFO[Window(Weather).Property(Current.Temperature),,°]</label2>
-								<thumb>home/home_weather.png</thumb>
+								<thumb>$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</thumb>
+								<icon>home/home_weather.png</icon>
 								<onclick>ActivateWindow(weather,return)</onclick>
 								<visible>Skin.HasSetting(ShowWeatherMenu)</visible>
-							</item>
-
-							<item id="12">
-								<description>Favourites</description>
-								<label>$LOCALIZE[31008]</label>
-								<thumb>home/home_favourites.png</thumb>
-								<onclick>ActivateWindow(favourites)</onclick>
-								<visible>Skin.HasSetting(ShowFavoritesMenu)</visible>
 							</item>
 
 							<item id="13">
 								<description>Profiles</description>
 								<label>$LOCALIZE[31009]</label>
-								<thumb>home/home_profiles.png</thumb>
+								<icon>home/home_profiles.png</icon>
 								<onclick>ActivateWindow(profiles)</onclick>
 								<visible>Skin.HasSetting(ShowProfilesMenu)</visible>
 							</item>
@@ -329,7 +403,7 @@
 							<item id="14">
 								<description>File Manager</description>
 								<label>$LOCALIZE[31011]</label>
-								<thumb>home/home_filemanager.png</thumb>
+								<icon>home/home_filemanager.png</icon>
 								<onclick>ActivateWindow(filemanager)</onclick>
 								<visible>Skin.HasSetting(ShowFileManagerMenu)</visible>
 							</item>
@@ -337,14 +411,14 @@
 							<item id="15">
 								<description>Settings</description>
 								<label>$LOCALIZE[31012]</label>
-								<thumb>home/home_settings.png</thumb>
+								<icon>home/home_settings.png</icon>
 								<onclick>ActivateWindow(settings)</onclick>
 							</item>
 
 							<item id="16">
 								<description>Shutdown</description>
 								<label>$LOCALIZE[31013]</label>
-								<thumb>home/home_shutdown.png</thumb>
+								<icon>home/home_shutdown.png</icon>
 								<onclick>ActivateWindow(shutdownmenu)</onclick>
 								<visible>Skin.HasSetting(ShowShutdownMenu)</visible>
 							</item>
@@ -352,7 +426,7 @@
 							<item id="17">
 								<description>Search</description>
 								<label>Search</label>
-								<thumb>home/home_search.png</thumb>
+								<icon>home/home_search.png</icon>
 								<onclick>XBMC.RunScript(script.globalsearch)</onclick>
 								<visible>Skin.HasSetting(ShowSearchMenu)</visible>
 							</item>
@@ -416,7 +490,7 @@
 						<onleft>9007</onleft>
 						<onright>9002</onright>
 						<onup>9001</onup>
-						<ondown>9001</ondown>
+						<ondown>8999</ondown>
 						<pagecontrol>9012</pagecontrol>
 						<viewtype label="535">list</viewtype>
 						<scrolltime tween="cubic" easing="out">600</scrolltime>
@@ -618,7 +692,7 @@
 							<item id="12">
 								<description>Favourites</description>
 								<label>$LOCALIZE[31008]</label>
-								<thumb>home/home_favourites_small.png</thumb>
+								<thumb>home/home_favourites.png</thumb>
 								<onclick>ActivateWindow(favourites)</onclick>
 								<visible>Skin.HasSetting(ShowFavoritesMenu)</visible>
 							</item>

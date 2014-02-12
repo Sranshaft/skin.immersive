@@ -254,6 +254,7 @@
 					<label>$LOCALIZE[31008]</label>
 					<onclick>Skin.ToggleSetting(ShowFavoritesMenu)</onclick>
 					<selected>Skin.HasSetting(ShowFavoritesMenu)</selected>
+					<enable>!Skin.HasSetting(UseTileMenu)</enable>
 					
 				</control>
 				
@@ -529,7 +530,7 @@
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>730</width>
-					<height>240</height>
+					<height>300</height>
 					
 					<include>Common_Animation_Settings_Options</include>
 					
@@ -541,6 +542,7 @@
 						
 					</control>
 					
+					<!--Background-->
 					<control type="group">
 					
 						<posy>60</posy>
@@ -555,63 +557,86 @@
 						<control type="image">
 						
 							<include>Common_Settings_Preview</include>
-							<texture>colors/color_white.png</texture>
+							<texture background="true">colors/color_white.png</texture>
 							<colordiffuse>Background_Dark</colordiffuse>
 							<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
 							
+							<animation effect="fade" start="0" end="100" time="1000" reversible="true">VisibleChange</animation>
+							
 						</control>
 						
-						<!--Preview (Fanart Background)-->
+						<!--Fanart Background (Home)-->
 						<control type="group">
 						
 							<visible>Skin.HasSetting(UseFanartBackground_Home)</visible>
-
-							<control type="image">
+							
+							<animation effect="fade" start="0" end="100" time="1000" reversible="true">VisibleChange</animation>
+							
+							<control type="multiimage">
 							
 								<include>Common_Settings_Preview</include>
-								<texture background="true">$INFO[Window(Home).Property(script.grab.fanart.Video.Fanart)]</texture>
+								<imagepath background="true">$INFO[Window(Home).Property(script.grab.fanart.Video.Fanart)]</imagepath>
 								<fadetime>1000</fadetime>
+								<colordiffuse>Background_Normal</colordiffuse>
+								<visible>Skin.HasSetting(UseColorDiffuseFanart_Home)</visible>
 								
 							</control>
+						
+							<control type="multiimage">
 							
+								<include>Common_Settings_Preview</include>
+								<imagepath background="true">$INFO[Window(Home).Property(script.grab.fanart.Video.Fanart)]</imagepath>
+								<fadetime>1000</fadetime>
+								<visible>!Skin.HasSetting(UseColorDiffuseFanart_Home)</visible>
+								
+							</control>
+
 							<!--Overlay Background-->
 							<control type="image">
 							
 								<include>Common_Settings_Preview</include>
-								<texture background="true">colors/color_black.png</texture>
+								<texture>colors/color_black.png</texture>
 								
-								<animation effect="fade" start="100" end="75" time="400" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="85" time="400" condition="!Skin.HasSetting(MoreVisFanart)">Conditional</animation>
+								<animation effect="fade" start="100" end="70" time="400" condition="Skin.HasSetting(MoreVisFanart)">Conditional</animation>
 								
 							</control>
 							
 						</control>
 						
-						<control type="image">
+						<!--Personalization Background-->
 						
-							<include>Common_Settings_Preview</include>
-							<texture background="true">colors/color_white.png</texture>
-							<colordiffuse>Background_Dark</colordiffuse>
-							<fadetime>1000</fadetime>
-							<visible>StringCompare(Skin.String(PersonalizeOverlay),Plain)</visible>
+						<control type="group">
+						
+							<visible>!IsEmpty(Skin.String(PersonalizeOverlay))</visible>
 							
-						</control>
-						
-						<control type="image">
-						
-							<include>Common_Settings_Preview</include>
-							<texture background="true">$VAR[Home_Background_Image]</texture>
-							<colordiffuse>Background_Normal</colordiffuse>
-							<fadetime>1000</fadetime>
-							<visible>!StringCompare(Skin.String(PersonalizeOverlay),Plain) + Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
+							<animation effect="fade" start="0" end="100" time="1000" reversible="true">VisibleChange</animation>
 							
-						</control>
+							<control type="image">
+							
+								<include>Common_Settings_Preview</include>
+								<texture background="true">colors/color_white.png</texture>
+								<colordiffuse>Background_Normal</colordiffuse>
+								<visible>StringCompare(Skin.String(PersonalizeOverlay),Plain)</visible>
+								
+							</control>
+
+							<control type="image">
+							
+								<include>Common_Settings_Preview</include>
+								<texture background="true">$VAR[Home_Background_Image]</texture>
+								<colordiffuse>Background_Normal</colordiffuse>
+								<visible>Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
+								
+							</control>
 						
-						<control type="image">
-						
-							<include>Common_Settings_Preview</include>
-							<texture background="true">$VAR[Home_Background_Image]</texture>
-							<fadetime>1000</fadetime>
-							<visible>!StringCompare(Skin.String(PersonalizeOverlay),Plain) + !Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
+							<control type="image">
+							
+								<include>Common_Settings_Preview</include>
+								<texture background="true">$VAR[Home_Background_Image]</texture>
+								<visible>!Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
+								
+							</control>
 							
 						</control>
 						
@@ -642,38 +667,33 @@
 					</control>	
 
 				</control>
-				
+
 				<control type="label" id="352">
-				
+					
 					<description></description>
 					<include>Common_Settings_Label</include>
-					<label>Backgrounds</label>
+					<label>Personalization</label>
 					
 				</control>
-				
+
 				<control type="panel" id="301">
 				
-					<width>640</width>
-					<height>80</height>
+					<width>730</width>
+					<height>120</height>
+					<orientation>horizontal</orientation>
 					
-					<itemlayout width="70" height="60">
+					<itemlayout width="123" height="120">
 					
 						<control type="image">
 						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>60</width>
-							<height>60</height>
+							<include>Common_Settings_Preview_Selection</include>
 							<texture>colors/color_black.png</texture>
 							
 						</control>
 						
 						<control type="image">
 						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>60</width>
-							<height>60</height>
+							<include>Common_Settings_Preview_Selection</include>
 							<texture>colors/color_white.png</texture>
 							<colordiffuse>Background_Dark</colordiffuse>
 							<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
@@ -682,25 +702,16 @@
 						
 						<control type="image">
 						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>60</width>
-							<height>60</height>
-							<texture>$INFO[ListItem.Icon]</texture>
-							<aspectratio align="left" aligny="bottom">scale</aspectratio>
-							<colordiffuse>Background_Normal</colordiffuse>
+							<include>Common_Settings_Preview_Selection</include>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
 							<visible>!Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
 							
 						</control>
 
 						<control type="image">
 						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>60</width>
-							<height>60</height>
-							<texture>$INFO[ListItem.Icon]</texture>
-							<aspectratio align="left" aligny="bottom">scale</aspectratio>
+							<include>Common_Settings_Preview_Selection</include>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
 							<colordiffuse>Background_Normal</colordiffuse>
 							<visible>Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
 							
@@ -708,24 +719,18 @@
 					
 					</itemlayout>
 					
-					<focusedlayout width="70" height="60">
+					<focusedlayout width="123" height="120">
 					
 						<control type="image">
 						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>60</width>
-							<height>60</height>
+							<include>Common_Settings_Preview_Selection</include>
 							<texture>colors/color_black.png</texture>
 							
 						</control>
 						
 						<control type="image">
 						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>60</width>
-							<height>60</height>
+							<include>Common_Settings_Preview_Selection</include>
 							<texture>colors/color_white.png</texture>
 							<colordiffuse>Background_Dark</colordiffuse>
 							<visible>Skin.HasSetting(UseColorBackground_Home)</visible>
@@ -734,38 +739,26 @@
 						
 						<control type="image">
 						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>60</width>
-							<height>60</height>
-							<texture>$INFO[ListItem.Icon]</texture>
-							<aspectratio align="left" aligny="bottom">scale</aspectratio>
-							<colordiffuse>Background_Normal</colordiffuse>
+							<include>Common_Settings_Preview</include>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
 							<visible>!Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
 							
 						</control>
 
 						<control type="image">
 						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>60</width>
-							<height>60</height>
-							<texture>$INFO[ListItem.Icon]</texture>
-							<aspectratio align="left" aligny="bottom">scale</aspectratio>
+							<include>Common_Settings_Preview_Selection</include>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
 							<colordiffuse>Background_Normal</colordiffuse>
 							<visible>Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
 							
 						</control>
 						
 						<control type="image">
-						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>60</width>
-							<height>60</height>
-							<texture>colors/color_white.png</texture>
-							<colordiffuse>40FFFFFF</colordiffuse>
+							
+							<include>Common_Settings_Preview_Selection</include>
+							<texture border="10">button_unfocus.png</texture>
+							<colordiffuse>Background_Highlight</colordiffuse>
 							
 						</control>
 					
@@ -830,23 +823,51 @@
 						</item>
 						
 						<item id="8">
-							<onclick>Skin.SetString(PersonalizeOverlay,Cubist)</onclick>
+							<onclick condition="IsEmpty(Skin.String(PersonalizationOverlayCustom1))">Skin.SetImage(PersonalizationOverlayCustom1)</onclick>
+							<onclick condition="!IsEmpty(Skin.String(PersonalizationOverlayCustom1))">Skin.SetString(PersonalizeOverlay,Custom1)</onclick>
 							<onclick>ActivateWindow(52)</onclick>
 							<icon>settings/settings_preview_cubist.png</icon>
-							<thumb>personalization/personalization_cubist.png</thumb>
-							<label>Cubist</label>
+							<thumb>$INFO[Skin.String(PersonalizationOverlayCustom1)]</thumb>
+							<label>Custom1</label>
 						</item>
 						
 						<item id="9">
-							<onclick>Skin.SetString(PersonalizeOverlay,Cubist)</onclick>
+							<onclick condition="IsEmpty(Skin.String(PersonalizationOverlayCustom2))">Skin.SetImage(PersonalizationOverlayCustom2)</onclick>
+							<onclick condition="!IsEmpty(Skin.String(PersonalizationOverlayCustom2))">Skin.SetString(PersonalizeOverlay,Custom2)</onclick>
 							<onclick>ActivateWindow(52)</onclick>
 							<icon>settings/settings_preview_cubist.png</icon>
-							<thumb>personalization/personalization_cubist.png</thumb>
-							<label>Cubist</label>
+							<thumb>$INFO[Skin.String(PersonalizationOverlayCustom2)]</thumb>
+							<label>Custom2</label>
+						</item>
+
+						<item id="10">
+							<onclick condition="IsEmpty(Skin.String(PersonalizationOverlayCustom3))">Skin.SetImage(PersonalizationOverlayCustom3)</onclick>
+							<onclick condition="!IsEmpty(Skin.String(PersonalizationOverlayCustom3))">Skin.SetString(PersonalizeOverlay,Custom3)</onclick>
+							<onclick>ActivateWindow(52)</onclick>
+							<icon>settings/settings_preview_cubist.png</icon>
+							<thumb>$INFO[Skin.String(PersonalizationOverlayCustom3)]</thumb>
+							<label>Custom3</label>
 						</item>
 						
 					</content>
 
+				</control>
+
+				<control type="label" id="353">
+					
+					<description></description>
+					<textcolor>Settings_Label</textcolor>
+					<include>Common_Settings_Label_Small</include>
+					<label>$INFO[Container(301).ListItem.Label]</label>
+					
+				</control>
+
+				<control type="label" id="354">
+					
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Fanart</label>
+					
 				</control>
 				
 				<control type="radiobutton" id="302">
@@ -871,7 +892,7 @@
 					
 				</control>
 				
-				<control type="label" id="353">
+				<control type="label" id="355">
 				
 					<description></description>
 					<include>Common_Settings_Label</include>
@@ -893,9 +914,19 @@
 					
 					<description>Color Background</description>
 					<include>Common_Settings_RadioButton</include>
-					<label>Use theme colour diffuse on image</label>
+					<label>Use colour diffuse on image</label>
 					<onclick>Skin.ToggleSetting(UseColorDiffuseBackground_Home)</onclick>
 					<selected>Skin.HasSetting(UseColorDiffuseBackground_Home)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="306">
+					
+					<description>Color Background</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Use colour diffuse on fanart</label>
+					<onclick>Skin.ToggleSetting(UseColorDiffuseFanart_Home)</onclick>
+					<selected>Skin.HasSetting(UseColorDiffuseFanart_Home)</selected>
 					
 				</control>
 				
@@ -965,6 +996,16 @@
 					<selected>Skin.HasSetting(ShowFanartBackground)</selected>
 					
 				</control>
+
+				<control type="radiobutton" id="404">
+					
+					<description>Background Visualiser</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Use theme colour on fanart</label>
+					<onclick>Skin.ToggleSetting(UseColorDiffuseFanart)</onclick>
+					<selected>Skin.HasSetting(UseColorDiffuseFanart)</selected>
+					
+				</control>
 				
 				<control type="label" id="452">
 				
@@ -974,7 +1015,7 @@
 					
 				</control>
 
-				<control type="radiobutton" id="404">
+				<control type="radiobutton" id="405">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
@@ -992,7 +1033,7 @@
 					
 				</control>
 				
-				<control type="radiobutton" id="405">
+				<control type="radiobutton" id="406">
 					
 					<description>Disable alphabetic overlay when scrolling media</description>
 					<include>Common_Settings_RadioButton</include>

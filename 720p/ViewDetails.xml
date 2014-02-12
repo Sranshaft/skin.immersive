@@ -36,7 +36,7 @@
 				<focusposition>0</focusposition>
 				<scrolltime tween="cubic" easing="out">600</scrolltime>
 				<preloaditems>4</preloaditems>
-				
+
 				<include>Common_Animation_HideWhenScrolling</include>
 				
 				<itemlayout width="440" height="115">
@@ -83,7 +83,7 @@
 				</focusedlayout>
 
 			</control>
-			
+
 			<!--Scrollbar-->
 			<control type="scrollbar" id="69">
 				

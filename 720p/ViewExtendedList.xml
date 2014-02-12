@@ -75,7 +75,7 @@
 							<posx>20</posx>
 							<posy>180</posy>
 							<width>260</width>
-							<height>62</height>
+							<height>60</height>
 							<label>$VAR[ExtendedList_Header]</label>
 							<font>Menu-ExtendedList-Header</font>
 							<textcolor>Settings_Label</textcolor>
@@ -194,7 +194,7 @@
 							<posx>20</posx>
 							<posy>180</posy>
 							<width>260</width>
-							<height>62</height>
+							<height>60</height>
 							<label>$VAR[ExtendedList_Header]</label>
 							<font>Menu-ExtendedList-Header</font>
 							<textcolor>Label_Normal</textcolor>

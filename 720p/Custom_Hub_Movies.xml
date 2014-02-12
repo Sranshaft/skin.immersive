@@ -67,15 +67,8 @@
 							
 							<posx>45</posx>
 							<posy>58</posy>
-							<width>600</width>
-							<height>30</height>
 							<label>EXPLORE</label>
-							<font>ForumBrowser-PageLabels</font>
-							<textcolor>Label_Normal</textcolor>
-							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<scrollspeed>0</scrollspeed>
-							<angle>-90</angle>
+							<include>Common_Vertical_Label</include>
 							
 							<include>Common_Animation_Vertical_Label</include>
 							
@@ -304,13 +297,13 @@
 					
 					</control>
 					
-					<include>ViewList_RootMenu_Featured</include>
-					<include>ViewList_RootMenu_RecentlyAdded</include>
-					<include>ViewList_RootMenu_AiringToday</include>
-					<include>ViewList_RootMenu_InCinemas</include>
-					<include>ViewList_RootMenu_NearbyEvents</include>
-					<include>ViewList_RootMenu_History</include>
-					<include>ViewList_RootMenu_Trakt</include>
+					<include>Hub_Featured</include>
+					<include>Hub_RecentlyAdded</include>
+					<include>Hub_AiringToday</include>
+					<include>Hub_InCinemas</include>
+					<include>Hub_NearbyEvents</include>
+					<include>Hub_History</include>
+					<include>Hub_Trakt</include>
 					
 				</control>
 				

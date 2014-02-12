@@ -5,21 +5,7 @@
 	<defaultcontrol always="true">450</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	
-	<!--Splash Screen-->
-	<onload condition="!Skin.HasSetting(NoSplashScreen)">ActivateWindow(60)</onload>
-	<include>Common_Animation_Window_Splash</include>
-	
 	<controls>
-
-		<control type="image">
-		
-			<include>Common_Dimensions</include>
-			<texture background="true">colors/color_white.png</texture>
-			<colordiffuse>Settings_Background_Light</colordiffuse>
-			
-		</control>
-	
-		<include>Common_Breadcrumb_Dark</include>
 
 		<!--Control Section-->
 		<control type="group">
@@ -28,147 +14,139 @@
 			<posy>100</posy>
 			<width>1220</width>
 			<height>480</height>
-			
-			<!--Animation-->
-			<include>Common_Animation_Content_Splash</include>
+
+			<animation type="WindowOpen" reversible="true">
+				<effect type="fade" start="0" end="100" time="100"/>
+				<effect type="slide" start="0,60" end="0,0" time="400" tween="cubic" easing="out" />
+			</animation>
+
+			<animation type="WindowClose" reversible="true">
+				<effect type="fade" start="100" end="0" time="100"/>
+				<effect type="slide" start="0,0" end="0,60" time="400" tween="cubic" easing="out" />
+			</animation>
 			
 			<control type="label">
 					
-				<label>explore</label>
-				<include>Common_Section_Label_Dark</include>
+				<label>favourites</label>
+				<include>Common_Section_Label</include>
 				
 			</control>
 
 			<control type="panel" id="450">
-				
+
 				<posx>0</posx>
 				<posy>60</posy>
 				<width>1220</width>
-				<height>500</height>
+				<height>480</height>
+				<onup>Dialog.Close(134)</onup>
+				<ondown>Dialog.Close(134)</ondown>
 				<onleft>450</onleft>
 				<onright>450</onright>
-				<onup>450</onup>
-				<ondown>450</ondown>
-				<pagecontrol>9010</pagecontrol>
-				<scrolltime tween="cubic" easing="out">600</scrolltime>
+				<viewtype label="Details">panel</viewtype>
 				<orientation>horizontal</orientation>
+				<pagecontrol>459</pagecontrol>
+				<focusposition>0</focusposition>
+				<scrolltime tween="cubic" easing="out">600</scrolltime>
 				<preloaditems>4</preloaditems>
 
-				<itemlayout width="440" height="125">
+				<include>Common_Animation_HideWhenScrolling</include>
+				
+				<itemlayout width="170" height="240">
 
-					<control type="image">
-						
-						<width>420</width>
-						<height>105</height>
-						<texture border="2">colors/color_white.png</texture>
-						<colordiffuse>Settings_Background_Dark</colordiffuse>
-						
-					</control>
-					
-					<control type="image">
-					
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>105</width>
-						<height>105</height>
-						<texture>colors/color_keyboard_dark.png</texture>
-						
-					</control>
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>150</width>
+								<height>150</height>
+								<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+								<aspectratio>scale</aspectratio>
+								
+							</control>
+							
+							<control type="textbox">
+								
+								<posx>0</posx>
+								<posy>160</posy>
+								<width>150</width>
+								<height>40</height>
+								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+								<font>Home-RecentWatched</font>
+								<textcolor>Label_Normal</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<autoscroll>false</autoscroll>
+								
+							</control>
+							
+							<control type="textbox">
+							
+								<posx>0</posx>
+								<posy>200</posy>
+								<width>150</width>
+								<height>22</height>
+								<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+								<font>Home-RecentWatched-Small</font>
+								<textcolor>Label_Normal</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<shadowcolor>00FFFFFF</shadowcolor>
+								<autoscroll>false</autoscroll>
+							
+							</control>
 
-					<control type="image">
-					
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>105</width>
-						<height>105</height>
-						<texture fallback="colors/color_keyboard_dark.png">$INFO[Listitem.Icon]</texture>
-						<aspectratio>scale</aspectratio>
-						
-					</control>
+						</itemlayout>
 
-					<control type="textbox">
-						
-						<posx>125</posx>
-						<posy>10</posy>
-						<width>255</width>
-						<height>72</height>
-						<label>$INFO[ListItem.Label]</label>
-						<font>Favourites-Large</font>
-						<textcolor>Settings_Menu_Normal</textcolor>
-						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<autoscroll>0</autoscroll>
-						
-					</control>
+						<focusedlayout width="170" height="240">
 
-				</itemlayout>
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>150</width>
+								<height>150</height>
+								<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Thumb]</texture>
+								<aspectratio>scale</aspectratio>
+								
+							</control>
+							
+							<control type="textbox">
+							
+								<posx>0</posx>
+								<posy>160</posy>
+								<width>150</width>
+								<height>40</height>
+								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+								<font>Home-RecentWatched</font>
+								<textcolor>Label_Highlight</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<shadowcolor>00FFFFFF</shadowcolor>
+								<autoscroll>false</autoscroll>
+								
+							</control>
+							
+							<control type="textbox">
+							
+								<posx>0</posx>
+								<posy>200</posy>
+								<width>150</width>
+								<height>22</height>
+								<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+								<font>Home-RecentWatched-Small</font>
+								<textcolor>Label_Highlight</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<shadowcolor>00FFFFFF</shadowcolor>
+								<autoscroll>false</autoscroll>
+							
+							</control>
 
-				<focusedlayout width="440" height="125">
-
-					<control type="image">
-						
-						<width>420</width>
-						<height>105</height>
-						<texture border="2">colors/color_white.png</texture>
-						<colordiffuse>Background_Highlight</colordiffuse>
-						
-					</control>
-					
-					<control type="image">
-					
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>105</width>
-						<height>105</height>
-						<texture>colors/color_keyboard_dark.png</texture>
-						
-					</control>
-
-					<control type="image">
-					
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>105</width>
-						<height>105</height>
-						<texture fallback="colors/color_keyboard_dark.png">$INFO[Listitem.Icon]</texture>
-						<aspectratio>scale</aspectratio>
-						
-					</control>
-
-					<control type="textbox">
-						
-						<posx>125</posx>
-						<posy>10</posy>
-						<width>255</width>
-						<height>72</height>
-						<label>$INFO[ListItem.Label]</label>
-						<font>Favourites-Large</font>
-						<textcolor>Label_Normal</textcolor>
-						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<autoscroll>0</autoscroll>
-						
-					</control>
-
-				</focusedlayout>
+						</focusedlayout>
 
 			</control>
-			
-		</control>
-		
-		<!--Scrollbar-->
-		<control type="group">
-			
-			<control type="scrollbar" id="9010">
-			
-				<include>Common_Window_Scrollbar_Horizontal_Dark</include>
-				<posy>700</posy>
-				
-				<include>Common_Animation_Window_Scrollbar_Fade</include>
-				
-			</control>
-			
-		</control>
+
+		</control>	
 		
 	</controls>
 

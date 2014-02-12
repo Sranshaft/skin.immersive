@@ -14,12 +14,13 @@
 			<include>Common_Animation_View</include>
 		
 			<control type="label">
-					
-				<label>explore</label>
+				
+				<width>1000</width>
+				<label>[LOWERCASE]$INFO[ListItem.Label][/LOWERCASE]</label>
 				<include>Common_Section_Label</include>
 				
 			</control>
-			
+
 			<control type="fixedlist" id="51">
 
 				<posx>0</posx>

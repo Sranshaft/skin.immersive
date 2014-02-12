@@ -21,7 +21,7 @@
 				<orientation>horizontal</orientation>
 				<itemgap>20</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
-				
+
 				<control type="button">
 					
 					<posy>12</posy>
@@ -33,7 +33,17 @@
 					<colordiffuse>Label_Normal</colordiffuse>
 					<onclick>back</onclick>
 					<visible>!StringCompare(Window.Property(xmlfile),Home.xml)</visible>
-					
+
+					<animation type="WindowOpen" reversible="false" condition="Window.Previous(home)">
+						<effect type="fade" start="0" end="100" time="400" delay="2000"/>
+						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="2000" tween="cubic" easing="out"/>
+					</animation>
+
+					<animation type="WindowOpen" reversible="false" condition="!Window.Previous(home)">
+						<effect type="fade" start="0" end="100" time="400" delay="600"/>
+						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="600" tween="cubic" easing="out"/>
+					</animation>
+
 				</control>
 				
 				<control type="label">
@@ -45,7 +55,17 @@
 					<font>Breadcrumb-Home</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>center</aligny>
-					
+
+					<animation type="WindowOpen" reversible="false" condition="Window.Previous(home)">
+						<effect type="fade" start="0" end="100" time="400" delay="2200"/>
+						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="2200" tween="cubic" easing="out"/>
+					</animation>
+
+					<animation type="WindowOpen" reversible="false" condition="!Window.Previous(home)">
+						<effect type="fade" start="0" end="100" time="400" delay="800"/>
+						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="800" tween="cubic" easing="out"/>
+					</animation>
+
 				</control>
 				
 				<control type="label">
@@ -58,6 +78,16 @@
 					<textcolor>Label_Normal</textcolor>
 					<aligny>center</aligny>
 					<visible>!StringCompare(Window.Property(xmlfile),Home.xml) + !StringCompare(Window.Property(xmlfile),FileBrowser.xml)</visible>
+
+					<animation type="WindowOpen" reversible="false" condition="Window.Previous(home)">
+						<effect type="fade" start="0" end="100" time="400" delay="2300"/>
+						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="2300" tween="cubic" easing="out"/>
+					</animation>
+
+					<animation type="WindowOpen" reversible="false" condition="!Window.Previous(home)">
+						<effect type="fade" start="0" end="100" time="400" delay="900"/>
+						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="900" tween="cubic" easing="out"/>
+					</animation>
 					
 				</control>
 				
@@ -73,6 +103,16 @@
 					<onfocus>ActivateWindow(51)</onfocus>
 					
 					<animation effect="rotate" start="0" end="180" center="auto" time="200" condition="Window.IsVisible(51)">Conditional</animation>
+
+					<animation type="WindowOpen" reversible="false" condition="Window.Previous(home)">
+						<effect type="fade" start="0" end="100" time="400" delay="2350"/>
+						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="2350" tween="cubic" easing="out"/>
+					</animation>
+
+					<animation type="WindowOpen" reversible="false" condition="!Window.Previous(home)">
+						<effect type="fade" start="0" end="100" time="400" delay="950"/>
+						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="950" tween="cubic" easing="out"/>
+					</animation>
 					
 					<visible>[!StringCompare(Container.FolderPath,videodb://1/) + SubString(Container.FolderPath,videodb://1/)] | [!StringCompare(Container.FolderPath,videodb://2/) + SubString(Container.FolderPath,videodb://2/)] | StringCompare(Container.FolderPath,videodb://4/) | StringCompare(Container.FolderPath,videodb://5/) | SubString(Container.FolderPath,musicdb://)</visible>
 					

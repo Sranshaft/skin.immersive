@@ -2,7 +2,7 @@
 
 <includes>
 
-	<include name="ViewList_RootMenu_Image">
+	<include name="Hub_Image">
 	
 		<!--Image Area-->
 		<control type="group" id="8000">
@@ -37,7 +37,7 @@
 			
 	</include>
 	
-	<include name="ViewList_RootMenu_Featured">
+	<include name="Hub_Featured">
 	
 		<!--Featured Area-->
 		<control type="group" id="8001">
@@ -452,7 +452,7 @@
 		
 	</include>
 
-	<include name="ViewList_RootMenu_RecentlyAdded">
+	<include name="Hub_RecentlyAdded">
 		
 		<!--Recently Added Area-->
 		<control type="group" id="8002">
@@ -840,7 +840,7 @@
 	
 	</include>
 	
-	<include name="ViewList_RootMenu_AiringToday">
+	<include name="Hub_AiringToday">
 		
 		<!--Airing Today Area-->
 		<control type="group" id="8003">
@@ -929,7 +929,7 @@
 	
 	</include>
 	
-	<include name="ViewList_RootMenu_NearbyEvents">
+	<include name="Hub_NearbyEvents">
 	
 		<!--Nearby Events Area-->
 		<control type="group" id="8004">
@@ -1182,7 +1182,7 @@
 		
 	</include>	
 	
-	<include name="ViewList_RootMenu_InCinemas">
+	<include name="Hub_InCinemas">
 	
 		<!--In Cinemas Area-->
 		<control type="group" id="8005">
@@ -1569,7 +1569,7 @@
 
 	</include>
 	
-	<include name="ViewList_RootMenu_History">
+	<include name="Hub_History">
 	
 		<!--History area-->
 		<control type="group" id="8006">
@@ -1969,7 +1969,7 @@
 			
 	</include>
 	
-	<include name="ViewList_RootMenu_Trakt">
+	<include name="Hub_Trakt">
 	
 		<control type="group" id="8007">
 		

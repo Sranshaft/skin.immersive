@@ -25,8 +25,7 @@
 	<include file="Includes_LiveTile.xml" />
 	<include file="Includes_NextAired.xml" />
 	<include file="Includes_PVR.xml" />
-	<include file="Includes_SortLetter.xml" />
-	<include file="Includes_Splash.xml" />
+	<include file="Includes_SortLetter.xml" />=
 	
 	
 	<!---------------------------------->
@@ -270,7 +269,7 @@
 		<onclick>Container.SetViewMode(59)</onclick>
 		
 	</include>
-	
+
 	<include name="Common_AppBar_View_Extended">
 	
 		<include>Common_AppBar_Button</include>
@@ -385,10 +384,21 @@
 				<animation effect="fade" start="0" end="100" time="1000" reversible="true">VisibleChange</animation>
 				
 				<control type="multiimage">
-					
+				
 					<include>Common_Dimensions</include>
 					<imagepath background="true">$INFO[Window(Home).Property(script.grab.fanart.Video.Fanart)]</imagepath>
 					<fadetime>1000</fadetime>
+					<colordiffuse>Background_Normal</colordiffuse>
+					<visible>Skin.HasSetting(UseColorDiffuseFanart_Home)</visible>
+					
+				</control>
+			
+				<control type="multiimage">
+				
+					<include>Common_Dimensions</include>
+					<imagepath background="true">$INFO[Window(Home).Property(script.grab.fanart.Video.Fanart)]</imagepath>
+					<fadetime>1000</fadetime>
+					<visible>!Skin.HasSetting(UseColorDiffuseFanart_Home)</visible>
 					
 				</control>
 				
@@ -408,8 +418,17 @@
 				
 					<include>Common_Dimensions</include>
 					<texture background="true">colors/color_white.png</texture>
-					<colordiffuse>Background_Dark</colordiffuse>
+					<colordiffuse>Background_Normal</colordiffuse>
 					<visible>StringCompare(Skin.String(PersonalizeOverlay),Plain)</visible>
+					
+				</control>
+
+				<control type="image">
+				
+					<include>Common_Dimensions</include>
+					<texture background="true">$VAR[Home_Background_Image]</texture>
+					<colordiffuse>Background_Normal</colordiffuse>
+					<visible>Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
 					
 				</control>
 			
@@ -417,8 +436,7 @@
 				
 					<include>Common_Dimensions</include>
 					<texture background="true">$VAR[Home_Background_Image]</texture>
-					<colordiffuse>Background_Normal</colordiffuse>
-					<visible>!StringCompare(Skin.String(PersonalizeOverlay),Plain)</visible>
+					<visible>!Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
 					
 				</control>
 				
@@ -438,7 +456,7 @@
 					<texture background="true">$VAR[Fanart_Image]</texture>
 					
 				</control>
-				
+
 				<include>Common_Background_Fade</include>
 				
 			</control>
@@ -1984,6 +2002,19 @@
 		<aligny>center</aligny>
 	
 	</include>
+
+	<include name="Common_Settings_Label_Small">
+	
+		<width>520</width>
+		<height>60</height>
+		<font>Menu-List-Small</font>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<align>left</align>
+		<aligny>top</aligny>
+	
+	</include>
 	
 	<include name="Common_Settings_Menu">
 	
@@ -2059,9 +2090,19 @@
 	
 		<posx>0</posx>
 		<posy>0</posy>
-		<width>320</width>
-		<height>180</height>
+		<width>425</width>
+		<height>240</height>
 		<aspectratio>stretch</aspectratio>
+		
+	</include>
+
+	<include name="Common_Settings_Preview_Selection">
+	
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>110</width>
+		<height>110</height>
+		<aspectratio align="left" aligny="bottom">scale</aspectratio>
 		
 	</include>	
 	
@@ -2568,7 +2609,7 @@
 			<posx>115</posx>
 			<posy>5</posy>
 			<width>285</width>
-			<height>34</height>
+			<height>36</height>
 			<label>$VAR[Details_Header]</label>
 			<font>Menu-Details-Header</font>
 			<textcolor>Label_Normal</textcolor>

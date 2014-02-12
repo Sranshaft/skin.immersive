@@ -93,7 +93,7 @@
 					<control type="label">
 					
 						<width>500</width>
-						<height>16</height>
+						<height>18</height>
 						<label>$VAR[NowPlaying_Second_Label]</label>
 						<font>Appbar-Info-Small</font>
 						<textcolor>Label_Normal</textcolor>
@@ -103,7 +103,7 @@
 					<control type="label">
 					
 						<width>500</width>
-						<height>16</height>
+						<height>18</height>
 						<label>$VAR[NowPlaying_Third_Label]</label>
 						<font>Appbar-Info-Small</font>
 						<textcolor>Label_Normal</textcolor>
@@ -114,7 +114,7 @@
 					<control type="label">
 					
 						<width>500</width>
-						<height>30</height>
+						<height>22</height>
 						<label>[B]$INFO[Player.Time] / $INFO[Player.Duration][/B]</label>
 						<font>Appbar-Info-Small</font>
 						<textcolor>Label_Normal</textcolor>
