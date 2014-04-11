@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>	
+
+	<include name="Common_OSD_Settings_Button">
+	
+		<width>730</width>
+		<height>60</height>
+		<texturefocus colordiffuse="Background_Highlight">colors/color_white.png</texturefocus>
+		<font>Menu-List</font>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<textoffsetx>32</textoffsetx>
+		<textoffsety>-10</textoffsety>
+		<align>left</align>
+		<aligny>center</aligny>
+			
+	</include>
+
+	<include name="Common_OSD_Settings_RadioButton">
+	
+		<width>730</width>
+		<height>60</height>
+		<texturefocus colordiffuse="Background_Highlight">colors/color_white.png</texturefocus>
+		<textureradioonfocus colordiffuse="White">controls/control_radiobutton_on.png</textureradioonfocus>
+		<textureradioonnofocus colordiffuse="Label_Normal">controls/control_radiobutton_on.png</textureradioonnofocus>
+		<textureradioofffocus colordiffuse="White">controls/control_radiobutton_off.png</textureradioofffocus>
+		<textureradiooffnofocus colordiffuse="Label_Normal">controls/control_radiobutton_off.png</textureradiooffnofocus>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<radioposx>650</radioposx>
+		<radioposy>21</radioposy>
+		
+	</include>
+	
+	<include name="Common_OSD_Settings_SliderEx">
+		
+		<width>730</width>
+		<height>60</height>
+		<texturefocus colordiffuse="Background_Highlight">colors/color_white.png</texturefocus>
+		<sliderwidth>160</sliderwidth>
+		<sliderheight>15</sliderheight>
+		<texturesliderbar colordiffuse="Label_Normal">controls/control_slider.png</texturesliderbar>
+		<textureslidernib border="2" colordiffuse="Label_Normal">controls/control_slider_nib.png</textureslidernib>
+		<textureslidernibfocus border="2" colordiffuse="White">controls/control_slider_nib.png</textureslidernibfocus>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<textoffsetx>32</textoffsetx>
+		<textoffsety>-10</textoffsety>
+		
+	</include>
+	
+	<include name="Common_OSD_Settings_SpinButton">
+	
+		<width>730</width>
+		<height>60</height>
+		<texturefocus colordiffuse="Background_Highlight">colors/color_white.png</texturefocus>
+		<textureup colordiffuse="Label_Normal">controls/control_spinbutton_up.png</textureup>
+		<textureupfocus colordiffuse="White">controls/control_spinbutton_up.png</textureupfocus>
+		<texturedown colordiffuse="Label_Normal">controls/control_spinbutton_down.png</texturedown>
+		<texturedownfocus colordiffuse="White">controls/control_spinbutton_down.png</texturedownfocus>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<spinposx>32</spinposx>
+		<spinposy>21</spinposy>
+		<spinwidth>25</spinwidth>
+			
+	</include>
+
+</includes>	

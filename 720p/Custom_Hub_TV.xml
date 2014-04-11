@@ -10,10 +10,7 @@
 	
 	<!--Splash Screen-->
 	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
-	
-	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Video)">XBMC.RunScript(script.randomandlastitems,limit=10,method=Last,playlist=special://skin/playlists/History (TV Shows).xsp,menu=Menu2)</onload>
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowAiringTodaySection_Video)">XBMC.RunScript(script.tv.show.next.aired,backend=True)</onload>
-	
 	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingShows)</onload>
 	
 	<onload>AlarmClock(MoveFeatured,Control.Move(9001,1),00:20,silent,loop)</onload>
@@ -65,6 +62,7 @@
 							<posx>45</posx>
 							<posy>58</posy>
 							<label>EXPLORE</label>
+							<textcolor>Label_Normal</textcolor>
 							<include>Common_Vertical_Label</include>
 							
 							<include>Common_Animation_Vertical_Label</include>
@@ -196,6 +194,13 @@
 									<label>Recently added</label>
 									<thumb>hub/hub_recentlyadded_small.png</thumb>
 									<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
+								</item>
+
+								<item>
+									<description>In Progress</description>
+									<label>In Progress</label>
+									<thumb>hub/hub_inprogress_small.png</thumb>
+									<onclick>ActivateWindow(64,return)</onclick>
 								</item>
 
 								<item>

@@ -10,9 +10,6 @@
 	
 	<!--Splash Screen-->
 	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
-	
-	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Video)">XBMC.RunScript(script.randomandlastitems,limit=10,method=Last,playlist=special://skin/playlists/History (Movies).xsp,menu=Menu1)</onload>
-	
 	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowInCinemasSection_Video)">RunScript(script.extendedinfo,info=incinema)</onload>
 	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
 	
@@ -68,6 +65,7 @@
 							<posx>45</posx>
 							<posy>58</posy>
 							<label>EXPLORE</label>
+							<textcolor>Label_Normal</textcolor>
 							<include>Common_Vertical_Label</include>
 							
 							<include>Common_Animation_Vertical_Label</include>
@@ -199,6 +197,13 @@
 									<label>Recently added</label>
 									<thumb>hub/hub_recentlyadded_small.png</thumb>
 									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
+								</item>
+
+								<item>
+									<description>In Progress</description>
+									<label>In Progress</label>
+									<thumb>hub/hub_inprogress_small.png</thumb>
+									<onclick>ActivateWindow(65,return)</onclick>
 								</item>
 								
 								<item>

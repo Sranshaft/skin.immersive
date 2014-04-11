@@ -460,9 +460,6 @@
 			<include>Common_AppBar_Divider</include>
 		</control>
 		
-		<!--Flatten-->
-		<include>Common_AppBar_Flatten</include>
-		
 		<!--Filter-->
 		<include>Common_AppBar_Filter</include>
 		
@@ -714,39 +711,27 @@
 			<include>Common_AppBar_Divider</include>
 		</control>	
 		
-		<!--Files-->
-		<include>Common_AppBar_Files</include>
-		
-		<!--Stack-->
-		<include>Common_AppBar_Stack</include>
-			
-		<!--Unlock Shares-->
-		<include>Common_AppBar_UnlockShares</include>
-		
-		<!--Watched/Unwatched-->
-		<include>Common_AppBar_ToggleWatched</include>
-		
-		<!--PartyMode-->
-		<control type="button" id="16">
+		<!--Update Library-->
+		<control type="button" id="18">
 			
 			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_partymode_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_partymode.png</texturenofocus>
-			<label>589</label>
-			<visible>Container.Content(musicvideos)</visible>
+			<texturefocus>appbar/appbar_scantolibrary_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_scantolibrary.png</texturenofocus>
+			<label>update[CR]library</label>
+			<onclick>UpdateLibrary(video)</onclick>
 			
 		</control>
-		
-		<!--Flatten-->
-		<include>Common_AppBar_Flatten</include>
-		
+
+		<!--Divider-->
+		<control type="image" id="9153">
+			<include>Common_AppBar_Divider</include>
+		</control>
+
+		<!--Watched/Unwatched-->
+		<include>Common_AppBar_ToggleWatched</include>
+
 		<!--Filter-->
 		<include>Common_AppBar_Filter</include>
-		
-		<!--Divider-->
-		<control type="image" id="9152">
-			<include>Common_AppBar_Divider</include>
-		</control>	
 		
 		<!--Search-->
 		<include>Common_AppBar_Search</include>

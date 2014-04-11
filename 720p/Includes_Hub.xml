@@ -69,7 +69,6 @@
 				<viewtype label="535">panel</viewtype>
 				<pagecontrol>9011</pagecontrol>
 				<scrolltime tween="cubic" easing="in">400</scrolltime>
-				<autoscroll delay="400" time="500" repeat="2000">true</autoscroll>
 				<orientation>vertical</orientation>
 				<preloaditems>2</preloaditems>
 				
@@ -106,7 +105,7 @@
 				<content>
 				
 					<!--Movies-->
-				
+					
 					<item id="1">
 						<onclick>$INFO[Window(Home).Property(RandomMovie.2.Play)]</onclick>
 						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RandomMovie.2.Art(fanart))]</thumb>
@@ -506,7 +505,7 @@
 						<posy>0</posy>
 						<width>100</width>
 						<height>100</height>
-						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[Hub_Image]</texture>
 						<aspectratio>scale</aspectratio>
 						
 					</control>
@@ -519,7 +518,7 @@
 							<posy>-16</posy>
 							<width>300</width>
 							<height>86</height>
-							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+							<label>[UPPERCASE]$VAR[Hub_Header][/UPPERCASE]</label>
 							<font>Home-Featured</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
@@ -535,7 +534,7 @@
 							<posy>74</posy>
 							<width>400</width>
 							<height>40</height>
-							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+							<label>[UPPERCASE]$VAR[Hub_Detail][/UPPERCASE]</label>
 							<font>Home-Featured-Small</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
@@ -568,7 +567,7 @@
 						<posy>0</posy>
 						<width>100</width>
 						<height>100</height>
-						<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true" fallback="colors/color_keyboard.png">$VAR[Hub_Image]</texture>
 						<aspectratio>scale</aspectratio>
 						
 					</control>
@@ -581,7 +580,7 @@
 							<posy>-16</posy>
 							<width>300</width>
 							<height>86</height>
-							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+							<label>[UPPERCASE]$VAR[Hub_Header][/UPPERCASE]</label>
 							<font>Home-Featured</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
@@ -597,7 +596,7 @@
 							<posy>74</posy>
 							<width>400</width>
 							<height>40</height>
-							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+							<label>[UPPERCASE]$VAR[Hub_Detail][/UPPERCASE]</label>
 							<font>Home-Featured-Small</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
@@ -611,208 +610,8 @@
 
 				</focusedlayout>
 				
-				<content>
+				<content target="$VAR[Hub_Target]">$VAR[Hub_RecentlyAdded]</content>
 				
-					<!--Movies-->
-				
-					<item id="1">
-						<onclick>$INFO[Window(Home).Property(RecentMovie.1.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RecentMovie.1.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentMovie.1.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentMovie.1.Year)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-
-					<item id="2">
-						<onclick>$INFO[Window(Home).Property(RecentMovie.2.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RecentMovie.2.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentMovie.2.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentMovie.2.Year)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="3">
-						<onclick>$INFO[Window(Home).Property(RecentMovie.3.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RecentMovie.3.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentMovie.3.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentMovie.3.Year)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-
-					<item id="4">
-						<onclick>$INFO[Window(Home).Property(RecentMovie.4.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RecentMovie.4.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentMovie.4.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentMovie.4.Year)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="5">
-						<onclick>$INFO[Window(Home).Property(RecentMovie.5.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RecentMovie.5.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentMovie.5.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentMovie.5.Year)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-
-					<item id="6">
-						<onclick>$INFO[Window(Home).Property(RecentMovie.6.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RecentMovie.6.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentMovie.6.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentMovie.6.Year)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="7">
-						<onclick>$INFO[Window(Home).Property(RecentMovie.7.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RecentMovie.7.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentMovie.7.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentMovie.7.Year)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-
-					<item id="8">
-						<onclick>$INFO[Window(Home).Property(RecentMovie.8.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RecentMovie.8.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentMovie.8.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentMovie.8.Year)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-
-					<!--TV Shows-->
-					
-					<item id="1">
-						<onclick>$INFO[Window(Home).Property(RecentEpisode.1.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentEpisode.1.EpisodeNo)] $INFO[Window(Home).Property(RecentEpisode.1.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentEpisode.1.TVshowTitle)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-
-					<item id="2">
-						<onclick>$INFO[Window(Home).Property(RecentEpisode.2.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.fanart) )]</thumb>
-						<label>$INFO[Window(Home).Property(RecentEpisode.2.EpisodeNo)] $INFO[Window(Home).Property(RecentEpisode.2.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentEpisode.2.TVshowTitle )]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="3">
-						<onclick>$INFO[Window(Home).Property(RecentEpisode.3.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RecentEpisode.3.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentEpisode.3.EpisodeNo)] $INFO[Window(Home).Property(RecentEpisode.3.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentEpisode.3.TVshowTitle)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-
-					<item id="4">
-						<onclick>$INFO[Window(Home).Property(RecentEpisode.4.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RecentEpisode.4.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentEpisode.4.EpisodeNo)] $INFO[Window(Home).Property(RecentEpisode.4.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentEpisode.4.TVshowTitle)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="5">
-						<onclick>$INFO[Window(Home).Property(RecentEpisode.5.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RecentEpisode.5.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentEpisode.5.EpisodeNo)] $INFO[Window(Home).Property(RecentEpisode.5.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentEpisode.5.TVshowTitle)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-
-					<item id="6">
-						<onclick>$INFO[Window(Home).Property(RecentEpisode.6.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RecentEpisode.6.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentEpisode.6.EpisodeNo)] $INFO[Window(Home).Property(RecentEpisode.6.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentEpisode.6.TVshowTitle)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="7">
-						<onclick>$INFO[Window(Home).Property(RecentEpisode.7.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RecentEpisode.7.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentEpisode.7.EpisodeNo)] $INFO[Window(Home).Property(RecentEpisode.7.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentEpisode.7.TVshowTitle)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-
-					<item id="8">
-						<onclick>$INFO[Window(Home).Property(RecentEpisode.8.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RecentEpisode.8.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(RecentEpisode.8.EpisodeNo)] $INFO[Window(Home).Property(RecentEpisode.8.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentEpisode.8.TVshowTitle)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<!--Music-->
-					
-					<item id="1">
-						<onclick>$INFO[Window(Home).Property(RecentAlbum.1.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(RecentAlbum.1.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(RecentAlbum.1.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentAlbum.1.Artist)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="2">
-						<onclick>$INFO[Window(Home).Property(RecentAlbum.2.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(RecentAlbum.2.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(RecentAlbum.2.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentAlbum.2.Artist)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="3">
-						<onclick>$INFO[Window(Home).Property(RecentAlbum.3.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(RecentAlbum.3.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(RecentAlbum.3.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentAlbum.3.Artist)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="4">
-						<onclick>$INFO[Window(Home).Property(RecentAlbum.4.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(RecentAlbum.4.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(RecentAlbum.4.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentAlbum.4.Artist)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="5">
-						<onclick>$INFO[Window(Home).Property(RecentAlbum.5.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(RecentAlbum.5.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(RecentAlbum.5.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentAlbum.5.Artist)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="6">
-						<onclick>$INFO[Window(Home).Property(RecentAlbum.6.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(RecentAlbum.6.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(RecentAlbum.6.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentAlbum.6.Artist)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="7">
-						<onclick>$INFO[Window(Home).Property(RecentAlbum.7.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(RecentAlbum.7.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(RecentAlbum.7.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentAlbum.7.Artist)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="8">
-						<onclick>$INFO[Window(Home).Property(RecentAlbum.8.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(RecentAlbum.8.Thumb)]</thumb>
-						<label>$INFO[Window(Home).Property(RecentAlbum.8.Title)]</label>
-						<label2>$INFO[Window(Home).Property(RecentAlbum.8.Artist)]</label2>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-				</content>
-
 			</control>
 			
 			<!--Scrollbar-->
@@ -1214,7 +1013,6 @@
 				<pagecontrol>9016</pagecontrol>
 				<viewtype label="535">list</viewtype>
 				<scrolltime tween="cubic" easing="in">400</scrolltime>
-				<autoscroll delay="400" time="500" repeat="2000">true</autoscroll>
 				<orientation>vertical</orientation>
 				<preloaditems>2</preloaditems>
 				
@@ -1628,7 +1426,7 @@
 						<posy>0</posy>
 						<width>150</width>
 						<height>150</height>
-						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true">$VAR[Hub_Image]</texture>
 						<aspectratio>scale</aspectratio>
 						
 					</control>
@@ -1639,7 +1437,7 @@
 						<posy>160</posy>
 						<width>150</width>
 						<height>40</height>
-						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+						<label>[UPPERCASE]$VAR[Hub_Header][/UPPERCASE]</label>
 						<font>Home-RecentWatched</font>
 						<textcolor>Label_Normal</textcolor>
 						<aligny>top</aligny>
@@ -1654,7 +1452,7 @@
 						<posy>200</posy>
 						<width>150</width>
 						<height>22</height>
-						<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+						<label>[UPPERCASE]$VAR[Hub_Detail][/UPPERCASE]</label>
 						<font>Home-RecentWatched-Small</font>
 						<textcolor>Label_Normal</textcolor>
 						<aligny>top</aligny>
@@ -1674,7 +1472,7 @@
 						<posy>0</posy>
 						<width>150</width>
 						<height>150</height>
-						<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true">$VAR[Hub_Image]</texture>
 						<aspectratio>scale</aspectratio>
 						
 					</control>
@@ -1685,7 +1483,7 @@
 						<posy>160</posy>
 						<width>150</width>
 						<height>40</height>
-						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+						<label>[UPPERCASE]$VAR[Hub_Header][/UPPERCASE]</label>
 						<font>Home-RecentWatched</font>
 						<textcolor>Label_Highlight</textcolor>
 						<aligny>top</aligny>
@@ -1701,7 +1499,7 @@
 						<posy>200</posy>
 						<width>150</width>
 						<height>22</height>
-						<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+						<label>[UPPERCASE]$VAR[Hub_Detail][/UPPERCASE]</label>
 						<font>Home-RecentWatched-Small</font>
 						<textcolor>Label_Highlight</textcolor>
 						<aligny>top</aligny>
@@ -1712,256 +1510,8 @@
 					</control>
 
 				</focusedlayout>
-				
-				<content>
 
-					<!--Movies-->
-				
-					<item id="1">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.1.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(PlaylistLastMovieMenu1.1.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.1.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.1.Year)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMovieMenu1.1.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-
-					<item id="2">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.2.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(PlaylistLastMovieMenu1.2.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.2.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.2.Year)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMovieMenu1.2.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="3">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.3.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(PlaylistLastMovieMenu1.3.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.3.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.3.Year)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMovieMenu1.3.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="4">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.4.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(PlaylistLastMovieMenu1.4.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.4.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.4.Year)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMovieMenu1.4.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-
-					<item id="5">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.5.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(PlaylistLastMovieMenu1.5.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.5.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.5.Year)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMovieMenu1.5.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="6">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.6.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(PlaylistLastMovieMenu1.6.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.6.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.6.Year)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMovieMenu1.6.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="7">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.7.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(PlaylistLastMovieMenu1.7.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.7.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.7.Year)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMovieMenu1.7.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="8">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.8.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(PlaylistLastMovieMenu1.8.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.8.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.8.Year)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMovieMenu1.8.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="9">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.9.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(PlaylistLastMovieMenu1.9.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.9.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.9.Year)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMovieMenu1.9.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="10">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.10.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(PlaylistLastMovieMenu1.10.Art(fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.10.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMovieMenu1.10.Year)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMovieMenu1.10.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<!--TV Shows-->
-					
-					<item id="1">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.1.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.1.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.1.EpisodeNo)] $INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.1.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.1.TVshowTitle)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastEpisodeMenu2.1.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="2">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.2.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.2.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.2.EpisodeNo)] $INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.2.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.2.TVshowTitle)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastEpisodeMenu2.2.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="3">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.3.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.3.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.3.EpisodeNo)] $INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.3.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.3.TVshowTitle)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastEpisodeMenu2.3.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="4">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.4.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.4.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.4.EpisodeNo)] $INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.4.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.4.TVshowTitle)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastEpisodeMenu2.4.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="5">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.5.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.5.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.5.EpisodeNo)] $INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.5.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.5.TVshowTitle)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastEpisodeMenu2.5.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="6">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.6.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.6.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.6.EpisodeNo)] $INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.6.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.6.TVshowTitle)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastEpisodeMenu2.6.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="7">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.7.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.7.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.7.EpisodeNo)] $INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.7.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.7.TVshowTitle)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastEpisodeMenu2.7.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="8">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.8.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.8.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.8.EpisodeNo)] $INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.8.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.8.TVshowTitle)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastEpisodeMenu2.8.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="9">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.9.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.9.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.9.EpisodeNo)] $INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.9.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.9.TVshowTitle)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastEpisodeMenu2.9.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="10">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.10.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.10.Art(tvshow.fanart))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.10.EpisodeNo)] $INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.10.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastEpisodeMenu2.10.TVshowTitle)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastEpisodeMenu2.10.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<!--Music-->
-					
-					<item id="1">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.1.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(PlaylistLastMusicMenu3.1.Art(thumb))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.1.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.1.Artist)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMusicMenu3.1.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="2">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.2.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(PlaylistLastMusicMenu3.2.Art(thumb))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.2.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.2.Artist)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMusicMenu3.2.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="3">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.3.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(PlaylistLastMusicMenu3.3.Art(thumb))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.3.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.3.Artist)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMusicMenu3.3.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="4">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.4.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(PlaylistLastMusicMenu3.4.Art(thumb))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.4.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.4.Artist)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMusicMenu3.4.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="5">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.5.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(PlaylistLastMusicMenu3.5.Art(thumb))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.5.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.5.Artist)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMusicMenu3.5.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="6">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.6.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(PlaylistLastMusicMenu3.6.Art(thumb))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.6.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.6.Artist)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMusicMenu3.6.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="7">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.7.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(PlaylistLastMusicMenu3.7.Art(thumb))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.7.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.7.Artist)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMusicMenu3.7.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="8">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.8.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(PlaylistLastMusicMenu3.8.Art(thumb))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.8.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.8.Artist)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMusicMenu3.8.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="9">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.9.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(PlaylistLastMusicMenu3.9.Art(thumb))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.9.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.9.Artist)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMusicMenu3.9.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-					<item id="10">
-						<onclick>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.10.Play)]</onclick>
-						<thumb fallback="fallbacks/fallback_music.jpg">$INFO[Window(Home).Property(PlaylistLastMusicMenu3.10.Art(thumb))]</thumb>
-						<label>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.10.Title)]</label>
-						<label2>$INFO[Window(Home).Property(PlaylistLastMusicMenu3.10.Artist)]</label2>
-						<visible>!IsEmpty(Window(Home).Property(PlaylistLastMusicMenu3.10.Title)) + StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)</visible>
-					</item>
-					
-				</content>
+				<content target="$VAR[Hub_Target]">$VAR[Hub_History]</content>
 
 			</control>
 			
@@ -1999,7 +1549,6 @@
 				<onright>9017</onright>
 				<viewtype label="535">list</viewtype>
 				<scrolltime tween="cubic" easing="in">400</scrolltime>
-				<autoscroll delay="400" time="500" repeat="2000">true</autoscroll>
 				<orientation>vertical</orientation>
 				<preloaditems>2</preloaditems>
 				

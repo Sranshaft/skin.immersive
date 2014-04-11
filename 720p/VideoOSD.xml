@@ -224,6 +224,12 @@
 					<onclick>SetFocus(10001)</onclick>
 					
 				</control>
+
+				<control type="button" id="160">
+					
+					<visible>false</visible>	
+
+				</control>
 				
 			</control>
 			
@@ -348,8 +354,7 @@
 						<label>get subtitles</label>
 						<onclick>SetFocus(413)</onclick>
 						<onclick>Skin.Reset(ShowMoreOptionsMenu)</onclick>
-						<onclick>Close</onclick>
-						<onclick>XBMC.RunScript($INFO[Skin.String(SubtitlePath)])</onclick>
+						<onclick>ActivateWindow(SubtitleSearch)</onclick>
 					</item>
 
 					<item>

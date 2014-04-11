@@ -24,8 +24,9 @@
 	<include file="Includes_Hub.xml" />
 	<include file="Includes_LiveTile.xml" />
 	<include file="Includes_NextAired.xml" />
+	<include file="Includes_OSD.xml" />
 	<include file="Includes_PVR.xml" />
-	<include file="Includes_SortLetter.xml" />=
+	<include file="Includes_SortLetter.xml" />
 	
 	
 	<!---------------------------------->
@@ -81,7 +82,6 @@
 		<textoffsetx>-4</textoffsetx>
 		<textoffsety>54</textoffsety>
 		<wrapmultiline>true</wrapmultiline>
-		<onclick>Skin.Reset(ShowAppBar)</onclick>
 		<onup>SetFocus(50)</onup>
 		
 	</include>
@@ -210,11 +210,17 @@
 	
 	<include name="Common_AppBar_Stack">
 	
-		<control type="button" id="7">
+		<control type="radiobutton" id="7">
 			
 			<include>Common_AppBar_Button</include>
 			<texturefocus>appbar/appbar_stack_focus.png</texturefocus>
 			<texturenofocus>appbar/appbar_stack.png</texturenofocus>
+			<textureradioon>appbar/appbar_radioon.png</textureradioon>
+			<textureradiooff>-</textureradiooff>
+			<radiowidth>48</radiowidth>
+			<radioheight>48</radioheight>
+			<radioposx>6</radioposx>
+			<label>stack[CR]files</label>
 			<label>stack[CR]files</label>
 			<visible>Control.IsEnabled(7)</visible>
 			
@@ -778,7 +784,7 @@
 	
 		<posx>80</posx>
 		<posy>0</posy>
-		<width min="20" max="320">auto</width>
+		<width>400</width>
 		<height>60</height>
 		<font>Menu-Scroll</font>
 		<textcolor>Settings_Label</textcolor>
@@ -1827,7 +1833,7 @@
 	
 		<posx>0</posx>
 		<posy>0</posy>
-		<width min="20" max="530">auto</width>
+		<width>530</width>
 		<height>40</height>
 		<font>Content-Label</font>
 		<textcolor>Settings_Label</textcolor>
@@ -2114,9 +2120,8 @@
 		<height>5</height>
 		<texturebg>colors/color_keyboard_dark.png</texturebg>
 		<lefttexture>-</lefttexture>
-		<midtexture>colors/color_white.png</midtexture>
+		<midtexture colordiffuse="Background_Highlight">colors/color_white.png</midtexture>
 		<righttexture>-</righttexture>
-		<!--<colordiffuse>Background_Highlight</colordiffuse>-->
 		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
 		
 	</include>
@@ -2125,10 +2130,12 @@
 	
 		<width>730</width>
 		<height>60</height>
-		<textureradioon colordiffuse="Settings_Label">controls/control_radiobutton_on.png</textureradioon>
-		<textureradiooff colordiffuse="Settings_Label">controls/control_radiobutton_off.png</textureradiooff>
-		<colordiffuse>Background_Highlight</colordiffuse>
-		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
+		<texturefocus colordiffuse="Background_Highlight">colors/color_white.png</texturefocus>
+		<texturenofocus colordiffuse="Settings_Background_Light">colors/color_white.png</texturenofocus>
+		<textureradioonfocus colordiffuse="White">controls/control_radiobutton_on.png</textureradioonfocus>
+		<textureradioonnofocus colordiffuse="Settings_Label">controls/control_radiobutton_on.png</textureradioonnofocus>
+		<textureradioofffocus colordiffuse="White">controls/control_radiobutton_off.png</textureradioofffocus>
+		<textureradiooffnofocus colordiffuse="Settings_Label">controls/control_radiobutton_off.png</textureradiooffnofocus>
 		<textcolor>Settings_Label</textcolor>
 		<focusedcolor>Settings_Label_Highlight</focusedcolor>
 		<disabledcolor>Settings_Label_Disabled</disabledcolor>
@@ -2152,14 +2159,13 @@
 		
 		<width>730</width>
 		<height>60</height>
-		<texturefocus>colors/color_white.png</texturefocus>
-		<texturenofocus>-</texturenofocus>
+		<texturefocus colordiffuse="Background_Highlight">colors/color_white.png</texturefocus>
+		<texturenofocus colordiffuse="Settings_Background_Light">colors/color_white.png</texturenofocus>
 		<sliderwidth>160</sliderwidth>
 		<sliderheight>15</sliderheight>
 		<texturesliderbar colordiffuse="Settings_Label">controls/control_slider.png</texturesliderbar>
 		<textureslidernib border="2" colordiffuse="Settings_Label">controls/control_slider_nib.png</textureslidernib>
-		<textureslidernibfocus border="2" colordiffuse="Settings_Label">controls/control_slider_nib.png</textureslidernibfocus>
-		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
+		<textureslidernibfocus border="2" colordiffuse="White">controls/control_slider_nib.png</textureslidernibfocus>
 		<textcolor>Settings_Label</textcolor>
 		<focusedcolor>Settings_Label_Highlight</focusedcolor>
 		<disabledcolor>Settings_Label_Disabled</disabledcolor>
@@ -2172,12 +2178,12 @@
 	
 		<width>730</width>
 		<height>60</height>
-		<textureup>controls/control_spinbutton_up.png</textureup>
-		<textureupfocus colordiffuse="Settings_Label">controls/control_spinbutton_up.png</textureupfocus>
-		<texturedown>controls/control_spinbutton_down.png</texturedown>
-		<texturedownfocus colordiffuse="Settings_Label">controls/control_spinbutton_down.png</texturedownfocus>
-		<colordiffuse>Background_Highlight</colordiffuse>
-		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
+		<texturefocus colordiffuse="Background_Highlight">colors/color_white.png</texturefocus>
+		<texturenofocus colordiffuse="Settings_Background_Light">colors/color_white.png</texturenofocus>
+		<textureup colordiffuse="Settings_Label">controls/control_spinbutton_up.png</textureup>
+		<textureupfocus colordiffuse="White">controls/control_spinbutton_up.png</textureupfocus>
+		<texturedown colordiffuse="Settings_Label">controls/control_spinbutton_down.png</texturedown>
+		<texturedownfocus colordiffuse="White">controls/control_spinbutton_down.png</texturedownfocus>
 		<textcolor>Settings_Label</textcolor>
 		<focusedcolor>Settings_Label_Highlight</focusedcolor>
 		<disabledcolor>Settings_Label_Disabled</disabledcolor>

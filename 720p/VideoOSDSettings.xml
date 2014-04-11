@@ -81,7 +81,7 @@
 					<description>Default Button</description>
 					<textcolor>Label_Normal</textcolor>
 					<disabledcolor>Label_Disabled</disabledcolor>
-					<include>Common_Settings_Button</include>
+					<include>Common_OSD_Settings_Button</include>
 					
 				</control>
 
@@ -90,7 +90,7 @@
 					<description>Default Radio Button</description>
 					<textcolor>Label_Normal</textcolor>
 					<disabledcolor>Label_Disabled</disabledcolor>
-					<include>Common_Settings_RadioButton</include>
+					<include>Common_OSD_Settings_RadioButton</include>
 					
 				</control>
 
@@ -99,7 +99,7 @@
 					<description>Default Spin Control</description>
 					<textcolor>Label_Normal</textcolor>
 					<disabledcolor>Label_Disabled</disabledcolor>
-					<include>Common_Settings_SpinButton</include>
+					<include>Common_OSD_Settings_SpinButton</include>
 					
 				</control>
 
@@ -108,7 +108,7 @@
 					<description>Default Category Button</description>
 					<textcolor>Label_Normal</textcolor>
 					<disabledcolor>Label_Disabled</disabledcolor>
-					<include>Common_Settings_SliderEx</include>
+					<include>Common_OSD_Settings_SliderEx</include>
 					
 				</control>
 			

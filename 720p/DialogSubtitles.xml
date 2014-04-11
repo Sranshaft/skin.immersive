@@ -2,11 +2,11 @@
 
 <window>
 	
-	<defaultcontrol always="true">120</defaultcontrol>
+	<!--<defaultcontrol always="true">120</defaultcontrol>-->
 	<allowoverlay>no</allowoverlay>
 	<backgroundcolor>Settings_Background_Dark</backgroundcolor>
 	
-	<zorder>1</zorder>
+	<zorder>2</zorder>
 	
 	<include>Common_Animation_Window</include>
 	
@@ -31,15 +31,7 @@
 			<colordiffuse>Settings_Label</colordiffuse>
 			
 		</control>
-		
-		<control type="group" id="111">
-					
-		</control>
-		
-		<control type="spincontrol" id="121">
-		
-		</control>
-		
+
 		<!--Menu-->
 		<control type="group">
 			
@@ -93,7 +85,8 @@
 						<height>60</height>
 						<label>$INFO[ListItem.Label]</label>
 						<font>Menu-List</font>
-						<textcolor>Settings_Menu_Normal</textcolor>
+						<textcolor>Settings_Label</textcolor>
+						<selectedcolor>Settings_Label</selectedcolor>
 						<aligny>center</aligny>
 						
 					</control>
@@ -121,17 +114,17 @@
 						<height>60</height>
 						<label>$INFO[ListItem.Label]</label>
 						<font>Menu-List</font>
-						<textcolor>Settings_Menu_Highlight</textcolor>
+						<textcolor>Settings_Label_Highlight</textcolor>
 						<aligny>center</aligny>
 						<scrollspeed>0</scrollspeed>
 						
 					</control>
 
 				</focusedlayout>
-				
+
 			</control>
 			
-			<control type="group" id="99">
+			<control type="group">
 			
 				<posx>500</posx>
 				<posy>0</posy>
@@ -148,7 +141,18 @@
 					<label>-</label>
 					
 				</control>
-			
+
+				<control type="label" id="130">
+				
+					<description></description>
+					<posx>0</posx>
+					<posy>100</posy>
+					<width>700</width>
+					<include>Common_Settings_Label</include>
+					<label>-</label>
+					
+				</control>
+
 				<control type="list" id="120">
 						
 					<posx>0</posx>
@@ -472,6 +476,17 @@
 
 					</focusedlayout>
 
+				</control>
+
+				<control type="label" id="140">
+				
+					<description></description>
+					<posx>0</posx>
+					<posy>660</posy>
+					<width>700</width>
+					<include>Common_Settings_Label</include>
+					<label>-</label>
+					
 				</control>
 				
 				<!--Scrollbar-->

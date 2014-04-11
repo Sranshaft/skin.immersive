@@ -248,7 +248,7 @@
 							
 						<posx>60</posx>
 						<posy>0</posy>
-						<width min="20" max="530">auto</width>
+						<width>600</width>
 						<height>100</height>
 						<label>show listing</label>
 						<font>Menu-Scroll</font>
