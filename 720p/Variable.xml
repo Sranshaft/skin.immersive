@@ -50,10 +50,9 @@
 		<value condition="StringCompare(Window.Property(xmlfile),MyPics.xml)">$LOCALIZE[1]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml)">Live TV</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml) | StringCompare(Window.Property(xmlfile),MyMusicSongs.xml)">$LOCALIZE[2]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + [StringCompare(Container.FolderPath,library://video/movies/) | SubString(Container.FolderPath,videodb://1/,left)]">$LOCALIZE[20342]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + [StringCompare(Container.FolderPath,library://video/tvshows/) | SubString(Container.FolderPath,videodb://2/,left)]">$LOCALIZE[20343]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + SubString(Container.FolderPath,videodb://movies/,left)">$LOCALIZE[20342]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + SubString(Container.FolderPath,videodb://tvshows/,left)">$LOCALIZE[20343]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml)">$LOCALIZE[10025]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml)">$INFO[Container.FolderName]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPrograms.xml)">$LOCALIZE[1043]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyVideoPlaylist.xml)">$LOCALIZE[20012]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyMusicPlaylist.xml)">$LOCALIZE[20011]</value>
@@ -66,6 +65,8 @@
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDSettings.xml)">XBMC Video</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VisualisationPresetList.xml)">XBMC Music</value>
 		
+		<!--Addon Specfic Variables-->
+
 		<value condition="SubString(Window.Property(xmlfile),script-Actors-DialogInfo.xml)">$INFO[Listitem.Title]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-Actors-DialogVideoInfo.xml)">$INFO[Listitem.Title]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-Actors-Browser.xml)">Image Browser</value>
@@ -99,7 +100,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(13)">Recordings</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(14)">Timers</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(17)">Search</value>
-		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + !StringCompare(Container.FolderPath,library://video/movies/) + !StringCompare(Container.FolderPath,videodb://1/) + !StringCompare(Container.FolderPath,library://video/tvshows/) + !StringCompare(Container.FolderPath,videodb://2/)">$INFO[Container.FolderName]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + !IsEmpty(Container.FolderPath">$INFO[Container.FolderName]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml) + !IsEmpty(Container.FolderPath)">$INFO[Container.FolderName]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyWeather.xml)">$INFO[Window(Weather).Property(Location)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSD.xml)">Controls</value>
@@ -107,6 +108,8 @@
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDSettings.xml)">$INFO[Control.GetLabel(2)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VisualisationPresetList.xml)">$LOCALIZE[31032]</value>
 		
+		<!--Addon Specfic Variables-->
+
 		<value condition="SubString(Window.Property(xmlfile),script-NextAired-TVGuide)">Coming episodes</value>
 		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.TVOverlay)">$INFO[Control.GetLabel(502)]</value>
 		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.EPG)">EPG</value>
@@ -158,7 +161,7 @@
 		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Property(Addon.Version))">$INFO[ListItem.Studio]</value>
 		<value>$INFO[ListItem.Label2]</value>
 	</variable>
-	
+
 	<!--Extended List Variables-->
 	
 	<variable name="ExtendedList_Header">
@@ -805,7 +808,7 @@
 	
 	<variable name="Trakt_TrendingMovies_TextColor">
 		<value condition="ControlGroup(10000).HasFocus(10001) + Control.HasFocus(10001)">Label_Highlight</value>
-		<value>Settings_Label</value>
+		<value>Label_Normal</value>
 	</variable>
 	
 	<variable name="Trakt_TrendingShows_Label">
@@ -815,7 +818,7 @@
 	
 	<variable name="Trakt_TrendingShows_TextColor">
 		<value condition="ControlGroup(10000).HasFocus(10002) + Control.HasFocus(10002)">Label_Highlight</value>
-		<value>Settings_Label</value>
+		<value>Label_Normal</value>
 	</variable>
 	
 	<variable name="Trakt_AiringShows_Label">
@@ -825,7 +828,7 @@
 	
 	<variable name="Trakt_AiringShows_TextColor">
 		<value condition="ControlGroup(10000).HasFocus(10003) + Control.HasFocus(10003)">Label_Highlight</value>
-		<value>Settings_Label</value>
+		<value>Label_Normal</value>
 	</variable>
 	
 	<variable name="Trakt_PremieringShows_Label">
@@ -835,7 +838,7 @@
 	
 	<variable name="Trakt_PremieringShows_TextColor">
 		<value condition="ControlGroup(10000).HasFocus(10004) + Control.HasFocus(10004)">Label_Highlight</value>
-		<value>Settings_Label</value>
+		<value>Label_Normal</value>
 	</variable>
 	
 	<!--TV Show Next Aired Variables-->

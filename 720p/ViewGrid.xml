@@ -238,7 +238,6 @@
 						<textcolor>Settings_Label</textcolor>
 						<aligny>top</aligny>
 						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
 						<autoscroll>false</autoscroll>
 						
 					</control>

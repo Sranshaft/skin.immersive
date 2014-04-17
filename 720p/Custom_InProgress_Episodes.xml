@@ -63,220 +63,256 @@
 						
 					</control>
 
-					<control type="list" id="50">
+					<control type="fixedlist" id="50">
 						
 						<posx>320</posx>
-						<posy>60</posy>
-						<width>520</width>
-						<height>420</height>
-						<onright>9000</onright>
-						<onleft>10000</onleft>
-						<onup>50</onup>
-						<ondown>50</ondown>
+						<posy>20</posy>
+						<width>1000</width>
+						<height>480</height>
+						<onright>50</onright>
+						<onleft>50</onleft>
 						<pagecontrol>60</pagecontrol>
-						<viewtype label="List">list</viewtype>
+						<viewtype label="Extended">wrap</viewtype>
+						<orientation>horizontal</orientation>
+						<focusposition>0</focusposition>
 						<scrolltime tween="cubic" easing="out">600</scrolltime>
 						<preloaditems>2</preloaditems>
 						
-						<itemlayout width="520" height="60">
-
-							<control type="textbox">
+						<include>Common_Animation_HideWhenScrolling</include>
+						
+						<itemlayout width="320" height="480">
+						
+							<control type="group">
 							
-								<posx>32</posx>
-								<posy>0</posy>
-								<width>460</width>
-								<height>36</height>
-								<label>$VAR[InProgress_Header]</label>
-								<font>Menu-List</font>
-								<textcolor>Label_Normal</textcolor>
-								<aligny>top</aligny>
+								<posx>0</posx>
+								<posy>40</posy>
+								<width>300</width>
+								<height>440</height>
 								
-							</control>
-							
-							<control type="textbox">
-							
-								<posx>32</posx>
-								<posy>30</posy>
-								<width>460</width>
-								<height>30</height>
-								<label>[UPPERCASE]$INFO[ListItem.LastPlayed,Last watched on ,][/UPPERCASE]</label>
-								<font>Menu-List-Small</font>
-								<textcolor>Label_Normal</textcolor>
-								<aligny>top</aligny>
+								<control type="image">
 								
-							</control>
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>300</width>
+									<height>440</height>
+									<texture background="true">colors/color_white.png</texture>
+									<colordiffuse>Settings_Background_Dark</colordiffuse>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>300</width>
+									<height>170</height>
+									<texture background="true" fallback="fallbacks/fallback_tv.png">$INFO[ListItem.Art(thumb)]</texture>
+									<aspectratio aligny="top">scale</aspectratio>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>20</posx>
+									<posy>180</posy>
+									<width>260</width>
+									<height>60</height>
+									<label>$VAR[InProgress_Header]</label>
+									<font>Menu-ExtendedList-Header</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>top</aligny>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>20</posx>
+									<posy>248</posy>
+									<width>100</width>
+									<height>20</height>
+									<texture background="true">$INFO[ListItem.StarRating]</texture>
+									<colordiffuse>Settings_Label</colordiffuse>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>20</posx>
+									<posy>270</posy>
+									<width>260</width>
+									<height>125</height>
+									<label>$INFO[ListItem.Plot]</label>
+									<font>Menu-ExtendedList-Details</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+								<control type="label">
+								
+									<posx>20</posx>
+									<posy>400</posy>
+									<width>240</width>
+									<height>26</height>
+									<label>$INFO[ListItem.LastPlayed,Last played on ,]</label>
+									<font>Menu-ExtendedList-Small</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>center</aligny>
+									
+								</control>
+								
+								<control type="image">
+									
+									<posx>250</posx>
+									<posy>394</posy>
+									<width>40</width>
+									<height>40</height>
+									<texture>$VAR[Menu_Overlay_Image]</texture>
+									<aspectratio>stretch</aspectratio>
+									<colordiffuse>Settings_Label</colordiffuse>
+									
+								</control>
+								
+							</control>	
 							
 						</itemlayout>
 
-						<focusedlayout width="520" height="60">
+						<focusedlayout width="320" height="480">
 						
-							<control type="image">
-										
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>640</width>
-								<height>60</height>
-								<texture background="true">colors/color_keyboard.png</texture>
-								<visible>!Control.HasFocus(50)</visible>
-								
-							</control>
-
-							<control type="image">
+							<control type="group">
 							
 								<posx>0</posx>
-								<posy>0</posy>
-								<width>640</width>
-								<height>60</height>
-								<texture>colors/color_white.png</texture>
-								<colordiffuse>Background_Highlight</colordiffuse>
-								<visible>Control.HasFocus(50)</visible>
+								<posy>40</posy>
+								<width>300</width>
+								<height>440</height>
 								
-							</control>
-							
-							<control type="textbox">
-							
-								<posx>32</posx>
-								<posy>0</posy>
-								<width>460</width>
-								<height>36</height>
-								<label>$VAR[InProgress_Header]</label>
-								<font>Menu-List</font>
-								<textcolor>Label_Normal</textcolor>
-								<aligny>top</aligny>
+								<control type="image">
 								
-							</control>
-							
-							<control type="textbox">
-							
-								<posx>32</posx>
-								<posy>30</posy>
-								<width>460</width>
-								<height>30</height>
-								<label>[UPPERCASE]$INFO[ListItem.LastPlayed,Last watched on ,][/UPPERCASE]</label>
-								<font>Menu-List-Small</font>
-								<textcolor>Label_Normal</textcolor>
-								<aligny>top</aligny>
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>300</width>
+									<height>440</height>
+									<texture background="true">colors/color_white.png</texture>
+									<colordiffuse>Label_Highlight</colordiffuse>
+									
+								</control>
 								
-							</control>
-
+								<control type="image">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>300</width>
+									<height>170</height>
+									<texture background="true" fallback="fallbacks/fallback_tv.png">$INFO[ListItem.Art(thumb)]</texture>
+									<aspectratio aligny="top">scale</aspectratio>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>20</posx>
+									<posy>180</posy>
+									<width>260</width>
+									<height>60</height>
+									<label>$VAR[InProgress_Header]</label>
+									<font>Menu-ExtendedList-Header</font>
+									<textcolor>Label_Normal</textcolor>
+									<aligny>top</aligny>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+								<control type="image">
+								
+									<posx>20</posx>
+									<posy>248</posy>
+									<width>100</width>
+									<height>20</height>
+									<texture background="true">$INFO[ListItem.StarRating]</texture>
+									<colordiffuse>Label_Normal</colordiffuse>
+									<aspectratio>scale</aspectratio>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>20</posx>
+									<posy>270</posy>
+									<width>260</width>
+									<height>125</height>
+									<label>$INFO[ListItem.Plot]</label>
+									<font>Menu-ExtendedList-Details</font>
+									<textcolor>Label_Normal</textcolor>
+									<aligny>top</aligny>
+									<wrapmultiline>true</wrapmultiline>
+									<shadowcolor>00FFFFFF</shadowcolor>
+									<autoscroll>false</autoscroll>
+									
+								</control>
+								
+								<control type="label">
+								
+									<posx>20</posx>
+									<posy>400</posy>
+									<width>240</width>
+									<height>26</height>
+									<label>$INFO[ListItem.LastPlayed,Last played on ,]</label>
+									<font>Menu-ExtendedList-Small</font>
+									<textcolor>Label_Normal</textcolor>
+									<aligny>center</aligny>
+									
+								</control>
+								
+								<control type="label">
+								
+									<posx>250</posx>
+									<posy>400</posy>
+									<width>260</width>
+									<height>26</height>
+									<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+									<font>Menu-ExtendedList-Small</font>
+									<textcolor>Label_Normal</textcolor>
+									<align>right</align>
+									<aligny>center</aligny>
+									
+									<visible>!StringCompare(ListItem.Property(UnWatchedEpisodes),0)</visible>
+									
+								</control>
+								
+								<control type="image">
+									
+									<posx>250</posx>
+									<posy>394</posy>
+									<width>40</width>
+									<height>40</height>
+									<texture>$VAR[Menu_Overlay_Image]</texture>
+									<aspectratio>stretch</aspectratio>
+									<colordiffuse>Label_Normal</colordiffuse>
+									
+								</control>
+								
+							</control>	
+							
 						</focusedlayout>
 
-						<content target="video">special://skin/playlists/Episodes In Progress.xsp</content>
+						<content target="video">special://skin/playlists/In Progress (TV Shows).xsp</content>
 						
 					</control>
 
-					<control type="label">
-					
-						<posx>840</posx>
-						<posy>485</posy>
-						<width>520</width>
-						<height>24</height>
-						<label>[UPPERCASE]$INFO[Container(50).CurrentPage,Page ,] of $INFO[Container(50).NumPages,, pages][/UPPERCASE]</label>
-						<font>Menu-List-Small</font>
-						<textcolor>Label_Disabled</textcolor>
-						<align>right</align>
-						<aligny>top</aligny>
+					<!--Scrollbar-->
+					<control type="scrollbar" id="60">
 						
-					</control>
-
-					<control type="group">
-					
-						<posx>860</posx>
-						<posy>60</posy>
-						<width>300</width>
-						<height>440</height>
+						<include>Common_Scrollbar_Horizontal</include>
+						<posy>520</posy>
 						
-						<control type="image">
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(50).Scrolling">Conditional</animation>
 						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>300</width>
-							<height>440</height>
-							<texture background="true">colors/color_white.png</texture>
-							<colordiffuse>Settings_Background_Dark</colordiffuse>
-							
-						</control>
-						
-						<control type="image">
-						
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>300</width>
-							<height>170</height>
-							<texture background="true" fallback="fallbacks/fallback_tv.png">$INFO[Container(50).ListItem.Art(thumb)]</texture>
-							<aspectratio aligny="top">scale</aspectratio>
-							<fadetime>400</fadetime>
-							
-						</control>
-						
-						<control type="textbox">
-						
-							<posx>20</posx>
-							<posy>180</posy>
-							<width>260</width>
-							<height>60</height>
-							<label>$INFO[Container(50).ListItem.TVShowTitle]</label>
-							<font>Menu-ExtendedList-Header</font>
-							<textcolor>Settings_Label</textcolor>
-							<aligny>top</aligny>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
-							
-						</control>
-						
-						<control type="image">
-						
-							<posx>20</posx>
-							<posy>248</posy>
-							<width>100</width>
-							<height>20</height>
-							<texture background="true">$INFO[Container(50).ListItem.StarRating]</texture>
-							<colordiffuse>Settings_Label</colordiffuse>
-							<aspectratio>scale</aspectratio>
-							
-						</control>
-						
-						<control type="textbox">
-						
-							<posx>20</posx>
-							<posy>270</posy>
-							<width>260</width>
-							<height>125</height>
-							<label>$INFO[Container(50).ListItem.Plot]</label>
-							<font>Menu-ExtendedList-Details</font>
-							<textcolor>Settings_Label</textcolor>
-							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
-							
-						</control>
-						
-						<control type="label">
-						
-							<posx>20</posx>
-							<posy>400</posy>
-							<width>260</width>
-							<height>26</height>
-							<label>$INFO[Container(50).ListItem.Studio]</label>
-							<font>Menu-ExtendedList-Small</font>
-							<textcolor>Settings_Label</textcolor>
-							<aligny>center</aligny>
-							
-						</control>
-
-						<control type="image">
-							
-							<posx>250</posx>
-							<posy>394</posy>
-							<width>40</width>
-							<height>40</height>
-							<texture>$INFO[Container(50).ListItem.Overlay]</texture>
-							<aspectratio>stretch</aspectratio>
-							<colordiffuse>Settings_Label</colordiffuse>
-							
-						</control>
-
 					</control>
 
 				</control>

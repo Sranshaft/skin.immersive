@@ -879,7 +879,7 @@
 		<height>720</height>
 		
 	</include>
-	
+
 	<include name="Common_ForumBrowser_Background">
 	
 		<control type="image">
@@ -2231,6 +2231,17 @@
 		<onclick>ClearProperty(Country,58)</onclick>
 		<onclick>ClearProperty(NextTime,58)</onclick>
 		
+	</include>	
+
+	<include name="Common_TraktTV_ClearProperties_Comment">
+
+		<onclick>ClearProperty(Username,66)</onclick>
+		<onclick>ClearProperty(Location,66)</onclick>
+		<onclick>ClearProperty(Avatar,66)</onclick>
+		<onclick>ClearProperty(Comment,66)</onclick>
+		<onclick>ClearProperty(Type,66)</onclick>
+		<onclick>ClearProperty(Likes,66)</onclick>
+
 	</include>	
 	
 	<include name="Common_TraktTV_Info_Detail">

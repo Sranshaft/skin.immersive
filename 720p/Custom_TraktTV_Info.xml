@@ -3,12 +3,11 @@
 <window type="dialog" id="58">
 
 	<defaultcontrol always="true">50</defaultcontrol>
-
 	<zorder>2</zorder>
 	
 	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
 	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Similar,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
-	
+
 	<include>Common_Animation_Window</include>
 	
 	<controls>
@@ -1075,7 +1074,7 @@
 						<content>
 						
 							<item id="1">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.1.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.1.Avatar)]</property>
@@ -1086,7 +1085,7 @@
 							</item>
 							
 							<item id="2">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.2.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.2.Avatar)]</property>
@@ -1097,7 +1096,7 @@
 							</item>
 							
 							<item id="3">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.3.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.3.Avatar)]</property>
@@ -1108,7 +1107,7 @@
 							</item>
 							
 							<item id="4">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.4.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.4.Avatar)]</property>
@@ -1119,7 +1118,7 @@
 							</item>
 							
 							<item id="5">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.5.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.5.Avatar)]</property>
@@ -1130,7 +1129,7 @@
 							</item>
 							
 							<item id="6">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.6.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.6.Avatar)]</property>
@@ -1141,7 +1140,7 @@
 							</item>
 							
 							<item id="7">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.7.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.7.Avatar)]</property>
@@ -1152,7 +1151,7 @@
 							</item>
 							
 							<item id="8">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.8.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.8.Avatar)]</property>
@@ -1163,7 +1162,7 @@
 							</item>
 							
 							<item id="9">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.9.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.9.Avatar)]</property>
@@ -1174,7 +1173,7 @@
 							</item>
 							
 							<item id="10">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.10.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.10.Avatar)]</property>
@@ -1185,7 +1184,7 @@
 							</item>
 							
 							<item id="11">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.11.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.11.Avatar)]</property>
@@ -1196,7 +1195,7 @@
 							</item>
 							
 							<item id="12">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.12.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.12.Avatar)]</property>
@@ -1207,7 +1206,7 @@
 							</item>
 							
 							<item id="13">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.13.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.13.Avatar)]</property>
@@ -1218,7 +1217,7 @@
 							</item>
 							
 							<item id="14">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.14.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.14.Avatar)]</property>
@@ -1229,7 +1228,7 @@
 							</item>
 							
 							<item id="15">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.15.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.15.Avatar)]</property>
@@ -1240,7 +1239,7 @@
 							</item>
 							
 							<item id="16">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.16.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.16.Avatar)]</property>
@@ -1251,7 +1250,7 @@
 							</item>
 							
 							<item id="17">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.17.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.17.Avatar)]</property>
@@ -1262,7 +1261,7 @@
 							</item>
 							
 							<item id="18">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.18.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.18.Avatar)]</property>
@@ -1273,7 +1272,7 @@
 							</item>
 							
 							<item id="19">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.19.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.19.Avatar)]</property>
@@ -1284,7 +1283,7 @@
 							</item>
 							
 							<item id="20">
-								<onclick>-</onclick>
+								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.20.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.20.Avatar)]</property>
