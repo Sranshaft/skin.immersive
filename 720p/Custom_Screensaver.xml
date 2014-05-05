@@ -7,7 +7,7 @@
 	<visible>System.ScreenSaverActive + !Player.HasVideo</visible>
 
 	<controls>
-	
+
 		<control type="group">
 		
 			<posx>80</posx>

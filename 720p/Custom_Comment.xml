@@ -114,7 +114,7 @@
 				<posy>156</posy>
 				<width>420</width>
 				<height>220</height>
-				<label>$INFO[Window.Property(Comment)]</label>
+				<label fallback="">$INFO[Window.Property(Comment)]</label>
 				<font>Menu-Similar-Plot</font>
 				<textcolor>Settings_Label</textcolor>
 				<aligny>top</aligny>

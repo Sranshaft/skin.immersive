@@ -368,15 +368,13 @@
 			<!--Filters Section-->
 			<control type="grouplist">
 					
+				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>100</posy>
-				<width>700</width>
-				<height>510</height>
-				<pagecontrol>80</pagecontrol>
+				<width>730</width>
+				<height>540</height>
 				<itemgap>0</itemgap>
 				<orientation>vertical</orientation>
-				<usecontrolcoords>true</usecontrolcoords>
-				
 				<visible>Container(98).Hasfocus(3)</visible>
 				
 				<include>Common_Animation_Settings_Options</include>
@@ -391,6 +389,7 @@
 				
 				<control type="spincontrolex" id="16">
 				
+					<description>Match</description>
 					<include>Common_Settings_SpinButton</include>
 					<label>$LOCALIZE[21424]</label>
 					<onup>19</onup>
@@ -402,6 +401,7 @@
 				
 				<control type="spincontrolex" id="17">
 				
+					<description>Limit</description>
 					<include>Common_Settings_SpinButton</include>
 					<label>$LOCALIZE[21427]</label>
 					<onup>16</onup>
@@ -413,6 +413,7 @@
 				
 				<control type="spincontrolex" id="18">
 				
+					<description>Order</description>
 					<include>Common_Settings_SpinButton</include>
 					<label>$LOCALIZE[21429]</label>
 					<onup>17</onup>
@@ -424,7 +425,7 @@
 				
 				<control type="togglebutton" id="19">
 
-					<include>Common_Settings_SpinButton</include>
+					<include>Common_Settings_Button</include>
 					<label>$LOCALIZE[21431]</label>
 					<altlabel>$LOCALIZE[21430]</altlabel>
 					<onup>17</onup>

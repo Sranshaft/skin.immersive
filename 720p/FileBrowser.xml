@@ -505,8 +505,17 @@
 				<posy>0</posy>
 				<width>300</width>
 				<height>720</height>
-				<texture background="true">colors/color_white.png</texture>
-				<colordiffuse>Settings_Background_Dark</colordiffuse>
+				<texture>colors/color_keyboard_dark.png</texture>
+				
+			</control>
+
+			<control type="image">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>300</width>
+				<height>440</height>
+				<texture>colors/color_keyboard.png</texture>
 				
 			</control>
 			
@@ -519,7 +528,7 @@
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<fadetime>400</fadetime>
-				
+
 			</control>
 			
 			<control type="grouplist">
@@ -549,7 +558,7 @@
 					<height>24</height>
 					<label>[B]$INFO[ListItem.FileExtension][/B]</label>
 					<font>FileBrowser-Details-Small</font>
-					<textcolor>Settings_Label</textcolor>
+					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>
 					<visible>!IsEmpty(ListItem.FileExtension)</visible>
 					
@@ -573,7 +582,7 @@
 					<height>24</height>
 					<label>File size: $INFO[ListItem.Size]</label>
 					<font>FileBrowser-Details-Small</font>
-					<textcolor>Settings_Label</textcolor>
+					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>
 					<visible>!IsEmpty(ListItem.Size)</visible>
 					
@@ -585,7 +594,7 @@
 					<height>24</height>
 					<label>File date: $INFO[ListItem.Date]</label>
 					<font>FileBrowser-Details-Small</font>
-					<textcolor>Settings_Label</textcolor>
+					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>
 					<visible>!IsEmpty(ListItem.Date)</visible>
 					

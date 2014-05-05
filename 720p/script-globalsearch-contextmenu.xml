@@ -23,7 +23,7 @@
 				<animation effect="slide" start="-320,0" end="0,0" time="200" tween="cubic" easing="in">WindowClose</animation>
 			
 				<!--Background-->
-				<control type="image">
+				<control type="image" id="999">
 				
 					<posy>0</posy>
 					<posy>0</posy>
@@ -56,7 +56,6 @@
 					<height>720</height>
 					<itemgap>0</itemgap>
 					<orientation>vertical</orientation>
-					<usecontrolcoords>true</usecontrolcoords>
 					
 					<control type="button" id="1001">
 					
@@ -83,19 +82,6 @@
 
 			</control>
 
-		</control>
-						
-	
-		<control type="image" id="997">
-			<visible>false</visible>
-		</control>
-		
-		<control type="image" id="998">
-			<visible>false</visible>
-		</control>
-		
-		<control type="image" id="999">
-			<visible>false</visible>
 		</control>
 		
 	</controls>

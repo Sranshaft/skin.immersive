@@ -64,6 +64,16 @@
 					<posy>0</posy>
 					<width>84</width>
 					<height>84</height>
+					<texture>colors/color_keyboard_dark.png</texture>
+					
+				</control>
+
+				<control type="image">
+						
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>84</width>
+					<height>84</height>
 					<texture>$VAR[NowPlaying_Image]</texture>
 					<aspectratio>scale</aspectratio>
 					

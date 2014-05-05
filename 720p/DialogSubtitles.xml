@@ -2,64 +2,28 @@
 
 <window>
 	
-	<!--<defaultcontrol always="true">120</defaultcontrol>-->
 	<allowoverlay>no</allowoverlay>
 	<backgroundcolor>Settings_Background_Dark</backgroundcolor>
 	
-	<zorder>2</zorder>
-	
 	<include>Common_Animation_Window</include>
-	
+
 	<controls>
-
-		<control type="image">
+	
+		<!--Background-->
+		<include>Common_Settings_Background</include>
 		
-			<include>Common_Dimensions</include>
-			<texture background="true">colors/color_white.png</texture>
-			<colordiffuse>Settings_Background_Light</colordiffuse>
-			
-		</control>
-		
-		<control type="image" id="110">
-			
-			<description>Service Logo</description>
-			<posx>1010</posx>
-			<posy>40</posy>
-			<width>250</width>
-			<height>40</height>
-			<aspectratio>keep</aspectratio>
-			<colordiffuse>Settings_Label</colordiffuse>
-			
-		</control>
-
 		<!--Menu-->
 		<control type="group">
-			
-			<!--Background-->
-			<control type="image">
-			
-				<posy>0</posy>
-				<posy>0</posy>
-				<width>420</width>
-				<height>720</height>
-				<texture background="true">colors/color_white.png</texture>
-				<colordiffuse>Settings_Background_Dark</colordiffuse>			
-
-			</control>
+		
+			<include>Common_Settings_Header_Back</include>
 			
 			<control type="label">
 	
-				<posx>60</posx>
-				<posy>22</posy>
-				<width>420</width>
-				<height>32</height>
+				<include>Common_Settings_Header</include>
 				<label>XBMC Subtitles</label>
-				<font>Settings-Menu-Header</font>
-				<textcolor>Settings_Header</textcolor>
-				<aligny>top</aligny>
 				
 			</control>
-			
+	
 			<control type="list" id="150">
 				
 				<description>List</description>
@@ -130,6 +94,17 @@
 				<posy>0</posy>
 				<width>700</width>
 				<height>480</height>
+
+				<control type="image" id="110">
+			
+					<description>Service Logo</description>
+					<posx>450</posx>
+					<posy>40</posy>
+					<width>250</width>
+					<height>40</height>
+					<aspectratio align="right">keep</aspectratio>
+
+				</control>
 			
 				<control type="label" id="100">
 				
@@ -153,14 +128,27 @@
 					
 				</control>
 
+				<control type="label" id="140">
+				
+					<description></description>
+					<posx>700</posx>
+					<posy>100</posy>
+					<width>700</width>
+					<align>right</align>
+					<include>Common_Settings_Label</include>
+					<label>-</label>
+					
+				</control>
+
 				<control type="list" id="120">
 						
 					<posx>0</posx>
 					<posy>160</posy>
 					<width>700</width>
-					<height>480</height>
+					<height>420</height>
 					<onleft>150</onleft>
 					<ondown>120</ondown>
+					<onright>9000</onright>
 					<pagecontrol>81</pagecontrol>
 					<viewtype label="535">list</viewtype>
 					<scrolltime tween="cubic" easing="out">600</scrolltime>
@@ -478,17 +466,6 @@
 
 				</control>
 
-				<control type="label" id="140">
-				
-					<description></description>
-					<posx>0</posx>
-					<posy>660</posy>
-					<width>700</width>
-					<include>Common_Settings_Label</include>
-					<label>-</label>
-					
-				</control>
-				
 				<!--Scrollbar-->
 				<control type="scrollbar" id="81">
 				
@@ -496,13 +473,41 @@
 					
 					<posx>720</posx>
 					<posy>160</posy>
-					<height>480</height>
+					<height>420</height>
 					
 					<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(120).Scrolling">Conditional</animation>
 					
 				</control>
 				
 			</control>	
+
+		</control>
+
+		<!--AppBar-->
+		<include>Common_Settings_Divider</include>
+		
+		<control type="grouplist" id="9000">
+		
+			<include>Common_Settings_Button_Grouplist</include>
+
+			<!--Search Button-->
+			<control type="button" id="160">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>Search</label>
+				<onup>120</onup>
+				
+			</control>
+		
+			<!--Okay Button-->
+			<control type="button" id="18">
+					
+				<include>Common_Settings_Control_Button</include>
+				<label>$LOCALIZE[186]</label>
+				<onup>120</onup>
+				<onclick>Back</onclick>
+				
+			</control>
 
 		</control>
 		

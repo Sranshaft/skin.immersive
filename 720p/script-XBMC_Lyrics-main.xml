@@ -47,7 +47,7 @@
 				<posy>684</posy>
 				<width>300</width>
 				<height>20</height>
-				<label>Powered by $INFO[Control.GetLabel(200)]</label>
+				<label>Powered by $ADDON[script.cu.lrclyrics 32199]</label>
 				<font>Lyrics-Scraper</font>
 				<textcolor>Label_Normal</textcolor>
 				

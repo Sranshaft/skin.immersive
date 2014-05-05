@@ -534,8 +534,8 @@
 								<posy>0</posy>
 								<width>60</width>
 								<height>60</height>
-								<texture>colors/color_white.png</texture>
-								<colordiffuse>Tile_Background</colordiffuse>
+								<texture colordiffuse="Tile_Background">colors/color_white.png</texture>
+								
 								<visible>!Control.HasFocus(9001)</visible>
 								
 							</control>
@@ -546,8 +546,7 @@
 								<posy>0</posy>
 								<width>60</width>
 								<height>60</height>
-								<texture>colors/color_white.png</texture>
-								<colordiffuse>Background_Highlight</colordiffuse>
+								<texture colordiffuse="Background_Highlight">colors/color_white.png</texture>
 								
 								<visible>Control.HasFocus(9001)</visible>
 								

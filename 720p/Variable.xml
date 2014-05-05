@@ -59,6 +59,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),MyWeather.xml)">XBMC Weather</value>
 		<value condition="StringCompare(Window.Property(xmlfile),SettingsCategory.xml) | StringCompare(Window.Property(xmlfile),Custom_52_Skin_Settings.xml)">$LOCALIZE[5]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),SettingsSystemInfo.xml)">$LOCALIZE[130]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Slideshow.xml)">XBMC Pictures</value>
 		<value condition="StringCompare(Window.Property(xmlfile),SmartPlaylistEditor.xml)">$LOCALIZE[21432]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSD.xml)">XBMC Video</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDBookmarks.xml)">XBMC Video</value>
@@ -107,6 +108,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDBookmarks.xml)">Bookmarks</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDSettings.xml)">$INFO[Control.GetLabel(2)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VisualisationPresetList.xml)">$LOCALIZE[31032]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Slideshow.xml)">$INFO[ListItem.FolderPath]</value>
 		
 		<!--Addon Specfic Variables-->
 
@@ -444,8 +446,8 @@
 	<variable name="Hub_Image">
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_movies.jpg</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_music.jpg</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml + IsEmpty(ListItem.Art(thumb))">fallbacks/fallback_music.jpg</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml + !IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml + IsEmpty(ListItem.Property(Fanart_Image))">fallbacks/fallback_tv.jpg</value>
 		<value>colors/color_keyboard_dark.png</value>

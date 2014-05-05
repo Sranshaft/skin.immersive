@@ -16,6 +16,13 @@
 	<controls>
 
 		<!--Background Area-->
+		<control type="image">
+		
+			<include>Common_Dimensions</include>
+			<texture background="true">colors/color_black.png</texture>
+			
+		</control>
+
 		<include>Common_Background</include>
 		
 		<control type="group">

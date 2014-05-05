@@ -727,6 +727,8 @@
 			<include>Common_AppBar_Divider</include>
 		</control>
 
+		<include>Common_AppBar_Files</include>
+
 		<!--Watched/Unwatched-->
 		<include>Common_AppBar_ToggleWatched</include>
 
@@ -906,6 +908,269 @@
 			
 		</control>
 		
+	</include>
+
+	<!--Common appbar buttons-->
+
+	<include name="Common_AppBar_Button">
+	
+		<width>48</width>
+		<height>48</height>
+		<font>Appbar-Label-Small</font>
+		<textcolor>Label_Normal</textcolor>
+		<focusedcolor>Label_Normal</focusedcolor>
+		<disabledcolor>Label_Disabled</disabledcolor>
+		<align>center</align>
+		<aligny>top</aligny>
+		<textoffsetx>-4</textoffsetx>
+		<textoffsety>54</textoffsety>
+		<wrapmultiline>true</wrapmultiline>
+		<onup>SetFocus(50)</onup>
+		
+	</include>
+	
+	<include name="Common_AppBar_Button_Small">
+	
+		<width>32</width>
+		<height>32</height>
+		<font>Appbar-Label</font>
+		<textcolor>00FFFFFF</textcolor>
+		<focusedcolor>Label_Highlight</focusedcolor>
+		<selectedcolor>Label_Normal</selectedcolor>
+		<disabledcolor>Label_Disabled</disabledcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textoffsetx>48</textoffsetx>
+		<textoffsety>16</textoffsety>
+		<wrapmultiline>true</wrapmultiline>
+		<onup>SetFocus(50)</onup>
+		
+	</include>
+	
+	<include name="Common_AppBar_Divider">
+	
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>2</width>
+		<height>48</height>
+		<texture>colors/color_white.png</texture>
+
+	</include>
+	
+	<include name="Common_AppBar_Files">
+	
+		<control type="button" id="5">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_files_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_files.png</texturenofocus>
+			<label>file[CR]mode</label>
+			
+		</control>
+		
+	</include>
+	
+	<include name="Common_AppBar_Filter">
+	
+		<control type="radiobutton" id="5119">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_filter_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_filter.png</texturenofocus>
+			<textureradioon>appbar/appbar_radioon.png</textureradioon>
+			<textureradiooff>-</textureradiooff>
+			<selected>Container.Filtered</selected>
+			<radiowidth>48</radiowidth>
+			<radioheight>48</radioheight>
+			<radioposx>6</radioposx>
+			<label>smart[CR]filter</label>
+			<onclick>SetFocus(50)</onclick>
+			<onclick>Filter</onclick>
+			
+		</control>
+		
+	</include>
+	
+	<include name="Common_AppBar_Search">
+	
+		<control type="button" id="8">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_search_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_search.png</texturenofocus>
+			<label>search</label>
+			
+		</control>
+		
+	</include>
+	
+	<include name="Common_AppBar_SortBy">
+	
+		<control type="button" id="9149">
+
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_sort_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_sort.png</texturenofocus>
+			<label>sort by:[CR]$INFO[Container.SortMethod]</label>
+			<onclick>Container.NextSortMethod</onclick>
+			
+		</control>	
+		
+	</include>
+
+	<include name="Common_AppBar_SortDirection">
+	
+		<control type="togglebutton" id="4">
+			
+			<include>Common_AppBar_Button</include>
+			<label>sort[CR]direction</label>
+			<altlabel>sort[CR]direction</altlabel>
+			<texturefocus>appbar/appbar_sortascending_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_sortascending.png</texturenofocus>
+			<alttexturefocus>appbar/appbar_sortdescending_focus.png</alttexturefocus>
+			<alttexturenofocus>appbar/appbar_sortdescending.png</alttexturenofocus>
+			<colordiffuse>$VAR[Appbar_SortDirection_ColorDiffuse]</colordiffuse>
+			
+		</control>
+		
+	</include>
+	
+	<include name="Common_AppBar_ToggleWatched">
+	
+		<control type="button" id="14">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_watched_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_watched.png</texturenofocus>
+			<label>toggle[CR]watched</label>
+			
+		</control>
+		
+	</include>
+	
+	<include name="Common_AppBar_UnlockShares">
+	
+		<control type="button" id="11">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_unlock_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_unlock.png</texturenofocus>
+			<label>unlock[CR]shares</label>
+			<visible>System.HasLocks</visible>
+			<onclick>Xbmc.MasterMode</onclick>
+			
+		</control>
+		
+	</include>
+	
+	<include name="Common_AppBar_View_Banner">
+			
+		<include>Common_AppBar_Button</include>
+		<texturefocus>appbar/appbar_banner_focus.png</texturefocus>
+		<texturenofocus>appbar/appbar_banner.png</texturenofocus>
+		<label>view:[CR]banner</label>
+		<onclick>Container.SetViewMode(501)</onclick>
+		
+	</include>
+	
+	<include name="Common_AppBar_View_Details">
+			
+		<include>Common_AppBar_Button</include>
+		<texturefocus>appbar/appbar_details_focus.png</texturefocus>
+		<texturenofocus>appbar/appbar_details.png</texturenofocus>
+		<label>view:[CR]details</label>
+		<onclick>Container.SetViewMode(59)</onclick>
+		
+	</include>
+
+	<include name="Common_AppBar_View_Extended">
+	
+		<include>Common_AppBar_Button</include>
+		<texturefocus>appbar/appbar_extended_focus.png</texturefocus>
+		<texturenofocus>appbar/appbar_extended.png</texturenofocus>
+		<label>view:[CR]extended</label>
+		<onclick>Container.SetViewMode(53)</onclick>
+		
+	</include>
+	
+	<include name="Common_AppBar_View_ExtendedSqaure">
+	
+		<include>Common_AppBar_Button</include>
+		<texturefocus>appbar/appbar_extended_focus.png</texturefocus>
+		<texturenofocus>appbar/appbar_extended.png</texturenofocus>
+		<label>view:[CR]extended</label>
+		<onclick>Container.SetViewMode(58)</onclick>
+		
+	</include>
+	
+	<include name="Common_AppBar_View_Grid">
+	
+		<include>Common_AppBar_Button</include>
+		<texturefocus>appbar/appbar_grid_focus.png</texturefocus>
+		<texturenofocus>appbar/appbar_grid.png</texturenofocus>
+		<label>view:[CR]grid</label>
+		<onclick>Container.SetViewMode(55)</onclick>
+		
+	</include>
+	
+	<include name="Common_AppBar_View_GridEpisode">
+	
+		<include>Common_AppBar_Button</include>
+		<texturefocus>appbar/appbar_grid_focus.png</texturefocus>
+		<texturenofocus>appbar/appbar_grid.png</texturenofocus>
+		<label>view:[CR]grid</label>
+		<onclick>Container.SetViewMode(56)</onclick>
+		
+	</include>
+	
+	<include name="Common_AppBar_View_List">
+	
+		<include>Common_AppBar_Button</include>
+		<texturefocus>appbar/appbar_list_focus.png</texturefocus>
+		<texturenofocus>appbar/appbar_list.png</texturenofocus>
+		<label>view:[CR]list</label>
+		<onclick>Container.SetViewMode(50)</onclick>
+		
+	</include>
+	
+	<include name="Common_AppBar_View_Poster">
+	
+		<include>Common_AppBar_Button</include>
+		<texturefocus>appbar/appbar_poster_focus.png</texturefocus>
+		<texturenofocus>appbar/appbar_poster.png</texturenofocus>
+		<label>view:[CR]posters</label>
+		<onclick>Container.SetViewMode(51)</onclick>
+	
+	</include>
+	
+	<include name="Common_AppBar_View_Square">
+			
+		<include>Common_AppBar_Button</include>
+		<texturefocus>appbar/appbar_square_focus.png</texturefocus>
+		<texturenofocus>appbar/appbar_square.png</texturenofocus>
+		<label>view:[CR]square</label>
+		<onclick>Container.SetViewMode(54)</onclick>
+		
+	</include>
+	
+	<include name="Common_AppBar_View_Tall">
+	
+		<include>Common_AppBar_Button</include>
+		<texturefocus>appbar/appbar_tall_focus.png</texturefocus>
+		<texturenofocus>appbar/appbar_tall.png</texturenofocus>
+		<label>view:[CR]tall</label>
+		<onclick>Container.SetViewMode(57)</onclick>
+	
+	</include>
+	
+	<include name="Common_AppBar_View_Thumb">
+	
+		<include>Common_AppBar_Button</include>
+		<texturefocus>appbar/appbar_tile_focus.png</texturefocus>
+		<texturenofocus>appbar/appbar_tile.png</texturenofocus>
+		<label>view:[CR]thumb</label>
+		<onclick>Container.SetViewMode(52)</onclick>
+	
 	</include>
 	
 </includes>	

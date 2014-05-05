@@ -91,45 +91,49 @@
 						
 						<itemlayout width="400" height="60">
 						
-							<control type="image">
-							
-								<posx>14</posx>
-								<posy>17</posy>
-								<width>26</width>
-								<height>26</height>
-								<texture>kai/kai_date.png</texture>
-								<aspectratio>center</aspectratio>
-								<colordiffuse>Label_Normal</colordiffuse>
-								
-								<visible>StringCompare(ListItem.Label,System.Date(DDD))</visible>
-								
-								<animation type="VisibleChange">
-									<effect type="fade" start="0" end="100" time="400" delay="200" />
-								</animation>
-							
-							</control>
-
 							<control type="label">
 							
 								<posx>32</posx>
 								<posy>0</posy>
-								<width min="20" max="380">auto</width>
+								<width min="20" max="360">auto</width>
 								<height>60</height>
 								<label>$INFO[ListItem.Label]</label>
 								<font>Menu-List</font>
 								<textcolor>Label_Normal</textcolor>
-								<selectedcolor>Label_Highlight</selectedcolor>
+								<align>left</align>
 								<aligny>center</aligny>
-								
-								<animation type="Conditional" condition="StringCompare(ListItem.Label,System.Date(DDD))">
-									<effect type="slide" start="0,0" end="20,0" time="400" />
-								</animation>
-								
+							
+							</control>
+
+							<!--Show calendar icon-->
+							<control type="image">
+
+								<posx>348</posx>
+								<posy>17</posy>
+								<width>26</width>
+								<height>26</height>
+								<texture>kai/kai_date.png</texture>
+								<colordiffuse>Label_Normal</colordiffuse>
+								<aspectratio>center</aspectratio>
+
+								<visible>StringCompare(ListItem.Label,System.Date(DDD))</visible>
+
 							</control>
 							
 						</itemlayout>
 
 						<focusedlayout width="400" height="60">
+
+							<control type="image">
+									
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>400</width>
+								<height>60</height>
+								<texture background="true">colors/color_keyboard.png</texture>
+								<visible>!Control.HasFocus(207)</visible>
+								
+							</control>
 
 							<control type="image">
 							
@@ -139,43 +143,37 @@
 								<height>60</height>
 								<texture>colors/color_white.png</texture>
 								<colordiffuse>Background_Highlight</colordiffuse>
-							
+								<visible>Control.HasFocus(207)</visible>
+								
 							</control>
 							
-							<control type="image">
-							
-								<posx>14</posx>
-								<posy>17</posy>
-								<width>26</width>
-								<height>26</height>
-								<texture>kai/kai_date.png</texture>
-								<aspectratio>center</aspectratio>
-								<colordiffuse>Label_Normal</colordiffuse>
-								
-								<visible>StringCompare(ListItem.Label,System.Date(DDD))</visible>
-								
-								<animation type="VisibleChange">
-									<effect type="fade" start="0" end="100" time="400" delay="200" />
-								</animation>
-							
-							</control>
-						
 							<control type="label">
 							
 								<posx>32</posx>
 								<posy>0</posy>
-								<width min="20" max="380">auto</width>
+								<width min="20" max="360">auto</width>
 								<height>60</height>
 								<label>$INFO[ListItem.Label]</label>
 								<font>Menu-List</font>
 								<textcolor>Label_Normal</textcolor>
+								<align>left</align>
 								<aligny>center</aligny>
-								<scrollspeed>0</scrollspeed>
-								
-								<animation type="Conditional" condition="StringCompare(ListItem.Label,System.Date(DDD))">
-									<effect type="slide" start="0,0" end="20,0" time="400" />
-								</animation>
-								
+
+							</control>
+
+							<!--Show calendar icon-->
+							<control type="image">
+
+								<posx>348</posx>
+								<posy>17</posy>
+								<width>26</width>
+								<height>26</height>
+								<texture>kai/kai_date.png</texture>
+								<colordiffuse>Label_Normal</colordiffuse>
+								<aspectratio>center</aspectratio>
+
+								<visible>StringCompare(ListItem.Label,System.Date(DDD))</visible>
+
 							</control>
 
 						</focusedlayout>

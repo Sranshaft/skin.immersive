@@ -217,6 +217,53 @@
 				</control>
 				
 			</control>
+
+			<!--Progress Bar-->
+			<control type="progress" id="12">
+			
+				<description>My first progress control</description>
+				<posx>60</posx>
+				<posy>100</posy>
+				<width>280</width>
+				<height>5</height>
+				<texturebg border="2">colors/color_grey.png</texturebg>
+				<lefttexture>-</lefttexture>
+				<midtexture border="2">colors/color_silver.png</midtexture>
+				<righttexture>-</righttexture>
+				<info>Player.ProgressCache</info>
+				
+			</control>
+			
+			<!--Progress Bar-->
+			<control type="progress" id="12">
+			
+				<description>My first progress control</description>
+				<posx>60</posx>
+				<posy>100</posy>
+				<width>280</width>
+				<height>5</height>
+				<texturebg border="2">colors/color_transparent.png</texturebg>
+				<lefttexture>-</lefttexture>
+				<midtexture border="2">colors/color_white.png</midtexture>
+				<righttexture>-</righttexture>
+				<info>Player.Progress</info>
+				<colordiffuse>Background_Highlight</colordiffuse>
+				
+			</control>
+			
+			<control type="slider">
+
+				<posx>60</posx>
+				<posy>100</posy>
+				<width>280</width>
+				<height>5</height>
+				<texturesliderbar border="2">colors/color_transparent.png</texturesliderbar>
+				<textureslidernib border="2">colors/color_white.png</textureslidernib>
+				<textureslidernibfocus border="2">colors/color_white.png</textureslidernibfocus>
+				<info>Player.Progress</info>
+				<action>seek</action>
+				
+			</control>
 			
 			<!--Current Time-->
 			<control type="label">
@@ -230,6 +277,16 @@
 				<font>NowPlaying-Detail-Small</font>
 				<aligny>center</aligny>
 			
+			</control>
+
+			<control type="image">
+						
+				<posx>370</posx>
+				<posy>15</posy>
+				<width>115</width>
+				<height>115</height>
+				<texture>colors/color_keyboard_dark.png</texture>
+				
 			</control>
 			
 			<control type="image">

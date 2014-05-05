@@ -2,7 +2,66 @@
 
 <window id="2007">
 
-	<controls>	
+	<controls>
+
+		<!--Information Area-->
+		<control type="group">
+		
+			<visible>!System.IdleTime(30)</visible>
+		
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="400" />
+			</animation>
+			
+			<animation type="Hidden">
+				<effect type="fade" start="100" end="0" time="400" delay="400" />
+			</animation>
+			
+			<control type="image">
+					
+				<include>Common_Dimensions</include>
+				<texture>overlays/overlay_fullscreen_top.png</texture>
+				
+			</control>
+			
+			<!--Top Area-->
+			<include>Common_Breadcrumb</include>
+			
+			<control type="group">
+			
+				<!--Left Scroll Image-->
+				<control type="image">
+				
+					<posx>0</posx>
+					<posy>320</posy>
+					<width>100</width>
+					<height>48</height>
+					<texture>controls/control_image_left.png</texture>
+					
+					<animation type="Conditional" condition="System.IdleTime(10)">
+						<effect type="fade" start="100" end="80" time="400" />
+					</animation>
+					
+				</control>
+				
+				<!--Right Scroll Image-->
+				<control type="image">
+				
+					<posx>1180</posx>
+					<posy>320</posy>
+					<width>100</width>
+					<height>48</height>
+					<texture>controls/control_image_right.png</texture>
+					
+					<animation type="Conditional" condition="System.IdleTime(10)">
+						<effect type="fade" start="100" end="80" time="400" />
+					</animation>
+					
+				</control>
+				
+			</control>	
+
+		</control>
 	
 	</controls>
 
