@@ -28,7 +28,7 @@
 	<include file="Includes_PseudoTV.xml" />
 	<include file="Includes_PVR.xml" />
 	<include file="Includes_SortLetter.xml" />
-	<include file="Includes_TraktTV" />
+	<include file="Includes_TraktTV.xml" />
 	<include file="Includes_Views.xml" />
 	
 	
@@ -980,14 +980,17 @@
 			</animation>
 		
 			<control type="image">
+
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>48</width>
 				<height>48</height>
 				<texture background="true">volume/base.png</texture>
+
 			</control>
 			
 			<control type="image">
+
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>48</width>
@@ -996,18 +999,22 @@
 				<colordiffuse>Background_Highlight</colordiffuse>
 				
 				<animation effect="rotate" end="-360" center="auto" loop="true" time="2000" condition="Player.Playing">Conditional</animation>
+
 			</control>
 			
 			<control type="image">
+
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>48</width>
 				<height>48</height>
 				<texture background="true">$VAR[Kai_Media_Icon]</texture>
 				<aspectratio>center</aspectratio>
+
 			</control>
 			
 			<control type="label">
+
 				<description>message</description>
 				<posx>-14</posx>
 				<posy>-1</posy>
@@ -1018,9 +1025,11 @@
 				<scroll>false</scroll>
 				<align>right</align>
 				<aligny>center</aligny>
+
 			</control>
 			
 			<control type="label">
+				
 				<description>message</description>
 				<posx>-14</posx>
 				<posy>20</posy>
@@ -1031,6 +1040,7 @@
 				<scroll>false</scroll>
 				<align>right</align>
 				<aligny>top</aligny>
+				
 			</control>
 			
 		</control>
