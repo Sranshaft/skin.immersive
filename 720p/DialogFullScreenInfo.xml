@@ -57,7 +57,7 @@
 					<posx>40</posx>
 					<posy>40</posy>
 					<width>320</width>
-					<height>680</height>
+					<height>586</height>
 					<itemgap>6</itemgap>
 					<orientation>vertical</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
@@ -76,29 +76,31 @@
 					
 					<control type="image">
 						
+						<posy>6</posy>
 						<width>110</width>
 						<height>22</height>
 						<texture background="true">$INFO[Player.StarRating]</texture>
 						<colordiffuse>Label_Normal</colordiffuse>
 						<aspectratio>scale</aspectratio>
+						<visible>!IsEmpty(Player.StarRating)</visible>
 						
 					</control>
 					
-					<control type="label">
+					<control type="textbox">
 					
-						<posy>10</posy>
-						<width>350</width>
-						<height>10</height>
+						<posy>6</posy>
+						<width>320</width>
+						<height>20</height>
 						<label>$VAR[NowPlaying_Second_Label]</label>
 						<textcolor>Label_Normal</textcolor>
 						<font>Fullscreen-Info-Small</font>
 					
 					</control>
 					
-					<control type="label">
+					<control type="textbox">
 					
-						<width>350</width>
-						<height>16</height>
+						<width>320</width>
+						<height>20</height>
 						<label>$VAR[NowPlaying_Third_Label]</label>
 						<textcolor>Label_Normal</textcolor>
 						<font>Fullscreen-Info-Small</font>
@@ -108,14 +110,11 @@
 					<control type="textbox">
 					
 						<width>320</width>
-						<height>410</height>
+						<height>400</height>
 						<label>$INFO[VideoPlayer.Plot]</label>
 						<textcolor>Label_Normal</textcolor>
 						<font>Fullscreen-Info-Normal</font>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
-					
+						
 					</control>
 					
 				</control>
