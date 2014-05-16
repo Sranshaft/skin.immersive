@@ -1,363 +1,325 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--Need to update-->
-
 <window>
+	
 	<defaultcontrol always="true">11</defaultcontrol>
-	<coordinates>
-		<system>1</system>
-		<posx>780</posx>
-		<posy>30</posy>
-	</coordinates>
-	<include>dialogeffect</include>
+	
+	<animation type="WindowOpen">
+		<effect type="fade" start="0" end="100" time="400" />
+	</animation>
+	
+	<animation type="WindowClose">
+		<effect type="fade" start="100" end="0" time="400" delay="400" />
+	</animation>
+	
+	<onload>AlarmClock(CloseFullscreenInfo,Dialog.Close(),00:30,silent)</onload>
+	
 	<controls>
+	
 		<control type="group">
+		
+			<visible>!Player.ShowCodec</visible>
+	
 			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
+					
+				<include>Common_Dimensions</include>
+				<texture>overlays/overlay_fullscreen_top.png</texture>
+				
+			</control>
+			
+			<!--Top Area-->
+			<include>Common_Breadcrumb_Alt</include>
+			
+			<!--Information Area-->
+			<control type="group">
+			
+				<posx>1280</posx>
 				<posy>0</posy>
-				<width>480</width>
-				<height>660</height>
-				<texture border="40">DialogBack2.png</texture>
-			</control>
-			<control type="button">
-				<description>Close Window button</description>
-				<posx>390</posx>
-				<posy>15</posy>
-				<width>64</width>
-				<height>32</height>
-				<label>-</label>
-				<font>-</font>
-				<onclick>PreviousMenu</onclick>
-				<texturefocus>DialogCloseButton-focus.png</texturefocus>
-				<texturenofocus>DialogCloseButton.png</texturenofocus>
-				<onleft>2</onleft>
-				<onright>2</onright>
-				<onup>2</onup>
-				<ondown>2</ondown>
-				<visible>system.getbool(input.enablemouse)</visible>
-			</control>
-			<control type="image">
-				<description>Dialog Header image</description>
-				<posx>40</posx>
-				<posy>16</posy>
 				<width>400</width>
-				<height>50</height>
-				<texture>dialogheader.png</texture>
+				<height>720</height>
+				
+				<animation effect="slide" start="0,0" end="-400,0" time="400" delay="400" tween="cubic" easing="out">WindowOpen</animation>
+				<animation effect="slide" start="-400,0" end="0,0" time="400" tween="cubic" easing="out">WindowClose</animation>
+				
+				<control type="image">
+				
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>700</width>
+					<height>720</height>
+					<texture background="true">colors/color_white.png</texture>
+					<colordiffuse>FanartDiffuse</colordiffuse>
+				
+				</control>
+				
+				<control type="panel" id="11">
+					
+					<posx>0</posx>
+					<posy>60</posy>
+					<width>380</width>
+					<height>520</height>
+					<onleft>30</onleft>
+					<onright>9007</onright>
+					<onup>11</onup>
+					<ondown>11</ondown>
+					<pagecontrol>81</pagecontrol>
+					<viewtype label="535">list</viewtype>
+					<scrolltime tween="cubic" easing="out">600</scrolltime>
+					<preloaditems>2</preloaditems>
+					<orientation>vertical</orientation>
+					
+					<itemlayout width="380" height="104">
+
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>84</width>
+							<height>84</height>
+							<texture background="true">colors/color_keyboard.png</texture>
+							
+						</control>
+					
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>84</width>
+							<height>84</height>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
+
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+							
+						</control>
+					
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>84</width>
+							<height>84</height>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<aspectratio>keep</aspectratio>
+							
+						</control>
+						
+						<control type="group">
+						
+							<posx>100</posx>
+							<posy>-10</posy>
+							<width>260</width>
+							<height>84</height>
+						
+							<control type="textbox">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>260</width>
+								<height>26</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Menu-Similar-Header</font>
+								<textcolor>Label_Normal</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<shadowcolor>00FFFFFF</shadowcolor>
+								<autoscroll>false</autoscroll>
+								
+							</control>
+							
+							<control type="textbox">
+							
+								<posx>0</posx>
+								<posy>24</posy>
+								<width>260</width>
+								<height>24</height>
+								<label>$INFO[ListItem.Title]</label>
+								<font>Menu-Similar-Detail</font>
+								<textcolor>Label_Normal</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<shadowcolor>00FFFFFF</shadowcolor>
+								<autoscroll>false</autoscroll>
+								
+							</control>
+							
+							<control type="textbox">
+							
+								<posx>0</posx>
+								<posy>44</posy>
+								<width>260</width>
+								<height>24</height>
+								<label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
+								<font>Menu-Similar-Detail</font>
+								<textcolor>Label_Normal</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<shadowcolor>00FFFFFF</shadowcolor>
+								<autoscroll>false</autoscroll>
+								
+							</control>
+							
+							<control type="image">
+						
+								<posx>0</posx>
+								<posy>88</posy>
+								<width>260</width>
+								<height>5</height>
+								<texture background="true" border="2">colors/color_white.png</texture>
+								<colordiffuse>Label_Disabled</colordiffuse>
+								
+							</control>
+							
+							<control type="progress">
+
+								<description>Progressbar</description>
+								<posx>0</posx>
+								<posy>88</posy>
+								<width>260</width>
+								<height>5</height>
+								<texturebg border="2">colors/color_transparent.png</texturebg>
+								<lefttexture>-</lefttexture>
+								<midtexture border="2">colors/color_white.png</midtexture>
+								<righttexture>-</righttexture>
+								<colordiffuse>Label_Normal</colordiffuse>
+								<visible>ListItem.HasEpg</visible>
+								<info>ListItem.Progress</info>
+								
+							</control>
+							
+						</control>
+						
+					</itemlayout>
+
+					<focusedlayout width="380" height="104">
+
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>84</width>
+							<height>84</height>
+							<texture background="true">colors/color_keyboard.png</texture>
+							
+						</control>
+					
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>84</width>
+							<height>84</height>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
+
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+							
+						</control>
+					
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>84</width>
+							<height>84</height>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<aspectratio>keep</aspectratio>
+							
+						</control>
+						
+						<control type="group">
+						
+							<posx>100</posx>
+							<posy>-10</posy>
+							<width>260</width>
+							<height>84</height>
+						
+							<control type="textbox">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>260</width>
+								<height>26</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Menu-Similar-Header</font>
+								<textcolor>Label_Highlight</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<shadowcolor>00FFFFFF</shadowcolor>
+								<autoscroll>false</autoscroll>
+								
+							</control>
+							
+							<control type="textbox">
+							
+								<posx>0</posx>
+								<posy>24</posy>
+								<width>260</width>
+								<height>24</height>
+								<label>$INFO[ListItem.Title]</label>
+								<font>Menu-Similar-Detail</font>
+								<textcolor>Label_Highlight</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<shadowcolor>00FFFFFF</shadowcolor>
+								<autoscroll>false</autoscroll>
+								
+							</control>
+							
+							<control type="textbox">
+							
+								<posx>0</posx>
+								<posy>44</posy>
+								<width>260</width>
+								<height>24</height>
+								<label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
+								<font>Menu-Similar-Detail</font>
+								<textcolor>Label_Highlight</textcolor>
+								<aligny>top</aligny>
+								<wrapmultiline>true</wrapmultiline>
+								<shadowcolor>00FFFFFF</shadowcolor>
+								<autoscroll>false</autoscroll>
+								
+							</control>
+							
+							<control type="image">
+						
+								<posx>0</posx>
+								<posy>88</posy>
+								<width>260</width>
+								<height>5</height>
+								<texture background="true" border="2">colors/color_white.png</texture>
+								<colordiffuse>Label_Disabled</colordiffuse>
+								
+							</control>
+							
+							<control type="progress">
+
+								<description>Progressbar</description>
+								<posx>0</posx>
+								<posy>88</posy>
+								<width>260</width>
+								<height>5</height>
+								<texturebg border="2">colors/color_transparent.png</texturebg>
+								<lefttexture>-</lefttexture>
+								<midtexture border="2">colors/color_white.png</midtexture>
+								<righttexture>-</righttexture>
+								<colordiffuse>Label_Highlight</colordiffuse>
+								<visible>ListItem.HasEpg</visible>
+								<info>ListItem.Progress</info>
+								
+							</control>
+							
+						</control>	
+
+					</focusedlayout>
+
+				</control>
+			
 			</control>
-			<control type="label">
-				<description>header label</description>
-				<posx>40</posx>
-				<posy>16</posy>
-				<width>430</width>
-				<height>40</height>
-				<font>font12_title</font>
-				<label>$LOCALIZE[19023] - $INFO[VideoPlayer.ChannelGroup]</label>
-				<align>center</align>
-				<aligny>center</aligny>
-				<textcolor>blue</textcolor>
-				<shadowcolor>black</shadowcolor>
-				<visible>!pvr.IsPlayingRadio</visible>
-			</control>
-			<control type="label">
-				<description>header label</description>
-				<posx>40</posx>
-				<posy>16</posy>
-				<width>430</width>
-				<height>40</height>
-				<font>font12_title</font>
-				<label>$LOCALIZE[19024] - $INFO[MusicPlayer.ChannelGroup]</label>
-				<align>center</align>
-				<aligny>center</aligny>
-				<textcolor>blue</textcolor>
-				<shadowcolor>black</shadowcolor>
-				<visible>pvr.IsPlayingRadio</visible>
-			</control>
-			<control type="label">
-				<description>header label</description>
-				<posx>40</posx>
-				<posy>-7</posy>
-				<width>430</width>
-				<height>120</height>
-				<font>font10_title</font>
-				<label>$INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)] • $INFO[System.Time]</label>
-				<align>center</align>
-				<aligny>center</aligny>
-				<textcolor>grey</textcolor>
-				<shadowcolor>black</shadowcolor>
-			</control>
-			<control type="list" id="11">
-				<posx>30</posx>
-				<posy>70</posy>
-				<width>410</width>
-				<height>520</height>
-				<onleft>60</onleft>
-				<onright>60</onright>
-				<onup>11</onup>
-				<ondown>11</ondown>
-				<viewtype label="535">list</viewtype>
-				<pagecontrol>60</pagecontrol>
-				<scrolltime>200</scrolltime>
-				<itemlayout height="70" width="410">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>410</width>
-						<height>65</height>
-						<texture border="5">button-nofocus.png</texture>
-						<include>VisibleFadeEffect</include>
-					</control>
-					<control type="label">
-						<posx>5</posx>
-						<posy>0</posy>
-						<width>40</width>
-						<height>30</height>
-						<font>font12</font>
-						<align>left</align>
-						<aligny>center</aligny>
-						<textcolor>grey</textcolor>
-						<selectedcolor>grey</selectedcolor>
-						<info>ListItem.ChannelNumber</info>
-					</control>
-					<control type="image">
-						<posx>5</posx>
-						<posy>35</posy>
-						<width>30</width>
-						<height>20</height>
-						<texture>PVR-IsRecording.png</texture>
-						<visible>ListItem.IsRecording</visible>
-					</control>
-					<control type="label">
-						<posx>50</posx>
-						<posy>0</posy>
-						<width>350</width>
-						<height>25</height>
-						<font>font13</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<posx>50</posx>
-						<posy>25</posy>
-						<width>350</width>
-						<height>20</height>
-						<font>font12</font>
-						<textcolor>grey</textcolor>
-						<selectedcolor>grey</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Title]</label>
-						<visible>IsEmpty(Listitem.Icon)</visible>
-					</control>
-					<control type="label">
-						<posx>50</posx>
-						<posy>25</posy>
-						<width>300</width>
-						<height>20</height>
-						<font>font12</font>
-						<textcolor>grey</textcolor>
-						<selectedcolor>grey</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Title]</label>
-						<visible>!IsEmpty(Listitem.Icon)</visible>
-					</control>
-					<control type="label">
-						<posx>50</posx>
-						<posy>44</posy>
-						<width>60</width>
-						<height>20</height>
-						<font>font10_title</font>
-						<textcolor>blue</textcolor>
-						<selectedcolor>blue</selectedcolor>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.StartTime]</label>
-						<visible>ListItem.HasEpg</visible>
-					</control>
-					<control type="progress">
-						<description>Progressbar</description>
-						<posx>110</posx>
-						<posy>53</posy>
-						<width>230</width>
-						<height>6</height>
-						<colordiffuse>88FFFFFF</colordiffuse>
-						<info>ListItem.Progress</info>
-						<visible>ListItem.HasEpg</visible>
-					</control>
-					<control type="label">
-						<posx>355</posx>
-						<posy>44</posy>
-						<width>60</width>
-						<height>20</height>
-						<font>font10_title</font>
-						<textcolor>blue</textcolor>
-						<selectedcolor>blue</selectedcolor>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.EndTime]</label>
-						<visible>ListItem.HasEpg</visible>
-					</control>
-					<control type="image">
-						<posx>360</posx>
-						<posy>4</posy>
-						<width>40</width>
-						<height>40</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-					</control>
-				</itemlayout>
-				<focusedlayout height="70" width="410">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>410</width>
-						<height>65</height>
-						<texture border="5">button-nofocus.png</texture>
-						<visible>!Control.HasFocus(11)</visible>
-						<include>VisibleFadeEffect</include>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>410</width>
-						<height>65</height>
-						<texture border="5">button-focus2.png</texture>
-						<visible>Control.HasFocus(11)</visible>
-						<include>VisibleFadeEffect</include>
-					</control>
-					<control type="label">
-						<posx>5</posx>
-						<posy>0</posy>
-						<width>40</width>
-						<height>30</height>
-						<font>font12</font>
-						<align>left</align>
-						<aligny>center</aligny>
-						<textcolor>grey</textcolor>
-						<selectedcolor>grey</selectedcolor>
-						<info>ListItem.ChannelNumber</info>
-					</control>
-					<control type="image">
-						<posx>5</posx>
-						<posy>35</posy>
-						<width>30</width>
-						<height>20</height>
-						<texture>PVR-IsRecording.png</texture>
-						<visible>ListItem.IsRecording</visible>
-					</control>
-					<control type="label">
-						<posx>50</posx>
-						<posy>0</posy>
-						<width>350</width>
-						<height>25</height>
-						<font>font13</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<posx>50</posx>
-						<posy>25</posy>
-						<width>350</width>
-						<height>20</height>
-						<font>font12</font>
-						<textcolor>grey</textcolor>
-						<selectedcolor>grey</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Title]</label>
-						<visible>IsEmpty(Listitem.Icon)</visible>
-					</control>
-					<control type="label">
-						<posx>50</posx>
-						<posy>25</posy>
-						<width>300</width>
-						<height>20</height>
-						<font>font12</font>
-						<textcolor>grey</textcolor>
-						<selectedcolor>grey</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Title]</label>
-						<visible>!IsEmpty(Listitem.Icon)</visible>
-					</control>
-					<control type="label">
-						<posx>50</posx>
-						<posy>44</posy>
-						<width>60</width>
-						<height>20</height>
-						<font>font10_title</font>
-						<textcolor>blue</textcolor>
-						<selectedcolor>blue</selectedcolor>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.StartTime]</label>
-						<visible>ListItem.HasEpg</visible>
-					</control>
-					<control type="progress">
-						<description>Progressbar</description>
-						<posx>110</posx>
-						<posy>53</posy>
-						<width>230</width>
-						<height>6</height>
-						<colordiffuse>88FFFFFF</colordiffuse>
-						<info>ListItem.Progress</info>
-						<visible>ListItem.HasEpg</visible>
-					</control>
-					<control type="label">
-						<posx>355</posx>
-						<posy>44</posy>
-						<width>60</width>
-						<height>20</height>
-						<font>font10_title</font>
-						<textcolor>blue</textcolor>
-						<selectedcolor>blue</selectedcolor>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.EndTime]</label>
-						<visible>ListItem.HasEpg</visible>
-					</control>
-					<control type="image">
-						<posx>360</posx>
-						<posy>4</posy>
-						<width>40</width>
-						<height>40</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-					</control>
-				</focusedlayout>
-			</control>
-			<control type="scrollbar" id="60">
-				<posx>440</posx>
-				<posy>70</posy>
-				<width>25</width>
-				<height>520</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
-				<onleft>11</onleft>
-				<onright>11</onright>
-				<ondown>61</ondown>
-				<onup>61</onup>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
-			</control>
-			<control type="label">
-				<description>Page Count Label</description>
-				<posx>450</posx>
-				<posy>610</posy>
-				<width>400</width>
-				<height>20</height>
-				<font>font12</font>
-				<textcolor>grey</textcolor>
-				<scroll>false</scroll>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>([COLOR=blue]$INFO[Container(11).NumItems][/COLOR]) $LOCALIZE[19019] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(11).CurrentPage]/$INFO[Container(11).NumPages][/COLOR])</label>
-				<include>Window_OpenClose_Animation</include>
-			</control>
-		</control>
+
+		</control>	
+		
 	</controls>
+
 </window>
