@@ -1318,18 +1318,18 @@
 					<description>Enable Debug Grid</description>
 					<include>Common_Settings_RadioButton</include>
 					<label>$LOCALIZE[31034]</label>
-					<onclick>Skin.ToggleSetting(DebugGrid)</onclick>
-					<selected>Skin.HasSetting(DebugGrid)</selected>
+					<onclick>Skin.ToggleSetting(ShowDebugGrid)</onclick>
+					<selected>Skin.HasSetting(ShowDebugGrid)</selected>
 					
 				</control>
 
 				<control type="radiobutton" id="902">
 					
-					<description>Disable Debug Info</description>
+					<description>Enable Debug Info</description>
 					<include>Common_Settings_RadioButton</include>
 					<label>$LOCALIZE[31035]</label>
-					<onclick>Skin.ToggleSetting(HideDebugInfo)</onclick>
-					<selected>Skin.HasSetting(HideDebugInfo)</selected>
+					<onclick>Skin.ToggleSetting(ShowDebugInfo)</onclick>
+					<selected>Skin.HasSetting(ShowDebugInfo)</selected>
 					
 				</control>
 

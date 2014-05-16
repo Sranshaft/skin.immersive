@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <includes>
 
 	<include file="ViewList.xml" /> 				<!--50-->
@@ -39,6 +37,23 @@
 	<!--
 	<!---------------------------------->
 	
+	<include name="PathID">
+		<width>520</width>
+		<height>14</height>
+		<textcolor>White</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+	</include>
+
+
+	<include name="ContentType">
+		<width>520</width>
+		<height>14</height>
+		<textcolor>Red</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+	</include>
+
 	<include name="WindowID">
 		<width>520</width>
 		<height>14</height>

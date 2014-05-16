@@ -13,17 +13,177 @@
 			<width>520</width>
 			<height>300</height>
 			<itemgap>8</itemgap>
-			<visible>!Skin.HasSetting(HideDebugInfo)</visible>
+			<visible>Skin.HasSetting(ShowDebugInfo)</visible>
 			
 			<control type="label">
-				<include>WindowID</include>
+				<include>PathID</include>
 				<label>$INFO[Container.FolderPath]</label>
+				<visible>!IsEmpty(Container.FolderPath)</visible>
 			</control>
 			
 			<control type="label">
-				<include>WindowID</include>
+				<include>PathID</include>
 				<label>$INFO[Container.FolderName]</label>
+				<visible>!IsEmpty(Container.FolderName)</visible>
 			</control>
+
+			<!--Content labels-->
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Files</label>
+				<visible>Container.Content(files)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Songs</label>
+				<visible>Container.Content(songs)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Artists</label>
+				<visible>Container.Content(artists)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Albums</label>
+				<visible>Container.Content(albums)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Movies</label>
+				<visible>Container.Content(movies)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: TV Shows</label>
+				<visible>Container.Content(tvshows)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Seasons</label>
+				<visible>Container.Content(seasons)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Episodes</label>
+				<visible>Container.Content(episodes)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Music videos</label>
+				<visible>Container.Content(musicvideos)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Years</label>
+				<visible>Container.Content(years)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Actors</label>
+				<visible>Container.Content(actors)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Playlists</label>
+				<visible>Container.Content(playlists)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Plugins</label>
+				<visible>Container.Content(plugins)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Studios</label>
+				<visible>Container.Content(studios)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Directors</label>
+				<visible>Container.Content(directors)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Sets</label>
+				<visible>Container.Content(sets)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Tags</label>
+				<visible>Container.Content(tags)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: Addons</label>
+				<visible>Container.Content(addons)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Container Content: LiveTV</label>
+				<visible>Container.Content(livetv)</visible>
+			</control>
+
+			<!--Player Path label-->
+
+			<control type="label">
+				<include>PathID</include>
+				<label>$INFO[Player.FolderPath]</label>
+				<visible>!IsEmpty(Player.FolderPath)</visible>
+			</control>
+
+			<!--Player Content labels-->
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Files</label>
+				<visible>VideoPlayer.Content(files)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Movies</label>
+				<visible>VideoPlayer.Content(movies)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Episodes</label>
+				<visible>VideoPlayer.Content(episodes)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Music Videos</label>
+				<visible>VideoPlayer.Content(musicvideos)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: LiveTV</label>
+				<visible>VideoPlayer.Content(livetv)</visible>
+			</control>
+
+			<!--Window labels-->
 			
 			<control type="label">
 				<include>WindowID</include>
@@ -227,6 +387,12 @@
 				<include>WindowID</include>
 				<label>MyPrograms.xml</label>
 				<visible>Window.IsVisible(MyPrograms.xml)</visible>
+			</control>
+
+			<control type="label">
+				<include>WindowID</include>
+				<label>MyPVR.xml</label>
+				<visible>Window.IsVisible(MyPVR.xml)</visible>
 			</control>
 
 			<control type="label">
@@ -436,43 +602,43 @@
 			</control>
 			
 			<control type="label">
-				<include>WindowID</include>
+				<include>DialogID</include>
 				<label>DialogPVRChannelManager.xml</label>
 				<visible>Window.IsVisible(DialogPVRChannelManager.xml)</visible>
 			</control>
 			
 			<control type="label">
-				<include>WindowID</include>
+				<include>DialogID</include>
 				<label>DialogPVRChannelsOSD.xml</label>
 				<visible>Window.IsVisible(DialogPVRChannelsOSD.xml)</visible>
 			</control>
 			
 			<control type="label">
-				<include>WindowID</include>
+				<include>DialogID</include>
 				<label>DialogPVRGroupManager.xml</label>
 				<visible>Window.IsVisible(DialogPVRGroupManager.xml)</visible>
 			</control>
 			
 			<control type="label">
-				<include>WindowID</include>
+				<include>DialogID</include>
 				<label>DialogPVRGuideInfo.xml</label>
 				<visible>Window.IsVisible(DialogPVRGuideInfo.xml)</visible>
 			</control>
 			
 			<control type="label">
-				<include>WindowID</include>
+				<include>DialogID</include>
 				<label>DialogPVRGuideOSD.xml</label>
 				<visible>Window.IsVisible(DialogPVRGuideOSD.xml)</visible>
 			</control>
 			
 			<control type="label">
-				<include>WindowID</include>
+				<include>DialogID</include>
 				<label>DialogPVRGuideSearch.xml</label>
 				<visible>Window.IsVisible(DialogPVRGuideSearch.xml)</visible>
 			</control>
 			
 			<control type="label">
-				<include>WindowID</include>
+				<include>DialogID</include>
 				<label>DialogPVRRecordingInfo.xml</label>
 				<visible>Window.IsVisible(DialogPVRRecordingInfo.xml)</visible>
 			</control>
@@ -662,7 +828,7 @@
 		<control type="image">
 			<include>Common_Dimensions</include>
 			<texture>special://skin/backgrounds/debuggrid720.png</texture>
-			<visible>Skin.HasSetting(DebugGrid)</visible>
+			<visible>Skin.HasSetting(ShowDebugGrid)</visible>
 		</control>
 
 	</controls>
