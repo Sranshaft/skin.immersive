@@ -14,7 +14,7 @@
 			<animation type="Conditional" condition="Skin.HasSetting(ShowAppBar) | ControlGroup(9000).HasFocus">
 				<effect type="slide" start="0,0" end="0,-76" time="200"/>
 			</animation>
-			
+
 			<control type="image" id="8000">
 				
 				<posx>0</posx>
@@ -904,6 +904,7 @@
 			<texturefocus>appbar/appbar_refresh_focus.png</texturefocus>
 			<texturenofocus>appbar/appbar_refresh.png</texturenofocus>
 			<label>force[CR]update</label>
+			<onclick>RunScript(script.tv.show.next.aired,force=True)</onclick>
 			<onup>207</onup>
 			
 		</control>

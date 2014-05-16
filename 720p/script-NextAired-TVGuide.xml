@@ -2,7 +2,7 @@
 
 <window>
 	
-	<defaultcontrol always="true">84</defaultcontrol>
+	<defaultcontrol always="true">207</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	
 	<!--Splash Screen-->
@@ -181,37 +181,37 @@
 						<content>
 						
 							<item id="1">
-								<label>Monday</label>
+								<label>$INFO[Window(home).Property(NextAired.200.Weekday)]</label>
 								<onclick>Control.SetFocus(200)</onclick>
 							</item>	
 							
 							<item id="2">
-								<label>Tuesday</label>
+								<label>$INFO[Window(home).Property(NextAired.201.Weekday)]</label>
 								<onclick>Control.SetFocus(201)</onclick>
 							</item>
 							
 							<item id="3">
-								<label>Wednesday</label>
+								<label>$INFO[Window(home).Property(NextAired.202.Weekday)]</label>
 								<onclick>Control.SetFocus(202)</onclick>
 							</item>
 							
 							<item id="4">
-								<label>Thursday</label>
+								<label>$INFO[Window(home).Property(NextAired.203.Weekday)]</label>
 								<onclick>Control.SetFocus(203)</onclick>
 							</item>
 							
 							<item id="5">
-								<label>Friday</label>
+								<label>$INFO[Window(home).Property(NextAired.204.Weekday)]</label>
 								<onclick>Control.SetFocus(204)</onclick>
 							</item>
 							
 							<item id="6">
-								<label>Saturday</label>
+								<label>$INFO[Window(home).Property(NextAired.205.Weekday)]</label>
 								<onclick>Control.SetFocus(205)</onclick>
 							</item>
 							
 							<item id="7">
-								<label>Sunday</label>
+								<label>$INFO[Window(home).Property(NextAired.206.Weekday)]</label>
 								<onclick>Control.SetFocus(206)</onclick>
 							</item>
 							
