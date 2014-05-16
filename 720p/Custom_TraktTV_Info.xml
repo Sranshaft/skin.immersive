@@ -5,8 +5,8 @@
 	<defaultcontrol always="true">50</defaultcontrol>
 	<zorder>2</zorder>
 	
-	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
-	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Similar,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + !Window.Previous(movieinformation)">RunScript(script.extendedinfo,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + !Window.Previous(movieinformation)">RunScript(script.extendedinfo,info=Similar,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
 
 	<include>Common_Animation_Window</include>
 	
@@ -58,17 +58,8 @@
 			<control type="image">
 		
 				<include>Common_Dimensions</include>
-				<texture background="true">colors/color_white.png</texture>
-				<colordiffuse>Settings_Background_Light</colordiffuse>
-				
-			</control>
+				<texture background="true">trakt.tv/trakt_tv_background.png</texture>
 			
-			<control type="image">
-			
-				<include>Common_Dimensions</include>
-				<texture background="true">forumbrowser/forumbrowser_background.png</texture>
-				<colordiffuse>Settings_Background_Dark</colordiffuse>
-				
 			</control>
 			
 		</control>
@@ -128,7 +119,7 @@
 				<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 				<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
 				<aspectratio>keep</aspectratio>
-				<colordiffuse>Settings_Label</colordiffuse>
+				<colordiffuse>Label_Normal</colordiffuse>
 				<onclick>back</onclick>
 				
 			</control>
@@ -141,7 +132,7 @@
 				<width>1200</width>
 				<label>$INFO[Window.Property(Title)]</label>
 				<font>Breadcrumb-SubFolder-Alt</font>
-				<textcolor>Settings_Label</textcolor>
+				<textcolor>Label_Normal</textcolor>
 				
 			</control>
 			
@@ -153,7 +144,7 @@
 				<width>1200</width>
 				<label>Trakt.tv</label>
 				<font>Breadcrumb-Home-Alt</font>
-				<textcolor>Settings_Label</textcolor>
+				<textcolor>Label_Normal</textcolor>
 				
 			</control>
 			
@@ -246,7 +237,7 @@
 					<control type="label">
 						
 						<label>overview</label>
-						<include>Common_Section_Label_Dark</include>
+						<include>Common_Section_Label</include>
 						
 						<animation effect="fade" start="100" end="0" time="600" condition="Window.IsVisible(57) + [Control.HasFocus(51) | Control.HasFocus(581) | Control.HasFocus(52) | Control.HasFocus(53)]">Conditional</animation>
 						
@@ -357,7 +348,7 @@
 							<width>340</width>
 							<height>32</height>
 							<texture background="true">$INFO[Window.Property(Rating),trakt.tv/rating,.png]</texture>
-							<colordiffuse>Settings_Label</colordiffuse>
+							<colordiffuse>Label_Normal</colordiffuse>
 							<aspectratio align="left">keep</aspectratio>
 							
 						</control>
@@ -373,7 +364,7 @@
 								<height>32</height>
 								<texturefocus>playercontrols/playercontrol_play_focus.png</texturefocus>
 								<texturenofocus>playercontrols/playercontrol_play.png</texturenofocus>
-								<colordiffuse>Settings_Label</colordiffuse>
+								<colordiffuse>Label_Normal</colordiffuse>
 								<aspectratio align="left">scale</aspectratio>
 								<textoffsetx>32</textoffsetx>
 								<onleft>50</onleft>
@@ -408,7 +399,7 @@
 						<width>340</width>
 						<height>1</height>
 						<texture>colors/color_white.png</texture>
-						<colordiffuse>Settings_Label</colordiffuse>
+						<colordiffuse>Label_Normal</colordiffuse>
 						
 					</control>
 					
@@ -420,7 +411,7 @@
 						<height>400</height>
 						<label>$INFO[Window.Property(Plot)]</label>
 						<font>TraktTV-Info-Plot</font>
-						<textcolor>Settings_Label</textcolor>
+						<textcolor>Label_Normal</textcolor>
 						
 					</control>
 					
@@ -438,7 +429,7 @@
 					<control type="label">
 						
 						<label>similar</label>
-						<include>Common_Section_Label_Dark</include>
+						<include>Common_Section_Label</include>
 						
 					</control>
 					
@@ -446,7 +437,7 @@
 						
 						<posx>360</posx>
 						<label>$INFO[Window(Home).Property(SimilarTrakt.Count)]</label>
-						<include>Common_Section_Label_Right_Dark</include>
+						<include>Common_Section_Label_Right</include>
 						
 					</control>
 					
@@ -504,7 +495,7 @@
 									<height>24</height>
 									<label>$INFO[ListItem.Label]</label>
 									<font>Menu-Similar-Header</font>
-									<textcolor>Settings_Label</textcolor>
+									<textcolor>Label_Normal</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -520,7 +511,7 @@
 									<height>20</height>
 									<label>$INFO[ListItem.Property(Year)]</label>
 									<font>Menu-Similar-Detail</font>
-									<textcolor>Settings_Label</textcolor>
+									<textcolor>Label_Normal</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -536,7 +527,7 @@
 									<height>80</height>
 									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>Menu-Similar-Plot</font>
-									<textcolor>Settings_Label</textcolor>
+									<textcolor>Label_Normal</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -602,7 +593,7 @@
 									<height>20</height>
 									<label>$INFO[ListItem.Property(Year)]</label>
 									<font>Menu-Similar-Detail</font>
-									<textcolor>Settings_Label</textcolor>
+									<textcolor>Label_Normal</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -618,7 +609,7 @@
 									<height>80</height>
 									<label>$INFO[ListItem.Property(Plot)]</label>
 									<font>Menu-Similar-Plot</font>
-									<textcolor>Settings_Label</textcolor>
+									<textcolor>Label_Normal</textcolor>
 									<aligny>top</aligny>
 									<wrapmultiline>true</wrapmultiline>
 									<shadowcolor>00FFFFFF</shadowcolor>
@@ -763,7 +754,7 @@
 					<control type="label">
 						
 						<label>comments</label>
-						<include>Common_Section_Label_Dark</include>
+						<include>Common_Section_Label</include>
 						
 					</control>
 					
@@ -771,7 +762,7 @@
 						
 						<posx>380</posx>
 						<label>$INFO[Window(Home).Property(CommentsTrakt.Count)]</label>
-						<include>Common_Section_Label_Right_Dark</include>
+						<include>Common_Section_Label_Right</include>
 						
 					</control>
 					
