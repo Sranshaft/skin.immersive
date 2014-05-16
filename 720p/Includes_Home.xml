@@ -1210,7 +1210,7 @@
 								
 									<posx>10</posx>
 									<posy>91</posy>
-									<width>400</width>
+									<width>380</width>
 									<height>24</height>
 									<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 									<font>Home-RecentWatched</font>
@@ -1225,7 +1225,7 @@
 								
 									<posx>10</posx>
 									<posy>111</posy>
-									<width>400</width>
+									<width>380</width>
 									<height>24</height>
 									<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 									<font>Home-RecentWatched-Small</font>
@@ -1271,7 +1271,7 @@
 								
 									<posx>10</posx>
 									<posy>91</posy>
-									<width>400</width>
+									<width>380</width>
 									<height>24</height>
 									<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 									<font>Home-RecentWatched</font>
@@ -1286,7 +1286,7 @@
 								
 									<posx>10</posx>
 									<posy>111</posy>
-									<width>400</width>
+									<width>380</width>
 									<height>24</height>
 									<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
 									<font>Home-RecentWatched-Small</font>
@@ -1486,8 +1486,7 @@
 						<ondown>9005</ondown>
 						<onleft>9004</onleft>
 						<onright>9006</onright>
-						<onclick condtion="System.HasAddon(script.globalsearch)">XBMC.RunScript(script.globalsearch)</onclick>
-						<onclick condtion="!System.HasAddon(script.globalsearch)">VideoLibrary.Search</onclick>
+						<onclick>XBMC.RunScript(script.globalsearch)</onclick>
 						
 					</control>
 					

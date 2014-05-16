@@ -112,7 +112,7 @@
 				<posy>0</posy>
 				<width>210</width>
 				<height>210</height>
-				<imagepath>tile/</imagepath>
+				<imagepath>special://skin/media/tile/,.png</imagepath>
 				<timeperimage>2000</timeperimage>
 				<fadetime>1000</fadetime>
 				<randomize>true</randomize>

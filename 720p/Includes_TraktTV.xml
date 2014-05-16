@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-</includes>
+<includes>
 
 	<include name="Common_TraktTV_ClearProperties">
 	
@@ -20,7 +20,7 @@
 		<onclick>ClearProperty(Country,58)</onclick>
 		<onclick>ClearProperty(NextTime,58)</onclick>
 		
-	</include>	
+	</include>
 
 	<include name="Common_TraktTV_ClearProperties_Comment">
 
@@ -38,10 +38,10 @@
 		<width>180</width>
 		<height>18</height>
 		<font>TraktTV-Info-Detail</font>
-		<textcolor>Settings_Label</textcolor>
+		<textcolor>Label_Normal</textcolor>
 		<aligny>top</aligny>
 		<wrapmultiline>true</wrapmultiline>
 		
-	</include>	
+	</include>
 
 </includes>	

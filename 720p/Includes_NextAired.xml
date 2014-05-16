@@ -204,7 +204,7 @@
 				<width>300</width>
 				<height>440</height>
 				
-				<visible>Control.HasFocus(207)</visible>
+				<visible>Control.HasFocus(207) | Control.HasFocus(8) | Control.HasFocus(9)</visible>
 		
 				<control type="image">
 				
@@ -277,7 +277,7 @@
 				<width>300</width>
 				<height>440</height>
 				
-				<visible>!Control.HasFocus(207)</visible>
+				<visible>!Control.HasFocus(207) + !Control.HasFocus(8) + !Control.HasFocus(9)</visible>
 				
 				<control type="image">
 				

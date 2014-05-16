@@ -35,7 +35,7 @@
 				<effect type="fade" start="100" end="0" time="200"/>
 			</animation>
 
-			<animation type="Conditional" condition="Skin.HasSetting(ShowAppBar) | ControlGroup(9000).HasFocus">
+			<animation type="Conditional" condition="Skin.HasSetting(ShowAppBar) | Window.ControlGroup(9000).HasFocus">
 				<effect type="slide" start="0,0" end="0,-116" time="200"/>
 			</animation>
 			

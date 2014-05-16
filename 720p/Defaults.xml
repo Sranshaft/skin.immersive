@@ -209,6 +209,7 @@
 	<default type="textbox">
 		
 		<label>-</label>
+		<wrapmultiline>true</wrapmultiline>
 		<shadowcolor>00FFFFFF</shadowcolor>
 		<autoscroll>false</autoscroll>
 		
