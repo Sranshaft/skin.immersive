@@ -8,11 +8,11 @@
 	<onload>Skin.Reset(ShowManageMenu)</onload>
 	<onload>Skin.Reset(ShowComment)</onload>
 
-	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(movies)">RunScript(script.extendedinfo,info=Comments,dbid=$INFO[ListItem.DBID],type=movie)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(tvshows)">RunScript(script.extendedinfo,info=Comments,dbid=$INFO[ListItem.DBID],type=tvshow)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(episodes)">RunScript(script.extendedinfo,info=EpisodeComments,show=$INFO[ListItem.TVshowTitle],type=episode,season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode])</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(movies)">RunScript(script.extendedinfo,info=Similar,dbid=$INFO[ListItem.DBID],type=movie)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(tvshows)">RunScript(script.extendedinfo,info=Similar,dbid=$INFO[ListItem.DBID],type=tvshow)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(movies) + !StringCompare(ListItem.DBID,-1)">RunScript(script.extendedinfo,info=Comments,dbid=$INFO[ListItem.DBID],type=movie)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(tvshows) + !StringCompare(ListItem.DBID,-1)">RunScript(script.extendedinfo,info=Comments,dbid=$INFO[ListItem.DBID],type=tvshow)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(episodes) + !StringCompare(ListItem.DBID,-1)">RunScript(script.extendedinfo,info=EpisodeComments,show=$INFO[ListItem.TVshowTitle],type=episode,season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode])</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(movies) + !StringCompare(ListItem.DBID,-1)">RunScript(script.extendedinfo,info=Similar,dbid=$INFO[ListItem.DBID],type=movie)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Container.Content(tvshows) + !StringCompare(ListItem.DBID,-1)">RunScript(script.extendedinfo,info=Similar,dbid=$INFO[ListItem.DBID],type=tvshow)</onload>
 	<onload condition="System.HasAddon(script.videoextras)">
     XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onload condition="Skin.HasSetting(ShowTVTunesNotification) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
@@ -430,13 +430,12 @@
 							<posy>0</posy>
 							<width>380</width>
 							<height>215</height>
-							<texturefocus>dialoginfo/dialoginfo_play_large.png</texturefocus>
-							<texturenofocus>dialoginfo/dialoginfo_play_large.png</texturenofocus>
-							<colordiffuse>Label_Normal</colordiffuse>
+							<texturefocus colordiffuse="Label_Highlight">dialoginfo/dialoginfo_play_large.png</texturefocus>
+							<texturenofocus colordiffuse="Label_Normal">dialoginfo/dialoginfo_play_large.png</texturenofocus>
 							<pulseonselect>true</pulseonselect>
 							<onclick>SendClick(2003,8)</onclick>
 							<onleft>8</onleft>
-							<onright>50</onright>
+							<onright>70</onright>
 							
 							<animation type="WindowOpen">
 								<effect type="fade" start="0" end="100" time="400" delay="2000" />
@@ -558,16 +557,40 @@
 						<include>Common_Section_Label_Dark</include>
 						
 					</control>
-					
-					<control type="textbox">
+
+					<control type="textbox" id="60">
 							
 						<include>Common_InfoDialog_Description</include>
 						<width>340</width>
-						<height>512</height>
+						<height>460</height>
 						<label>$VAR[Info_Description]</label>
 						
 					</control>
-					
+
+					<control type="button" id="70">
+
+						<posy>522</posy>
+						<width>340</width>
+						<height>40</height>
+						<texturefocus border="6" colordiffuse="Label_Highlight">button_focus.png</texturefocus>
+						<texturenofocus border="6" colordiffuse="Settings_Label">button_unfocus.png</texturenofocus>
+						<label>read more...</label>
+						<font>DialogInfo-Header</font>
+						<textcolor>Settings_Label</textcolor>
+						<focusedcolor>Label_Normal</focusedcolor>
+						<disabledcolor>Label_Disabled</disabledcolor>
+						<textoffsetx>0</textoffsetx>
+						<textoffsety>6</textoffsety>
+						<align>center</align>
+						<aligny>top</aligny>
+						<onleft>9001</onleft>
+						<onright>50</onright>
+						<onclick>ActivateWindow(67,return)</onclick>
+
+						<visible>Control.IsVisible(71)</visible>
+
+					</control>	
+
 					<!--Scrollbar-->
 					<control type="scrollbar" id="71">
 					
@@ -576,10 +599,12 @@
 						<posx>360</posx>
 						<posy>60</posy>
 						<height>500</height>
+						<onleft>9001</onleft>
+						<onright>50</onright>
 						
-						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(71)">Conditional</animation>
+						<animation effect="fade" start="0" end="0" time="200" reversible="true" condition="true">Conditional</animation>
 						
-					</control>				
+					</control>			
 					
 				</control>
 				
@@ -604,7 +629,7 @@
 						<posy>60</posy>
 						<width>780</width>
 						<height>520</height>
-						<onleft>9001</onleft>
+						<onleft>70</onleft>
 						<onright>51</onright>
 						<onup>50</onup>
 						<ondown>50</ondown>
@@ -762,7 +787,7 @@
 					<width>400</width>
 					<height>560</height>
 					
-					<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+					<visible>IntegerGreaterThan(Window(Home).Property(SimilarTrakt.Count),0) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
 				
 					<control type="label">
 						
