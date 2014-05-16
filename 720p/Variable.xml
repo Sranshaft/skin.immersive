@@ -19,11 +19,6 @@
 		<value condition="!Control.IsEnabled(4)">Label_Disabled</value>
 	</variable>
 	
-	<variable name="Appbar_Stack_ColorDiffuse">
-		<value condition="Control.IsEnabled(7)">Label_Normal</value>
-		<value condition="!Control.IsEnabled(7)">Label_Disabled</value>
-	</variable>
-	
 	<!--Breadcrumb Variables-->
 	
 	<variable name="Breadcrumb_Home_Label">
@@ -42,6 +37,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasVideo">XBMC Video</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasAudio">XBMC Music</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSelect.xml)">$INFO[Control.GetLabel(1)]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsOSD.xml)">XBMC TV</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogVideoInfo.xml)">$INFO[ListItem.Title]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),FileBrowser.xml)">$INFO[Control.GetLabel(411)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),FileManager.xml)">$LOCALIZE[7]</value>
@@ -90,6 +86,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasVideo">Now watching</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasAudio">Now listening</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSelect.xml)">$INFO[Container(6).NumItems,, items]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsOSD.xml)">Channels</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicOSD.xml)">Controls</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicVisualisation.xml)">Now listening</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPics.xml)">$INFO[Container.FolderName]</value>
@@ -101,7 +98,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(13)">Recordings</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(14)">Timers</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(17)">Search</value>
-		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + !IsEmpty(Container.FolderPath">$INFO[Container.FolderName]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + !IsEmpty(Container.FolderPath)">$INFO[Container.FolderName]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml) + !IsEmpty(Container.FolderPath)">$INFO[Container.FolderName]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyWeather.xml)">$INFO[Window(Weather).Property(Location)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSD.xml)">Controls</value>
@@ -167,7 +164,10 @@
 	<!--Extended List Variables-->
 	
 	<variable name="ExtendedList_Header">
-		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">$INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + !IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + !IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Episode,,.] $INFO[ListItem.Title]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,,.] $INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
@@ -177,9 +177,7 @@
 		<value condition="Container.Content(movies) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_movies.jpg</value>
 		<value condition="Container.Content(artists) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_music.jpg</value>
 		<value condition="Container.Content(tvshows) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_tv.jpg</value>
-		<value condition="Container.Content(seasons) + IsEmpty(ListItem.Art(season.fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="Container.Content(seasons)">$INFO[ListItem.Art(season.fanart)]</value>
 		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + !IsEmpty(ListItem.Fanart)">$INFO[ListItem.Fanart]</value>
 		<value>$INFO[ListItem.Thumb]</value>
 	</variable>
@@ -190,7 +188,6 @@
 		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left)] + IsEmpty(ListItem.Plot)">$INFO[ListItem.Property(Addon.Description)]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
 		<value condition="Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
-		<value condition="Container.Content(seasons)">$INFO[Container.ShowPlot]</value>
 		<value>Description not available</value>
 	</variable>
 	
@@ -204,8 +201,7 @@
 	<variable name="ExtendedList_Detail">
 		<value condition="Container.Content(movies)">$INFO[ListItem.Year] $INFO[ListItem.Studio]</value>
 		<value condition="Container.Content(tvshows)">$INFO[ListItem.Studio]</value>
-		<value condition="Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, Episodes]</value>
-		<value condition="Container.Content(episodes) + StringCompare(Container.FolderPath,videodb://5/)">[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes)">[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered,ORIGINALLY AIRED ,]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Born))">$INFO[ListItem.Property(Artist_Born),BORN ,]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Formed))">$INFO[ListItem.Property(Artist_Formed),FORMED ,]</value>
@@ -412,67 +408,70 @@
 	<!--Hub Variables-->
 
 	<variable name="Hub_RecentlyAdded">
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml">videodb://recentlyaddedmovies/</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml">musicdb://recentlyaddedalbums/</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml">videodb://recentlyaddedepisodes/</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">videodb://recentlyaddedmovies/</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">musicdb://recentlyaddedalbums/</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">videodb://recentlyaddedepisodes/</value>
 	</variable>
 
 	<variable name="Hub_History">
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml">special://skin/playlists/History (Movies).xsp</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml">musicdb://recentlyplayedalbums/</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml">special://skin/playlists/History (TV Shows).xsp</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">special://skin/playlists/History (Movies).xsp</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">musicdb://recentlyplayedalbums/</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">special://skin/playlists/History (TV Shows).xsp</value>
 	</variable>
 
 	<variable name="Hub_Target">
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml">video</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml">audio</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml">video</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">video</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">audio</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">video</value>
 	</variable>
 
 	<variable name="Hub_Header">
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml">$INFO[ListItem.Title]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml">$INFO[ListItem.Title]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml + !IntegerGreaterThan(ListItem.Season), 10) + !IntegerGreaterThan(ListItem.Episode), 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml + IntegerGreaterThan(ListItem.Season), 10) + !IntegerGreaterThan(ListItem.Episode), 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml + IntegerGreaterThan(ListItem.Season), 10) + IntegerGreaterThan(ListItem.Episode), 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">$INFO[ListItem.Title]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">$INFO[ListItem.Title]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
 	</variable>
 
 	<variable name="Hub_Detail">
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml">$INFO[ListItem.Year]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml">$INFO[ListItem.Artist]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml">$INFO[ListItem.TVShowTitle]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">$INFO[ListItem.Year]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">$INFO[ListItem.Artist]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">$INFO[ListItem.TVShowTitle]</value>
 	</variable>
 
 	<variable name="Hub_Image">
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_movies.jpg</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml + IsEmpty(ListItem.Art(thumb))">fallbacks/fallback_music.jpg</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml + !IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml + IsEmpty(ListItem.Property(Fanart_Image))">fallbacks/fallback_tv.jpg</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + IsEmpty(ListItem.Art(fanart))">fallbacks/fallback_movies.jpg</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml) + IsEmpty(ListItem.Art(thumb))">fallbacks/fallback_music.jpg</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + IsEmpty(ListItem.Property(Fanart_Image))">fallbacks/fallback_tv.jpg</value>
 		<value>colors/color_keyboard_dark.png</value>
 	</variable>
 
 	<!--In Progress Variables-->
 
 	<variable name="InProgress_Header">
-		<value condition="!IntegerGreaterThan(ListItem.Season), 10) + !IntegerGreaterThan(ListItem.Episode), 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
-		<value condition="IntegerGreaterThan(ListItem.Season), 10) + !IntegerGreaterThan(ListItem.Episode), 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
-		<value condition="IntegerGreaterThan(ListItem.Season), 10) + IntegerGreaterThan(ListItem.Episode), 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
+		<value condition="!IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
+		<value condition="!IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
+		<value condition="IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
+		<value condition="IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
 	</variable>	
 
 	<!--Info Dialog Variables-->
 	
 	<variable name="Info_Image">
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Art(thumb)]</value>
-		<value>$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value>$INFO[ListItem.Thumb]</value>
 	</variable>
 	
 	<variable name="Info_Description">
-		<value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)] + !IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
+		<value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(files)] + !IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 		<value condition="Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
-		<value condition="[SubString(Container.FolderPath,addons,left) | SubString(Container.FolderPath,plugin,left) | Container.Content(plugins)] + !IsEmpty(ListItem.Property(Addon.Description))">$INFO[ListItem.Property(Addon.Description)]</value>
+		<value condition="Container.Content(plugins) + !IsEmpty(ListItem.Property(Addon.Description))">$INFO[ListItem.Property(Addon.Description)]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(10)">$INFO[Container(10).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(11)">$INFO[Container(11).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(12)">$INFO[Container(12).ListItem.Plot]</value>
@@ -564,8 +563,10 @@
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Cover]</value>
 		<value condition="Player.HasVideo + VideoPlayer.HasMenu">nowplaying/tile/nowplaying_dvd.png</value>
 		<value condition="Player.HasVideo + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
-		<value condition="Player.HasVideo + VideoPlayer.Content(files)">nowplaying/tile/nowplaying_file.png</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[Player.Art(thumb)]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(files) + !IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(files) + !IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(files)">nowplaying/tile/nowplaying_file.png</value>
 		<value>$INFO[Player.Art(thumb)]</value>
 	</variable>
 	
@@ -642,19 +643,30 @@
 	<!--Splash Variables-->
 	
 	<variable name="Splash_Image">
-		<value condition="Window.IsVisible(script-The Big Picture-main.xml)">splash/splash_thebigpicture.png</value>
-		<value condition="Window.IsVisible(script-NextAired-TVGuide.xml)">splash/splash_nextaired.png</value>
-		<value condition="Window.IsVisible(script-globalsearch-main.xml)">splash/splash_globalsearch.png</value>
-		<value condition="Window.IsVisible(script-forumbrowser-forums.xml)">splash/splash_forumbrowser.png</value>
-		<value condition="Window.IsVisible(script.pseudotv.EPG.xml)">splash/splash_pseudotv.png</value>
+
+		<!--Program Addons-->
+		
+		<value condition="Window.IsVisible(script-forumbrowser-forums.xml)">splash/addons/programs/splash_forumbrowser.png</value>
+		<value condition="Window.IsVisible(script-globalsearch-main.xml)">splash/addons/programs/splash_globalsearch.png</value>
+		<value condition="Window.IsVisible(script-NextAired-TVGuide.xml)">splash/addons/programs/splash_nextaired.png</value>
+		<value condition="Window.IsVisible(script.pseudotv.EPG.xml)">splash/addons/programs/splash_pseudotv.png</value>
+		
+		<!--Video Addons-->
+		<value condition="Window.IsActive(MyVideoNav.xml) + SubString(Container.FolderPath,plugin)">$INFO[Container.FolderName,splash/addons/video/splash_,.png]</value>
+
+		<!--Music Addons-->
+		<value condition="Window.IsActive(MyMusicNav.xml) + SubString(Container.FolderPath,plugin)">$INFO[Container.FolderName,splash/addons/music/splash_,.png]</value>
+
+		<!--Picture Addons-->
+		<value condition="Window.IsVisible(script-The Big Picture-main.xml)">splash/addons/pictures/splash_thebigpicture.png</value>
+
+		<!--XBMC Windows-->
+
 		<value condition="Window.IsActive(Custom_Hub_Movies.xml)">splash/splash_movies.png</value>
 		<value condition="Window.IsActive(Custom_Hub_Music.xml)">splash/splash_music.png</value>
 		<value condition="Window.IsActive(Custom_Hub_TV.xml)">splash/splash_tvshows.png</value>
 		<value condition="Window.IsActive(DialogFavourites.xml)">splash/splash_favorites.png</value>
 		<value condition="Window.IsActive(MyPics.xml)">splash/splash_picture.png</value>
-		<value condition="Window.IsActive(MyVideoNav.xml) + StringCompare(Container.FolderName,Revision3)">splash/splash_revision3.png</value>
-		<value condition="Window.IsActive(MyVideoNav.xml) + StringCompare(Container.FolderName,Reddit Video)">splash/splash_reddit.png</value>
-		<value condition="Window.IsActive(MyVideoNav.xml) + StringCompare(Container.FolderName,Youtube)">splash/splash_youtube.png</value>
 		<value condition="Window.IsActive(MyVideoNav.xml)">splash/splash_video.png</value>
 		<value condition="Window.IsActive(FileManager.xml)">splash/splash_filemanager.png</value>
 		<value condition="Window.IsActive(Settings.xml)">splash/splash_settings.png</value>
@@ -662,6 +674,7 @@
 		<value condition="Window.IsActive(AddonBrowser.xml)">splash/splash_store.png</value>
 		<value condition="Window.IsActive(MyWeather.xml)">splash/splash_weather.png</value>
 		<value condition="Window.IsActive(Startup.xml)">splash/splash_startup.png</value>
+
 	</variable>
 	
 	<!--Square List Variables-->
