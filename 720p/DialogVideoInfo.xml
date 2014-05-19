@@ -16,6 +16,8 @@
 	<onload condition="System.HasAddon(script.videoextras)">
     XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onload condition="Skin.HasSetting(ShowTVTunesNotification) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
+
+	<onload>Common_TraktTV_ClearProperties</onload>
 	
 	<include>Common_Animation_Window</include>
 	
@@ -536,6 +538,15 @@
 							
 								<include>Common_InfoDialog_Header_Small</include>
 								<label>$INFO[ListItem.Year] $INFO[ListItem.Studio]</label>
+								<visible>!IsEmpty(ListItem.Year)</visible>
+								
+							</control>
+
+							<control type="label">
+							
+								<include>Common_InfoDialog_Header_Small</include>
+								<label>$INFO[ListItem.Studio]</label>
+								<visible>IsEmpty(ListItem.Year)</visible>
 								
 							</control>
 							
