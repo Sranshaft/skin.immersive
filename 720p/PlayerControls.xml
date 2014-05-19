@@ -229,9 +229,9 @@
 			<control type="list" id="10001">
 						
 				<posx>1048</posx>
-				<posy>408</posy>
+				<posy>348</posy>
 				<width>200</width>
-				<height>180</height>
+				<height>240</height>
 				<onup>10001</onup>
 				<ondown>10001</ondown>
 				<onleft>SetFocus(413)</onleft>
@@ -306,7 +306,13 @@
 						<label>show fullscreen</label>
 						<onclick condition="Player.HasVideo">activatewindow(fullscreenvideo)</onclick>
 						<onclick condition="Player.HasAudio">activatewindow(visualisation)</onclick>
-					</item>	
+					</item>
+
+					<item>
+						<label>show playlist</label>
+						<onclick condition="Player.HasVideo">activatewindow(videoplaylist)</onclick>
+						<onclick condition="Player.HasAudio">activatewindow(musicplaylist)</onclick>
+					</item>		
 
 					<item>
 						<label>$VAR[OSD_Repeat_Label]</label>
@@ -316,7 +322,7 @@
 					<item>
 						<label>$VAR[OSD_Random_Label]</label>
 						<onclick>playercontrol(random)</onclick>
-					</item>	
+					</item>
 
 				</content>
 				
@@ -325,9 +331,9 @@
 			<control type="image">
 		
 				<posx>1048</posx>
-				<posy>408</posy>
+				<posy>348</posy>
 				<width>200</width>
-				<height>180</height>
+				<height>240</height>
 				<texture border="4">button_unfocus.png</texture>
 				<colordiffuse>Black</colordiffuse>
 				

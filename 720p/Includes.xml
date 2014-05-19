@@ -23,6 +23,7 @@
 	<include file="Includes_LiveTile.xml" />
 	<include file="Includes_NextAired.xml" />
 	<include file="Includes_OSD.xml" />
+	<include file="Includes_Playlist.xml" />
 	<include file="Includes_PseudoTV.xml" />
 	<include file="Includes_PVR.xml" />
 	<include file="Includes_SortLetter.xml" />

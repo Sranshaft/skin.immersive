@@ -294,22 +294,6 @@
 			<include>Common_AppBar_Divider</include>
 		</control>
 		
-		<!--Random Button-->
-		<control type="radiobutton" id="400">
-	
-			<include>Common_AppBar_Button</include>
-			<texturefocus>playercontrols/playercontrol_shuffle_focus.png</texturefocus>
-			<texturenofocus>playercontrols/playercontrol_shuffle.png</texturenofocus>
-			<textureradioon>appbar/appbar_radioon.png</textureradioon>
-			<textureradiooff>-</textureradiooff>
-			<radiowidth>48</radiowidth>
-			<radioheight>48</radioheight>
-			<radioposx>6</radioposx>
-			<label>$VAR[OSD_Random_Label]</label>
-			<onclick>playercontrol(random)</onclick>
-			
-		</control>
-		
 		<!--Skip Previous Button-->
 		<control type="button" id="401">
 			
@@ -346,17 +330,6 @@
 			
 		</control>
 		
-		<!--Repeat Button-->
-		<control type="button" id="407">
-				
-			<include>Common_AppBar_Button</include>
-			<texturefocus>playercontrols/playercontrol_repeat_focus.png</texturefocus>
-			<texturenofocus>playercontrols/playercontrol_repeat.png</texturenofocus>
-			<label>$VAR[OSD_Repeat_Label]</label>
-			<onclick>playercontrol(repeat)</onclick>
-			
-		</control>
-	
 	</include>
 	
 	<!--Appbar for MyMusicSongs.xml-->
@@ -768,22 +741,6 @@
 			<include>Common_AppBar_Divider</include>
 		</control>
 		
-		<!--Random Button-->
-		<control type="radiobutton" id="400">
-	
-			<include>Common_AppBar_Button</include>
-			<texturefocus>playercontrols/playercontrol_shuffle_focus.png</texturefocus>
-			<texturenofocus>playercontrols/playercontrol_shuffle.png</texturenofocus>
-			<textureradioon>appbar/appbar_radioon.png</textureradioon>
-			<textureradiooff>-</textureradiooff>
-			<radiowidth>48</radiowidth>
-			<radioheight>48</radioheight>
-			<radioposx>6</radioposx>
-			<label>$VAR[OSD_Random_Label]</label>
-			<onclick>playercontrol(random)</onclick>
-			
-		</control>
-		
 		<!--Skip Previous Button-->
 		<control type="button" id="401">
 			
@@ -820,17 +777,6 @@
 			
 		</control>
 		
-		<!--Repeat Button-->
-		<control type="button" id="407">
-				
-			<include>Common_AppBar_Button</include>
-			<texturefocus>playercontrols/playercontrol_repeat_focus.png</texturefocus>
-			<texturenofocus>playercontrols/playercontrol_repeat.png</texturenofocus>
-			<label>$VAR[OSD_Repeat_Label]</label>
-			<onclick>playercontrol(repeat)</onclick>
-			
-		</control>
-	
 	</include>
 	
 	<!--AppBar for MyWeather.xml-->
