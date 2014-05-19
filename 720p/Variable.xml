@@ -546,7 +546,8 @@
 	<variable name="NowPlaying_Second_Label">
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Album]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(movies)">$INFO[VideoPlayer.Director]</value>
-		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + !IsEmpty(VideoPlayer.TVShowTitle)">$INFO[VideoPlayer.Season,Season ,] $INFO[VideoPlayer.Episode,Episode ,] '[B]$INFO[VideoPlayer.TVShowTitle][/B]'</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Season,Season ,] $INFO[VideoPlayer.Episode,Episode ,] '[B]$INFO[VideoPlayer.TVShowTitle][/B]'</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(files)">$INFO[VideoPlayer.Genre]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelName]</value>
 	</variable>
 	
@@ -555,7 +556,7 @@
 		<value condition="Player.HasVideo + VideoPlayer.HasMenu">Chapter $INFO[Player.Chapter] of $INFO[Player.ChapterCount]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(movies) + !IsEmpty(VideoPlayer.Year)">[B]$INFO[VideoPlayer.Year][/B] $INFO[VideoPlayer.Studio]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(movies) + IsEmpty(VideoPlayer.Year)">$INFO[VideoPlayer.Studio]</value>
-		<value condition="Player.HasVideo + VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Studio]</value>
+		<value condition="Player.HasVideo + [VideoPlayer.Content(episodes) | VideoPlayer.Content(files)] + !IsEmpty(VideoPlayer.Studio)">$INFO[VideoPlayer.Studio]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.StartTime] - $INFO[VideoPlayer.EndTime]</value>
 	</variable>
 	
