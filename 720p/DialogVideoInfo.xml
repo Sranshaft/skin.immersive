@@ -1591,19 +1591,21 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.1.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.1.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.1.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.1.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.1.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.1.Likes)]</property>
 
 								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.1.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.1.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.1.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.1.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.1.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.1.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.1.Likes)],66)</onclick>
-								<onclick>ActivateWindow(66,return)</onclick>
 
+								<onclick>ActivateWindow(66,return)</onclick>
+								
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),0)</visible>
 							</item>
 							
@@ -1611,17 +1613,19 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.2.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.2.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.2.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.2.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.2.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.2.Likes)]</property>
 
 								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.2.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.2.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.2.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.2.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.2.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.2.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.2.Likes)],66)</onclick>
+								
 								<onclick>ActivateWindow(66,return)</onclick>
 
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),1)</visible>
@@ -1631,7 +1635,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.3.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.3.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.3.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.3.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.3.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.3.Likes)]</property>
 								
@@ -1639,7 +1643,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.3.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.3.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.3.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.3.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.3.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.3.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.3.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1651,7 +1655,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.4.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.4.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.4.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.4.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.4.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.4.Likes)]</property>
 								
@@ -1659,7 +1663,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.4.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.4.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.4.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.4.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.4.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.4.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.4.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1671,7 +1675,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.5.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.5.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.5.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.5.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.5.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.5.Likes)]</property>
 								
@@ -1679,7 +1683,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.5.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.5.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.5.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.5.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.5.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.5.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.5.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1691,7 +1695,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.6.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.6.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.6.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.6.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.6.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.6.Likes)]</property>
 								
@@ -1699,7 +1703,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.6.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.6.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.6.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.6.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.6.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.6.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.6.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1711,7 +1715,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.7.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.7.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.7.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.7.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.7.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.7.Likes)]</property>
 								
@@ -1719,7 +1723,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.7.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.7.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.7.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.7.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.7.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.7.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.7.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1731,7 +1735,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.8.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.8.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.8.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.8.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.8.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.8.Likes)]</property>
 
@@ -1739,7 +1743,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.8.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.8.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.8.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.8.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.8.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.8.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.8.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1751,7 +1755,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.9.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.9.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.9.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.9.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.9.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.9.Likes)]</property>
 
@@ -1759,7 +1763,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.9.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.9.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.9.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.9.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.9.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.9.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.9.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1771,7 +1775,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.10.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.10.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.10.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.10.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.10.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.10.Likes)]</property>
 
@@ -1779,7 +1783,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.10.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.10.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.10.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.10.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.10.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.10.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.10.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1791,7 +1795,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.11.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.11.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.11.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.11.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.11.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.11.Likes)]</property>
 
@@ -1799,7 +1803,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.11.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.11.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.11.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.11.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.11.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.11.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.11.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1811,7 +1815,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.12.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.12.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.12.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.12.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.12.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.12.Likes)]</property>
 
@@ -1819,7 +1823,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.12.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.12.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.12.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.12.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.12.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.12.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.12.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1831,7 +1835,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.13.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.13.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.13.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.13.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.13.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.13.Likes)]</property>
 
@@ -1839,7 +1843,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.13.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.13.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.13.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.13.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.13.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.13.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.13.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1851,7 +1855,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.14.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.14.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.14.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.14.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.14.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.14.Likes)]</property>
 
@@ -1859,7 +1863,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.14.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.14.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.14.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.14.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.14.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.14.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.14.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1871,7 +1875,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.15.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.15.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.15.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.15.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.15.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.15.Likes)]</property>
 
@@ -1879,7 +1883,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.15.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.15.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.15.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.15.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.15.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.15.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.15.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1891,7 +1895,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.16.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.16.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.16.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.16.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.16.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.16.Likes)]</property>
 
@@ -1899,7 +1903,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.16.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.16.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.16.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.16.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.16.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.16.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.16.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1911,7 +1915,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.17.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.17.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.17.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.17.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.17.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.17.Likes)]</property>
 
@@ -1919,7 +1923,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.17.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.17.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.17.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.17.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.17.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.17.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.17.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1931,7 +1935,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.18.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.18.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.18.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.18.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.18.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.18.Likes)]</property>
 
@@ -1939,7 +1943,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.18.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.18.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.18.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.18.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.18.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.18.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.18.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1951,7 +1955,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.19.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.19.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.19.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.19.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.19.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.19.Likes)]</property>
 
@@ -1959,7 +1963,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.19.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.19.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.19.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.19.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.19.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.19.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.19.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -1971,7 +1975,7 @@
 								<label>$INFO[Window(Home).Property(CommentsTrakt.20.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.20.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.20.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.20.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.20.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.20.Likes)]</property>
 
@@ -1979,7 +1983,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.20.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.20.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.20.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(CommentsTrakt.20.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.20.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.20.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.20.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>

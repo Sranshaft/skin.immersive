@@ -2,7 +2,7 @@
 
 <window type="dialog" id="66">
 
-	<defaultcontrol always="true">10</defaultcontrol>
+	<defaultcontrol always="true">11</defaultcontrol>
 	<zorder>2</zorder>
 	
 	<controls>
@@ -113,25 +113,26 @@
 				<posx>20</posx>
 				<posy>156</posy>
 				<width>420</width>
-				<height>220</height>
-				<label fallback="">$INFO[Window.Property(Comment)]</label>
+				<height>262</height>
+				<label fallback="">$ESCINFO[Window.Property(Comment)]</label>
 				<font>Menu-Similar-Plot</font>
 				<textcolor>Settings_Label</textcolor>
 				<aligny>top</aligny>
 				<wrapmultiline>true</wrapmultiline>
 				<autoscroll>false</autoscroll>
+				<pagecontrol>11</pagecontrol>
 				<visible>!IsEmpty(Window.Property(Comment))</visible>
 				
 			</control>
 
 			<!--Scrollbar-->
-			<control type="scrollbar" id="20">
+			<control type="scrollbar" id="11">
 			
 				<include>Common_Settings_Scrollbar_Vertical</include>
 				
 				<posx>460</posx>
 				<posy>160</posy>
-				<height>220</height>
+				<height>262</height>
 				
 				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(10).Scrolling">Conditional</animation>
 				
