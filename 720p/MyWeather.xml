@@ -445,9 +445,10 @@
 						<height>480</height>
 						<onleft>50</onleft>
 						<onright>9501</onright>
-						<ondown>9000</ondown>
+						<onup>9500</onup>
+						<ondown>9500</ondown>
 						<viewtype label="535">icon</viewtype>
-						<pagecontrol>9551</pagecontrol>
+						<pagecontrol>9550</pagecontrol>
 						<scrolltime tween="cubic" easing="out">600</scrolltime>
 						<orientation>vertical</orientation>
 						
@@ -833,7 +834,7 @@
 					</control>
 					
 					<!--Scrollbar-->
-					<control type="scrollbar" id="9551">
+					<control type="scrollbar" id="9550">
 					
 						<include>Common_Settings_Scrollbar_Vertical</include>
 						
@@ -841,7 +842,7 @@
 						<posy>60</posy>
 						<height>480</height>
 						
-						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(81).Scrolling">Conditional</animation>
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(9500).Scrolling">Conditional</animation>
 						
 					</control>
 					
@@ -868,7 +869,6 @@
 						<height>480</height>
 						<onleft>9500</onleft>
 						<onright>9502</onright>
-						<ondown>9000</ondown>
 						<viewtype label="535">icon</viewtype>
 						<scrolltime tween="cubic" easing="out">600</scrolltime>
 						<orientation>vertical</orientation>
@@ -940,7 +940,7 @@
 								<posx>20</posx>
 								<posy>320</posy>
 								<width>230</width>
-								<height>100</height>
+								<height>120</height>
 								<label>$INFO[ListItem.Property(Forecast)]</label>
 								<font>Weather-36HourForecast</font>
 								<textcolor>Settings_Label</textcolor>
@@ -983,7 +983,7 @@
 								<width>270</width>
 								<height>60</height>
 								<texture>colors/color_white.png</texture>
-								<colordiffuse>Settings_Background_Dark</colordiffuse>
+								<colordiffuse>Settings_Label_Disabled</colordiffuse>
 								
 							</control>
 							
@@ -1030,7 +1030,7 @@
 								<posx>20</posx>
 								<posy>320</posy>
 								<width>230</width>
-								<height>100</height>
+								<height>120</height>
 								<label>$INFO[ListItem.Property(Forecast)]</label>
 								<font>Weather-36HourForecast</font>
 								<textcolor>Label_Normal</textcolor>
@@ -1089,10 +1089,10 @@
 					
 				</control>	
 		
-				<!--10 Dsy Forecast-->
+				<!--10 Day Forecast-->
 				<control type="group">
 				
-					<width>980</width>
+					<width>1000</width>
 					<height>500</height>
 					
 					<control type="label">
@@ -1110,9 +1110,11 @@
 						<height>480</height>
 						<onleft>9501</onleft>
 						<onright>9503</onright>
-						<ondown>9000</ondown>
+						<onup>9502</onup>
+						<ondown>9502</ondown>
 						<viewtype label="535">icon</viewtype>
 						<scrolltime tween="cubic" easing="out">600</scrolltime>
+						<pagecontrol>9552</pagecontrol>
 						<preloaditems>2</preloaditems>
 						<orientation>vertical</orientation>
 						
@@ -1371,6 +1373,19 @@
 							</item>
 							
 						</content>
+						
+					</control>
+
+					<!--Scrollbar-->
+					<control type="scrollbar" id="9552">
+					
+						<include>Common_Settings_Scrollbar_Vertical</include>
+						
+						<posx>980</posx>
+						<posy>60</posy>
+						<height>480</height>
+						
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(9501).Scrolling">Conditional</animation>
 						
 					</control>
 			
