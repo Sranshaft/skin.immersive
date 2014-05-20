@@ -647,6 +647,7 @@
 			<filename>SegoeWP-Bold.ttf</filename>
 			<size>16</size>
 			<style>uppercase</style>
+			<linespacing>0.85</linespacing>
 		</font>
 		
 		<font>
