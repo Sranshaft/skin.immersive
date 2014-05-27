@@ -650,17 +650,36 @@
 				
 					<control type="image">
 					
+            <description>show channel logo when available</description>
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>60</width>
 						<height>60</height>
 						<texture background="true">$INFO[ListItem.Thumb]</texture>
 						<aspectratio>keep</aspectratio>
+            <visible>!IsEmpty(ListItem.Thumb)</visible>
 						
 					</control>
 
+          <control type="label">
+						
+            <description>show channel name when no logo is available</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>120</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-Similar-Header</font>
+						<textcolor>Label_Normal</textcolor>
+						<aligny>center</aligny>					
+						<autoscroll>true</autoscroll>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+              
+					</control>  
+            
 					<control type="label">
 
+            <description>show channel number</description>
 						<posx>180</posx>
 						<posy>0</posy>
 						<width>180</width>
@@ -690,17 +709,36 @@
 				
 					<control type="image">
 					
+            <description>show channel logo when available</description>
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>60</width>
 						<height>60</height>
 						<texture background="true">$INFO[ListItem.Thumb]</texture>
 						<aspectratio>keep</aspectratio>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+            
+					</control>
+          
+          <control type="label">
 						
+            <description>show channel name when no logo is available</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>120</width>
+						<height>60</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Menu-Similar-Header</font>
+						<textcolor>Label_Normal</textcolor>
+						<aligny>center</aligny>					
+						<autoscroll>true</autoscroll>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+              
 					</control>
 
 					<control type="label">
 
+            <description>show channel number</description>
 						<posx>180</posx>
 						<posy>0</posy>
 						<width>180</width>
