@@ -6,7 +6,7 @@
 	<onload condition="System.HasAddon(script.grab.fanart)">XBMC.RunScript(script.grab.fanart,mode=random)</onload>
 	
 	<!--Splash Screen-->
-	<onload>AlarmClock(CloseStartup,ReplaceWindow(home),00:05,silent)</onload>
+	<onload>AlarmClock(CloseStartup,ReplaceWindow(home),00:10,silent)</onload>
 	
 	<animation type="WindowOpen">
 		<effect type="fade" start="0" end="100" time="400" delay="200" />
@@ -14,6 +14,7 @@
 	
 	<animation type="WindowClose">
 		<effect type="fade" start="100" end="0" time="400" delay="200" />
+		<effect type="slide" start="0,0" end="0,-720" time="400" delay="200" />
 	</animation>
 	
 	<controls>
@@ -31,6 +32,28 @@
 			<include>Common_Dimensions</include>
 			<texture>$VAR[Splash_Image]</texture>
 		
+		</control>
+
+		<control type="image">
+			
+			<description>Busy animation</description>
+			<posx>624</posx>
+			<posy>486</posy>
+			<width>32</width>
+			<height>32</height>
+			<texture>buffer/buffer_progress.png</texture>
+			<aspectratio>keep</aspectratio>
+			
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="400" delay="500" />
+				<effect type="rotate" end="-360" center="640,500" time="2000" loop="true" />
+			</animation>
+
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="400" delay="200" />
+				<effect type="rotate" end="-360" center="640,500" time="2000" loop="true" />
+			</animation>
+			
 		</control>
 		
 	</controls>

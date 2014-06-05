@@ -53,6 +53,12 @@
 						<label>Hubs</label>
 						<onclick>-</onclick>
 					</item>
+
+					<item id="9">
+						<description>Charms</description>
+						<label>Charms</label>
+						<onclick>-</onclick>
+					</item>
 					
 					<item id="3">
 						<description>Backgrounds</description>
@@ -90,7 +96,7 @@
 						<onclick>-</onclick>
 					</item>
 
-					<item id="9">
+					<item id="10">
 						<description>Debug</description>
 						<label>$LOCALIZE[31033]</label>
 						<onclick>-</onclick>
@@ -1293,9 +1299,119 @@
 				</control>
 				
 			</control>
+	
+			<!--Charms Options-->
+			<control type="grouplist" id="900">
+			
+				<description>Control Area</description>
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>730</width>
+				<height>540</height>
+				<itemgap>0</itemgap>
+				<onup>900</onup>
+				<ondown>900</ondown>
+				<onleft>98</onleft>
+				<onright>-</onright>
+				<orientation>vertical</orientation>
+				<pagecontrol>89</pagecontrol>
+				<visible>Container(98).HasFocus(9)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
+				
+				<control type="label" id="950">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Available charms</label>
+					
+				</control>
+				
+				<control type="radiobutton" id="901">
+					
+					<description>Background Visualiser</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Home</label>
+					<onclick>Skin.ToggleSetting(ShowHomeCharm)</onclick>
+					<selected>Skin.HasSetting(ShowHomeCharm)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="902">
+					
+					<description>Background Visualiser</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Search</label>
+					<onclick>Skin.ToggleSetting(ShowSearchCharm)</onclick>
+					<selected>Skin.HasSetting(ShowSearchCharm)</selected>
+					<enable>System.HasAddon(script.globalsearch)</enable>
+					
+				</control>
+
+				<control type="radiobutton" id="903">
+					
+					<description>Movies</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31006]</label>
+					<onclick>Skin.ToggleSetting(ShowMoviesCharm)</onclick>
+					<selected>Skin.HasSetting(ShowMoviesCharm)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="904">
+					
+					<description>TV shows</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31007]</label>
+					<onclick>Skin.ToggleSetting(ShowTVShowsCharm)</onclick>
+					<selected>Skin.HasSetting(ShowTVShowsCharm)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="905">
+					
+					<description>Music</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31004]</label>
+					<onclick>Skin.ToggleSetting(ShowMusicCharm)</onclick>
+					<selected>Skin.HasSetting(ShowMusicCharm)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="906">
+					
+					<description>Favourites</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31008]</label>
+					<onclick>Skin.ToggleSetting(ShowFavouritesCharm)</onclick>
+					<selected>Skin.HasSetting(ShowFavouritesCharm)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="907">
+					
+					<description>Settings</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31012]</label>
+					<onclick>Skin.ToggleSetting(ShowSettingsCharm)</onclick>
+					<selected>Skin.HasSetting(ShowSettingsCharm)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="908">
+					
+					<description>Shutdown</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31013]</label>
+					<onclick>Skin.ToggleSetting(ShowShutdownCharm)</onclick>
+					<selected>Skin.HasSetting(ShowShutdownCharm)</selected>
+					
+				</control>
+
+			</control>	
 
 			<!--Debug Options-->
-			<control type="grouplist" id="900">
+			<control type="grouplist" id="1000">
 				
 				<description>Control Area</description>
 				<posx>0</posx>
@@ -1309,11 +1425,11 @@
 				<onright>-</onright>
 				<orientation>vertical</orientation>
 				<pagecontrol>89</pagecontrol>
-				<visible>Container(98).Hasfocus(9)</visible>
+				<visible>Container(98).Hasfocus(10)</visible>
 				
 				<include>Common_Animation_Settings_Options</include>
 
-				<control type="radiobutton" id="901">
+				<control type="radiobutton" id="1001">
 					
 					<description>Enable Debug Grid</description>
 					<include>Common_Settings_RadioButton</include>
@@ -1323,7 +1439,7 @@
 					
 				</control>
 
-				<control type="radiobutton" id="902">
+				<control type="radiobutton" id="1002">
 					
 					<description>Enable Debug Info</description>
 					<include>Common_Settings_RadioButton</include>
@@ -1346,7 +1462,7 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(81)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(100)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(1)</visible>
 			
@@ -1361,7 +1477,7 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(82)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(200)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(2)</visible>
 			
@@ -1376,7 +1492,7 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(83)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(300)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(3)</visible>
 			
@@ -1391,7 +1507,7 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(84)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(400)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(4)</visible>
 			
@@ -1406,7 +1522,7 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(85)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(500)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(5)</visible>
 			
@@ -1421,7 +1537,7 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(86)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(600)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(6)</visible>
 			
@@ -1436,9 +1552,24 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(87)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(800)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(8)</visible>
+			
+		</control>
+
+		<!--Scrollbar-->
+		<control type="scrollbar" id="89">
+		
+			<include>Common_Settings_Scrollbar_Vertical</include>
+			
+			<posx>1260</posx>
+			<posy>160</posy>
+			<height>480</height>
+			
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(900)">Conditional</animation>
+			
+			<visible>Container(98).Hasfocus(9)</visible>
 			
 		</control>
 

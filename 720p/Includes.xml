@@ -31,12 +31,9 @@
 	<include file="Includes_Views.xml" />
 	
 	
-	<!---------------------------------->
-	<!--
-	<!--	Debug Includes to be
-	<!--    deleted after completion
-	<!--
-	<!---------------------------------->
+	<!--											-->
+	<!--	      Debug Includes (Delete)			-->
+	<!--											-->
 	
 	<include name="PathID">
 		<width>520</width>
@@ -81,12 +78,9 @@
 		<texturefocus>-</texturefocus>
 	</include>
 	
-	<!---------------------------------->
-	<!--
-	<!--	Common controls and
-	<!--    attributes
-	<!--
-	<!---------------------------------->
+	<!--											-->
+	<!--		    Common Includes 				-->
+	<!--											-->
 	
 	<include name="Common_Background">
 
@@ -255,6 +249,8 @@
 	<include name="Common_Bottom">
 	
 		<control type="grouplist">
+
+			<visible>IsEmpty(Control.GetLabel(18))</visible>
 			
 			<posx>60</posx>
 			<posy>20</posy>
@@ -405,6 +401,70 @@
 		<itemgap>60</itemgap>
 		<orientation>horizontal</orientation>
 		
+	</include>
+
+	<include name="Common_Content_Empty_Label">
+
+		<control type="label" id="18">
+			<posx>10000</posx>
+		</control>
+
+		<control type="group">
+
+			<posx>240</posx>
+			<posy>132</posy>
+
+			<visible>!IsEmpty(Control.GetLabel(18))</visible>
+
+			<control type="image">
+
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>256</width>
+				<height>256</height>
+				<texture>DefaultEmpty.png</texture>
+
+			</control>	
+
+			<control type="label">
+
+				<posx>300</posx>
+				<posy>30</posy>
+				<width>500</width>
+				<height>216</height>
+				<label>It's a bit lonely in here.[CR][CR]Please go to the files menu and add a source to populate this list.</label>
+				<font>Menu-List</font>
+				<textcolor>Label_Normal</textcolor>
+				<aligny>top</aligny>
+				<scrollspeed>0</scrollspeed>
+				<wrapmultiline>true</wrapmultiline>
+
+			</control>
+
+			<control type="button" id ="5">
+				
+				<description>Source</description>
+				<posx>650</posx>
+				<posy>216</posy>
+				<width>150</width>
+				<height>40</height>
+				<texturefocus border="6">button_focus.png</texturefocus>
+				<texturenofocus border="6">button_unfocus.png</texturenofocus>
+				<label>Add source...</label>
+				<font>DialogInfo-Header</font>
+				<textcolor>Label_Normal</textcolor>
+				<focusedcolor>Background_Normal</focusedcolor>
+				<disabledcolor>Label_Disabled</disabledcolor>
+				<colordiffuse>White</colordiffuse>
+				<textoffsetx>0</textoffsetx>
+				<textoffsety>6</textoffsety>
+				<align>center</align>
+				<aligny>top</aligny>
+				
+			</control>
+
+		</control>
+
 	</include>
 	
 	<include name="Common_ContextMenu_Button">
@@ -988,7 +1048,7 @@
 			<width>48</width>
 			<height>48</height>
 			
-			<visible>![Window.IsVisible(volumebar) | Window.IsVisible(mutebug)] + ![Window.IsVisible(extendedprogressdialog)] + Player.HasMedia</visible>
+			<visible>![Window.IsVisible(volumebar) | Window.IsVisible(mutebug)] + Player.HasMedia</visible>
 		
 			<animation type="VisibleChange" reversible="true">
 				<effect type="fade" start="0" end="100" time="400"/>

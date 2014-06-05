@@ -100,7 +100,7 @@
 				<posy>0</posy>
 				<width>210</width>
 				<height>210</height>
-				<texture aligny="top" background="true">$VAR[Fanart_Image]</texture>
+				<texture background="true">$VAR[Fanart_Image]</texture>
 				<aspectratio>scale</aspectratio>
 				<fadetime>1000</fadetime>
 				

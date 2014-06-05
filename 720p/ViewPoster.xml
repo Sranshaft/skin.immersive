@@ -9,7 +9,7 @@
 			<posx>60</posx>
 			<posy>0</posy>
 		
-			<visible>Control.IsVisible(51)</visible>
+			<visible>Control.IsVisible(51) + IsEmpty(Control.GetLabel(18))</visible>
 			
 			<include>Common_Animation_View</include>
 		
@@ -25,7 +25,7 @@
 
 				<posx>0</posx>
 				<posy>20</posy>
-				<width>1500</width>
+				<width>1600</width>
 				<height>480</height>
 				<onup>10000</onup>
 				<ondown>9000</ondown>
@@ -55,7 +55,7 @@
 					
 				</itemlayout>
 
-				<focusedlayout width="640" height="480">
+				<focusedlayout width="550" height="480">
 				
 					<control type="image">
 					

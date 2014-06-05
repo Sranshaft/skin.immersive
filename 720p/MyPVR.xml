@@ -358,7 +358,7 @@
 							<width>460</width>
 							<height>260</height>
 							<texture background="true">$VAR[NowPlaying_Image]</texture>
-							<aspectratio align="true" aligny="top">scale</aspectratio>
+							<aspectratio aligny="top">scale</aspectratio>
 						
 						</control>
 						
@@ -388,7 +388,7 @@
 							<width>260</width>
 							<height>260</height>
 							<texture background="true">$VAR[NowPlaying_Image]</texture>
-							<aspectratio align="true" aligny="top">scale</aspectratio>
+							<aspectratio aligny="top">scale</aspectratio>
 						
 						</control>
 						

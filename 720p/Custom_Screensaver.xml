@@ -56,28 +56,13 @@
 				<effect type="slide" start="1280,0" end="0,0" center="auto" delay="400" time="1000" tween="cubic" easing="out" />
 			</animation>
 		
-			<control type="multiimage">
-							
-				<posx>10</posx>
-				<posy>2</posy>
-				<width>15</width>
-				<height>48</height>
-				<imagepath>nowplaying/</imagepath>
-				<aspectratio>center</aspectratio>
-				<timeperimage>1000</timeperimage>
-				<fadetime>400</fadetime>
-				<randomize>false</randomize>
-				<loop>yes</loop>
-				
-			</control>
-			
 			<control type="label">
 			
 				<posx>40</posx>
 				<posy>0</posy>
 				<width>1220</width>
 				<height>48</height>
-				<label>$INFO[MusicPlayer.Title] $INFO[MusicPlayer.Artist,· ,]</label>
+				<label>$INFO[MusicPlayer.Title] [B]$INFO[MusicPlayer.Artist][/B]</label>
 				<font>Screensaver-NowPlaying</font>
 				<textcolor>white</textcolor>
 				<aligny>center</aligny>

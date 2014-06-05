@@ -534,7 +534,7 @@
 								<posy>0</posy>
 								<width>60</width>
 								<height>60</height>
-								<texture colordiffuse="Tile_Background">colors/color_white.png</texture>
+								<texture>colors/color_keyboard_dark.png</texture>
 								
 								<visible>!Control.HasFocus(9001)</visible>
 								
@@ -1884,7 +1884,7 @@
 							<width>460</width>
 							<height>260</height>
 							<texture background="true">$VAR[NowPlaying_Image]</texture>
-							<aspectratio align="true" aligny="top">scale</aspectratio>
+							<aspectratio aligny="top">scale</aspectratio>
 						
 						</control>
 						
@@ -1914,7 +1914,7 @@
 							<width>260</width>
 							<height>260</height>
 							<texture background="true">$VAR[NowPlaying_Image]</texture>
-							<aspectratio align="true" aligny="top">scale</aspectratio>
+							<aspectratio aligny="top">scale</aspectratio>
 						
 						</control>
 						

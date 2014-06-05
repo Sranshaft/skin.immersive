@@ -8,6 +8,9 @@
 	
 	<!--Splash Screen-->
 	<onload condition="!Skin.HasSetting(NoSplashScreen)">ActivateWindow(60)</onload>
+
+	<onload>Skin.Reset(ShowAppBar)</onload>
+	<onunload>Skin.Reset(ShowAppBar)</onunload>
 	
 	<controls>
 

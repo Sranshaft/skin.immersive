@@ -51,7 +51,7 @@
 					<width>460</width>
 					<height>260</height>
 					<texture background="true">$VAR[NowPlaying_Image]</texture>
-					<aspectratio align="true" aligny="top">scale</aspectratio>
+					<aspectratio aligny="top">scale</aspectratio>
 				
 				</control>
 				
@@ -81,7 +81,7 @@
 					<width>260</width>
 					<height>260</height>
 					<texture background="true">$VAR[NowPlaying_Image]</texture>
-					<aspectratio align="true" aligny="top">scale</aspectratio>
+					<aspectratio aligny="top">scale</aspectratio>
 				
 				</control>
 				
@@ -196,6 +196,20 @@
 					<colordiffuse>Background_Highlight</colordiffuse>
 					
 				</control>
+
+				<control type="slider">
+
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>260</width>
+					<height>5</height>
+					<texturesliderbar border="2">colors/color_transparent.png</texturesliderbar>
+					<textureslidernib border="2">colors/color_white.png</textureslidernib>
+					<textureslidernibfocus border="2">colors/color_white.png</textureslidernibfocus>
+					<info>Player.Progress</info>
+					<action>seek</action>
+					
+				</control>
 			
 				<control type="label">
 				
@@ -293,7 +307,7 @@
 						<posy>0</posy>
 						<width min="20" max="336">auto</width>
 						<height>36</height>
-						<label>$INFO[ListItem.Title]</label>
+						<label>$VAR[Playlist_Header]</label>
 						<font>Menu-List</font>
 						<textcolor>Label_Normal</textcolor>
 						<aligny>top</aligny>
@@ -306,7 +320,7 @@
 						<posy>30</posy>
 						<width min="20" max="336">auto</width>
 						<height>30</height>
-						<label>[UPPERCASE]$VAR[Playlist_Label][/UPPERCASE]</label>
+						<label>[UPPERCASE]$VAR[Playlist_SubHeader][/UPPERCASE]</label>
 						<font>Menu-List-Small</font>
 						<textcolor>Label_Normal</textcolor>
 						<selectedcolor>Label_Highlight</selectedcolor>
@@ -347,7 +361,7 @@
 						<posy>0</posy>
 						<width min="20" max="336">auto</width>
 						<height>36</height>
-						<label>$INFO[ListItem.Title]</label>
+						<label>$VAR[Playlist_Header]</label>
 						<font>Menu-List</font>
 						<textcolor>Label_Normal</textcolor>
 						<aligny>top</aligny>
@@ -360,9 +374,10 @@
 						<posy>30</posy>
 						<width min="20" max="336">auto</width>
 						<height>30</height>
-						<label>[UPPERCASE]$VAR[Playlist_Label][/UPPERCASE]</label>
+						<label>[UPPERCASE]$VAR[Playlist_SubHeader][/UPPERCASE]</label>
 						<font>Menu-List-Small</font>
 						<textcolor>Label_Normal</textcolor>
+						<selectedcolor>Label_Highlight</selectedcolor>
 						<aligny>top</aligny>
 						
 					</control>

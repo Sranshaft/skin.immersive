@@ -8,12 +8,13 @@
 	
 	<!--Splash Screen-->
 	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
+
+	<onload>Skin.Reset(ShowAppBar)</onload>
+	<onunload>Skin.Reset(ShowAppBar)</onunload>
 	
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowNextAiredNotification)">XBMC.RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onload condition="System.HasAddon(script.tvtunes) + Skin.HasSetting(ShowTVTunesNotification)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
- 
 
-	
 	<controls>
 
 		<!--Background Area-->
@@ -51,6 +52,9 @@
 				<include>ViewGrid_Episodes</include>
 				<include>ViewDetails</include>
 				<include>ViewBanner</include>
+
+				<!--Warning label when content is empty-->
+				<include>Common_Content_Empty_Label</include>
 				
 			</control>
 			

@@ -9,9 +9,9 @@
 			<posx>0</posx>
 			<posy>680</posy>
 			
-			<visible>!Window.IsVisible(virtualkeyboard) + ![StringCompare(Container.FolderPath,videodb://1/) | StringCompare(Container.FolderPath,library://video/movies/) | StringCompare(Container.FolderPath,videodb://2/) | StringCompare(Container.FolderPath,library://video/tvshows/) | [IsEmpty(Container.FolderPath) + StringCompare(Window.Property(xmlfile),MyMusicNav.xml)]]</visible>
+			<visible>!Window.IsVisible(virtualkeyboard)</visible>
 			
-			<animation type="Conditional" condition="Skin.HasSetting(ShowAppBar) | ControlGroup(9000).HasFocus">
+			<animation type="Conditional" condition="Skin.HasSetting(ShowAppBar)">
 				<effect type="slide" start="0,0" end="0,-76" time="200"/>
 			</animation>
 
@@ -24,7 +24,7 @@
 				<texture>colors/color_white.png</texture>
 				<colordiffuse>AppBar_Background</colordiffuse>
 				
-				<visible>Skin.HasSetting(ShowAppBar) | ControlGroup(9000).HasFocus</visible>
+				<visible>Skin.HasSetting(ShowAppBar)</visible>
 				
 				<animation type="Visible">
 					<effect type="fade" start="0" end="100" time="200"/>
@@ -61,7 +61,7 @@
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
 				
-				<visible allowhiddenfocus="true">Skin.HasSetting(ShowAppBar) | ControlGroup(9000).HasFocus</visible>
+				<visible allowhiddenfocus="true">Skin.HasSetting(ShowAppBar)</visible>
 				
 				<animation type="Visible">
 					<effect type="fade" start="0" end="100" time="200"/>
@@ -249,7 +249,18 @@
 		<control type="image" id="9151">
 			<include>Common_AppBar_Divider</include>
 		</control>
-		
+
+		<!--Update Library-->
+		<control type="button" id="9">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_scantolibrary_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_scantolibrary.png</texturenofocus>
+			<label>update[CR]library</label>
+			<onclick>UpdateLibrary(music)</onclick>
+			
+		</control>
+
 		<!--Files-->
 		<include>Common_AppBar_Files</include>
 		
@@ -695,12 +706,12 @@
 			
 		</control>
 
+		<include>Common_AppBar_Files</include>
+
 		<!--Divider-->
 		<control type="image" id="9153">
 			<include>Common_AppBar_Divider</include>
 		</control>
-
-		<include>Common_AppBar_Files</include>
 
 		<!--Watched/Unwatched-->
 		<include>Common_AppBar_ToggleWatched</include>
@@ -872,8 +883,26 @@
 		<textoffsetx>-4</textoffsetx>
 		<textoffsety>54</textoffsety>
 		<wrapmultiline>true</wrapmultiline>
+		<onfocus>Skin.SetBool(ShowAppBar)</onfocus>
+		<onup>Skin.Reset(ShowAppBar)</onup>
 		<onup>SetFocus(50)</onup>
-		
+
+	</include>
+
+	<include name="Common_AppBar_OSD_Button">
+	
+		<width>48</width>
+		<height>48</height>
+		<font>Appbar-Label-Small</font>
+		<textcolor>Label_Normal</textcolor>
+		<focusedcolor>Label_Normal</focusedcolor>
+		<disabledcolor>Label_Disabled</disabledcolor>
+		<align>center</align>
+		<aligny>top</aligny>
+		<textoffsetx>-4</textoffsetx>
+		<textoffsety>54</textoffsety>
+		<wrapmultiline>true</wrapmultiline>
+
 	</include>
 	
 	<include name="Common_AppBar_Button_Small">
@@ -912,6 +941,8 @@
 			<texturefocus>appbar/appbar_files_focus.png</texturefocus>
 			<texturenofocus>appbar/appbar_files.png</texturenofocus>
 			<label>file[CR]mode</label>
+			<visible>IsEmpty(Control.GetLabel(18))</visible>
+			<onclick>Skin.Reset(ShowAppBar)</onclick>
 			
 		</control>
 		
@@ -933,6 +964,7 @@
 			<label>smart[CR]filter</label>
 			<onclick>SetFocus(50)</onclick>
 			<onclick>Filter</onclick>
+			<onclick>Skin.Reset(ShowAppBar)</onclick>
 			
 		</control>
 		
@@ -946,6 +978,7 @@
 			<texturefocus>appbar/appbar_search_focus.png</texturefocus>
 			<texturenofocus>appbar/appbar_search.png</texturenofocus>
 			<label>search</label>
+			<onclick>Skin.Reset(ShowAppBar)</onclick>
 			
 		</control>
 		
@@ -970,12 +1003,12 @@
 		<control type="togglebutton" id="4">
 			
 			<include>Common_AppBar_Button</include>
-			<label>sort[CR]direction</label>
-			<altlabel>sort[CR]direction</altlabel>
 			<texturefocus>appbar/appbar_sortascending_focus.png</texturefocus>
 			<texturenofocus>appbar/appbar_sortascending.png</texturenofocus>
 			<alttexturefocus>appbar/appbar_sortdescending_focus.png</alttexturefocus>
 			<alttexturenofocus>appbar/appbar_sortdescending.png</alttexturenofocus>
+			<label>sort[CR]direction</label>
+			<altlabel>sort[CR]direction</altlabel>
 			<colordiffuse>$VAR[Appbar_SortDirection_ColorDiffuse]</colordiffuse>
 			
 		</control>
@@ -984,27 +1017,17 @@
 	
 	<include name="Common_AppBar_ToggleWatched">
 	
-		<control type="button" id="14">
+		<control type="radiobutton" id="14">
 			
 			<include>Common_AppBar_Button</include>
 			<texturefocus>appbar/appbar_watched_focus.png</texturefocus>
 			<texturenofocus>appbar/appbar_watched.png</texturenofocus>
+			<textureradioon>appbar/appbar_radioon.png</textureradioon>
+			<textureradiooff>-</textureradiooff>
+			<radiowidth>48</radiowidth>
+			<radioheight>48</radioheight>
+			<radioposx>6</radioposx>
 			<label>toggle[CR]watched</label>
-			
-		</control>
-		
-	</include>
-	
-	<include name="Common_AppBar_UnlockShares">
-	
-		<control type="button" id="11">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_unlock_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_unlock.png</texturenofocus>
-			<label>unlock[CR]shares</label>
-			<visible>System.HasLocks</visible>
-			<onclick>Xbmc.MasterMode</onclick>
 			
 		</control>
 		
@@ -1118,6 +1141,6 @@
 		<label>view:[CR]thumb</label>
 		<onclick>Container.SetViewMode(52)</onclick>
 	
-	</include>
+	</include>	
 	
 </includes>	

@@ -143,44 +143,50 @@
 				<visible>Container.Content(livetv)</visible>
 			</control>
 
+			<!--Player Content labels-->
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Songs</label>
+				<visible>Player.HasAudio</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Files</label>
+				<visible>Player.HasVideo + VideoPlayer.Content(files)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Movies</label>
+				<visible>Player.HasVideo + VideoPlayer.Content(movies)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Episodes</label>
+				<visible>Player.HasVideo + VideoPlayer.Content(episodes)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Music Videos</label>
+				<visible>Player.HasVideo + VideoPlayer.Content(musicvideos)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: LiveTV</label>
+				<visible>Player.HasVideo + VideoPlayer.Content(livetv)</visible>
+			</control>
+
 			<!--Player Path label-->
 
 			<control type="label">
 				<include>PathID</include>
 				<label>$INFO[Player.FolderPath]</label>
 				<visible>!IsEmpty(Player.FolderPath)</visible>
-			</control>
-
-			<!--Player Content labels-->
-
-			<control type="label">
-				<include>ContentType</include>
-				<label>Player Content: Files</label>
-				<visible>VideoPlayer.Content(files)</visible>
-			</control>
-
-			<control type="label">
-				<include>ContentType</include>
-				<label>Player Content: Movies</label>
-				<visible>VideoPlayer.Content(movies)</visible>
-			</control>
-
-			<control type="label">
-				<include>ContentType</include>
-				<label>Player Content: Episodes</label>
-				<visible>VideoPlayer.Content(episodes)</visible>
-			</control>
-
-			<control type="label">
-				<include>ContentType</include>
-				<label>Player Content: Music Videos</label>
-				<visible>VideoPlayer.Content(musicvideos)</visible>
-			</control>
-
-			<control type="label">
-				<include>ContentType</include>
-				<label>Player Content: LiveTV</label>
-				<visible>VideoPlayer.Content(livetv)</visible>
 			</control>
 
 			<!--Window labels-->

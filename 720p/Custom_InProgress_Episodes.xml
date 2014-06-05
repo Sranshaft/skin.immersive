@@ -172,7 +172,7 @@
 									<posy>394</posy>
 									<width>40</width>
 									<height>40</height>
-									<texture>$VAR[Menu_Overlay_Image]</texture>
+									<texture>$VAR[View_Item_Overlay]</texture>
 									<aspectratio>stretch</aspectratio>
 									<colordiffuse>Settings_Label</colordiffuse>
 									
@@ -291,7 +291,7 @@
 									<posy>394</posy>
 									<width>40</width>
 									<height>40</height>
-									<texture>$VAR[Menu_Overlay_Image]</texture>
+									<texture>$VAR[View_Item_Overlay]</texture>
 									<aspectratio>stretch</aspectratio>
 									<colordiffuse>Label_Normal</colordiffuse>
 									

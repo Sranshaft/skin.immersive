@@ -38,6 +38,7 @@
 			<!--Content Area-->
 			<include>Home_Content</include>
 
+			<!--Favourites Button-->
 			<control type="button" id="8999">
 				
 				<posx>60</posx>	

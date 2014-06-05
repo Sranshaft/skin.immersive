@@ -524,11 +524,8 @@
 									<height>40</height>
 									<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 									<font>Menu-Featured-Small</font>
-									<textcolor>Settings_Label</textcolor>
+									<textcolor>Label_Normal</textcolor>
 									<aligny>top</aligny>
-									<wrapmultiline>true</wrapmultiline>
-									<shadowcolor>00FFFFFF</shadowcolor>
-									<autoscroll>false</autoscroll>
 									
 								</control>
 								
@@ -587,9 +584,6 @@
 									<font>Menu-Featured-Small</font>
 									<textcolor>Label_Normal</textcolor>
 									<aligny>top</aligny>
-									<wrapmultiline>true</wrapmultiline>
-									<shadowcolor>00FFFFFF</shadowcolor>
-									<autoscroll>false</autoscroll>
 									
 								</control>
 								

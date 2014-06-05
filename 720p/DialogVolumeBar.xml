@@ -85,9 +85,6 @@
 				<textureslidernibfocus border="2">colors/color_white.png</textureslidernibfocus>
 				<info>Player.Volume</info>
 				<action>volume</action>
-				<controloffsetx></controloffsetx>
-				<controloffsety></controloffsety>
-				<pulseonselect></pulseonselect>
 				
 				<animation effect="rotate" end="90" time="0" center="50,5" condition="true">Conditional</animation>
 				
@@ -165,9 +162,6 @@
 				<textureslidernibfocus>colors/color_white.png</textureslidernibfocus>
 				<info>Player.Volume</info>
 				<action>volume</action>
-				<controloffsetx></controloffsetx>
-				<controloffsety></controloffsety>
-				<pulseonselect></pulseonselect>
 				
 				<animation effect="rotate" end="90" time="0" center="50,5" condition="true">Conditional</animation>
 				

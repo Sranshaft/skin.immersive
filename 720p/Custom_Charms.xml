@@ -156,9 +156,15 @@
 				<scrolltime tween="cubic" easing="out">600</scrolltime>
 				<preloaditems>2</preloaditems>
 				
-				<animation effect="slide" start="0,0" end="0,80" time="400" tween="cubic" easing="out" condition="StringCompare(Container(10).NumItems,7)">Conditional</animation>
-				
+
 				<animation effect="slide" start="0,0" end="0,40" time="400" tween="cubic" easing="out" condition="StringCompare(Container(10).NumItems,8)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,80" time="400" tween="cubic" easing="out" condition="StringCompare(Container(10).NumItems,7)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,120" time="400" tween="cubic" easing="out" condition="StringCompare(Container(10).NumItems,6)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,160" time="400" tween="cubic" easing="out" condition="StringCompare(Container(10).NumItems,5)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,200" time="400" tween="cubic" easing="out" condition="StringCompare(Container(10).NumItems,4)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,240" time="400" tween="cubic" easing="out" condition="StringCompare(Container(10).NumItems,3)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,280" time="400" tween="cubic" easing="out" condition="StringCompare(Container(10).NumItems,2)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,320" time="400" tween="cubic" easing="out" condition="StringCompare(Container(10).NumItems,1)">Conditional</animation>
 				
 				<itemlayout width="100" height="80">
 				
@@ -235,6 +241,7 @@
 						<thumb>charms/charm_home.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
 						<onclick>ActivateWindow(Home)</onclick>
+						<visible>Skin.HasSetting(ShowHomeCharm)</visible>
 					</item>
 					
 					<item>
@@ -243,15 +250,25 @@
 						<thumb>charms/charm_search.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
 						<onclick>XBMC.RunScript(script.globalsearch)</onclick>
-						<visible>System.HasAddon(script.globalsearch)</visible>
+						<visible>System.HasAddon(script.globalsearch) + Skin.HasSetting(ShowSearchCharm)</visible>
 					</item>
 				
 					<item>
-						<description>Videos</description>
-						<label>$LOCALIZE[31003]</label>
-						<thumb>charms/charm_video.png</thumb>
+						<description>Movies</description>
+						<label>$LOCALIZE[31006]</label>
+						<thumb>charms/charm_movies.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
-						<onclick>ActivateWindow(videos,root)</onclick>
+						<onclick>ActivateWindow(61,return)</onclick>
+						<visible>Skin.HasSetting(ShowMoviesCharm)</visible>
+					</item>
+
+					<item>
+						<description>TV Shows</description>
+						<label>$LOCALIZE[31007]</label>
+						<thumb>charms/charm_tvshows.png</thumb>
+						<onclick>Dialog.Close(55)</onclick>
+						<onclick>ActivateWindow(62,return)</onclick>
+						<visible>Skin.HasSetting(ShowTVShowsCharm)</visible>
 					</item>
 				
 					<item>
@@ -259,7 +276,8 @@
 						<label>$LOCALIZE[31004]</label>
 						<thumb>charms/charm_music.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
-						<onclick>ActivateWindow(MusicLibrary)</onclick>
+						<onclick>ActivateWindow(63,return)</onclick>
+						<visible>Skin.HasSetting(ShowMusicCharm)</visible>
 					</item>
 					
 					<item>
@@ -276,6 +294,7 @@
 						<label>$LOCALIZE[31008]</label>
 						<thumb>charms/charm_favourites.png</thumb>
 						<onclick>ActivateWindow(favourites)</onclick>
+						<visible>Skin.HasSetting(ShowFavouritesCharm)</visible>
 					</item>
 					
 					<item>
@@ -284,6 +303,7 @@
 						<thumb>charms/charm_settings.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
 						<onclick>ActivateWindow(settings)</onclick>
+						<visible>Skin.HasSetting(ShowSettingsCharm)</visible>
 					</item>
 					
 					<item>
@@ -292,6 +312,7 @@
 						<thumb>charms/charm_shutdown.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
 						<onclick>ActivateWindow(shutdownmenu)</onclick>
+						<visible>Skin.HasSetting(ShowSettingsCharm)</visible>
 					</item>
 
 				</content>

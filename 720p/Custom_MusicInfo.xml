@@ -2,7 +2,7 @@
 
 <window type="dialog" id="59">
 
-	<zorder>2</zorder>
+	<zorder>1</zorder>
 	
 	<visible>Player.ShowInfo + !Window.IsVisible(VisualisationSettings) + !Window.IsVisible(VisualisationPresetList) + Window.IsVisible(visualisation)</visible>
 	

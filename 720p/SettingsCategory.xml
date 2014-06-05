@@ -48,7 +48,7 @@
 				<posx>0</posx>
 				<posy>100</posy>
 				<width>730</width>
-				<height>540</height>
+				<height>480</height>
 				<itemgap>0</itemgap>
 				<onleft>3</onleft>
 				<onright>3</onright>
@@ -72,6 +72,40 @@
 			
 		</control>
 
+		<!--Setting description-->
+		<control type="group">
+
+			<posx>480</posx>
+			<posy>600</posy>
+
+			<include>Common_Animation_Settings_Options</include>
+
+			<control type="image">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>730</width>
+				<height>2</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Settings_Label</colordiffuse>
+				
+			</control>
+
+			<control type="textbox" id="6">
+				
+				<posx>0</posx>
+				<posy>20</posy>
+				<width>730</width>
+				<height>72</height>
+				<font>Menu-List</font>
+				<textcolor>Settings_Label</textcolor>
+				<align>left</align>
+				<aligny>top</aligny>
+
+			</control>
+
+		</control>	
+		
 		<control type="button" id="7">
 			
 			<description>Default Button</description>

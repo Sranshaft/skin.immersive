@@ -19,6 +19,7 @@
 		<focusedcolor>White</focusedcolor>
 		<selectedcolor>White</selectedcolor>
 		<disabledcolor>Label_Disabled</disabledcolor>
+		<scroll>false</scroll>
 		<scrollspeed>0</scrollspeed>
 		
 	</default>

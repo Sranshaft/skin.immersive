@@ -2,6 +2,14 @@
 
 <includes>
 
+	<include name="Common_TraktTV_ClearResults">
+	
+		<onload>ClearProperty(SimilarTrakt,0)</onload>
+		<onload>ClearProperty(CommentsTrakt,0)</onload>
+		<onload>ClearProperty(EpisodeCommentsTrakt,0)</onload>
+		
+	</include>
+
 	<include name="Common_TraktTV_ClearProperties">
 	
 		<onclick>ClearProperty(Title,58)</onclick>

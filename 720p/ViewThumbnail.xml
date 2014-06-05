@@ -9,7 +9,7 @@
 			<posx>60</posx>
 			<posy>0</posy>
 		
-			<visible>Control.IsVisible(52)</visible>
+			<visible>Control.IsVisible(52) + IsEmpty(Control.GetLabel(18))</visible>
 			
 			<include>Common_Animation_View</include>
 		
@@ -55,7 +55,7 @@
 							<posy>0</posy>
 							<width>370</width>
 							<height>210</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[Thumbnail_Image]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[View_Item_Thumb]</texture>
 							<aspectratio>scale</aspectratio>
 							
 						</control>
@@ -71,15 +71,28 @@
 							
 						</control>
 							
-						<control type="textbox">
+						<control type="label">
 							
 							<posx>10</posx>
 							<posy>158</posy>
 							<width>350</width>
-							<height>40</height>
-							<label>$VAR[Thumbnail_Header]</label>
+							<height>20</height>
+							<label>$VAR[View_Item_Header]</label>
 							<textcolor>Label_Normal</textcolor>
 							<font>Menu-Thumbnail-Header</font>
+							<aligny>top</aligny>
+							
+						</control>
+						
+						<control type="label">
+							
+							<posx>10</posx>
+							<posy>178</posy>
+							<width>350</width>
+							<height>20</height>
+							<label>$VAR[View_Item_SubHeader]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-Thumbnail-Detail</font>
 							<aligny>top</aligny>
 							
 						</control>
@@ -130,7 +143,7 @@
 							<posy>0</posy>
 							<width>370</width>
 							<height>210</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[Thumbnail_Image]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[View_Item_Thumb]</texture>
 							<aspectratio>scale</aspectratio>
 							
 						</control>
@@ -146,15 +159,28 @@
 							
 						</control>
 							
-						<control type="textbox">
+						<control type="label">
 							
 							<posx>10</posx>
 							<posy>158</posy>
 							<width>350</width>
-							<height>40</height>
-							<label>$VAR[Thumbnail_Header]</label>
+							<height>20</height>
+							<label>$VAR[View_Item_Header]</label>
 							<textcolor>Label_Normal</textcolor>
 							<font>Menu-Thumbnail-Header</font>
+							<aligny>top</aligny>
+							
+						</control>
+						
+						<control type="label">
+							
+							<posx>10</posx>
+							<posy>178</posy>
+							<width>350</width>
+							<height>20</height>
+							<label>$VAR[View_Item_SubHeader]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-Thumbnail-Detail</font>
 							<aligny>top</aligny>
 							
 						</control>
@@ -192,7 +218,7 @@
 						<control type="textbox">
 							
 							<include>Common_LiveTile_Description_Wide</include>
-							<label>$VAR[Tile_Description]</label>
+							<label>$VAR[View_Item_Description]</label>
 							<visible>System.IdleTime(2)</visible>
 				
 						</control>
@@ -203,7 +229,7 @@
 							<posy>176</posy>
 							<width>350</width>
 							<height>20</height>
-							<label>$VAR[Thumbnail_Detail]</label>
+							<label>$VAR[View_Item_SubHeader]</label>
 							<textcolor>Label_Normal</textcolor>
 							<font>Menu-Thumbnail-Detail</font>
 							<aligny>top</aligny>

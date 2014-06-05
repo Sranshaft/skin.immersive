@@ -15,7 +15,7 @@
 			<posy>720</posy>
 			
 			<visible>StringCompare(VideoPlayer.Time,00:10) | StringCompare(VideoPlayer.Time,00:11) | StringCompare(VideoPlayer.Time,00:12) | StringCompare(VideoPlayer.Time,00:13) | StringCompare(VideoPlayer.Time,00:14) | StringCompare(VideoPlayer.Time,00:15) | StringCompare(VideoPlayer.Time,00:00:10) | StringCompare(VideoPlayer.Time,00:00:11) | StringCompare(VideoPlayer.Time,00:00:12) | StringCompare(VideoPlayer.Time,00:00:13) | StringCompare(VideoPlayer.Time,00:00:14) | StringCompare(VideoPlayer.Time,00:00:15)</visible>
-			
+
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="400"/>
 				<effect type="slide" start="0,0" end="0,-188" time="400" tween="cubic" easing="out" />
