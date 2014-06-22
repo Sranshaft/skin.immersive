@@ -216,7 +216,7 @@
 			<posy>38</posy>
 			<width min="20" max="480">auto</width>
 			<height>20</height>
-			<label>[UPPERCASE]$VAR[View_Item_SubHeader][/UPPERCASE]</label>
+			<label>[UPPERCASE][B]$VAR[View_Item_SubHeader][/B][/UPPERCASE]</label>
 			<textcolor>Label_Normal</textcolor>
 			<font>Menu-List-Small</font>
 			<aligny>top</aligny>
