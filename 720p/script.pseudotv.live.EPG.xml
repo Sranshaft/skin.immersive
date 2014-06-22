@@ -77,7 +77,13 @@
 			</control>
 			
 			<control type="image" id="503">
-				<visible>false</visible>
+
+				<posx>60</posx>
+				<posy>570</posy>
+				<width>150</width>
+				<height>100</height>
+				<aspectratio>keep</aspectratio>
+
 			</control>
 			
 			<control type="label" id="101">
@@ -342,10 +348,22 @@
 				</control>
 				
 			</control>
-			
-			<control type="image" id="100">
-				<visible>false</visible>
-			</control>
+
+			<control type="button" id="99">
+				<description>Focused Text Color</description>
+	            <visible>false</visible>			
+	            <label>0xFF333333</label>
+	        </control>
+	        <control type="button" id="100">
+	        	<description>Text Color</description>
+	            <visible>false</visible>			
+	            <label>0xFFFFFFFF</label>
+	        </control>
+	        <control type="button" id="105">
+	        	<description>Text Font</description>
+	            <visible>false</visible>			
+	            <label>PseudoTV-Channel-Name</label>
+	        </control>
 			
 			<control type="image" id="321">
 				<visible>false</visible>
