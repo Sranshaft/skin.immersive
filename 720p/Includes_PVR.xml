@@ -88,9 +88,6 @@
 							<font>Menu-Similar-Header</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -104,9 +101,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -120,9 +114,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -211,9 +202,6 @@
 							<font>Menu-Similar-Header</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -227,9 +215,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -243,9 +228,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -386,9 +368,6 @@
 							<font>Menu-Similar-Header</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -402,9 +381,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -418,9 +394,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -509,9 +482,6 @@
 							<font>Menu-Similar-Header</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -525,9 +495,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -541,9 +508,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -855,9 +819,6 @@
 							<font>Menu-Similar-Header</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -871,9 +832,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -888,9 +846,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -966,9 +921,6 @@
 							<font>Menu-Similar-Header</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -982,9 +934,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -999,9 +948,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -1127,9 +1073,6 @@
 							<font>Menu-Similar-Header</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -1143,9 +1086,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -1159,9 +1099,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -1237,9 +1174,6 @@
 							<font>Menu-Similar-Header</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -1253,9 +1187,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -1269,9 +1200,6 @@
 							<font>Menu-Similar-Detail</font>
 							<textcolor>Label_Highlight</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -1365,9 +1293,6 @@
 						<font>Menu-Similar-Header</font>
 						<textcolor>Label_Normal</textcolor>
 						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
 						
 					</control>
 					
@@ -1381,9 +1306,6 @@
 						<font>Menu-Similar-Detail</font>
 						<textcolor>Label_Normal</textcolor>
 						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
 						
 					</control>
 					
@@ -1420,9 +1342,6 @@
 						<font>Menu-Similar-Header</font>
 						<textcolor>Label_Highlight</textcolor>
 						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
 						
 					</control>
 					
@@ -1436,9 +1355,6 @@
 						<font>Menu-Similar-Detail</font>
 						<textcolor>Label_Highlight</textcolor>
 						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
 						
 					</control>
 					
@@ -1522,9 +1438,6 @@
 						<font>Menu-Similar-Header</font>
 						<textcolor>Label_Normal</textcolor>
 						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
 						
 					</control>
 					
@@ -1538,9 +1451,6 @@
 						<font>Menu-Similar-Detail</font>
 						<textcolor>Label_Normal</textcolor>
 						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
 						
 					</control>
 					
@@ -1577,9 +1487,6 @@
 						<font>Menu-Similar-Header</font>
 						<textcolor>Label_Highlight</textcolor>
 						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
 						
 					</control>
 					
@@ -1593,9 +1500,6 @@
 						<font>Menu-Similar-Detail</font>
 						<textcolor>Label_Highlight</textcolor>
 						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
 						
 					</control>
 					
@@ -1679,9 +1583,6 @@
 						<font>Menu-Similar-Header</font>
 						<textcolor>Label_Normal</textcolor>
 						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
 						
 					</control>
 					
@@ -1695,9 +1596,6 @@
 						<font>Menu-Similar-Detail</font>
 						<textcolor>Label_Normal</textcolor>
 						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
 						
 					</control>
 					
@@ -1744,9 +1642,6 @@
 						<font>Menu-Similar-Header</font>
 						<textcolor>Label_Highlight</textcolor>
 						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
 						
 					</control>
 					
@@ -1760,9 +1655,6 @@
 						<font>Menu-Similar-Detail</font>
 						<textcolor>Label_Highlight</textcolor>
 						<aligny>top</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<shadowcolor>00FFFFFF</shadowcolor>
-						<autoscroll>false</autoscroll>
 						
 					</control>
 					
