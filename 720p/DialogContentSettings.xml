@@ -246,7 +246,7 @@
 				<description>Control Area</description>
 				<posx>0</posx>
 				<posy>380</posy>
-				<width>700</width>
+				<width>730</width>
 				<height>120</height>
 				<itemgap>0</itemgap>
 				<onup>4</onup>
