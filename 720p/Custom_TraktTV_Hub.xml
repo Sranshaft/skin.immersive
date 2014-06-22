@@ -114,7 +114,7 @@
 			
 			<control type="grouplist">
 			
-				<posx>128</posx>
+				<posx>110</posx>
 				<posy>100</posy>
 				<width>1100</width>
 				<height>100</height>
@@ -178,17 +178,29 @@
 			<height>480</height>
 			
 			<include>Common_Animation_Content</include>
-			
+
 			<control type="group">
 		
 				<posx>60</posx>
 				<posy>0</posy>
+
+				<control type="label">
+							
+					<posx>45</posx>
+					<posy>58</posy>
+					<label>EXPLORE</label>
+					<textcolor>Label_Normal</textcolor>
+					<include>Common_Vertical_Label</include>
+					
+					<include>Common_Animation_Vertical_Label</include>
+					
+				</control>
 				
 				<include>Common_Animation_View</include>
-				
+
 				<control type="panel" id="571">
 						
-					<posx>68</posx>
+					<posx>50</posx>
 					<posy>60</posy>
 					<width>1160</width>
 					<height>520</height>
@@ -665,7 +677,7 @@
 				
 				<control type="panel" id="572">
 						
-					<posx>68</posx>
+					<posx>50</posx>
 					<posy>60</posy>
 					<width>1160</width>
 					<height>520</height>
@@ -1162,7 +1174,7 @@
 				
 				<control type="panel" id="573">
 						
-					<posx>68</posx>
+					<posx>50</posx>
 					<posy>60</posy>
 					<width>1160</width>
 					<height>520</height>
@@ -1659,7 +1671,7 @@
 				
 				<control type="panel" id="574">
 						
-					<posx>68</posx>
+					<posx>50</posx>
 					<posy>60</posy>
 					<width>1160</width>
 					<height>520</height>
