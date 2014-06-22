@@ -76,6 +76,7 @@
 				
 				<!--Windows-->
 				<include condition="StringCompare(Window.Property(xmlfile),AddonBrowser.xml)">AppBar_AddonBrowser</include>
+				<include condition="StringCompare(Window.Property(xmlfile),MyGames.xml)">AppBar_MyGames</include>
 				<include condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml)">AppBar_MyMusicNav</include>
 				<include condition="StringCompare(Window.Property(xmlfile),MyMusicPlaylist.xml)">AppBar_MyMusicPlaylist</include>
 				<include condition="StringCompare(Window.Property(xmlfile),MyMusicSongs.xml)">AppBar_MyMusicSongs</include>
@@ -182,6 +183,36 @@
 			<label>hide[CR]foriegn</label>
 			
 		</control>
+		
+	</include>
+
+	<include name="AppBar_MyGames">
+		
+		<!--View List-->
+		<control type="button" id="9110">
+			
+			<include>Common_AppBar_View_List</include>
+			
+		</control>
+		
+		<!--Divider-->
+		<control type="image" id="9150">
+			<include>Common_AppBar_Divider</include>
+		</control>
+		
+		<!--Sort Order-->
+		<include>Common_AppBar_SortBy</include>
+		
+		<!--Sort A-Z-->
+		<include>Common_AppBar_SortDirection</include>
+		
+		<!--Divider-->
+		<control type="image" id="9151">
+			<include>Common_AppBar_Divider</include>
+		</control>	
+		
+		<!--Filter-->
+		<include>Common_AppBar_Filter</include>
 		
 	</include>	
 	
