@@ -33,8 +33,9 @@
 		<value condition="StringCompare(Window.Property(xmlfile),FileManager.xml)">$LOCALIZE[7]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicOSD.xml)">XBMC Music</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicVisualisation.xml)">XBMC Music</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyGames.xml)">$LOCALIZE[15016]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPics.xml)">$LOCALIZE[1]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml)">Live TV</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml)">$LOCALIZE[31502]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml) | StringCompare(Window.Property(xmlfile),MyMusicSongs.xml)">$LOCALIZE[2]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + SubString(Container.FolderPath,videodb://movies/,left)">$LOCALIZE[20342]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + SubString(Container.FolderPath,videodb://tvshows/,left)">$LOCALIZE[20343]</value>
@@ -79,6 +80,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsOSD.xml)">Channels</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicOSD.xml)">Controls</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicVisualisation.xml)">Now listening</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyGames.xml)">$INFO[ListItem.FolderName]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPics.xml)">$INFO[Container.FolderName]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(10)">EPG timeline</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(15)">EPG channel</value>
@@ -502,6 +504,7 @@
 		<value condition="Window.IsActive(Custom_Hub_Music.xml)">splash/splash_music.png</value>
 		<value condition="Window.IsActive(Custom_Hub_TV.xml)">splash/splash_tvshows.png</value>
 		<value condition="Window.IsActive(DialogFavourites.xml)">splash/splash_favorites.png</value>
+		<value condition="Window.IsActive(MyGames.xml)">splash/splash_games.png</value>
 		<value condition="Window.IsActive(MyPics.xml)">splash/splash_picture.png</value>
 		<value condition="Window.IsActive(MyVideoNav.xml)">splash/splash_video.png</value>
 		<value condition="Window.IsActive(MyMusicSongs.xml)">splash/splash_music.png</value>
