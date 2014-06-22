@@ -7,6 +7,12 @@
 	
 	<controls>
 
+		<control type="image">
+			<include>Common_Dimensions</include>
+			<texture>special://skin/backgrounds/debuggrid720.png</texture>
+			<visible>Skin.HasSetting(ShowDebugGrid)</visible>
+		</control>
+
 		<control type="grouplist">
 			<posx>10</posx>
 			<posy>10</posy>
@@ -831,11 +837,6 @@
 			
 		</control>
 
-		<control type="image">
-			<include>Common_Dimensions</include>
-			<texture>special://skin/backgrounds/debuggrid720.png</texture>
-			<visible>Skin.HasSetting(ShowDebugGrid)</visible>
-		</control>
-
 	</controls>
+
 </window>
