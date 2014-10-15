@@ -231,7 +231,7 @@
 				
 				<!--Refresh Button-->
 				<control type="group">
-				
+					<visible>!substring(Container.FolderPath,plugin://plugin.video)</visible>
 					<width>400</width>
 					<height>60</height>
 					
@@ -268,8 +268,7 @@
 					<width>400</width>
 					<height>60</height>
 					
-					<visible>System.HasAddon(script.libraryeditor)</visible>
-
+					<visible>System.HasAddon(script.libraryeditor) + !substring(Container.FolderPath,plugin://plugin.video)</visible>
 					<include>Common_Control_Background</include>
 					
 					<control type="button" id="15">
@@ -303,23 +302,19 @@
 				
 					<width>400</width>
 					<height>60</height>
-
+					<visible>!substring(Container.FolderPath,plugin://plugin.video)</visible>
 					<include>Common_Control_Background</include>
 					
 					<control type="button" id="10">
-						
 						<include>Common_Control_Button</include>
 						<onup>15</onup>
 						<ondown>100</ondown>
 						<onright>9001</onright>
-						
 					</control>
 					
 					<control type="image">
-					
 						<include>Common_Control_Image</include>
 						<texture>dialoginfo/dialoginfo_artwork.png</texture>
-					
 					</control>
 					
 					<control type="label">
@@ -2791,56 +2786,56 @@
 						
 							<include>Common_InfoDialog_Detail_Header</include>
 							<label>Last played</label>
-							
+							<visible>!IsEmpty(ListItem.LastPlayed)</visible>
 						</control>
 						
 						<control type="textbox">
 						
 							<include>Common_InfoDialog_Detail_Label</include>
 							<label>$INFO[ListItem.LastPlayed]</label>
-							
+							<visible>!IsEmpty(ListItem.LastPlayed)</visible>
 						</control>
 						
 						<control type="label">
 						
 							<include>Common_InfoDialog_Detail_Header</include>
 							<label>Play count</label>
-							
+							<visible>!IsEmpty(ListItem.PlayCount)</visible>
 						</control>
 						
 						<control type="textbox">
 						
 							<include>Common_InfoDialog_Detail_Label</include>
 							<label>$INFO[ListItem.PlayCount]</label>
-							
+							<visible>!IsEmpty(ListItem.PlayCount)</visible>
 						</control>
 						
 						<control type="label">
 						
 							<include>Common_InfoDialog_Detail_Header</include>
 							<label>Date added</label>
-							
+							<visible>!IsEmpty(ListItem.DateAdded)</visible>
 						</control>
 						
 						<control type="textbox">
 						
 							<include>Common_InfoDialog_Detail_Label</include>
 							<label>$INFO[ListItem.DateAdded]</label>
-							
+							<visible>!IsEmpty(ListItem.DateAdded)</visible>
 						</control>
 						
 						<control type="label">
 						
 							<include>Common_InfoDialog_Detail_Header</include>
 							<label>File size</label>
-							
+							<visible>!Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 						</control>
 						
 						<control type="textbox">
 						
 							<include>Common_InfoDialog_Detail_Label</include>
 							<label>$INFO[ListItem.Size]</label>
-							
+							<visible>!Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 						</control>
 						
 					</control>

@@ -326,7 +326,7 @@
 								<thumb>$INFO[Window(Home).Property(script.grab.fanart.Movie.Fanart)]</thumb>
 								<icon>home/home_movie.png</icon>
 								<onclick>ActivateWindow(61,return)</onclick>
-								<visible>Library.HasContent(movies) + Skin.HasSetting(ShowMoviesMenu)</visible>
+								<visible>[Library.HasContent(movies) | Skin.HasSetting(HomeMenuUseMBforMovies)] + Skin.HasSetting(ShowMoviesMenu)</visible>
 							</item>
 
 							<item id="5">
@@ -336,7 +336,7 @@
 								<thumb>$INFO[Window(Home).Property(script.grab.fanart.TV.Fanart)]</thumb>
 								<icon>home/home_tvshow.png</icon>
 								<onclick>ActivateWindow(62,return)</onclick>
-								<visible>Library.HasContent(tvshows) + Skin.HasSetting(ShowTVShowsMenu)</visible>
+								<visible>[Library.HasContent(tvshows) | Skin.HasSetting(HomeMenuUseMBforTVSeries)] + Skin.HasSetting(ShowTVShowsMenu)</visible>
 							</item>
 							
 							<item id="6">
@@ -625,7 +625,7 @@
 								<label2>$INFO[Window(Home).Property(Movies.Count),, movies][CR]$INFO[Window(Home).Property(Movies.Watched),, watched][CR]$INFO[Window(Home).Property(Movies.UnWatched),, unwatched]</label2>
 								<thumb>home/home_movie_small.png</thumb>
 								<onclick>ActivateWindow(61,return)</onclick>
-								<visible>Library.HasContent(movies) + Skin.HasSetting(ShowMoviesMenu)</visible>
+								<visible>[Library.HasContent(movies) | Skin.HasSetting(HomeMenuUseMBforMovies)] + Skin.HasSetting(ShowMoviesMenu)</visible>
 							</item>
 
 							<item id="5">
@@ -634,7 +634,7 @@
 								<label2>$INFO[Window(Home).Property(TVShows.Count),, tv shows][CR]$INFO[Window(Home).Property(TVShows.Watched),, watched][CR]$INFO[Window(Home).Property(TVShows.UnWatched),, unwatched]</label2>
 								<thumb>home/home_tvshow_small.png</thumb>
 								<onclick>ActivateWindow(62,return)</onclick>
-								<visible>Library.HasContent(tvshows) + Skin.HasSetting(ShowTVShowsMenu)</visible>
+								<visible>[Library.HasContent(tvshows) | Skin.HasSetting(HomeMenuUseMBforTVSeries)] + Skin.HasSetting(ShowTVShowsMenu)</visible>
 							</item>
 							
 							<item id="6">
@@ -916,7 +916,15 @@
 								<thumb>$INFO[Window.Property(RandomMovie.1.Art(fanart))]</thumb>
 								<label>$INFO[Window.Property(RandomMovie.1.Title)]</label>
 								<label2>$INFO[Window.Property(RandomMovie.1.Year)]</label2>
-								<visible>!IsEmpty(Window.Property(RandomMovie.1.Title))</visible>
+								<visible>!IsEmpty(Window.Property(RandomMovie.1.Title)) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+							</item>
+							
+							<item id="1">
+								<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovieMB3.1.Path)])</onclick>
+								<thumb>$INFO[Window(Home).Property(RandomMovieMB3.1.Art(fanart))]</thumb>
+								<label>$INFO[Window(Home).Property(RandomMovieMB3.1.Title)]</label>
+								<label2>$INFO[Window(Home).Property(RandomMovieMB3.1.Year)]</label2>
+								<visible>!IsEmpty(Window.Property(RandomMovieMB3.1.Title)) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 							</item>
 
 							<item id="2">
@@ -924,8 +932,16 @@
 								<thumb>$INFO[Window.Property(RandomEpisode.1.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RandomEpisode.1.EpisodeNo)] $INFO[Window.Property(RandomEpisode.1.Title)]</label>
 								<label2>$INFO[Window.Property(RandomEpisode.1.TVshowTitle)]</label2>
-								<visible>!IsEmpty(Window.Property(RandomEpisode.1.TVshowTitle))</visible>
+								<visible>!IsEmpty(Window.Property(RandomEpisode.1.TVshowTitle)) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 							</item>
+							
+							<item id="2">
+								<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisodeMB3.1.Path)])</onclick>
+								<thumb>$INFO[Window.Property(RandomEpisodeMB3.1.Art(tvshow.fanart))]</thumb>
+								<label>$INFO[Window.Property(RandomEpisodeMB3.1.EpisodeNo)] $INFO[Window.Property(RandomEpisodeMB3.1.Title)]</label>
+								<label2>$INFO[Window.Property(RandomEpisodeMB3.1.TVshowTitle)]</label2>
+								<visible>!IsEmpty(Window.Property(RandomEpisodeMB3.1.TVshowTitle)) + Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
+							</item>						
 							
 							<item id="3">
 								<onclick>$INFO[Window.Property(RandomAlbum.1.Play)]</onclick>
@@ -1074,13 +1090,15 @@
 						</focusedlayout>
 						
 						<content>
-
+						
+						
+							<!-- recommended movies normal -->
 							<item id="1">
 								<onclick>$INFO[Window.Property(RecommendedMovie.1.Play)]</onclick>
 								<thumb>$INFO[Window.Property(RecommendedMovie.1.Art(fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedMovie.1.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedMovie.1.Year)]</label2>
-								<visible>!IsEmpty(Window.Property(RecommendedMovie.1.Title))</visible>
+								<visible>!IsEmpty(Window.Property(RecommendedMovie.1.Title)) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 							</item>
 
 							<item id="2">
@@ -1088,7 +1106,7 @@
 								<thumb>$INFO[Window.Property(RecommendedMovie.2.Art(fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedMovie.2.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedMovie.2.Year)]</label2>
-								<visible>!IsEmpty(Window.Property(RecommendedMovie.2.Title))</visible>
+								<visible>!IsEmpty(Window.Property(RecommendedMovie.2.Title)) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 							</item>
 							
 							<item id="3">
@@ -1096,28 +1114,53 @@
 								<thumb>$INFO[Window.Property(RecommendedMovie.3.Art(fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedMovie.3.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedMovie.3.Year)]</label2>
-								<visible>!IsEmpty(Window.Property(RecommendedMovie.3.Title))</visible>
+								<visible>!IsEmpty(Window.Property(RecommendedMovie.3.Title)) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 							</item>
 							
+							<!-- recommended movies MB3 -->
 							<item id="4">
 								<onclick>$INFO[Window.Property(RecommendedEpisode.1.Play)]</onclick>
 								<thumb>$INFO[Window.Property(RecommendedEpisode.1.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedEpisode.1.EpisodeNo)] $INFO[Window.Property(RecommendedEpisode.1.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedEpisode.1.TVshowTitle)]</label2>
 							</item>
+							
+							<item id="1">
+								<onclick>PlayMedia($ESCINFO[Window.Property(SuggestedMovieMB3.1.Path)])</onclick>
+								<thumb>$INFO[Window.Property(SuggestedMovieMB3.1.Art(fanart))]</thumb>
+								<label>$INFO[Window.Property(SuggestedMovieMB3.1.Title)]</label>
+								<label2>$INFO[Window.Property(SuggestedMovieMB3.1.Year)]</label2>
+								<visible>!IsEmpty(Window.Property(SuggestedMovieMB3.1.Title)) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+							</item>
+
+							<item id="2">
+								<onclick>PlayMedia($ESCINFO[Window.Property(SuggestedMovieMB3.2.Path)])</onclick>
+								<thumb>$INFO[Window.Property(SuggestedMovieMB3.2.Art(fanart))]</thumb>
+								<label>$INFO[Window.Property(SuggestedMovieMB3.2.Title)]</label>
+								<label2>$INFO[Window.Property(SuggestedMovieMB3.2.Year)]</label2>
+								<visible>!IsEmpty(Window.Property(SuggestedMovieMB3.2.Title)) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+							</item>
+							
+							<item id="3">
+								<onclick>PlayMedia($ESCINFO[Window.Property(SuggestedMovieMB3.3.Path)])</onclick>
+								<thumb>$INFO[Window.Property(SuggestedMovieMB3.3.Art(fanart))]</thumb>
+								<label>$INFO[Window.Property(SuggestedMovieMB3.3.Title)]</label>
+								<label2>$INFO[Window.Property(SuggestedMovieMB3.3.Year)]</label2>
+								<visible>!IsEmpty(Window.Property(SuggestedMovieMB3.3.Title)) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+							</item>
 
 							<item id="5">
 								<onclick>$INFO[Window.Property(RecommendedEpisode.2.Play)]</onclick>
 								<thumb>$INFO[Window.Property(RecommendedEpisode.2.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedEpisode.2.EpisodeNo)] $INFO[Window.Property(RecommendedEpisode.2.Title)]</label>
-								<label2>$INFO[Window.Property(RecommendedEpisode.2.TVshowTitle)]</label2>
+								<label2>$INFO[Window.Property(RecommendedEpisode.2.TVshowTitle)] + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</label2>
 							</item>
 							
 							<item id="6">
 								<onclick>$INFO[Window.Property(RecommendedEpisode.3.Play)]</onclick>
 								<thumb>$INFO[Window.Property(RecommendedEpisode.3.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedEpisode.3.EpisodeNo)] $INFO[Window.Property(RecommendedEpisode.3.Title)]</label>
-								<label2>$INFO[Window.Property(RecommendedEpisode.3.TVshowTitle)]</label2>
+								<label2>$INFO[Window.Property(RecommendedEpisode.3.TVshowTitle)] + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</label2>
 							</item>
 							
 							<item id="7">
@@ -1125,7 +1168,7 @@
 								<thumb>$INFO[Window.Property(RecommendedEpisode.4.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedEpisode.4.EpisodeNo)] $INFO[Window.Property(RecommendedEpisode.4.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedEpisode.4.TVshowTitle)]</label2>
-								<visible>IsEmpty(Window.Property(RecommendedMovie.3.Title))</visible>
+								<visible>IsEmpty(Window.Property(RecommendedMovie.3.Title)) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 							</item>
 
 							<item id="8">
@@ -1133,7 +1176,7 @@
 								<thumb>$INFO[Window.Property(RecommendedEpisode.5.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedEpisode.5.EpisodeNo)] $INFO[Window.Property(RecommendedEpisode.5.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedEpisode.5.TVshowTitle)]</label2>
-								<visible>IsEmpty(Window.Property(RecommendedMovie.2.Title))</visible>
+								<visible>IsEmpty(Window.Property(RecommendedMovie.2.Title)) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 							</item>
 							
 							<item id="9">
@@ -1141,8 +1184,10 @@
 								<thumb>$INFO[Window.Property(RecommendedEpisode.6.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecommendedEpisode.6.EpisodeNo)] $INFO[Window.Property(RecommendedEpisode.6.Title)]</label>
 								<label2>$INFO[Window.Property(RecommendedEpisode.6.TVshowTitle)]</label2>
-								<visible>IsEmpty(Window.Property(RecommendedMovie.1.Title))</visible>
+								<visible>IsEmpty(Window.Property(RecommendedMovie.1.Title)) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 							</item>
+							
+							
 							
 						</content>
 
@@ -1309,7 +1354,15 @@
 								<thumb>$INFO[Window.Property(RecentMovie.1.Art(fanart))]</thumb>
 								<label>$INFO[Window.Property(RecentMovie.1.Title)]</label>
 								<label2>$INFO[Window.Property(RecentMovie.1.Year)]</label2>
-								<visible>!IsEmpty(Window.Property(RecentMovie.1.Title))</visible>
+								<visible>!IsEmpty(Window.Property(RecentMovie.1.Title)) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+							</item>
+							
+							<item id="1">
+								<onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovieMB3.1.Path)])</onclick>
+								<thumb>$INFO[Window.Property(LatestMovieMB3.1.Art(fanart))]</thumb>
+								<label>$INFO[Window.Property(LatestMovieMB3.1.Title)]</label>
+								<label2>$INFO[Window.Property(LatestMovieMB3.1.Year)]</label2>
+								<visible>!IsEmpty(Window.Property(LatestMovieMB3.1.Title)) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 							</item>
 
 							<item id="2">
@@ -1317,7 +1370,15 @@
 								<thumb>$INFO[Window.Property(RecentEpisode.1.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecentEpisode.1.EpisodeNo)] $INFO[Window.Property(RecentEpisode.1.Title)]</label>
 								<label2>$INFO[Window.Property(RecentEpisode.1.TVshowTitle)]</label2>
-								<visible>!IsEmpty(Window.Property(RecentEpisode.1.TVshowTitle))</visible>
+								<visible>!IsEmpty(Window.Property(RecentEpisode.1.TVshowTitle)) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
+							</item>
+							
+							<item id="2">
+								<onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisodeMB3.1.Path)])</onclick>
+								<thumb>$INFO[Window.Property(LatestEpisodeMB3.1.Art(tvshow.fanart))]</thumb>
+								<label>$INFO[Window.Property(LatestEpisodeMB3.1.EpisodeNo)] $INFO[Window.Property(LatestEpisodeMB3.1.Title)]</label>
+								<label2>$INFO[Window.Property(LatestEpisodeMB3.1.TVshowTitle)]</label2>
+								<visible>!IsEmpty(Window.Property(LatestEpisodeMB3.1.TVshowTitle)) + Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 							</item>
 							
 							<item id="3">
@@ -1333,7 +1394,15 @@
 								<thumb>$INFO[Window.Property(RecentMovie.2.Art(fanart))]</thumb>
 								<label>$INFO[Window.Property(RecentMovie.2.Title)]</label>
 								<label2>$INFO[Window.Property(RecentMovie.2.Year)]</label2>
-								<visible>!IsEmpty(Window.Property(RecentMovie.2.Title))</visible>
+								<visible>!IsEmpty(Window.Property(RecentMovie.2.Title)) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+							</item>
+							
+							<item id="4">
+								<onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovieMB3.2.Path)])</onclick>
+								<thumb>$INFO[Window.Property(LatestMovieMB3.2.Art(fanart))]</thumb>
+								<label>$INFO[Window.Property(LatestMovieMB3.2.Title)]</label>
+								<label2>$INFO[Window.Property(LatestMovieMB3.2.Year)]</label2>
+								<visible>!IsEmpty(Window.Property(LatestMovieMB3.2.Title)) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 							</item>
 
 							<item id="5">
@@ -1341,7 +1410,15 @@
 								<thumb>$INFO[Window.Property(RecentEpisode.2.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecentEpisode.2.EpisodeNo)] $INFO[Window.Property(RecentEpisode.2.Title)]</label>
 								<label2>$INFO[Window.Property(RecentEpisode.2.TVshowTitle)]</label2>
-								<visible>!IsEmpty(Window.Property(RecentEpisode.2.TVshowTitle))</visible>
+								<visible>!IsEmpty(Window.Property(RecentEpisode.2.TVshowTitle)) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
+							</item>
+							
+							<item id="5">
+								<onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisodeMB3.2.Path)])</onclick>
+								<thumb>$INFO[Window.Property(LatestEpisodeMB3.2.Art(tvshow.fanart))]</thumb>
+								<label>$INFO[Window.Property(LatestEpisodeMB3.2.EpisodeNo)] $INFO[Window.Property(LatestEpisodeMB3.2.Title)]</label>
+								<label2>$INFO[Window.Property(LatestEpisodeMB3.2.TVshowTitle)]</label2>
+								<visible>!IsEmpty(Window.Property(LatestEpisodeMB3.2.TVshowTitle)) + Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 							</item>
 							
 							<item id="6">
@@ -1357,7 +1434,15 @@
 								<thumb>$INFO[Window.Property(RecentMovie.3.Art(fanart))]</thumb>
 								<label>$INFO[Window.Property(RecentMovie.3.Title)]</label>
 								<label2>$INFO[Window.Property(RecentMovie.3.Year)]</label2>
-								<visible>!IsEmpty(Window.Property(RecentMovie.3.Title))</visible>
+								<visible>!IsEmpty(Window.Property(RecentMovie.3.Title)) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+							</item>
+							
+							<item id="7">
+								<onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovieMB3.3.Path)])</onclick>
+								<thumb>$INFO[Window.Property(LatestMovieMB3.3.Art(fanart))]</thumb>
+								<label>$INFO[Window.Property(LatestMovieMB3.3.Title)]</label>
+								<label2>$INFO[Window.Property(LatestMovieMB3.3.Year)]</label2>
+								<visible>!IsEmpty(Window.Property(LatestMovieMB3.3.Title)) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 							</item>
 
 							<item id="8">
@@ -1365,7 +1450,14 @@
 								<thumb>$INFO[Window.Property(RecentEpisode.3.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecentEpisode.3.EpisodeNo)] $INFO[Window.Property(RecentEpisode.3.Title)]</label>
 								<label2>$INFO[Window.Property(RecentEpisode.3.TVshowTitle)]</label2>
-								<visible>!IsEmpty(Window.Property(RecentEpisode.3.TVshowTitle))</visible>
+								<visible>!IsEmpty(Window.Property(RecentEpisode.3.TVshowTitle)) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
+							</item>
+							<item id="8">
+								<onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisodeMB3.3.Path)])</onclick>
+								<thumb>$INFO[Window.Property(LatestEpisodeMB3.3.Art(tvshow.fanart))]</thumb>
+								<label>$INFO[Window.Property(LatestEpisodeMB3.3.EpisodeNo)] $INFO[Window.Property(LatestEpisodeMB3.3.Title)]</label>
+								<label2>$INFO[Window.Property(LatestEpisodeMB3.3.TVshowTitle)]</label2>
+								<visible>!IsEmpty(Window.Property(LatestEpisodeMB3.3.TVshowTitle)) + Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 							</item>
 							
 							<item id="9">
@@ -1381,7 +1473,15 @@
 								<thumb>$INFO[Window.Property(RecentMovie.4.Art(fanart))]</thumb>
 								<label>$INFO[Window.Property(RecentMovie.4.Title)]</label>
 								<label2>$INFO[Window.Property(RecentMovie.4.Year)]</label2>
-								<visible>!IsEmpty(Window.Property(RecentMovie.4.Title))</visible>
+								<visible>!IsEmpty(Window.Property(RecentMovie.4.Title)) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+							</item>
+							
+							<item id="10">
+								<onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovieMB3.4.Path)])</onclick>
+								<thumb>$INFO[Window.Property(LatestMovieMB3.4.Art(fanart))]</thumb>
+								<label>$INFO[Window.Property(LatestMovieMB3.4.Title)]</label>
+								<label2>$INFO[Window.Property(LatestMovieMB3.4.Year)]</label2>
+								<visible>!IsEmpty(Window.Property(LatestMovieMB3.4.Title)) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 							</item>
 
 							<item id="11">
@@ -1389,7 +1489,14 @@
 								<thumb>$INFO[Window.Property(RecentEpisode.4.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecentEpisode.4.EpisodeNo)] $INFO[Window.Property(RecentEpisode.4.Title)]</label>
 								<label2>$INFO[Window.Property(RecentEpisode.4.TVshowTitle)]</label2>
-								<visible>!IsEmpty(Window.Property(RecentEpisode.4.TVshowTitle))</visible>
+								<visible>!IsEmpty(Window.Property(RecentEpisode.4.TVshowTitle)) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
+							</item>
+							<item id="11">
+								<onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisodeMB3.4.Path)])</onclick>
+								<thumb>$INFO[Window.Property(LatestEpisodeMB3.4.Art(tvshow.fanart))]</thumb>
+								<label>$INFO[Window.Property(LatestEpisodeMB3.4.EpisodeNo)] $INFO[Window.Property(LatestEpisodeMB3.4.Title)]</label>
+								<label2>$INFO[Window.Property(LatestEpisodeMB3.4.TVshowTitle)]</label2>
+								<visible>!IsEmpty(Window.Property(LatestEpisodeMB3.4.TVshowTitle)) + Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 							</item>
 							
 							<item id="12">
@@ -1405,7 +1512,15 @@
 								<thumb>$INFO[Window.Property(RecentMovie.5.Art(fanart))]</thumb>
 								<label>$INFO[Window.Property(RecentMovie.5.Title)]</label>
 								<label2>$INFO[Window.Property(RecentMovie.5.Year)]</label2>
-								<visible>!IsEmpty(Window.Property(RecentMovie.5.Title))</visible>
+								<visible>!IsEmpty(Window.Property(RecentMovie.5.Title)) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+							</item>
+							
+							<item id="13">
+								<onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovieMB3.5.Path)])</onclick>
+								<thumb>$INFO[Window.Property(LatestMovieMB3.5.Art(fanart))]</thumb>
+								<label>$INFO[Window.Property(LatestMovieMB3.5.Title)]</label>
+								<label2>$INFO[Window.Property(LatestMovieMB3.5.Year)]</label2>
+								<visible>!IsEmpty(Window.Property(LatestMovieMB3.5.Title)) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 							</item>
 
 							<item id="14">
@@ -1413,7 +1528,14 @@
 								<thumb>$INFO[Window.Property(RecentEpisode.5.Art(tvshow.fanart))]</thumb>
 								<label>$INFO[Window.Property(RecentEpisode.5.EpisodeNo)] $INFO[Window.Property(RecentEpisode.5.Title)]</label>
 								<label2>$INFO[Window.Property(RecentEpisode.5.TVshowTitle)]</label2>
-								<visible>!IsEmpty(Window.Property(RecentEpisode.5.TVshowTitle))</visible>
+								<visible>!IsEmpty(Window.Property(RecentEpisode.5.TVshowTitle)) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
+							</item>
+							<item id="14">
+								<onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisodeMB3.5.Path)])</onclick>
+								<thumb>$INFO[Window.Property(LatestEpisodeMB3.5.Art(tvshow.fanart))]</thumb>
+								<label>$INFO[Window.Property(LatestEpisodeMB3.5.EpisodeNo)] $INFO[Window.Property(LatestEpisodeMB3.5.Title)]</label>
+								<label2>$INFO[Window.Property(LatestEpisodeMB3.5.TVshowTitle)]</label2>
+								<visible>!IsEmpty(Window.Property(LatestEpisodeMB3.5.TVshowTitle)) + Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 							</item>
 							
 							<item id="15">

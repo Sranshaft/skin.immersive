@@ -298,15 +298,19 @@
 	<!--Hub Variables-->
 
 	<variable name="Hub_RecentlyAdded">
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">videodb://recentlyaddedmovies/</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + !Skin.HasSetting(HomeMenuUseMBforMovies)">videodb://recentlyaddedmovies/</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.1.content)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">musicdb://recentlyaddedalbums/</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">videodb://recentlyaddedepisodes/</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)">videodb://recentlyaddedepisodes/</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + Skin.HasSetting(HomeMenuUseMBforTVSeries)">$INFO[Window(Home).Property(xbmb3c.std.tvshows.1.content)]</value>
 	</variable>
 
 	<variable name="Hub_History">
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">special://skin/playlists/History (Movies).xsp</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + !Skin.HasSetting(HomeMenuUseMBforMovies)">special://skin/playlists/History (Movies).xsp</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.2.content)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">musicdb://recentlyplayedalbums/</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">special://skin/playlists/History (TV Shows).xsp</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)">special://skin/playlists/History (TV Shows).xsp</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + Skin.HasSetting(HomeMenuUseMBforTVSeries)">$INFO[Window(Home).Property(xbmb3c.std.tvshows.2.content)]</value>
 	</variable>
 
 	<variable name="Hub_Target">
