@@ -2,16 +2,13 @@
 
 <window>
 
-	<defaultcontrol always="true">50</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
+	<include>Common_Window</include>
+
 	<views>50</views>
 	
-	<!--Splash Screen-->
-	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
-
 	<onload>Skin.Reset(ShowAppBar)</onload>
 	<onunload>Skin.Reset(ShowAppBar)</onunload>
-	
+
 	<controls>
 
 		<!--Background Area-->

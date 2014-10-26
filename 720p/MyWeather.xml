@@ -2,16 +2,11 @@
 
 <window id="2600">
 	
-	<defaultcontrol always="true">50</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
+	<include>Common_Window</include>
+	<include>Common_Animation_Window</include>
 	
-	<!--Splash Screen-->
-	<onload condition="!Skin.HasSetting(NoSplashScreen)">ActivateWindow(60)</onload>
-	
-	<include>Common_Animation_Window_Splash</include>
-
 	<controls>
-	
+
 		<!--Background-->
 		<control type="image">
 				
@@ -53,6 +48,8 @@
 			<height>720</height>
 			<texture>colors/color_white.png</texture>
 			<colordiffuse>Settings_Background_Light</colordiffuse>
+
+			<include>Common_Animation_Content</include>
 			
 			<animation effect="slide" start="0,0" end="-1020,0" time="600" tween="cubic" easing="out" condition="Control.HasFocus(9500) | Control.HasFocus(9501) | Control.HasFocus(9502) | Control.HasFocus(9503)">Conditional</animation>
 			
@@ -76,8 +73,8 @@
 			<control type="button">
 					
 				<posy>12</posy>
-				<width>48</width>
-				<height>48</height>
+				<width>42</width>
+				<height>42</height>
 				<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 				<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
 				<aspectratio>keep</aspectratio>

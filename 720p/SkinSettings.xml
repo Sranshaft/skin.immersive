@@ -358,6 +358,16 @@
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
+					<label>Manage</label>
+					<onclick>Skin.ToggleSetting(ShowManageSection)</onclick>
+					<selected>Skin.HasSetting(ShowManageSection)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="122">
+					
+					<description>Background Visualiser</description>
+					<include>Common_Settings_RadioButton</include>
 					<label>Favourites</label>
 					<onclick>Skin.ToggleSetting(ShowFavouritesSection)</onclick>
 					<selected>Skin.HasSetting(ShowFavouritesSection)</selected>

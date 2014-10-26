@@ -36,7 +36,38 @@
 			</control>
 			
 			<!--Content Area-->
-			<include>Home_Content</include>
+			<control type="group">
+		
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>1280</width>
+				<height>480</height>
+				
+				<!--Animation-->
+				<include>Common_Animation_Content</include>
+				
+				<control type="grouplist" id="9000">
+				
+					<include>Common_Content_Grouplist</include>
+
+					<animation type="Conditional" reversible="true" condition="Window.IsActive(134)">
+						<effect type="fade" start="100" end="0" time="100"/>
+						<effect type="slide" start="0,0" end="0,-60" center="auto" time="400" tween="cubic" easing="out" />
+					</animation>
+
+					<include>Home_Tile</include>
+					<include>Home_List</include>
+					<include>Home_Featured</include>
+					<include>Home_OnDeck</include>
+					<include>Home_RecentlyAdded</include>
+					<include>Home_Search</include>
+					<include>Home_Manage</include>
+					<include>Home_Favourites</include>
+					<include>Home_NowPlaying</include>
+
+				</control>
+
+			</control>	
 
 			<!--Favourites Button-->
 			<control type="button" id="8999">

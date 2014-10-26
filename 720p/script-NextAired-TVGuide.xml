@@ -47,7 +47,7 @@
 				<width>1280</width>
 				<height>480</height>
 				
-				<include>Common_Animation_Content_Splash</include>
+				<include>Common_Animation_Content</include>
 				
 				<!--List-->
 				<control type="group">

@@ -176,13 +176,15 @@
 			
 			<!--Details Section-->
 			<control type="group">
-			
+
 				<posx>640</posx>
 				<posy>60</posy>
 				<width>400</width>
 				<height>440</height>
 				
 				<include>Common_Animation_HideWhenScrolling</include>
+
+				<visible>Control.IsVisible(55)</visible>
 				
 				<control type="image">
 							

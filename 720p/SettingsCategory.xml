@@ -2,105 +2,110 @@
 
 <window id="12">
 
+	<include>Common_Window</include>
+
 	<defaultcontrol always="true">3</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
 	
 	<controls>
 
-		<include>Common_Settings_Background</include>
-		
 		<control type="group">
-		
-			<include>Common_Settings_Header_Back</include>
-			
-			<control type="label" id="2">
-	
-				<include>Common_Settings_Header</include>
-				
-			</control>
 
-			<control type="grouplist" id="3">
+			<include>Common_Settings_Background</include>
+			
+			<control type="group">
+			
+				<include>Common_Settings_Header_Back</include>
+				
+				<control type="label" id="2">
+		
+					<include>Common_Settings_Header</include>
 					
-				<description>grouplist for context buttons</description>
-				<posx>0</posx>
-				<posy>100</posy>
-				<width>420</width>
-				<height max="600">auto</height>
-				<itemgap>0</itemgap>
-				<onright>5</onright>
-				
-			</control>	
-			
-		</control>
-		
-		<control type="group">
-		
-			<posx>480</posx>
-			<posy>0</posy>
-			<width>730</width>
-			<height>480</height>
-			
-			<include>Common_Animation_Settings_Options</include>
-		
-			<control type="grouplist" id="5">
-				
-				<description>Control Area</description>
-				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
-				<height>480</height>
-				<itemgap>0</itemgap>
-				<onleft>3</onleft>
-				<onright>3</onright>
-				<orientation>vertical</orientation>
-				<pagecontrol>81</pagecontrol>
+				</control>
+
+				<control type="grouplist" id="3">
+						
+					<description>grouplist for context buttons</description>
+					<posx>0</posx>
+					<posy>100</posy>
+					<width>420</width>
+					<height max="600">auto</height>
+					<itemgap>0</itemgap>
+					<onright>5</onright>
+					
+				</control>	
 				
 			</control>
-		
-		</control>
-		
-		<!--Scrollbar-->
-		<control type="scrollbar" id="81">
-		
-			<include>Common_Settings_Scrollbar_Vertical</include>
 			
-			<posx>1260</posx>
-			<posy>100</posy>
-			<height>540</height>
+			<control type="group">
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(81)">Conditional</animation>
-			
-		</control>
-
-		<!--Setting description-->
-		<control type="group">
-
-			<posx>480</posx>
-			<posy>600</posy>
-
-			<include>Common_Animation_Settings_Options</include>
-
-			<control type="image">
-			
-				<posx>0</posx>
+				<posx>480</posx>
 				<posy>0</posy>
 				<width>730</width>
-				<height>2</height>
-				<texture>colors/color_white.png</texture>
-				<colordiffuse>Settings_Label</colordiffuse>
+				<height>480</height>
+				
+				<include>Common_Animation_Settings_Options</include>
+			
+				<control type="grouplist" id="5">
+					
+					<description>Control Area</description>
+					<posx>0</posx>
+					<posy>100</posy>
+					<width>730</width>
+					<height>480</height>
+					<itemgap>0</itemgap>
+					<onleft>3</onleft>
+					<onright>3</onright>
+					<orientation>vertical</orientation>
+					<pagecontrol>81</pagecontrol>
+					
+				</control>
+			
+			</control>
+			
+			<!--Scrollbar-->
+			<control type="scrollbar" id="81">
+			
+				<include>Common_Settings_Scrollbar_Vertical</include>
+				
+				<posx>1260</posx>
+				<posy>100</posy>
+				<height>540</height>
+				
+				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(81)">Conditional</animation>
 				
 			</control>
 
-			<control type="textbox" id="6">
+			<!--Setting description-->
+			<control type="group">
+
+				<posx>480</posx>
+				<posy>600</posy>
+
+				<include>Common_Animation_Settings_Options</include>
+
+				<control type="image">
 				
-				<posx>0</posx>
-				<posy>20</posy>
-				<width>730</width>
-				<height>72</height>
-				<font>Menu-List</font>
-				<textcolor>Settings_Label</textcolor>
-				<align>left</align>
-				<aligny>top</aligny>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>730</width>
+					<height>2</height>
+					<texture>colors/color_white.png</texture>
+					<colordiffuse>Settings_Label</colordiffuse>
+					
+				</control>
+
+				<control type="textbox" id="6">
+					
+					<posx>0</posx>
+					<posy>20</posy>
+					<width>730</width>
+					<height>72</height>
+					<font>Menu-List</font>
+					<textcolor>Settings_Label</textcolor>
+					<align>left</align>
+					<aligny>top</aligny>
+
+				</control>
 
 			</control>
 

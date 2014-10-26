@@ -252,18 +252,17 @@
 		</font>
 		
 		<font>
-			<name>Fullscreen-NowPlaying-Large</name>
+			<name>Fullscreen-NowPlaying-Bold</name>
 			<filename>SegoeWP-SemiBold.ttf</filename>
-			<size>90</size>
 			<style>uppercase</style>
-			<linespacing>0.65</linespacing>
+			<size>48</size>
 		</font>
 		
 		<font>
-			<name>Fullscreen-NowPlaying-Normal</name>
-			<filename>SegoeWP-SemiBold.ttf</filename>
+			<name>Fullscreen-NowPlaying-Light</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
 			<style>uppercase</style>
-			<size>32</size>
+			<size>48</size>
 		</font>
 		
 		<font>
