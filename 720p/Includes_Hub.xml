@@ -1653,7 +1653,7 @@
 				
 					<item id="1">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.1.Art(poster))]</thumb>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(TrendingShows.1.Art(poster))]</thumb>
 						<label>$INFO[Window(Home).Property(TrendingShows.1.Title)]</label>
 						<label2>$INFO[Window(Home).Property(TrendingShows.1.Runtime),, minutes]</label2>
 						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.1.Plot)]</property>
@@ -1663,7 +1663,7 @@
 
 					<item id="2">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.2.Art(poster))]</thumb>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(TrendingShows.2.Art(poster))]</thumb>
 						<label>$INFO[Window(Home).Property(TrendingShows.2.Title)]</label>
 						<label2>$INFO[Window(Home).Property(TrendingShows.2.Runtime),, minutes]</label2>
 						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.2.Plot)]</property>
@@ -1673,7 +1673,7 @@
 					
 					<item id="3">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.3.Art(poster))]</thumb>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(TrendingShows.3.Art(poster))]</thumb>
 						<label>$INFO[Window(Home).Property(TrendingShows.3.Title)]</label>
 						<label2>$INFO[Window(Home).Property(TrendingShows.3.Runtime),, minutes]</label2>
 						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.3.Plot)]</property>
@@ -1683,7 +1683,7 @@
 
 					<item id="4">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.4.Art(poster))]</thumb>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(TrendingShows.4.Art(poster))]</thumb>
 						<label>$INFO[Window(Home).Property(TrendingShows.4.Title)]</label>
 						<label2>$INFO[Window(Home).Property(TrendingShows.4.Runtime),, minutes]</label2>
 						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.4.Plot)]</property>
@@ -1693,7 +1693,7 @@
 					
 					<item id="5">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.5.Art(poster))]</thumb>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(TrendingShows.5.Art(poster))]</thumb>
 						<label>$INFO[Window(Home).Property(TrendingShows.5.Title)]</label>
 						<label2>$INFO[Window(Home).Property(TrendingShows.5.Runtime),, minutes]</label2>
 						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.5.Plot)]</property>
@@ -1703,7 +1703,7 @@
 
 					<item id="6">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.6.Art(poster))]</thumb>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(TrendingShows.6.Art(poster))]</thumb>
 						<label>$INFO[Window(Home).Property(TrendingShows.6.Title)]</label>
 						<label2>$INFO[Window(Home).Property(TrendingShows.6.Runtime),, minutes]</label2>
 						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.6.Plot)]</property>
@@ -1713,7 +1713,7 @@
 					
 					<item id="7">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.7.Art(poster))]</thumb>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(TrendingShows.7.Art(poster))]</thumb>
 						<label>$INFO[Window(Home).Property(TrendingShows.7.Title)]</label>
 						<label2>$INFO[Window(Home).Property(TrendingShows.7.Runtime),, minutes]</label2>
 						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.7.Plot)]</property>
@@ -1723,7 +1723,7 @@
 
 					<item id="8">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.8.Art(poster))]</thumb>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(TrendingShows.8.Art(poster))]</thumb>
 						<label>$INFO[Window(Home).Property(TrendingShows.8.Title)]</label>
 						<label2>$INFO[Window(Home).Property(TrendingShows.8.Runtime),, minutes]</label2>
 						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.8.Plot)]</property>
@@ -1733,7 +1733,7 @@
 					
 					<item id="9">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.9.Art(poster))]</thumb>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(TrendingShows.9.Art(poster))]</thumb>
 						<label>$INFO[Window(Home).Property(TrendingShows.9.Title)]</label>
 						<label2>$INFO[Window(Home).Property(TrendingShows.9.Runtime),, minutes]</label2>
 						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.9.Plot)]</property>
@@ -1743,7 +1743,7 @@
 
 					<item id="10">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.10.Art(poster))]</thumb>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(TrendingShows.10.Art(poster))]</thumb>
 						<label>$INFO[Window(Home).Property(TrendingShows.10.Title)]</label>
 						<label2>$INFO[Window(Home).Property(TrendingShows.10.Runtime),, minutes]</label2>
 						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.10.Plot)]</property>
