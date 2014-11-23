@@ -208,7 +208,7 @@
 						<posy>0</posy>
 						<width>140</width>
 						<height>140</height>
-						<texture border="10">button_unfocus.png</texture>
+						<texture border="10">list_unfocus.png</texture>
 						<colordiffuse>Background_Highlight</colordiffuse>
 						<aspectratio>scale</aspectratio>
 						
@@ -1519,7 +1519,7 @@
 
 		<control type="group">
 		
-			<width>400</width>
+			<width>300</width>
 			<height>480</height>
 
 			<visible>Skin.HasSetting(ShowManageSection)</visible>
@@ -1530,114 +1530,310 @@
 				<include>Common_Section_Label</include>
 				
 			</control>
-		
-			<control type="list" id="9006">
-					
+
+			<control type="group">
+
 				<posx>0</posx>
 				<posy>60</posy>
-				<width>400</width>
-				<height>480</height>
-				<onleft>9005</onleft>
-				<onright>9007</onright>
-				<onup>9006</onup>
-				<ondown>9006</ondown>
-				<viewtype label="535">list</viewtype>
-				<scrolltime tween="cubic" easing="out">600</scrolltime>
-				<preloaditems>2</preloaditems>
-				
-				<itemlayout width="400" height="60">
-				
-					<control type="label">
-					
-						<posx>0</posx>
-						<width min="20" max="380">auto</width>
-						<height>60</height>
-						<label>$INFO[ListItem.Label]</label>
-						<font>Menu-List</font>
-						<textcolor>Label_Normal</textcolor>
-						<aligny>center</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<scrollspeed>0</scrollspeed>
+
+				<control type="image">
 						
-					</control>
-
-				</itemlayout>
-
-				<focusedlayout width="400" height="60">
-
-					<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>280</width>
+					<height>30</height>
+					<texture>colors/color_keyboard_dark.png</texture>
 					
-						<posx>0</posx>
-						<width min="20" max="380">auto</width>
-						<height>60</height>
-						<label>$INFO[ListItem.Label]</label>
-						<font>Menu-List</font>
-						<textcolor>Label_Normal</textcolor>
-						<aligny>center</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<scrollspeed>0</scrollspeed>
+				</control>
 
-						<visible>!Control.HasFocus(9006)</visible>
+				<control type="label">
 						
-					</control>
-				
-					<control type="label">
+					<posx>10</posx>
+					<posy>0</posy>
+					<aligny>center</aligny>
+					<width min="20" max="280">auto</width>
+					<height>30</height>
+					<label>Video library</label>
+					<textcolor>Label_Normal</textcolor>
+					<font>Menu-List-Small</font>
 					
-						<posx>0</posx>
-						<width min="20" max="380">auto</width>
-						<height>60</height>
-						<label>$INFO[ListItem.Label]</label>
-						<font>Menu-List</font>
-						<textcolor>Label_Highlight</textcolor>
-						<aligny>center</aligny>
-						<wrapmultiline>true</wrapmultiline>
-						<scrollspeed>0</scrollspeed>
-						
-						<visible>Control.HasFocus(9006)</visible>
-
-					</control>
-
-				</focusedlayout>
-				
-				<content>
-				
-					<item id="1">
-						<thumb>-</thumb>
-						<label>Update video library</label>
-						<onclick>UpdateLibrary(video)</onclick>
-					</item>
-
-					<item id="2">
-						<thumb>-</thumb>
-						<label>Clean video library</label>
-						<onclick>CleanLibrary(video)</onclick>
-					</item>
-
-					<item id="3">
-						<thumb>-</thumb>
-						<label>Export video library</label>
-						<onclick>exportlibrary(video,true,true,true,false)</onclick>
-					</item>
-
-					<item id="3">
-						<thumb>-</thumb>
-						<label>Update music library</label>
-						<onclick>UpdateLibrary(music)</onclick>
-					</item>
-
-				</content>
-				
-			</control>
+				</control>
 			
+				<control type="list" id="9006">
+						
+					<posx>0</posx>
+					<posy>50</posy>
+					<width>300</width>
+					<height>240</height>
+					<onleft>9005</onleft>
+					<onright>9007</onright>
+					<onup>9106</onup>
+					<ondown>9106</ondown>
+					<viewtype label="535">list</viewtype>
+					<scrolltime tween="cubic" easing="out">600</scrolltime>
+					<orientation>vertical</orientation>
+					<preloaditems>2</preloaditems>
+					
+					<itemlayout width="300" height="80">
+					
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>60</width>
+							<height>60</height>
+							<texture>colors/color_keyboard_dark.png</texture>
+							
+						</control>
+					
+						<control type="image">
+						
+							<include>Common_Control_Image</include>
+							<texture>$INFO[ListItem.Thumb]</texture>
+							
+						</control>
+						
+						<control type="label">
+						
+							<posx>80</posx>
+							<posy>0</posy>
+							<aligny>center</aligny>
+							<width min="20" max="380">auto</width>
+							<height>60</height>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-List</font>
+							
+						</control>
+
+					</itemlayout>
+
+					<focusedlayout width="300" height="80">
+					
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>60</width>
+							<height>60</height>
+							<texture>colors/color_keyboard_dark.png</texture>
+							
+							<visible>!Control.HasFocus(9006)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>60</width>
+							<height>60</height>
+							<texture colordiffuse="Background_Highlight">colors/color_white.png</texture>
+							
+							<visible>Control.HasFocus(9006)</visible>
+							
+						</control>
+					
+						<control type="image">
+						
+							<include>Common_Control_Image</include>
+							<texture>$INFO[ListItem.Thumb]</texture>
+							
+						</control>
+						
+						<control type="label">
+						
+							<posx>80</posx>
+							<posy>0</posy>
+							<aligny>center</aligny>
+							<width min="20" max="380">auto</width>
+							<height>60</height>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-List</font>
+							
+						</control>
+
+					</focusedlayout>
+					
+					<content>
+					
+						<item id="1">
+							<thumb>-</thumb>
+							<label>Update</label>
+							<onclick>UpdateLibrary(video)</onclick>
+						</item>
+
+						<item id="2">
+							<thumb>-</thumb>
+							<label>Clean</label>
+							<onclick>CleanLibrary(video)</onclick>
+						</item>
+
+						<item id="3">
+							<thumb>-</thumb>
+							<label>Export</label>
+							<onclick>exportlibrary(video,true,true,true,false)</onclick>
+						</item>
+
+					</content>
+					
+				</control>
+
+			</control>
+
+			<!--Music library-->
+
+			<control type="group">
+
+				<posx>0</posx>
+				<posy>350</posy>
+			
+				<control type="image">
+						
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>280</width>
+					<height>30</height>
+					<texture>colors/color_keyboard_dark.png</texture>
+					
+				</control>
+
+				<control type="label">
+						
+					<posx>10</posx>
+					<posy>0</posy>
+					<aligny>center</aligny>
+					<width min="20" max="280">auto</width>
+					<height>30</height>
+					<label>Music library</label>
+					<textcolor>Label_Normal</textcolor>
+					<font>Menu-List-Small</font>
+					
+				</control>
+			
+				<control type="list" id="9106">
+						
+					<posx>0</posx>
+					<posy>50</posy>
+					<width>300</width>
+					<height>420</height>
+					<onleft>9005</onleft>
+					<onright>9007</onright>
+					<onup>Control.SetFocus(9006,3)</onup>
+					<onup>9006</onup>
+					<ondown>Control.SetFocus(9006,0)</ondown>
+					<ondown>9006</ondown>
+					<viewtype label="535">list</viewtype>
+					<scrolltime tween="cubic" easing="out">600</scrolltime>
+					<orientation>vertical</orientation>
+					<preloaditems>2</preloaditems>
+					
+					<itemlayout width="300" height="80">
+					
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>60</width>
+							<height>60</height>
+							<texture>colors/color_keyboard_dark.png</texture>
+							
+						</control>
+					
+						<control type="image">
+						
+							<include>Common_Control_Image</include>
+							<texture>$INFO[ListItem.Thumb]</texture>
+							
+						</control>
+						
+						<control type="label">
+						
+							<posx>80</posx>
+							<posy>0</posy>
+							<aligny>center</aligny>
+							<width min="20" max="380">auto</width>
+							<height>60</height>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-List</font>
+							
+						</control>
+
+					</itemlayout>
+
+					<focusedlayout width="300" height="80">
+					
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>60</width>
+							<height>60</height>
+							<texture>colors/color_keyboard_dark.png</texture>
+							
+							<visible>!Control.HasFocus(9106)</visible>
+							
+						</control>
+						
+						<control type="image">
+						
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>60</width>
+							<height>60</height>
+							<texture colordiffuse="Background_Highlight">colors/color_white.png</texture>
+							
+							<visible>Control.HasFocus(9106)</visible>
+							
+						</control>
+					
+						<control type="image">
+						
+							<include>Common_Control_Image</include>
+							<texture>$INFO[ListItem.Thumb]</texture>
+							
+						</control>
+						
+						<control type="label">
+						
+							<posx>80</posx>
+							<posy>0</posy>
+							<aligny>center</aligny>
+							<width min="20" max="380">auto</width>
+							<height>60</height>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>Label_Normal</textcolor>
+							<font>Menu-List</font>
+							
+						</control>
+
+					</focusedlayout>
+					
+					<content>
+					
+						<item id="1">
+							<thumb>-</thumb>
+							<label>Update</label>
+							<onclick>UpdateLibrary(music)</onclick>
+						</item>
+
+					</content>
+					
+				</control>
+
+			</control>	
+
 		</control>
 		
 	</include>				
-	
+
 	<include name="Home_Favourites">
 
 		<control type="group">
 				
-			<width>440</width>
+			<width>340</width>
 			<height>480</height>
 			
 			<visible>Skin.HasSetting(ShowFavouritesSection)</visible>
@@ -1653,89 +1849,52 @@
 					
 				<posx>0</posx>
 				<posy>60</posy>
-				<width>400</width>
+				<width>320</width>
 				<height>480</height>
 				<onleft>9006</onleft>
 				<onright>9008</onright>
 				<onup>9007</onup>
 				<ondown>9007</ondown>
 				<pagecontrol>9041</pagecontrol>
-				<viewtype label="535">panel</viewtype>
+				<viewtype label="535">list</viewtype>
 				<scrolltime tween="cubic" easing="out">600</scrolltime>
-				<preloaditems>2</preloaditems>
+				<orientation>vertical</orientation>
+				<preloaditems>3</preloaditems>
 				
-				<itemlayout width="400" height="120">
-				
+				<itemlayout width="160" height="160">
+
 					<control type="image">
 					
 						<posx>0</posx>
 						<posy>0</posy>
-						<width>100</width>
-						<height>100</height>
-						<texture>colors/color_white.png</texture>
-						<colordiffuse>Background_Normal</colordiffuse>
+						<width>140</width>
+						<height>140</height>
+						<texture>colors/color_keyboard_dark.png</texture>
 						
 					</control>
-				
+
 					<control type="image">
-						
+					
 						<posx>0</posx>
 						<posy>0</posy>
-						<width>100</width>
-						<height>100</height>
-						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+						<width>140</width>
+						<height>140</height>
+						<texture>$INFO[ListItem.Icon]</texture>
 						<aspectratio>scale</aspectratio>
 						
-					</control>
-					
-					<control type="group">
-					
-						<control type="textbox">
-						
-							<posx>120</posx>
-							<posy>-14</posy>
-							<width>300</width>
-							<height>86</height>
-							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-							<font>Home-Featured</font>
-							<textcolor>Label_Normal</textcolor>
-							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
-							
-						</control>
-						
-						<control type="label">
-						
-							<posx>120</posx>
-							<posy>74</posy>
-							<width>400</width>
-							<height>40</height>
-							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
-							<font>Home-Featured-Small</font>
-							<textcolor>Label_Normal</textcolor>
-							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
-						
-						</control>
-					
 					</control>
 
 				</itemlayout>
 
-				<focusedlayout width="400" height="120">
-				
+				<focusedlayout width="160" height="160">
+
 					<control type="image">
 					
 						<posx>0</posx>
 						<posy>0</posy>
-						<width>100</width>
-						<height>100</height>
-						<texture>colors/color_white.png</texture>
-						<colordiffuse>Background_Normal</colordiffuse>
+						<width>140</width>
+						<height>140</height>
+						<texture>colors/color_keyboard_dark.png</texture>
 						
 					</control>
 
@@ -1743,48 +1902,26 @@
 					
 						<posx>0</posx>
 						<posy>0</posy>
-						<width>100</width>
-						<height>100</height>
-						<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Thumb]</texture>
+						<width>140</width>
+						<height>140</height>
+						<texture>$INFO[ListItem.Icon]</texture>
 						<aspectratio>scale</aspectratio>
 						
 					</control>
+
+					<control type="image">
 					
-					<control type="group">
-					
-						<control type="textbox">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>140</width>
+						<height>140</height>
+						<texture border="10">list_unfocus.png</texture>
+						<colordiffuse>Background_Highlight</colordiffuse>
+						<aspectratio>scale</aspectratio>
+
+						<visible>Control.HasFocus(9007)</visible>
 						
-							<posx>120</posx>
-							<posy>-14</posy>
-							<width>300</width>
-							<height>86</height>
-							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-							<font>Home-Featured</font>
-							<textcolor>Label_Highlight</textcolor>
-							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
-							
-						</control>
-						
-						<control type="label">
-						
-							<posx>120</posx>
-							<posy>74</posy>
-							<width>400</width>
-							<height>40</height>
-							<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
-							<font>Home-Featured-Small</font>
-							<textcolor>Label_Highlight</textcolor>
-							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
-						
-						</control>
-						
-					</control>	
+					</control>		
 
 				</focusedlayout>
 				
@@ -1947,24 +2084,24 @@
 				<wrapmultiline>true</wrapmultiline>
 				<scrollspeed>0</scrollspeed>
 				
-				<visible>!IntegerGreaterThan(Container(9007).NumPages,0)</visible>
+				<visible>!IntegerGreaterThan(Container(9006).NumPages,0)</visible>
 				
 			</control>
 			
 			<!--Scrollbar-->
 			<control type="group">
 				
-				<visible>IntegerGreaterThan(Container(9007).NumPages,0)</visible>
+				<visible>IntegerGreaterThan(Container(9006).NumPages,0)</visible>
 				
 				<control type="scrollbar" id="9041">
 				
 					<include>Common_Scrollbar_Vertical</include>
 				
-					<posx>420</posx>
+					<posx>320</posx>
 					<posy>60</posy>
 					<height>460</height>
 					
-					<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(9007).Scrolling">Conditional</animation>
+					<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(9006).Scrolling">Conditional</animation>
 					
 				</control>
 				
