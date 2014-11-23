@@ -518,6 +518,12 @@
 	</variable>
 
 	<!--Tile Variables-->
+
+	<variable name="Tile_Description">
+		<value condition="[Container.Content(movies) + ListItem.IsFolder] | StringCompare(Container.FolderPath,videodb://1/7/)"></value>
+		<value condition="Container.Content(movies) + !ListItem.IsFolder">$INFO[ListItem.Tagline]</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.PlotOutline]</value>
+	</variable>	
 	
 	<variable name="Tile_Top_Header">
 		<value condition="[Container.Content(movies) + ListItem.IsFolder] | StringCompare(Container.FolderPath,videodb://1/7/)">Box set</value>
