@@ -8,7 +8,6 @@
 		<import addon="script.favourites" version="4.0.9"/>
 		<import addon="script.globalsearch" version="1.1.1"/>
 		<import addon="script.playalbum" version="0.1.2"/>
-		<import addon="script.randomandlastitems" version="2.1.2"/>
 		<import addon="script.tv.show.next.aired" version="5.0.6"/>
 		
 	</requires>
