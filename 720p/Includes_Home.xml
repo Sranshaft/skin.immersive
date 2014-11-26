@@ -1000,7 +1000,7 @@
 					<control type="textbox">
 					
 						<posx>0</posx>
-						<posy>200</posy>
+						<posy>198</posy>
 						<width>150</width>
 						<height>22</height>
 						<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
@@ -1047,7 +1047,7 @@
 					<control type="textbox">
 					
 						<posx>0</posx>
-						<posy>200</posy>
+						<posy>198</posy>
 						<width>150</width>
 						<height>22</height>
 						<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
