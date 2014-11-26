@@ -2334,7 +2334,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.1.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Likes)]</property>
 
@@ -2342,7 +2342,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$ESCINFOINFO[Window(Home).Property(EpisodeCommentsTrakt.1.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.1.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(EpisodeCommentsTrakt.1.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -2354,7 +2354,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.2.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Likes)]</property>
 
@@ -2362,7 +2362,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,ESCINFO$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.2.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(EpisodeCommentsTrakt.2.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -2374,7 +2374,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.3.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.3.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.3.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.3.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.3.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.3.Likes)]</property>
 
@@ -2394,7 +2394,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.4.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.4.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.4.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.4.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.4.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.4.Likes)]</property>
 
@@ -2414,7 +2414,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.5.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.5.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.5.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.5.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.5.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.5.Likes)]</property>
 
@@ -2434,7 +2434,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.6.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.6.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.6.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.6.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.6.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.6.Likes)]</property>
 
@@ -2454,7 +2454,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.7.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.7.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.7.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.7.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.7.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.7.Likes)]</property>
 
@@ -2474,7 +2474,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.8.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.8.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.8.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.8.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.8.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.8.Likes)]</property>
 
@@ -2494,7 +2494,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.9.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.9.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.9.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.9.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.9.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.9.Likes)]</property>
 
@@ -2514,7 +2514,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.10.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.10.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.10.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.10.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.10.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.10.Likes)]</property>
 
@@ -2534,7 +2534,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.11.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.11.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.11.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.11.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.11.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.11.Likes)]</property>
 
@@ -2554,7 +2554,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.12.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.12.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.12.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.12.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.12.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.12.Likes)]</property>
 
@@ -2574,7 +2574,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.13.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.13.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.13.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.13.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.13.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.13.Likes)]</property>
 
@@ -2594,7 +2594,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.14.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.14.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.14.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.14.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.14.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.14.Likes)]</property>
 
@@ -2614,7 +2614,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.15.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Likes)]</property>
 
@@ -2634,7 +2634,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.16.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.16.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.16.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.16.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.16.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.16.Likes)]</property>
 
@@ -2654,7 +2654,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.17.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.17.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.17.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.17.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.17.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.17.Likes)]</property>
 
@@ -2674,7 +2674,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.18.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.18.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.18.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.18.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.18.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.18.Likes)]</property>
 
@@ -2694,7 +2694,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.19.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.19.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.19.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.19.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.19.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.19.Likes)]</property>
 
@@ -2714,7 +2714,7 @@
 								<label>$INFO[Window(Home).Property(EpisodeCommentsTrakt.20.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(EpisodeCommentsTrakt.20.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(EpisodeCommentsTrakt.20.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.20.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(EpisodeCommentsTrakt.20.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(EpisodeCommentsTrakt.20.Likes)]</property>
 
