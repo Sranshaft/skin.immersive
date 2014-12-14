@@ -9,6 +9,7 @@
 	<onload>XBMC.RunScript(script.favourites)</onload>
 	<onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(skinsettings)</onload>
 	<onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(53)</onload>
+	<onload condition="System.HasAddon(plugin.video.xbmb3c)">RunScript(plugin.video.xbmb3c,skin)</onload>
 	
 	<controls>
 	

@@ -4,8 +4,6 @@
 	
 	<defaultcontrol always="true">9001</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-
-	<include>Common_TraktTV_ClearResults</include>
 	
 	<onload>Skin.Reset(ShowManageMenu)</onload>
 	<onload>Skin.Reset(ShowComment)</onload>
@@ -231,7 +229,7 @@
 				
 				<!--Refresh Button-->
 				<control type="group">
-				
+					<visible>!substring(Container.FolderPath,plugin://plugin.video)</visible>
 					<width>400</width>
 					<height>60</height>
 					
@@ -268,8 +266,7 @@
 					<width>400</width>
 					<height>60</height>
 					
-					<visible>System.HasAddon(script.libraryeditor)</visible>
-
+					<visible>System.HasAddon(script.libraryeditor) + !substring(Container.FolderPath,plugin://plugin.video)</visible>
 					<include>Common_Control_Background</include>
 					
 					<control type="button" id="15">
@@ -303,7 +300,7 @@
 				
 					<width>400</width>
 					<height>60</height>
-
+					<visible>!substring(Container.FolderPath,plugin://plugin.video)</visible>
 					<include>Common_Control_Background</include>
 					
 					<control type="button" id="10">
@@ -431,8 +428,8 @@
 							<posy>0</posy>
 							<width>380</width>
 							<height>215</height>
-							<texturefocus>dialoginfo/dialoginfo_play_large.png</texturefocus>
-							<texturenofocus>dialoginfo/dialoginfo_play_large.png</texturenofocus>
+							<texturefocus colordiffuse="Label_Highlight">dialoginfo/dialoginfo_play_large.png</texturefocus>
+							<texturenofocus colordiffuse="Label_Normal">dialoginfo/dialoginfo_play_large.png</texturenofocus>
 							<pulseonselect>true</pulseonselect>
 							<onclick>SendClick(2003,8)</onclick>
 							<onleft>8</onleft>
@@ -797,7 +794,7 @@
 					<width>400</width>
 					<height>560</height>
 					
-					<visible>IntegerGreaterThan(Window(Home).Property(SimilarTrakt.Count),0) + [Container.Content(movies) | Container.Content(tvshows)] + !StringCompare(ListItem.DBID,-1)</visible>
+					<visible>IntegerGreaterThan(Window(Home).Property(SimilarTrakt.Count),0) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
 				
 					<control type="label">
 						
@@ -999,7 +996,7 @@
 							<item id="1">
 								<label>$INFO[Window(Home).Property(SimilarTrakt.1.Title)]</label>
 								<thumb>$INFO[Window(Home).Property(SimilarTrakt.1.Art(poster))]</thumb>
-								<property name="Plot">$ESCINFO[Window(Home).Property(SimilarTrakt.1.Plot)]</property>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.1.Plot)]</property>
 								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.1.Genre)]</property>
 								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.1.MPAA)]</property>
 								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.1.Year)]</property>
@@ -1024,7 +1021,7 @@
 							<item id="2">
 								<label>$INFO[Window(Home).Property(SimilarTrakt.2.Title)]</label>
 								<thumb>$INFO[Window(Home).Property(SimilarTrakt.2.Art(poster))]</thumb>
-								<property name="Plot">$ESCINFO[Window(Home).Property(SimilarTrakt.2.Plot)]</property>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.2.Plot)]</property>
 								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.2.Genre)]</property>
 								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.2.MPAA)]</property>
 								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.2.Year)]</property>
@@ -1049,7 +1046,7 @@
 							<item id="3">
 								<label>$INFO[Window(Home).Property(SimilarTrakt.3.Title)]</label>
 								<thumb>$INFO[Window(Home).Property(SimilarTrakt.3.Art(poster))]</thumb>
-								<property name="Plot">$ESCINFO[Window(Home).Property(SimilarTrakt.3.Plot)]</property>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.3.Plot)]</property>
 								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.3.Genre)]</property>
 								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.3.MPAA)]</property>
 								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.3.Year)]</property>
@@ -1074,7 +1071,7 @@
 							<item id="4">
 								<label>$INFO[Window(Home).Property(SimilarTrakt.4.Title)]</label>
 								<thumb>$INFO[Window(Home).Property(SimilarTrakt.4.Art(poster))]</thumb>
-								<property name="Plot">$ESCINFO[Window(Home).Property(SimilarTrakt.4.Plot)]</property>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.4.Plot)]</property>
 								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.4.Genre)]</property>
 								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.4.MPAA)]</property>
 								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.4.Year)]</property>
@@ -1099,7 +1096,7 @@
 							<item id="5">
 								<label>$INFO[Window(Home).Property(SimilarTrakt.5.Title)]</label>
 								<thumb>$INFO[Window(Home).Property(SimilarTrakt.5.Art(poster))]</thumb>
-								<property name="Plot">$ESCINFO[Window(Home).Property(SimilarTrakt.5.Plot)]</property>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.5.Plot)]</property>
 								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.5.Genre)]</property>
 								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.5.MPAA)]</property>
 								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.5.Year)]</property>
@@ -1124,7 +1121,7 @@
 							<item id="6">
 								<label>$INFO[Window(Home).Property(SimilarTrakt.6.Title)]</label>
 								<thumb>$INFO[Window(Home).Property(SimilarTrakt.6.Art(poster))]</thumb>
-								<property name="Plot">$ESCINFO[Window(Home).Property(SimilarTrakt.6.Plot)]</property>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.6.Plot)]</property>
 								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.6.Genre)]</property>
 								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.6.MPAA)]</property>
 								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.6.Year)]</property>
@@ -1149,7 +1146,7 @@
 							<item id="7">
 								<label>$INFO[Window(Home).Property(SimilarTrakt.7.Title)]</label>
 								<thumb>$INFO[Window(Home).Property(SimilarTrakt.7.Art(poster))]</thumb>
-								<property name="Plot">$ESCINFO[Window(Home).Property(SimilarTrakt.7.Plot)]</property>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.7.Plot)]</property>
 								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.7.Genre)]</property>
 								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.7.MPAA)]</property>
 								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.7.Year)]</property>
@@ -1174,7 +1171,7 @@
 							<item id="8">
 								<label>$INFO[Window(Home).Property(SimilarTrakt.8.Title)]</label>
 								<thumb>$INFO[Window(Home).Property(SimilarTrakt.8.Art(poster))]</thumb>
-								<property name="Plot">$ESCINFO[Window(Home).Property(SimilarTrakt.8.Plot)]</property>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.8.Plot)]</property>
 								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.8.Genre)]</property>
 								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.8.MPAA)]</property>
 								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.8.Year)]</property>
@@ -1199,7 +1196,7 @@
 							<item id="9">
 								<label>$INFO[Window(Home).Property(SimilarTrakt.9.Title)]</label>
 								<thumb>$INFO[Window(Home).Property(SimilarTrakt.9.Art(poster))]</thumb>
-								<property name="Plot">$ESCINFO[Window(Home).Property(SimilarTrakt.9.Plot)]</property>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.9.Plot)]</property>
 								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.9.Genre)]</property>
 								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.9.MPAA)]</property>
 								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.9.Year)]</property>
@@ -1224,7 +1221,7 @@
 							<item id="10">
 								<label>$INFO[Window(Home).Property(SimilarTrakt.10.Title)]</label>
 								<thumb>$INFO[Window(Home).Property(SimilarTrakt.10.Art(poster))]</thumb>
-								<property name="Plot">$ESCINFO[Window(Home).Property(SimilarTrakt.10.Plot)]</property>
+								<property name="Plot">$INFO[Window(Home).Property(SimilarTrakt.10.Plot)]</property>
 								<property name="Genre">$INFO[Window(Home).Property(SimilarTrakt.10.Genre)]</property>
 								<property name="MPAA">$INFO[Window(Home).Property(SimilarTrakt.10.MPAA)]</property>
 								<property name="Year">$INFO[Window(Home).Property(SimilarTrakt.10.Year)]</property>
@@ -1271,7 +1268,7 @@
 					<width>420</width>
 					<height>560</height>
 					
-					<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),0) + [Container.Content(movies) | Container.Content(tvshows)] + !StringCompare(ListItem.DBID,-1)</visible>
+					<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),0) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
 				
 					<control type="label">
 						
@@ -2622,7 +2619,7 @@
 								<onclick>SetProperty(Username,$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Username)],66)</onclick>
 								<onclick>SetProperty(Location,$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Location)],66)</onclick>
 								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Avatar)],66)</onclick>
-								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(EpisodeCommentsTrakt.15.Text)],66)</onclick>
+								<onclick>SetProperty(Comment,$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Text)],66)</onclick>
 								<onclick>SetProperty(Type,$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Type)],66)</onclick>
 								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(EpisodeCommentsTrakt.15.Likes)],66)</onclick>
 								<onclick>ActivateWindow(66,return)</onclick>
@@ -2791,56 +2788,56 @@
 						
 							<include>Common_InfoDialog_Detail_Header</include>
 							<label>Last played</label>
-							
+							<visible>!IsEmpty(ListItem.LastPlayed)</visible>
 						</control>
 						
 						<control type="textbox">
 						
 							<include>Common_InfoDialog_Detail_Label</include>
 							<label>$INFO[ListItem.LastPlayed]</label>
-							
+							<visible>!IsEmpty(ListItem.LastPlayed)</visible>
 						</control>
 						
 						<control type="label">
 						
 							<include>Common_InfoDialog_Detail_Header</include>
 							<label>Play count</label>
-							
+							<visible>!IsEmpty(ListItem.PlayCount)</visible>
 						</control>
 						
 						<control type="textbox">
 						
 							<include>Common_InfoDialog_Detail_Label</include>
 							<label>$INFO[ListItem.PlayCount]</label>
-							
+							<visible>!IsEmpty(ListItem.PlayCount)</visible>
 						</control>
 						
 						<control type="label">
 						
 							<include>Common_InfoDialog_Detail_Header</include>
 							<label>Date added</label>
-							
+							<visible>!IsEmpty(ListItem.DateAdded)</visible>
 						</control>
 						
 						<control type="textbox">
 						
 							<include>Common_InfoDialog_Detail_Label</include>
 							<label>$INFO[ListItem.DateAdded]</label>
-							
+							<visible>!IsEmpty(ListItem.DateAdded)</visible>
 						</control>
 						
 						<control type="label">
 						
 							<include>Common_InfoDialog_Detail_Header</include>
 							<label>File size</label>
-							
+							<visible>!Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 						</control>
 						
 						<control type="textbox">
 						
 							<include>Common_InfoDialog_Detail_Label</include>
 							<label>$INFO[ListItem.Size]</label>
-							
+							<visible>!Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 						</control>
 						
 					</control>

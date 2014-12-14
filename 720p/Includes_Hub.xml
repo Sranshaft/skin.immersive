@@ -77,7 +77,7 @@
 						<label>$INFO[Window(Home).Property(RandomMovie.2.Title)]</label>
 						<label2>$INFO[Window(Home).Property(RandomMovie.2.Plot)]</label2>
 						<property name="detail">$INFO[Window(Home).Property(RandomMovie.2.Year)] $INFO[Window(Home).Property(RandomMovie.2.Studio)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 					</item>
 					
 					<item id="2">
@@ -86,7 +86,7 @@
 						<label>$INFO[Window(Home).Property(RandomMovie.3.Title)]</label>
 						<label2>$INFO[Window(Home).Property(RandomMovie.3.Plot)]</label2>
 						<property name="detail">$INFO[Window(Home).Property(RandomMovie.3.Year)] $INFO[Window(Home).Property(RandomMovie.3.Studio)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 					</item>
 
 					<item id="3">
@@ -95,7 +95,7 @@
 						<label>$INFO[Window(Home).Property(RandomMovie.4.Title)]</label>
 						<label2>$INFO[Window(Home).Property(RandomMovie.4.Plot)]</label2>
 						<property name="detail">$INFO[Window(Home).Property(RandomMovie.4.Year)] $INFO[Window(Home).Property(RandomMovie.4.Studio)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 					</item>
 					
 					<item id="4">
@@ -104,7 +104,7 @@
 						<label>$INFO[Window(Home).Property(RandomMovie.5.Title)]</label>
 						<label2>$INFO[Window(Home).Property(RandomMovie.5.Plot)]</label2>
 						<property name="detail">$INFO[Window(Home).Property(RandomMovie.5.Year)] $INFO[Window(Home).Property(RandomMovie.5.Studio)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 					</item>
 
 					<item id="5">
@@ -113,7 +113,7 @@
 						<label>$INFO[Window(Home).Property(RandomMovie.6.Title)]</label>
 						<label2>$INFO[Window(Home).Property(RandomMovie.6.Plot)]</label2>
 						<property name="detail">$INFO[Window(Home).Property(RandomMovie.6.Year)] $INFO[Window(Home).Property(RandomMovie.6.Studio)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 					</item>
 					
 					<item id="6">
@@ -122,8 +122,66 @@
 						<label>$INFO[Window(Home).Property(RandomMovie.7.Title)]</label>
 						<label2>$INFO[Window(Home).Property(RandomMovie.7.Plot)]</label2>
 						<property name="detail">$INFO[Window(Home).Property(RandomMovie.7.Year)] $INFO[Window(Home).Property(RandomMovie.7.Studio)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 					</item>
+					
+					
+					<!--Movies MB 3-->
+					
+					<item id="1">
+						<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovieMB3.2.Path)])</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RandomMovieMB3.2.Art(fanart))]</thumb>
+						<label>$INFO[Window(Home).Property(RandomMovieMB3.2.Title)]</label>
+						<label2>$INFO[Window(Home).Property(RandomMovieMB3.2.Plot)]</label2>
+						<property name="detail">$INFO[Window(Home).Property(RandomMovieMB3.2.Year)] $INFO[Window(Home).Property(RandomMovieMB3.2.Studio)]</property>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+					</item>
+					
+					<item id="2">
+						<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovieMB3.3.Path)])</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RandomMovieMB3.3.Art(fanart))]</thumb>
+						<label>$INFO[Window(Home).Property(RandomMovieMB3.3.Title)]</label>
+						<label2>$INFO[Window(Home).Property(RandomMovieMB3.3.Plot)]</label2>
+						<property name="detail">$INFO[Window(Home).Property(RandomMovieMB3.3.Year)] $INFO[Window(Home).Property(RandomMovieMB3.3.Studio)]</property>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+					</item>
+
+					<item id="3">
+						<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovieMB3.4.Path)])</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RandomMovieMB3.4.Art(fanart))]</thumb>
+						<label>$INFO[Window(Home).Property(RandomMovieMB3.4.Title)]</label>
+						<label2>$INFO[Window(Home).Property(RandomMovieMB3.4.Plot)]</label2>
+						<property name="detail">$INFO[Window(Home).Property(RandomMovieMB3.4.Year)] $INFO[Window(Home).Property(RandomMovieMB3.4.Studio)]</property>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+					</item>
+					
+					<item id="4">
+						<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovieMB3.5.Path)])</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RandomMovieMB3.5.Art(fanart))]</thumb>
+						<label>$INFO[Window(Home).Property(RandomMovieMB3.5.Title)]</label>
+						<label2>$INFO[Window(Home).Property(RandomMovieMB3.5.Plot)]</label2>
+						<property name="detail">$INFO[Window(Home).Property(RandomMovieMB3.5.Year)] $INFO[Window(Home).Property(RandomMovieMB3.5.Studio)]</property>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+					</item>
+
+					<item id="5">
+						<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovieMB3.6.Path)])</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RandomMovieMB3.6.Art(fanart))]</thumb>
+						<label>$INFO[Window(Home).Property(RandomMovieMB3.6.Title)]</label>
+						<label2>$INFO[Window(Home).Property(RandomMovieMB3.6.Plot)]</label2>
+						<property name="detail">$INFO[Window(Home).Property(RandomMovieMB3.6.Year)] $INFO[Window(Home).Property(RandomMovieMB3.6.Studio)]</property>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+					</item>
+					
+					<item id="6">
+						<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovieMB3.7.Path)])</onclick>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(RandomMovieMB3.7.Art(fanart))]</thumb>
+						<label>$INFO[Window(Home).Property(RandomMovieMB3.7.Title)]</label>
+						<label2>$INFO[Window(Home).Property(RandomMovieMB3.7.Plot)]</label2>
+						<property name="detail">$INFO[Window(Home).Property(RandomMovieMB3.7.Year)] $INFO[Window(Home).Property(RandomMovieMB3.7.Studio)]</property>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+					</item>
+					
 					
 					<!--TV Shows-->
 
@@ -133,7 +191,7 @@
 						<label>$INFO[Window(Home).Property(RandomEpisode.2.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisode.2.Title)]</label>
 						<label2>$INFO[Window(Home).Property(RandomEpisode.2.Plot)]</label2>
 						<property name="detail">$INFO[Window(Home).Property(RandomEpisode.2.TVshowTitle)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 					</item>
 
 					<item id="2">
@@ -142,7 +200,7 @@
 						<label>$INFO[Window(Home).Property(RandomEpisode.3.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisode.3.Title)]</label>
 						<label2>$INFO[Window(Home).Property(RandomEpisode.3.Plot)]</label2>
 						<property name="detail">$INFO[Window(Home).Property(RandomEpisode.3.TVshowTitle)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 					</item>
 
 					<item id="3">
@@ -151,7 +209,7 @@
 						<label>$INFO[Window(Home).Property(RandomEpisode.4.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisode.4.Title)]</label>
 						<label2>$INFO[Window(Home).Property(RandomEpisode.4.Plot)]</label2>
 						<property name="detail">$INFO[Window(Home).Property(RandomEpisode.4.TVshowTitle)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 					</item>
 					
 					<item id="4">
@@ -160,7 +218,7 @@
 						<label>$INFO[Window(Home).Property(RandomEpisode.5.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisode.5.Title)]</label>
 						<label2>$INFO[Window(Home).Property(RandomEpisode.5.Plot)]</label2>
 						<property name="detail">$INFO[Window(Home).Property(RandomEpisode.5.TVshowTitle)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 					</item>
 
 					<item id="5">
@@ -169,7 +227,7 @@
 						<label>$INFO[Window(Home).Property(RandomEpisode.6.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisode.6.Title)]</label>
 						<label2>$INFO[Window(Home).Property(RandomEpisode.6.Plot)]</label2>
 						<property name="detail">$INFO[Window(Home).Property(RandomEpisode.6.TVshowTitle)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 					</item>
 					
 					<item id="6">
@@ -178,8 +236,65 @@
 						<label>$INFO[Window(Home).Property(RandomEpisode.7.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisode.7.Title)]</label>
 						<label2>$INFO[Window(Home).Property(RandomEpisode.7.Plot)]</label2>
 						<property name="detail">$INFO[Window(Home).Property(RandomEpisode.7.TVshowTitle)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 					</item>
+					
+					<!--TV Shows MB3-->
+
+					<item id="1">
+						<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisodeMB3.2.Path)])</onclick>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RandomEpisodeMB3.2.Art(tvshow.fanart))]</thumb>
+						<label>$INFO[Window(Home).Property(RandomEpisodeMB3.2.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisodeMB3.2.Title)]</label>
+						<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.2.Plot)]</label2>
+						<property name="detail">$INFO[Window(Home).Property(RandomEpisodeMB3.2.TVshowTitle)]</property>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
+					</item>
+
+					<item id="2">
+						<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisodeMB3.3.Path)])</onclick>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RandomEpisodeMB3.3.Art(tvshow.fanart))]</thumb>
+						<label>$INFO[Window(Home).Property(RandomEpisodeMB3.3.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisodeMB3.3.Title)]</label>
+						<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.3.Plot)]</label2>
+						<property name="detail">$INFO[Window(Home).Property(RandomEpisodeMB3.3.TVshowTitle)]</property>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
+					</item>
+
+					<item id="3">
+						<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisodeMB3.4.Path)])</onclick>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RandomEpisodeMB3.4.Art(tvshow.fanart))]</thumb>
+						<label>$INFO[Window(Home).Property(RandomEpisodeMB3.4.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisodeMB3.4.Title)]</label>
+						<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.4.Plot)]</label2>
+						<property name="detail">$INFO[Window(Home).Property(RandomEpisodeMB3.4.TVshowTitle)]</property>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
+					</item>
+					
+					<item id="4">
+						<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisodeMB3.5.Path)])</onclick>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RandomEpisodeMB3.5.Art(tvshow.fanart))]</thumb>
+						<label>$INFO[Window(Home).Property(RandomEpisodeMB3.5.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisodeMB3.5.Title)]</label>
+						<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.5.Plot)]</label2>
+						<property name="detail">$INFO[Window(Home).Property(RandomEpisodeMB3.5.TVshowTitle)]</property>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
+					</item>
+
+					<item id="5">
+						<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisodeMB3.6.Path)])</onclick>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RandomEpisodeMB3.6.Art(tvshow.fanart))]</thumb>
+						<label>$INFO[Window(Home).Property(RandomEpisodeMB3.6.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisodeMB3.6.Title)]</label>
+						<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.6.Plot)]</label2>
+						<property name="detail">$INFO[Window(Home).Property(RandomEpisodeMB3.6.TVshowTitle)]</property>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
+					</item>
+					
+					<item id="6">
+						<onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisodeMB3.7.Path)])</onclick>
+						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(RandomEpisodeMB3.7.Art(tvshow.fanart))]</thumb>
+						<label>$INFO[Window(Home).Property(RandomEpisodeMB3.7.EpisodeNo)] $INFO[Window(Home).Property(RandomEpisodeMB3.7.Title)]</label>
+						<label2>$INFO[Window(Home).Property(RandomEpisodeMB3.7.Plot)]</label2>
+						<property name="detail">$INFO[Window(Home).Property(RandomEpisodeMB3.7.TVshowTitle)]</property>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
+					</item>
+					
 					
 					<!--Music-->
 
@@ -614,7 +729,7 @@
 			<width>420</width>
 			<height>480</height>
 			
-			<visible>System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowAiringTodaySection_Video) + StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
+			<visible>System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowAiringTodaySection_Video) + StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml) + !Skin.HasSetting(HomeMenuUseMBforTVSeries)</visible>
 			
 			<control type="label">
 					
@@ -1576,7 +1691,7 @@
 						<label2>$INFO[Window(Home).Property(TrendingMovies.3.Runtime),, minutes]</label2>
 						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.3.Plot)]</property>
 						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.3.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml))</visible>
 					</item>
 
 					<item id="4">
@@ -1668,7 +1783,7 @@
 						<label2>$INFO[Window(Home).Property(TrendingShows.2.Runtime),, minutes]</label2>
 						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.2.Plot)]</property>
 						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.2.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml))</visible>
 					</item>
 					
 					<item id="3">
@@ -2070,7 +2185,7 @@
 						<onclick>ActivateWindow(57)</onclick>
 						<thumb>-</thumb>
 						<label>premering[CR]shows</label>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
+						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml))</visible>
 					</item>
 					
 					<item id="3">

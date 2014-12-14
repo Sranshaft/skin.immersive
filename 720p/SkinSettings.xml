@@ -1298,6 +1298,28 @@
 					
 				</control>
 				
+				<!-- mediabrowser for movies -->
+				<control type="radiobutton" id="804">
+					<description>Enable MediaBrowser for Movies</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Enable MediaBrowser for Movies library</label>
+					<onclick>Skin.ToggleSetting(HomeMenuUseMBforMovies)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseMBforMovies)</selected>
+                    <enable>System.HasAddon(plugin.video.xbmb3c)</enable>
+				</control>
+				
+				<!-- mediabrowser for tvshows -->
+				<control type="radiobutton" id="805">
+					<description>Enable MediaBrowser for TV-Shows</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Enable MediaBrowser for TV-Shows library</label>
+					<onclick>Skin.ToggleSetting(HomeMenuUseMBforTVseries)</onclick>
+                    <selected>Skin.HasSetting(HomeMenuUseMBforTVseries)</selected>
+                    <enable>System.HasAddon(plugin.video.xbmb3c)</enable>
+				</control>
+				
+				
+				
 			</control>
 	
 			<!--Charms Options-->

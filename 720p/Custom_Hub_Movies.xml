@@ -189,28 +189,31 @@
 									<description>Titles</description>
 									<label>Titles</label>
 									<thumb>hub/hub_movietitles_small.png</thumb>
-									<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
+									<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video,MovieTitles, return)</onclick>
+									<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.0.path)]</onclick>
 								</item>
-
 								<item>
 									<description>Recently Added</description>
 									<label>Recently added</label>
 									<thumb>hub/hub_recentlyadded_small.png</thumb>
-									<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
+									<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video, RecentlyAddedMovies, return)</onclick>
+									<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.1.path)]</onclick>
 								</item>
 
 								<item>
 									<description>In Progress</description>
 									<label>In Progress</label>
 									<thumb>hub/hub_inprogress_small.png</thumb>
-									<onclick>ActivateWindow(65,return)</onclick>
+									<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(65,return)</onclick>
+									<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.2.path)]</onclick>
 								</item>
 								
 								<item>
 									<description>Actors</description>
 									<label>Actors</label>
 									<thumb>hub/hub_actors_small.png</thumb>
-									<onclick>ActivateWindow(Videos,MovieActors,return)</onclick>
+									<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video, MovieActors, return)</onclick>
+									<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.8.path)]</onclick>
 								</item>
 								
 								<item>
@@ -218,13 +221,15 @@
 									<label>Directors</label>
 									<thumb>hub/hub_directors_small.png</thumb>
 									<onclick>ActivateWindow(Videos,MovieDirectors,return)</onclick>
+									<visible>!Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 								</item>
 								
 								<item>
 									<description>Genres</description>
 									<label>Genres</label>
 									<thumb>hub/hub_genres_small.png</thumb>
-									<onclick>ActivateWindow(Videos,MovieGenres,return)</onclick>
+									<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video, MovieGenres, return)</onclick>
+									<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.6.path)]</onclick>
 								</item>
 								
 								<item>
@@ -232,13 +237,15 @@
 									<label>Years</label>
 									<thumb>hub/hub_years_small.png</thumb>
 									<onclick>ActivateWindow(Videos,MovieYears,return)</onclick>
+									<visible>!Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 								</item>
 								
 								<item>
 									<description>Studios</description>
 									<label>Studios</label>
 									<thumb>hub/hub_studios_small.png</thumb>
-									<onclick>ActivateWindow(Videos,MovieStudios,return)</onclick>
+									<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video, MovieStudios, return)</onclick>
+									<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.7.path)]</onclick>
 								</item>
 								
 								<item>
@@ -246,13 +253,15 @@
 									<label>Countries</label>
 									<thumb>hub/hub_countries_small.png</thumb>
 									<onclick>ActivateWindow(Videos,MovieCountries,return)</onclick>
+									<visible>!Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 								</item>
 								
 								<item>
 									<description>Sets</description>
 									<label>Sets</label>
 									<thumb>hub/hub_sets_small.png</thumb>
-									<onclick>ActivateWindow(Videos,MovieSets,return)</onclick>
+									<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">ActivateWindow(Video, MovieSets, return)</onclick>
+									<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.movies.4.path)]</onclick>
 								</item>
 								
 								<item>
@@ -260,13 +269,15 @@
 									<label>Tags</label>
 									<thumb>hub/hub_tags_small.png</thumb>
 									<onclick>ActivateWindow(Videos,MovieTags,return)</onclick>
+									<visible>!Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 								</item>
 								
 								<item>
 									<description>Playlists</description>
 									<label>Playlists</label>
 									<thumb>hub/hub_playlists_small.png</thumb>
-									<onclick>ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
+									<onclick condition="!Skin.HasSetting(HomeMenuUseMBforMovies)">>ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
+									<onclick condition="Skin.HasSetting(HomeMenuUseMBforMovies)">$INFO[Window(Home).Property(xbmb3c.std.playlists.0)]</onclick>
 								</item>
 								
 								<item>
@@ -281,6 +292,7 @@
 									<label>Files</label>
 									<thumb>hub/hub_files_small.png</thumb>
 									<onclick>ActivateWindow(Videos,Files,return)</onclick>
+									<visible>!Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 								</item>
 
 							</content>
