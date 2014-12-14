@@ -187,7 +187,7 @@
 					<label>$LOCALIZE[31006]</label>
 					<onclick>Skin.ToggleSetting(ShowMoviesMenu)</onclick>
 					<selected>Skin.HasSetting(ShowMoviesMenu)</selected>
-					<enable>Library.HasContent(movies)</enable>
+					<enable>Library.HasContent(movies) | Skin.HasSetting(HomeMenuUseMBforMovies)</enable>
 					
 				</control>
 				
@@ -198,7 +198,7 @@
 					<label>$LOCALIZE[31007]</label>
 					<onclick>Skin.ToggleSetting(ShowTVShowsMenu)</onclick>
 					<selected>Skin.HasSetting(ShowTVShowsMenu)</selected>
-					<enable>Library.HasContent(tvshows)</enable>
+					<enable>Library.HasContent(tvshows) | Skin.HasSetting(HomeMenuUseMBforTVSeries)</enable>
 					
 				</control>
 				
@@ -883,7 +883,7 @@
 					<label>Use random fanart for background</label>
 					<onclick>Skin.ToggleSetting(UseFanartBackground_Home)</onclick>
 					<selected>Skin.HasSetting(UseFanartBackground_Home)</selected>
-					<enable>System.HasAddon(script.grab.fanart)</enable>
+					<enable>System.HasAddon(script.grab.fanart) | Skin.HasSetting(HomeMenuUseMBforMovies)</enable>
 					
 				</control>
 				

@@ -326,7 +326,17 @@
 								<thumb>$INFO[Window(Home).Property(script.grab.fanart.Movie.Fanart)]</thumb>
 								<icon>home/home_movie.png</icon>
 								<onclick>ActivateWindow(61,return)</onclick>
-								<visible>[Library.HasContent(movies) | Skin.HasSetting(HomeMenuUseMBforMovies)] + Skin.HasSetting(ShowMoviesMenu)</visible>
+								<visible>Library.HasContent(movies) + !Skin.HasSetting(HomeMenuUseMBforMovies) + Skin.HasSetting(ShowMoviesMenu)</visible>
+							</item>
+							
+							<item id="4">
+								<description>Movies</description>
+								<label>$LOCALIZE[31006]</label>
+								<label2>$INFO[Window(Home).Property(MB3TotalMovies),, movies][CR]$INFO[Window(Home).Property(MB3TotalWatchedMovies),, watched][CR]$INFO[Window(Home).Property(MB3TotalUnWatchedMovies),, unwatched]</label2>
+								<thumb>$INFO[Window(Home).Property(MB3.Background.Movie.FanArt)]</thumb>
+								<icon>home/home_movie.png</icon>
+								<onclick>ActivateWindow(61,return)</onclick>
+								<visible>Skin.HasSetting(HomeMenuUseMBforMovies) + Skin.HasSetting(ShowMoviesMenu)</visible>
 							</item>
 
 							<item id="5">
@@ -336,7 +346,17 @@
 								<thumb>$INFO[Window(Home).Property(script.grab.fanart.TV.Fanart)]</thumb>
 								<icon>home/home_tvshow.png</icon>
 								<onclick>ActivateWindow(62,return)</onclick>
-								<visible>[Library.HasContent(tvshows) | Skin.HasSetting(HomeMenuUseMBforTVSeries)] + Skin.HasSetting(ShowTVShowsMenu)</visible>
+								<visible>Library.HasContent(tvshows) + !Skin.HasSetting(HomeMenuUseMBforTVSeries) + Skin.HasSetting(ShowTVShowsMenu)</visible>
+							</item>
+							
+							<item id="5">
+								<description>TV Shows</description>
+								<label>$LOCALIZE[31007]</label>
+								<label2>$INFO[Window(Home).Property(MB3TotalEpisodes),, episodes][CR]$INFO[Window(Home).Property(MB3TotalWatchedEpisodes),, watched][CR]$INFO[Window(Home).Property(MB3TotalUnWatchedEpisodes),, unwatched]</label2>
+								<thumb>$INFO[Window(Home).Property(MB3.Background.TV.FanArt)]</thumb>
+								<icon>home/home_tvshow.png</icon>
+								<onclick>ActivateWindow(62,return)</onclick>
+								<visible>Skin.HasSetting(HomeMenuUseMBforTVSeries) + Skin.HasSetting(ShowTVShowsMenu)</visible>
 							</item>
 							
 							<item id="6">

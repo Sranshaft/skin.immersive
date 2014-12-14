@@ -106,22 +106,32 @@
 				<animation effect="fade" start="0" end="100" time="1000" reversible="true">VisibleChange</animation>
 				
 				<control type="multiimage">
-				
 					<include>Common_Dimensions</include>
 					<imagepath background="true">$INFO[Window(Home).Property(script.grab.fanart.Video.Fanart)]</imagepath>
 					<fadetime>1000</fadetime>
 					<colordiffuse>Background_Normal</colordiffuse>
-					<visible>Skin.HasSetting(UseColorDiffuseFanart_Home)</visible>
-					
+					<visible>Skin.HasSetting(UseColorDiffuseFanart_Home) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 				</control>
 			
 				<control type="multiimage">
-				
 					<include>Common_Dimensions</include>
 					<imagepath background="true">$INFO[Window(Home).Property(script.grab.fanart.Video.Fanart)]</imagepath>
 					<fadetime>1000</fadetime>
-					<visible>!Skin.HasSetting(UseColorDiffuseFanart_Home)</visible>
-					
+					<visible>!Skin.HasSetting(UseColorDiffuseFanart_Home) + !Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+				</control>
+				
+				<!-- MB3 Random Backgrounds -->
+				<control type="image">
+					<include>Common_Dimensions</include>
+					<texture background="true">$INFO[Window(Home).Property(MB3.Background.Global.FanArt)]</texture>
+					<colordiffuse>Background_Normal</colordiffuse>
+					<visible>Skin.HasSetting(UseColorDiffuseFanart_Home) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
+				</control>
+			
+				<control type="image">
+					<include>Common_Dimensions</include>
+					<texture background="true">$INFO[Window(Home).Property(MB3.Background.Global.FanArt)]</texture>
+					<visible>!Skin.HasSetting(UseColorDiffuseFanart_Home) + Skin.HasSetting(HomeMenuUseMBforMovies)</visible>
 				</control>
 				
 				<include>Common_Background_Fade</include>
@@ -1865,5 +1875,37 @@
 		<visible>System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)</visible>
 		
 	</include>
+	
+	
+	 <include name="defaultskinsettings">
+
+		<!-- skin default settings -->
+        <onload condition="!Skin.HasSetting(HomeMenuDefaults1) + [Library.HasContent(movies) | Skin.HasSetting(HomeMenuUseMBforMovies)]">Skin.SetBool(ShowMoviesMenu)</onload>
+        <onload condition="!Skin.HasSetting(HomeMenuDefaults1) + [Library.HasContent(tvshows) | Skin.HasSetting(HomeMenuUseMBforTVSeries)]">Skin.SetBool(ShowTVShowsMenu)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1) + System.HasPVR">Skin.SetBool(ShowLiveTVMenu)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(ShowMusicMenu)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(ShowPicturesMenu)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(ShowWeatherMenu)</onload>
+		
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(HomeMenuUseMBforMovies)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1) + System.HasAddon(plugin.video.xbmb3c)">Skin.SetBool(HomeMenuUseMBforTVSeries)</onload>
+
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(ShowFeaturedSection_Video)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(ShowRecentlyAddedSection_Video)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(ShowHistorySection_Video)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(ShowRecentlyAddedSection_Music)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(ShowHistorySection_Music)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(ShowFanartBackground)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(UseColorDiffuseFanart)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(UseTileMenu)</onload>
+		
+		
+		
+		<!-- finish default settings -->
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults1)">Skin.SetBool(HomeMenuDefaults1)</onload>
+
+    </include>
+	
+	
 
 </includes>

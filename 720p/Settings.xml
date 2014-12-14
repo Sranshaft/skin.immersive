@@ -3,7 +3,7 @@
 <window id="4">
 
 	<defaultcontrol always="true">9000</defaultcontrol>
-	
+	<include>defaultskinsettings</include>
 	<!--Splash Screen-->
 	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
 
