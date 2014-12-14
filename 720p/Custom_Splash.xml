@@ -21,18 +21,14 @@
 			<include>Common_Animation_Splash</include>
 	
 			<control type="image">
-					
+
 				<include>Common_Dimensions</include>
 				<texture>colors/color_white.png</texture>
 				<colordiffuse>Background_Normal</colordiffuse>
-			
+				
 			</control>
 				
 			<control type="image">
-				
-				<animation type="WindowOpen">
-					<effect type="fade" start="0" end="100" time="400" delay="200" />
-				</animation>
 				
 				<include>Common_Dimensions</include>
 				<texture>$VAR[Splash_Image]</texture>

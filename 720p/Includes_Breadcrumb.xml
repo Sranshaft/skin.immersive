@@ -11,7 +11,9 @@
 			<posy>0</posy>
 			<width>1280</width>
 			<height>120</height>
-			
+
+			<include>Common_Animation_Breadcrumb</include>
+
 			<control type="grouplist">
 			
 				<posx>60</posx>
@@ -32,17 +34,8 @@
 					<aspectratio>keep</aspectratio>
 					<colordiffuse>Label_Normal</colordiffuse>
 					<onclick>back</onclick>
+
 					<visible>!StringCompare(Window.Property(xmlfile),Home.xml)</visible>
-
-					<animation type="WindowOpen" reversible="false" condition="Window.Previous(home)">
-						<effect type="fade" start="0" end="100" time="400" delay="2000"/>
-						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="2000" tween="cubic" easing="out"/>
-					</animation>
-
-					<animation type="WindowOpen" reversible="false" condition="!Window.Previous(home)">
-						<effect type="fade" start="0" end="100" time="400" delay="600"/>
-						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="600" tween="cubic" easing="out"/>
-					</animation>
 
 				</control>
 				
@@ -56,16 +49,6 @@
 					<textcolor>Label_Normal</textcolor>
 					<aligny>center</aligny>
 
-					<animation type="WindowOpen" reversible="false" condition="Window.Previous(home)">
-						<effect type="fade" start="0" end="100" time="400" delay="2200"/>
-						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="2200" tween="cubic" easing="out"/>
-					</animation>
-
-					<animation type="WindowOpen" reversible="false" condition="!Window.Previous(home)">
-						<effect type="fade" start="0" end="100" time="400" delay="800"/>
-						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="800" tween="cubic" easing="out"/>
-					</animation>
-
 				</control>
 				
 				<control type="label">
@@ -77,18 +60,9 @@
 					<font>Breadcrumb-SubFolder</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>center</aligny>
+
 					<visible>!StringCompare(Window.Property(xmlfile),Home.xml) + !StringCompare(Window.Property(xmlfile),FileBrowser.xml)</visible>
 
-					<animation type="WindowOpen" reversible="false" condition="Window.Previous(home)">
-						<effect type="fade" start="0" end="100" time="400" delay="2300"/>
-						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="2300" tween="cubic" easing="out"/>
-					</animation>
-
-					<animation type="WindowOpen" reversible="false" condition="!Window.Previous(home)">
-						<effect type="fade" start="0" end="100" time="400" delay="900"/>
-						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="900" tween="cubic" easing="out"/>
-					</animation>
-					
 				</control>
 				
 				<control type="button" id="10000">
@@ -102,19 +76,9 @@
 					<colordiffuse>Label_Normal</colordiffuse>
 					<onfocus>ActivateWindow(51)</onfocus>
 					
-					<animation effect="rotate" start="0" end="180" center="auto" time="200" condition="Window.IsVisible(51)">Conditional</animation>
-
-					<animation type="WindowOpen" reversible="false" condition="Window.Previous(home)">
-						<effect type="fade" start="0" end="100" time="400" delay="2350"/>
-						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="2350" tween="cubic" easing="out"/>
-					</animation>
-
-					<animation type="WindowOpen" reversible="false" condition="!Window.Previous(home)">
-						<effect type="fade" start="0" end="100" time="400" delay="950"/>
-						<effect type="slide" start="100,0" end="0,0" center="auto" time="400" delay="950" tween="cubic" easing="out"/>
-					</animation>
-					
 					<visible>SubString(Container.FolderPath,videodb://movies/) | SubString(Container.FolderPath,videodb://tvshows/) | SubString(Container.FolderPath,musicdb://)</visible>
+
+					<animation effect="rotate" start="0" end="180" center="auto" time="200" condition="Window.IsVisible(51)">Conditional</animation>
 					
 				</control>
 				
@@ -133,7 +97,9 @@
 			<posy>0</posy>
 			<width>1280</width>
 			<height>120</height>
-			
+
+			<include>Common_Animation_Breadcrumb</include>
+
 			<control type="grouplist">
 			
 				<posx>60</posx>
@@ -197,12 +163,12 @@
 			<posy>20</posy>
 			<width>1280</width>
 			<height>120</height>
-			
+
 			<control type="button">
 					
 				<posy>12</posy>
-				<width>48</width>
-				<height>48</height>
+				<width>42</width>
+				<height>42</height>
 				<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 				<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
 				<aspectratio>keep</aspectratio>
@@ -247,12 +213,12 @@
 			<posy>20</posy>
 			<width>1280</width>
 			<height>120</height>
-			
+
 			<control type="button">
 					
 				<posy>12</posy>
-				<width>48</width>
-				<height>48</height>
+				<width>42</width>
+				<height>42</height>
 				<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 				<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
 				<aspectratio>keep</aspectratio>
@@ -263,7 +229,7 @@
 			
 			<control type="label">
 
-				<description>Location Label</description>
+				<description>Top Label</description>
 				<posx>68</posx>
 				<posy>0</posy>
 				<width>1200</width>
@@ -275,7 +241,7 @@
 			
 			<control type="label">
 
-				<description>Location Label</description>
+				<description>Bottom Label</description>
 				<posx>68</posx>
 				<posy>18</posy>
 				<width>1200</width>

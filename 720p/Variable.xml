@@ -21,6 +21,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),DialogAddonInfo.xml)">$INFO[ListItem.Property(Addon.Name)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogAlbumInfo.xml) + Container.Content(artists)">$INFO[ListItem.Artist]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogAlbumInfo.xml) + Container.Content(albums)">$INFO[ListItem.Album]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogButtonMenu.xml)">XBMC</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogContentSettings.xml)">$LOCALIZE[20333]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogFavourites.xml)">$LOCALIZE[1036]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogFullScreenInfo.xml)">XBMC Video</value>
@@ -73,6 +74,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">Hub</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_InProgress_Episodes.xml)">Episodes</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_InProgress_Movies.xml)">Movies</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogButtonMenu.xml)">Power Options</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogFullScreenInfo.xml)">Now watching</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasVideo">Now watching</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasAudio">Now listening</value>
@@ -522,6 +524,12 @@
 	</variable>
 
 	<!--Tile Variables-->
+
+	<variable name="Tile_Description">
+		<value condition="[Container.Content(movies) + ListItem.IsFolder] | StringCompare(Container.FolderPath,videodb://1/7/)"></value>
+		<value condition="Container.Content(movies) + !ListItem.IsFolder">$INFO[ListItem.Tagline]</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.PlotOutline]</value>
+	</variable>	
 	
 	<variable name="Tile_Top_Header">
 		<value condition="[Container.Content(movies) + ListItem.IsFolder] | StringCompare(Container.FolderPath,videodb://1/7/)">Box set</value>
@@ -653,8 +661,5 @@
 		<value>$INFO[ListItem.Overlay]</value>
 		
 	</variable>
-	
-	
-	
 	
 </includes>

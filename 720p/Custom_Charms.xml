@@ -20,7 +20,7 @@
 			
 				<posx>40</posx>
 				<posy>545</posy>
-				<width>500</width>
+				<width>600</width>
 				<height>136</height>
 				<texture>colors/color_white.png</texture>
 				<colordiffuse>FanartDiffuse</colordiffuse>

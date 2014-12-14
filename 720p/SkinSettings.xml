@@ -91,8 +91,8 @@
 					</item>
 					
 					<item id="8">
-						<description>3rd party addons</description>
-						<label>3rd Party addons</label>
+						<description>Addons</description>
+						<label>Addons</label>
 						<onclick>-</onclick>
 					</item>
 
@@ -355,6 +355,16 @@
 				</control>
 				
 				<control type="radiobutton" id="121">
+					
+					<description>Background Visualiser</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Manage</label>
+					<onclick>Skin.ToggleSetting(ShowManageSection)</onclick>
+					<selected>Skin.HasSetting(ShowManageSection)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="122">
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
@@ -1227,7 +1237,7 @@
 
 			</control>
 			
-			<!--3rd Party Addons Options-->
+			<!--Addons Options-->
 			<control type="grouplist" id="800">
 				
 				<description>Control Area</description>
@@ -1250,7 +1260,7 @@
 				
 					<description></description>
 					<include>Common_Settings_Label</include>
-					<label>Built-in notifications</label>
+					<label>Built-in addons</label>
 					
 				</control>
 				

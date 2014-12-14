@@ -38,12 +38,14 @@
 				<orientation>horizontal</orientation>
 				<itemgap>20</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
+
+				<include>Common_Animation_Breadcrumb</include>
 				
 				<control type="button">
 					
 					<posy>12</posy>
-					<width>48</width>
-					<height>48</height>
+					<width>42</width>
+					<height>42</height>
 					<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 					<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
 					<colordiffuse>Label_Normal</colordiffuse>

@@ -5,7 +5,7 @@
 	<!--Splash Screen-->
 	<onload condition="!Skin.HasSetting(NoSplashScreen)">ActivateWindow(60)</onload>
 	
-	<include>Common_Animation_Window_Splash</include>
+	<include>Common_Animation_Window</include>
 
     <controls>
 	
