@@ -248,7 +248,7 @@
 							
 							<visible>Control.IsEnabled(6)</visible>
 
-							<include>Common_Control_Background</include>
+							
 							
 							<control type="button" id="6">
 								
@@ -284,7 +284,7 @@
 							
 							<visible>Control.IsEnabled(7)</visible>
 
-							<include>Common_Control_Background</include>
+							
 							
 							<control type="button" id="7">
 								
@@ -320,7 +320,7 @@
 							
 							<visible>Control.IsEnabled(8)</visible>
 
-							<include>Common_Control_Background</include>
+							
 							
 							<control type="button" id="8">
 								
@@ -356,7 +356,7 @@
 							
 							<visible>Control.IsEnabled(9)</visible>
 
-							<include>Common_Control_Background</include>
+							
 							
 							<control type="button" id="9">
 								
@@ -392,7 +392,7 @@
 							
 							<visible>Control.IsEnabled(10)</visible>
 							
-							<include>Common_Control_Background</include>
+							
 
 							<control type="button" id="10">
 								
@@ -428,7 +428,7 @@
 							
 							<visible>Control.IsEnabled(11)</visible>
 
-							<include>Common_Control_Background</include>
+							
 							
 							<control type="button" id="11">
 								

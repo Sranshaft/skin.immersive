@@ -40,7 +40,7 @@
 					
 					<description>Heading</description>
 					<posx>900</posx>
-					<label>Welcome to XBMC Immersive</label>
+					<label>Welcome to Immersive</label>
 					<width>590</width>
 					<font>Dialog-Header</font>
 					
@@ -51,7 +51,7 @@
 					<description>Line 1</description>
 					<width>900</width>
 					<height>40</height>
-					<label>Since this is your first time using [B]XBMC Immersive[/B], let's take a few moments to set it up.</label>
+					<label>Since this is your first time using [B]Immersive[/B], let's take a few moments to set it up.</label>
 					<font>Dialog-Detail</font>
 					<wrapmultiline>true</wrapmultiline>
 					
@@ -62,7 +62,7 @@
 					<description>Line 2</description>
 					<width>900</width>
 					<height>40</height>
-					<label>Here you will find all the options available to you to customise the appearance of [B]XBMC Immersive[/B] exactly how you want it.</label>
+					<label>Here you will find all the options available to you to customise the appearance of [B]Immersive[/B] exactly how you want it.</label>
 					<font>Dialog-Detail</font>
 					<wrapmultiline>true</wrapmultiline>
 					

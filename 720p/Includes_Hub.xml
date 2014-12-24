@@ -963,7 +963,7 @@
 				
 			</control>
 			
-			<control type="list" id="9005">
+			<control type="wraplist" id="9005">
 						
 				<posx>0</posx>
 				<posy>60</posy>
@@ -987,7 +987,7 @@
 						<posy>0</posy>
 						<width>286</width>
 						<height>420</height>
-						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true" fallback="fallbacks/fallback_movies.jpg">$INFO[ListItem.Thumb]</texture>
 						<aspectratio>stretch</aspectratio>
 						
 					</control>
@@ -1002,113 +1002,113 @@
 						<posy>0</posy>
 						<width>286</width>
 						<height>420</height>
-						<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true" fallback="fallbacks/fallback_movies.jpg">$INFO[ListItem.Thumb]</texture>
 						<aspectratio>stretch</aspectratio>
 						
 					</control>
 					
 				</focusedlayout>
+
+				<!--<content>plugin://script.extendedinfo.immersive?info=intheaters</content>-->
 				
 				<content>
-				
-					<!--Movies-->
-				
+
 					<item id="1">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.1.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.1.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.1.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.1.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.1.MPAA)]</property>
-						<property name="Rating">$INFO[Window(Home).Property(InCinemaMoviesRT.1.Rating)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InTheatersMovies.1.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InTheatersMovies.1.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InTheatersMovies.1.Duration),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InTheatersMovies.1.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InTheatersMovies.1.MPAA)]</property>
+						<property name="Rating">$INFO[Window(Home).Property(InTheatersMovies.1.Rating)]</property>
 					</item>
 
 					<item id="2">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.2.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.2.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.2.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.2.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.2.MPAA)]</property>
-						<property name="Rating">$INFO[Window(Home).Property(InCinemaMoviesRT.2.Rating)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InTheatersMovies.2.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InTheatersMovies.2.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InTheatersMovies.2.Duration),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InTheatersMovies.2.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InTheatersMovies.2.MPAA)]</property>
+						<property name="Rating">$INFO[Window(Home).Property(InTheatersMovies.2.Rating)]</property>
 					</item>
 					
 					<item id="3">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.3.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.3.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.3.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.3.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.3.MPAA)]</property>
-						<property name="Rating">$INFO[Window(Home).Property(InCinemaMoviesRT.3.Rating)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InTheatersMovies.3.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InTheatersMovies.3.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InTheatersMovies.3.Duration),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InTheatersMovies.3.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InTheatersMovies.3.MPAA)]</property>
+						<property name="Rating">$INFO[Window(Home).Property(InTheatersMovies.3.Rating)]</property>
 					</item>
 
 					<item id="4">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.4.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.4.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.4.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.4.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.4.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InTheatersMovies.4.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InTheatersMovies.4.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InTheatersMovies.4.Duration),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InTheatersMovies.4.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InTheatersMovies.4.MPAA)]</property>
 					</item>
 					
 					<item id="5">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.5.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.5.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.5.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.5.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.5.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InTheatersMovies.5.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InTheatersMovies.5.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InTheatersMovies.5.Duration),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InTheatersMovies.5.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InTheatersMovies.5.MPAA)]</property>
 					</item>
 
 					<item id="6">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.6.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.6.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.6.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.6.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.6.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InTheatersMovies.6.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InTheatersMovies.6.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InTheatersMovies.6.Duration),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InTheatersMovies.6.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InTheatersMovies.6.MPAA)]</property>
 					</item>
 					
 					<item id="7">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.7.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.7.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.7.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.7.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.7.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InTheatersMovies.7.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InTheatersMovies.7.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InTheatersMovies.7.Duration),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InTheatersMovies.7.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InTheatersMovies.7.MPAA)]</property>
 					</item>
 
 					<item id="8">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.8.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.8.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.8.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.8.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.8.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InTheatersMovies.8.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InTheatersMovies.8.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InTheatersMovies.8.Duration),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InTheatersMovies.8.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InTheatersMovies.8.MPAA)]</property>
 					</item>
 					
 					<item id="9">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.9.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.9.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.9.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.9.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.9.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InTheatersMovies.9.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InTheatersMovies.9.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InTheatersMovies.9.Duration),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InTheatersMovies.9.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InTheatersMovies.9.MPAA)]</property>
 					</item>
 
 					<item id="10">
 						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.10.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.10.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.10.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.10.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.10.MPAA)]</property>
+						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InTheatersMovies.10.Art(poster))]</thumb>
+						<label>$INFO[Window(Home).Property(InTheatersMovies.10.Title)]</label>
+						<label2>$INFO[Window(Home).Property(InTheatersMovies.10.Duration),, minutes]</label2>
+						<property name="Plot">$INFO[Window(Home).Property(InTheatersMovies.10.Plot)]</property>
+						<property name="MPAA">$INFO[Window(Home).Property(InTheatersMovies.10.MPAA)]</property>
 					</item>
-					
-				</content>
 
-			</control>
+				</content>-->	
+
+			</control>		
 			
 			<control type="group">
 			
@@ -1143,9 +1143,6 @@
 					<font>Menu-InCinemas-Large</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>
-					<wrapmultiline>true</wrapmultiline>
-					<shadowcolor>00FFFFFF</shadowcolor>
-					<autoscroll>false</autoscroll>
 					
 					<visible>!Control.HasFocus(9005)</visible>
 					
@@ -1172,6 +1169,7 @@
 					<posy>26</posy>
 					<width>266</width>
 					<height>24</height>
+					<!--<label>$INFO[Container(9005).ListItem.Property(Duration),, minutes]</label>-->
 					<label>$INFO[Container(9005).ListItem.Label2]</label>
 					<font>Menu-InCinemas-Small</font>
 					<textcolor>Label_Normal</textcolor>

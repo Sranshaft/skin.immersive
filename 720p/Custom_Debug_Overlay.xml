@@ -13,6 +13,16 @@
 			<visible>Skin.HasSetting(ShowDebugGrid)</visible>
 		</control>
 
+		<!--Top Area-->
+		<control type="image">
+				
+			<include>Common_Dimensions</include>
+			<texture>overlays/overlay_fullscreen_top.png</texture>
+
+			<visible>Skin.HasSetting(ShowDebugInfo)</visible>
+			
+		</control>
+
 		<control type="grouplist">
 			<posx>10</posx>
 			<posy>10</posy>
@@ -193,6 +203,13 @@
 				<include>PathID</include>
 				<label>$INFO[Player.FolderPath]</label>
 				<visible>!IsEmpty(Player.FolderPath)</visible>
+			</control>
+
+			<!--Container labels-->
+			
+			<control type="label">
+				<include>ContainerInfo</include>
+				<label>Container info: $INFO[Container.CurrentPage,Page:, of] $INFO[Container.NumPages] - $INFO[Container.Position,Item:, of] $INFO[Container.NumItems]</label>
 			</control>
 
 			<!--Window labels-->
@@ -552,6 +569,13 @@
 				<label>DialogKeyboard.xml</label>
 				<visible>Window.IsVisible(DialogKeyboard.xml)</visible>
 			</control>
+
+			<control type="label">
+				<include>DialogID</include>
+				<label>DialogMediaFilter.xml</label>
+				<visible>Window.IsVisible(DialogMediaFilter.xml)</visible>
+			</control>
+
 
 			<control type="label">
 				<include>DialogID</include>

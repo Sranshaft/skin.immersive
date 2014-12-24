@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<window type="dialog" id="67">
+<window type="dialog" id="68">
 
 	<defaultcontrol always="true">11</defaultcontrol>
 	<zorder>2</zorder>

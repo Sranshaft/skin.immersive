@@ -23,7 +23,6 @@
 			<!--Top Area-->
 			<include>Common_Breadcrumb</include>
 			<include>Common_Clock</include>
-			<include>Common_Overlay</include>
 			
 			<control type="grouplist">
 			
@@ -161,7 +160,7 @@
 				
 				<posx>360</posx>
 				<posy>200</posy>
-				<width>2</width>
+				<width>4</width>
 				<height>350</height>
 				<colordiffuse>Label_Highlight</colordiffuse>
 				

@@ -9,7 +9,7 @@
 	<zorder>2</zorder>
 	
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowAiringTodaySection_Video)">XBMC.RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingShows)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo.immersive) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo.immersive,info=trendingshows)</onload>
 	
 	<onload>AlarmClock(MoveFeatured,Control.Move(9001,1),00:20,silent,loop)</onload>
 	<onunload>XBMC.CancelAlarm(MoveFeatured,true)</onunload>

@@ -49,7 +49,7 @@
 			<control type="label">
 	
 				<include>Common_ContextMenu_Header</include>
-				<label>Menu</label>
+				<label>Power</label>
 				
 			</control>
 			

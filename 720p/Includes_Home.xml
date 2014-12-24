@@ -208,7 +208,7 @@
 						<posy>0</posy>
 						<width>140</width>
 						<height>140</height>
-						<texture border="10">list_unfocus.png</texture>
+						<texture border="10">list_focus.png</texture>
 						<colordiffuse>Background_Highlight</colordiffuse>
 						<aspectratio>scale</aspectratio>
 						
@@ -1915,7 +1915,7 @@
 						<posy>0</posy>
 						<width>140</width>
 						<height>140</height>
-						<texture border="10">list_unfocus.png</texture>
+						<texture border="10">list_focus.png</texture>
 						<colordiffuse>Background_Highlight</colordiffuse>
 						<aspectratio>scale</aspectratio>
 

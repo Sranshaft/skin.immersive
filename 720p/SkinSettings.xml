@@ -443,7 +443,7 @@
 					<label>In cinemas</label>
 					<onclick>Skin.ToggleSetting(ShowInCinemasSection_Video)</onclick>
 					<selected>Skin.HasSetting(ShowInCinemasSection_Video)</selected>
-					<enable>System.HasAddon(script.extendedinfo)</enable>
+					<enable>System.HasAddon(script.extendedinfo.immersive)</enable>
 					
 				</control>
 				
@@ -454,7 +454,7 @@
 					<label>Trending</label>
 					<onclick>Skin.ToggleSetting(ShowTrendingSection_Video)</onclick>
 					<selected>Skin.HasSetting(ShowTrendingSection_Video)</selected>
-					<enable>System.HasAddon(script.extendedinfo)</enable>
+					<enable>System.HasAddon(script.extendedinfo.immersive)</enable>
 					
 				</control>
 				
@@ -506,7 +506,7 @@
 					<label>Nearby events</label>
 					<onclick>Skin.ToggleSetting(ShowNearbyEventsSection_Music)</onclick>
 					<selected>Skin.HasSetting(ShowNearbyEventsSection_Music)</selected>
-					<enable>System.HasAddon(script.extendedinfo)</enable>
+					<enable>System.HasAddon(script.extendedinfo.immersive)</enable>
 					
 				</control>
 				
@@ -755,7 +755,7 @@
 						
 						<control type="image">
 						
-							<include>Common_Settings_Preview</include>
+							<include>Common_Settings_Preview_Selection</include>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
 							<visible>!Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
 							
@@ -773,7 +773,7 @@
 						<control type="image">
 							
 							<include>Common_Settings_Preview_Selection</include>
-							<texture border="10">button_unfocus.png</texture>
+							<texture border="10">list_focus.png</texture>
 							<colordiffuse>Background_Highlight</colordiffuse>
 							
 						</control>

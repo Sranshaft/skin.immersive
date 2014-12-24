@@ -31,7 +31,7 @@
 				<width>480</width>
 				<height>440</height>
 				<texture background="true">colors/color_white.png</texture>
-				<colordiffuse>Settings_Background_Dark</colordiffuse>
+				<colordiffuse>Settings_Background_Light</colordiffuse>
 				
 			</control>
 

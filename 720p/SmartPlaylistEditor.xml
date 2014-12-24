@@ -265,7 +265,7 @@
 						<width>400</width>
 						<height>60</height>
 
-						<include>Common_Control_Background</include>
+						
 						
 						<control type="button" id="13">
 							
@@ -299,7 +299,7 @@
 						<width>400</width>
 						<height>60</height>
 
-						<include>Common_Control_Background</include>
+						
 						
 						<control type="button" id="14">
 							
@@ -333,7 +333,7 @@
 						<width>400</width>
 						<height>60</height>
 
-						<include>Common_Control_Background</include>
+						
 						
 						<control type="button" id="15">
 							

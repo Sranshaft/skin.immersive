@@ -8,7 +8,7 @@
 	
 	<onload condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ShowHistorySection_Music)">XBMC.RunScript(script.randomandlastitems,limit=16,type=Music,method=Last,playlist=special://skin/playlists/History (Music).xsp,menu=Menu3)</onload>
 	
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowNearbyEventsSection_Music)">RunScript(script.extendedinfo,info=NearEvents)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo.immersive) + Skin.HasSetting(ShowNearbyEventsSection_Music)">RunScript(script.extendedinfo.immersive,info=NearEvents)</onload>
 	
 	<onload>AlarmClock(MoveFeatured,Control.Move(9001,1),00:30,silent,loop)</onload>
 	<onunload>XBMC.CancelAlarm(MoveFeatured,true)</onunload>

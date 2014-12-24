@@ -172,26 +172,26 @@
 		<font>
 			<name>DialogInfo-Header</name>
 			<filename>SegoeWP-SemiBold.ttf</filename>
-			<size>18</size>
+			<size>16</size>
 		</font>
 		
 		<font>
 			<name>DialogInfo-Label</name>
 			<filename>SegoeWP-SemiLight.ttf</filename>
-			<size>18</size>
+			<size>16</size>
 			<linespacing>0.92</linespacing>
 		</font>
 		
 		<font>
 			<name>DialogInfo-Header-Small</name>
 			<filename>SegoeWP-SemiBold.ttf</filename>
-			<size>16</size>
+			<size>14</size>
 		</font>
 		
 		<font>
 			<name>DialogInfo-Label-Small</name>
 			<filename>SegoeWP-SemiLight.ttf</filename>
-			<size>16</size>
+			<size>14</size>
 		</font>
 		
 		<!--Dropdown Fonts-->

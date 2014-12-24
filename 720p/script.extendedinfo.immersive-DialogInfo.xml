@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="3000">
+	
+	<defaultcontrol always="true">70</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<backgroundcolor>Settings_Background_Light</backgroundcolor>
+	
+	<include>Common_Animation_Window</include>
+	
+	<controls>
+	
+		<include>Common_Background_Information</include>
+		<include>Common_Breadcrumb_Dark</include>
+		
+		<!--Content Area-->
+		<control type="group">
+		
+			<posx>0</posx>
+			<posy>100</posy>
+			<width>1280</width>
+			<height>560</height>
+			
+			<!--Animation-->
+			<include>Common_Animation_Content</include>
+			
+			<animation type="Conditional" condition="Control.HasFocus(6) | Control.HasFocus(8) | Control.HasFocus(11) | Control.HasFocus(20) |Control.HasFocus(25) | [Skin.HasSetting(ShowManageMenu) + [System.GetBool(Input.EnableMouse) | Skin.HasSetting(UseTouchInput)]]">
+				<effect type="slide" start="0,0" end="400,0" time="400" delay="200" tween="cubic" easing="out"/>
+			</animation>
+			
+			<control type="grouplist">
+			
+				<include>Common_Content_Grouplist</include>
+			
+				<!--Information Section-->
+				<control type="group">
+
+					<width>380</width>
+					<height>560</height>
+					
+					<control type="group">
+					
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>380</width>
+						<height>500</height>
+				
+						<control type="image">
+								
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>380</width>
+							<height>500</height>
+							<texture background="true">colors/color_white.png</texture>
+							<colordiffuse>Background_Normal</colordiffuse>
+							
+						</control>
+						
+						<control type="image">
+								
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>380</width>
+							<height>380</height>
+							<texture background="true">$INFO[Window.Property(actor.Thumb)]</texture>
+							<aspectratio align="center" aligny="top">scale</aspectratio>
+							
+						</control>
+						
+						<control type="grouplist">
+						
+							<posx>20</posx>
+							<posy>180</posy>
+							<width>340</width>
+							<height>300</height>
+							<itemgap>0</itemgap>
+							<orientation>vertical</orientation>
+							<align>bottom</align>
+							<usecontrolcoords>true</usecontrolcoords>
+							
+							<control type="label">
+						
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>[B]Birthplace:[/B] $INFO[Window.Property(actor.PlaceOfBirth)]</label>
+								<visible>!IsEmpty(Window.Property(actor.PlaceOfBirth))</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>[B]Born:[/B] $INFO[Window.Property(actor.Birthday)] $INFO[Window.Property(actor.AgeLong), (,)]</label>
+								<visible>!IsEmpty(Window.Property(actor.Birthday))</visible>
+							
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_InfoDialog_Label_Small</include>
+								<label>[B]Died:[/B] $INFO[Window.Property(actor.Deathday)] $INFO[Window.Property(actor.DeathageLong), (,)]</label>
+								<visible>!IsEmpty(Window.Property(actor.Deathday))</visible>
+							
+							</control>
+							
+						</control>	
+					
+					</control>
+				
+				</control>
+				
+				<!--Overview Section-->
+				<control type="group">
+				
+					<width>380</width>
+					<height>560</height>
+				
+					<control type="label">
+						
+						<label>overview</label>
+						<include>Common_Section_Label_Dark</include>
+						
+					</control>
+				
+					<control type="textbox" id="60">
+							
+						<include>Common_InfoDialog_Description</include>
+						<width>340</width>
+						<height>470</height>
+						<label>$VAR[Info_Description]</label>
+						
+					</control>
+
+					<control type="button" id="70">
+
+						<posy>535</posy>
+						<width>340</width>
+						<height>20</height>
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<label>read more...</label>
+						<font>DialogInfo-Header</font>
+						<textcolor>Settings_Label</textcolor>
+						<focusedcolor>Label_Highlight</focusedcolor>
+						<disabledcolor>Label_Disabled</disabledcolor>
+						<textoffsetx>0</textoffsetx>
+						<textoffsety>6</textoffsety>
+						<align>left</align>
+						<aligny>top</aligny>
+						<onleft>-</onleft>
+						<onright condition="!ControlGroup(100).HasFocus(101) + !ControlGroup(100).HasFocus(102)">150</onright>
+						<onright condition="ControlGroup(100).HasFocus(101)">150</onright>
+						<onright condition="ControlGroup(100).HasFocus(102)">250</onright>
+						<onclick>ActivateWindow(67,return)</onclick>
+
+						<visible allowhiddenfocus="true">Control.IsVisible(71)</visible>
+
+					</control>	
+					
+					<!--Scrollbar-->
+					<control type="scrollbar" id="71">
+					
+						<include>Common_Settings_Scrollbar_Vertical</include>
+						
+						<posx>360</posx>
+						<posy>60</posy>
+						<height>500</height>
+						
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(71)">Conditional</animation>
+						
+					</control>	
+					
+				</control>
+				
+				<!-- Filmography Section-->
+				<control type="group">
+				
+					<width>400</width>
+					<height>560</height>
+
+					<control type="label">
+						
+						<label>filmography</label>
+						<include>Common_Section_Label_Dark</include>
+						
+					</control>
+
+					<control type="grouplist" id="100">
+
+						<posx>165</posx>
+						<posy>14</posy>
+						<orientation>horizontal</orientation>
+						<itemgap>0</itemgap>
+						<onup condition="ControlGroup(100).HasFocus(101)">150</onup>
+						<onup condition="ControlGroup(100).HasFocus(102)">250</onup>
+						<ondown condition="ControlGroup(100).HasFocus(101)">150</ondown>
+						<ondown condition="ControlGroup(100).HasFocus(102)">250</ondown>
+
+						<control type="button" id="101">
+							
+							<width>56</width>
+							<height>20</height>
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<label>movies</label>
+							<font>Menu-Similar-Plot</font>
+							<textcolor>Settings_Label</textcolor>
+							<focusedcolor>Label_Highlight</focusedcolor>
+							<selectedcolor>Label_Highlight</selectedcolor>
+							<disabledcolor>Label_Disabled</disabledcolor>
+							<textoffsetx>0</textoffsetx>
+							<textoffsety>6</textoffsety>
+							<onclick>SetProperty(ShowMovieList,true)</onclick>
+							
+						</control>
+
+						<control type="button" id="102">
+							
+							<width>100</width>
+							<height>20</height>
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<label>tv</label>
+							<font>Menu-Similar-Plot</font>
+							<textcolor>Settings_Label</textcolor>
+							<focusedcolor>Label_Highlight</focusedcolor>
+							<selectedcolor>Label_Highlight</selectedcolor>
+							<disabledcolor>Label_Disabled</disabledcolor>
+							<textoffsetx>0</textoffsetx>
+							<textoffsety>6</textoffsety>
+							<onclick>SetProperty(ShowMovieList,false)</onclick>
+							
+						</control>
+
+					</control>	
+
+					<control type="label">
+						
+						<posx>360</posx>
+						<label>$INFO[Container(150).NumItems]</label>
+						<include>Common_Section_Label_Right_Dark</include>
+
+						<animation effect="fade" start="0" end="100" time="200" reversible="true">Visible</animation>
+						<animation effect="fade" start="100" end="0" time="200" reversible="true">Hidden</animation>
+
+						<visible>ControlGroup(100).HasFocus(101) | [!ControlGroup(100).HasFocus(101) + !ControlGroup(100).HasFocus(102)]</visible>
+						
+					</control>
+					
+					<control type="panel" id="150">
+							
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>380</width>
+						<height>520</height>
+						<onleft>70</onleft>
+						<onright>350</onright>
+						<onup>100</onup>
+						<ondown>150</ondown>
+						<pagecontrol>81</pagecontrol>
+						<viewtype label="535">list</viewtype>
+						<scrolltime tween="cubic" easing="out">600</scrolltime>
+						<preloaditems>2</preloaditems>
+						<orientation>vertical</orientation>
+
+						<animation effect="fade" start="0" end="100" time="200" reversible="true">Visible</animation>
+						<animation effect="fade" start="100" end="0" time="200" reversible="true">Hidden</animation>
+
+						<visible>ControlGroup(100).HasFocus(101) | [!ControlGroup(100).HasFocus(101) + !ControlGroup(100).HasFocus(102)]</visible>
+						
+						<itemlayout width="380" height="130">
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								
+							</control>
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true" fallback="fallbacks/fallback_movies.png">$INFO[ListItem.Thumb]</texture>
+								<aspectratio>stretch</aspectratio>
+								
+							</control>
+
+							<control type="group">
+
+								<posx>0</posx>
+								<posy>78</posy>
+								<width>32</width>
+								<height>32</height>
+
+								<visible>!IsEmpty(ListItem.Property(DBID))</visible>
+
+								<control type="image">
+	
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>32</width>
+									<height>32</height>
+									<texture>colors/color_white.png</texture>
+									<colordiffuse>Background_Highlight</colordiffuse>
+									
+								</control>
+								
+								<control type="image">
+							
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>32</width>
+									<height>32</height>
+									<texture>OverlayInDatabase.png</texture>
+									
+								</control>
+
+							</control>	
+							
+							<control type="group">
+							
+								<posx>100</posx>
+								<posy>-10</posy>
+								<width>240</width>
+								<height>110</height>
+							
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>240</width>
+									<height>24</height>
+									<label>$INFO[ListItem.Label]</label>
+									<font>Menu-Similar-Header</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>24</posy>
+									<width>240</width>
+									<height>20</height>
+									<label>$INFO[ListItem.Property(Year)]</label>
+									<font>Menu-Similar-Detail</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>44</posy>
+									<width>240</width>
+									<height>80</height>
+									<label>$INFO[ListItem.Property(Character),as ,]</label>
+									<font>Menu-Similar-Plot</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+							</control>
+							
+						</itemlayout>
+
+						<focusedlayout width="380" height="260">
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								
+							</control>
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true" fallback="fallbacks/fallback_movies.png">$INFO[ListItem.Thumb]</texture>
+								<aspectratio>stretch</aspectratio>
+								
+							</control>
+
+							<control type="group">
+
+								<posx>0</posx>
+								<posy>78</posy>
+								<width>32</width>
+								<height>32</height>
+
+								<visible>!IsEmpty(ListItem.Property(DBID))</visible>
+
+								<control type="image">
+	
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>32</width>
+									<height>32</height>
+									<texture>colors/color_white.png</texture>
+									<colordiffuse>Background_Highlight</colordiffuse>
+									
+								</control>
+								
+								<control type="image">
+							
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>32</width>
+									<height>32</height>
+									<texture>OverlayInDatabase.png</texture>
+									
+								</control>
+
+							</control>	
+							
+							<control type="group">
+							
+								<posx>100</posx>
+								<posy>-10</posy>
+								<width>240</width>
+								<height>110</height>
+							
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>240</width>
+									<height>24</height>
+									<label>$INFO[ListItem.Label]</label>
+									<font>Menu-Similar-Header</font>
+									<textcolor>Label_Highlight</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>24</posy>
+									<width>240</width>
+									<height>20</height>
+									<label>$INFO[ListItem.Property(Year)]</label>
+									<font>Menu-Similar-Detail</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>44</posy>
+									<width>240</width>
+									<height>80</height>
+									<label>$INFO[ListItem.Property(Character),as ,]</label>
+									<font>Menu-Similar-Plot</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+							</control>	
+
+						</focusedlayout>
+						
+					</control>	
+				
+					<!--Scrollbar-->
+					<control type="scrollbar" id="81">
+					
+						<include>Common_Settings_Scrollbar_Vertical</include>
+						
+						<posx>380</posx>
+						<posy>60</posy>
+						<height>500</height>
+						
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(81).Scrolling">Conditional</animation>
+						<animation effect="fade" start="0" end="100" time="200" reversible="true">Visible</animation>
+						<animation effect="fade" start="100" end="0" time="200" reversible="true">Hidden</animation>
+
+						<visible>ControlGroup(100).HasFocus(101) | [!ControlGroup(100).HasFocus(101) + !ControlGroup(100).HasFocus(102)]</visible>
+						
+					</control>
+
+					<control type="label">
+						
+						<posx>360</posx>
+						<label>$INFO[Container(250).NumItems]</label>
+						<include>Common_Section_Label_Right_Dark</include>
+
+						<animation effect="fade" start="0" end="100" time="200" reversible="true">Visible</animation>
+						<animation effect="fade" start="100" end="0" time="200" reversible="true">Hidden</animation>
+
+						<visible>ControlGroup(100).HasFocus(102)</visible>
+						
+					</control>
+
+					<control type="panel" id="250">
+							
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>380</width>
+						<height>520</height>
+						<onleft>70</onleft>
+						<onright>350</onright>
+						<onup>100</onup>
+						<ondown>250</ondown>
+						<pagecontrol>82</pagecontrol>
+						<viewtype label="535">list</viewtype>
+						<scrolltime tween="cubic" easing="out">600</scrolltime>
+						<preloaditems>2</preloaditems>
+						<orientation>vertical</orientation>
+
+						<animation effect="fade" start="0" end="100" time="200" reversible="true">Visible</animation>
+						<animation effect="fade" start="100" end="0" time="200" reversible="true">Hidden</animation>
+
+						<visible>ControlGroup(100).HasFocus(102)</visible>
+						
+						<itemlayout width="380" height="130">
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								
+							</control>
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true" fallback="fallbacks/fallback_movies.png">$INFO[ListItem.Thumb]</texture>
+								<aspectratio>stretch</aspectratio>
+								
+							</control>
+
+							<control type="group">
+
+								<posx>0</posx>
+								<posy>78</posy>
+								<width>32</width>
+								<height>32</height>
+
+								<visible>!IsEmpty(ListItem.Property(DBID))</visible>
+
+								<control type="image">
+	
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>32</width>
+									<height>32</height>
+									<texture>colors/color_white.png</texture>
+									<colordiffuse>Background_Highlight</colordiffuse>
+									
+								</control>
+								
+								<control type="image">
+							
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>32</width>
+									<height>32</height>
+									<texture>OverlayInDatabase.png</texture>
+									
+								</control>
+
+							</control>	
+							
+							<control type="group">
+							
+								<posx>100</posx>
+								<posy>-10</posy>
+								<width>240</width>
+								<height>110</height>
+							
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>240</width>
+									<height>24</height>
+									<label>$INFO[ListItem.Label]</label>
+									<font>Menu-Similar-Header</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>24</posy>
+									<width>240</width>
+									<height>20</height>
+									<label>$INFO[ListItem.Property(Year)]</label>
+									<font>Menu-Similar-Detail</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>44</posy>
+									<width>240</width>
+									<height>80</height>
+									<label>$INFO[ListItem.Property(Character),as ,]</label>
+									<font>Menu-Similar-Plot</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+							</control>
+							
+						</itemlayout>
+
+						<focusedlayout width="380" height="260">
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								
+							</control>
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>110</height>
+								<texture background="true" fallback="fallbacks/fallback_movies.png">$INFO[ListItem.Thumb]</texture>
+								<aspectratio>stretch</aspectratio>
+								
+							</control>
+
+							<control type="group">
+
+								<posx>0</posx>
+								<posy>78</posy>
+								<width>32</width>
+								<height>32</height>
+
+								<visible>!IsEmpty(ListItem.Property(DBID))</visible>
+
+								<control type="image">
+	
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>32</width>
+									<height>32</height>
+									<texture>colors/color_white.png</texture>
+									<colordiffuse>Background_Highlight</colordiffuse>
+									
+								</control>
+								
+								<control type="image">
+							
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>32</width>
+									<height>32</height>
+									<texture>OverlayInDatabase.png</texture>
+									
+								</control>
+
+							</control>	
+							
+							<control type="group">
+							
+								<posx>100</posx>
+								<posy>-10</posy>
+								<width>240</width>
+								<height>110</height>
+							
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>240</width>
+									<height>24</height>
+									<label>$INFO[ListItem.Label]</label>
+									<font>Menu-Similar-Header</font>
+									<textcolor>Label_Highlight</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>24</posy>
+									<width>240</width>
+									<height>20</height>
+									<label>$INFO[ListItem.Property(Year)]</label>
+									<font>Menu-Similar-Detail</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+								<control type="textbox">
+								
+									<posx>0</posx>
+									<posy>44</posy>
+									<width>240</width>
+									<height>80</height>
+									<label>$INFO[ListItem.Property(Character),as ,]</label>
+									<font>Menu-Similar-Plot</font>
+									<textcolor>Settings_Label</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+							</control>	
+
+						</focusedlayout>
+						
+					</control>	
+				
+					<!--Scrollbar-->
+					<control type="scrollbar" id="82">
+					
+						<include>Common_Settings_Scrollbar_Vertical</include>
+						
+						<posx>380</posx>
+						<posy>60</posy>
+						<height>500</height>
+						
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(82).Scrolling">Conditional</animation>
+						<animation effect="fade" start="0" end="100" time="200" reversible="true">Visible</animation>
+						<animation effect="fade" start="100" end="0" time="200" reversible="true">Hidden</animation>
+
+						<visible>ControlGroup(100).HasFocus(102)</visible>
+						
+					</control>
+
+				</control>
+
+				<!-- YouTube Video Section-->
+				<control type="group">
+				
+					<width>446</width>
+					<height>560</height>
+					
+					<control type="label">
+						
+						<label>youtube</label>
+						<include>Common_Section_Label_Dark</include>
+						
+					</control>
+					
+					<control type="label">
+						
+						<posx>406</posx>
+						<label>$INFO[Container(350).NumItems]</label>
+						<include>Common_Section_Label_Right_Dark</include>
+						
+					</control>
+					
+					<control type="panel" id="350">
+							
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>426</width>
+						<height>520</height>
+						<onleft condition="!ControlGroup(100).HasFocus(101) + !ControlGroup(100).HasFocus(102)">150</onleft>
+						<onleft condition="ControlGroup(100).HasFocus(101)">150</onleft>
+						<onleft condition="ControlGroup(100).HasFocus(102)">250</onleft>
+						<onright>450</onright>
+						<onup>350</onup>
+						<ondown>350</ondown>
+						<pagecontrol>83</pagecontrol>
+						<viewtype label="535">list</viewtype>
+						<scrolltime tween="cubic" easing="out">600</scrolltime>
+						<preloaditems>2</preloaditems>
+						<orientation>vertical</orientation>
+						
+						<itemlayout width="426" height="260">
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>406</width>
+								<height>240</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								
+							</control>
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>406</width>
+								<height>240</height>
+								<texture background="true" fallback="fallbacks/fallback_movies.png">$INFO[ListItem.Icon]</texture>
+								<aspectratio align="center" aligny="top">scale</aspectratio>
+								
+							</control>	
+							
+							<control type="group">
+							
+								<posx>0</posx>
+								<posy>180</posy>
+								<width>406</width>
+								<height>60</height>
+							
+								<control type="image">
+						
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>406</width>
+									<height>60</height>
+									<texture>colors/color_white.png</texture>
+									<colordiffuse>FanartDiffuse</colordiffuse>
+									
+								</control>
+									
+								<control type="textbox">
+									
+									<posx>10</posx>
+									<posy>4</posy>
+									<width>386</width>
+									<height>42</height>
+									<label>$INFO[ListItem.Label]</label>
+									<font>Menu-Similar-Header</font>
+									<textcolor>Label_Normal</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+							</control>
+							
+						</itemlayout>
+
+						<focusedlayout width="426" height="260">
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>406</width>
+								<height>240</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								
+							</control>
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>406</width>
+								<height>240</height>
+								<texture background="true" fallback="fallbacks/fallback_movies.png">$INFO[ListItem.Icon]</texture>
+								<aspectratio align="center" aligny="top">scale</aspectratio>
+								
+							</control>	
+							
+							<control type="group">
+							
+								<posx>0</posx>
+								<posy>180</posy>
+								<width>406</width>
+								<height>60</height>
+							
+								<control type="image">
+						
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>406</width>
+									<height>60</height>
+									<texture>colors/color_white.png</texture>
+									<colordiffuse>FanartDiffuse</colordiffuse>
+									
+								</control>
+									
+								<control type="textbox">
+									
+									<posx>10</posx>
+									<posy>4</posy>
+									<width>386</width>
+									<height>42</height>
+									<label>$INFO[ListItem.Label]</label>
+									<font>Menu-Similar-Header</font>
+									<textcolor>Label_Highlight</textcolor>
+									<aligny>top</aligny>
+									
+								</control>
+								
+							</control>	
+
+						</focusedlayout>
+						
+					</control>	
+				
+					<!--Scrollbar-->
+					<control type="scrollbar" id="83">
+					
+						<include>Common_Settings_Scrollbar_Vertical</include>
+						
+						<posx>426</posx>
+						<posy>60</posy>
+						<height>500</height>
+						
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(83).Scrolling">Conditional</animation>
+						
+					</control>	
+					
+				</control>
+
+				<!-- Images Section-->
+				<control type="group">
+				
+					<width>540</width>
+					<height>560</height>
+					
+					<control type="label">
+						
+						<label>images</label>
+						<include>Common_Section_Label_Dark</include>
+						
+					</control>
+					
+					<control type="label">
+						
+						<posx>500</posx>
+						<label>$INFO[Container(450).NumItems]</label>
+						<include>Common_Section_Label_Right_Dark</include>
+						
+					</control>
+					
+					<control type="panel" id="450">
+							
+						<posx>0</posx>
+						<posy>60</posy>
+						<width>520</width>
+						<height>520</height>
+						<onleft>350</onleft>
+						<onright>-</onright>
+						<onup>450</onup>
+						<ondown>450</ondown>
+						<pagecontrol>84</pagecontrol>
+						<viewtype label="535">list</viewtype>
+						<scrolltime tween="cubic" easing="out">600</scrolltime>
+						<preloaditems>2</preloaditems>
+						<orientation>vertical</orientation>
+						
+						<itemlayout width="260" height="260">
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>240</width>
+								<height>240</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								
+							</control>
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>240</width>
+								<height>240</height>
+								<texture background="true" fallback="fallbacks/fallback_movies.png">$INFO[ListItem.Icon]</texture>
+								<aspectratio align="center" aligny="top">scale</aspectratio>
+								
+							</control>
+							
+						</itemlayout>
+
+						<focusedlayout width="426" height="260">
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>240</width>
+								<height>240</height>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								
+							</control>
+						
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>240</width>
+								<height>240</height>
+								<texture background="true" fallback="fallbacks/fallback_movies.png">$INFO[ListItem.Icon]</texture>
+								<aspectratio align="center" aligny="top">scale</aspectratio>
+								
+							</control>
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>240</width>
+								<height>240</height>
+								<texture border="10">list_focus.png</texture>
+								<colordiffuse>Background_Highlight</colordiffuse>
+
+							</control>
+
+						</focusedlayout>
+						
+					</control>	
+				
+					<!--Scrollbar-->
+					<control type="scrollbar" id="84">
+					
+						<include>Common_Settings_Scrollbar_Vertical</include>
+						
+						<posx>520</posx>
+						<posy>60</posy>
+						<height>500</height>
+						
+						<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(84).Scrolling">Conditional</animation>
+						
+					</control>	
+					
+				</control>
+				
+			</control>
+			
+		</control>
+
+		<control type="list" id="250">
+		
+			<visible>false</visible>
+			<visible allowhiddenfocus="true">false</visible>
+			
+		</control>
+
+		<control type="list" id="550">
+		
+			<visible>false</visible>
+			<visible allowhiddenfocus="true">false</visible>
+			
+		</control>
+
+		<control type="list" id="650">
+		
+			<visible>false</visible>
+			<visible allowhiddenfocus="true">false</visible>
+			
+		</control>
+
+		<control type="list" id="750">
+		
+			<visible>false</visible>
+			<visible allowhiddenfocus="true">false</visible>
+			
+		</control>
+
+	</controls>
+
+</window>

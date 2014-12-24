@@ -41,7 +41,7 @@
 
 				<posx>60</posx>
 				<posy>20</posy>
-				<width>1080</width>
+				<width>1200</width>
 				<height>60</height>
 				<itemgap>20</itemgap>
 				<orientation>horizontal</orientation>

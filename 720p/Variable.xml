@@ -21,19 +21,19 @@
 		<value condition="StringCompare(Window.Property(xmlfile),DialogAddonInfo.xml)">$INFO[ListItem.Property(Addon.Name)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogAlbumInfo.xml) + Container.Content(artists)">$INFO[ListItem.Artist]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogAlbumInfo.xml) + Container.Content(albums)">$INFO[ListItem.Album]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),DialogButtonMenu.xml)">XBMC</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogButtonMenu.xml)">Kodi</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogContentSettings.xml)">$LOCALIZE[20333]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogFavourites.xml)">$LOCALIZE[1036]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),DialogFullScreenInfo.xml)">XBMC Video</value>
-		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasVideo">XBMC Video</value>
-		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasAudio">XBMC Music</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogFullScreenInfo.xml)">Kodi Video</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasVideo">Kodi Video</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasAudio">Kodi Music</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSelect.xml)">$INFO[Control.GetLabel(1)]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsOSD.xml)">XBMC TV</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsOSD.xml)">Kodi TV</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogVideoInfo.xml)">$INFO[ListItem.Title]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),FileBrowser.xml)">$INFO[Control.GetLabel(411)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),FileManager.xml)">$LOCALIZE[7]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),MusicOSD.xml)">XBMC Music</value>
-		<value condition="StringCompare(Window.Property(xmlfile),MusicVisualisation.xml)">XBMC Music</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MusicOSD.xml)">Kodi Music</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MusicVisualisation.xml)">Kodi Music</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyGames.xml)">$LOCALIZE[15016]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPics.xml)">$LOCALIZE[1]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml)">$LOCALIZE[31502]</value>
@@ -44,21 +44,22 @@
 		<value condition="StringCompare(Window.Property(xmlfile),MyPrograms.xml)">$LOCALIZE[1043]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyVideoPlaylist.xml)">$LOCALIZE[20012]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyMusicPlaylist.xml)">$LOCALIZE[20011]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),MyWeather.xml)">XBMC Weather</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyWeather.xml)">Kodi Weather</value>
 		<value condition="StringCompare(Window.Property(xmlfile),SettingsCategory.xml) | StringCompare(Window.Property(xmlfile),Custom_52_Skin_Settings.xml)">$LOCALIZE[5]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),SettingsSystemInfo.xml)">$LOCALIZE[130]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),Slideshow.xml)">XBMC Pictures</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Slideshow.xml)">Kodi Pictures</value>
 		<value condition="StringCompare(Window.Property(xmlfile),SmartPlaylistEditor.xml)">$LOCALIZE[21432]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),VideoOSD.xml)">XBMC Video</value>
-		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDBookmarks.xml)">XBMC Video</value>
-		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDSettings.xml)">XBMC Video</value>
-		<value condition="StringCompare(Window.Property(xmlfile),VisualisationPresetList.xml)">XBMC Music</value>
+		<value condition="StringCompare(Window.Property(xmlfile),VideoOSD.xml)">Kodi Video</value>
+		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDBookmarks.xml)">Kodi Video</value>
+		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDSettings.xml)">Kodi Video</value>
+		<value condition="StringCompare(Window.Property(xmlfile),VisualisationPresetList.xml)">Kodi Music</value>
 		
 		<!--Addon Specfic Variables-->
 
-		<value condition="SubString(Window.Property(xmlfile),script-Actors-DialogInfo.xml)">$INFO[Listitem.Title]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-Actors-DialogVideoInfo.xml)">$INFO[Listitem.Title]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-Actors-Browser.xml)">Image Browser</value>
+		<value condition="SubString(Window.Property(xmlfile),script.extendedinfo.immersive-DialogInfo.xml)">$INFO[Window.Property(actor.Title)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script.extendedinfo.immersive-DialogVideoInfo.xml)">$INFO[Window.Property(movie.Title)]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-main.xml)">Global Search</value>
 		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-infodialog.xml)">$INFO[Container(100).ListItem.Label]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-NextAired-TVGuide)">Next Aired TV Guide</value>
@@ -369,20 +370,26 @@
 		<value condition="Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
 		<value condition="Container.Content(plugins) + !IsEmpty(ListItem.Property(Addon.Description))">$INFO[ListItem.Property(Addon.Description)]</value>
+		<value condition="SubString(Window.Property(xmlfile),Custom_Plot.xml) + !IsEmpty(Window(Home).Property(actor.Biography))">$INFO[Window(Home).Property(actor.Biography)]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(10)">$INFO[Container(10).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(11)">$INFO[Container(11).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(12)">$INFO[Container(12).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(13)">$INFO[Container(13).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(14)">$INFO[Container(14).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(15)">$INFO[Container(15).ListItem.Plot]</value>
-		<value condition="SubString(Window.Property(xmlfile),script-Actors-DialogInfo.xml) + !IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
-		<value condition="SubString(Window.Property(xmlfile),script-Actors-DialogVideoInfo.xml) + !IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
+		<value condition="SubString(Window.Property(xmlfile),script.extendedinfo.immersive-DialogInfo.xml) + !IsEmpty(Window.Property(actor.Biography))">$INFO[Window.Property(actor.Biography)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script.extendedinfo.immersive-DialogVideoInfo.xml) + !IsEmpty(Window.Property(movie.Plot))">$INFO[Window.Property(movie.Plot)]</value>
 		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + [Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(150)]">$INFO[Container(100).ListItem.Property(Plot)]</value>
 		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + Control.IsVisible(160)">$INFO[Container(100).ListItem.Property(Artist_Description)]</value>
 		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + Control.IsVisible(170)">$INFO[Container(100).ListItem.Property(Album_Description)]</value>
 		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + Control.IsVisible(180)">$INFO[Container(100).ListItem.Property(Comment)]</value>
 		<value>Description not available</value>
 	</variable>
+
+	<variable name="Info_Similar">
+		<value condition="Container.Content(movies)">plugin://script.extendedinfo.immersive?info=similar&amp;&amp;dbid=$INFO[ListItem.DBID]&amp;&amp;type=movie</value>
+		<value condition="Container.Content(tvshows)">plugin://script.extendedinfo.immersive?info=similar&amp;&amp;dbid=$INFO[ListItem.DBID]&amp;&amp;type=show</value>
+	</variable>	
 	
 	<!--Kai Variables-->
 	
@@ -604,7 +611,7 @@
 		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + !IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
 		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
 		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
-		<value condition="Container.Content(episodes)">$INFO[ListItem.Episode,,.] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Title)">$INFO[ListItem.Episode,,.] $INFO[ListItem.Title]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,,.] $INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
 

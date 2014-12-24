@@ -3,30 +3,48 @@
 <window type="dialog" id="58">
 
 	<defaultcontrol always="true">50</defaultcontrol>
+	<backgroundcolor>0xff000000</backgroundcolor>
 	<zorder>2</zorder>
 	
-	<onload condition="System.HasAddon(script.extendedinfo) + !Window.Previous(movieinformation)">RunScript(script.extendedinfo,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + !Window.Previous(movieinformation)">RunScript(script.extendedinfo,info=Similar,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
+	<onload condition="System.HasAddon(script.extendedinfo.immersive)">RunScript(script.extendedinfo.immersive,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
+	<onload condition="System.HasAddon(script.extendedinfo.immersive)">RunScript(script.extendedinfo.immersive,info=Similar,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
 
 	<include>Common_Animation_Window</include>
 	
 	<controls>
-	
-		<!--Background-->
+
 		<control type="image">
-				
+					
 			<include>Common_Dimensions</include>
 			<texture>colors/color_white.png</texture>
-			<colordiffuse>Background_Normal</colordiffuse>
+			<colordiffuse>Black</colordiffuse>
+
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="400" delay="200"/>
+			</animation>
 			
 		</control>
-		
+
+		<!--Background-->
 		<control type="group">
 		
 			<animation effect="slide" start="0,0" end="-1020,0" time="600" tween="cubic" easing="out" condition="Window.IsVisible(57) + [Control.HasFocus(51) | Control.HasFocus(581) | Control.HasFocus(52) | Control.HasFocus(53)]">Conditional</animation>
 			
 			<animation effect="slide" start="0,0" end="-200,0" time="600" tween="cubic" easing="out" condition="!Window.IsVisible(57) + [Control.HasFocus(51) | Control.HasFocus(581) | Control.HasFocus(52) | Control.HasFocus(53)]">Conditional</animation>
-		
+
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="400"/>
+				<effect type="slide" start="0,0" end="-1280,0" time="400" tween="cubic" easing="in"/>
+			</animation>
+
+			<control type="image">
+					
+				<include>Common_Dimensions</include>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Background_Normal</colordiffuse>
+				
+			</control>
+
 			<control type="image">
 	
 				<include>Common_Dimensions</include>

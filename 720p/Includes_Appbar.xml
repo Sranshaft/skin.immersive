@@ -920,22 +920,6 @@
 
 	</include>
 
-	<include name="Common_AppBar_OSD_Button">
-	
-		<width>48</width>
-		<height>48</height>
-		<font>Appbar-Label-Small</font>
-		<textcolor>Label_Normal</textcolor>
-		<focusedcolor>Label_Normal</focusedcolor>
-		<disabledcolor>Label_Disabled</disabledcolor>
-		<align>center</align>
-		<aligny>top</aligny>
-		<textoffsetx>-4</textoffsetx>
-		<textoffsety>54</textoffsety>
-		<wrapmultiline>true</wrapmultiline>
-
-	</include>
-	
 	<include name="Common_AppBar_Button_Small">
 	
 		<width>32</width>
@@ -952,6 +936,22 @@
 		<wrapmultiline>true</wrapmultiline>
 		<onup>SetFocus(50)</onup>
 		
+	</include>
+
+	<include name="Common_AppBar_OSD_Button">
+	
+		<width>48</width>
+		<height>48</height>
+		<font>Appbar-Label-Small</font>
+		<textcolor>Label_Normal</textcolor>
+		<focusedcolor>Label_Normal</focusedcolor>
+		<disabledcolor>Label_Disabled</disabledcolor>
+		<align>center</align>
+		<aligny>top</aligny>
+		<textoffsetx>-4</textoffsetx>
+		<textoffsety>54</textoffsety>
+		<wrapmultiline>true</wrapmultiline>
+
 	</include>
 	
 	<include name="Common_AppBar_Divider">

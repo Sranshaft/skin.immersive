@@ -29,8 +29,8 @@
 			<width>320</width>
 			<height>720</height>
 			
-			<animation effect="slide" start="0,0" end="-320,0" time="400" tween="cubic" easing="out">WindowOpen</animation>
-			<animation effect="slide" start="-320,0" end="0,0" time="200" tween="cubic" easing="in">WindowClose</animation>
+			<animation effect="slide" start="0,0" end="-320,0" time="400" tween="cubic" easing="out" condition="!Window.Previous(videobookmarks)">WindowOpen</animation>
+			<animation effect="slide" start="-320,0" end="0,0" time="200" tween="cubic" easing="in" condition="!Window.Previous(videobookmarks)">WindowClose</animation>
 		
 			<!--Background-->
 			<control type="image">
@@ -66,8 +66,8 @@
 					
 					<include>Common_ContextMenu_Button</include>
 					<label>$VAR[ContextMenu_MetaActors_Label]</label>
-					<onclick>RunScript(script.metadata.actors,$INFO[ListItem.Label])</onclick>
-					<visible>System.HasAddon(script.metadata.actors) + [Container.Content(actors) | Container.Content(directors) | Container.Content(artists)]</visible>
+					<onclick>XBMC.RunScript(script.extendedinfo.immersive,info=extendedactorinfo,name=$INFO[ListItem.Label])</onclick>
+					<visible>System.HasAddon(script.extendedinfo.immersive) + [Container.Content(actors) | Container.Content(directors) | Container.Content(artists)]</visible>
 					
 				</control>
 				

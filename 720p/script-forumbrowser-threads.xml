@@ -65,7 +65,7 @@
 					
 					<visible>Control.IsVisible(200)</visible>
 
-					<include>Common_Control_Background</include>
+					
 					
 					<control type="button" id="200">
 						
@@ -100,7 +100,7 @@
 					
 					<visible>Control.IsVisible(202)</visible>
 
-					<include>Common_Control_Background</include>
+					
 					
 					<control type="button" id="202">
 						
@@ -134,7 +134,7 @@
 					
 					<visible>Control.IsVisible(105)</visible>
 
-					<include>Common_Control_Background</include>
+					
 					
 					<control type="button" id="105">
 						

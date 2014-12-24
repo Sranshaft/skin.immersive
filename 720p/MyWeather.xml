@@ -4,21 +4,36 @@
 	
 	<include>Common_Window</include>
 	<include>Common_Animation_Window</include>
-	
+
 	<controls>
 
-		<!--Background-->
 		<control type="image">
-				
+					
 			<include>Common_Dimensions</include>
 			<texture>colors/color_white.png</texture>
-			<colordiffuse>Background_Normal</colordiffuse>
+			<colordiffuse>Black</colordiffuse>
+
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="400" delay="200"/>
+			</animation>
 			
 		</control>
-		
+
+		<!--Background-->
 		<control type="group">
-		
-			<visible>Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))</visible>
+
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="400"/>
+				<effect type="slide" start="0,0" end="-1280,0" time="400" tween="cubic" easing="in"/>
+			</animation>
+
+			<control type="image">
+					
+				<include>Common_Dimensions</include>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Background_Normal</colordiffuse>
+				
+			</control>
 		
 			<control type="multiimage">
 				
@@ -27,6 +42,8 @@
 				<timeperimage>10000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
+
+				<visible>Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))</visible>
 				
 			</control>
 			

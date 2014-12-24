@@ -35,19 +35,34 @@
 	<!--	      Debug Includes (Delete)			-->
 	<!--											-->
 	
-	<include name="PathID">
+	<include name="ContainerInfo">
 		<width>520</width>
 		<height>14</height>
-		<textcolor>White</textcolor>
+		<textcolor>Green</textcolor>
 		<shadowcolor>Black</shadowcolor>
 		<align>left</align>
 	</include>
-
 
 	<include name="ContentType">
 		<width>520</width>
 		<height>14</height>
 		<textcolor>Red</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+	</include>
+
+	<include name="DialogID">
+		<width>520</width>
+		<height>14</height>
+		<textcolor>Green</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+	</include>
+
+	<include name="PathID">
+		<width>520</width>
+		<height>14</height>
+		<textcolor>White</textcolor>
 		<shadowcolor>Black</shadowcolor>
 		<align>left</align>
 	</include>
@@ -60,14 +75,6 @@
 		<align>left</align>
 	</include>
 
-	<include name="DialogID">
-		<width>520</width>
-		<height>14</height>
-		<textcolor>Green</textcolor>
-		<shadowcolor>Black</shadowcolor>
-		<align>left</align>
-	</include>
-	
 	<include name="HiddenButton">
 		<posx>-20</posx>
 		<posy>-20</posy>
@@ -245,6 +252,18 @@
 		</control>
 		
 	</include>
+
+	<include name="Common_Background_Information">
+
+		<control type="image">
+		
+			<include>Common_Dimensions</include>
+			<texture background="true">dialoginfo/dialoginfo_background.png</texture>
+			<colordiffuse>Settings_Background_Dark</colordiffuse>
+			
+		</control>
+
+	</include>	
 	
 	<include name="Common_Bottom">
 	
@@ -482,7 +501,7 @@
 		<aligny>center</aligny>
 		
 	</include>
-	
+
 	<include name="Common_ContextMenu_Header">
 	
 		<posx>80</posx>
@@ -515,12 +534,12 @@
 
 	<include name="Common_Control_Background">
 
-		<control type="image">
+		<!--<control type="image">
 							
 			<include>Common_Control_Image</include>
 			<texture>colors/color_keyboard_dark.png</texture>
 							
-		</control>
+		</control>-->
 
 	</include>	
 	
@@ -528,11 +547,10 @@
 	
 		<width>60</width>
 		<height>60</height>
-		<texturefocus>colors/color_white.png</texturefocus>
-		<texturenofocus>-</texturenofocus>
-		<alttexturefocus>colors/color_white.png</alttexturefocus>
-		<alttexturenofocus>-</alttexturenofocus>
-		<colordiffuse>Background_Highlight</colordiffuse>
+		<texturefocus colordiffuse="Background_Highlight">colors/color_white.png</texturefocus>
+		<texturenofocus colordiffuse="FF222222">colors/color_white.png</texturenofocus>
+		<alttexturefocus colordiffuse="Background_Highlight">colors/color_white.png</alttexturefocus>
+		<alttexturenofocus>colors/color_keyboard_dark.png</alttexturenofocus>
 		<disabledcolor>Label_Disabled</disabledcolor>
 		<textcolor>Transparent</textcolor>
 		<visible allowhiddenfocus="true">true</visible>
@@ -1840,6 +1858,7 @@
 
 		<defaultcontrol always="true">50</defaultcontrol>
 		<allowoverlay>yes</allowoverlay>
+		<backgroundcolor>0xff000000</backgroundcolor>
 
 		<!--Splash Screen-->
 		<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
