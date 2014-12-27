@@ -248,12 +248,10 @@
 							
 							<visible>Control.IsEnabled(6)</visible>
 
-							
-							
 							<control type="button" id="6">
 								
 								<include>Common_Control_Button</include>
-								<onup>11</onup>
+								<onup>12</onup>
 								<ondown>7</ondown>
 								<onright>-</onright>
 								<onleft>9001</onleft>
@@ -270,7 +268,7 @@
 							<control type="label">
 							
 								<include>Common_Control_Label</include>
-								<label>$INFO[Control.GetLabel(6)]</label>
+								<label>$LOCALIZE[24022]</label>
 								
 							</control>
 							
@@ -284,8 +282,6 @@
 							
 							<visible>Control.IsEnabled(7)</visible>
 
-							
-							
 							<control type="button" id="7">
 								
 								<include>Common_Control_Button</include>
@@ -306,7 +302,7 @@
 							<control type="label">
 							
 								<include>Common_Control_Label</include>
-								<label>$INFO[Control.GetLabel(7)]</label>
+								<label>$LOCALIZE[24048]</label>
 								
 							</control>
 							
@@ -320,8 +316,6 @@
 							
 							<visible>Control.IsEnabled(8)</visible>
 
-							
-							
 							<control type="button" id="8">
 								
 								<include>Common_Control_Button</include>
@@ -342,7 +336,7 @@
 							<control type="label">
 							
 								<include>Common_Control_Label</include>
-								<label>$INFO[Control.GetLabel(8)]</label>
+								<label>$LOCALIZE[24069]</label>
 								
 							</control>
 							
@@ -356,8 +350,6 @@
 							
 							<visible>Control.IsEnabled(9)</visible>
 
-							
-							
 							<control type="button" id="9">
 								
 								<include>Common_Control_Button</include>
@@ -392,8 +384,6 @@
 							
 							<visible>Control.IsEnabled(10)</visible>
 							
-							
-
 							<control type="button" id="10">
 								
 								<include>Common_Control_Button</include>
@@ -428,13 +418,11 @@
 							
 							<visible>Control.IsEnabled(11)</visible>
 
-							
-							
 							<control type="button" id="11">
 								
 								<include>Common_Control_Button</include>
 								<onup>10</onup>
-								<ondown>6</ondown>
+								<ondown>12</ondown>
 								<onright>-</onright>
 								<onleft>9001</onleft>
 								
@@ -451,6 +439,40 @@
 							
 								<include>Common_Control_Label</include>
 								<label>$LOCALIZE[24048]</label>
+								
+							</control>
+							
+						</control>
+
+						<!--Launch Button-->
+						<control type="group">
+						
+							<width>400</width>
+							<height>60</height>
+							
+							<visible>Control.IsEnabled(12)</visible>
+
+							<control type="button" id="12">
+								
+								<include>Common_Control_Button</include>
+								<onup>11</onup>
+								<ondown>6</ondown>
+								<onright>-</onright>
+								<onleft>9001</onleft>
+								
+							</control>
+							
+							<control type="image">
+							
+								<include>Common_Control_Image</include>
+								<texture>dialoginfo/dialoginfo_launch.png</texture>
+								
+							</control>
+							
+							<control type="label">
+							
+								<include>Common_Control_Label</include>
+								<label>$LOCALIZE[518]</label>
 								
 							</control>
 							

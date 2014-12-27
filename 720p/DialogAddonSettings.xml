@@ -12,6 +12,7 @@
 
 		<include>Common_Settings_Background</include>
 		
+		<!--Menu-->
 		<control type="group">
 		
 			<include>Common_Settings_Header_Back</include>
@@ -37,12 +38,10 @@
 			
 		</control>
 		
+		<!--Controls-->
 		<control type="group">
 		
-			<posx>480</posx>
-			<posy>0</posy>
-			<width>730</width>
-			<height>480</height>
+			<include>Common_Settings_Group</include>
 			
 			<include>Common_Animation_Settings_Options</include>
 		
@@ -50,8 +49,8 @@
 				
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
+				<posy>0</posy>
+				<width>800</width>
 				<height>480</height>
 				<itemgap>0</itemgap>
 				<onleft>9</onleft>

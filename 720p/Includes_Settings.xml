@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+
+	<include name="Common_Settings_Background">
+	
+		<control type="image">
+		
+			<include>Common_Dimensions</include>
+			<texture>colors/color_white.png</texture>
+			<colordiffuse>Settings_Background_Dark</colordiffuse>
+			
+		</control>
+	
+		<control type="image">
+		
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>360</width>
+			<height>720</height>
+			<texture>colors/color_white.png</texture>
+			<colordiffuse>Settings_Background_Dark</colordiffuse>	
+
+		</control>
+	
+		<control type="image">
+		
+			<posx>360</posx>
+			<posy>0</posy>
+			<width>960</width>
+			<height>720</height>
+			<texture>colors/color_white.png</texture>
+			<colordiffuse>Settings_Background_Light</colordiffuse>
+			
+		</control>
+			
+	</include>
+	
+	<include name="Common_Settings_Button">
+	
+		<width>800</width>
+		<height>60</height>
+		<texturefocus>colors/color_white.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<alttexturefocus>colors/color_white.png</alttexturefocus>
+		<alttexturenofocus>-</alttexturenofocus>
+		<colordiffuse>Background_Highlight</colordiffuse>
+		<disabledColorDiffuse>Settings_Label_Disabled</disabledColorDiffuse>
+		<font>Menu-List</font>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<textoffsetx>32</textoffsetx>
+		<textoffsety>-10</textoffsety>
+		<align>left</align>
+		<aligny>center</aligny>
+			
+	</include>
+	
+	<include name="Common_Settings_Button_Grouplist">
+	
+		<posx>420</posx>
+		<posy>640</posy>
+		<width>800</width>
+		<height>40</height>
+		<itemgap>10</itemgap>
+		<orientation>horizontal</orientation>
+		<align>right</align>
+	
+	</include>
+	
+	<include name="Common_Settings_Control_Button">
+	
+		<width>100</width>
+		<height>40</height>
+		<texturefocus border="6">button_focus.png</texturefocus>
+		<texturenofocus border="6">button_unfocus.png</texturenofocus>
+		<font>DialogInfo-Header</font>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<colordiffuse>Settings_Label</colordiffuse>
+		<textoffsetx>0</textoffsetx>
+		<textoffsety>6</textoffsety>
+		<align>center</align>
+		<aligny>top</aligny>
+			
+	</include>
+
+	<include name="Common_Settings_Description">
+
+		<include>Common_Settings_Divider</include>
+
+		<control type="textbox" id="6">
+					
+			<posx>420</posx>
+			<posy>626</posy>
+			<width>800</width>
+			<height>72</height>
+			<font>Menu-List</font>
+			<textcolor>Settings_Label</textcolor>
+			<align>left</align>
+			<aligny>top</aligny>
+
+		</control>
+
+	</include>	
+	
+	<include name="Common_Settings_Divider">
+	
+		<control type="image">
+		
+			<posx>420</posx>
+			<posy>620</posy>
+			<width>800</width>
+			<height>2</height>
+			<texture>colors/color_white.png</texture>
+			<colordiffuse>Settings_Label</colordiffuse>
+			
+		</control>	
+			
+	</include>
+	
+	<include name="Common_Settings_Edit">
+	
+		<width>800</width>
+		<height>60</height>
+		<texturefocus>colors/color_white.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<alttexturefocus>colors/color_white.png</alttexturefocus>
+		<alttexturenofocus>-</alttexturenofocus>
+		<colordiffuse>Background_Highlight</colordiffuse>
+		<disabledColorDiffuse>Label_Disabled</disabledColorDiffuse>
+		<font>Menu-List</font>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<textoffsetx>32</textoffsetx>
+		<textoffsety>-10</textoffsety>
+		<align>left</align>
+		<aligny>center</aligny>
+			
+	</include>
+
+	<include name="Common_Settings_Group">
+	
+		<posx>420</posx>
+		<posy>100</posy>
+		<width>800</width>
+		<height>480</height>
+
+	</include>
+	
+	<include name="Common_Settings_Header">
+	
+		<posx>80</posx>
+		<posy>22</posy>
+		<width>420</width>
+		<height>32</height>
+		<font>Settings-Menu-Header</font>
+		<textcolor>Settings_Header</textcolor>
+		<aligny>top</aligny>
+		
+	</include>
+
+	<include name="Common_Settings_Header_Back">
+	
+		<control type="button">
+					
+			<posx>30</posx>
+			<posy>30</posy>
+			<posy>60</posy>
+			<width>32</width>
+			<height>32</height>
+			<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
+			<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>Settings_Menu_Normal</colordiffuse>
+			<onclick>back</onclick>
+			
+		</control>
+		
+	</include>	
+	
+	<include name="Common_Settings_Label">
+	
+		<width>520</width>
+		<height>60</height>
+		<font>Menu-List</font>
+		<textcolor>Settings_Header</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+	
+	</include>
+
+	<include name="Common_Settings_Label_Small">
+	
+		<width>520</width>
+		<height>60</height>
+		<font>Menu-List-Small</font>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<align>left</align>
+		<aligny>top</aligny>
+	
+	</include>
+	
+	<include name="Common_Settings_Menu">
+	
+		<width>360</width>
+		<height>60</height>
+		<texturefocus>colors/color_white.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<alttexturefocus>colors/color_white.png</alttexturefocus>
+		<alttexturenofocus>-</alttexturenofocus>
+		<colordiffuse>Background_Highlight</colordiffuse>
+		<disabledColorDiffuse>Label_Disabled</disabledColorDiffuse>
+		<font>Menu-List</font>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<textoffsetx>80</textoffsetx>
+		<align>left</align>
+		<aligny>center</aligny>
+	
+	</include>
+
+	<include name="Common_Settings_Menu_List">
+
+		<description>List</description>
+		<posx>0</posx>
+		<posy>100</posy>
+		<width>420</width>
+		<height>600</height>
+		<scrolltime>0</scrolltime>
+		<orientation>vertical</orientation>
+		<pagecontrol>-</pagecontrol>
+
+		<itemlayout width="360" height="60">
+
+			<control type="label">
+					
+				<posx>80</posx>
+				<posy>0</posy>
+				<width min="20" max="340">auto</width>
+				<height>60</height>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Menu-List</font>
+				<textcolor>Settings_Menu_Normal</textcolor>
+				<aligny>center</aligny>
+				
+			</control>
+
+		</itemlayout>
+
+		<focusedlayout width="360" height="60">
+
+			<control type="image">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>360</width>
+				<height>60</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Background_Highlight</colordiffuse>
+			
+			</control>
+
+			<control type="label">
+					
+				<posx>80</posx>
+				<posy>0</posy>
+				<width min="20" max="340">auto</width>
+				<height>60</height>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Menu-List</font>
+				<textcolor>Settings_Menu_Highlight</textcolor>
+				<aligny>center</aligny>
+				<scrollspeed>0</scrollspeed>
+				
+			</control>
+
+		</focusedlayout>
+
+	</include>	
+	
+	<include name="Common_Settings_Preview">
+	
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>425</width>
+		<height>240</height>
+		<aspectratio>stretch</aspectratio>
+		
+	</include>
+
+	<include name="Common_Settings_Preview_Selection">
+	
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>110</width>
+		<height>110</height>
+		<aspectratio align="left" aligny="bottom">scale</aspectratio>
+		
+	</include>	
+	
+	<include name="Common_Settings_Progress">
+		
+		<posx>32</posx>
+		<posy>10</posy>
+		<width>800</width>
+		<height>5</height>
+		<texturebg>colors/color_keyboard_dark.png</texturebg>
+		<lefttexture>-</lefttexture>
+		<midtexture colordiffuse="Background_Highlight">colors/color_white.png</midtexture>
+		<righttexture>-</righttexture>
+		
+	</include>
+	
+	<include name="Common_Settings_RadioButton">
+	
+		<width>800</width>
+		<height>60</height>
+		<texturefocus colordiffuse="Background_Highlight">colors/color_white.png</texturefocus>
+		<texturenofocus colordiffuse="Settings_Background_Light">colors/color_white.png</texturenofocus>
+		<textureradioonfocus colordiffuse="White">controls/control_radiobutton_on.png</textureradioonfocus>
+		<textureradioonnofocus colordiffuse="Settings_Label">controls/control_radiobutton_on.png</textureradioonnofocus>
+		<textureradioofffocus colordiffuse="White">controls/control_radiobutton_off.png</textureradioofffocus>
+		<textureradiooffnofocus colordiffuse="Settings_Label">controls/control_radiobutton_off.png</textureradiooffnofocus>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<radioposx>718</radioposx>
+		<radioposy>21</radioposy>
+		
+	</include>
+	
+	<include name="Common_Settings_Scrollbar_Vertical">
+	
+		<width>5</width>
+		<texturesliderbackground>-</texturesliderbackground>
+		<texturesliderbar>colors/color_lightgrey.png</texturesliderbar>
+		<texturesliderbarfocus>colors/color_silver.png</texturesliderbarfocus>
+		<orientation>vertical</orientation>
+		<showonepage>false</showonepage>
+		
+	</include>
+	
+	<include name="Common_Settings_SliderEx">
+		
+		<width>800</width>
+		<height>60</height>
+		<texturefocus colordiffuse="Background_Highlight">colors/color_white.png</texturefocus>
+		<texturenofocus colordiffuse="Settings_Background_Light">colors/color_white.png</texturenofocus>
+		<sliderwidth>160</sliderwidth>
+		<sliderheight>15</sliderheight>
+		<texturesliderbar colordiffuse="Settings_Label">controls/control_slider.png</texturesliderbar>
+		<textureslidernib border="2" colordiffuse="Settings_Label">controls/control_slider_nib.png</textureslidernib>
+		<textureslidernibfocus border="2" colordiffuse="White">controls/control_slider_nib.png</textureslidernibfocus>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<textoffsetx>32</textoffsetx>
+		<textoffsety>-10</textoffsety>
+		
+	</include>
+	
+	<include name="Common_Settings_SpinButton">
+	
+		<width>800</width>
+		<height>60</height>
+		<texturefocus colordiffuse="Background_Highlight">colors/color_white.png</texturefocus>
+		<texturenofocus colordiffuse="Settings_Background_Light">colors/color_white.png</texturenofocus>
+		<textureup colordiffuse="Settings_Label">controls/control_spinbutton_up.png</textureup>
+		<textureupfocus colordiffuse="White">controls/control_spinbutton_up.png</textureupfocus>
+		<texturedown colordiffuse="Settings_Label">controls/control_spinbutton_down.png</texturedown>
+		<texturedownfocus colordiffuse="White">controls/control_spinbutton_down.png</texturedownfocus>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<spinposx>32</spinposx>
+		<spinposy>21</spinposy>
+		<spinwidth>25</spinwidth>
+			
+	</include>
+
+</includes>	

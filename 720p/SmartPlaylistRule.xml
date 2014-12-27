@@ -23,18 +23,10 @@
 		
 			<control type="list" id="98">
 				
-				<description>List</description>
-				<posx>0</posx>
-				<posy>100</posy>
-				<width>420</width>
-				<height max="600">auto</height>
 				<onup>98</onup>
 				<ondown>98</ondown>
 				<onleft>-</onleft>
 				<onright>99</onright>
-				<scrolltime>0</scrolltime>
-				<orientation>vertical</orientation>
-				<pagecontrol>-</pagecontrol>
 
 				<include>Common_Settings_Menu_List</include>
 
@@ -54,20 +46,16 @@
 		
 		<control type="group" id="99">
 			
-			<posx>480</posx>
-			<posy>0</posy>
-			<width>730</width>
-			<height>480</height>
-			
+			<include>Common_Settings_Group</include>
 			<include>Common_Animation_Settings_Options</include>
 		
 			<!--Filters Section-->
 			<control type="grouplist">
 					
 				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
-				<height>480</height>
+				<posy>0</posy>
+				<width>800</width>
+				<height>420</height>
 				<pagecontrol>80</pagecontrol>
 				<itemgap>0</itemgap>
 				<orientation>vertical</orientation>
@@ -104,9 +92,9 @@
 					
 				</control>
 				
-				<control type="button" id="17">
+				<control type="edit" id="17">
 
-					<include>Common_Settings_Button</include>
+					<include>Common_Settings_Edit</include>
 					<label>$LOCALIZE[1024]</label>
 					<onup>16</onup>
 					<ondown>20</ondown>

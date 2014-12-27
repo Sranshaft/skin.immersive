@@ -58,14 +58,6 @@
 			
 			<include>Common_Animation_Settings_Options</include>
 			
-			<control type="label" id="3">
-			
-				<posx>0</posx>
-				<posy>100</posy>
-				<include>Common_Settings_Label</include>
-				
-			</control>	
-		
 			<control type="grouplist" id="5">
 				
 				<description>Control Area</description>
@@ -117,7 +109,7 @@
 			
 		</control>
 		
-		<control type="sliderex" id="10">
+		<control type="sliderex" id="13">
 		
 			<description>Default Spin Control</description>
 			<include>Common_Settings_SliderEx</include>
@@ -127,7 +119,7 @@
 		<control type="image" id="11">
 		
 			<description>separator image</description>
-			<height>-2</height>
+			<height>0</height>
 			<texture>-</texture>
 			
 		</control>

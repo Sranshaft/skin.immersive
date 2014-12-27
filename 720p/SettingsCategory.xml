@@ -2,16 +2,15 @@
 
 <window id="12">
 
-	<include>Common_Window</include>
-
 	<defaultcontrol always="true">3</defaultcontrol>
-	
+
 	<controls>
 
 		<control type="group">
 
 			<include>Common_Settings_Background</include>
 			
+			<!--Menu-->
 			<control type="group">
 			
 				<include>Common_Settings_Header_Back</include>
@@ -36,21 +35,17 @@
 				
 			</control>
 			
+			<!--Controls-->
 			<control type="group">
 			
-				<posx>480</posx>
-				<posy>0</posy>
-				<width>730</width>
-				<height>480</height>
+				<include>Common_Settings_Group</include>
 				
-				<include>Common_Animation_Settings_Options</include>
-			
 				<control type="grouplist" id="5">
 					
 					<description>Control Area</description>
 					<posx>0</posx>
-					<posy>100</posy>
-					<width>730</width>
+					<posy>0</posy>
+					<width>800</width>
 					<height>480</height>
 					<itemgap>0</itemgap>
 					<onleft>3</onleft>
@@ -69,45 +64,14 @@
 				
 				<posx>1260</posx>
 				<posy>100</posy>
-				<height>540</height>
+				<height>480</height>
 				
 				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(81)">Conditional</animation>
 				
 			</control>
 
 			<!--Setting description-->
-			<control type="group">
-
-				<posx>480</posx>
-				<posy>600</posy>
-
-				<include>Common_Animation_Settings_Options</include>
-
-				<control type="image">
-				
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>730</width>
-					<height>2</height>
-					<texture>colors/color_white.png</texture>
-					<colordiffuse>Settings_Label</colordiffuse>
-					
-				</control>
-
-				<control type="textbox" id="6">
-					
-					<posx>0</posx>
-					<posy>20</posy>
-					<width>730</width>
-					<height>72</height>
-					<font>Menu-List</font>
-					<textcolor>Settings_Label</textcolor>
-					<align>left</align>
-					<aligny>top</aligny>
-
-				</control>
-
-			</control>
+			<include>Common_Settings_Description</include>
 
 		</control>	
 		
@@ -136,6 +100,13 @@
 			
 			<description>Default Category Button</description>
 			<include>Common_Settings_Menu</include>
+			
+		</control>
+
+		<control type="sliderex" id="13">
+		
+			<description>Default Spin Control</description>
+			<include>Common_Settings_SliderEx</include>
 			
 		</control>
 

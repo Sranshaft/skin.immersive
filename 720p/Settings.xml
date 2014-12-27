@@ -3,9 +3,8 @@
 <window id="4">
 
 	<include>Common_Window</include>
-
 	<defaultcontrol always="true">9000</defaultcontrol>
-	
+
 	<controls>
 	
 		<control type="group">
@@ -20,7 +19,7 @@
 				<control type="label">
 		
 					<include>Common_Settings_Header</include>
-					<label>XBMC settings</label>
+					<label>Settings</label>
 					
 				</control>
 				

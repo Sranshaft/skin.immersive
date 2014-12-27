@@ -140,18 +140,15 @@
 		</control>
 		
 		<!--Updates-->
-		<control type="radiobutton" id="5">
+		<control type="button" id="5">
 			
 			<include>Common_AppBar_Button</include>
 			<texturefocus>appbar/appbar_autoupdate_focus.png</texturefocus>
 			<texturenofocus>appbar/appbar_autoupdate.png</texturenofocus>
-			<textureradioon>appbar/appbar_radioon.png</textureradioon>
-			<textureradiooff>-</textureradiooff>
 			<radiowidth>48</radiowidth>
 			<radioheight>48</radioheight>
 			<radioposx>6</radioposx>
-			<label>auto[CR]update</label>
-			
+			`2
 		</control>
 		
 		<!--Notifications-->

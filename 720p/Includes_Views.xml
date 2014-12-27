@@ -191,7 +191,7 @@
 			<font>Menu-List</font>
 			<aligny>center</aligny>
 
-			<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(episodes)]</visible>
+			<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(episodes)</visible>
 
 		</control>
 
