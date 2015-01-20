@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<window id="3000">
+<window>
 	
 	<defaultcontrol always="true">70</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<backgroundcolor>Settings_Background_Light</backgroundcolor>
 	
-	<include>Common_Animation_Window</include>
+	<include>Common_Animation_Window_ExtendedInfo</include>
 	
 	<controls>
 	
@@ -246,6 +246,8 @@
 						
 					</control>
 					
+					<!--Movie Roles-->
+
 					<control type="panel" id="150">
 							
 						<posx>0</posx>
@@ -507,6 +509,8 @@
 						<visible>ControlGroup(100).HasFocus(102)</visible>
 						
 					</control>
+
+					<!--TV Roles-->
 
 					<control type="panel" id="250">
 							
@@ -1047,13 +1051,6 @@
 				</control>
 				
 			</control>
-			
-		</control>
-
-		<control type="list" id="250">
-		
-			<visible>false</visible>
-			<visible allowhiddenfocus="true">false</visible>
 			
 		</control>
 

@@ -219,6 +219,30 @@
 				<label>script.pseudoTV.TVOverlay.xml</label>
 				<visible>Window.IsVisible(script.pseudoTV.TVOverlay.xml)</visible>
 			</control>
+
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-ExtendedInfo Script-DialogInfo.xml</label>
+				<visible>Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			</control>
+
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-ExtendedInfo Script-DialogVideoInfo.xml</label>
+				<visible>Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
+			</control>
+
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-ExtendedInfo Script-Slideshow.xml</label>
+				<visible>Window.IsVisible(script-ExtendedInfo Script-Slideshow.xml)</visible>
+			</control>
+
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-ExtendedInfo Script-VideoList.xml</label>
+				<visible>Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)</visible>
+			</control>
 			
 			<control type="label">
 				<include>WindowID</include>

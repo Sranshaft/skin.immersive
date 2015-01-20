@@ -58,8 +58,8 @@
 
 		<value condition="SubString(Window.Property(xmlfile),script-Actors-DialogVideoInfo.xml)">$INFO[Listitem.Title]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-Actors-Browser.xml)">Image Browser</value>
-		<value condition="SubString(Window.Property(xmlfile),script.extendedinfo.immersive-DialogInfo.xml)">$INFO[Window.Property(actor.Title)]</value>
-		<value condition="SubString(Window.Property(xmlfile),script.extendedinfo.immersive-DialogVideoInfo.xml)">$INFO[Window.Property(movie.Title)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogInfo.xml)">$INFO[Window.Property(actor.Title)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogVideoInfo.xml)">$INFO[Window.Property(movie.Title)]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-main.xml)">Global Search</value>
 		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-infodialog.xml)">$INFO[Container(100).ListItem.Label]</value>
 		<value condition="SubString(Window.Property(xmlfile),script-NextAired-TVGuide)">Next Aired TV Guide</value>
@@ -312,6 +312,11 @@
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">special://skin/playlists/History (TV Shows).xsp</value>
 	</variable>
 
+	<variable name="Hub_Trakt">
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">plugin://script.extendedinfo?info=trendingmovies</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">plugin://script.extendedinfo?info=trendingshows</value>
+	</variable>
+
 	<variable name="Hub_Target">
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">video</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">audio</value>
@@ -370,15 +375,15 @@
 		<value condition="Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
 		<value condition="Container.Content(plugins) + !IsEmpty(ListItem.Property(Addon.Description))">$INFO[ListItem.Property(Addon.Description)]</value>
-		<value condition="SubString(Window.Property(xmlfile),Custom_Plot.xml) + !IsEmpty(Window(Home).Property(actor.Biography))">$INFO[Window(Home).Property(actor.Biography)]</value>
+		<value condition="SubString(Window.Property(xmlfile),Custom_Plot.xml) + !IsEmpty(Window(script-ExtendedInfo Script-DialogInfo).Property(actor.Biography))">$INFO[Window(Home).Property(actor.Biography)]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(10)">$INFO[Container(10).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(11)">$INFO[Container(11).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(12)">$INFO[Container(12).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(13)">$INFO[Container(13).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(14)">$INFO[Container(14).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(15)">$INFO[Container(15).ListItem.Plot]</value>
-		<value condition="SubString(Window.Property(xmlfile),script.extendedinfo.immersive-DialogInfo.xml) + !IsEmpty(Window.Property(actor.Biography))">$INFO[Window.Property(actor.Biography)]</value>
-		<value condition="SubString(Window.Property(xmlfile),script.extendedinfo.immersive-DialogVideoInfo.xml) + !IsEmpty(Window.Property(movie.Plot))">$INFO[Window.Property(movie.Plot)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogInfo.xml) + !IsEmpty(Window.Property(actor.Biography))">$INFO[Window.Property(actor.Biography)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogVideoInfo.xml) + !IsEmpty(Window.Property(movie.Plot))">$INFO[Window.Property(movie.Plot)]</value>
 		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + [Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(150)]">$INFO[Container(100).ListItem.Property(Plot)]</value>
 		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + Control.IsVisible(160)">$INFO[Container(100).ListItem.Property(Artist_Description)]</value>
 		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + Control.IsVisible(170)">$INFO[Container(100).ListItem.Property(Album_Description)]</value>
@@ -387,8 +392,8 @@
 	</variable>
 
 	<variable name="Info_Similar">
-		<value condition="Container.Content(movies)">plugin://script.extendedinfo.immersive?info=similar&amp;&amp;dbid=$INFO[ListItem.DBID]&amp;&amp;type=movie</value>
-		<value condition="Container.Content(tvshows)">plugin://script.extendedinfo.immersive?info=similar&amp;&amp;dbid=$INFO[ListItem.DBID]&amp;&amp;type=show</value>
+		<value condition="Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
+		<value condition="Container.Content(tvshows)">plugin://script.extendedinfo?info=similartvshowstrakt&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
 	</variable>	
 	
 	<!--Kai Variables-->

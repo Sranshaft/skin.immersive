@@ -174,7 +174,7 @@
 	
 	<include name="Common_LiveTile_Detail">
 	
-		<posx>20r</posx>
+		<posx>20</posx>
 		<posy>0</posy>
 		<width>170</width>
 		<height>40</height>

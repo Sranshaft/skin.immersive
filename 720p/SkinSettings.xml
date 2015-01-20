@@ -418,7 +418,6 @@
 					<label>Recently added</label>
 					<onclick>Skin.ToggleSetting(ShowRecentlyAddedSection_Video)</onclick>
 					<selected>Skin.HasSetting(ShowRecentlyAddedSection_Video)</selected>
-					<enable>System.HasAddon(service.skin.widgets)</enable>
 					
 				</control>
 				
@@ -440,7 +439,7 @@
 					<label>In cinemas</label>
 					<onclick>Skin.ToggleSetting(ShowInCinemasSection_Video)</onclick>
 					<selected>Skin.HasSetting(ShowInCinemasSection_Video)</selected>
-					<enable>System.HasAddon(script.extendedinfo.immersive)</enable>
+					<enable>System.HasAddon(script.extendedinfo)</enable>
 					
 				</control>
 				
@@ -451,7 +450,7 @@
 					<label>Trending</label>
 					<onclick>Skin.ToggleSetting(ShowTrendingSection_Video)</onclick>
 					<selected>Skin.HasSetting(ShowTrendingSection_Video)</selected>
-					<enable>System.HasAddon(script.extendedinfo.immersive)</enable>
+					<enable>System.HasAddon(script.extendedinfo)</enable>
 					
 				</control>
 				
@@ -491,7 +490,6 @@
 					<label>Recently added</label>
 					<onclick>Skin.ToggleSetting(ShowRecentlyAddedSection_Music)</onclick>
 					<selected>Skin.HasSetting(ShowRecentlyAddedSection_Music)</selected>
-					<enable>System.HasAddon(service.skin.widgets)</enable>
 					
 				</control>
 				
@@ -502,7 +500,7 @@
 					<label>Nearby events</label>
 					<onclick>Skin.ToggleSetting(ShowNearbyEventsSection_Music)</onclick>
 					<selected>Skin.HasSetting(ShowNearbyEventsSection_Music)</selected>
-					<enable>System.HasAddon(script.extendedinfo.immersive)</enable>
+					<enable>System.HasAddon(script.extendedinfo)</enable>
 					
 				</control>
 				

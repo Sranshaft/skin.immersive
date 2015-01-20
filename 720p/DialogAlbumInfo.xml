@@ -5,7 +5,7 @@
 	<defaultcontrol always="true">9001</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	
-	<onload condition="System.HasAddon(script.extendedinfo.immersive)">RunScript(script.extendedinfo.immersive,info=artistdetails,artistname=$INFO[ListItem.Artist],prefix=ArtistDetails.)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=artistdetails,artistname=$INFO[ListItem.Artist],prefix=ArtistDetails.)</onload>
 	<onload>Skin.Reset(ShowManageMenu)</onload>
 	
 	<include>Common_Animation_Window</include>
@@ -317,7 +317,7 @@
 								
 								<include>Common_InfoDialog_Label_Small</include>
 								<label>[B]Born[/B] $INFO[ListItem.Property(Artist_Born)]</label>
-								<visible>!IsEmpty(ListItem.Property(Artist_Born)) + !System.HasAddon(script.extendedinfo.immersive)</visible>
+								<visible>!IsEmpty(ListItem.Property(Artist_Born)) + !System.HasAddon(script.extendedinfo)</visible>
 							
 							</control>
 
@@ -325,7 +325,7 @@
 							
 								<include>Common_InfoDialog_Label_Small</include>
 								<label>[B]Died[/B] $INFO[ListItem.Property(Artist_Died)]</label>
-								<visible>!IsEmpty(ListItem.Property(Artist_Died)) + !System.HasAddon(script.extendedinfo.immersive)</visible>
+								<visible>!IsEmpty(ListItem.Property(Artist_Died)) + !System.HasAddon(script.extendedinfo)</visible>
 							
 							</control>
 
@@ -333,7 +333,7 @@
 							
 								<include>Common_InfoDialog_Label_Small</include>
 								<label>[B]Formed[/B] $INFO[ListItem.Property(Artist_Formed)]</label>
-								<visible>!IsEmpty(ListItem.Property(Artist_Formed)) + !System.HasAddon(script.extendedinfo.immersive)</visible>
+								<visible>!IsEmpty(ListItem.Property(Artist_Formed)) + !System.HasAddon(script.extendedinfo)</visible>
 							
 							</control>
 
@@ -341,7 +341,7 @@
 							
 								<include>Common_InfoDialog_Label_Small</include>
 								<label>[B]Disbanded[/B] $INFO[ListItem.Property(Artist_Disbanded)]</label>
-								<visible>!IsEmpty(ListItem.Property(Artist_Disbanded)) + !System.HasAddon(script.extendedinfo.immersive)</visible>
+								<visible>!IsEmpty(ListItem.Property(Artist_Disbanded)) + !System.HasAddon(script.extendedinfo)</visible>
 							
 							</control>
 
@@ -349,7 +349,7 @@
 							
 								<include>Common_InfoDialog_Label_Small</include>
 								<label>$INFO[ListItem.Property(Artist_Genre)]</label>
-								<visible>!IsEmpty(ListItem.Property(Artist_Genre)) + !System.HasAddon(script.extendedinfo.immersive)</visible>
+								<visible>!IsEmpty(ListItem.Property(Artist_Genre)) + !System.HasAddon(script.extendedinfo)</visible>
 							
 							</control>
 
@@ -359,7 +359,7 @@
 								
 								<include>Common_InfoDialog_Label_Small</include>
 								<label>[B]Born[/B] $INFO[Window(Home).Property(ArtistDetails.Born)]</label>
-								<visible>!IsEmpty(Window(Home).Property(ArtistDetails.Born)) + System.HasAddon(script.extendedinfo.immersive)</visible>
+								<visible>!IsEmpty(Window(Home).Property(ArtistDetails.Born)) + System.HasAddon(script.extendedinfo)</visible>
 							
 							</control>
 
@@ -367,7 +367,7 @@
 							
 								<include>Common_InfoDialog_Label_Small</include>
 								<label>[B]Died[/B] $INFO[Window(Home).Property(ArtistDetails.Died)]</label>
-								<visible>!IsEmpty(Window(Home).Property(ArtistDetails.Died)) + System.HasAddon(script.extendedinfo.immersive)</visible>
+								<visible>!IsEmpty(Window(Home).Property(ArtistDetails.Died)) + System.HasAddon(script.extendedinfo)</visible>
 							
 							</control>
 							
@@ -375,7 +375,7 @@
 							
 								<include>Common_InfoDialog_Label_Small</include>
 								<label>[B]Formed[/B] $INFO[Window(Home).Property(ArtistDetails.Formed)]</label>
-								<visible>!IsEmpty(Window(Home).Property(ArtistDetails.Formed)) + System.HasAddon(script.extendedinfo.immersive)</visible>
+								<visible>!IsEmpty(Window(Home).Property(ArtistDetails.Formed)) + System.HasAddon(script.extendedinfo)</visible>
 							
 							</control>
 
@@ -383,7 +383,7 @@
 							
 								<include>Common_InfoDialog_Label_Small</include>
 								<label>[B]Disbanded[/B] $INFO[Window(Home).Property(ArtistDetails.Disbanded)]</label>
-								<visible>!IsEmpty(Window(Home).Property(ArtistDetails.Disbanded)) + System.HasAddon(script.extendedinfo.immersive)</visible>
+								<visible>!IsEmpty(Window(Home).Property(ArtistDetails.Disbanded)) + System.HasAddon(script.extendedinfo)</visible>
 							
 							</control>
 							
@@ -391,7 +391,7 @@
 							
 								<include>Common_InfoDialog_Label_Small</include>
 								<label>$INFO[Window(Home).Property(ArtistDetails.Genre)]</label>
-								<visible>!IsEmpty(Window(Home).Property(ArtistDetails.Genre)) + System.HasAddon(script.extendedinfo.immersive)</visible>
+								<visible>!IsEmpty(Window(Home).Property(ArtistDetails.Genre)) + System.HasAddon(script.extendedinfo)</visible>
 							
 							</control>
 
@@ -482,8 +482,8 @@
 						<align>left</align>
 						<aligny>top</aligny>
 						<onleft>9001</onleft>
-						<onright condition="!Skin.HasAddon(script.extendedinfo.immersive)">50</onright>
-						<onright condition="!Skin.HasAddon(script.extendedinfo.immersive)">80</onright>
+						<onright condition="!Skin.HasAddon(script.extendedinfo)">50</onright>
+						<onright condition="!Skin.HasAddon(script.extendedinfo)">80</onright>
 						<onclick>ActivateWindow(67,return)</onclick>
 
 						<visible allowhiddenfocus="true">Control.IsVisible(71)</visible>
@@ -513,7 +513,7 @@
 					<width>400</width>
 					<height>560</height>
 
-					<visible>Container.Content(artists) + !System.HasAddon(script.extendedinfo.immersive)</visible>
+					<visible>Container.Content(artists) + !System.HasAddon(script.extendedinfo)</visible>
 					
 					<control type="label">
 						
@@ -779,7 +779,7 @@
 					<width>400</width>
 					<height>560</height>
 
-					<visible>Container.Content(artists) + System.HasAddon(script.extendedinfo.immersive)</visible>
+					<visible>Container.Content(artists) + System.HasAddon(script.extendedinfo)</visible>
 					
 					<control type="label">
 						
@@ -1022,7 +1022,7 @@
 
 						</focusedlayout>
 
-						<content>plugin://script.extendedinfo.immersive?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+						<content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
 						
 					</control>
 				
@@ -1267,7 +1267,7 @@
 					<width>360</width>
 					<height>560</height>
 
-					<visible>Container.Content(artists) + System.HasAddon(script.extendedinfo.immersive)</visible>
+					<visible>Container.Content(artists) + System.HasAddon(script.extendedinfo)</visible>
 					
 					<control type="label">
 						
@@ -1360,7 +1360,7 @@
 
 						</focusedlayout>
 
-						<content>plugin://script.extendedinfo.immersive?info=similarartists&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+						<content>plugin://script.extendedinfo?info=similarartists&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
 						
 					</control>
 				
@@ -1385,7 +1385,7 @@
 					<width>446</width>
 					<height>560</height>
 
-					<visible>Container.Content(artists) + System.HasAddon(script.extendedinfo.immersive)</visible>
+					<visible>Container.Content(artists) + System.HasAddon(script.extendedinfo)</visible>
 					
 					<control type="label">
 						
@@ -1534,7 +1534,7 @@
 
 						</focusedlayout>
 
-						<content>plugin://script.extendedinfo.immersive?info=youtubesearch&amp;&amp;id=$INFO[ListItem.Artist,,"+MusicVideo"]</content>
+						<content>plugin://script.extendedinfo?info=youtubesearch&amp;&amp;id=$INFO[ListItem.Artist,,"+MusicVideo"]</content>
 						
 					</control>	
 				
@@ -1559,7 +1559,7 @@
 					<width>420</width>
 					<height>560</height>
 					
-					<visible>Container.Content(artists) + System.HasAddon(script.extendedinfo.immersive) + IntegerGreaterThan(Container(100).NumItems,0)</visible>
+					<visible>Container.Content(artists) + System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(100).NumItems,0)</visible>
 					
 					<control type="label">
 							
@@ -1705,7 +1705,7 @@
 
 						</focusedlayout>
 						
-						<content>plugin://script.extendedinfo.immersive?info=artistevents&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+						<content>plugin://script.extendedinfo?info=artistevents&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
 						
 					</control>
 

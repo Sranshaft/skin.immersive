@@ -6,8 +6,8 @@
 	<backgroundcolor>0xff000000</backgroundcolor>
 	<zorder>2</zorder>
 	
-	<onload condition="System.HasAddon(script.extendedinfo.immersive)">RunScript(script.extendedinfo.immersive,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
-	<onload condition="System.HasAddon(script.extendedinfo.immersive)">RunScript(script.extendedinfo.immersive,info=Similar,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Similar,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
 
 	<include>Common_Animation_Window</include>
 	

@@ -1009,7 +1009,7 @@
 					
 				</focusedlayout>
 
-				<!--<content>plugin://script.extendedinfo.immersive?info=intheaters</content>-->
+				<!--<content>plugin://script.extendedinfo?info=intheaters</content>-->
 				
 				<content>
 
@@ -1521,7 +1521,7 @@
 						<posy>0</posy>
 						<width>286</width>
 						<height>420</height>
-						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Art(poster)]</texture>
 						<aspectratio>stretch</aspectratio>
 						
 					</control>
@@ -1536,18 +1536,20 @@
 						<posy>0</posy>
 						<width>286</width>
 						<height>420</height>
-						<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Art(poster)]</texture>
 						<aspectratio>stretch</aspectratio>
 						
 					</control>
 					
 				</focusedlayout>
+
+				<content limt="10">$VAR[Hub_Trakt]</content>
 				
-				<content>
+				<!--<content>
 				
 					<!--Movies-->
 				
-					<item id="1">
+					<!--<item id="1">
 						<onclick>-</onclick>
 						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.1.Art(poster))]</thumb>
 						<label>$INFO[Window(Home).Property(TrendingMovies.1.Title)]</label>
@@ -1649,7 +1651,7 @@
 					
 					<!--TV Shows-->
 				
-					<item id="1">
+					<!--<item id="1">
 						<onclick>-</onclick>
 						<thumb fallback="fallbacks/fallback_tv.jpg">$INFO[Window(Home).Property(TrendingShows.1.Art(poster))]</thumb>
 						<label>$INFO[Window(Home).Property(TrendingShows.1.Title)]</label>
@@ -1749,7 +1751,7 @@
 						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
 					</item>
 					
-				</content>
+				</content>-->
 
 			</control>
 			
@@ -1815,7 +1817,7 @@
 					<posy>26</posy>
 					<width>266</width>
 					<height>24</height>
-					<label>$INFO[Container(9007).ListItem.Label2]</label>
+					<label>$INFO[Container(9007).ListItem.Property(Runtime),, minutes]</label>
 					<font>Menu-InCinemas-Small</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>

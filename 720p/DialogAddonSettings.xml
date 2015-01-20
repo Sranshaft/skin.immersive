@@ -70,8 +70,8 @@
 			<include>Common_Settings_Scrollbar_Vertical</include>
 			
 			<posx>1260</posx>
-			<posy>160</posy>
-			<height>420</height>
+			<posy>100</posy>
+			<height>480</height>
 			
 			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(81)">Conditional</animation>
 			
@@ -136,7 +136,7 @@
 		
 		<control type="image" id="6">
 		
-			<description>Default Image</description>
+			<visible>false</visible>
 			
 		</control>
 		

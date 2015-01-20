@@ -6,10 +6,10 @@
 	
 	<include>Common_Animation_Window</include>
 	
-	<!--<onload condition="System.HasAddon(script.extendedinfo.immersive)">RunScript(script.extendedinfo.immersive,info=TrendingMovies)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo.immersive)">RunScript(script.extendedinfo.immersive,info=TrendingShows)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo.immersive)">RunScript(script.extendedinfo.immersive,info=PremiereShows)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo.immersive)">RunScript(script.extendedinfo.immersive,info=AiringShows)</onload>-->
+	<!--<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=TrendingShows)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=PremiereShows)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=AiringShows)</onload>-->
 	
 	<controls>
 	
@@ -271,7 +271,7 @@
 
 					</focusedlayout>
 					
-					<content>plugin://script.extendedinfo.immersive?info=trendingmovies</content>
+					<content>plugin://script.extendedinfo?info=trendingmovies</content>
 
 					<!--<content>
 					
@@ -750,7 +750,7 @@
 
 					</focusedlayout>
 
-					<content>plugin://script.extendedinfo.immersive?info=trendingshows</content>
+					<content>plugin://script.extendedinfo?info=trendingshows</content>
 					
 					<!--<content>
 					
@@ -1249,7 +1249,7 @@
 
 					</focusedlayout>
 					
-					<content>plugin://script.extendedinfo.immersive?info=airingshows</content>
+					<content>plugin://script.extendedinfo?info=airingshows</content>
 
 					<!--<content>
 					
@@ -1748,7 +1748,7 @@
 
 					</focusedlayout>
 
-					<content>plugin://script.extendedinfo.immersive?info=premiereshows</content>
+					<content>plugin://script.extendedinfo?info=premiereshows</content>
 					
 					<!--<content>
 					
