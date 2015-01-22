@@ -663,6 +663,7 @@
 
 	<variable name="View_Item_Overlay">
 	
+		<value condition="Container.Content(addons) + !IsEmpty(ListItem.Label2)">OverlayDownloaded.png</value>
 		<value condition="ListItem.IsPlaying">OverlayPlaying.png</value>
 		<value condition="ListItem.IsResumable">OverlayResumable.png</value>
 		<value condition="SubString(Window.Property(xmlfile),script-videoextras-main.xml)">OverlayWatched.png</value>

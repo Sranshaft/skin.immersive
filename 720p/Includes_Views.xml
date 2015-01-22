@@ -191,7 +191,7 @@
 			<font>Menu-List</font>
 			<aligny>center</aligny>
 
-			<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(episodes)</visible>
+			<visible>!Container.Content(albums) + !Container.Content(songs) + !Container.Content(episodes) + !Container.Content(addons)</visible>
 
 		</control>
 
@@ -206,7 +206,7 @@
 			<font>Menu-List</font>
 			<aligny>top</aligny>
 
-			<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(episodes)</visible>
+			<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(episodes) | Container.Content(addons)</visible>
 			
 		</control>
 
@@ -221,7 +221,7 @@
 			<font>Menu-List-Small</font>
 			<aligny>top</aligny>
 
-			<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(episodes)</visible>
+			<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(episodes) | Container.Content(addons)</visible>
 			
 		</control>
 
@@ -241,7 +241,7 @@
 	
 	<include name="Common_View_Overlay">
 	
-		<visible>[!StringCompare(ListItem.Property(UnWatchedEpisodes),0) + Container.Content(tvshows)] | StringCompare(ListItem.Overlay,OverlayUnwatched.png) | ListItem.IsResumable</visible>
+		<visible>[!StringCompare(ListItem.Property(UnWatchedEpisodes),0) + Container.Content(tvshows)] | StringCompare(ListItem.Overlay,OverlayUnwatched.png) | ListItem.IsResumable | [Container.Content(addons) + !IsEmpty(ListItem.Label2)]</visible>
 						
 		<control type="image">
 	

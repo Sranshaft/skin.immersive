@@ -79,6 +79,17 @@
 							<aspectratio>scale</aspectratio>
 							
 						</control>
+
+						<control type="group">
+						
+							<posx>0</posx>
+							<posy>118</posy>
+							<width>32</width>
+							<height>32</height>
+		
+							<include>Common_View_Overlay</include>
+		
+						</control>
 						
 						<control type="image">
 							
@@ -165,6 +176,17 @@
 							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[View_Item_Thumb]</texture>
 							<aspectratio>scale</aspectratio>
 							
+						</control>
+
+						<control type="group">
+						
+							<posx>0</posx>
+							<posy>118</posy>
+							<width>32</width>
+							<height>32</height>
+		
+							<include>Common_View_Overlay</include>
+		
 						</control>
 						
 						<control type="image">
