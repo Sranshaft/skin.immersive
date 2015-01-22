@@ -2,7 +2,7 @@
 
 <window type="dialog" id="55">
 
-	<!--<defaultcontrol always="true">10</defaultcontrol>-->
+	<defaultcontrol always="true">10</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<zorder>2</zorder>
 	
@@ -15,6 +15,24 @@
 		
 			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="400">WindowClose</animation>
+
+			<control type="image">
+			
+				<posx>40</posx>
+				<posy>545</posy>
+				<width>500</width>
+				<height>136</height>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>FanartDiffuse</colordiffuse>
+
+				<visible>!Player.HasMedia</visible>
+				
+				<!--<animation type="Conditional" condition="Player.HasMedia" reversible="false">
+					<effect type="slide" start="0,0" end="0,-20" time="200" tween="cubic" easing="out" />
+					<effect type="zoom" start="100,100" end="100,120" time="200" tween="cubic" easing="out" />
+				</animation>-->
+				
+			</control>
 			
 			<control type="image">
 			
@@ -24,6 +42,8 @@
 				<height>136</height>
 				<texture>colors/color_white.png</texture>
 				<colordiffuse>FanartDiffuse</colordiffuse>
+
+				<visible>Player.HasMedia</visible>
 				
 				<animation type="Conditional" condition="Player.HasMedia" reversible="false">
 					<effect type="slide" start="0,0" end="0,-20" time="200" tween="cubic" easing="out" />
@@ -181,7 +201,7 @@
 					
 					<control type="label">
 					
-						<posx>50</posx>
+						<posx>0</posx>
 						<posy>50</posy>
 						<width>100</width>
 						<height>20</height>
@@ -220,7 +240,7 @@
 					
 					<control type="label">
 					
-						<posx>50</posx>
+						<posx>0</posx>
 						<posy>50</posy>
 						<width>100</width>
 						<height>20</height>
@@ -293,6 +313,7 @@
 						<description>Favourites</description>
 						<label>$LOCALIZE[31008]</label>
 						<thumb>charms/charm_favourites.png</thumb>
+						<onclick>Dialog.Close(55)</onclick>
 						<onclick>ActivateWindow(favourites)</onclick>
 						<visible>Skin.HasSetting(ShowFavouritesCharm)</visible>
 					</item>
