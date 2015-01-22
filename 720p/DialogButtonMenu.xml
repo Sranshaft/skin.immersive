@@ -57,7 +57,7 @@
 				
 				<description>grouplist for context buttons</description>
 				<posx>0</posx>
-				<posy>92</posy>
+				<posy>100</posy>
 				<width>320</width>
 				<height>600</height>
 				<itemgap>0</itemgap>
