@@ -1007,6 +1007,22 @@
 			<texturenofocus>appbar/appbar_search.png</texturenofocus>
 			<label>search</label>
 			<onclick>Skin.Reset(ShowAppBar)</onclick>
+
+			<visible>!Skin.HasSetting(UseGlobalSearch)</visible>
+			
+		</control>
+
+		<control type="button" id="88">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_search_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_search.png</texturenofocus>
+			<label>search</label>
+			<onclick>SetFocus(50)</onclick>
+			<onclick>Skin.Reset(ShowAppBar)</onclick>
+			<onclick>XBMC.RunScript(script.globalsearch)</onclick>
+
+			<visible>Skin.HasSetting(UseGlobalSearch)</visible>
 			
 		</control>
 		

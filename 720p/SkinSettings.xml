@@ -1301,6 +1301,19 @@
 					<enable>System.HasAddon(script.tvtunes)</enable>
 					
 				</control>
+
+				<!--Global Search-->
+				
+				<control type="radiobutton" id="804">
+					
+					<description>Enable TV Tunes</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Use Global Search instead of built-in search</label>
+					<onclick>Skin.ToggleSetting(UseGlobalSearch)</onclick>
+					<selected>Skin.HasSetting(UseGlobalSearch)</selected>
+					<enable>System.HasAddon(script.globalsearch)</enable>
+					
+				</control>
 				
 			</control>
 	
