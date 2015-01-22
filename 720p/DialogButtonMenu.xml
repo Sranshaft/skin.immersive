@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<window type="buttonMenu" id="111">
+<window type="buttonMenu">
 	
 	
-	<defaultcontrol always="true">3111</defaultcontrol>
+	<defaultcontrol always="true">996</defaultcontrol>
 	
 	<coordinates>
 		<system>1</system>
@@ -61,10 +61,11 @@
 				<width>320</width>
 				<height>600</height>
 				<itemgap>0</itemgap>
-				<onright>997</onright>
+				<onup>-</onup>
+				<ondown>-</ondown>
 				
 				<!--Exit Button-->
-				<control type="button" id="3111">
+				<control type="button" id="2">
 					
 					<include>Common_ContextMenu_Button</include>
 					<label>$LOCALIZE[13012]</label>
@@ -74,8 +75,88 @@
 					
 				</control>
 
+				<!--Shutdown Button-->
+				<control type="button" id="3">
+					
+					<include>Common_ContextMenu_Button</include>
+					<label>$LOCALIZE[13016]</label>
+					<onclick>Powerdown()</onclick>
+
+					<visible>System.CanPowerDown</visible>
+					
+				</control>
+
+				<!--Custom Shutdown Timer Button-->
+				<control type="button" id="4">
+					
+					<include>Common_ContextMenu_Button</include>
+					<label>$LOCALIZE[20150]</label>
+					<onclick>AlarmClock(shutdowntimer,Shutdown())</onclick>
+
+					<visible>!System.HasAlarm(shutdowntimer)</visible>
+					<visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
+					
+				</control>
+
+				<!--Cancel Custom Shutdown Timer Button-->
+				<control type="button" id="5">
+					
+					<include>Common_ContextMenu_Button</include>
+					<label>$LOCALIZE[20151]</label>
+					<onclick>CancelAlarm(shutdowntimer)</onclick>
+
+					<!--<visible>System.HasAlarm(shutdowntimer)</visible>-->
+					
+				</control>
+
+				<!--Suspend Button-->
+				<control type="button" id="6">
+					
+					<include>Common_ContextMenu_Button</include>
+					<label>$LOCALIZE[13011]</label>
+					<onclick>Suspend()</onclick>
+					
+					<visible>System.CanSuspend</visible>
+					
+				</control>
+
+				<!--Hibernate Button-->
+				<control type="button" id="7">
+					
+					<include>Common_ContextMenu_Button</include>
+					<label>$LOCALIZE[13010]</label>
+					<onclick>Hibernate()</onclick>
+				
+					<visible>System.CanHibernate</visible>
+					
+				</control>
+
+				<!--Hibernate Button-->
+				<control type="button" id="8">
+					
+					<include>Common_ContextMenu_Button</include>
+					<label>$LOCALIZE[13013]</label>
+					<onclick>Reset()</onclick>
+					
+					<visible>System.CanReboot</visible>
+					
+				</control>
+
+				<!--LogOff Button-->
+				<control type="button" id="9">
+					
+					<include>Common_ContextMenu_Button</include>
+					<label>$LOCALIZE[20126] $INFO[system.profilename]</label>
+					<onclick>Dialog.Close(all,true)</onclick>
+					<onclick>System.LogOff</onclick>
+
+					<visible>System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)</visible>
+					<visible>System.Loggedon</visible>
+					
+				</control>
+
 				<!--Master Button-->
-				<control type="button" id="3112">
+				<control type="button" id="2">
 					
 					<include>Common_ContextMenu_Button</include>
 					<label>$LOCALIZE[20046]</label>
@@ -85,79 +166,51 @@
 					<visible>System.HasLocks</visible>
 					
 				</control>
+				
+			</control>
 
-				<!--LogOff Button-->
-				<control type="button" id="3113">
+			<control type="group">
+
+				<posx>0</posx>
+				<posy>660</posy>
+
+				<!--<visible>System.HasAlarm(shutdowntimer)</visible>-->
+
+				<control type="image">
 					
-					<include>Common_ContextMenu_Button</include>
-					<label>$LOCALIZE[20126] $INFO[System.ProfileName]</label>
-					<onclick>Dialog.Close(all,true)</onclick>
-					<onclick>System.LogOff</onclick>
-
-					<visible>System.Loggedon + System.HasLoginScreen</visible>
+					<posx>16</posx>
+					<posy>0</posy>
+					<width>288</width>
+					<height>1</height>
+					<texture>colors/color_white.png</texture>
 					
 				</control>
 
-				<!--Cancel Custom Shutdown Timer Button-->
-				<control type="button" id="3114">
+				<control type="image">
 					
-					<include>Common_ContextMenu_Button</include>
-					<label>$LOCALIZE[20151]</label>
-					<onclick>XBMC.CancelAlarm(ShutDownTimer)</onclick>
-
-					<visible>System.HasAlarm(ShutDownTimer)</visible>
-					
-				</control>
-
-				<!--Custom Shutdown Timer Button-->
-				<control type="button" id="3115">
-					
-					<include>Common_ContextMenu_Button</include>
-					<label>$LOCALIZE[20150]</label>
-					<onclick>XBMC.AlarmClock(ShutDownTimer,XBMC.ShutDown())</onclick>
-
-					<visible>!System.HasAlarm(ShutDownTimer)</visible>
-					
-				</control>
-
-				<!--Shutdown Button-->
-				<control type="button" id="3116">
-					
-					<include>Common_ContextMenu_Button</include>
-					<label>$LOCALIZE[13005]</label>
-					<onclick condition="System.CanPowerDown">XBMC.PowerDown()</onclick>
-					<onclick condition="!System.CanPowerDown">XBMC.ShutDown()</onclick>
-					
-				</control>
-
-				<!--Suspend Button-->
-				<control type="button" id="3117">
-					
-					<include>Common_ContextMenu_Button</include>
-					<label>$LOCALIZE[13011]</label>
-					<onclick>XBMC.Suspend()</onclick>
-					
-				</control>
-
-				<!--Suspend Button-->
-				<control type="button" id="3118">
-					
-					<include>Common_ContextMenu_Button</include>
-					<label>$LOCALIZE[13013]</label>
-					<onclick>XBMC.Reset()</onclick>
-					
-				</control>
-
-				<!--Hibernate Button-->
-				<control type="button" id="3119">
-					
-					<include>Common_ContextMenu_Button</include>
-					<label>$LOCALIZE[13010]</label>
-					<onclick>XBMC.Hibernate()</onclick>
+					<posx>16</posx>
+					<posy>8</posy>
+					<width>32</width>
+					<height>32</height>
+					<texture>DefaultIconWarning.png</texture>
+					<aspectratio>keep</aspectratio>
 					
 				</control>
 				
-			</control>
+				<control type="textbox">
+					
+					<posx>48</posx>
+					<posy>14</posy>
+					<width>300</width>
+					<height>42</height>
+					<label>System will shutdown in [B]$INFO[System.Alarmpos][/B]</label>
+					<font>Appbar-Label-Small</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>top</aligny>
+					
+				</control>
+
+			</control>	
 			
 		</control>	
 
