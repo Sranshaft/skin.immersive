@@ -1659,19 +1659,19 @@
 					<content>
 					
 						<item id="1">
-							<thumb>-</thumb>
+							<thumb>dialoginfo/dialoginfo_refresh.png</thumb>
 							<label>Update</label>
 							<onclick>UpdateLibrary(video)</onclick>
 						</item>
 
 						<item id="2">
-							<thumb>-</thumb>
+							<thumb>dialoginfo/dialoginfo_clean.png</thumb>
 							<label>Clean</label>
 							<onclick>CleanLibrary(video)</onclick>
 						</item>
 
 						<item id="3">
-							<thumb>-</thumb>
+							<thumb>dialoginfo/dialoginfo_export.png</thumb>
 							<label>Export</label>
 							<onclick>exportlibrary(video,true,true,true,false)</onclick>
 						</item>
@@ -1814,7 +1814,7 @@
 					<content>
 					
 						<item id="1">
-							<thumb>-</thumb>
+							<thumb>dialoginfo/dialoginfo_refresh.png</thumb>
 							<label>Update</label>
 							<onclick>UpdateLibrary(music)</onclick>
 						</item>
