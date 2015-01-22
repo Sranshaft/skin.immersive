@@ -391,6 +391,11 @@
 		<value>Description not available</value>
 	</variable>
 
+	<variable name="Info_SetSeason">
+		<value condition="Container.Content(movies)">sets</value>
+		<value condition="Container.Content(tvshows)">seasons</value>
+	</variable>	
+
 	<variable name="Info_Similar">
 		<value condition="Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
 		<value condition="Container.Content(tvshows)">plugin://script.extendedinfo?info=similartvshowstrakt&amp;&amp;dbid=$INFO[ListItem.DBID]</value>

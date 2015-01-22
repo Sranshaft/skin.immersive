@@ -716,7 +716,7 @@
 					
 				</control>
 
-				<!--Seasons Section-->
+				<!--Sets Section-->
 				<control type="group">
 				
 					<width>400</width>
@@ -726,7 +726,7 @@
 				
 					<control type="label">
 						
-						<label>seasons</label>
+						<label>$VAR[Info_SetSeason]</label>
 						<include>Common_Section_Label_Dark</include>
 						
 					</control>

@@ -7,6 +7,22 @@
 	<backgroundcolor>Settings_Background_Light</backgroundcolor>
 
 	<onload>Skin.Reset(ShowManageMenu)</onload>
+
+	<!--ExtendedInfo (Movies)-->
+	<onload condition="Container.Content(movies) + Skin.HasSetting(UseExtendedInfoDialogs)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID])</onload>
+    <onload condition="Container.Content(movies) + Skin.HasSetting(UseExtendedInfoDialogs)">Dialog.Close(movieinformation)</onload>
+
+    <!--ExtendedInfo (TV Shows)-->
+	<onload condition="Container.Content(tvshows) + Skin.HasSetting(UseExtendedInfoDialogs)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID])</onload>
+    <onload condition="Container.Content(tvshows) + Skin.HasSetting(UseExtendedInfoDialogs)">Dialog.Close(movieinformation)</onload>
+
+    <!--ExtendedInfo (TV Seasons)-->
+	<onload condition="Container.Content(seasons) + Skin.HasSetting(UseExtendedInfoDialogs)">RunScript(script.extendedinfo,info=seasoninfo,tvshow="$INFO[ListItem.TVShowTitle]",season="$INFO[ListItem.Season]")</onload>
+    <onload condition="Container.Content(seasons) + Skin.HasSetting(UseExtendedInfoDialogs)">Dialog.Close(movieinformation)</onload>
+
+    <!--ExtendedInfo (Episodes)-->
+	<!--<onload condition="Container.Content(episodes) + Skin.HasSetting(UseExtendedInfoDialogs)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID])</onload>
+    <onload condition="Container.Content(episodes) + Skin.HasSetting(UseExtendedInfoDialogs)">Dialog.Close(movieinformation)</onload>-->
 	
 	<onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onload condition="Skin.HasSetting(ShowTVTunesNotification) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
@@ -743,7 +759,7 @@
 					<width>400</width>
 					<height>560</height>
 					
-					<visible>[Container.Content(movies) | Container.Content(tvshows)] + !StringCompare(ListItem.DBID,-1)</visible>
+					<!--<visible>[Container.Content(movies) | Container.Content(tvshows)] + !StringCompare(ListItem.DBID,-1)</visible>-->
 				
 					<control type="label">
 						
@@ -1004,7 +1020,7 @@
 
 						</focusedlayout>
 
-						<content>$VAR[Info_Similar]</content>
+						<content>plugin://script.extendedinfo?info=similiarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</content>
 
 					</control>
 					

@@ -1306,12 +1306,25 @@
 				
 				<control type="radiobutton" id="804">
 					
-					<description>Enable TV Tunes</description>
+					<description>Enable Global Search</description>
 					<include>Common_Settings_RadioButton</include>
 					<label>Use Global Search instead of built-in search</label>
 					<onclick>Skin.ToggleSetting(UseGlobalSearch)</onclick>
 					<selected>Skin.HasSetting(UseGlobalSearch)</selected>
 					<enable>System.HasAddon(script.globalsearch)</enable>
+					
+				</control>
+
+				<!--ExtendedInfo-->
+				
+				<control type="radiobutton" id="805">
+					
+					<description>Enable ExtendedInfo Dialogs</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Use ExtendedInfo dialogs instead of built-in dialogs</label>
+					<onclick>Skin.ToggleSetting(UseExtendedInfoDialogs)</onclick>
+					<selected>Skin.HasSetting(UseExtendedInfoDialogs)</selected>
+					<enable>System.HasAddon(script.extendedinfo)</enable>
 					
 				</control>
 				
