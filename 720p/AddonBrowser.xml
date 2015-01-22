@@ -30,7 +30,7 @@
 				<height>480</height>
 				
 				<!--Animation-->
-				<include>Common_Animation_Content_Splash</include>
+				<include>Common_Animation_Content</include>
 				
 				<!--Available Views-->
 				<include>ViewList</include>

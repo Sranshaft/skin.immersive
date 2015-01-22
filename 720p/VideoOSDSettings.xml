@@ -3,7 +3,7 @@
 <window id="123">
 	
 	<defaultcontrol always="true">5</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
+	<allowoverlay>no</allowoverlay>
 
 	<animation type="WindowOpen">
 		<effect type="fade" start="0" end="100" time="400" />

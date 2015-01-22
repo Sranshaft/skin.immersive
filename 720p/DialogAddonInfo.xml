@@ -268,7 +268,7 @@
 							<control type="label">
 							
 								<include>Common_Control_Label</include>
-								<label>$LOCALIZE[24022]</label>
+								<label>$INFO[Control.GetLabel(6)]</label>
 								
 							</control>
 							
@@ -302,7 +302,7 @@
 							<control type="label">
 							
 								<include>Common_Control_Label</include>
-								<label>$LOCALIZE[24048]</label>
+								<label>$INFO[Control.GetLabel(7)]</label>
 								
 							</control>
 							

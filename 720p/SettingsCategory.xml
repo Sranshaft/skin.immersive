@@ -3,6 +3,7 @@
 <window id="12">
 
 	<defaultcontrol always="true">3</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
 
 	<controls>
 
