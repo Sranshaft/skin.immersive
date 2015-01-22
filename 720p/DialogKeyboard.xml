@@ -259,49 +259,49 @@
 						<description>'S' button</description>
 						<include>Common_Keyboard_Button</include>
 						<onup>121</onup>
-						<ondown>90</ondown>
+						<ondown>160</ondown>
 					</control>
 					
 					<control type="button" id="142">
 						<description>'D' button</description>
 						<include>Common_Keyboard_Button</include>
 						<onup>122</onup>
-						<ondown>88</ondown>
+						<ondown>161</ondown>
 					</control>
 					
 					<control type="button" id="143">
 						<description>'F' button</description>
 						<include>Common_Keyboard_Button</include>
 						<onup>123</onup>
-						<ondown>67</ondown>
+						<ondown>162</ondown>
 					</control>
 					
 					<control type="button" id="144">
 						<description>'G' button</description>
 						<include>Common_Keyboard_Button</include>
 						<onup>124</onup>
-						<ondown>86</ondown>
+						<ondown>163</ondown>
 					</control>
 
 					<control type="button" id="145">
 						<description>'H' button</description>
 						<include>Common_Keyboard_Button</include>
 						<onup>125</onup>
-						<ondown>66</ondown>
+						<ondown>164</ondown>
 					</control>
 
 					<control type="button" id="146">
 						<description>'J' button</description>
 						<include>Common_Keyboard_Button</include>
 						<onup>126</onup>
-						<ondown>78</ondown>
+						<ondown>165</ondown>
 					</control>
 					
 					<control type="button" id="147">
 						<description>'K' button</description>
 						<include>Common_Keyboard_Button</include>
 						<onup>127</onup>
-						<ondown>77</ondown>
+						<ondown>166</ondown>
 					</control>
 
 					<control type="button" id="148">
@@ -323,8 +323,8 @@
 							<width>150</width>
 							<onup>8</onup>
 							<ondown>307</ondown>
-							<onleft>76</onleft>
-							<onright>52</onright>
+							<onleft>148</onleft>
+							<onright>103</onright>
 							
 						</control>
 						
@@ -362,10 +362,10 @@
 							<description>CAPS LOCK button</description>
 							<include>Common_Keyboard_Button_Dark</include>
 							<width>70</width>
-							<onup>65</onup>
+							<onup>140</onup>
 							<ondown>32</ondown>
 							<onleft>51</onleft>
-							<onright>90</onright>
+							<onright>160</onright>
 							
 						</control>
 						
@@ -384,7 +384,7 @@
 					<control type="button" id="160">
 						<description>'Z' button</description>
 						<include>Common_Keyboard_Button</include>
-						<onup>83</onup>
+						<onup>141</onup>
 						<ondown>32</ondown>
 						<onleft>303</onleft>
 					</control>
@@ -392,42 +392,42 @@
 					<control type="button" id="161">
 						<description>'X' button</description>
 						<include>Common_Keyboard_Button</include>
-						<onup>68</onup>
+						<onup>142</onup>
 						<ondown>32</ondown>
 					</control>
 					
 					<control type="button" id="162">
 						<description>'C' button</description>
 						<include>Common_Keyboard_Button</include>
-						<onup>70</onup>
+						<onup>143</onup>
 						<ondown>32</ondown>
 					</control>
 					
 					<control type="button" id="163">
 						<description>'V' button</description>
 						<include>Common_Keyboard_Button</include>
-						<onup>71</onup>
+						<onup>144</onup>
 						<ondown>32</ondown>
 					</control>
 					
 					<control type="button" id="164">
 						<description>'B' button</description>
 						<include>Common_Keyboard_Button</include>
-						<onup>72</onup>
+						<onup>145</onup>
 						<ondown>32</ondown>
 					</control>
 					
 					<control type="button" id="165">
 						<description>'N' button</description>
 						<include>Common_Keyboard_Button</include>
-						<onup>74</onup>
+						<onup>146</onup>
 						<ondown>32</ondown>
 					</control>
 					
 					<control type="button" id="166">
 						<description>'M' button</description>
 						<include>Common_Keyboard_Button</include>
-						<onup>75</onup>
+						<onup>147</onup>
 						<ondown>32</ondown>
 					</control>
 					
@@ -437,7 +437,7 @@
 						<width>70</width>
 						<label>!%$</label>
 						<altlabel>abc</altlabel>
-						<onup>76</onup>
+						<onup>148</onup>
 						<ondown>32</ondown>
 						<onright>307</onright>
 					</control>
@@ -482,7 +482,7 @@
 							<onup>300</onup>
 							<ondown>306</ondown>
 							<onleft>307</onleft>
-							<onright>49</onright>
+							<onright>100</onright>
 							
 						</control>
 						
@@ -544,7 +544,7 @@
 						<include>Common_Keyboard_Button_Dark</include>
 						<width>630</width>
 						<label>space</label>
-						<onup>90</onup>
+						<onup>163</onup>
 						<onright>305</onright>
 						
 					</control>
@@ -587,7 +587,7 @@
 							<width>70</width>
 							<onup>302</onup>
 							<onleft>305</onleft>
-							<onright>48</onright>
+							<onright>109</onright>
 							
 						</control>
 						
@@ -623,7 +623,7 @@
 					<itemgap>10</itemgap>
 					<orientation>horizontal</orientation>
 					<onleft>8</onleft>
-					<onright>81</onright>
+					<onright>108</onright>
 
 					<control type="button" id="106">
 						<description>'7' button</description>
@@ -659,7 +659,7 @@
 					<itemgap>10</itemgap>
 					<orientation>horizontal</orientation>
 					<onleft>300</onleft>
-					<onright>65</onright>
+					<onright>105</onright>
 					
 					<control type="button" id="103">
 						<description>'4' button</description>
@@ -697,7 +697,7 @@
 					<itemgap>10</itemgap>
 					<orientation>horizontal</orientation>	
 					<onleft>302</onleft>
-					<onright>303</onright>
+					<onright>102</onright>
 
 					<control type="button" id="100">
 						<description>'1' button</description>
@@ -735,7 +735,7 @@
 					<itemgap>10</itemgap>
 					<orientation>horizontal</orientation>
 					<onleft>306</onleft>
-					<onright>32</onright>
+					<onright>109</onright>
 				
 					<control type="button" id="109">
 						<description>'0' button</description>
