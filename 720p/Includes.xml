@@ -921,6 +921,22 @@
 		<aligny>center</aligny>
 		
 	</include>
+
+	<include name="Common_Keyboard_Button_Disabled">
+	
+		<width>70</width>
+		<height>60</height>
+		<texturefocus>colors/color_grey.png</texturefocus>
+		<texturenofocus>colors/color_keyboard.png</texturenofocus>
+		<font>Keyboard-Label</font>
+		<textcolor>Label_Disabled</textcolor>
+		<focusedcolor>Label_Disabled</focusedcolor>
+		<textoffsetx>0</textoffsetx>
+		<textoffsety>0</textoffsety>
+		<align>center</align>
+		<aligny>center</aligny>
+		
+	</include>
 	
 	<include name="Common_Keyboard_Button_Dark">
 	

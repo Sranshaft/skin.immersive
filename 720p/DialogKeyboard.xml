@@ -446,7 +446,7 @@
 					
 						<width>70</width>
 						
-						<control type="togglebutton" id="307">
+						<control type="button" id="307">
 							
 							<description>IP Input button</description>
 							<include>Common_Keyboard_Button_Dark</include>
