@@ -629,7 +629,18 @@
 								<posy>0</posy>
 								<width>150</width>
 								<height>150</height>
-								<texture background="true">$INFO[ListItem.Thumb]</texture>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								<aspectratio>scale</aspectratio>
+								
+							</control>
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>150</width>
+								<height>150</height>
+								<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
 								<aspectratio>scale</aspectratio>
 								
 							</control>
@@ -668,7 +679,18 @@
 								<posy>0</posy>
 								<width>150</width>
 								<height>150</height>
-								<texture background="true">$INFO[ListItem.Thumb]</texture>
+								<texture background="true">colors/color_keyboard_dark.png</texture>
+								<aspectratio>scale</aspectratio>
+								
+							</control>
+
+							<control type="image">
+							
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>150</width>
+								<height>150</height>
+								<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
 								<aspectratio>scale</aspectratio>
 								
 							</control>
@@ -1510,7 +1532,7 @@
 						<width>426</width>
 						<height>520</height>
 						<onleft>1050</onleft>
-						<onright>-</onright>
+						<onright>1350</onright>
 						<onup>350</onup>
 						<ondown>350</ondown>
 						<pagecontrol>83</pagecontrol>
