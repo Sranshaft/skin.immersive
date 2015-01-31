@@ -2,7 +2,7 @@
 
 <window id="109">
 
-	<defaultcontrol always="true">19</defaultcontrol>
+	<defaultcontrol always="true">21</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	
 	<animation type="WindowOpen" condition="!Skin.HasSetting(UseAltKeyboard)">
