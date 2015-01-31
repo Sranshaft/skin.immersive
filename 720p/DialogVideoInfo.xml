@@ -759,7 +759,7 @@
 					<width>400</width>
 					<height>560</height>
 					
-					<!--<visible>[Container.Content(movies) | Container.Content(tvshows)] + !StringCompare(ListItem.DBID,-1)</visible>-->
+					<visible>[Container.Content(movies) | Container.Content(tvshows)] + !StringCompare(ListItem.DBID,-1)</visible>
 				
 					<control type="label">
 						
