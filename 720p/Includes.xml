@@ -848,7 +848,7 @@
 	<include name="Common_InfoDialog_Description">
 	
 		<posx>0</posx>
-		<posy>50</posy>
+		<posy>54</posy>
 		<font>DialogInfo-Label</font>
 		<textcolor>Settings_Label</textcolor>
 		<shadowcolor>00FFFFFF</shadowcolor>

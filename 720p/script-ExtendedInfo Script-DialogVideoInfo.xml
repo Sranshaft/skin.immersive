@@ -38,7 +38,7 @@
 				
 			</control>
 			
-			<control type="grouplist">
+			<control type="grouplist" id="9000">
 
 				<posx>50</posx>
 				<posy>60</posy>
@@ -121,9 +121,8 @@
 					<width>400</width>
 					<height>60</height>
 
-					<visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property(HideVideoExtrasButton))</visible>
-                    <visible>!IsEmpty(Window.Property(movie.FilenameAndPath))</visible>
-
+					<visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property(HideVideoExtrasButton)) + !IsEmpty(Window.Property(movie.FilenameAndPath))</visible>
+                    
 					<control type="button" id="100">
 						
 						<include>Common_Control_Button</include>
@@ -151,7 +150,7 @@
 				</control>
 
 				<!--Divider-->
-				<include>Common_Control_Divider</include>
+				<include condition="Control.IsVisible(8) | Control.IsVisible(99) | Control.IsVisible(100)">Common_Control_Divider</include>
 
 				<!--Your Rating Button-->
 				<control type="group">
@@ -464,7 +463,7 @@
 							<control type="label">
 							
 								<include>Common_InfoDialog_Label_Small</include>
-								<label>$INFO[Window.Property(movie.MPAA)]</label>
+								<label>$INFO[Window.Property(movie.MPAA),Rated ,]</label>
 								<visible>!IsEmpty(Window.Property(movie.MPAA))</visible>
 							
 							</control>
@@ -561,7 +560,7 @@
 						<textoffsety>6</textoffsety>
 						<align>left</align>
 						<aligny>top</aligny>
-						<onleft>8</onleft>
+						<onleft>9000</onleft>
 						<onright>1000</onright>
 						<onclick>ActivateWindow(67,return)</onclick>
 
@@ -835,7 +834,7 @@
 							<control type="group">
 							
 								<posx>100</posx>
-								<posy>-10</posy>
+								<posy>-8</posy>
 								<width>260</width>
 								<height>110</height>
 							
@@ -949,7 +948,7 @@
 							<control type="group">
 							
 								<posx>100</posx>
-								<posy>-10</posy>
+								<posy>-8</posy>
 								<width>260</width>
 								<height>110</height>
 							
@@ -1119,7 +1118,7 @@
 							<control type="group">
 							
 								<posx>100</posx>
-								<posy>-10</posy>
+								<posy>-8</posy>
 								<width>260</width>
 								<height>110</height>
 							
@@ -1233,7 +1232,7 @@
 							<control type="group">
 							
 								<posx>100</posx>
-								<posy>-10</posy>
+								<posy>-8</posy>
 								<width>260</width>
 								<height>110</height>
 							
@@ -1382,7 +1381,7 @@
 									<control type="textbox">
 									
 										<posx>0</posx>
-										<posy>-10</posy>
+										<posy>-8</posy>
 										<width>280</width>
 										<height>24</height>
 										<label>$INFO[ListItem.Property(author)]</label>
@@ -1452,7 +1451,7 @@
 									<control type="textbox">
 									
 										<posx>0</posx>
-										<posy>-10</posy>
+										<posy>-8</posy>
 										<width>280</width>
 										<height>24</height>
 										<label>$INFO[ListItem.Property(author)]</label>
@@ -1692,7 +1691,7 @@
 					<control type="grouplist">
 					
 						<posx>0</posx>
-						<posy>60</posy>
+						<posy>56</posy>
 						<width>340</width>
 						<height>520</height>
 						<itemgap>10</itemgap>

@@ -689,9 +689,21 @@
 								<posx>0</posx>
 								<posy>160</posy>
 								<width>150</width>
-								<height>80</height>
+								<height>40</height>
 								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 								<font>Home-RecentWatched</font>
+								<textcolor>Settings_Label</textcolor>
+								
+							</control>
+
+							<control type="textbox">
+								
+								<posx>0</posx>
+								<posy>200</posy>
+								<width>150</width>
+								<height>40</height>
+								<label>as $INFO[ListItem.Label2]</label>
+								<font>DialogInfo-Header-Small</font>
 								<textcolor>Settings_Label</textcolor>
 								
 							</control>
@@ -727,10 +739,22 @@
 								<posx>0</posx>
 								<posy>160</posy>
 								<width>150</width>
-								<height>80</height>
+								<height>40</height>
 								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 								<font>Home-RecentWatched</font>
 								<textcolor>Label_Highlight</textcolor>
+								
+							</control>
+
+							<control type="textbox">
+								
+								<posx>0</posx>
+								<posy>200</posy>
+								<width>150</width>
+								<height>40</height>
+								<label>as $INFO[ListItem.Label2]</label>
+								<font>DialogInfo-Header-Small</font>
+								<textcolor>Settings_Label</textcolor>
 								
 							</control>
 
@@ -759,7 +783,7 @@
 					<width>400</width>
 					<height>560</height>
 					
-					<visible>[Container.Content(movies) | Container.Content(tvshows)] + !StringCompare(ListItem.DBID,-1)</visible>
+					<visible>[Container.Content(movies) | Container.Content(tvshows)] + !StringCompare(ListItem.DBID,-1) + IntegerGreaterThan(Container(51).NumItems,0)</visible>
 				
 					<control type="label">
 						
@@ -1057,7 +1081,7 @@
 					<control type="grouplist">
 					
 						<posx>0</posx>
-						<posy>60</posy>
+						<posy>56</posy>
 						<width>340</width>
 						<height>520</height>
 						<itemgap>10</itemgap>
