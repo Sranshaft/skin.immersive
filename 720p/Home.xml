@@ -24,16 +24,35 @@
 			<include>Common_Clock</include>
 			<include>Common_Overlay</include>
 			
-			<control type="image">
-							
+			<control type="grouplist">
+
 				<posx>60</posx>
 				<posy>20</posy>
 				<width>200</width>
 				<height>65</height>
-				<texture>home/logo.png</texture>
-				<aspectratio>keep</aspectratio>
-				
-			</control>
+				<orientation>horizontal</orientation>
+				<itemgap>0</itemgap>
+
+				<control type="image">
+								
+					<width>65</width>
+					<height>65</height>
+					<texture>home/home_logo_image.png</texture>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>Background_Highlight</colordiffuse>
+					
+				</control>
+
+				<control type="image">
+								
+					<width>135</width>
+					<height>65</height>
+					<texture>home/home_logo_text.png</texture>
+					<aspectratio>keep</aspectratio>
+					
+				</control>
+
+			</control>	
 			
 			<!--Content Area-->
 			<control type="group">
