@@ -12,6 +12,23 @@
 	<!--Breadcrumb Variables-->
 	
 	<variable name="Breadcrumb_Home_Label">
+		
+		<!--Addon Windows-->
+
+		<value condition="SubString(Window.Property(xmlfile),script-Actors-DialogVideoInfo.xml)">$INFO[Listitem.Title]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-Actors-Browser.xml)">Image Browser</value>
+		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogInfo.xml)">$INFO[Window.Property(actor.Title)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogVideoInfo.xml)">$INFO[Window.Property(movie.Title)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-main.xml)">Global Search</value>
+		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-infodialog.xml)">$INFO[Container(100).ListItem.Label]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-NextAired-TVGuide)">Next Aired TV Guide</value>
+		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.live.TVOverlay)">PseudoTV Live</value>
+		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.live.EPG.xml)">PseudoTV Live</value>
+		<value condition="SubString(Window.Property(xmlfile),script-videoextras-main.xml)">$INFO[ListItem.Title]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-The Big Picture-main)">The Big Picture</value>
+
+		<!--Core Windows-->
+
 		<value condition="StringCompare(Window.Property(xmlfile),AddonBrowser.xml)">$LOCALIZE[24001]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">$LOCALIZE[31006]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">$LOCALIZE[31004]</value>
@@ -53,23 +70,21 @@
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDBookmarks.xml)">Kodi Video</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDSettings.xml)">Kodi Video</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VisualisationPresetList.xml)">Kodi Music</value>
-		
-		<!--Addon Specfic Variables-->
-
-		<value condition="SubString(Window.Property(xmlfile),script-Actors-DialogVideoInfo.xml)">$INFO[Listitem.Title]</value>
-		<value condition="SubString(Window.Property(xmlfile),script-Actors-Browser.xml)">Image Browser</value>
-		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogInfo.xml)">$INFO[Window.Property(actor.Title)]</value>
-		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogVideoInfo.xml)">$INFO[Window.Property(movie.Title)]</value>
-		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-main.xml)">Global Search</value>
-		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-infodialog.xml)">$INFO[Container(100).ListItem.Label]</value>
-		<value condition="SubString(Window.Property(xmlfile),script-NextAired-TVGuide)">Next Aired TV Guide</value>
-		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.live.TVOverlay)">PseudoTV Live</value>
-		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.live.EPG.xml)">PseudoTV Live</value>
-		<value condition="SubString(Window.Property(xmlfile),script-videoextras-main.xml)">$INFO[ListItem.Title]</value>
-		<value condition="SubString(Window.Property(xmlfile),script-The Big Picture-main)">The Big Picture</value>
 	</variable>
 	
 	<variable name="Breadcrumb_SubFolder_Label">
+
+		<!--Addon Windows-->
+
+		<value condition="SubString(Window.Property(xmlfile),script-NextAired-TVGuide)">Coming episodes</value>
+		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.live.TVOverlay)">$INFO[Control.GetLabel(502)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.live.EPG)">EPG</value>
+		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-main)">$INFO[Control.GetLabel(190)]$INFO[Control.GetLabel(191)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-videoextras-main.xml)">$ADDON[script.videoextras 32001]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-The Big Picture-main)">$INFO[Container(100).ListItem.Property(album_title)]</value>
+
+		<!--Core Windows-->
+
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">Hub</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">Hub</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">Hub</value>
@@ -101,15 +116,6 @@
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDSettings.xml)">$INFO[Control.GetLabel(2)]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VisualisationPresetList.xml)">$LOCALIZE[31032]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Slideshow.xml)">$INFO[ListItem.FolderPath]</value>
-		
-		<!--Addon Specfic Variables-->
-
-		<value condition="SubString(Window.Property(xmlfile),script-NextAired-TVGuide)">Coming episodes</value>
-		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.live.TVOverlay)">$INFO[Control.GetLabel(502)]</value>
-		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.live.EPG)">EPG</value>
-		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-main)">$INFO[Control.GetLabel(190)]$INFO[Control.GetLabel(191)]</value>
-		<value condition="SubString(Window.Property(xmlfile),script-videoextras-main.xml)">$ADDON[script.videoextras 32001]</value>
-		<value condition="SubString(Window.Property(xmlfile),script-The Big Picture-main)">$INFO[Container(100).ListItem.Property(album_title)]</value>
 	</variable>
 	
 	<!--Context Menu Variables-->
@@ -371,6 +377,18 @@
 	</variable>
 	
 	<variable name="Info_Description">
+		
+		<!--Addon Windows-->
+
+		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogInfo.xml) + !IsEmpty(Window.Property(actor.Biography))">$INFO[Window.Property(actor.Biography)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogVideoInfo.xml) + !IsEmpty(Window.Property(movie.Plot))">$INFO[Window.Property(movie.Plot)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + [Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(150)]">$INFO[Container(100).ListItem.Property(Plot)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + Control.IsVisible(160)">$INFO[Container(100).ListItem.Property(Artist_Description)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + Control.IsVisible(170)">$INFO[Container(100).ListItem.Property(Album_Description)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + Control.IsVisible(180)">$INFO[Container(100).ListItem.Property(Comment)]</value>
+
+		<!--Core Windows-->
+
 		<value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(files)] + !IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 		<value condition="Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
 		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
@@ -382,12 +400,6 @@
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(13)">$INFO[Container(13).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(14)">$INFO[Container(14).ListItem.Plot]</value>
 		<value condition="SubString(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(15)">$INFO[Container(15).ListItem.Plot]</value>
-		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogInfo.xml) + !IsEmpty(Window.Property(actor.Biography))">$INFO[Window.Property(actor.Biography)]</value>
-		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogVideoInfo.xml) + !IsEmpty(Window.Property(movie.Plot))">$INFO[Window.Property(movie.Plot)]</value>
-		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + [Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(150)]">$INFO[Container(100).ListItem.Property(Plot)]</value>
-		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + Control.IsVisible(160)">$INFO[Container(100).ListItem.Property(Artist_Description)]</value>
-		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + Control.IsVisible(170)">$INFO[Container(100).ListItem.Property(Album_Description)]</value>
-		<value condition="SubString(Window.Property(xmlfile),script.globalsearch-infodialog.xml) + Control.IsVisible(180)">$INFO[Container(100).ListItem.Property(Comment)]</value>
 		<value>Description not available</value>
 	</variable>
 
@@ -517,7 +529,7 @@
 		<!--Picture Addons-->
 		<value condition="Window.IsVisible(script-The Big Picture-main.xml)">splash/addons/pictures/splash_thebigpicture.png</value>
 
-		<!--XBMC Windows-->
+		<!--Core Windows-->
 
 		<value condition="Window.IsActive(Custom_Hub_Movies.xml)">splash/splash_movies.png</value>
 		<value condition="Window.IsActive(Custom_Hub_Music.xml)">splash/splash_music.png</value>
