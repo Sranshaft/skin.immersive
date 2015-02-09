@@ -150,6 +150,98 @@
 		<value condition="Window.IsVisible(MyMusicPlaylist.xml)">$INFO[MusicPlayer.Property(Fanart_Image)]</value>
 		<value>$INFO[ListItem.Art(fanart)]</value>
 	</variable>
+
+	<!--Favourites Variables-->
+
+	<variable name="Favourites_Pin_1_Label">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite1.Path))">$INFO[Skin.String(CustomFavourite1.Label)]</value>
+		<value></value>
+	</variable>
+
+	<variable name="Favourites_Pin_1_OnClick">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite1.Path))">$INFO[Skin.String(CustomFavourite1.Path)]</value>
+		<value>RunScript(script.favourites,property=CustomFavourite1)</value>
+	</variable>
+
+	<variable name="Favourites_Pin_1_Thumb">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite1.Path))">$INFO[Skin.String(CustomFavourite1.Icon)]</value>
+		<value>dialoginfo/dialoginfo_add.png</value>
+	</variable>
+
+	<variable name="Favourites_Pin_2_Label">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite2.Path))">$INFO[Skin.String(CustomFavourite2.Label)]</value>
+		<value></value>
+	</variable>
+
+	<variable name="Favourites_Pin_2_OnClick">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite2.Path))">$INFO[Skin.String(CustomFavourite2.Path)]</value>
+		<value>RunScript(script.favourites,property=CustomFavourite2)</value>
+	</variable>
+
+	<variable name="Favourites_Pin_2_Thumb">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite2.Path))">$INFO[Skin.String(CustomFavourite2.Icon)]</value>
+		<value>dialoginfo/dialoginfo_add.png</value>
+	</variable>
+
+	<variable name="Favourites_Pin_3_Label">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite3.Path))">$INFO[Skin.String(CustomFavourite3.Label)]</value>
+		<value></value>
+	</variable>
+
+	<variable name="Favourites_Pin_3_OnClick">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite3.Path))">$INFO[Skin.String(CustomFavourite3.Path)]</value>
+		<value>RunScript(script.favourites,property=CustomFavourite3)</value>
+	</variable>
+
+	<variable name="Favourites_Pin_3_Thumb">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite3.Path))">$INFO[Skin.String(CustomFavourite3.Icon)]</value>
+		<value>dialoginfo/dialoginfo_add.png</value>
+	</variable>
+
+	<variable name="Favourites_Pin_4_Label">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite4.Path))">$INFO[Skin.String(CustomFavourite4.Label)]</value>
+		<value></value>
+	</variable>
+
+	<variable name="Favourites_Pin_4_OnClick">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite4.Path))">$INFO[Skin.String(CustomFavourite4.Path)]</value>
+		<value>RunScript(script.favourites,property=CustomFavourite4)</value>
+	</variable>
+
+	<variable name="Favourites_Pin_4_Thumb">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite4.Path))">$INFO[Skin.String(CustomFavourite4.Icon)]</value>
+		<value>dialoginfo/dialoginfo_add.png</value>
+	</variable>
+
+	<variable name="Favourites_Pin_5_Label">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite5.Path))">$INFO[Skin.String(CustomFavourite5.Label)]</value>
+		<value></value>
+	</variable>
+
+	<variable name="Favourites_Pin_5_OnClick">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite5.Path))">$INFO[Skin.String(CustomFavourite5.Path)]</value>
+		<value>RunScript(script.favourites,property=CustomFavourite5)</value>
+	</variable>
+
+	<variable name="Favourites_Pin_5_Thumb">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite5.Path))">$INFO[Skin.String(CustomFavourite5.Icon)]</value>
+		<value>dialoginfo/dialoginfo_add.png</value>
+	</variable>
+
+	<variable name="Favourites_Pin_6_Label">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite6.Path))">$INFO[Skin.String(CustomFavourite6.Label)]</value>
+		<value></value>
+	</variable>
+
+	<variable name="Favourites_Pin_6_OnClick">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite6.Path))">$INFO[Skin.String(CustomFavourite6.Path)]</value>
+		<value>RunScript(script.favourites,property=CustomFavourite6)</value>
+	</variable>
+
+	<variable name="Favourites_Pin_6_Thumb">
+		<value condition="!IsEmpty(Skin.String(CustomFavourite6.Path))">$INFO[Skin.String(CustomFavourite6.Icon)]</value>
+		<value>dialoginfo/dialoginfo_add.png</value>
+	</variable>
 	
 	<!--ForumBrowser Variables-->
 	
