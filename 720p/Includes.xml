@@ -184,6 +184,17 @@
 					<include>Common_Dimensions</include>
 					<fadetime>1000</fadetime>
 					<texture background="true">$VAR[Fanart_Image]</texture>
+					<colordiffuse>Background_Normal</colordiffuse>
+					<visible>Skin.HasSetting(UseColorDiffuseFanart)</visible>
+					
+				</control>
+
+				<control type="image">
+					
+					<include>Common_Dimensions</include>
+					<fadetime>1000</fadetime>
+					<texture background="true">$VAR[Fanart_Image]</texture>
+					<visible>!Skin.HasSetting(UseColorDiffuseFanart)</visible>
 					
 				</control>
 
