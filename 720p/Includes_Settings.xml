@@ -335,6 +335,7 @@
 		<disabledcolor>Settings_Label_Disabled</disabledcolor>
 		<radioposx>718</radioposx>
 		<radioposy>21</radioposy>
+		<textwidth>660</textwidth>
 		
 	</include>
 	
