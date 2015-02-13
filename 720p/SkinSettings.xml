@@ -96,6 +96,12 @@
 						<onclick>-</onclick>
 					</item>
 
+					<item id="11">
+						<description>Favourites</description>
+						<label>Favourites</label>
+						<onclick>-</onclick>
+					</item>
+
 					<item id="10">
 						<description>Debug</description>
 						<label>$LOCALIZE[31033]</label>
@@ -1439,6 +1445,100 @@
 				</control>
 
 			</control>	
+
+			<!--Pinned Options-->
+			<control type="grouplist" id="1100">
+				
+				<description>Control Area</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
+				<itemgap>0</itemgap>
+				<onup>900</onup>
+				<ondown>900</ondown>
+				<onleft>98</onleft>
+				<onright>-</onright>
+				<orientation>vertical</orientation>
+				<pagecontrol>89</pagecontrol>
+				<visible>Container(98).Hasfocus(11)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
+
+				<control type="label" id="1150">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Pinned favourites</label>
+					
+				</control>
+
+				<control type="button" id="1101">
+					
+					<description>Pinned 1</description>
+					<include>Common_Settings_Button</include>
+					<label>$VAR[Favourites_Pin_1_Label]</label>
+					<onclick>RunScript(script.favourites,property=CustomFavourite1)</onclick>
+					
+				</control>
+
+				<control type="button" id="1102">
+					
+					<description>Pinned 2</description>
+					<include>Common_Settings_Button</include>
+					<label>$VAR[Favourites_Pin_2_Label]</label>
+					<onclick>RunScript(script.favourites,property=CustomFavourite2)</onclick>
+					
+				</control>
+
+				<control type="button" id="1103">
+					
+					<description>Pinned 3</description>
+					<include>Common_Settings_Button</include>
+					<label>$VAR[Favourites_Pin_3_Label]</label>
+					<onclick>RunScript(script.favourites,property=CustomFavourite3)</onclick>
+					
+				</control>
+
+				<control type="button" id="1104">
+					
+					<description>Pinned 4</description>
+					<include>Common_Settings_Button</include>
+					<label>$VAR[Favourites_Pin_4_Label]</label>
+					<onclick>RunScript(script.favourites,property=CustomFavourite4)</onclick>
+					
+				</control>
+
+				<control type="button" id="1105">
+					
+					<description>Pinned 5</description>
+					<include>Common_Settings_Button</include>
+					<label>$VAR[Favourites_Pin_5_Label]</label>
+					<onclick>RunScript(script.favourites,property=CustomFavourite5)</onclick>
+					
+				</control>
+
+				<control type="button" id="1106">
+					
+					<description>Pinned 6</description>
+					<include>Common_Settings_Button</include>
+					<label>$VAR[Favourites_Pin_6_Label]</label>
+					<onclick>RunScript(script.favourites,property=CustomFavourite6)</onclick>
+					
+				</control>
+
+				<control type="radiobutton" id="1107">
+					
+					<description>Pinned 6</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Show pinned favourites on the Favourites window</label>
+					<onclick>Skin.ToggleSetting(ShowPinnedFavourites)</onclick>
+					<selected>Skin.HasSetting(ShowPinnedFavourites)</selected>
+					
+				</control>
+
+			</control>
+
 
 			<!--Debug Options-->
 			<control type="grouplist" id="1000">
