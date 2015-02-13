@@ -260,6 +260,7 @@
 						<label>Home</label>
 						<thumb>charms/charm_home.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
+						<onclick>Dialog.Close(134)</onclick>
 						<onclick>ActivateWindow(Home)</onclick>
 						<visible>Skin.HasSetting(ShowHomeCharm)</visible>
 					</item>
@@ -269,6 +270,7 @@
 						<label>Search</label>
 						<thumb>charms/charm_search.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
+						<onclick>Dialog.Close(134)</onclick>
 						<onclick>XBMC.RunScript(script.globalsearch)</onclick>
 						<visible>System.HasAddon(script.globalsearch) + Skin.HasSetting(ShowSearchCharm)</visible>
 					</item>
@@ -278,6 +280,7 @@
 						<label>$LOCALIZE[31006]</label>
 						<thumb>charms/charm_movies.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
+						<onclick>Dialog.Close(134)</onclick>
 						<onclick>ActivateWindow(61,return)</onclick>
 						<visible>Skin.HasSetting(ShowMoviesCharm)</visible>
 					</item>
@@ -287,6 +290,7 @@
 						<label>$LOCALIZE[31007]</label>
 						<thumb>charms/charm_tvshows.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
+						<onclick>Dialog.Close(134)</onclick>
 						<onclick>ActivateWindow(62,return)</onclick>
 						<visible>Skin.HasSetting(ShowTVShowsCharm)</visible>
 					</item>
@@ -296,6 +300,7 @@
 						<label>$LOCALIZE[31004]</label>
 						<thumb>charms/charm_music.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
+						<onclick>Dialog.Close(134)</onclick>
 						<onclick>ActivateWindow(63,return)</onclick>
 						<visible>Skin.HasSetting(ShowMusicCharm)</visible>
 					</item>
@@ -305,6 +310,7 @@
 						<label>$LOCALIZE[31014]</label>
 						<thumb>charms/charm_disc.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
+						<onclick>Dialog.Close(134)</onclick>
 						<onclick>PlayDVD</onclick>
 						<visible>System.HasMediadvd</visible>
 					</item>
@@ -314,6 +320,7 @@
 						<label>$LOCALIZE[31008]</label>
 						<thumb>charms/charm_favourites.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
+						<onclick>Dialog.Close(134)</onclick>
 						<onclick>ActivateWindow(favourites)</onclick>
 						<visible>Skin.HasSetting(ShowFavouritesCharm)</visible>
 					</item>
@@ -323,6 +330,7 @@
 						<label>$LOCALIZE[31012]</label>
 						<thumb>charms/charm_settings.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
+						<onclick>Dialog.Close(134)</onclick>
 						<onclick>ActivateWindow(settings)</onclick>
 						<visible>Skin.HasSetting(ShowSettingsCharm)</visible>
 					</item>
@@ -332,6 +340,7 @@
 						<label>$LOCALIZE[31013]</label>
 						<thumb>charms/charm_shutdown.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
+						<onclick>Dialog.Close(134)</onclick>
 						<onclick>ActivateWindow(shutdownmenu)</onclick>
 						<visible>Skin.HasSetting(ShowSettingsCharm)</visible>
 					</item>
