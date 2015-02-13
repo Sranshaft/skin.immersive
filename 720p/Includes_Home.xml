@@ -47,36 +47,18 @@
 						
 					</control>
 
-					<control type="multiimage">
+					<control type="image">
 					
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>140</width>
 						<height>140</height>
-						<imagepath>$INFO[ListItem.Thumb]</imagepath>
-						<timeperimage>2000</timeperimage>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
 						<fadetime>1000</fadetime>
-						<randomize>false</randomize>
 						<aspectratio>scale</aspectratio>
 						
 					</control>
 
-					<control type="multiimage">
-	
-						<posx>-1</posx>
-						<posy>-1</posy>
-						<width>142</width>
-						<height>142</height>
-						<imagepath>tile/</imagepath>
-						<timeperimage>2000</timeperimage>
-						<fadetime>1000</fadetime>
-						<randomize>false</randomize>
-						<colordiffuse>FanartDiffuse</colordiffuse>
-
-						<visible>!IsEmpty(ListItem.Thumb)</visible>
-
-					</control>
-					
 					<control type="image">
 					
 						<posx>0</posx>
@@ -132,36 +114,18 @@
 						
 					</control>
 
-					<control type="multiimage">
+					<control type="image">
 					
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>140</width>
 						<height>140</height>
-						<imagepath>$INFO[ListItem.Thumb]</imagepath>
-						<timeperimage>2000</timeperimage>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
 						<fadetime>1000</fadetime>
-						<randomize>false</randomize>
 						<aspectratio>scale</aspectratio>
 						
 					</control>
 
-					<control type="multiimage">
-	
-						<posx>-1</posx>
-						<posy>-1</posy>
-						<width>142</width>
-						<height>142</height>
-						<imagepath>tile/</imagepath>
-						<timeperimage>2000</timeperimage>
-						<fadetime>1000</fadetime>
-						<randomize>false</randomize>
-						<colordiffuse>FanartDiffuse</colordiffuse>
-
-						<visible>!IsEmpty(ListItem.Thumb)</visible>
-						
-					</control>
-					
 					<control type="image">
 					
 						<posx>0</posx>
@@ -208,7 +172,7 @@
 						<posy>0</posy>
 						<width>140</width>
 						<height>140</height>
-						<texture border="10">list_focus.png</texture>
+						<texture border="8">list_focus.png</texture>
 						<colordiffuse>Background_Highlight</colordiffuse>
 						<aspectratio>scale</aspectratio>
 						
@@ -548,7 +512,7 @@
 						<posy>0</posy>
 						<width>60</width>
 						<height>60</height>
-						<texture border="10">button_unfocus.png</texture>
+						<texture border="8">list_focus.png</texture>
 						<colordiffuse>Background_Highlight</colordiffuse>
 						
 						<visible>Control.HasFocus(9001)</visible>
@@ -762,7 +726,6 @@
 				<width>400</width>
 				<height>480</height>
 				<onleft>9001</onleft>
-				<onright>SetFocus(9003,0)</onright>
 				<onright>9003</onright>
 				<onup>9002</onup>
 				<ondown>9002</ondown>
@@ -1921,153 +1884,11 @@
 
 						<visible>Control.HasFocus(9007)</visible>
 						
-					</control>		
+					</control>	
 
 				</focusedlayout>
-				
-				<content>
 
-					<item id="1">
-						<onclick>$INFO[Window.Property(favourite.1.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.1.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.1.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.1.Path))</visible>
-					</item>
-
-					<item id="2">
-						<onclick>$INFO[Window.Property(favourite.2.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.2.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.2.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.2.Path))</visible>
-					</item>
-					
-					<item id="3">
-						<onclick>$INFO[Window.Property(favourite.3.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.3.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.3.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.3.Path))</visible>
-					</item>
-					
-					<item id="4">
-						<onclick>$INFO[Window.Property(favourite.4.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.4.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.4.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.4.Path))</visible>
-					</item>
-					
-					<item id="5">
-						<onclick>$INFO[Window.Property(favourite.5.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.5.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.5.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.5.Path))</visible>
-					</item>
-
-					<item id="6">
-						<onclick>$INFO[Window.Property(favourite.6.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.6.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.6.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.6.Path))</visible>
-					</item>
-					
-					<item id="7">
-						<onclick>$INFO[Window.Property(favourite.7.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.7.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.7.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.7.Path))</visible>
-					</item>
-					
-					<item id="8">
-						<onclick>$INFO[Window.Property(favourite.8.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.8.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.8.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.8.Path))</visible>
-					</item>
-					
-					<item id="9">
-						<onclick>$INFO[Window.Property(favourite.9.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.9.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.9.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.9.Path))</visible>
-					</item>
-					
-					<item id="10">
-						<onclick>$INFO[Window.Property(favourite.10.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.10.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.10.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.10.Path))</visible>
-					</item>
-					
-					<item id="11">
-						<onclick>$INFO[Window.Property(favourite.11.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.11.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.11.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.11.Path))</visible>
-					</item>
-
-					<item id="12">
-						<onclick>$INFO[Window.Property(favourite.12.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.12.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.12.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.12.Path))</visible>
-					</item>
-					
-					<item id="13">
-						<onclick>$INFO[Window.Property(favourite.13.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.13.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.13.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.13.Path))</visible>
-					</item>
-					
-					<item id="14">
-						<onclick>$INFO[Window.Property(favourite.14.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.14.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.14.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.14.Path))</visible>
-					</item>
-					
-					<item id="15">
-						<onclick>$INFO[Window.Property(favourite.15.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.15.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.15.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.15.Path))</visible>
-					</item>
-
-					<item id="16">
-						<onclick>$INFO[Window.Property(favourite.16.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.16.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.16.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.16.Path))</visible>
-					</item>
-					
-					<item id="17">
-						<onclick>$INFO[Window.Property(favourite.17.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.17.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.17.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.17.Path))</visible>
-					</item>
-					
-					<item id="18">
-						<onclick>$INFO[Window.Property(favourite.18.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.18.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.18.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.18.Path))</visible>
-					</item>
-					
-					<item id="19">
-						<onclick>$INFO[Window.Property(favourite.19.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.19.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.19.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.19.Path))</visible>
-					</item>
-					
-					<item id="20">
-						<onclick>$INFO[Window.Property(favourite.20.Path)]</onclick>
-						<thumb>$INFO[Window.Property(favourite.20.Thumb)]</thumb>
-						<label>$INFO[Window.Property(favourite.20.Name)]</label>
-						<visible>!IsEmpty(Window.Property(favourite.20.Path))</visible>
-					</item>
-					
-				</content>
+				<content limit="20">plugin://script.extendedinfo?info=favourites</content>
 
 			</control>
 			
