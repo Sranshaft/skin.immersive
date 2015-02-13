@@ -4,15 +4,15 @@
 	
 	<defaultcontrol always="true">-</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	
-	<animation type="WindowOpen" condition="!Window.Previous(mutebug)">
+
+	<animation type="WindowOpen">
 		<effect type="fade" start="0" end="100" time="100" />
 	</animation>
 	
-	<animation type="WindowClose" condition="!Window.Next(mutebug)">
+	<animation type="WindowClose">
 		<effect type="fade" start="100" end="0" time="400" />
 	</animation>
-	
+
 	<controls>
 	
 		<control type="group">
@@ -23,7 +23,7 @@
 			<height>145</height>
 			
 			<visible>!StringCompare(Player.Volume,-60 dB) + !Player.HasMedia</visible>
-		
+
 			<control type="image">
 				
 				<posx>0</posx>

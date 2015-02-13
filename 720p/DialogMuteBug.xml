@@ -4,16 +4,19 @@
 
 	<defaultcontrol always="true">901</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	
+
 	<controls>
 	
 		<control type="group">
-			
+
 			<posx>40</posx>
 			<posy>40</posy>
 			<width>60</width>
 			<height>145</height>
-			
+
+			<animation effect="fade" start="0" end="100" time="400" condition="!Window.IsVisible(volumebar)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="100" condition="Window.IsVisible(volumebar)">Conditional</animation>
+
 			<control type="image">
 				
 				<posx>0</posx>
@@ -22,7 +25,7 @@
 				<height>145</height>
 				<texture>colors/color_white.png</texture>
 				<colordiffuse>FanartDiffuse</colordiffuse>
-				
+
 			</control>
 			
 			<control type="image">
