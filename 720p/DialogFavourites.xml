@@ -182,7 +182,7 @@
 							<item id="1">
 								<description>Pinned Favourite 1</description>
 								<label>$VAR[Favourites_Pin_1_Label]</label>
-								<onclick condition="!IsEmpty(Skin.String(CustomFavourite1.Path))">Dialog.Close(134)</onclick>
+								<onclick>Dialog.Close(134)</onclick>
 								<onclick>$VAR[Favourites_Pin_1_OnClick]</onclick>
 								<icon>$VAR[Favourites_Pin_1_Thumb]</icon>
 							</item>
@@ -190,7 +190,7 @@
 							<item id="2">
 								<description>Pinned Favourite 2</description>
 								<label>$VAR[Favourites_Pin_2_Label]</label>
-								<onclick condition="!IsEmpty(Skin.String(CustomFavourite2.Path))">Dialog.Close(134)</onclick>
+								<onclick>Dialog.Close(134)</onclick>
 								<onclick>$VAR[Favourites_Pin_2_OnClick]</onclick>
 								<icon>$VAR[Favourites_Pin_2_Thumb]</icon>
 							</item>
@@ -198,7 +198,7 @@
 							<item id="3">
 								<description>Pinned Favourite 3</description>
 								<label>$VAR[Favourites_Pin_3_Label]</label>
-								<onclick condition="!IsEmpty(Skin.String(CustomFavourite3.Path))">Dialog.Close(134)</onclick>
+								<onclick>Dialog.Close(134)</onclick>
 								<onclick>$VAR[Favourites_Pin_3_OnClick]</onclick>
 								<icon>$VAR[Favourites_Pin_3_Thumb]</icon>
 							</item>
@@ -206,7 +206,7 @@
 							<item id="4">
 								<description>Pinned Favourite 4</description>
 								<label>$VAR[Favourites_Pin_4_Label]</label>
-								<onclick condition="!IsEmpty(Skin.String(CustomFavourite4.Path))">Dialog.Close(134)</onclick>
+								<onclick>Dialog.Close(134)</onclick>
 								<onclick>$VAR[Favourites_Pin_4_OnClick]</onclick>
 								<icon>$VAR[Favourites_Pin_4_Thumb]</icon>
 							</item>
@@ -214,7 +214,7 @@
 							<item id="5">
 								<description>Pinned Favourite 5</description>
 								<label>$VAR[Favourites_Pin_5_Label]</label>
-								<onclick condition="!IsEmpty(Skin.String(CustomFavourite5.Path))">Dialog.Close(134)</onclick>
+								<onclick>Dialog.Close(134)</onclick>
 								<onclick>$VAR[Favourites_Pin_5_OnClick]</onclick>
 								<icon>$VAR[Favourites_Pin_5_Thumb]</icon>
 							</item>
@@ -222,7 +222,7 @@
 							<item id="6">
 								<description>Pinned Favourite 6</description>
 								<label>$VAR[Favourites_Pin_6_Label]</label>
-								<onclick condition="!IsEmpty(Skin.String(CustomFavourite6.Path))">Dialog.Close(134)</onclick>
+								<onclick>Dialog.Close(134)</onclick>
 								<onclick>$VAR[Favourites_Pin_6_OnClick]</onclick>
 								<icon>$VAR[Favourites_Pin_6_Thumb]</icon>
 							</item>
