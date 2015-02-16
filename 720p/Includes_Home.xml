@@ -269,7 +269,7 @@
 						<label2>$INFO[Window(Home).Property(Movies.Count),, movies][CR]$INFO[Window(Home).Property(Movies.Watched),, watched][CR]$INFO[Window(Home).Property(Movies.UnWatched),, unwatched]</label2>
 						<thumb>$INFO[Window(Home).Property(script.grab.fanart.Movie.Fanart)]</thumb>
 						<icon>home/home_movie.png</icon>
-						<onclick>ActivateWindow(61,return)</onclick>
+						<onclick>ActivateWindow(1110,return)</onclick>
 						<visible>Library.HasContent(movies) + Skin.HasSetting(ShowMoviesMenu)</visible>
 					</item>
 
@@ -279,7 +279,7 @@
 						<label2>$INFO[Window(Home).Property(TVShows.Count),, tv shows][CR]$INFO[Window(Home).Property(TVShows.Watched),, watched][CR]$INFO[Window(Home).Property(TVShows.UnWatched),, unwatched]</label2>
 						<thumb>$INFO[Window(Home).Property(script.grab.fanart.TV.Fanart)]</thumb>
 						<icon>home/home_tvshow.png</icon>
-						<onclick>ActivateWindow(62,return)</onclick>
+						<onclick>ActivateWindow(1111,return)</onclick>
 						<visible>Library.HasContent(tvshows) + Skin.HasSetting(ShowTVShowsMenu)</visible>
 					</item>
 					
@@ -287,7 +287,7 @@
 						<description>Live TV</description>
 						<label>Live TV</label>
 						<icon>home/home_livetv.png</icon>
-						<onclick>ActivateWindow(PVR)</onclick>
+						<onclick>ActivateWindow(1112,return)</onclick>
 						<visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(ShowLiveTVMenu)</visible>
 					</item>
 					
@@ -297,7 +297,7 @@
 						<label2>$INFO[Window(Home).Property(Music.ArtistsCount),, artists][CR]$INFO[Window(Home).Property(Music.AlbumsCount),, albums][CR]$INFO[Window(Home).Property(Music.SongsCount),, songs]</label2>
 						<thumb>$INFO[Window(Home).Property(script.grab.fanart.Music.Fanart)]</thumb>
 						<icon>home/home_music.png</icon>
-						<onclick>ActivateWindow(63,return)</onclick>
+						<onclick>ActivateWindow(1113,return)</onclick>
 						<visible>Skin.HasSetting(ShowMusicMenu)</visible>
 					</item>
 					
@@ -580,7 +580,7 @@
 						<label>$LOCALIZE[31007]</label>
 						<label2>$INFO[Window(Home).Property(TVShows.Count),, tv shows][CR]$INFO[Window(Home).Property(TVShows.Watched),, watched][CR]$INFO[Window(Home).Property(TVShows.UnWatched),, unwatched]</label2>
 						<thumb>home/home_tvshow_small.png</thumb>
-						<onclick>ActivateWindow(62,return)</onclick>
+						<onclick>ActivateWindow(1111,return)</onclick>
 						<visible>Library.HasContent(tvshows) + Skin.HasSetting(ShowTVShowsMenu)</visible>
 					</item>
 					
@@ -605,7 +605,7 @@
 						<label>$LOCALIZE[31004]</label>
 						<label2>$INFO[Window(Home).Property(Music.ArtistsCount),, artists][CR]$INFO[Window(Home).Property(Music.AlbumsCount),, albums][CR]$INFO[Window(Home).Property(Music.SongsCount),, songs]</label2>
 						<thumb>home/home_music_small.png</thumb>
-						<onclick>ActivateWindow(63,return)</onclick>
+						<onclick>ActivateWindow(1112,return)</onclick>
 						<visible>Skin.HasSetting(ShowMusicMenu)</visible>
 					</item>
 

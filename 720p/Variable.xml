@@ -30,6 +30,7 @@
 		<!--Core Windows-->
 
 		<value condition="StringCompare(Window.Property(xmlfile),AddonBrowser.xml)">$LOCALIZE[24001]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_LiveTV.xml)">Live TV</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">$LOCALIZE[31006]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">$LOCALIZE[31004]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">$LOCALIZE[20343]</value>
@@ -85,6 +86,7 @@
 
 		<!--Core Windows-->
 
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_LiveTV.xml)">Hub</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">Hub</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">Hub</value>
 		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">Hub</value>
@@ -242,7 +244,7 @@
 		<value condition="!IsEmpty(Skin.String(CustomFavourite6.Path))">$INFO[Skin.String(CustomFavourite6.Icon)]</value>
 		<value>dialoginfo/dialoginfo_add.png</value>
 	</variable>
-	
+
 	<!--ForumBrowser Variables-->
 	
 	<variable name="ForumBrowser_Breadcrumb_Label1">

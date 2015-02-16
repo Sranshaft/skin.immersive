@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<window id="1113">
+<window id="1112">
 
 	<include>Common_Window</include>
 
@@ -8,11 +8,18 @@
 	
 	<zorder>2</zorder>
 	
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowNearbyEventsSection_Music)">RunScript(script.extendedinfo,info=nearevents)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowInCinemasSection_Video)">RunScript(script.extendedinfo,info=intheaters)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=trendingmovies)</onload>
 	
 	<onload>AlarmClock(MoveFeatured,Control.Move(9001,1),00:20,silent,loop)</onload>
 	<onunload>XBMC.CancelAlarm(MoveFeatured,true)</onunload>
 	
+	<onload>AlarmClock(MoveIncinemas,Control.Move(9005,1),00:20,silent,loop)</onload>
+	<onunload>XBMC.CancelAlarm(MoveIncinemas,true)</onunload>
+	
+	<onload>AlarmClock(MoveTrakt,Control.Move(9007,1),00:20,silent,loop)</onload>
+	<onunload>XBMC.CancelAlarm(MoveTrakt,true)</onunload>
+
 	<controls>
 
 		<!--Background Area-->
@@ -167,82 +174,47 @@
 							
 							<content>
 
-								<item id="1">
+								<item>
 									<description>Now Playing</description>
 									<label>Now playing</label>
 									<thumb>$VAR[NowPlaying_Image]</thumb>
-									<onclick>ActivateWindow(visualisation)</onclick>
-									<visible>Player.HasMedia + Player.HasAudio</visible>
+									<onclick>ActivateWindow(fullscreenvideo)</onclick>
+									<visible>Player.HasVideo + VideoPlayer.Content(movies)</visible>
+								</item>
+								
+								<item>
+									<description>Channels</description>
+									<label>$LOCALIZE[19019]</label>
+									<thumb>hub/hub_movietitles_small.png</thumb>
+									<onclick>ActivateWindow(TVChannels,return)</onclick>
 								</item>
 
-								<item id="2">
-									<description>Recently Added</description>
-									<label>Recent added</label>
+								<item>
+									<description>Guide</description>
+									<label>$LOCALIZE[19069]</label>
 									<thumb>hub/hub_recentlyadded_small.png</thumb>
-									<onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums,return)</onclick>
+									<onclick>ActivateWindow(TVGuide,return)</onclick>
+								</item>
+
+								<item>
+									<description>Recordings</description>
+									<label>$LOCALIZE[19163]</label>
+									<thumb>hub/hub_inprogress_small.png</thumb>
+									<onclick>ActivateWindow(TVRecordings,return)</onclick>
 								</item>
 								
-								<item id="3">
-									<description>Recently Played</description>
-									<label>Last played</label>
-									<thumb>hub/hub_recentlyadded_small.png</thumb>
-									<onclick>ActivateWindow(MusicLibrary,RecentlyPlayedAlbums,return)</onclick>
-								</item>
-								
-								<item id="4">
-									<description>Artists</description>
-									<label>Artists</label>
+								<item>
+									<description>Timers</description>
+									<label>$LOCALIZE[19040]</label>
 									<thumb>hub/hub_actors_small.png</thumb>
-									<onclick>ActivateWindow(MusicLibrary,Artists,return)</onclick>
+									<onclick>ActivateWindow(TVTimers,return)</onclick>
 								</item>
 								
-								<item id="5">
-									<description>Albums</description>
-									<label>Albums</label>
-									<thumb>hub/hub_albums_small.png</thumb>
-									<onclick>ActivateWindow(MusicLibrary,Albums,return)</onclick>
-								</item>
-								
-								<item id="6">
-									<description>Songs</description>
-									<label>Songs</label>
-									<thumb>hub/hub_songs_small.png</thumb>
-									<onclick>ActivateWindow(MusicLibrary,Songs,return)</onclick>
-								</item>
-								
-								<item id="7">
-									<description>Genres</description>
-									<label>Genres</label>
-									<thumb>hub/hub_genres_small.png</thumb>
-									<onclick>ActivateWindow(MusicLibrary,Genres,return)</onclick>
-								</item>
-								
-								<item id="8">
-									<description>Years</description>
-									<label>Years</label>
-									<thumb>hub/hub_years_small.png</thumb>
-									<onclick>ActivateWindow(MusicLibrary,Years,return)</onclick>
-								</item>
-								
-								<item id="9">
-									<description>Top100</description>
-									<label>Top100</label>
-									<thumb>hub/hub_top100_small.png</thumb>
-									<onclick>ActivateWindow(MusicLibrary,Top100,return)</onclick>
-								</item>
-								
-								<item id="10">
-									<description>Playlists</description>
-									<label>Playlists</label>
-									<thumb>hub/hub_playlists_small.png</thumb>
-									<onclick>ActivateWindow(MusicLibrary,special://musicplaylists/,return)</onclick>
-								</item>
-								
-								<item id="11">
-									<description>Addons</description>
-									<label>Addons</label>
-									<thumb>hub/hub_addons_small.png</thumb>
-									<onclick>ActivateWindow(MusicLibrary,addons://sources/audio/,return)</onclick>
+								<item>
+									<description>Search</description>
+									<label>$LOCALIZE[137]</label>
+									<thumb>hub/hub_directors_small.png</thumb>
+									<onclick>ActivateWindow(TVSearch,return)</onclick>
 								</item>
 
 							</content>
@@ -263,14 +235,8 @@
 						</control>
 					
 					</control>
-					
-					<include>Hub_Featured</include>
-					<include>Hub_RecentlyAdded</include>
-					<include>Hub_AiringToday</include>
-					<include>Hub_InCinemas</include>
-					<include>Hub_NearbyEvents</include>
-					<include>Hub_History</include>
-					<include>Hub_Trakt</include>
+
+					<include>Hub_PVR_Overview</include>
 					
 				</control>
 				

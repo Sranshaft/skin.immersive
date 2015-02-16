@@ -27,11 +27,6 @@
 
 				<visible>!Player.HasMedia</visible>
 				
-				<!--<animation type="Conditional" condition="Player.HasMedia" reversible="false">
-					<effect type="slide" start="0,0" end="0,-20" time="200" tween="cubic" easing="out" />
-					<effect type="zoom" start="100,100" end="100,120" time="200" tween="cubic" easing="out" />
-				</animation>-->
-				
 			</control>
 			
 			<control type="image">
@@ -281,7 +276,7 @@
 						<thumb>charms/charm_movies.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
 						<onclick>Dialog.Close(134)</onclick>
-						<onclick>ActivateWindow(61,return)</onclick>
+						<onclick>ActivateWindow(1110,return)</onclick>
 						<visible>Skin.HasSetting(ShowMoviesCharm)</visible>
 					</item>
 
@@ -291,7 +286,7 @@
 						<thumb>charms/charm_tvshows.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
 						<onclick>Dialog.Close(134)</onclick>
-						<onclick>ActivateWindow(62,return)</onclick>
+						<onclick>ActivateWindow(1111,return)</onclick>
 						<visible>Skin.HasSetting(ShowTVShowsCharm)</visible>
 					</item>
 				
@@ -301,7 +296,7 @@
 						<thumb>charms/charm_music.png</thumb>
 						<onclick>Dialog.Close(55)</onclick>
 						<onclick>Dialog.Close(134)</onclick>
-						<onclick>ActivateWindow(63,return)</onclick>
+						<onclick>ActivateWindow(1113,return)</onclick>
 						<visible>Skin.HasSetting(ShowMusicCharm)</visible>
 					</item>
 					

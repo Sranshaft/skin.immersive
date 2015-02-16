@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<window id="61">
+<window id="1110">
 
 	<include>Common_Window</include>
 
@@ -15,7 +15,7 @@
 	<onunload>XBMC.CancelAlarm(MoveFeatured,true)</onunload>
 	
 	<onload>AlarmClock(MoveIncinemas,Control.Move(9005,1),00:20,silent,loop)</onload>
-	<onunload>XBMC.CancelAlarm(MoveIncinemas,true)</onunload>
+	<onunload>XBMC.CancelAlarm(MoveInCinemas,true)</onunload>
 	
 	<onload>AlarmClock(MoveTrakt,Control.Move(9007,1),00:20,silent,loop)</onload>
 	<onunload>XBMC.CancelAlarm(MoveTrakt,true)</onunload>
