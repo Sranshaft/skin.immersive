@@ -6,10 +6,10 @@
 	
 	<include>Common_Animation_Window</include>
 	
-	<!--<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
 	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=TrendingShows)</onload>
 	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=PremiereShows)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=AiringShows)</onload>-->
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=AiringShows)</onload>
 	
 	<controls>
 	
@@ -227,7 +227,7 @@
 							<posy>0</posy>
 							<width>170</width>
 							<height>240</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Art(poster)]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
 							<aspectratio>stretch</aspectratio>
 							
 						</control>
@@ -242,7 +242,7 @@
 							<posy>0</posy>
 							<width>170</width>
 							<height>240</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Art(poster)]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
 							<aspectratio>stretch</aspectratio>
 							
 						</control>
@@ -271,9 +271,7 @@
 
 					</focusedlayout>
 					
-					<content>plugin://script.extendedinfo?info=trendingmovies</content>
-
-					<!--<content>
+					<content>
 					
 						<item id="1">
 							<thumb>$INFO[Window(Home).Property(TrendingMovies.1.Art(poster))]</thumb>
@@ -290,7 +288,7 @@
 							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.1.Art(poster))],58)</onclick>
 							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.1.Art(fanart))],58)</onclick>
 							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.1.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.1.ID)],58)</onclick>
+							<onclick>SetProperty(ID,$INFO[TrendingMovies.1.ID],58)</onclick>
 							<onclick>SetProperty(Type,movie,58)</onclick>
 							<onclick>ActivateWindow(58,return)</onclick>
 						</item>
@@ -310,7 +308,7 @@
 							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.2.Art(poster))],58)</onclick>
 							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.2.Art(fanart))],58)</onclick>
 							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.2.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.2.ID)],58)</onclick>
+							<onclick>SetProperty(DBID,$INFO[Window(Home).Property(TrendingMovies.2.DBID)],58)</onclick>
 							<onclick>SetProperty(Type,movie,58)</onclick>
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
@@ -330,7 +328,7 @@
 							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.3.Art(poster))],58)</onclick>
 							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.3.Art(fanart))],58)</onclick>
 							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.3.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.3.ID)],58)</onclick>
+							<onclick>SetProperty(DBID,$INFO[Window(Home).Property(TrendingMovies.3.DBID)],58)</onclick>
 							<onclick>SetProperty(Type,movie,58)</onclick>
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
@@ -350,7 +348,7 @@
 							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.4.Art(poster))],58)</onclick>
 							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.4.Art(fanart))],58)</onclick>
 							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.4.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.4.ID)],58)</onclick>
+							<onclick>SetProperty(DBID,$INFO[Window(Home).Property(TrendingMovies.4.DBID)],58)</onclick>
 							<onclick>SetProperty(Type,movie,58)</onclick>
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
@@ -675,7 +673,7 @@
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
 					
-					</content>-->	
+					</content>
 
 				</control>
 				
@@ -706,7 +704,7 @@
 							<posy>0</posy>
 							<width>170</width>
 							<height>240</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Art(poster)]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
 							<aspectratio>stretch</aspectratio>
 							
 						</control>
@@ -721,7 +719,7 @@
 							<posy>0</posy>
 							<width>170</width>
 							<height>240</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Art(poster)]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
 							<aspectratio>stretch</aspectratio>
 							
 						</control>
@@ -750,9 +748,7 @@
 
 					</focusedlayout>
 
-					<content>plugin://script.extendedinfo?info=trendingshows</content>
-					
-					<!--<content>
+					<content>
 					
 						<item id="1">
 							<thumb>$INFO[Window(Home).Property(TrendingShows.1.Art(poster))]</thumb>
@@ -1174,7 +1170,7 @@
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
 					
-					</content>-->
+					</content>
 
 				</control>
 				
@@ -1205,7 +1201,7 @@
 							<posy>0</posy>
 							<width>170</width>
 							<height>240</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Art(poster)]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
 							<aspectratio>stretch</aspectratio>
 							
 						</control>
@@ -1220,7 +1216,7 @@
 							<posy>0</posy>
 							<width>170</width>
 							<height>240</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Art(poster)]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
 							<aspectratio>stretch</aspectratio>
 							
 						</control>
@@ -1249,9 +1245,7 @@
 
 					</focusedlayout>
 					
-					<content>plugin://script.extendedinfo?info=airingshows</content>
-
-					<!--<content>
+					<content>
 					
 						<item id="1">
 							<thumb>$INFO[Window(Home).Property(AiringShows.1.Art(poster))]</thumb>
@@ -1673,7 +1667,7 @@
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
 					
-					</content>-->	
+					</content>	
 
 				</control>
 				
@@ -1704,7 +1698,7 @@
 							<posy>0</posy>
 							<width>170</width>
 							<height>240</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Art(poster)]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
 							<aspectratio>stretch</aspectratio>
 							
 						</control>
@@ -1719,7 +1713,7 @@
 							<posy>0</posy>
 							<width>170</width>
 							<height>240</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Art(poster)]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
 							<aspectratio>stretch</aspectratio>
 							
 						</control>
@@ -1748,9 +1742,7 @@
 
 					</focusedlayout>
 
-					<content>plugin://script.extendedinfo?info=premiereshows</content>
-					
-					<!--<content>
+					<content>
 					
 						<item id="1">
 							<thumb>$INFO[Window(Home).Property(PremiereShows.1.Art(poster))]</thumb>
@@ -2172,7 +2164,7 @@
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
 					
-					</content>-->
+					</content>
 
 				</control>
 				

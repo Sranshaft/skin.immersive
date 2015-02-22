@@ -6,8 +6,9 @@
 	<backgroundcolor>0xff000000</backgroundcolor>
 	<zorder>2</zorder>
 	
-	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
-	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Similar,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
+	<!--<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>-->
+	<onload condition="System.HasAddon(script.extendedinfo) + StringCompare($INFO[Window.Property(Type)],movie)">RunScript(script.extendedinfo,info=similarmoviestrakt,id=$INFO[Window.Property(ID)],prefix=SimilarTrakt)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + StringCompare($INFO[Window.Property(Type)],tvshow)">RunScript(script.extendedinfo,info=similartvshowstrakt,id=$INFO[Window.Property(ID)],prefix=SimilarTrakt)</onload>
 
 	<include>Common_Animation_Window</include>
 	
@@ -444,11 +445,11 @@
 					<width>400</width>
 					<height>560</height>
 					
-					<visible>Window.IsVisible(57) + IntegerGreaterThan(Window(Home).Property(SimilarTrakt.Count),0)</visible>
+					<visible>Window.IsVisible(57)</visible>
 					
 					<control type="label">
 						
-						<label>similar</label>
+						<label>$INFO[Window.Property(DBID)]</label>
 						<include>Common_Section_Label</include>
 						
 					</control>
@@ -456,7 +457,7 @@
 					<control type="label">
 						
 						<posx>360</posx>
-						<label>$INFO[Window(Home).Property(SimilarTrakt.Count)]</label>
+						<label>$INFO[Container(52).NumItems]</label>
 						<include>Common_Section_Label_Right</include>
 						
 					</control>
@@ -640,8 +641,10 @@
 							</control>	
 
 						</focusedlayout>
+
+						<content limit="10">plugin://script.extendedinfo?info=similartvshowstrakt&amp;&amp;dbid=$INFO[Window.Property(DBID)]</content>
 						
-						<content>
+						<!--<content>
 						
 							<item id="1">
 								<label>$INFO[Window(Home).Property(SimilarTrakt.1.Title)]</label>
@@ -743,7 +746,7 @@
 								<onclick>-</onclick>
 							</item>
 
-						</content>		
+						</content>-->		
 						
 					</control>
 					
