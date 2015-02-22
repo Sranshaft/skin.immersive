@@ -571,7 +571,7 @@
 						<label>$LOCALIZE[31006]</label>
 						<label2>$INFO[Window(Home).Property(Movies.Count),, movies][CR]$INFO[Window(Home).Property(Movies.Watched),, watched][CR]$INFO[Window(Home).Property(Movies.UnWatched),, unwatched]</label2>
 						<thumb>home/home_movie_small.png</thumb>
-						<onclick>ActivateWindow(61,return)</onclick>
+						<onclick>ActivateWindow(1110,return)</onclick>
 						<visible>Library.HasContent(movies) + Skin.HasSetting(ShowMoviesMenu)</visible>
 					</item>
 
@@ -588,7 +588,7 @@
 						<description>Live TV</description>
 						<label>Live TV</label>
 						<thumb>home/home_livetv_small.png</thumb>
-						<onclick>ActivateWindow(PVR)</onclick>
+						<onclick>ActivateWindow(1112,return)</onclick>
 						<visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(ShowLiveTVMenu)</visible>
 					</item>
 					
@@ -605,7 +605,7 @@
 						<label>$LOCALIZE[31004]</label>
 						<label2>$INFO[Window(Home).Property(Music.ArtistsCount),, artists][CR]$INFO[Window(Home).Property(Music.AlbumsCount),, albums][CR]$INFO[Window(Home).Property(Music.SongsCount),, songs]</label2>
 						<thumb>home/home_music_small.png</thumb>
-						<onclick>ActivateWindow(1112,return)</onclick>
+						<onclick>ActivateWindow(1113,return)</onclick>
 						<visible>Skin.HasSetting(ShowMusicMenu)</visible>
 					</item>
 
