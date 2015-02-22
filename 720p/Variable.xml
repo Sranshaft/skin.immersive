@@ -519,16 +519,23 @@
 	<variable name="NowPlaying_First_Label">
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Artist]</value>
 		<value condition="Player.HasVideo + VideoPlayer.HasMenu">$INFO[Player.Title]</value>
-		<value condition="Player.HasVideo + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(files)]">$INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + [VideoPlayer.Content(movies) | VideoPlayer.Content(files)]">$INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + IsEmpty(VideoPlayer.Season)">$INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + !IntegerGreaterThan(VideoPlayer.Season,9) + !IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,S0,]$INFO[VideoPlayer.Episode,E0,] $INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + !IntegerGreaterThan(VideoPlayer.Season,9) + IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,S0,]$INFO[VideoPlayer.Episode,E,] $INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + IntegerGreaterThan(VideoPlayer.Season,9) + !IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E0,] $INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + IntegerGreaterThan(VideoPlayer.Season,9) + IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E,] $INFO[VideoPlayer.Title]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo">$INFO[VideoPlayer.Title]</value>
 	</variable>
 	
 	<variable name="NowPlaying_Second_Label">
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Album]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(movies)">$INFO[VideoPlayer.Director]</value>
-		<value condition="Player.HasVideo + VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Season,Season ,] $INFO[VideoPlayer.Episode,Episode ,] '[B]$INFO[VideoPlayer.TVShowTitle][/B]'</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TVShowTitle]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(files)">$INFO[VideoPlayer.Genre]</value>
 		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelName]</value>
+		<value condition="Player.HasVideo">$INFO[VideoPlayer.Studio]</value>
 	</variable>
 	
 	<variable name="NowPlaying_Third_Label">
@@ -580,18 +587,18 @@
 	<!--Playlist Variables-->
 
 	<variable name="Playlist_Header">
-		<value condition="Window.IsActive(MyVideoPlaylist.xml) + !IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
-		<value condition="Window.IsActive(MyVideoPlaylist.xml) + !IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
-		<value condition="Window.IsActive(MyVideoPlaylist.xml) + IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
-		<value condition="Window.IsActive(MyVideoPlaylist.xml) + IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
+		<value condition="Window.IsActive(MyVideoPlaylist.xml) + !IntegerGreaterThan(ListItem.Season, 9) + !IntegerGreaterThan(ListItem.Episode, 9) + !IsEmpty(ListItem.Season)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
+		<value condition="Window.IsActive(MyVideoPlaylist.xml) + !IntegerGreaterThan(ListItem.Season, 9) + IntegerGreaterThan(ListItem.Episode, 9) + !IsEmpty(ListItem.Season)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
+		<value condition="Window.IsActive(MyVideoPlaylist.xml) + IntegerGreaterThan(ListItem.Season, 9) + !IntegerGreaterThan(ListItem.Episode, 9) + !IsEmpty(ListItem.Season)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
+		<value condition="Window.IsActive(MyVideoPlaylist.xml) + IntegerGreaterThan(ListItem.Season, 9) + IntegerGreaterThan(ListItem.Episode, 9) + !IsEmpty(ListItem.Season)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
 		<value condition="Window.IsActive(MyMusicPlaylist.xml)">$INFO[ListItem.TrackNumber] $INFO[ListItem.Title]</value>
-		<value>$INFO[ListItem.Artist]</value>
+		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	
 	<variable name="Playlist_SubHeader">
-		<value condition="Window.IsActive(MyVideoPlaylist.xml)">$INFO[ListItem.TVShowTitle]</value>
+		<value condition="Window.IsActive(MyVideoPlaylist.xml) + !IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle]</value>
 		<value condition="Window.IsActive(MyMusicPlaylist.xml)">$INFO[ListItem.Artist]</value>
-		<value>$INFO[ListItem.Artist]</value>
+		<value>$INFO[ListItem.Label2]</value>
 	</variable>
 
 	<!--PVR Variables-->
@@ -723,10 +730,10 @@
 	<!--View Item Variables-->
 
 	<variable name="View_Item_Header">
-		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + !IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
-		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + !IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
-		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + IntegerGreaterThan(ListItem.Season, 10) + !IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
-		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + IntegerGreaterThan(ListItem.Season, 10) + IntegerGreaterThan(ListItem.Episode, 10)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + !IntegerGreaterThan(ListItem.Season, 9) + !IntegerGreaterThan(ListItem.Episode, 9)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + !IntegerGreaterThan(ListItem.Season, 9) + IntegerGreaterThan(ListItem.Episode, 9)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + IntegerGreaterThan(ListItem.Season, 9) + !IntegerGreaterThan(ListItem.Episode, 9)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderPath,recentlyaddedepisodes) + IntegerGreaterThan(ListItem.Season, 9) + IntegerGreaterThan(ListItem.Episode, 9)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,] $INFO[ListItem.Title]</value>
 		<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Title)">$INFO[ListItem.Episode,,.] $INFO[ListItem.Title]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,,.] $INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
