@@ -2019,7 +2019,7 @@
 				<control type="textbox">
 				
 					<width>460</width>
-					<height>76</height>
+					<height>74</height>
 					<label>[UPPERCASE]$VAR[NowPlaying_First_Label][/UPPERCASE]</label>
 					<textcolor>Label_Normal</textcolor>
 					<font>Fullscreen-Info-Large</font>
