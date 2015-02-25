@@ -1436,9 +1436,9 @@
 						<colordiffuse>Settings_Background_Dark</colordiffuse>
 						
 					</control>
-					
+
 					<control type="image">
-						
+							
 						<description>Map Image</description>
 						<posx>0</posx>
 						<posy>60</posy>
@@ -1457,7 +1457,7 @@
 						<posy>60</posy>
 						<width>600</width>
 						<height>480</height>
-						<texture>$INFO[Window.Property(Map.2.Layer)]</texture>
+						<texture>$INFO[Window.Property(Map.1.Layer)]</texture>
 						<aspectratio>scale</aspectratio>
 						<aligny>center</aligny>
 						
