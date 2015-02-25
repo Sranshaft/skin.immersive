@@ -1141,7 +1141,7 @@
 				<description>message</description>
 				<posx>-14</posx>
 				<posy>-1</posy>
-				<width>400</width>
+				<width>300</width>
 				<height>32</height>
 				<label>$VAR[NowPlaying_First_Label]</label>
 				<font>Clock-Header</font>
@@ -1156,7 +1156,7 @@
 				<description>message</description>
 				<posx>-14</posx>
 				<posy>20</posy>
-				<width>400</width>
+				<width>300</width>
 				<height>32</height>
 				<label>$VAR[NowPlaying_Second_Label]</label>
 				<font>Clock-Detail</font>

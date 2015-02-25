@@ -42,7 +42,7 @@
 				<control type="label">
 					
 					<posy>-2</posy>
-					<width min="0" max="850">auto</width>
+					<width min="0" max="400">auto</width>
 					<height>65</height>
 					<label>$VAR[Breadcrumb_Home_Label]</label>
 					<font>Breadcrumb-Home</font>
