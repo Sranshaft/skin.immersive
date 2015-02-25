@@ -8,6 +8,13 @@
 		<value condition="Control.IsEnabled(4)">Label_Normal</value>
 		<value condition="!Control.IsEnabled(4)">Label_Disabled</value>
 	</variable>
+
+	<variable name="Appbar_Update_Label">
+		<value condition="StringCompare(Control.GetLabel(5),$LOCALIZE[12396])">Update:[CR]On</value>
+		<value condition="StringCompare(Control.GetLabel(5),$LOCALIZE[12397])">Update:[CR]Notify</value>
+		<value condition="StringCompare(Control.GetLabel(5),$LOCALIZE[12398])">Update:[CR]Never</value>
+		<value>$INFO[Control.GetLabel(5)]</value>
+	</variable>
 	
 	<!--Breadcrumb Variables-->
 	
@@ -112,7 +119,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(17)">Search</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + !IsEmpty(Container.FolderPath)">$INFO[Container.FolderName]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml) + !IsEmpty(Container.FolderPath)">$INFO[Container.FolderName]</value>
-		<value condition="StringCompare(Window.Property(xmlfile),MyWeather.xml)">$INFO[Window(Weather).Property(Location)]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyWeather.xml)">$INFO[Weather.Location]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSD.xml)">Controls</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDBookmarks.xml)">Bookmarks</value>
 		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDSettings.xml)">$INFO[Control.GetLabel(2)]</value>
@@ -788,5 +795,25 @@
 		<value>$INFO[ListItem.Overlay]</value>
 		
 	</variable>
+
+	<variable name="Weather_Map">
+
+		<value condition="$INFO[Window.Property(Map.1.IsFetched)">$INFO[Window.Property(Map.1.Area)]</value>
+		<value condition="$INFO[Window.Property(Map.2.IsFetched)">$INFO[Window.Property(Map.2.Area)]</value>
+		<value condition="$INFO[Window.Property(Map.3.IsFetched)">$INFO[Window.Property(Map.3.Area)]</value>
+		<value condition="$INFO[Window.Property(Map.4.IsFetched)">$INFO[Window.Property(Map.4.Area)]</value>
+		<value condition="$INFO[Window.Property(Map.5.IsFetched)">$INFO[Window.Property(Map.5.Area)]</value>
+
+	</variable>
+
+	<variable name="Weather_Layer">
+
+		<value condition="$INFO[Window.Property(Map.1.IsFetched)">$INFO[Window.Property(Map.1.Layer)]</value>
+		<value condition="$INFO[Window.Property(Map.2.IsFetched)">$INFO[Window.Property(Map.2.Layer)]</value>
+		<value condition="$INFO[Window.Property(Map.3.IsFetched)">$INFO[Window.Property(Map.3.Layer)]</value>
+		<value condition="$INFO[Window.Property(Map.4.IsFetched)">$INFO[Window.Property(Map.4.Layer)]</value>
+		<value condition="$INFO[Window.Property(Map.5.IsFetched)">$INFO[Window.Property(Map.5.Layer)]</value>
+
+	</variable>	
 	
 </includes>

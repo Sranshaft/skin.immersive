@@ -133,22 +133,58 @@
 		
 		<!--Filter-->
 		<include>Common_AppBar_Filter</include>
+
+		<!--Language Filter-->
+		<control type="radiobutton" id="7">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_languages_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_languages.png</texturenofocus>
+			<textureradioon>appbar/appbar_radioon.png</textureradioon>
+			<textureradiooff>-</textureradiooff>
+			<radiowidth>48</radiowidth>
+			<radioheight>48</radioheight>
+			<radioposx>6</radioposx>
+			<label>hide[CR]foriegn</label>
+			
+		</control>
+
+		<!--Hide Broken Addons-->
+		<control type="radiobutton" id="8">
+			
+			<include>Common_AppBar_Button</include>
+			<texturefocus>appbar/appbar_broken_focus.png</texturefocus>
+			<texturenofocus>appbar/appbar_broken.png</texturenofocus>
+			<textureradioon>appbar/appbar_radioon.png</textureradioon>
+			<textureradiooff>-</textureradiooff>
+			<radiowidth>48</radiowidth>
+			<radioheight>48</radioheight>
+			<radioposx>6</radioposx>
+			<label>hide[CR]broken</label>
+			
+		</control>
 		
 		<!--Divider-->
 		<control type="image" id="9152">
 			<include>Common_AppBar_Divider</include>
 		</control>
-		
+
 		<!--Updates-->
-		<control type="button" id="5">
+		<control type="button" id="9">
 			
 			<include>Common_AppBar_Button</include>
 			<texturefocus>appbar/appbar_autoupdate_focus.png</texturefocus>
 			<texturenofocus>appbar/appbar_autoupdate.png</texturenofocus>
-			<radiowidth>48</radiowidth>
-			<radioheight>48</radioheight>
-			<radioposx>6</radioposx>
-			`2
+			<label>$VAR[Appbar_Update_Label]</label>
+			<onclick>SendClick(5)</onclick>
+
+		</control>
+		
+		<!--Updates-->
+		<control type="button" id="5">
+			
+			<visible>false</visible>
+
 		</control>
 		
 		<!--Notifications-->
@@ -163,21 +199,6 @@
 			<radioheight>48</radioheight>
 			<radioposx>6</radioposx>
 			<label>notify[CR]me</label>
-			
-		</control>
-		
-		<!--Language Filter-->
-		<control type="radiobutton" id="7">
-			
-			<include>Common_AppBar_Button</include>
-			<texturefocus>appbar/appbar_languages_focus.png</texturefocus>
-			<texturenofocus>appbar/appbar_languages.png</texturenofocus>
-			<textureradioon>appbar/appbar_radioon.png</textureradioon>
-			<textureradiooff>-</textureradiooff>
-			<radiowidth>48</radiowidth>
-			<radioheight>48</radioheight>
-			<radioposx>6</radioposx>
-			<label>hide[CR]foriegn</label>
 			
 		</control>
 		
