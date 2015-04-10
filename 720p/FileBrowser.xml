@@ -7,8 +7,6 @@
 	
 	<onload>Skin.Reset(ShowManageMenu)</onload>
 	
-	<!--<include>Common_Animation_Window</include>-->
-	
 	<controls>
 	
 		<!--Background Area-->
@@ -195,7 +193,7 @@
 						
 					</control>
 					
-					<control type="panel" id="450">
+					<control type="list" id="450">
 								
 						<posx>0</posx>
 						<posy>60</posy>
@@ -269,7 +267,20 @@
 								<width>820</width>
 								<height>105</height>
 								<texture border="2">colors/color_white.png</texture>
+								<colordiffuse>Label_Dark</colordiffuse>
+
+								<visible>!Control.HasFocus(450)</visible>
+								
+							</control>
+
+							<control type="image">
+								
+								<width>820</width>
+								<height>105</height>
+								<texture border="2">colors/color_white.png</texture>
 								<colordiffuse>Background_Highlight</colordiffuse>
+
+								<visible>Control.HasFocus(450)</visible>
 								
 							</control>
 							
@@ -328,7 +339,7 @@
 						
 					</control>
 					
-					<control type="panel" id="451">
+					<control type="list" id="451">
 								
 						<posx>0</posx>
 						<posy>60</posy>
@@ -402,7 +413,20 @@
 								<width>820</width>
 								<height>105</height>
 								<texture border="2">colors/color_white.png</texture>
+								<colordiffuse>Label_Dark</colordiffuse>
+
+								<visible>!Control.HasFocus(451)</visible>
+								
+							</control>
+
+							<control type="image">
+								
+								<width>820</width>
+								<height>105</height>
+								<texture border="2">colors/color_white.png</texture>
 								<colordiffuse>Background_Highlight</colordiffuse>
+
+								<visible>Control.HasFocus(451)</visible>
 								
 							</control>
 							
