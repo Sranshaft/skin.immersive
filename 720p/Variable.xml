@@ -53,6 +53,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasVideo">Kodi Video</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasAudio">Kodi Music</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSelect.xml)">$INFO[Control.GetLabel(1)]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsManager.xml)">Kodi TV</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsOSD.xml)">Kodi TV</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogVideoInfo.xml)">$INFO[ListItem.Title]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),FileBrowser.xml)">$INFO[Control.GetLabel(411)]</value>
@@ -104,6 +105,7 @@
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasVideo">Now watching</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasAudio">Now listening</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogSelect.xml)">$INFO[Container(6).NumItems,, items]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsManager.xml)">$LOCALIZE[19199]</value>
 		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsOSD.xml)">Channels</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicOSD.xml)">Controls</value>
 		<value condition="StringCompare(Window.Property(xmlfile),MusicVisualisation.xml)">Now listening</value>
@@ -615,6 +617,11 @@
 		<value condition="Control.IsVisible(15)">EPG: Channel</value>
 		<value condition="Control.IsVisible(16)">EPG: Now / Next</value>
 		<value>EPG</value>
+	</variable>
+
+	<variable name="PVR_Channels_Header">
+		<value condition="IsEmpty(Window.Property(IsRadio))">$LOCALIZE[19023]</value>
+		<value condition="!IsEmpty(Window.Property(IsRadio))">$LOCALIZE[19024]</value>
 	</variable>	
 
 	<!--Splash Variables-->
