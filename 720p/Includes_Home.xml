@@ -525,6 +525,19 @@
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>Label_Normal</textcolor>
 						<include>Common_Control_Label</include>
+
+						<visible>!Control.HasFocus(9001)</visible>
+						
+					</control>
+
+					<control type="label">
+					
+						<width min="20" max="380">auto</width>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>Label_Highlight</textcolor>
+						<include>Common_Control_Label</include>
+
+						<visible>Control.HasFocus(9001)</visible>
 						
 					</control>
 

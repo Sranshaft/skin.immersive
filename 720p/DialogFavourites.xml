@@ -2,7 +2,8 @@
 
 <window type="dialog" id="134">
 	
-	<defaultcontrol always="true">440</defaultcontrol>
+	<onload condition="Skin.HasSetting(ShowPinnedFavourites)">SetFocus(440)</onload>
+	<onload condition="!Skin.HasSetting(ShowPinnedFavourites)">SetFocus(450)</onload>
 	<allowoverlay>yes</allowoverlay>
 	
 	<controls>
@@ -152,17 +153,15 @@
 								<texture>$INFO[ListItem.Icon]</texture>
 								
 							</control>
+
+							<control type="label">
 							
-							<control type="image">
-							
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>60</width>
-								<height>60</height>
-								<texture border="8">list_focus.png</texture>
-								<colordiffuse>Background_Highlight</colordiffuse>
-								
-								<visible>Control.HasFocus(440)</visible>
+								<width min="20" max="380">auto</width>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>Label_Normal</textcolor>
+								<include>Common_Control_Label</include>
+
+								<visible>!Control.HasFocus(440)</visible>
 								
 							</control>
 							
@@ -170,8 +169,10 @@
 							
 								<width min="20" max="380">auto</width>
 								<label>$INFO[ListItem.Label]</label>
-								<textcolor>Label_Normal</textcolor>
+								<textcolor>Label_Highlight</textcolor>
 								<include>Common_Control_Label</include>
+
+								<visible>Control.HasFocus(440)</visible>
 								
 							</control>
 
@@ -255,6 +256,8 @@
 						<include>Common_Favourites_Properties</include>
 						<include>Common_Favourites_Content</include>
 
+						<onclick>Dialog.Close(134)</onclick>
+
 						<visible>Skin.HasSetting(ShowPinnedFavourites)</visible>
 
 					</control>
@@ -282,6 +285,8 @@
 						<include>Common_Favourites_Content</include>
 
 						<visible>!Skin.HasSetting(ShowPinnedFavourites)</visible>
+
+						<onclick>Dialog.Close(134)</onclick>
 
 						<content limit="20">plugin://script.extendedinfo?info=favourites</content>
 
