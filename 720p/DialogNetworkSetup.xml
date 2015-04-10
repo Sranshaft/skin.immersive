@@ -17,7 +17,7 @@
 			<control type="label" id="2">
 	
 				<include>Common_Settings_Header</include>
-				<label>1007</label>
+				<label>Add location</label>
 				
 			</control>
 			
@@ -54,84 +54,82 @@
 		
 		<control type="group" id="99">
 		
-			<posx>500</posx>
-			<posy>100</posy>
-			<width>700</width>
-			<height>480</height>
-			
-			<include>Common_Animation_Settings_Options</include>
+			<include>Common_Settings_Group</include>
 			
 			<control type="grouplist" id="5">
 				
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>120</posy>
-				<width>700</width>
-				<height>540</height>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
 				<itemgap>0</itemgap>
-				<onleft>3</onleft>
-				<onright>9000</onright>
+				<onup>5</onup>
+				<ondown>9000</ondown>
+				<onleft>98</onleft>
+				<onright>-</onright>
 				<orientation>vertical</orientation>
 				<pagecontrol>81</pagecontrol>
-				
-			</control>
-			
-			<control type="spincontrolex" id="10">
-			
-				<description>Protocol</description>
-				<label>$LOCALIZE[1008]</label>
-				<include>Common_Settings_SpinButton</include>
-				
-			</control>
-			
-			<control type="edit" id="11">
-			
-				<description>Server Address</description>
-				<label>-</label>
-				<include>Common_Settings_Edit</include>
-				
-			</control>
-			
-			<control type="edit" id="12">
-			
-				<description>Server Browse</description>
-				<label>$LOCALIZE[1014]</label>
-				<include>Common_Settings_Edit</include>
-				
-			</control>
-			
-			<control type="edit" id="13">
-			
-				<description>Port</description>
-				<label>$LOCALIZE[1013]</label>
-				<include>Common_Settings_Edit</include>
-				
-			</control>
-			
-			<control type="edit" id="14">
-			
-				<description>Username</description>
-				<label>$LOCALIZE[1014]</label>
-				<include>Common_Settings_Edit</include>
-				
-			</control>
-			
-			<control type="edit" id="15">
-			
-				<description>Password</description>
-				<label>$LOCALIZE[15052]</label>
-				<include>Common_Settings_Edit</include>
-				
-			</control>
 
-			<control type="edit" id="16">
+				<control type="spincontrolex" id="10">
 			
-				<description>Remote</description>
-				<label>-</label>
-				<include>Common_Settings_Edit</include>
+					<description>Protocol</description>
+					<label>$LOCALIZE[1008]</label>
+					<include>Common_Settings_SpinButton</include>
+					
+				</control>
+				
+				<control type="edit" id="11">
+				
+					<description>Server Address</description>
+					<label>-</label>
+					<include>Common_Settings_Edit</include>
+					
+				</control>
+				
+				<control type="button" id="12">
+				
+					<description>Server Browse</description>
+					<label>$LOCALIZE[1024]</label>
+					<include>Common_Settings_Button</include>
+					
+				</control>
+				
+				<control type="edit" id="13">
+				
+					<description>Port</description>
+					<label>$LOCALIZE[1013]</label>
+					<include>Common_Settings_Edit</include>
+					
+				</control>
+				
+				<control type="edit" id="14">
+				
+					<description>Username</description>
+					<label>$LOCALIZE[1014]</label>
+					<include>Common_Settings_Edit</include>
+					
+				</control>
+				
+				<control type="edit" id="15">
+				
+					<description>Password</description>
+					<label>$LOCALIZE[15052]</label>
+					<include>Common_Settings_Edit</include>
+					
+				</control>
+
+				<control type="edit" id="16">
+				
+					<description>Remote</description>
+					<label>-</label>
+					<include>Common_Settings_Edit</include>
+					<ondown>9000</ondown>
+					
+				</control>
 				
 			</control>
-
+			
 		</control>
 
 		<!--AppBar-->
