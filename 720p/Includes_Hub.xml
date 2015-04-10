@@ -1445,7 +1445,7 @@
 					
 				</focusedlayout>
 
-				<content limt="10">$VAR[Hub_Trakt]</content>
+				<content limit="10">$VAR[Hub_Trakt]</content>
 				
 			</control>
 			
