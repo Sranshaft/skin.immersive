@@ -686,7 +686,7 @@
 				<posx>200</posx>
 				<posy>72</posy>
 				<width>590</width>
-				<height>20</height>
+				<height min="20" max="40">auto</height>
 				<label>-</label>
 				<font>Dialog-Detail</font>
 				<visible>!IsEmpty(Control.GetLabel(2))</visible>
