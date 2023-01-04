@@ -7,6 +7,22 @@
 	
 	<controls>
 
+		<control type="image">
+			<include>Common_Dimensions</include>
+			<texture>special://skin/backgrounds/debuggrid720.png</texture>
+			<visible>Skin.HasSetting(ShowDebugGrid)</visible>
+		</control>
+
+		<!--Top Area-->
+		<control type="image">
+				
+			<include>Common_Dimensions</include>
+			<texture>overlays/overlay_fullscreen_top.png</texture>
+
+			<visible>Skin.HasSetting(ShowDebugInfo)</visible>
+			
+		</control>
+
 		<control type="grouplist">
 			<posx>10</posx>
 			<posy>10</posy>
@@ -143,6 +159,44 @@
 				<visible>Container.Content(livetv)</visible>
 			</control>
 
+			<!--Player Content labels-->
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Songs</label>
+				<visible>Player.HasAudio</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Files</label>
+				<visible>Player.HasVideo + VideoPlayer.Content(files)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Movies</label>
+				<visible>Player.HasVideo + VideoPlayer.Content(movies)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Episodes</label>
+				<visible>Player.HasVideo + VideoPlayer.Content(episodes)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: Music Videos</label>
+				<visible>Player.HasVideo + VideoPlayer.Content(musicvideos)</visible>
+			</control>
+
+			<control type="label">
+				<include>ContentType</include>
+				<label>Player Content: LiveTV</label>
+				<visible>Player.HasVideo + VideoPlayer.Content(livetv)</visible>
+			</control>
+
 			<!--Player Path label-->
 
 			<control type="label">
@@ -151,36 +205,11 @@
 				<visible>!IsEmpty(Player.FolderPath)</visible>
 			</control>
 
-			<!--Player Content labels-->
-
+			<!--Container labels-->
+			
 			<control type="label">
-				<include>ContentType</include>
-				<label>Player Content: Files</label>
-				<visible>VideoPlayer.Content(files)</visible>
-			</control>
-
-			<control type="label">
-				<include>ContentType</include>
-				<label>Player Content: Movies</label>
-				<visible>VideoPlayer.Content(movies)</visible>
-			</control>
-
-			<control type="label">
-				<include>ContentType</include>
-				<label>Player Content: Episodes</label>
-				<visible>VideoPlayer.Content(episodes)</visible>
-			</control>
-
-			<control type="label">
-				<include>ContentType</include>
-				<label>Player Content: Music Videos</label>
-				<visible>VideoPlayer.Content(musicvideos)</visible>
-			</control>
-
-			<control type="label">
-				<include>ContentType</include>
-				<label>Player Content: LiveTV</label>
-				<visible>VideoPlayer.Content(livetv)</visible>
+				<include>ContainerInfo</include>
+				<label>Container info: $INFO[Container.CurrentPage,Page:, of] $INFO[Container.NumPages] - $INFO[Container.Position,Item:, of] $INFO[Container.NumItems]</label>
 			</control>
 
 			<!--Window labels-->
@@ -189,6 +218,30 @@
 				<include>WindowID</include>
 				<label>script.pseudoTV.TVOverlay.xml</label>
 				<visible>Window.IsVisible(script.pseudoTV.TVOverlay.xml)</visible>
+			</control>
+
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-ExtendedInfo Script-DialogInfo.xml</label>
+				<visible>Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			</control>
+
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-ExtendedInfo Script-DialogVideoInfo.xml</label>
+				<visible>Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
+			</control>
+
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-ExtendedInfo Script-Slideshow.xml</label>
+				<visible>Window.IsVisible(script-ExtendedInfo Script-Slideshow.xml)</visible>
+			</control>
+
+			<control type="label">
+				<include>WindowID</include>
+				<label>script-ExtendedInfo Script-VideoList.xml</label>
+				<visible>Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)</visible>
 			</control>
 			
 			<control type="label">
@@ -543,6 +596,13 @@
 
 			<control type="label">
 				<include>DialogID</include>
+				<label>DialogMediaFilter.xml</label>
+				<visible>Window.IsVisible(DialogMediaFilter.xml)</visible>
+			</control>
+
+
+			<control type="label">
+				<include>DialogID</include>
 				<label>DialogMediaSource.xml</label>
 				<visible>Window.IsVisible(DialogMediaSource.xml)</visible>
 			</control>
@@ -825,11 +885,6 @@
 			
 		</control>
 
-		<control type="image">
-			<include>Common_Dimensions</include>
-			<texture>special://skin/backgrounds/debuggrid720.png</texture>
-			<visible>Skin.HasSetting(ShowDebugGrid)</visible>
-		</control>
-
 	</controls>
+
 </window>

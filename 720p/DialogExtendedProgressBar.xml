@@ -13,30 +13,49 @@
 			<posx>0</posx>
 			<posy>640</posy>
 			
-			<visible>!VideoPlayer.IsFullscreen + !Window.IsVisible(screencalibration) + !Window.IsVisible(settings) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(infodialog)</visible>
+			<visible>!VideoPlayer.IsFullscreen + !Window.IsVisible(screencalibration) + !Window.IsVisible(weather) + !Window.IsVisible(screencalibration) + !Window.IsVisible(settings) + !Window.IsVisible(skinsettings) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(SettingsSystemInfo.xml) + !Window.IsVisible(infodialog) + !Window.IsVisible(script.extendedinfo-DialogVideoInfo.xml) + !Window.IsVisible(script.extendedinfo-DialogInfo.xml)</visible>
 			
-			<animation type="WindowOpen">
+			<!--Use these animation if the appbar is closed-->
+			<animation type="WindowOpen" condition="!Skin.HasSetting(ShowAppBar)">
 				<effect type="slide" start="0,76" end="0,0" time="200"/>
 				<effect type="fade" start="0" end="100" time="200"/>
 			</animation>
-			
-			<animation type="WindowClose">
+
+			<animation type="WindowClose" condition="!Skin.HasSetting(ShowAppBar)">
 				<effect type="slide" start="0,0" end="0,76" time="600"/>
 				<effect type="fade" start="100" end="0" time="600"/>
 			</animation>
-			
-			<animation type="Visible">
+
+			<animation type="Visible" condition="!Skin.HasSetting(ShowAppBar)">
 				<effect type="slide" start="0,76" end="0,0" time="200"/>
 				<effect type="fade" start="0" end="100" time="200"/>
 			</animation>
-			
-			<animation type="Hidden">
+
+			<animation type="Hidden" condition="!Skin.HasSetting(ShowAppBar)">
 				<effect type="slide" start="0,0" end="0,76" time="200"/>
 				<effect type="fade" start="100" end="0" time="200"/>
 			</animation>
+			
+			<!--Use these animation if the appbar is open-->
+			<animation type="WindowOpen" condition="Skin.HasSetting(ShowAppBar)">
+				<effect type="fade" start="0" end="100" time="200"/>
+			</animation>
 
-			<animation type="Conditional" condition="Skin.HasSetting(ShowAppBar) | Window.ControlGroup(9000).HasFocus">
-				<effect type="slide" start="0,0" end="0,-116" time="200"/>
+			<animation type="WindowClose" condition="Skin.HasSetting(ShowAppBar)">
+				<effect type="fade" start="100" end="0" time="600"/>
+			</animation>
+			
+			<animation type="Visible" condition="Skin.HasSetting(ShowAppBar)">
+				<effect type="fade" start="0" end="100" time="200"/>
+			</animation>
+
+			<animation type="Hidden" condition="Skin.HasSetting(ShowAppBar)">
+				<effect type="fade" start="100" end="0" time="200"/>
+			</animation>
+
+			<!--Adjust the position of the window depending on the visibility of the appbar-->
+			<animation type="Conditional" condition="Skin.HasSetting(ShowAppBar)">
+				<effect type="slide" start="0,0" end="0,-116" time="190"/>
 			</animation>
 			
 			<control type="image">

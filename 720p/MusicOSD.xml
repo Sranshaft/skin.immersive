@@ -253,9 +253,9 @@
 			<control type="list" id="10001">
 						
 				<posx>1048</posx>
-				<posy>168</posy>
+				<posy>228</posy>
 				<width>200</width>
-				<height>420</height>
+				<height>360</height>
 				<onup>10001</onup>
 				<ondown>10001</ondown>
 				<onleft>SetFocus(413)</onleft>
@@ -358,12 +358,6 @@
 					</item>
 
 					<item>
-						<label>DVD menu</label>
-						<onclick>PlayerControl(ShowVideoMenu)</onclick>
-						<enable>VideoPlayer.HasMenu</enable>
-					</item>
-
-					<item>
 						<label>$VAR[OSD_Repeat_Label]</label>
 						<onclick>playercontrol(repeat)</onclick>
 					</item>
@@ -380,9 +374,9 @@
 			<control type="image">
 		
 				<posx>1048</posx>
-				<posy>168</posy>
+				<posy>228</posy>
 				<width>200</width>
-				<height>420</height>
+				<height>360</height>
 				<texture border="4">button_unfocus.png</texture>
 				<colordiffuse>Black</colordiffuse>
 				

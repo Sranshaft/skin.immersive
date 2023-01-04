@@ -9,7 +9,7 @@
 			<posx>60</posx>
 			<posy>0</posy>
 		
-			<visible>Control.IsVisible(57)</visible>
+			<visible>Control.IsVisible(57) + IsEmpty(Control.GetLabel(18))</visible>
 			
 			<include>Common_Animation_View</include>
 		

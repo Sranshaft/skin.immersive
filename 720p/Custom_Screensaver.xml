@@ -57,32 +57,33 @@
 			</animation>
 		
 			<control type="multiimage">
-							
-				<posx>10</posx>
-				<posy>2</posy>
-				<width>15</width>
-				<height>48</height>
-				<imagepath>nowplaying/</imagepath>
-				<aspectratio>center</aspectratio>
-				<timeperimage>1000</timeperimage>
-				<fadetime>400</fadetime>
-				<randomize>false</randomize>
-				<loop>yes</loop>
+								
+					<posx>6</posx>
+					<posy>0</posy>
+					<width>15</width>
+					<height>48</height>
+					<imagepath>nowplaying/</imagepath>
+					<aspectratio>center</aspectratio>
+					<timeperimage>1000</timeperimage>
+					<fadetime>400</fadetime>
+					<randomize>false</randomize>
+					<loop>yes</loop>
+					<colordiffuse>Label_Normal</colordiffuse>
+					
+				</control>
 				
-			</control>
-			
-			<control type="label">
-			
-				<posx>40</posx>
-				<posy>0</posy>
-				<width>1220</width>
-				<height>48</height>
-				<label>$INFO[MusicPlayer.Title] $INFO[MusicPlayer.Artist,· ,]</label>
-				<font>Screensaver-NowPlaying</font>
-				<textcolor>white</textcolor>
-				<aligny>center</aligny>
+				<control type="label">
 				
-			</control>
+					<posx>36</posx>
+					<posy>0</posy>
+					<width>520</width>
+					<height>48</height>
+					<label>$VAR[NowPlaying_First_Label] $VAR[NowPlaying_Second_Label,Â· ,]</label>
+					<font>Screensaver-NowPlaying</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>center</aligny>
+					
+				</control>
 			
 		</control>
 	

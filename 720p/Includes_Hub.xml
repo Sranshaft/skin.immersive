@@ -2,41 +2,6 @@
 
 <includes>
 
-	<include name="Hub_Image">
-	
-		<!--Image Area-->
-		<control type="group" id="8000">
-			
-			<posx>0</posx>
-			<posy>0</posy>
-			<height>420</height>
-			<width>288</width>
-			
-			<visible>Control.IsVisible(50)</visible>
-		
-			<control type="label">
-					
-				<label>preview</label>
-				<include>Common_Section_Label</include>
-				
-			</control>
-		
-			<control type="image">
-			
-				<posx>0</posx>
-				<posy>60</posy>
-				<width>288</width>
-				<height>420</height>
-				<texture background="true">$INFO[ListItem.Thumb]</texture>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
-				<fadetime>400</fadetime>
-				
-			</control>
-			
-		</control>
-			
-	</include>
-	
 	<include name="Hub_Featured">
 	
 		<!--Featured Area-->
@@ -310,7 +275,7 @@
 					<posx>20</posx>
 					<posy>6</posy>
 					<width>260</width>
-					<height>116</height>
+					<height>114</height>
 					<label>[UPPERCASE]$INFO[Container(9001).ListItem.Label][/UPPERCASE]</label>
 					<font>Menu-Featured-Large</font>
 					<textcolor>Label_Highlight</textcolor>
@@ -328,7 +293,7 @@
 					<posx>20</posx>
 					<posy>6</posy>
 					<width>260</width>
-					<height>116</height>
+					<height>114</height>
 					<label>[UPPERCASE]$INFO[Container(9001).ListItem.Label][/UPPERCASE]</label>
 					<font>Menu-Featured-Large</font>
 					<textcolor>Label_Normal</textcolor>
@@ -515,7 +480,7 @@
 						<control type="textbox">
 						
 							<posx>120</posx>
-							<posy>-16</posy>
+							<posy>-14</posy>
 							<width>300</width>
 							<height>86</height>
 							<label>[UPPERCASE]$VAR[Hub_Header][/UPPERCASE]</label>
@@ -577,7 +542,7 @@
 						<control type="textbox">
 						
 							<posx>120</posx>
-							<posy>-16</posy>
+							<posy>-14</posy>
 							<width>300</width>
 							<height>86</height>
 							<label>[UPPERCASE]$VAR[Hub_Header][/UPPERCASE]</label>
@@ -675,7 +640,6 @@
 				<font>Menu-List</font>
 				<textcolor>Label_Normal</textcolor>
 				<aligny>top</aligny>
-				<wrapmultiline>true</wrapmultiline>
 				<scrollspeed>0</scrollspeed>
 				
 				<visible>IsEmpty(Window(Home).Property(NextAired.TodayShow))</visible>
@@ -693,7 +657,6 @@
 				<font>Menu-List</font>
 				<textcolor>Label_Normal</textcolor>
 				<aligny>top</aligny>
-				<wrapmultiline>true</wrapmultiline>
 				<scrollspeed>0</scrollspeed>
 				
 				<visible>!IsEmpty(Window(Home).Property(NextAired.TodayShow))</visible>
@@ -1000,7 +963,7 @@
 				
 			</control>
 			
-			<control type="list" id="9005">
+			<control type="wraplist" id="9005">
 						
 				<posx>0</posx>
 				<posy>60</posy>
@@ -1024,7 +987,7 @@
 						<posy>0</posy>
 						<width>286</width>
 						<height>420</height>
-						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true" fallback="fallbacks/fallback_movies.jpg">$INFO[ListItem.Art(poster)]</texture>
 						<aspectratio>stretch</aspectratio>
 						
 					</control>
@@ -1039,113 +1002,16 @@
 						<posy>0</posy>
 						<width>286</width>
 						<height>420</height>
-						<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true" fallback="fallbacks/fallback_movies.jpg">$INFO[ListItem.Art(poster)]</texture>
 						<aspectratio>stretch</aspectratio>
 						
 					</control>
 					
 				</focusedlayout>
+
+				<content limit="10">plugin://script.extendedinfo?info=intheaters</content>
 				
-				<content>
-				
-					<!--Movies-->
-				
-					<item id="1">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.1.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.1.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.1.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.1.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.1.MPAA)]</property>
-						<property name="Rating">$INFO[Window(Home).Property(InCinemaMoviesRT.1.Rating)]</property>
-					</item>
-
-					<item id="2">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.2.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.2.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.2.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.2.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.2.MPAA)]</property>
-						<property name="Rating">$INFO[Window(Home).Property(InCinemaMoviesRT.2.Rating)]</property>
-					</item>
-					
-					<item id="3">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.3.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.3.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.3.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.3.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.3.MPAA)]</property>
-						<property name="Rating">$INFO[Window(Home).Property(InCinemaMoviesRT.3.Rating)]</property>
-					</item>
-
-					<item id="4">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.4.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.4.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.4.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.4.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.4.MPAA)]</property>
-					</item>
-					
-					<item id="5">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.5.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.5.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.5.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.5.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.5.MPAA)]</property>
-					</item>
-
-					<item id="6">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.6.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.6.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.6.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.6.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.6.MPAA)]</property>
-					</item>
-					
-					<item id="7">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.7.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.7.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.7.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.7.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.7.MPAA)]</property>
-					</item>
-
-					<item id="8">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.8.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.8.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.8.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.8.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.8.MPAA)]</property>
-					</item>
-					
-					<item id="9">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.9.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.9.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.9.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.9.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.9.MPAA)]</property>
-					</item>
-
-					<item id="10">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(InCinemaMoviesRT.10.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(InCinemaMoviesRT.10.Title)]</label>
-						<label2>$INFO[Window(Home).Property(InCinemaMoviesRT.10.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(InCinemaMoviesRT.10.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(InCinemaMoviesRT.10.MPAA)]</property>
-					</item>
-					
-				</content>
-
-			</control>
+			</control>		
 			
 			<control type="group">
 			
@@ -1180,9 +1046,6 @@
 					<font>Menu-InCinemas-Large</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>
-					<wrapmultiline>true</wrapmultiline>
-					<shadowcolor>00FFFFFF</shadowcolor>
-					<autoscroll>false</autoscroll>
 					
 					<visible>!Control.HasFocus(9005)</visible>
 					
@@ -1209,7 +1072,7 @@
 					<posy>26</posy>
 					<width>266</width>
 					<height>24</height>
-					<label>$INFO[Container(9005).ListItem.Label2]</label>
+					<label>$INFO[Container(9005).ListItem.Property(Duration),, minutes]</label>
 					<font>Menu-InCinemas-Small</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>
@@ -1265,7 +1128,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9005).HasFocus(1)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9005).CurrentPage,1)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1275,7 +1138,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9005).HasFocus(2)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9005).CurrentPage,2)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1285,7 +1148,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9005).HasFocus(3)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9005).CurrentPage,3)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1295,7 +1158,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9005).HasFocus(4)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9005).CurrentPage,4)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1305,7 +1168,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9005).HasFocus(5)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9005).CurrentPage,5)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1315,7 +1178,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9005).HasFocus(6)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9005).CurrentPage,6)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1325,7 +1188,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9005).HasFocus(7)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9005).CurrentPage,7)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1335,7 +1198,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9005).HasFocus(8)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9005).CurrentPage,8)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1345,7 +1208,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9005).HasFocus(9)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9005).CurrentPage,9)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1355,7 +1218,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9005).HasFocus(10)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9005).CurrentPage,10)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1528,7 +1391,7 @@
 			<width>526</width>
 			<height>420</height>
 			
-			<visible>Skin.HasSetting(ShowTrendingSection_Video) + [StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) | StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)]</visible>
+			<visible>Skin.HasSetting(ShowTrendingSection_Video) + [StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml) | StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)] + IntegerGreaterThan(Container(9007).NumItems,0)</visible>
 			
 			<control type="label">
 					
@@ -1560,7 +1423,7 @@
 						<posy>0</posy>
 						<width>286</width>
 						<height>420</height>
-						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true" fallback="colors/color_keyboard_dark.png">$INFO[ListItem.Art(poster)]</texture>
 						<aspectratio>stretch</aspectratio>
 						
 					</control>
@@ -1575,221 +1438,15 @@
 						<posy>0</posy>
 						<width>286</width>
 						<height>420</height>
-						<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true" fallback="colors/color_keyboard.png">$INFO[ListItem.Art(poster)]</texture>
 						<aspectratio>stretch</aspectratio>
 						
 					</control>
 					
 				</focusedlayout>
+
+				<content limit="10">$VAR[Hub_Trakt]</content>
 				
-				<content>
-				
-					<!--Movies-->
-				
-					<item id="1">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.1.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingMovies.1.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingMovies.1.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.1.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.1.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-
-					<item id="2">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.2.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingMovies.2.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingMovies.2.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.2.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.2.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="3">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.3.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingMovies.3.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingMovies.3.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.3.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.3.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-
-					<item id="4">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.4.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingMovies.4.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingMovies.4.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.4.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.4.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="5">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.5.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingMovies.5.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingMovies.5.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.5.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.5.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-
-					<item id="6">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.6.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingMovies.6.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingMovies.6.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.6.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.6.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="7">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.7.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingMovies.7.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingMovies.7.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.7.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.7.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-
-					<item id="8">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.8.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingMovies.8.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingMovies.8.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.8.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.8.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<item id="9">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.9.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingMovies.9.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingMovies.9.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.9.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.9.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-
-					<item id="10">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingMovies.10.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingMovies.10.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingMovies.10.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingMovies.10.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingMovies.10.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)</visible>
-					</item>
-					
-					<!--TV Shows-->
-				
-					<item id="1">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.1.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingShows.1.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingShows.1.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.1.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.1.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-
-					<item id="2">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.2.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingShows.2.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingShows.2.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.2.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.2.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="3">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.3.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingShows.3.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingShows.3.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.3.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.3.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-
-					<item id="4">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.4.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingShows.4.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingShows.4.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.4.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.4.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="5">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.5.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingShows.5.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingShows.5.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.5.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.5.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-
-					<item id="6">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.6.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingShows.6.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingShows.6.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.6.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.6.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="7">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.7.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingShows.7.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingShows.7.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.7.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.7.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-
-					<item id="8">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.8.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingShows.8.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingShows.8.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.8.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.8.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-					<item id="9">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.9.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingShows.9.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingShows.9.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.9.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.9.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-
-					<item id="10">
-						<onclick>-</onclick>
-						<thumb fallback="fallbacks/fallback_movies.jpg">$INFO[Window(Home).Property(TrendingShows.10.Art(poster))]</thumb>
-						<label>$INFO[Window(Home).Property(TrendingShows.10.Title)]</label>
-						<label2>$INFO[Window(Home).Property(TrendingShows.10.Runtime),, minutes]</label2>
-						<property name="Plot">$INFO[Window(Home).Property(TrendingShows.10.Plot)]</property>
-						<property name="MPAA">$INFO[Window(Home).Property(TrendingShows.10.MPAA)]</property>
-						<visible>StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)</visible>
-					</item>
-					
-				</content>
-
 			</control>
 			
 			<control type="group">
@@ -1854,7 +1511,7 @@
 					<posy>26</posy>
 					<width>266</width>
 					<height>24</height>
-					<label>$INFO[Container(9007).ListItem.Label2]</label>
+					<label>$INFO[Container(9007).ListItem.Property(Runtime),, minutes]</label>
 					<font>Menu-InCinemas-Small</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>
@@ -1910,7 +1567,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9007).HasFocus(1)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9007).CurrentPage,1)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1920,7 +1577,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9007).HasFocus(2)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9007).CurrentPage,2)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1930,7 +1587,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9007).HasFocus(3)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9007).CurrentPage,3)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1940,7 +1597,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9007).HasFocus(4)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9007).CurrentPage,4)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1950,7 +1607,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9007).HasFocus(5)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9007).CurrentPage,5)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1960,7 +1617,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9007).HasFocus(6)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9007).CurrentPage,6)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1970,7 +1627,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9007).HasFocus(7)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9007).CurrentPage,7)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1980,7 +1637,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9007).HasFocus(8)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9007).CurrentPage,8)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -1990,7 +1647,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9007).HasFocus(9)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9007).CurrentPage,9)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -2000,7 +1657,7 @@
 				
 					<include>Common_List_Indicator</include>
 					
-					<animation type="Conditional" condition="!Container(9007).HasFocus(10)" reversible="true">
+					<animation type="Conditional" condition="!StringCompare(Container(9007).CurrentPage,10)" reversible="true">
 						<effect type="fade" start="100" end="10" time="400" />
 					</animation>
 					
@@ -2124,5 +1781,82 @@
 		</control>
 
 	</include>
+
+	<include name="Hub_PVR_Overview">
+
+		<control type="group" id="8008">
+
+			<width>256</width>
+			<height>420</height>
+			
+			<control type="label">
+					
+				<label>overview</label>
+				<include>Common_Section_Label</include>
+				
+			</control>
+
+			<control type="image">
+
+				<posx>0</posx>
+				<posy>60</posy>
+				<width>256</width>
+				<height>256</height>
+				<texture>progress/progress_background.png</texture>
+
+			</control>
+
+			<control type="image">
+
+				<posx>0</posx>
+				<posy>60</posy>
+				<width>256</width>
+				<height>256</height>
+				<texture>progress/progress_65.png</texture>
+				<colordiffuse>Background_Highlight</colordiffuse>
+
+			</control>	
+
+			<control type="image">
+
+				<posx>0</posx>
+				<posy>60</posy>
+				<width>256</width>
+				<height>256</height>
+				<texture>progress/progress_nib_65.png</texture>
+
+			</control>				
+
+			<control type="label">
+
+				<posx>0</posx>
+				<posy>155</posy>
+				<width>256</width>
+				<height>40</height>
+				<!--<label>$INFO[Pvr.BackendDiskspaceProgr]</label>-->
+				<label>100%</label>
+				<font>Menu-RecentlyAdded-Large</font>
+				<textcolor>Label_Normal</textcolor>
+				<align>center</align>
+
+			</control>
+
+			<control type="label">
+
+				<posx>0</posx>
+				<posy>195</posy>
+				<width>256</width>
+				<height>20</height>
+				<label>available disk space</label>
+				<font>Menu-RecentlyAdded-Small</font>
+				<textcolor>Label_Normal</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+
+			</control>
+
+		</control>
+		
+	</include>	
 
 </includes>

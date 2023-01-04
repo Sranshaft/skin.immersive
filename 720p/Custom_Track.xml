@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="dialog" id="68">
+
+	<defaultcontrol always="true">11</defaultcontrol>
+	<zorder>2</zorder>
+	
+	<controls>
+
+		<control type="group">
+			
+			<posx>400</posx>
+			<posy>160</posy>
+			<width>480</width>
+			<height>440</height>
+
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="100"/>
+				<effect type="zoom" start="40" end="100" center="640,360" delay="0" time="300" acceleration="-1" tween="back" easing="out" />
+			</animation>
+			
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="100"/>
+				<effect type="zoom" start="100" end="40" center="640,360" delay="0" time="200" tween="cubic" easing="out" />
+			</animation>
+			
+			<control type="image">
+						
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>480</width>
+				<height>440</height>
+				<texture background="true">colors/color_white.png</texture>
+				<colordiffuse>Settings_Background_Light</colordiffuse>
+				
+			</control>
+
+			<control type="image">
+						
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>480</width>
+				<height>440</height>
+				<texture background="true" border="5">button_unfocus.png</texture>
+				<colordiffuse>FF222222</colordiffuse>
+				
+			</control>
+
+			<control type="textbox" id="10">
+				
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>416</width>
+				<height>392</height>
+				<label fallback="">$VAR[Info_Description]</label>
+				<font>Menu-Similar-Plot</font>
+				<textcolor>Settings_Label</textcolor>
+				<aligny>top</aligny>
+				<wrapmultiline>true</wrapmultiline>
+				<autoscroll>false</autoscroll>
+				<pagecontrol>11</pagecontrol>
+				
+			</control>
+
+			<!--Scrollbar-->
+			<control type="scrollbar" id="11">
+			
+				<include>Common_Settings_Scrollbar_Vertical</include>
+				
+				<posx>454</posx>
+				<posy>24</posy>
+				<height>392</height>
+				
+			</control>	
+
+		</control>
+
+	</controls>
+	
+</window>		

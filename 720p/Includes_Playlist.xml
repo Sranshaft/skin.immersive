@@ -7,8 +7,6 @@
 
 		<control type="group">
 		
-			<posx>60</posx>
-			<posy>0</posy>
 			<width>460</width>
 			<height>480</height>
 		
@@ -50,8 +48,18 @@
 					<posy>0</posy>
 					<width>460</width>
 					<height>260</height>
+					<texture>colors/color_keyboard_dark.png</texture>
+				
+				</control>
+
+				<control type="image">
+					
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>460</width>
+					<height>260</height>
 					<texture background="true">$VAR[NowPlaying_Image]</texture>
-					<aspectratio align="true" aligny="top">scale</aspectratio>
+					<aspectratio aligny="center">scale</aspectratio>
 				
 				</control>
 				
@@ -61,7 +69,7 @@
 					<posy>0</posy>
 					<width>460</width>
 					<height>260</height>
-					<texture border="16">button_unfocus.png</texture>
+					<texture border="16">list_focus.png</texture>
 					
 				</control>
 			
@@ -80,8 +88,18 @@
 					<posy>0</posy>
 					<width>260</width>
 					<height>260</height>
+					<texture>colors/color_keyboard_dark.png</texture>
+				
+				</control>
+
+				<control type="image">
+					
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>260</width>
+					<height>260</height>
 					<texture background="true">$VAR[NowPlaying_Image]</texture>
-					<aspectratio align="true" aligny="top">scale</aspectratio>
+					<aspectratio aligny="center">scale</aspectratio>
 				
 				</control>
 				
@@ -91,7 +109,7 @@
 					<posy>0</posy>
 					<width>260</width>
 					<height>260</height>
-					<texture border="16">button_unfocus.png</texture>
+					<texture border="16">list_focus.png</texture>
 					
 				</control>
 			
@@ -109,7 +127,7 @@
 				<control type="textbox">
 				
 					<width>460</width>
-					<height>76</height>
+					<height>74</height>
 					<label>[UPPERCASE]$VAR[NowPlaying_First_Label][/UPPERCASE]</label>
 					<textcolor>Label_Normal</textcolor>
 					<font>Fullscreen-Info-Large</font>
@@ -165,6 +183,10 @@
 				<width>260</width>
 				<height>40</height>
 
+				<animation type="Conditional" condition="!Player.HasMedia">
+					<effect type="fade" start="100" end="0" time="200" />
+				</animation>
+
 				<!--Progress Bar-->
 				<control type="progress">
 				
@@ -194,6 +216,20 @@
 					<righttexture>-</righttexture>
 					<info>Player.Progress</info>
 					<colordiffuse>Background_Highlight</colordiffuse>
+					
+				</control>
+
+				<control type="slider">
+
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>260</width>
+					<height>5</height>
+					<texturesliderbar border="2">colors/color_transparent.png</texturesliderbar>
+					<textureslidernib border="2">colors/color_white.png</textureslidernib>
+					<textureslidernibfocus border="2">colors/color_white.png</textureslidernibfocus>
+					<info>Player.Progress</info>
+					<action>seek</action>
 					
 				</control>
 			
@@ -231,14 +267,94 @@
 
 	</include>
 
+	<include name="Common_Playlist_Queue_Item">
+
+		<control type="image">
+						
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>72</width>
+			<height>72</height>
+			<texture>colors/color_keyboard_dark.png</texture>
+			
+		</control>
+	
+		<control type="image">
+		
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>72</width>
+			<height>72</height>
+			<texture>$INFO[ListItem.Thumb]</texture>
+			<aspectratio>scale</aspectratio>
+			
+		</control>
+
+		<control type="label">
+		
+			<posx>92</posx>
+			<posy>0</posy>
+			<width min="20" max="480">auto</width>
+			<height>72</height>
+			<label>$VAR[Playlist_Header]</label>
+			<textcolor>Label_Normal</textcolor>
+			<font>Menu-List</font>
+			<aligny>center</aligny>
+
+			<visible>[Window.IsActive(MyVideoPlaylist.xml) + IsEmpty(ListItem.Season)] | [Window.IsActive(MyMusicPlaylist.xml) + IsEmpty(ListItem.Artist)]</visible>
+
+		</control>
+
+		<control type="label">
+		
+			<posx>92</posx>
+			<posy>8</posy>
+			<width min="20" max="480">auto</width>
+			<height>26</height>
+			<label>$VAR[Playlist_Header]</label>
+			<textcolor>Label_Normal</textcolor>
+			<font>Menu-List</font>
+			<aligny>top</aligny>
+
+			<visible>[Window.IsActive(MyVideoPlaylist.xml) + !IsEmpty(ListItem.Season)] | [Window.IsActive(MyMusicPlaylist.xml) + !IsEmpty(ListItem.Artist)]</visible>
+			
+		</control>
+
+		<control type="label">
+		
+			<posx>92</posx>
+			<posy>38</posy>
+			<width min="20" max="480">auto</width>
+			<height>20</height>
+			<label>[UPPERCASE]$VAR[Playlist_SubHeader][/UPPERCASE]</label>
+			<textcolor>Label_Normal</textcolor>
+			<font>Menu-List-Small</font>
+			<aligny>top</aligny>
+
+			<visible>[Window.IsActive(MyVideoPlaylist.xml) + !IsEmpty(ListItem.Season)] | [Window.IsActive(MyMusicPlaylist.xml) + !IsEmpty(ListItem.Artist)]</visible>
+			
+		</control>
+
+		<control type="image">
+
+			<posx>568</posx>
+			<posy>0</posy>
+			<width>72</width>
+			<height>72</height>
+			<texture>$VAR[View_Item_Overlay]</texture>
+			<colordiffuse>Label_Normal</colordiffuse>
+			<aspectratio>center</aspectratio>
+		
+		</control>
+
+	</include>	
+
 	<!--Playlist list-->
 	<include name="Common_Playlist_Queue">
 		
 		<control type="group">
 		
-			<posx>800</posx>
-			<posy>0</posy>
-			<width>440</width>
+			<width>660</width>
 			<height>480</height>
 			
 			<control type="label">
@@ -270,154 +386,69 @@
 						
 				<posx>0</posx>
 				<posy>60</posy>
-				<width>400</width>
-				<height>420</height>
-				<onleft>9000</onleft>
+				<width>640</width>
+				<height>460</height>
 				<onright>9007</onright>
+				<onleft>9000</onleft>
 				<onup>50</onup>
 				<ondown>50</ondown>
-				<pagecontrol>69</pagecontrol>
-				<viewtype label="535">list</viewtype>
+				<pagecontrol>60</pagecontrol>
+				<viewtype label="List">list</viewtype>
 				<scrolltime tween="cubic" easing="out">600</scrolltime>
 				<preloaditems>2</preloaditems>
 				
-				<animation type="Conditional" condition="!IntegerGreaterThan(Container(50).NumItems,1)">
-					<effect type="fade" start="100" end="0" time="200" />
-				</animation>
-				
-				<itemlayout width="400" height="60">
-				
-					<control type="textbox">
-						
-						<posx>32</posx>
-						<posy>0</posy>
-						<width min="20" max="336">auto</width>
-						<height>36</height>
-						<label>$INFO[ListItem.Title]</label>
-						<font>Menu-List</font>
-						<textcolor>Label_Normal</textcolor>
-						<aligny>top</aligny>
-						
-					</control>
-					
-					<control type="textbox">
-					
-						<posx>32</posx>
-						<posy>30</posy>
-						<width min="20" max="336">auto</width>
-						<height>30</height>
-						<label>[UPPERCASE]$VAR[Playlist_Label][/UPPERCASE]</label>
-						<font>Menu-List-Small</font>
-						<textcolor>Label_Normal</textcolor>
-						<selectedcolor>Label_Highlight</selectedcolor>
-						<aligny>top</aligny>
-						
-					</control>
-					
+				<itemlayout width="640" height="92">
+
+					<include>Common_Playlist_Queue_Item</include>
+
 				</itemlayout>
 
-				<focusedlayout width="400" height="60">
-
-					<control type="image">
-								
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>400</width>
-						<height>60</height>
-						<texture background="true">colors/color_keyboard.png</texture>
-						<visible>!Control.HasFocus(50)</visible>
-						
-					</control>
+				<focusedlayout width="640" height="92">
 
 					<control type="image">
 					
-						<posx>0</posx>
+						<posx>72</posx>
 						<posy>0</posy>
-						<width>400</width>
-						<height>60</height>
+						<width>580</width>
+						<height>72</height>
+						<texture>colors/color_keyboard.png</texture>
+
+						<visible>!Control.HasFocus(50)</visible>
+
+					</control>
+
+					<control type="image">
+						
+						<posx>72</posx>
+						<posy>0</posy>
+						<width>580</width>
+						<height>72</height>
 						<texture>colors/color_white.png</texture>
 						<colordiffuse>Background_Highlight</colordiffuse>
+
 						<visible>Control.HasFocus(50)</visible>
-					
-					</control>
-					
-					<control type="textbox">
-						
-						<posx>32</posx>
-						<posy>0</posy>
-						<width min="20" max="336">auto</width>
-						<height>36</height>
-						<label>$INFO[ListItem.Title]</label>
-						<font>Menu-List</font>
-						<textcolor>Label_Normal</textcolor>
-						<aligny>top</aligny>
-						
-					</control>
-					
-					<control type="textbox">
-					
-						<posx>32</posx>
-						<posy>30</posy>
-						<width min="20" max="336">auto</width>
-						<height>30</height>
-						<label>[UPPERCASE]$VAR[Playlist_Label][/UPPERCASE]</label>
-						<font>Menu-List-Small</font>
-						<textcolor>Label_Normal</textcolor>
-						<aligny>top</aligny>
-						
+
 					</control>
 
+					<include>Common_Playlist_Queue_Item</include>
+				
 				</focusedlayout>
 
-			</control>
-			
-			<control type="label">
-			
-				<posx>0</posx>
-				<posy>500</posy>
-				<width>400</width>
-				<height>64</height>
-				<label>[UPPERCASE]$INFO[Container(50).NumItems,Total Items: ,][/UPPERCASE]</label>
-				<font>Menu-List-Small</font>
-				<textcolor>Label_Disabled</textcolor>
-				<align>left</align>
-				<aligny>top</aligny>
-			
-			</control>
-			
-			<control type="label">
-			
-				<posx>400</posx>
-				<posy>500</posy>
-				<width>400</width>
-				<height>64</height>
-				<label>[UPPERCASE]$INFO[Container(50).Totaltime,Total Playing Time: ,][/UPPERCASE]</label>
-				<font>Menu-List-Small</font>
-				<textcolor>Label_Disabled</textcolor>
-				<align>right</align>
-				<aligny>top</aligny>
-			
-			</control>
+			</control>	
 			
 			<!--Scrollbar-->
-			<control type="group">
+			<control type="scrollbar" id="60">
 				
-				<visible>IntegerGreaterThan(Container(50).NumPages,1)</visible>
+				<posx>660</posx>
+				<posy>60</posy>
+				<height>440</height>
+				<onleft>50</onleft>
+				<onright>9001</onright>
 				
-				<control type="scrollbar" id="69">
+				<include>Common_Scrollbar_Vertical</include>
 				
-					<include>Common_Scrollbar_Vertical</include>
-					
-					<posx>420</posx>
-					<posy>60</posy>
-					<height>420</height>
-					<onleft>50</onleft>
-					<onright>9000</onright>
-					
-					<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(50).Scrolling">Conditional</animation>
-					
-				</control>
-			
+				<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(50).Scrolling">Conditional</animation>
+				
 			</control>
 			
 		</control>

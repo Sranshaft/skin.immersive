@@ -3,7 +3,7 @@
 <window>
 	
 	<defaultcontrol always="true">98</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
+	<allowoverlay>no</allowoverlay>
 	
 	<onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(53)</onload>
 	
@@ -53,6 +53,12 @@
 						<label>Hubs</label>
 						<onclick>-</onclick>
 					</item>
+
+					<item id="9">
+						<description>Charms</description>
+						<label>Charms</label>
+						<onclick>-</onclick>
+					</item>
 					
 					<item id="3">
 						<description>Backgrounds</description>
@@ -85,12 +91,18 @@
 					</item>
 					
 					<item id="8">
-						<description>3rd party addons</description>
-						<label>3rd Party addons</label>
+						<description>Addons</description>
+						<label>Addons</label>
 						<onclick>-</onclick>
 					</item>
 
-					<item id="9">
+					<item id="11">
+						<description>Favourites</description>
+						<label>Favourites</label>
+						<onclick>-</onclick>
+					</item>
+
+					<item id="10">
 						<description>Debug</description>
 						<label>$LOCALIZE[31033]</label>
 						<onclick>-</onclick>
@@ -102,21 +114,19 @@
 			
 		</control>	
 
+		<!--Controls-->
 		<control type="group" id="99">
 			
-			<posx>480</posx>
-			<posy>0</posy>
-			<width>730</width>
-			<height>480</height>
+			<include>Common_Settings_Group</include>
 			
 			<!--Home Options-->
 			<control type="grouplist" id="100">
 			
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
-				<height>540</height>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
 				<itemgap>0</itemgap>
 				<onup>100</onup>
 				<ondown>100</ondown>
@@ -352,6 +362,16 @@
 					
 					<description>Background Visualiser</description>
 					<include>Common_Settings_RadioButton</include>
+					<label>Manage</label>
+					<onclick>Skin.ToggleSetting(ShowManageSection)</onclick>
+					<selected>Skin.HasSetting(ShowManageSection)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="122">
+					
+					<description>Background Visualiser</description>
+					<include>Common_Settings_RadioButton</include>
 					<label>Favourites</label>
 					<onclick>Skin.ToggleSetting(ShowFavouritesSection)</onclick>
 					<selected>Skin.HasSetting(ShowFavouritesSection)</selected>
@@ -365,9 +385,9 @@
 			
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
-				<height>540</height>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
 				<itemgap>0</itemgap>
 				<onup>200</onup>
 				<ondown>200</ondown>
@@ -405,7 +425,6 @@
 					<label>Recently added</label>
 					<onclick>Skin.ToggleSetting(ShowRecentlyAddedSection_Video)</onclick>
 					<selected>Skin.HasSetting(ShowRecentlyAddedSection_Video)</selected>
-					<enable>System.HasAddon(service.skin.widgets)</enable>
 					
 				</control>
 				
@@ -449,7 +468,6 @@
 					<label>History</label>
 					<onclick>Skin.ToggleSetting(ShowHistorySection_Video)</onclick>
 					<selected>Skin.HasSetting(ShowHistorySection_Video)</selected>
-					<enable>System.HasAddon(script.randomandlastitems)</enable>
 					
 				</control>
 				
@@ -479,7 +497,6 @@
 					<label>Recently added</label>
 					<onclick>Skin.ToggleSetting(ShowRecentlyAddedSection_Music)</onclick>
 					<selected>Skin.HasSetting(ShowRecentlyAddedSection_Music)</selected>
-					<enable>System.HasAddon(service.skin.widgets)</enable>
 					
 				</control>
 				
@@ -501,7 +518,6 @@
 					<label>History</label>
 					<onclick>Skin.ToggleSetting(ShowHistorySection_Music)</onclick>
 					<selected>Skin.HasSetting(ShowHistorySection_Music)</selected>
-					<enable>System.HasAddon(script.randomandlastitems)</enable>
 					
 				</control>
 
@@ -512,9 +528,9 @@
 			
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
-				<height>540</height>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
 				<itemgap>0</itemgap>
 				<onleft>98</onleft>
 				<onright>-</onright>
@@ -739,7 +755,7 @@
 						
 						<control type="image">
 						
-							<include>Common_Settings_Preview</include>
+							<include>Common_Settings_Preview_Selection</include>
 							<texture background="true">$INFO[ListItem.Thumb]</texture>
 							<visible>!Skin.HasSetting(UseColorDiffuseBackground_Home)</visible>
 							
@@ -757,7 +773,7 @@
 						<control type="image">
 							
 							<include>Common_Settings_Preview_Selection</include>
-							<texture border="10">button_unfocus.png</texture>
+							<texture border="10">list_focus.png</texture>
 							<colordiffuse>Background_Highlight</colordiffuse>
 							
 						</control>
@@ -937,9 +953,9 @@
 				
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
-				<height>540</height>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
 				<itemgap>0</itemgap>
 				<onup>400</onup>
 				<ondown>400</ondown>
@@ -1050,9 +1066,9 @@
 				
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
-				<height>540</height>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
 				<itemgap>0</itemgap>
 				<onup>500</onup>
 				<ondown>500</ondown>
@@ -1107,9 +1123,9 @@
 				
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
-				<height>540</height>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
 				<itemgap>0</itemgap>
 				<onup>600</onup>
 				<ondown>600</ondown>
@@ -1176,9 +1192,9 @@
 				
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
-				<height>540</height>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
 				<itemgap>0</itemgap>
 				<onup>700</onup>
 				<ondown>700</ondown>
@@ -1221,14 +1237,14 @@
 
 			</control>
 			
-			<!--3rd Party Addons Options-->
+			<!--Addons Options-->
 			<control type="grouplist" id="800">
 				
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
-				<height>540</height>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
 				<itemgap>0</itemgap>
 				<onup>900</onup>
 				<ondown>900</ondown>
@@ -1244,7 +1260,7 @@
 				
 					<description></description>
 					<include>Common_Settings_Label</include>
-					<label>Built-in notifications</label>
+					<label>Built-in addons</label>
 					
 				</control>
 				
@@ -1291,17 +1307,43 @@
 					<enable>System.HasAddon(script.tvtunes)</enable>
 					
 				</control>
+
+				<!--Global Search-->
+				
+				<control type="radiobutton" id="804">
+					
+					<description>Enable Global Search</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Use Global Search instead of built-in search</label>
+					<onclick>Skin.ToggleSetting(UseGlobalSearch)</onclick>
+					<selected>Skin.HasSetting(UseGlobalSearch)</selected>
+					<enable>System.HasAddon(script.globalsearch)</enable>
+					
+				</control>
+
+				<!--ExtendedInfo-->
+				
+				<control type="radiobutton" id="805">
+					
+					<description>Enable ExtendedInfo Dialogs</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Use ExtendedInfo dialogs instead of built-in dialogs</label>
+					<onclick>Skin.ToggleSetting(UseExtendedInfoDialogs)</onclick>
+					<selected>Skin.HasSetting(UseExtendedInfoDialogs)</selected>
+					<enable>System.HasAddon(script.extendedinfo)</enable>
+					
+				</control>
 				
 			</control>
-
-			<!--Debug Options-->
+	
+			<!--Charms Options-->
 			<control type="grouplist" id="900">
-				
+			
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>100</posy>
-				<width>730</width>
-				<height>540</height>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
 				<itemgap>0</itemgap>
 				<onup>900</onup>
 				<ondown>900</ondown>
@@ -1309,11 +1351,215 @@
 				<onright>-</onright>
 				<orientation>vertical</orientation>
 				<pagecontrol>89</pagecontrol>
-				<visible>Container(98).Hasfocus(9)</visible>
+				<visible>Container(98).HasFocus(9)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
+				
+				<control type="label" id="950">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Available charms</label>
+					
+				</control>
+				
+				<control type="radiobutton" id="901">
+					
+					<description>Background Visualiser</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Home</label>
+					<onclick>Skin.ToggleSetting(ShowHomeCharm)</onclick>
+					<selected>Skin.HasSetting(ShowHomeCharm)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="902">
+					
+					<description>Background Visualiser</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Search</label>
+					<onclick>Skin.ToggleSetting(ShowSearchCharm)</onclick>
+					<selected>Skin.HasSetting(ShowSearchCharm)</selected>
+					<enable>System.HasAddon(script.globalsearch)</enable>
+					
+				</control>
+
+				<control type="radiobutton" id="903">
+					
+					<description>Movies</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31006]</label>
+					<onclick>Skin.ToggleSetting(ShowMoviesCharm)</onclick>
+					<selected>Skin.HasSetting(ShowMoviesCharm)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="904">
+					
+					<description>TV shows</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31007]</label>
+					<onclick>Skin.ToggleSetting(ShowTVShowsCharm)</onclick>
+					<selected>Skin.HasSetting(ShowTVShowsCharm)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="905">
+					
+					<description>Music</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31004]</label>
+					<onclick>Skin.ToggleSetting(ShowMusicCharm)</onclick>
+					<selected>Skin.HasSetting(ShowMusicCharm)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="906">
+					
+					<description>Favourites</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31008]</label>
+					<onclick>Skin.ToggleSetting(ShowFavouritesCharm)</onclick>
+					<selected>Skin.HasSetting(ShowFavouritesCharm)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="907">
+					
+					<description>Settings</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31012]</label>
+					<onclick>Skin.ToggleSetting(ShowSettingsCharm)</onclick>
+					<selected>Skin.HasSetting(ShowSettingsCharm)</selected>
+					
+				</control>
+
+				<control type="radiobutton" id="908">
+					
+					<description>Shutdown</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>$LOCALIZE[31013]</label>
+					<onclick>Skin.ToggleSetting(ShowShutdownCharm)</onclick>
+					<selected>Skin.HasSetting(ShowShutdownCharm)</selected>
+					
+				</control>
+
+			</control>	
+
+			<!--Pinned Options-->
+			<control type="grouplist" id="1100">
+				
+				<description>Control Area</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
+				<itemgap>0</itemgap>
+				<onup>900</onup>
+				<ondown>900</ondown>
+				<onleft>98</onleft>
+				<onright>-</onright>
+				<orientation>vertical</orientation>
+				<pagecontrol>89</pagecontrol>
+				<visible>Container(98).Hasfocus(11)</visible>
 				
 				<include>Common_Animation_Settings_Options</include>
 
-				<control type="radiobutton" id="901">
+				<control type="label" id="1150">
+				
+					<description></description>
+					<include>Common_Settings_Label</include>
+					<label>Pinned favourites</label>
+					
+				</control>
+
+				<control type="button" id="1101">
+					
+					<description>Pinned 1</description>
+					<include>Common_Settings_Button</include>
+					<label>$VAR[Favourites_Pin_1_Label]</label>
+					<onclick>RunScript(script.favourites,property=CustomFavourite1)</onclick>
+					
+				</control>
+
+				<control type="button" id="1102">
+					
+					<description>Pinned 2</description>
+					<include>Common_Settings_Button</include>
+					<label>$VAR[Favourites_Pin_2_Label]</label>
+					<onclick>RunScript(script.favourites,property=CustomFavourite2)</onclick>
+					
+				</control>
+
+				<control type="button" id="1103">
+					
+					<description>Pinned 3</description>
+					<include>Common_Settings_Button</include>
+					<label>$VAR[Favourites_Pin_3_Label]</label>
+					<onclick>RunScript(script.favourites,property=CustomFavourite3)</onclick>
+					
+				</control>
+
+				<control type="button" id="1104">
+					
+					<description>Pinned 4</description>
+					<include>Common_Settings_Button</include>
+					<label>$VAR[Favourites_Pin_4_Label]</label>
+					<onclick>RunScript(script.favourites,property=CustomFavourite4)</onclick>
+					
+				</control>
+
+				<control type="button" id="1105">
+					
+					<description>Pinned 5</description>
+					<include>Common_Settings_Button</include>
+					<label>$VAR[Favourites_Pin_5_Label]</label>
+					<onclick>RunScript(script.favourites,property=CustomFavourite5)</onclick>
+					
+				</control>
+
+				<control type="button" id="1106">
+					
+					<description>Pinned 6</description>
+					<include>Common_Settings_Button</include>
+					<label>$VAR[Favourites_Pin_6_Label]</label>
+					<onclick>RunScript(script.favourites,property=CustomFavourite6)</onclick>
+					
+				</control>
+
+				<control type="radiobutton" id="1107">
+					
+					<description>Pinned 6</description>
+					<include>Common_Settings_RadioButton</include>
+					<label>Show pinned favourites on the Favourites window</label>
+					<onclick>Skin.ToggleSetting(ShowPinnedFavourites)</onclick>
+					<selected>Skin.HasSetting(ShowPinnedFavourites)</selected>
+					
+				</control>
+
+			</control>
+
+
+			<!--Debug Options-->
+			<control type="grouplist" id="1000">
+				
+				<description>Control Area</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>800</width>
+				<height>480</height>
+				<itemgap>0</itemgap>
+				<onup>900</onup>
+				<ondown>900</ondown>
+				<onleft>98</onleft>
+				<onright>-</onright>
+				<orientation>vertical</orientation>
+				<pagecontrol>89</pagecontrol>
+				<visible>Container(98).Hasfocus(10)</visible>
+				
+				<include>Common_Animation_Settings_Options</include>
+
+				<control type="radiobutton" id="1001">
 					
 					<description>Enable Debug Grid</description>
 					<include>Common_Settings_RadioButton</include>
@@ -1323,7 +1569,7 @@
 					
 				</control>
 
-				<control type="radiobutton" id="902">
+				<control type="radiobutton" id="1002">
 					
 					<description>Enable Debug Info</description>
 					<include>Common_Settings_RadioButton</include>
@@ -1336,6 +1582,8 @@
 			</control>
 
 		</control>
+
+		<include>Common_Settings_Description</include>
 		
 		<!--Scrollbar-->
 		<control type="scrollbar" id="81">
@@ -1346,7 +1594,7 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(81)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(100)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(1)</visible>
 			
@@ -1361,7 +1609,7 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(82)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(200)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(2)</visible>
 			
@@ -1376,7 +1624,7 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(83)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(300)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(3)</visible>
 			
@@ -1391,7 +1639,7 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(84)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(400)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(4)</visible>
 			
@@ -1406,7 +1654,7 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(85)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(500)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(5)</visible>
 			
@@ -1421,7 +1669,7 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(86)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(600)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(6)</visible>
 			
@@ -1436,9 +1684,24 @@
 			<posy>160</posy>
 			<height>480</height>
 			
-			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Control.HasFocus(87)">Conditional</animation>
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(800)">Conditional</animation>
 			
 			<visible>Container(98).Hasfocus(8)</visible>
+			
+		</control>
+
+		<!--Scrollbar-->
+		<control type="scrollbar" id="89">
+		
+			<include>Common_Settings_Scrollbar_Vertical</include>
+			
+			<posx>1260</posx>
+			<posy>160</posy>
+			<height>480</height>
+			
+			<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container.Scrolling(900)">Conditional</animation>
+			
+			<visible>Container(98).Hasfocus(9)</visible>
 			
 		</control>
 

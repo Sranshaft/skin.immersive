@@ -12,7 +12,7 @@
 		<effect type="fade" start="100" end="0" time="400" delay="400" />
 	</animation>
 	
-	<onload>AlarmClock(CloseFullscreenInfo,Dialog.Close(),00:30,silent)</onload>
+	<onload>AlarmClock(CloseDialogPVRChannelsOSD,Dialog.Close(),00:30,silent)</onload>
 	
 	<controls>
 	

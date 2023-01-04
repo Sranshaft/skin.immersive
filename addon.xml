@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.immersive" version="0.3.0" name="Immersive" provider-name="Four13 Designs">
+<addon id="skin.immersive" version="0.6.0" name="Immersive" provider-name="Four13 Designs">
 
 	<requires>
 
-		<import addon="xbmc.gui" version="5.0.1"/>
-		<import addon="service.skin.widgets" version="0.0.25"/>
-		<import addon="script.favourites" version="4.0.9"/>
-		<import addon="script.globalsearch" version="1.1.1"/>
-		<import addon="script.playalbum" version="0.1.2"/>
-		<import addon="script.randomandlastitems" version="2.1.2"/>
-		<import addon="script.tv.show.next.aired" version="5.0.6"/>
+		<import addon="xbmc.gui" version="5.3.0"/>
+		<import addon="service.skin.widgets" version="0.0.29"/>
+		<import addon="script.favourites" version="6.0.1"/>
+		<import addon="script.globalsearch" version="3.0.3"/>
+		<import addon="script.playalbum" version="2.0.1"/>
+		<import addon="script.tv.show.next.aired" version="6.0.13"/>
+		<import addon="script.extendedinfo" version="2.0.2"/>
 		
 	</requires>
 	
-	<extension point="xbmc.gui.skin" defaultthemename="textures.xbt" debugging="false" effectslowdown="1.00">
+	<extension point="xbmc.gui.skin" debugging="false" effectslowdown="1.00">
 		
 		<res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
 		

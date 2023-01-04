@@ -7,6 +7,9 @@
 	
 	<!--Splash Screen-->
 	<onload condition="!Skin.HasSetting(NoSplashScreen)">ActivateWindow(60)</onload>
+
+	<onload>Skin.Reset(ShowAppBar)</onload>
+	<onunload>Skin.Reset(ShowAppBar)</onunload>
 	
 	<onload>ClearProperty(TVGuide.MondayList,Home)</onload>
 	<onload>ClearProperty(TVGuide.TuesdayList,Home)</onload>
@@ -44,7 +47,7 @@
 				<width>1280</width>
 				<height>480</height>
 				
-				<include>Common_Animation_Content_Splash</include>
+				<include>Common_Animation_Content</include>
 				
 				<!--List-->
 				<control type="group">
@@ -286,8 +289,10 @@
 						
 						<control type="fixedlist" id="200">
 								
-							<onup>207</onup>
-							<ondown>207</ondown>
+							<onup>Control.Move(207,-1)</onup>
+							<onup>SetFocus(206)</onup>
+							<ondown>Control.Move(207,1)</ondown>
+							<ondown>SetFocus(201)</ondown>
 							<onleft>207</onleft>
 							<onright>200</onright>
 							<include>Common_NextAired_FixedList</include>
@@ -308,8 +313,10 @@
 						
 						<control type="fixedlist" id="201">
 							
-							<onup>207</onup>
-							<ondown>207</ondown>
+							<onup>Control.Move(207,-1)</onup>
+							<onup>SetFocus(200)</onup>
+							<ondown>Control.Move(207,1)</ondown>
+							<ondown>SetFocus(202)</ondown>
 							<onleft>207</onleft>
 							<onright>201</onright>
 							<include>Common_NextAired_FixedList</include>
@@ -330,8 +337,10 @@
 						
 						<control type="fixedlist" id="202">
 								
-							<onup>207</onup>
-							<ondown>207</ondown>
+							<onup>Control.Move(207,-1)</onup>
+							<onup>SetFocus(201)</onup>
+							<ondown>Control.Move(207,1)</ondown>
+							<ondown>SetFocus(203)</ondown>
 							<onleft>207</onleft>
 							<onright>202</onright>
 							<include>Common_NextAired_FixedList</include>
@@ -352,8 +361,10 @@
 						
 						<control type="fixedlist" id="203">
 								
-							<onup>207</onup>
-							<ondown>207</ondown>
+							<onup>Control.Move(207,-1)</onup>
+							<onup>SetFocus(202)</onup>
+							<ondown>Control.Move(207,1)</ondown>
+							<ondown>SetFocus(204)</ondown>
 							<onleft>207</onleft>
 							<onright>203</onright>
 							<include>Common_NextAired_FixedList</include>
@@ -374,8 +385,10 @@
 						
 						<control type="fixedlist" id="204">
 								
-							<onup>207</onup>
-							<ondown>207</ondown>
+							<onup>Control.Move(207,-1)</onup>
+							<onup>SetFocus(203)</onup>
+							<ondown>Control.Move(207,1)</ondown>
+							<ondown>SetFocus(205)</ondown>
 							<onleft>207</onleft>
 							<onright>204</onright>
 							<include>Common_NextAired_FixedList</include>
@@ -396,8 +409,10 @@
 						
 						<control type="fixedlist" id="205">
 								
-							<onup>207</onup>
-							<ondown>207</ondown>
+							<onup>Control.Move(207,-1)</onup>
+							<onup>SetFocus(204)</onup>
+							<ondown>Control.Move(207,1)</ondown>
+							<ondown>SetFocus(206)</ondown>
 							<onleft>207</onleft>
 							<onright>205</onright>
 							<include>Common_NextAired_FixedList</include>
@@ -418,8 +433,10 @@
 						
 						<control type="fixedlist" id="206">
 								
-							<onup>207</onup>
-							<ondown>207</ondown>
+							<onup>Control.Move(207,-1)</onup>
+							<onup>SetFocus(205)</onup>
+							<ondown>Control.Move(207,1)</ondown>
+							<ondown>SetFocus(200)</ondown>
 							<onleft>207</onleft>
 							<onright>206</onright>
 							<include>Common_NextAired_FixedList</include>

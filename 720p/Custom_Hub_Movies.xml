@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<window id="61">
+<window id="1110">
+
+	<include>Common_Window</include>
 
 	<defaultcontrol always="true">9000</defaultcontrol>
 	
 	<zorder>2</zorder>
 	
-	<include>Common_Animation_Window</include>
-	
-	<!--Splash Screen-->
-	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowInCinemasSection_Video)">RunScript(script.extendedinfo,info=incinema)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=TrendingMovies)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowInCinemasSection_Video)">RunScript(script.extendedinfo,info=intheaters)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowTrendingSection_Video)">RunScript(script.extendedinfo,info=trendingmovies)</onload>
 	
 	<onload>AlarmClock(MoveFeatured,Control.Move(9001,1),00:20,silent,loop)</onload>
 	<onunload>XBMC.CancelAlarm(MoveFeatured,true)</onunload>
 	
 	<onload>AlarmClock(MoveIncinemas,Control.Move(9005,1),00:20,silent,loop)</onload>
-	<onunload>XBMC.CancelAlarm(MoveIncinemas,true)</onunload>
+	<onunload>XBMC.CancelAlarm(MoveInCinemas,true)</onunload>
 	
 	<onload>AlarmClock(MoveTrakt,Control.Move(9007,1),00:20,silent,loop)</onload>
 	<onunload>XBMC.CancelAlarm(MoveTrakt,true)</onunload>
-	
+
 	<controls>
 
 		<!--Background Area-->
@@ -46,8 +44,7 @@
 				<height>480</height>
 				
 				<!--Animation-->
-				<include condition="Window.Previous(home)">Common_Animation_Content_Splash</include>
-				<include condition="!Window.Previous(home)">Common_Animation_Content</include>
+				<include>Common_Animation_Content</include>
 				
 				<control type="grouplist">
 		
@@ -165,11 +162,24 @@
 								</control>
 								
 								<control type="label">
-								
+							
 									<width min="20" max="380">auto</width>
 									<label>$INFO[ListItem.Label]</label>
 									<textcolor>Label_Normal</textcolor>
 									<include>Common_Control_Label</include>
+
+									<visible>!Control.HasFocus(9000)</visible>
+									
+								</control>
+								
+								<control type="label">
+								
+									<width min="20" max="380">auto</width>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>Label_Highlight</textcolor>
+									<include>Common_Control_Label</include>
+
+									<visible>Control.HasFocus(9000)</visible>
 									
 								</control>
 

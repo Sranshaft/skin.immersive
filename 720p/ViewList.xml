@@ -9,28 +9,33 @@
 			<include>Common_Content_Grouplist</include>
 			<include>Common_Animation_View</include>
 			
-			<visible>Control.IsVisible(50)</visible>
+			<visible>Control.IsVisible(50) + IsEmpty(Control.GetLabel(18))</visible>
 			
 			<control type="group">
 			
 				<posx>60</posx>
 				<posy>0</posy>
-				<width>680</width>
+				<width>700</width>
 				<height>480</height>
 				
 				<control type="label">
-						
-					<label>explore</label>
-					<include>Common_Section_Label</include>
+							
+					<posx>45</posx>
+					<posy>58</posy>
+					<label>EXPLORE</label>
+					<textcolor>Label_Normal</textcolor>
+					<include>Common_Vertical_Label</include>
+					
+					<include>Common_Animation_Vertical_Label</include>
 					
 				</control>
-				
+
 				<control type="list" id="50">
-						
-					<posx>0</posx>
+								
+					<posx>50</posx>
 					<posy>60</posy>
 					<width>640</width>
-					<height>420</height>
+					<height>460</height>
 					<onright>9000</onright>
 					<onleft>10000</onleft>
 					<onup>50</onup>
@@ -40,77 +45,51 @@
 					<scrolltime tween="cubic" easing="out">600</scrolltime>
 					<preloaditems>2</preloaditems>
 					
-					<itemlayout width="640" height="60">
+					<itemlayout width="640" height="92">
 
 						<include>Common_View_List</include>
-						
+
 					</itemlayout>
 
-					<focusedlayout width="640" height="60">
-					
-						<control type="image">
-									
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>640</width>
-							<height>60</height>
-							<texture background="true">colors/color_keyboard.png</texture>
-							<visible>!Control.HasFocus(50)</visible>
-							
-						</control>
+					<focusedlayout width="640" height="92">
 
 						<control type="image">
 						
-							<posx>0</posx>
+							<posx>72</posx>
 							<posy>0</posy>
-							<width>640</width>
-							<height>60</height>
+							<width>580</width>
+							<height>72</height>
+							<texture>colors/color_keyboard.png</texture>
+
+							<visible>!Control.HasFocus(50)</visible>
+
+						</control>
+
+						<control type="image">
+							
+							<posx>72</posx>
+							<posy>0</posy>
+							<width>580</width>
+							<height>72</height>
 							<texture>colors/color_white.png</texture>
 							<colordiffuse>Background_Highlight</colordiffuse>
-							<visible>Control.HasFocus(50)</visible>
-							
-						</control>
-						
-						<include>Common_View_List</include>
 
+							<visible>Control.HasFocus(50)</visible>
+
+						</control>
+
+						<include>Common_View_List</include>
+					
 					</focusedlayout>
-					
-				</control>
+
+				</control>	
 				
-				<control type="label">
-					
-					<posx>0</posx>
-					<posy>500</posy>
-					<width>640</width>
-					<height>24</height>
-					<label>[UPPERCASE]$INFO[Container(50).CurrentPage,Page ,] of $INFO[Container(50).NumPages,, pages][/UPPERCASE]</label>
-					<font>Menu-List-Small</font>
-					<textcolor>Label_Disabled</textcolor>
-					<align>left</align>
-					<aligny>top</aligny>
-					
-				</control>
-				
-				<control type="label">
-				
-					<posx>640</posx>
-					<posy>500</posy>
-					<width>640</width>
-					<height>24</height>
-					<label>[UPPERCASE]$INFO[Container(50).Totaltime,Total Playing Time: ,][/UPPERCASE]</label>
-					<font>Menu-List-Small</font>
-					<textcolor>Label_Disabled</textcolor>
-					<align>right</align>
-					<aligny>top</aligny>
-					
-				</control>
-			
 				<!--Scrollbar-->
 				<control type="scrollbar" id="60">
 					
-					<posx>660</posx>
+					<posx>700</posx>
 					<posy>60</posy>
-					<height>420</height>
+					<height>440</height>
 					<onleft>50</onleft>
 					<onright>9001</onright>
 					
@@ -122,40 +101,61 @@
 				
 			</control>
 			
-			<include>ViewList_RootMenu_Image</include>
+			<include>ViewList_Overview</include>
 			
 		</control>
 		
 	</include>
 	
-	<include name="ViewList_RootMenu_Image">
+	<include name="ViewList_Overview">
 	
-		<!--Image Area-->
-		<control type="group" id="8000">
+		<!--Description Area-->
+		<control type="group">
 			
 			<posx>0</posx>
 			<posy>0</posy>
-			<height>420</height>
-			<width>288</width>
+			<width>400</width>
+			<height>480</height>
 			
 			<control type="label">
 					
-				<label>preview</label>
+				<label>overview</label>
 				<include>Common_Section_Label</include>
 				
 			</control>
-		
-			<control type="image">
-			
+
+			<control type="grouplist">
+
 				<posx>0</posx>
 				<posy>60</posy>
-				<width>288</width>
-				<height>420</height>
-				<texture background="true">$INFO[ListItem.Thumb]</texture>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
-				<fadetime>400</fadetime>
-				
-			</control>
+				<width>400</width>
+				<height>460</height>
+				<itemgap>10</itemgap>
+				<orientation>vertical</orientation>
+
+				<control type="image">
+
+					<width>400</width>
+					<height>210</height>
+					<texture>$VAR[View_Item_Poster]</texture>
+					<aspectratio align="left" aligny="top">keep</aspectratio>
+
+				</control>
+
+				<control type="textbox">
+							
+					<posx>0</posx>
+					<posy>50</posy>
+					<width>400</width>
+					<height>220</height>
+					<label>$VAR[View_Item_Description]</label>
+					<font>Menu-ExtendedList-Details</font>
+					<textcolor>Label_Normal</textcolor>
+					<aligny>top</aligny>
+					
+				</control>
+
+			</control>	
 			
 		</control>
 			

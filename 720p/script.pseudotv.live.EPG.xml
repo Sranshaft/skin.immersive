@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window>
+    
+	<allowoverlay>no</allowoverlay>
+
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
+
+	<controls>
+	
+		<!--Background Area-->
+		<include>Common_Background</include>
+		
+		<control type="group">
+		
+			<include>Common_Dimensions</include>
+			<include>Common_Animation_Window</include>
+		
+			<!--Top Area-->
+			<include>Common_Breadcrumb</include>
+			<include>Common_Clock</include>
+			
+			<control type="grouplist">
+			
+				<posx>360</posx>
+				<posy>570</posy>
+				<width>1180</width>
+				<height>40</height>
+				<orientation>horizontal</orientation>
+				<itemgap>10</itemgap>
+			
+				<control type="label" id="500">
+
+					<description>Show Name Label</description>
+					<width min="40" max="600">auto</width>
+					<height>40</height>
+					<label>Show Name</label>
+					<font>PseudoTV-Show-Name</font>
+					<align>left</align>
+					<textcolor>Label_Highlight</textcolor>
+					
+				</control>
+				
+				<control type="label" id="501">
+					
+					<description>Show Title Label</description>
+					<width min="40" max="400">auto</width>
+					<height>40</height>
+					<label>Show Title</label>
+					<font>PseudoTV-Show-Title</font>
+					<align>left</align>
+					<textcolor>Label_Normal</textcolor>
+					
+				</control>
+				
+			</control>
+			
+			<control type="label" id="502">
+				
+				<description>Show Description Label</description>
+				<posx>360</posx>
+				<posy>600</posy>
+				<width>835</width>
+				<height>50</height>
+				<label>Show Description</label>
+				<font>PseudoTV-Show-Description</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>Label_Normal</textcolor>
+				<wrapmultiline>true</wrapmultiline>
+				
+			</control>
+			
+			<control type="image" id="503">
+
+				<posx>60</posx>
+				<posy>570</posy>
+				<width>150</width>
+				<height>100</height>
+				<aspectratio>keep</aspectratio>
+
+			</control>
+			
+			<control type="label" id="101">
+				
+				<posx>360</posx>
+				<include>Common_PseudoTV_EPG_Time</include>
+				
+			</control>
+
+			<control type="label" id="102">
+			   
+				<posx>646</posx>
+				<include>Common_PseudoTV_EPG_Time</include>
+				
+			</control>
+
+			<control type="label" id="103">
+				
+				<posx>932</posx>
+				<include>Common_PseudoTV_EPG_Time</include>
+				
+			</control>
+			
+			<control type="label" id="104">
+				
+				<posx>100</posx>
+				<include>Common_PseudoTV_EPG_Time</include>
+				
+			</control>
+
+			<!--SHOW LISTINGS-->
+			<control type="group" id="111">
+				
+				<posy>200</posy>
+				<include>Common_PseudoTV_EPG_Group</include>
+				
+			</control>
+
+			<control type="group" id="112">
+			
+				<posy>260</posy>
+				<include>Common_PseudoTV_EPG_Group</include>
+				
+			</control>
+
+			<control type="group" id="113">
+			
+				<posy>320</posy>
+				<include>Common_PseudoTV_EPG_Group</include>
+				
+			</control>
+
+			<control type="group" id="114">
+			
+				<posy>380</posy>
+				<include>Common_PseudoTV_EPG_Group</include>
+				
+			</control>
+
+			<control type="group" id="115">
+			
+				<posy>440</posy>
+				<include>Common_PseudoTV_EPG_Group</include>
+				
+			</control>
+			
+			<control type="group" id="116">
+			
+				<posy>500</posy>
+				<include>Common_PseudoTV_EPG_Group</include>
+				
+			</control>
+			
+			<control type="image" id="120">
+				
+				<posx>360</posx>
+				<posy>200</posy>
+				<width>4</width>
+				<height>350</height>
+				<colordiffuse>Label_Highlight</colordiffuse>
+				
+			</control>
+
+			<!--CHANNEL BUTTONS AND LABELS-->
+			<control type="group">
+			
+				<posx>0</posx>
+				<posy>200</posy>
+			
+				<!--Channel 1-->
+				<control type="image">
+				
+					<posy>0</posy>
+					<include>Common_PseudoTV_EPG_Channel_Background</include>
+					
+				</control>
+				
+				<control type="image">
+				
+					<posy>0</posy>
+					<include>Common_PseudoTV_EPG_Group_Background</include>
+					
+				</control>
+				
+				<control type="label" id="301">
+					
+					<posy>0</posy>
+					<include>Common_PseudoTV_EPG_Channel_Name</include>
+					
+				</control>
+
+				<control type="label" id="311">
+					
+					<posy>0</posy>
+					<include>Common_PseudoTV_EPG_Channel_Number</include>
+					
+				</control>
+
+				<!--Channel 2-->
+				<control type="image">
+				
+					<posy>60</posy>
+					<include>Common_PseudoTV_EPG_Channel_Background</include>
+					
+				</control>
+				
+				<control type="image">
+				
+					<posy>60</posy>
+					<include>Common_PseudoTV_EPG_Group_Background</include>
+					
+				</control>
+				
+				<control type="label" id="302">
+					
+					<posy>60</posy>
+					<include>Common_PseudoTV_EPG_Channel_Name</include>
+					
+				</control>
+
+				<control type="label" id="312">
+					
+					<posy>60</posy>
+					<include>Common_PseudoTV_EPG_Channel_Number</include>
+					
+				</control>
+
+				<!--Channel 3-->
+				<control type="image">
+				
+					<posy>120</posy>
+					<include>Common_PseudoTV_EPG_Channel_Background</include>
+					
+				</control>
+				
+				<control type="image">
+				
+					<posy>120</posy>
+					<include>Common_PseudoTV_EPG_Group_Background</include>
+					
+				</control>
+				
+				<control type="label" id="303">
+					
+					<posy>120</posy>
+					<include>Common_PseudoTV_EPG_Channel_Name</include>
+					
+				</control>
+
+				<control type="label" id="313">
+					
+					<posy>120</posy>
+					<include>Common_PseudoTV_EPG_Channel_Number</include>
+					
+				</control>
+
+				<!--Channel 4-->
+				<control type="image">
+				
+					<posy>180</posy>
+					<include>Common_PseudoTV_EPG_Channel_Background</include>
+					
+				</control>
+				
+				<control type="image">
+				
+					<posy>180</posy>
+					<include>Common_PseudoTV_EPG_Group_Background</include>
+					
+				</control>
+				
+				<control type="label" id="304">
+					
+					<posy>180</posy>
+					<include>Common_PseudoTV_EPG_Channel_Name</include>
+					
+				</control>
+
+				<control type="label" id="314">
+					
+					<posy>180</posy>
+					<include>Common_PseudoTV_EPG_Channel_Number</include>
+					
+				</control>
+
+				<!--Channel 5-->
+				<control type="image">
+				
+					<posy>240</posy>
+					<include>Common_PseudoTV_EPG_Channel_Background</include>
+					
+				</control>
+				
+				<control type="image">
+				
+					<posy>240</posy>
+					<include>Common_PseudoTV_EPG_Group_Background</include>
+					
+				</control>
+				
+				<control type="label" id="305">
+				
+					<posy>240</posy>
+					<include>Common_PseudoTV_EPG_Channel_Name</include>
+					
+				</control>
+
+				<control type="label" id="315">
+					
+					<posy>240</posy>
+					<include>Common_PseudoTV_EPG_Channel_Number</include>
+					
+				</control>
+
+				<!--Channel 6-->
+				<control type="image">
+				
+					<posy>300</posy>
+					<include>Common_PseudoTV_EPG_Channel_Background</include>
+					
+				</control>
+				
+				<control type="image">
+				
+					<posy>300</posy>
+					<include>Common_PseudoTV_EPG_Group_Background</include>
+					
+				</control>
+				
+				<control type="label" id="306">
+					
+					<posy>300</posy>
+					<include>Common_PseudoTV_EPG_Channel_Name</include>
+					
+				</control>
+
+				<control type="label" id="316">
+					
+					<posy>300</posy>
+					<include>Common_PseudoTV_EPG_Channel_Number</include>
+					
+				</control>
+				
+			</control>
+
+			<control type="button" id="99">
+				<description>Focused Text Color</description>
+	            <visible>false</visible>			
+	            <label>0xFF333333</label>
+	        </control>
+	        <control type="button" id="100">
+	        	<description>Text Color</description>
+	            <visible>false</visible>			
+	            <label>0xFFFFFFFF</label>
+	        </control>
+	        <control type="button" id="105">
+	        	<description>Text Font</description>
+	            <visible>false</visible>			
+	            <label>PseudoTV-Channel-Name</label>
+	        </control>
+			
+			<control type="image" id="321">
+				<visible>false</visible>
+			</control>
+
+			<control type="image" id="322">
+				<visible>false</visible>
+			</control>
+			
+			<control type="image" id="323">
+				<visible>false</visible>
+			</control>
+			
+			<control type="image" id="324">
+				<visible>false</visible>
+			</control>
+			
+			<control type="image" id="325">
+				<visible>false</visible>
+			</control>
+			
+		</control>	
+
+    </controls>
+	
+</window>

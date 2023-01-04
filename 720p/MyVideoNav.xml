@@ -2,25 +2,20 @@
 
 <window id="6">
 
-	<defaultcontrol always="true">50</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
+	<include>Common_Window</include>
+
 	<views>50,51,52,53,54,55,56,58,59,501</views>
-	
-	<!--Splash Screen-->
-	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
 	
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(ShowNextAiredNotification)">XBMC.RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onload condition="System.HasAddon(script.tvtunes) + Skin.HasSetting(ShowTVTunesNotification)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
- 
 
-	
 	<controls>
 
 		<!--Background Area-->
 		<include>Common_Background</include>
 		
 		<control type="group">
-		
+
 			<include>Common_Dimensions</include>
 			<include>Common_Animation_Window</include>
 		
@@ -28,7 +23,7 @@
 			<include>Common_Breadcrumb</include>
 			<include>Common_Clock</include>
 			<include>Common_Overlay</include>
-			
+
 			<!--Content Area-->
 			<control type="group">
 			
@@ -51,6 +46,9 @@
 				<include>ViewGrid_Episodes</include>
 				<include>ViewDetails</include>
 				<include>ViewBanner</include>
+
+				<!--Warning label when content is empty-->
+				<include>Common_Content_Empty_Label</include>
 				
 			</control>
 			

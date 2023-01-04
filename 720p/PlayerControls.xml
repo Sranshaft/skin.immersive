@@ -5,10 +5,13 @@
 	<defaultcontrol always="true">1</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	
-	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !VideoPlayer.IsFullscreen + !Window.IsActive(Visualisation)</visible>
+	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !VideoPlayer.IsFullscreen + !Window.IsActive(Visualisation) + !Window.IsActive(musicplaylist)</visible>
 
 	<onload>Skin.Reset(ShowMoreOptionsMenu)</onload>
 	<onunload>Skin.Reset(ShowMoreOptionsMenu)</onunload>
+
+	<onload>Skin.Reset(ShowAppBar)</onload>
+	<onunload>Skin.Reset(ShowAppBar)</onunload>
 
 	<controls>
 
@@ -122,7 +125,7 @@
 				<!--Skip Previous Button-->
 				<control type="button" id="401">
 					
-					<include>Common_AppBar_Button</include>
+					<include>Common_AppBar_OSD_Button</include>
 					<texturefocus>playercontrols/playercontrol_skipback_focus.png</texturefocus>
 					<texturenofocus>playercontrols/playercontrol_skipback.png</texturenofocus>
 					<label>skip[CR]previous</label>
@@ -133,7 +136,7 @@
 				<!--Rewind Button-->
 				<control type="button" id="402">
 					
-					<include>Common_AppBar_Button</include>
+					<include>Common_AppBar_OSD_Button</include>
 					<texturefocus>playercontrols/playercontrol_rewind_focus.png</texturefocus>
 					<texturenofocus>playercontrols/playercontrol_rewind.png</texturenofocus>
 					<label>rewind</label>
@@ -144,7 +147,7 @@
 				<!--Play/Pause Button-->
 				<control type="togglebutton" id="403">
 					
-					<include>Common_AppBar_Button</include>
+					<include>Common_AppBar_OSD_Button</include>
 					<texturefocus>playercontrols/playercontrol_pause_focus.png</texturefocus>
 					<texturenofocus>playercontrols/playercontrol_pause.png</texturenofocus>
 					<alttexturefocus>playercontrols/playercontrol_play_focus.png</alttexturefocus>
@@ -158,7 +161,7 @@
 				<!--Stop Button-->
 				<control type="button" id="404">
 					
-					<include>Common_AppBar_Button</include>
+					<include>Common_AppBar_OSD_Button</include>
 					<texturefocus>playercontrols/playercontrol_stop_focus.png</texturefocus>
 					<texturenofocus>playercontrols/playercontrol_stop.png</texturenofocus>
 					<label>stop</label>
@@ -169,7 +172,7 @@
 				<!--Fast Forward Button-->
 				<control type="button" id="405">
 						
-					<include>Common_AppBar_Button</include>
+					<include>Common_AppBar_OSD_Button</include>
 					<texturefocus>playercontrols/playercontrol_fastforward_focus.png</texturefocus>
 					<texturenofocus>playercontrols/playercontrol_fastforward.png</texturenofocus>
 					<label>fast[CR]forward</label>
@@ -180,7 +183,7 @@
 				<!--Skip Next Button-->
 				<control type="button" id="406">
 						
-					<include>Common_AppBar_Button</include>
+					<include>Common_AppBar_OSD_Button</include>
 					<texturefocus>playercontrols/playercontrol_skipnext_focus.png</texturefocus>
 					<texturenofocus>playercontrols/playercontrol_skipnext.png</texturenofocus>
 					<label>skip[CR]next</label>
@@ -196,7 +199,7 @@
 				<!--More Options Button-->
 				<control type="button" id="413">
 						
-					<include>Common_AppBar_Button</include>
+					<include>Common_AppBar_OSD_Button</include>
 					<texturefocus>playercontrols/playercontrol_more_focus.png</texturefocus>
 					<texturenofocus>playercontrols/playercontrol_more.png</texturenofocus>
 					<label>more[CR]options</label>
@@ -304,12 +307,14 @@
 		
 					<item>
 						<label>show fullscreen</label>
+						<onclick>Dialog.Close(400)</onclick>
 						<onclick condition="Player.HasVideo">activatewindow(fullscreenvideo)</onclick>
 						<onclick condition="Player.HasAudio">activatewindow(visualisation)</onclick>
 					</item>
 
 					<item>
 						<label>show playlist</label>
+						<onclick>Dialog.Close(400)</onclick>
 						<onclick condition="Player.HasVideo">activatewindow(videoplaylist)</onclick>
 						<onclick condition="Player.HasAudio">activatewindow(musicplaylist)</onclick>
 					</item>		

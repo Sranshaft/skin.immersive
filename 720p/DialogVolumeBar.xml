@@ -4,15 +4,15 @@
 	
 	<defaultcontrol always="true">-</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	
-	<animation type="WindowOpen" condition="!Window.Previous(mutebug)">
+
+	<animation type="WindowOpen">
 		<effect type="fade" start="0" end="100" time="100" />
 	</animation>
 	
-	<animation type="WindowClose" condition="!Window.Next(mutebug)">
+	<animation type="WindowClose">
 		<effect type="fade" start="100" end="0" time="400" />
 	</animation>
-	
+
 	<controls>
 	
 		<control type="group">
@@ -23,7 +23,7 @@
 			<height>145</height>
 			
 			<visible>!StringCompare(Player.Volume,-60 dB) + !Player.HasMedia</visible>
-		
+
 			<control type="image">
 				
 				<posx>0</posx>
@@ -43,6 +43,23 @@
 				<height>32</height>
 				<texture>kai/kai_volume.png</texture>
 				<aspectratio>scale</aspectratio>
+
+				<animation effect="fade" start="0" end="100" time="100" condition="!Window.IsVisible(mutebug)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="100" condition="Window.IsVisible(mutebug)">Conditional</animation>
+				
+			</control>
+
+			<control type="image">
+				
+				<posx>14</posx>
+				<posy>104</posy>
+				<width>32</width>
+				<height>32</height>
+				<texture>kai/kai_mute.png</texture>
+				<aspectratio>scale</aspectratio>
+
+				<animation effect="fade" start="0" end="100" time="100" condition="Window.IsVisible(mutebug)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="100" condition="!Window.IsVisible(mutebug)">Conditional</animation>
 				
 			</control>
 			
@@ -85,9 +102,6 @@
 				<textureslidernibfocus border="2">colors/color_white.png</textureslidernibfocus>
 				<info>Player.Volume</info>
 				<action>volume</action>
-				<controloffsetx></controloffsetx>
-				<controloffsety></controloffsety>
-				<pulseonselect></pulseonselect>
 				
 				<animation effect="rotate" end="90" time="0" center="50,5" condition="true">Conditional</animation>
 				
@@ -123,6 +137,23 @@
 				<height>32</height>
 				<texture>kai/kai_volume.png</texture>
 				<aspectratio>scale</aspectratio>
+
+				<animation effect="fade" start="0" end="100" time="100" condition="!Window.IsVisible(mutebug)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="100" condition="Window.IsVisible(mutebug)">Conditional</animation>
+				
+			</control>
+
+			<control type="image">
+				
+				<posx>14</posx>
+				<posy>104</posy>
+				<width>32</width>
+				<height>32</height>
+				<texture>kai/kai_mute.png</texture>
+				<aspectratio>scale</aspectratio>
+
+				<animation effect="fade" start="0" end="100" time="100" condition="Window.IsVisible(mutebug)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="100" condition="!Window.IsVisible(mutebug)">Conditional</animation>
 				
 			</control>
 			
@@ -165,9 +196,6 @@
 				<textureslidernibfocus>colors/color_white.png</textureslidernibfocus>
 				<info>Player.Volume</info>
 				<action>volume</action>
-				<controloffsetx></controloffsetx>
-				<controloffsety></controloffsety>
-				<pulseonselect></pulseonselect>
 				
 				<animation effect="rotate" end="90" time="0" center="50,5" condition="true">Conditional</animation>
 				

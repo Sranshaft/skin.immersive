@@ -18,6 +18,27 @@
 			
 	</include>
 
+	<include name="Common_OSD_Settings_Edit">
+	
+		<width>730</width>
+		<height>60</height>
+		<texturefocus colordiffuse="Background_Highlight">colors/color_white.png</texturefocus>
+		<texturenofocus colordiffuse="White">-</texturenofocus>
+		<alttexturefocus>colors/color_white.png</alttexturefocus>
+		<alttexturenofocus>-</alttexturenofocus>
+		<colordiffuse>Background_Highlight</colordiffuse>
+		<disabledColorDiffuse>Label_Disabled</disabledColorDiffuse>
+		<font>Menu-List</font>
+		<textcolor>Settings_Label</textcolor>
+		<focusedcolor>Settings_Label_Highlight</focusedcolor>
+		<disabledcolor>Settings_Label_Disabled</disabledcolor>
+		<textoffsetx>32</textoffsetx>
+		<textoffsety>-10</textoffsety>
+		<align>left</align>
+		<aligny>center</aligny>
+			
+	</include>
+
 	<include name="Common_OSD_Settings_RadioButton">
 	
 		<width>730</width>

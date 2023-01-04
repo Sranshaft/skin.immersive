@@ -10,6 +10,7 @@
 		<!--Background-->
 		<include>Common_Settings_Background</include>
 		
+		<!--Menu-->
 		<control type="group">
 		
 			<include>Common_Settings_Header_Back</include>
@@ -52,13 +53,10 @@
 
 		</control>
 		
+		<!--Controls-->
 		<control type="group" id="99">
 		
-			<posx>500</posx>
-			<posy>100</posy>
-			<width>700</width>
-			<height>480</height>
-			
+			<include>Common_Settings_Group</include>
 			<include>Common_Animation_Settings_Options</include>
 			
 			<control type="image">
@@ -72,7 +70,7 @@
 				
 			</control>	
 			
-			<control type="image" id="2">
+			<control type="image" id="101">
 				
 				<description>profile image</description>
 				<posx>0</posx>
@@ -83,7 +81,7 @@
 				
 			</control>
 
-			<control type="label" id="1000">
+			<control type="label" id="102">
 				
 				<description>Profile Name</description>
 				<posx>120</posx>
@@ -94,7 +92,7 @@
 				
 			</control>
 
-			<control type="label" id="1001">
+			<control type="label" id="103">
 				<description>Profile Directory</description>
 				<posx>120</posx>
 				<posy>30</posy>
@@ -102,22 +100,31 @@
 				<font>Profile-Settings-Directory</font>
 				<textcolor>Label_Dark</textcolor>
 			</control>
+
+			<control type="label" id="2">
+			
+				<description>Default Button</description>
+				<posx>0</posx>
+				<posy>120</posy>
+				<include>Common_Settings_Label</include>
+				
+			</control>
 			
 			<control type="grouplist" id="5">
 				
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>120</posy>
-				<width>700</width>
+				<posy>180</posy>
+				<width>800</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onleft>3</onleft>
 				<onright>9000</onright>
 				<orientation>vertical</orientation>
 				<pagecontrol>81</pagecontrol>
-				
+
 			</control>
-			
+
 			<control type="button" id="7">
 			
 				<description>Default Button</description>

@@ -5,7 +5,7 @@
 	<defaultcontrol always="true">901</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	
-	<visible>!Window.IsVisible(fullscreeninfo) + [VideoPlayer.IsFullscreen | Window.IsVisible(visualisation)] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + !Window.IsVisible(script.pseudoTV.TVOverlay.xml) + !Window.IsVisible(osdvideosettings) + !Window.IsVisible(osdaudiosettings) + !Windows.IsVisible(videobookmarks) + !Window.IsVisible(script-XBMC-Subtitles-main.xml) + !Player.ShowCodec + !Player.ShowInfo + !Window.IsVisible(DialogSubtitles.xml)</visible>
+	<visible>!Window.IsVisible(fullscreeninfo) + [VideoPlayer.IsFullscreen | Window.IsVisible(visualisation)] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + !Window.IsVisible(script.pseudoTV.TVOverlay.xml) + !Window.IsActive(script.pseudotv.live.TVOverlay.xml) + !Window.IsVisible(osdvideosettings) + !Window.IsVisible(osdaudiosettings) + !Windows.IsVisible(videobookmarks) + !Window.IsVisible(script-XBMC-Subtitles-main.xml) + !Player.ShowCodec + !Player.ShowInfo + !Window.IsVisible(DialogSubtitles.xml)</visible>
 
 	<controls>
 	

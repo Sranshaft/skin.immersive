@@ -2,7 +2,7 @@
 
 <fonts>
 
-	<fontset id="default" unicode="true">
+	<fontset id="default">
 
 		<!--Appbar Fonts-->
 
@@ -172,26 +172,26 @@
 		<font>
 			<name>DialogInfo-Header</name>
 			<filename>SegoeWP-SemiBold.ttf</filename>
-			<size>18</size>
+			<size>16</size>
 		</font>
 		
 		<font>
 			<name>DialogInfo-Label</name>
 			<filename>SegoeWP-SemiLight.ttf</filename>
-			<size>18</size>
+			<size>16</size>
 			<linespacing>0.92</linespacing>
 		</font>
 		
 		<font>
 			<name>DialogInfo-Header-Small</name>
 			<filename>SegoeWP-SemiBold.ttf</filename>
-			<size>16</size>
+			<size>14</size>
 		</font>
 		
 		<font>
 			<name>DialogInfo-Label-Small</name>
 			<filename>SegoeWP-SemiLight.ttf</filename>
-			<size>16</size>
+			<size>14</size>
 		</font>
 		
 		<!--Dropdown Fonts-->
@@ -252,18 +252,17 @@
 		</font>
 		
 		<font>
-			<name>Fullscreen-NowPlaying-Large</name>
+			<name>Fullscreen-NowPlaying-Bold</name>
 			<filename>SegoeWP-SemiBold.ttf</filename>
-			<size>90</size>
 			<style>uppercase</style>
-			<linespacing>0.65</linespacing>
+			<size>48</size>
 		</font>
 		
 		<font>
-			<name>Fullscreen-NowPlaying-Normal</name>
-			<filename>SegoeWP-SemiBold.ttf</filename>
+			<name>Fullscreen-NowPlaying-Light</name>
+			<filename>SegoeWP-SemiLight.ttf</filename>
 			<style>uppercase</style>
-			<size>32</size>
+			<size>48</size>
 		</font>
 		
 		<font>
@@ -482,7 +481,7 @@
 		<font>
 			<name>Menu-List-Large</name>
 			<filename>SegoeWP-Black.ttf</filename>
-			<size>42</size>
+			<size>46</size>
 		</font>
 		
 		<font>
@@ -996,9 +995,9 @@
 		</font>
 		
 		
-		<!----------------------------------------------->
-		<!--          3rd Party Addon Fonts			   -->
-		<!----------------------------------------------->
+		<!--											-->
+		<!--	      3rd Party Addon Fonts			    -->
+		<!--											-->
 		
 		<!--Big Picture Addon Fonts-->
 		
@@ -1184,6 +1183,7 @@
 			<name>TVNextAired-Large</name>
 			<filename>SegoeWP-Bold.ttf</filename>
 			<size>36</size>
+			<style>uppercase</style>
 			<linespacing>0.65</linespacing>
 		</font>
 		

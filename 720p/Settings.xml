@@ -2,182 +2,138 @@
 
 <window id="4">
 
+	<include>Common_Window</include>
+	
 	<defaultcontrol always="true">9000</defaultcontrol>
-	
-	<!--Splash Screen-->
-	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
+	<allowoverlay>no</allowoverlay>
 
-	<animation type="WindowClose" condition="Window.Next(home)">
-		<effect type="fade" start="100" end="0" time="400" />
-	</animation>
-	
 	<controls>
 	
-		<include>Common_Settings_Background</include>
-	
-		<!--Menu-->
 		<control type="group">
+
+			<include>Common_Settings_Background</include>
+			
+			<!--Menu-->
+			<control type="group">
+			
+				<include>Common_Settings_Header_Back</include>
+			
+				<control type="label">
 		
-			<include>Common_Settings_Header_Back</include>
-		
-			<control type="label">
-	
-				<include>Common_Settings_Header</include>
-				<label>XBMC settings</label>
+					<include>Common_Settings_Header</include>
+					<label>Settings</label>
+					
+				</control>
+				
+				<control type="grouplist" id="9000">
+					
+					<description>grouplist for context buttons</description>
+					<posx>0</posx>
+					<posy>100</posy>
+					<width>420</width>
+					<height max="600">auto</height>
+					<itemgap>0</itemgap>
+					
+					<control type="button" id="9001">
+					
+						<include>Common_Settings_Menu</include>
+						<label>$LOCALIZE[480]</label>
+						<onclick>activatewindow(AppearanceSettings)</onclick>
+						
+					</control>
+					
+					<control type="button" id="9002">
+					
+						<include>Common_Settings_Menu</include>
+						<label>personalize</label>
+						<onclick>activatewindow(SkinSettings)</onclick>
+						
+					</control>
+					
+					<control type="button" id="9003">
+					
+						<include>Common_Settings_Menu</include>
+						<label>$LOCALIZE[3]</label>
+						<onclick>activatewindow(VideosSettings)</onclick>
+						
+					</control>
+					
+					<control type="button" id="9004">
+					
+						<include>Common_Settings_Menu</include>
+						<label>$LOCALIZE[2]</label>
+						<onclick>activatewindow(MusicSettings)</onclick>
+						
+					</control>
+					
+					<control type="button" id="9005">
+					
+						<include>Common_Settings_Menu</include>
+						<label>live tv</label>
+						<onclick>ActivateWindow(PVRSettings)</onclick>
+						
+					</control>
+					
+					<control type="button" id="9006">
+					
+						<include>Common_Settings_Menu</include>
+						<label>$LOCALIZE[24001]</label>
+						<onclick>activatewindow(AddonBrowser)</onclick>
+						
+					</control>
+					
+					<control type="button" id="9007">
+					
+						<include>Common_Settings_Menu</include>
+						<label>$LOCALIZE[1]</label>
+						<onclick>activatewindow(PicturesSettings)</onclick>
+						
+					</control>
+					
+					<control type="button" id="9008">
+					
+						<include>Common_Settings_Menu</include>
+						<label>$LOCALIZE[8]</label>
+						<onclick>activatewindow(WeatherSettings)</onclick>
+						
+					</control>
+					
+					<control type="button" id="9009">
+					
+						<include>Common_Settings_Menu</include>
+						<label>$LOCALIZE[14036]</label>
+						<onclick>activatewindow(ServiceSettings)</onclick>
+						
+					</control>
+					<control type="button" id="9010">
+					
+						<include>Common_Settings_Menu</include>
+						<label>$LOCALIZE[13000]</label>
+						<onclick>activatewindow(SystemSettings)</onclick>
+						
+					</control>
+					
+					<control type="button" id="9011">
+					
+						<include>Common_Settings_Menu</include>
+						<label>$LOCALIZE[13200]</label>
+						<onclick>activatewindow(Profiles)</onclick>
+						
+					</control>
+					
+					<control type="button" id="9012">
+					
+						<include>Common_Settings_Menu</include>
+						<label>$LOCALIZE[130]</label>
+						<onclick>activatewindow(SystemInfo)</onclick>
+						
+					</control>
+					
+				</control>
 				
 			</control>
 			
-			<control type="grouplist" id="9000">
-				
-				<description>grouplist for context buttons</description>
-				<posx>0</posx>
-				<posy>100</posy>
-				<width>420</width>
-				<height max="600">auto</height>
-				<itemgap>0</itemgap>
-				
-				<control type="button" id="9001">
-				
-					<include>Common_Settings_Menu</include>
-					<label>$LOCALIZE[480]</label>
-					<onclick>activatewindow(AppearanceSettings)</onclick>
-					
-				</control>
-				
-				<control type="button" id="9002">
-				
-					<include>Common_Settings_Menu</include>
-					<label>personalize</label>
-					<onclick>activatewindow(SkinSettings)</onclick>
-					
-				</control>
-				
-				<control type="button" id="9003">
-				
-					<include>Common_Settings_Menu</include>
-					<label>$LOCALIZE[3]</label>
-					<onclick>activatewindow(VideosSettings)</onclick>
-					
-				</control>
-				
-				<control type="button" id="9004">
-				
-					<include>Common_Settings_Menu</include>
-					<label>$LOCALIZE[2]</label>
-					<onclick>activatewindow(MusicSettings)</onclick>
-					
-				</control>
-				
-				<control type="button" id="9005">
-				
-					<include>Common_Settings_Menu</include>
-					<label>live tv</label>
-					<onclick>ActivateWindow(PVRSettings)</onclick>
-					
-				</control>
-				
-				<control type="button" id="9006">
-				
-					<include>Common_Settings_Menu</include>
-					<label>$LOCALIZE[24001]</label>
-					<onclick>activatewindow(AddonBrowser)</onclick>
-					
-				</control>
-				
-				<control type="button" id="9007">
-				
-					<include>Common_Settings_Menu</include>
-					<label>$LOCALIZE[1]</label>
-					<onclick>activatewindow(PicturesSettings)</onclick>
-					
-				</control>
-				
-				<control type="button" id="9008">
-				
-					<include>Common_Settings_Menu</include>
-					<label>$LOCALIZE[8]</label>
-					<onclick>activatewindow(WeatherSettings)</onclick>
-					
-				</control>
-				
-				<control type="button" id="9009">
-				
-					<include>Common_Settings_Menu</include>
-					<label>$LOCALIZE[14036]</label>
-					<onclick>activatewindow(ServiceSettings)</onclick>
-					
-				</control>
-				<control type="button" id="9010">
-				
-					<include>Common_Settings_Menu</include>
-					<label>$LOCALIZE[13000]</label>
-					<onclick>activatewindow(SystemSettings)</onclick>
-					
-				</control>
-				
-				<control type="button" id="9011">
-				
-					<include>Common_Settings_Menu</include>
-					<label>$LOCALIZE[13200]</label>
-					<onclick>activatewindow(Profiles)</onclick>
-					
-				</control>
-				
-				<control type="button" id="9012">
-				
-					<include>Common_Settings_Menu</include>
-					<label>$LOCALIZE[130]</label>
-					<onclick>activatewindow(SystemInfo)</onclick>
-					
-				</control>
-				
-			</control>
-			
-		</control>
-		
-		<!--<control type="group">
-		
-			<control type="multiimage">
-		
-				<posx>500</posx>
-				<posy>60</posy>
-				<width>700</width>
-				<height>415</height>
-				<imagepath>settings/lineart</imagepath>
-				<timeperimage>10000</timeperimage>
-				<fadetime>2000</fadetime>
-				<loop>true</loop>
-				
-			</control>
-			
-			<control type="label">
-				
-				<posx>500</posx>
-				<posy>500</posy>
-				<width>700</width>
-				<height>100</height>
-				<label>What is XBMC?</label>
-				<font>Settings-Header</font>
-				<textcolor>Settings_Header</textcolor>
-				<aligny>top</aligny>
-				
-			</control>
-		  
-			<control type="label">
-				
-				<posx>500</posx>
-				<posy>540</posy>
-				<width>700</width>
-				<height>300</height>
-				<wrapmultiline>true</wrapmultiline>
-				<label>While XBMC functions very well as a standard media player application for your computer, it has been designed to be the perfect companion for your HTPC. Supporting an almost endless range of remote controls, and combined with its beautiful interface and powerful skinning engine, XBMC feels very natural to use from the couch and is the ideal solution for your home theater.</label>
-				<font>Settings-Label</font>
-				<textcolor>Settings_Label</textcolor>
-				<aligny>top</aligny>
-				
-			</control>
-			
-		</control>-->
+		</control>	
 		
 	</controls>
 

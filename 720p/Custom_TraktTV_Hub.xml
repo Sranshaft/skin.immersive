@@ -38,12 +38,14 @@
 				<orientation>horizontal</orientation>
 				<itemgap>20</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
+
+				<include>Common_Animation_Breadcrumb</include>
 				
 				<control type="button">
 					
 					<posy>12</posy>
-					<width>48</width>
-					<height>48</height>
+					<width>42</width>
+					<height>42</height>
 					<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 					<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
 					<colordiffuse>Label_Normal</colordiffuse>
@@ -114,7 +116,7 @@
 			
 			<control type="grouplist">
 			
-				<posx>128</posx>
+				<posx>110</posx>
 				<posy>100</posy>
 				<width>1100</width>
 				<height>100</height>
@@ -178,17 +180,29 @@
 			<height>480</height>
 			
 			<include>Common_Animation_Content</include>
-			
+
 			<control type="group">
 		
 				<posx>60</posx>
 				<posy>0</posy>
+
+				<control type="label">
+							
+					<posx>45</posx>
+					<posy>58</posy>
+					<label>EXPLORE</label>
+					<textcolor>Label_Normal</textcolor>
+					<include>Common_Vertical_Label</include>
+					
+					<include>Common_Animation_Vertical_Label</include>
+					
+				</control>
 				
 				<include>Common_Animation_View</include>
-				
+
 				<control type="panel" id="571">
 						
-					<posx>68</posx>
+					<posx>50</posx>
 					<posy>60</posy>
 					<width>1160</width>
 					<height>520</height>
@@ -274,7 +288,7 @@
 							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.1.Art(poster))],58)</onclick>
 							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.1.Art(fanart))],58)</onclick>
 							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.1.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.1.ID)],58)</onclick>
+							<onclick>SetProperty(ID,$INFO[TrendingMovies.1.ID],58)</onclick>
 							<onclick>SetProperty(Type,movie,58)</onclick>
 							<onclick>ActivateWindow(58,return)</onclick>
 						</item>
@@ -294,7 +308,7 @@
 							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.2.Art(poster))],58)</onclick>
 							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.2.Art(fanart))],58)</onclick>
 							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.2.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.2.ID)],58)</onclick>
+							<onclick>SetProperty(DBID,$INFO[Window(Home).Property(TrendingMovies.2.DBID)],58)</onclick>
 							<onclick>SetProperty(Type,movie,58)</onclick>
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
@@ -314,7 +328,7 @@
 							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.3.Art(poster))],58)</onclick>
 							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.3.Art(fanart))],58)</onclick>
 							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.3.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.3.ID)],58)</onclick>
+							<onclick>SetProperty(DBID,$INFO[Window(Home).Property(TrendingMovies.3.DBID)],58)</onclick>
 							<onclick>SetProperty(Type,movie,58)</onclick>
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
@@ -334,7 +348,7 @@
 							<onclick>SetProperty(Poster,$INFO[Window(Home).Property(TrendingMovies.4.Art(poster))],58)</onclick>
 							<onclick>SetProperty(Fanart,$INFO[Window(Home).Property(TrendingMovies.4.Art(fanart))],58)</onclick>
 							<onclick>SetProperty(Trailer,$INFO[Window(Home).Property(TrendingMovies.4.Play)],58)</onclick>
-							<onclick>SetProperty(ID,$INFO[Window(Home).Property(TrendingMovies.4.ID)],58)</onclick>
+							<onclick>SetProperty(DBID,$INFO[Window(Home).Property(TrendingMovies.4.DBID)],58)</onclick>
 							<onclick>SetProperty(Type,movie,58)</onclick>
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
@@ -659,13 +673,13 @@
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
 					
-					</content>	
+					</content>
 
 				</control>
 				
 				<control type="panel" id="572">
 						
-					<posx>68</posx>
+					<posx>50</posx>
 					<posy>60</posy>
 					<width>1160</width>
 					<height>520</height>
@@ -733,7 +747,7 @@
 						</control>
 
 					</focusedlayout>
-					
+
 					<content>
 					
 						<item id="1">
@@ -1156,13 +1170,13 @@
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
 					
-					</content>	
+					</content>
 
 				</control>
 				
 				<control type="panel" id="573">
 						
-					<posx>68</posx>
+					<posx>50</posx>
 					<posy>60</posy>
 					<width>1160</width>
 					<height>520</height>
@@ -1659,7 +1673,7 @@
 				
 				<control type="panel" id="574">
 						
-					<posx>68</posx>
+					<posx>50</posx>
 					<posy>60</posy>
 					<width>1160</width>
 					<height>520</height>
@@ -1727,7 +1741,7 @@
 						</control>
 
 					</focusedlayout>
-					
+
 					<content>
 					
 						<item id="1">
@@ -2150,7 +2164,7 @@
 							<onclick>ActivateWindow(58)</onclick>
 						</item>
 					
-					</content>	
+					</content>
 
 				</control>
 				

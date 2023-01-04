@@ -27,18 +27,10 @@
 		
 			<control type="list" id="98">
 				
-				<description>List</description>
-				<posx>0</posx>
-				<posy>100</posy>
-				<width>420</width>
-				<height max="600">auto</height>
 				<onup>98</onup>
 				<ondown>98</ondown>
 				<onleft>-</onleft>
 				<onright>99</onright>
-				<scrolltime>0</scrolltime>
-				<orientation>vertical</orientation>
-				<pagecontrol>-</pagecontrol>
 
 				<include>Common_Settings_Menu_List</include>
 
@@ -62,12 +54,11 @@
 
 		</control>
 		
+		<!--Controls-->
 		<control type="group" id="99">
-			
-			<posx>500</posx>
-			<posy>0</posy>
-			<width>700</width>
-			<height>480</height>
+		
+			<include>Common_Settings_Group</include>
+			<include>Common_Animation_Settings_Options</include>
 			
 			<!--Locations-->
 			<control type="group" id="100">
@@ -80,7 +71,7 @@
 				
 					<description></description>
 					<posx>0</posx>
-					<posy>100</posy>
+					<posy>0</posy>
 					<include>Common_Settings_Label</include>
 					<label>$LOCALIZE[1021]</label>
 					
@@ -89,8 +80,8 @@
 				<control type="list" id="10">
 						
 					<posx>0</posx>
-					<posy>160</posy>
-					<width>500</width>
+					<posy>60</posy>
+					<width>560</width>
 					<height>540</height>
 					<onleft>98</onleft>
 					<onright>11</onright>
@@ -100,13 +91,13 @@
 					<scrolltime tween="cubic" easing="out">600</scrolltime>
 					<preloaditems>2</preloaditems>
 					
-					<itemlayout width="500" height="60">
+					<itemlayout width="560" height="60">
 
 						<control type="label">
 						
 							<posx>32</posx>
 							<posy>0</posy>
-							<width min="20" max="436">auto</width>
+							<width min="20" max="496">auto</width>
 							<height>60</height>
 							<label>$INFO[ListItem.Label]</label>
 							<font>Menu-List</font>
@@ -117,7 +108,7 @@
 
 					</itemlayout>
 
-					<focusedlayout width="500" height="60">
+					<focusedlayout width="560" height="60">
 					
 						<control type="group">
 						
@@ -127,7 +118,7 @@
 							
 								<posx>0</posx>
 								<posy>0</posy>
-								<width>500</width>
+								<width>560</width>
 								<height>60</height>
 								<texture>colors/color_white.png</texture>
 								<colordiffuse>Settings_Background_Dark</colordiffuse>
@@ -138,7 +129,7 @@
 							
 								<posx>32</posx>
 								<posy>0</posy>
-								<width min="20" max="436">auto</width>
+								<width min="20" max="496">auto</width>
 								<height>60</height>
 								<label>$INFO[ListItem.Label]</label>
 								<font>Menu-List</font>
@@ -157,7 +148,7 @@
 							
 								<posx>0</posx>
 								<posy>0</posy>
-								<width>500</width>
+								<width>560</width>
 								<height>60</height>
 								<texture>colors/color_white.png</texture>
 								<colordiffuse>Background_Highlight</colordiffuse>
@@ -168,7 +159,7 @@
 							
 								<posx>32</posx>
 								<posy>0</posy>
-								<width min="20" max="436">auto</width>
+								<width min="20" max="496">auto</width>
 								<height>60</height>
 								<label>$INFO[ListItem.Label]</label>
 								<font>Menu-List</font>
@@ -190,7 +181,7 @@
 					<include>Common_Settings_Scrollbar_Vertical</include>
 					
 					<posx>520</posx>
-					<posy>160</posy>
+					<posy>60</posy>
 					<height>540</height>
 					
 					<animation effect="fade" start="100" end="20" time="200" reversible="true" condition="!Container(81).Scrolling">Conditional</animation>
@@ -199,8 +190,8 @@
 				
 				<control type="grouplist">
 
-					<posx>540</posx>
-					<posy>160</posy>
+					<posx>600</posx>
+					<posy>60</posy>
 					<width>400</width>
 					<height>540</height>
 					<scrolltime tween="cubic" easing="out">600</scrolltime>
@@ -218,8 +209,6 @@
 						
 						<visible>Control.IsEnabled(11)</visible>
 
-						<include>Common_Control_Background</include>
-						
 						<control type="button" id="11">
 							
 							<include>Common_Control_Button</include>
@@ -252,8 +241,6 @@
 						<height>60</height>
 						
 						<visible>Control.IsEnabled(13)</visible>
-
-						<include>Common_Control_Background</include>
 						
 						<control type="button" id="13">
 							
@@ -287,8 +274,6 @@
 						<height>60</height>
 						
 						<visible>Control.IsEnabled(14)</visible>
-
-						<include>Common_Control_Background</include>
 						
 						<control type="button" id="14">
 							
@@ -324,8 +309,8 @@
 			
 				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>100</posy>
-				<width>700</width>
+				<posy>0</posy>
+				<width>800</width>
 				<height>540</height>
 				<itemgap>0</itemgap>
 				<onleft>98</onleft>
@@ -341,9 +326,9 @@
 
 				</control>
 
-				<control type="button" id="12">
+				<control type="edit" id="12">
 					
-					<include>Common_Settings_Button</include>
+					<include>Common_Settings_Edit</include>
 					<ondown>9000</ondown>
 					
 				</control>

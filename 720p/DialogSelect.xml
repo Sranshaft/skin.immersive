@@ -2,7 +2,8 @@
 
 <window id="2000">
 	
-	<defaultcontrol always="true">3</defaultcontrol>
+	<defaultcontrol condition="Control.IsVisible(3)">3</defaultcontrol>
+	<defaultcontrol condition="Control.IsVisible(6)">6</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	
 	<controls>

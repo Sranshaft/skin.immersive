@@ -3,30 +3,49 @@
 <window type="dialog" id="58">
 
 	<defaultcontrol always="true">50</defaultcontrol>
+	<backgroundcolor>0xff000000</backgroundcolor>
 	<zorder>2</zorder>
 	
-	<onload condition="System.HasAddon(script.extendedinfo) + !Window.Previous(movieinformation)">RunScript(script.extendedinfo,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + !Window.Previous(movieinformation)">RunScript(script.extendedinfo,info=Similar,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>
+	<!--<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=Comments,id=$INFO[Window.Property(ID)],type=$INFO[Window.Property(Type)])</onload>-->
+	<onload condition="System.HasAddon(script.extendedinfo) + StringCompare($INFO[Window.Property(Type)],movie)">RunScript(script.extendedinfo,info=similarmoviestrakt,id=$INFO[Window.Property(ID)],prefix=SimilarTrakt)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + StringCompare($INFO[Window.Property(Type)],tvshow)">RunScript(script.extendedinfo,info=similartvshowstrakt,id=$INFO[Window.Property(ID)],prefix=SimilarTrakt)</onload>
 
 	<include>Common_Animation_Window</include>
 	
 	<controls>
-	
-		<!--Background-->
+
 		<control type="image">
-				
+					
 			<include>Common_Dimensions</include>
 			<texture>colors/color_white.png</texture>
-			<colordiffuse>Background_Normal</colordiffuse>
+			<colordiffuse>Black</colordiffuse>
+
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="400" delay="200"/>
+			</animation>
 			
 		</control>
-		
+
+		<!--Background-->
 		<control type="group">
 		
 			<animation effect="slide" start="0,0" end="-1020,0" time="600" tween="cubic" easing="out" condition="Window.IsVisible(57) + [Control.HasFocus(51) | Control.HasFocus(581) | Control.HasFocus(52) | Control.HasFocus(53)]">Conditional</animation>
 			
 			<animation effect="slide" start="0,0" end="-200,0" time="600" tween="cubic" easing="out" condition="!Window.IsVisible(57) + [Control.HasFocus(51) | Control.HasFocus(581) | Control.HasFocus(52) | Control.HasFocus(53)]">Conditional</animation>
-		
+
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="400"/>
+				<effect type="slide" start="0,0" end="-1280,0" time="400" tween="cubic" easing="in"/>
+			</animation>
+
+			<control type="image">
+					
+				<include>Common_Dimensions</include>
+				<texture>colors/color_white.png</texture>
+				<colordiffuse>Background_Normal</colordiffuse>
+				
+			</control>
+
 			<control type="image">
 	
 				<include>Common_Dimensions</include>
@@ -85,8 +104,8 @@
 				<control type="button">
 					
 					<posy>12</posy>
-					<width>48</width>
-					<height>48</height>
+					<width>42</width>
+					<height>42</height>
 					<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 					<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
 					<colordiffuse>Label_Normal</colordiffuse>
@@ -105,6 +124,8 @@
 			<posy>20</posy>
 			<width>1280</width>
 			<height>120</height>
+
+			<include>Common_Animation_Breadcrumb</include>
 			
 			<animation effect="fade" start="0" end="100" time="600" reversible="true">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="600" reversible="true">Hidden</animation>
@@ -114,8 +135,8 @@
 			<control type="button">
 					
 				<posy>12</posy>
-				<width>48</width>
-				<height>48</height>
+				<width>42</width>
+				<height>42</height>
 				<texturefocus aligny="center">breadcrumb/breadcrumb_backarrow_focus.png</texturefocus>
 				<texturenofocus aligny="center">breadcrumb/breadcrumb_backarrow.png</texturenofocus>
 				<aspectratio>keep</aspectratio>
@@ -424,11 +445,11 @@
 					<width>400</width>
 					<height>560</height>
 					
-					<visible>Window.IsVisible(57) + IntegerGreaterThan(Window(Home).Property(SimilarTrakt.Count),0)</visible>
+					<visible>Window.IsVisible(57)</visible>
 					
 					<control type="label">
 						
-						<label>similar</label>
+						<label>$INFO[Window.Property(DBID)]</label>
 						<include>Common_Section_Label</include>
 						
 					</control>
@@ -436,7 +457,7 @@
 					<control type="label">
 						
 						<posx>360</posx>
-						<label>$INFO[Window(Home).Property(SimilarTrakt.Count)]</label>
+						<label>$INFO[Container(52).NumItems]</label>
 						<include>Common_Section_Label_Right</include>
 						
 					</control>
@@ -620,8 +641,10 @@
 							</control>	
 
 						</focusedlayout>
+
+						<content limit="10">plugin://script.extendedinfo?info=similartvshowstrakt&amp;&amp;dbid=$INFO[Window.Property(DBID)]</content>
 						
-						<content>
+						<!--<content>
 						
 							<item id="1">
 								<label>$INFO[Window(Home).Property(SimilarTrakt.1.Title)]</label>
@@ -723,7 +746,7 @@
 								<onclick>-</onclick>
 							</item>
 
-						</content>		
+						</content>-->		
 						
 					</control>
 					
@@ -1065,222 +1088,406 @@
 						<content>
 						
 							<item id="1">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.1.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.1.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.1.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.1.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.1.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.1.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.1.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.1.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.1.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.1.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.1.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.1.Likes)],66)</onclick>
+
+								<onclick>ActivateWindow(66,return)</onclick>
+								
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),0)</visible>
 							</item>
 							
 							<item id="2">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.2.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.2.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.2.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.2.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.2.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.2.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.2.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.2.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.2.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.2.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.2.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.2.Likes)],66)</onclick>
+								
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),1)</visible>
 							</item>
 							
 							<item id="3">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.3.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.3.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.3.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.3.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.3.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.3.Likes)]</property>
+								
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.3.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.3.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.3.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.3.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.3.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.3.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),2)</visible>
 							</item>
 							
 							<item id="4">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.4.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.4.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.4.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.4.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.4.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.4.Likes)]</property>
+								
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.4.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.4.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.4.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.4.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.4.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.4.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),3)</visible>
 							</item>
 							
 							<item id="5">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.5.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.5.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.5.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.5.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.5.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.5.Likes)]</property>
+								
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.5.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.5.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.5.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.5.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.5.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.5.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),4)</visible>
 							</item>
 							
 							<item id="6">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.6.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.6.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.6.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.6.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.6.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.6.Likes)]</property>
+								
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.6.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.6.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.6.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.6.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.6.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.6.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),5)</visible>
 							</item>
 							
 							<item id="7">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.7.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.7.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.7.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.7.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.7.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.7.Likes)]</property>
+								
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.7.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.7.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.7.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.7.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.7.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.7.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),6)</visible>
 							</item>
 							
 							<item id="8">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.8.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.8.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.8.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.8.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.8.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.8.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.8.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.8.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.8.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.8.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.8.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.8.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),7)</visible>
 							</item>
 							
 							<item id="9">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.9.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.9.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.9.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.9.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.9.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.9.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.9.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.9.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.9.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.9.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.9.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.9.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),8)</visible>
 							</item>
 							
 							<item id="10">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.10.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.10.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.10.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.10.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.10.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.10.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.10.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.10.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.10.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.10.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.10.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.10.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),9)</visible>
 							</item>
 							
 							<item id="11">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.11.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.11.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.11.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.11.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.11.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.11.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.11.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.11.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.11.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.11.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.11.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.11.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),10)</visible>
 							</item>
 							
 							<item id="12">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.12.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.12.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.12.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.12.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.12.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.12.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.12.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.12.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.12.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.12.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.12.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.12.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),11)</visible>
 							</item>
 							
 							<item id="13">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.13.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.13.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.13.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.13.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.13.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.13.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.13.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.13.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.13.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.13.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.13.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.13.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),12)</visible>
 							</item>
 							
 							<item id="14">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.14.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.14.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.14.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.14.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.14.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.14.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.14.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.14.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.14.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.14.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.14.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.14.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),13)</visible>
 							</item>
 							
 							<item id="15">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.15.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.15.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.15.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.15.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.15.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.15.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.15.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.15.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.15.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.15.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.15.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.15.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),14)</visible>
 							</item>
 							
 							<item id="16">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.16.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.16.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.16.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.16.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.16.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.16.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.16.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.16.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.16.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.16.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.16.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.16.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),15)</visible>
 							</item>
 							
 							<item id="17">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.17.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.17.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.17.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.17.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.17.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.17.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.17.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.17.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.17.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.17.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.17.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.17.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),16)</visible>
 							</item>
 							
 							<item id="18">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.18.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.18.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.18.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.18.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.18.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.18.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.18.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.18.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.18.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.18.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.18.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.18.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),17)</visible>
 							</item>
 							
 							<item id="19">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.19.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_left.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.19.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.19.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.19.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.19.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.19.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.19.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.19.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.19.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.19.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.19.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.19.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),18)</visible>
 							</item>
 							
 							<item id="20">
-								<onclick>Skin.SetBool(ShowComment)</onclick>
 								<label>$INFO[Window(Home).Property(CommentsTrakt.20.Username)]</label>
 								<thumb>forumbrowser/forumbrowser_bubble_right.png</thumb>
 								<property name="Avatar">$INFO[Window(Home).Property(CommentsTrakt.20.Avatar)]</property>
-								<property name="Comment">$INFO[Window(Home).Property(CommentsTrakt.20.Text)]</property>
+								<property name="Comment">$ESCINFO[Window(Home).Property(CommentsTrakt.20.Text)]</property>
 								<property name="Type">$INFO[Window(Home).Property(CommentsTrakt.20.Type)]</property>
 								<property name="Likes">$INFO[Window(Home).Property(CommentsTrakt.20.Likes)]</property>
+
+								<onclick>Common_TraktTV_ClearProperties_Comment</onclick>
+								<onclick>SetProperty(Username,$INFO[Window(Home).Property(CommentsTrakt.20.Username)],66)</onclick>
+								<onclick>SetProperty(Location,$INFO[Window(Home).Property(CommentsTrakt.20.Location)],66)</onclick>
+								<onclick>SetProperty(Avatar,$INFO[Window(Home).Property(CommentsTrakt.20.Avatar)],66)</onclick>
+								<onclick>SetProperty(Comment,$ESCINFO[Window(Home).Property(CommentsTrakt.20.Text)],66)</onclick>
+								<onclick>SetProperty(Type,$INFO[Window(Home).Property(CommentsTrakt.20.Type)],66)</onclick>
+								<onclick>SetProperty(Likes,$INFO[Window(Home).Property(CommentsTrakt.20.Likes)],66)</onclick>
+								<onclick>ActivateWindow(66,return)</onclick>
+
 								<visible>IntegerGreaterThan(Window(Home).Property(CommentsTrakt.Count),19)</visible>
 							</item>
 

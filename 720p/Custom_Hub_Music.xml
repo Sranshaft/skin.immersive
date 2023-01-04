@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<window id="63">
+<window id="1113">
+
+	<include>Common_Window</include>
 
 	<defaultcontrol always="true">9000</defaultcontrol>
 	
 	<zorder>2</zorder>
 	
-	<include>Common_Animation_Window</include>
-	
-	<!--Splash Screen-->
-	<onload condition="!Skin.HasSetting(NoSplashScreen) + Window.Previous(home)">ActivateWindow(60)</onload>
-	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowNearbyEventsSection_Music)">RunScript(script.extendedinfo,info=NearEvents)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo) + Skin.HasSetting(ShowNearbyEventsSection_Music)">RunScript(script.extendedinfo,info=nearevents)</onload>
 	
 	<onload>AlarmClock(MoveFeatured,Control.Move(9001,1),00:20,silent,loop)</onload>
 	<onunload>XBMC.CancelAlarm(MoveFeatured,true)</onunload>
@@ -39,8 +37,7 @@
 				<height>480</height>
 				
 				<!--Animation-->
-				<include condition="Window.Previous(home)">Common_Animation_Content_Splash</include>
-				<include condition="!Window.Previous(home)">Common_Animation_Content</include>
+				<include>Common_Animation_Content</include>
 				
 				<control type="grouplist">
 		
@@ -158,11 +155,24 @@
 								</control>
 								
 								<control type="label">
-								
+							
 									<width min="20" max="380">auto</width>
 									<label>$INFO[ListItem.Label]</label>
 									<textcolor>Label_Normal</textcolor>
 									<include>Common_Control_Label</include>
+
+									<visible>!Control.HasFocus(9000)</visible>
+									
+								</control>
+								
+								<control type="label">
+								
+									<width min="20" max="380">auto</width>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>Label_Highlight</textcolor>
+									<include>Common_Control_Label</include>
+
+									<visible>Control.HasFocus(9000)</visible>
 									
 								</control>
 

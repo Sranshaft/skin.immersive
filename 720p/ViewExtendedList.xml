@@ -9,7 +9,7 @@
 			<posx>60</posx>
 			<posy>0</posy>
 		
-			<visible>Control.IsVisible(53)</visible>
+			<visible>Control.IsVisible(53) + IsEmpty(Control.GetLabel(18))</visible>
 			
 			<include>Common_Animation_View</include>
 		
@@ -81,7 +81,7 @@
 							<posy>0</posy>
 							<width>300</width>
 							<height>170</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[ExtendedList_Image]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[View_Item_Thumb]</texture>
 							<aspectratio aligny="top">scale</aspectratio>
 							
 						</control>
@@ -92,12 +92,10 @@
 							<posy>180</posy>
 							<width>260</width>
 							<height>60</height>
-							<label>$VAR[ExtendedList_Header]</label>
+							<label>$VAR[View_Item_Header]</label>
 							<font>Menu-ExtendedList-Header</font>
 							<textcolor>Settings_Label</textcolor>
 							<aligny>top</aligny>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -119,13 +117,10 @@
 							<posy>270</posy>
 							<width>260</width>
 							<height>125</height>
-							<label>$VAR[ExtendedList_Plot]</label>
+							<label>$VAR[View_Item_Description]</label>
 							<font>Menu-ExtendedList-Details</font>
 							<textcolor>Settings_Label</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -135,7 +130,7 @@
 							<posy>400</posy>
 							<width>240</width>
 							<height>26</height>
-							<label>$VAR[ExtendedList_Detail]</label>
+							<label>$VAR[View_Item_SubHeader]</label>
 							<font>Menu-ExtendedList-Small</font>
 							<textcolor>Settings_Label</textcolor>
 							<aligny>center</aligny>
@@ -164,7 +159,7 @@
 							<posy>394</posy>
 							<width>40</width>
 							<height>40</height>
-							<texture>$VAR[Menu_Overlay_Image]</texture>
+							<texture>$VAR[View_Item_Overlay]</texture>
 							<aspectratio>stretch</aspectratio>
 							<colordiffuse>Settings_Label</colordiffuse>
 							
@@ -200,7 +195,7 @@
 							<posy>0</posy>
 							<width>300</width>
 							<height>170</height>
-							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[ExtendedList_Image]</texture>
+							<texture background="true" fallback="colors/color_keyboard_dark.png">$VAR[View_Item_Thumb]</texture>
 							<aspectratio aligny="top">scale</aspectratio>
 							
 						</control>
@@ -211,12 +206,10 @@
 							<posy>180</posy>
 							<width>260</width>
 							<height>60</height>
-							<label>$VAR[ExtendedList_Header]</label>
+							<label>$VAR[View_Item_Header]</label>
 							<font>Menu-ExtendedList-Header</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -238,13 +231,10 @@
 							<posy>270</posy>
 							<width>260</width>
 							<height>125</height>
-							<label>$VAR[ExtendedList_Plot]</label>
+							<label>$VAR[View_Item_Description]</label>
 							<font>Menu-ExtendedList-Details</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<shadowcolor>00FFFFFF</shadowcolor>
-							<autoscroll>false</autoscroll>
 							
 						</control>
 						
@@ -254,7 +244,7 @@
 							<posy>400</posy>
 							<width>240</width>
 							<height>26</height>
-							<label>$VAR[ExtendedList_Detail]</label>
+							<label>$VAR[View_Item_SubHeader]</label>
 							<font>Menu-ExtendedList-Small</font>
 							<textcolor>Label_Normal</textcolor>
 							<aligny>center</aligny>
@@ -283,7 +273,7 @@
 							<posy>394</posy>
 							<width>40</width>
 							<height>40</height>
-							<texture>$VAR[Menu_Overlay_Image]</texture>
+							<texture>$VAR[View_Item_Overlay]</texture>
 							<aspectratio>stretch</aspectratio>
 							<colordiffuse>Label_Normal</colordiffuse>
 							

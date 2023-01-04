@@ -145,8 +145,8 @@
 					<posx>20</posx>
 					<posy>20</posy>
 					<width min="20" max="260">auto</width>
-					<height>76</height>
-					<label>[UPPERCASE]$INFO[ListItem.Property(NextTitle)][/UPPERCASE]</label>
+					<height>74</height>
+					<label>$INFO[ListItem.Property(NextTitle)]</label>
 					<font>TVNextAired-Large</font>
 					<textcolor>Settings_Label</textcolor>
 					<aligny>top</aligny>
@@ -222,8 +222,8 @@
 					<posx>20</posx>
 					<posy>20</posy>
 					<width min="20" max="260">auto</width>
-					<height>76</height>
-					<label>[UPPERCASE]$INFO[ListItem.Property(NextTitle)][/UPPERCASE]</label>
+					<height>74</height>
+					<label>$INFO[ListItem.Property(NextTitle)]</label>
 					<font>TVNextAired-Large</font>
 					<textcolor>Settings_Label</textcolor>
 					<aligny>top</aligny>
@@ -295,8 +295,8 @@
 					<posx>20</posx>
 					<posy>20</posy>
 					<width min="20" max="260">auto</width>
-					<height>76</height>
-					<label>[UPPERCASE]$INFO[ListItem.Property(NextTitle)][/UPPERCASE]</label>
+					<height>74</height>
+					<label>$INFO[ListItem.Property(NextTitle)]</label>
 					<font>TVNextAired-Large</font>
 					<textcolor>Label_Normal</textcolor>
 					<aligny>top</aligny>

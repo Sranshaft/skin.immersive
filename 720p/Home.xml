@@ -24,20 +24,66 @@
 			<include>Common_Clock</include>
 			<include>Common_Overlay</include>
 			
-			<control type="image">
-							
+			<control type="grouplist">
+
 				<posx>60</posx>
 				<posy>20</posy>
 				<width>200</width>
 				<height>65</height>
-				<texture>home/logo.png</texture>
-				<aspectratio>keep</aspectratio>
-				
-			</control>
+				<orientation>horizontal</orientation>
+				<itemgap>0</itemgap>
+
+				<control type="image">
+								
+					<width>65</width>
+					<height>65</height>
+					<texture>home/home_logo_image.png</texture>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>Background_Highlight</colordiffuse>
+					
+				</control>
+
+				<control type="image">
+								
+					<width>135</width>
+					<height>65</height>
+					<texture>home/home_logo_text.png</texture>
+					<aspectratio>keep</aspectratio>
+					
+				</control>
+
+			</control>	
 			
 			<!--Content Area-->
-			<include>Home_Content</include>
+			<control type="group">
+		
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>1280</width>
+				<height>480</height>
+				
+				<!--Animation-->
+				<include>Common_Animation_Content</include>
+				
+				<control type="grouplist" id="9000">
+				
+					<include>Common_Content_Grouplist</include>
 
+					<include>Home_Tile</include>
+					<include>Home_List</include>
+					<include>Home_Featured</include>
+					<include>Home_OnDeck</include>
+					<include>Home_RecentlyAdded</include>
+					<include>Home_Search</include>
+					<include>Home_Manage</include>
+					<include>Home_Favourites</include>
+					<include>Home_NowPlaying</include>
+
+				</control>
+
+			</control>	
+
+			<!--Favourites Button-->
 			<control type="button" id="8999">
 				
 				<posx>60</posx>	

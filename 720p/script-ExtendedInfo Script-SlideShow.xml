@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="10000">
+
+	<defaultcontrol always="true">10000</defaultcontrol>
+
+	<include>Common_Animation_Window</include>
+
+	<controls>
+
+		<control type="image">
+					
+			<include>Common_Dimensions</include>
+			<texture>colors/color_black.png</texture>
+			
+		</control>
+
+		<control type="list" id="10000">
+
+			<include>Common_Dimensions</include>
+			<onright>10000</onright>
+			<onleft>10000</onleft>
+			<orientation>Horizontal</orientation>
+			<itemlayout height="1" width="1"></itemlayout>
+			<focusedlayout height="1" width="1"></focusedlayout>
+
+		</control>
+
+		<control type="image">
+					
+			<include>Common_Dimensions</include>
+			<texture>$INFO[Container(10000).ListItem.Thumb]</texture>
+			<aspectratio>keep</aspectratio>
+			
+		</control>
+	
+	</controls>
+
+</window>
